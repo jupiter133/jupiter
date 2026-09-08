@@ -215,6 +215,7 @@ describe('result', () => {
     const reading = result.subjects.find((x) => x.subject === 'reading')!;
     const math = result.subjects.find((x) => x.subject === 'math')!;
     expect(reading.finalTier).toBeGreaterThan(math.finalTier);
-    expect(result.recommendedStartingModule).toMatch(/strongest in reading/i);
+    expect(result.profile.even).toBe(false);
+    expect(result.profile.strongest).toBe('reading');
   });
 });

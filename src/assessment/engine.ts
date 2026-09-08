@@ -9,7 +9,7 @@ import type {
   SubjectState,
   Tier,
 } from './types';
-import { MAX_TIER, MIN_TIER, SUBJECT_LABEL, SUBJECT_ORDER } from './types';
+import { MAX_TIER, MIN_TIER, SUBJECT_ORDER } from './types';
 import { QUESTIONS } from './questionBank';
 
 /**
@@ -259,15 +259,18 @@ export function buildResult(state: SessionState): PlacementResult {
   const strongest = subjects.reduce((a, b) => (b.finalTier > a.finalTier ? b : a));
   const weakest = subjects.reduce((a, b) => (b.finalTier < a.finalTier ? b : a));
 
-  const overall =
-    strongest.finalTier === weakest.finalTier
-      ? `Your child places at a similar level across all three strands. Start with ${PLACEMENT.reading[averageTier].recommendedStartingModule.split(':')[0]} and run the three tracks together.`
-      : `Your child is strongest in ${SUBJECT_LABEL[strongest.subject].toLowerCase()} and has the most room to grow in ${SUBJECT_LABEL[weakest.subject].toLowerCase()}. Each strand starts at its own level — no single grade label fits all three.`;
-
   return {
     finalTier: averageTier,
     gradeEquivalentDisplay: PLACEMENT.reading[averageTier].gradeEquivalentDisplay,
-    recommendedStartingModule: overall,
+    // Track name only — the screen writes the sentence, since only it knows
+    // the child's name.
+    recommendedStartingModule:
+      PLACEMENT.reading[averageTier].recommendedStartingModule.split(':')[0],
+    profile: {
+      even: strongest.finalTier === weakest.finalTier,
+      strongest: strongest.subject,
+      weakest: weakest.subject,
+    },
     subjects,
     questionsAnswered: state.questionsAnswered.length,
     durationMs: Math.max(0, finishedAt - state.startedAt),

@@ -44,7 +44,9 @@ body {
 .display { font-size: var(--font-size-display); font-weight: 900; margin: 0; line-height: 1.1; }
 .title { font-size: var(--font-size-title); font-weight: 800; margin: 0; line-height: 1.2; }
 .heading { font-size: var(--font-size-heading); font-weight: 700; margin: 0; }
+.heading--sm { font-size: 19px; line-height: 1.3; }
 .body { font-size: var(--font-size-body); color: var(--text-secondary); line-height: 1.6; margin: 0; }
+.body--sm { font-size: 15px; line-height: 1.5; }
 .label {
   font-size: var(--font-size-label);
   font-weight: 700;
@@ -336,20 +338,61 @@ body {
 
 /* ---------- Parent results ---------- */
 
+/* Results are budgeted to fit the tablet screen without scrolling. */
+.results { display: flex; flex-direction: column; gap: var(--space-4); }
+
 .subject-results {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3);
   align-items: stretch;
 }
 
-.subject-results > .panel { display: flex; flex-direction: column; }
+.panel--strand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
 
-.results-footer {
+/* Pins the starting module to the bottom so the three cards line up. */
+.start-here {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--accent-primary-soft);
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.start-here__module { font-size: 15px; font-weight: 800; line-height: 1.35; }
+
+.results-meta {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   gap: var(--space-4);
-  align-items: start;
+  align-items: center;
+}
+
+.fact-strip {
+  display: flex;
+  gap: var(--space-5);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-inset);
+  border-radius: var(--radius-md);
+}
+
+.fact { display: flex; flex-direction: column; gap: 2px; }
+.fact dd { margin: 0; }
+.fact__value { font-size: 16px; font-weight: 800; white-space: nowrap; }
+
+.results-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: flex-end;
 }
 
 .panel {
@@ -385,7 +428,7 @@ body {
 
 /* Portrait / small tablet fallback — the flow is designed for landscape. */
 @media (max-width: 900px), (orientation: portrait) {
-  .handoff, .question-body--with-passage, .subject-results, .results-footer, .celebration-split { grid-template-columns: 1fr; }
+  .handoff, .question-body--with-passage, .subject-results, .results-meta, .celebration-split { grid-template-columns: 1fr; }
   .options { grid-template-columns: 1fr; }
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
   .card { padding: var(--space-5); }
@@ -652,30 +695,36 @@ body {
 /* ---------- Tablet mockup ---------- */
 
 .device-stage {
-  min-height: 100%;
+  height: 100%;
   display: flex;
-  padding: clamp(12px, 3vmin, 44px);
+  padding: clamp(10px, 2.5vmin, 40px);
   background: var(--device-backdrop);
+  /* The shell is sized to fit; nothing here should ever scroll the page. */
+  overflow: hidden;
 }
 
-.device-well { flex: 1; display: grid; place-items: center; min-width: 0; }
+.device-well {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+}
 
 .tablet {
   position: relative;
-  /* Bezel thickness scales with the shell so it reads right at any size. */
-  padding: 2.6%;
-  border-radius: clamp(20px, 3.2%, 46px);
   background: var(--device-bezel);
-  border: 2px solid var(--device-bezel-edge);
+  /* Content box is the screen exactly; TabletFrame sets size, padding (the
+     bezel) and radius from the measured scale. A border would add to the
+     footprint, so the edge highlight is an inset shadow instead. */
+  box-sizing: content-box;
   box-shadow:
-    0 40px 80px rgba(23, 54, 42, 0.28),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.06);
-  box-sizing: border-box;
+    0 30px 60px rgba(23, 54, 42, 0.26),
+    inset 0 0 0 2px var(--device-bezel-edge);
 }
 
 .tablet__camera {
   position: absolute;
-  top: 1.15%;
   left: 50%;
   width: 9px;
   height: 9px;
@@ -689,7 +738,6 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 8px;
   background: var(--surface-canvas);
 }
 

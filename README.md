@@ -38,6 +38,19 @@ to fit whatever space it's given, so the mockup always shows the layout that was
 designed rather than a reflowed browser approximation. Bezel colors live in
 `tokens.css` under `--device-*` and are used by nothing inside the app screens.
 
+**The bezel is part of the fit calculation.** Sizing the shell to the screen and
+then padding it outwards pushes the canvas past the frame, and the overflow gets
+clipped. Since the bezel scales with the screen, the footprint is
+`s * (1280 + 2 * 0.035 * 800)` wide and `s * 800 * (1 + 2 * 0.035)` tall;
+solving both against the available box gives the largest scale that fits whole.
+The shell is `content-box` so its content box is exactly the screen, and the
+edge highlight is an inset shadow rather than a border, which would add to the
+footprint.
+
+Every screen is budgeted to fit 1280x800 without scrolling — including the
+parent results with a long learning-challenges note. `scratchpad/audit.mjs`
+walks the whole flow and reports any screen whose content exceeds the canvas.
+
 ### Child name
 
 The name comes from the **child's profile** — by the time a parent reaches this

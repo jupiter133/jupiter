@@ -149,11 +149,22 @@ export interface SubjectPlacement {
   questionsAnswered: number;
 }
 
+/** Shape of the result across strands, as data rather than prose.
+ *  The engine has no business writing sentences about a child by name. */
+export interface StrandProfile {
+  /** True when every strand landed on the same tier. */
+  even: boolean;
+  strongest: Subject;
+  weakest: Subject;
+}
+
 export interface PlacementResult {
   /** Rounded average across strands — drives the overall starting point. */
   finalTier: Tier;
   gradeEquivalentDisplay: string;
+  /** Overall track name, e.g. "Trailhead". */
   recommendedStartingModule: string;
+  profile: StrandProfile;
   subjects: SubjectPlacement[];
   questionsAnswered: number;
   durationMs: number;
