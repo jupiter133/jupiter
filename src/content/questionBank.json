@@ -1,0 +1,173 @@
+{
+  "version": "0.1.0-placeholder",
+  "questions": [
+    {
+      "id": "t1-v-01",
+      "tier": 1,
+      "skill": "vocabulary",
+      "questionText": "Which word means the same as big?",
+      "options": [
+        { "id": "a", "text": "large" },
+        { "id": "b", "text": "tiny" },
+        { "id": "c", "text": "cold" },
+        { "id": "d", "text": "loud" }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "t1-v-02",
+      "tier": 1,
+      "skill": "vocabulary",
+      "questionText": "Which word is the opposite of day?",
+      "options": [
+        { "id": "a", "text": "morning" },
+        { "id": "b", "text": "night" },
+        { "id": "c", "text": "sun" },
+        { "id": "d", "text": "week" }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "t1-c-01",
+      "tier": 1,
+      "skill": "comprehension",
+      "passageTitle": "The Lost Mitten",
+      "passage": "Nina walked to the pond with her red mittens. She threw a snowball at the old pine tree. When she got home, only one mitten was left in her pocket.",
+      "questionText": "What did Nina lose?",
+      "options": [
+        { "id": "a", "text": "Her hat" },
+        { "id": "b", "text": "A mitten" },
+        { "id": "c", "text": "Her boots" },
+        { "id": "d", "text": "A snowball" }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "t1-c-02",
+      "tier": 1,
+      "skill": "comprehension",
+      "passageTitle": "Camp Breakfast",
+      "passage": "The campers woke up when the sun came over the hill. Sam stirred the oatmeal in a big pot. Everyone ate two bowls before the morning hike.",
+      "questionText": "What did the campers eat?",
+      "options": [
+        { "id": "a", "text": "Oatmeal" },
+        { "id": "b", "text": "Pancakes" },
+        { "id": "c", "text": "Soup" },
+        { "id": "d", "text": "Berries" }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "t2-v-01",
+      "tier": 2,
+      "skill": "vocabulary",
+      "questionText": "The trail was narrow. What does narrow mean?",
+      "options": [
+        { "id": "a", "text": "Not wide" },
+        { "id": "b", "text": "Very long" },
+        { "id": "c", "text": "Full of rocks" },
+        { "id": "d", "text": "Going uphill" }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "t2-v-02",
+      "tier": 2,
+      "skill": "vocabulary",
+      "questionText": "Which word best completes the sentence? The bear moved ______ so it would not wake the cubs.",
+      "options": [
+        { "id": "a", "text": "quickly" },
+        { "id": "b", "text": "quietly" },
+        { "id": "c", "text": "brightly" },
+        { "id": "d", "text": "hungrily" }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "t2-c-01",
+      "tier": 2,
+      "skill": "comprehension",
+      "passageTitle": "The Compass",
+      "passage": "Aya's compass needle always pointed north, even when the trail curved. Her group followed the river instead, because the map showed the camp was downstream. By noon they could smell woodsmoke from the campfire.",
+      "questionText": "Why did the group follow the river instead of the compass?",
+      "options": [
+        { "id": "a", "text": "The compass was broken" },
+        { "id": "b", "text": "The map showed camp was downstream" },
+        { "id": "c", "text": "They wanted to go swimming" },
+        { "id": "d", "text": "The trail was closed" }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "t2-c-02",
+      "tier": 2,
+      "skill": "comprehension",
+      "passageTitle": "Northern Lights",
+      "passage": "Ben stayed up past bedtime because his uncle promised the sky would glow. At first there was nothing but stars. Then a green ribbon slid across the dark, and Ben forgot how cold his hands were.",
+      "questionText": "How did Ben feel when the lights appeared?",
+      "options": [
+        { "id": "a", "text": "Bored and sleepy" },
+        { "id": "b", "text": "Scared of the dark" },
+        { "id": "c", "text": "Amazed enough to forget the cold" },
+        { "id": "d", "text": "Angry at his uncle" }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "t3-v-01",
+      "tier": 3,
+      "skill": "vocabulary",
+      "questionText": "The guide was reluctant to cross the ice. Reluctant means:",
+      "options": [
+        { "id": "a", "text": "Unwilling or hesitant" },
+        { "id": "b", "text": "Eager and excited" },
+        { "id": "c", "text": "Careless" },
+        { "id": "d", "text": "Exhausted" }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "t3-v-02",
+      "tier": 3,
+      "skill": "vocabulary",
+      "questionText": "Which word is closest in meaning to abundant?",
+      "options": [
+        { "id": "a", "text": "Rare" },
+        { "id": "b", "text": "Plentiful" },
+        { "id": "c", "text": "Fragile" },
+        { "id": "d", "text": "Distant" }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "t3-c-01",
+      "tier": 3,
+      "skill": "comprehension",
+      "passageTitle": "The Ice Road",
+      "passage": "Every winter the road to the village freezes solid enough to carry trucks. Drivers move slowly, not because the ice is weak, but because speed sends a wave through the water beneath it. That wave can crack the surface far ahead of the truck itself.",
+      "questionText": "Why do drivers keep their speed low on the ice road?",
+      "options": [
+        { "id": "a", "text": "The ice is too thin to hold a truck" },
+        { "id": "b", "text": "Speed creates a wave under the ice that can crack it" },
+        { "id": "c", "text": "The road is very narrow" },
+        { "id": "d", "text": "Trucks use less fuel when slow" }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "t3-c-02",
+      "tier": 3,
+      "skill": "comprehension",
+      "passageTitle": "Two Maps",
+      "passage": "The old map showed the creek running east of the ridge. The new survey put it west. Rather than argue, the scouts walked the ridge themselves and found the creek had simply changed course after the flood.",
+      "questionText": "What is the main idea of this passage?",
+      "options": [
+        { "id": "a", "text": "Old maps are always wrong" },
+        { "id": "b", "text": "Checking for yourself explained why both maps differed" },
+        { "id": "c", "text": "Floods are dangerous to scouts" },
+        { "id": "d", "text": "The scouts got lost on the ridge" }
+      ],
+      "correctAnswerId": "b"
+    }
+  ]
+}
