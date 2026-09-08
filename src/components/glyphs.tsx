@@ -35,10 +35,10 @@ export type GlyphName =
   | 'teacher';
 
 const FUR = 'var(--mascot-fur)';
-const AMBER = 'var(--accent-primary)';
-const MOSS = 'var(--accent-secondary)';
+const AMBER = 'var(--accent-gold)';
+const MOSS = 'var(--accent-primary)';
 const INK = 'var(--text-primary)';
-const SAND = 'var(--surface-inset)';
+const SAND = 'var(--surface-canvas)';
 
 /** Shared outline weight — the art reads as one set because of this. */
 const S = { stroke: INK, strokeWidth: 4, strokeLinejoin: 'round' as const, strokeLinecap: 'round' as const };
@@ -56,7 +56,7 @@ export const GLYPHS: Record<GlyphName, ReactElement> = {
         <path d="M47 51h6" />
       </g>
       <path d="M42 66q8 6 16 0" fill="none" strokeWidth="3" />
-      <path d="M50 80l11 4-11 14-11-14z" fill="var(--accent-primary)" />
+      <path d="M50 80l11 4-11 14-11-14z" fill="var(--accent-gold)" />
     </g>
   ),
   sun: (

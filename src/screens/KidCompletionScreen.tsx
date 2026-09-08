@@ -1,6 +1,7 @@
 import { Badge } from '../components/Badge';
 import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
+import { Tag } from '../components/Tag';
 
 interface Props {
   childName: string;
@@ -34,8 +35,8 @@ export function KidCompletionScreen({ childName, coins, onHandBack }: Props) {
           <p className="label">Quest complete</p>
           <h1 className="display">You mapped the whole trail!</h1>
           <p className="body">
-            Ms Hannah says {name ? `you’re officially a Trail Blazer, ${name}` : 'you’re officially a Trail Blazer'}.
-            Every stop is on the map now.
+            Ms Hannah says you’re officially a <Tag color="gold">Trail Blazer</Tag>
+            {name ? `, ${name}` : ''}. Every stop is on the map now.
           </p>
 
           <div className="coin-row" aria-hidden="true">

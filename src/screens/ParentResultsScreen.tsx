@@ -56,7 +56,7 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
 
         <div className="subject-results">
           {result.subjects.map((placement) => (
-            <div key={placement.subject} className="panel panel--strand">
+            <div key={placement.subject} className="panel panel--strand" data-strand={placement.subject}>
               <p className="label">{SUBJECT_LABEL[placement.subject]}</p>
               <h2 className="heading heading--sm">{placement.gradeEquivalentDisplay}</h2>
               <p className="body body--sm">{placement.summary}</p>

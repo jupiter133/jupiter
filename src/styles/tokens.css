@@ -1,61 +1,67 @@
-/* OLC color role system — light theme.
- * Roles are locked — screens reference roles only, never raw hex values.
- * Add a role here before using it anywhere in the app. */
+/* ============================================================================
+   OLC design system — tokens
+   Section 1 is the OLC palette and foundations, vendored verbatim from the
+   design system package (design/olc/). Section 2 maps the app's semantic
+   roles onto them. Screens reference roles only, never raw hex; add a role
+   here before using it anywhere.
+
+   The DS readme notes its hex values were eyeball-matched from product
+   screenshots, not pulled from Figma. If a value is off, fix it in Section 1
+   and everything follows.
+   ========================================================================== */
+
 :root {
-  /* Surfaces — warm paper / field-notebook whites */
-  --surface-canvas: #f4f1e8;
-  --surface-card: #ffffff;
-  --surface-card-raised: #fbf9f3;
-  --surface-inset: #f2eee2;
+  /* ---------- 1. OLC foundations (verbatim) ---------- */
 
-  /* Borders / dividers */
-  --border-subtle: #e3ddcc;
-  --border-strong: #c8bfa6;
+  /* Brand core — the O·L·C letter tiles */
+  --olc-green:          #2FBF4E; /* primary action, "O" tile, progress */
+  --olc-green-dark:     #1E9E3C; /* button bottom-edge shadow, press, hover */
+  --olc-green-deep:     #0F3D22; /* dark-green heading ink */
+  --olc-pink:           #F35EA6; /* "L" tile, hot accent */
+  --olc-cyan:           #37BDF3; /* "C" tile, secondary accent, links */
 
-  /* Text — deep forest green carries the brand on light surfaces */
-  --text-primary: #17362a;
-  --text-secondary: #4a6558;
-  --text-muted: #7b8f83;
-  --text-on-accent: #17362a;
+  /* Highlighter + card fills */
+  --olc-lime:           #A4E552;
+  --olc-lime-dark:      #7FBF33;
+  --olc-pink-soft:      #F9C4DC;
+  --olc-pink-soft-dark: #E39ABC;
+  --olc-cyan-soft:      #9FE6F7;
+  --olc-cyan-soft-dark: #6FC8DE;
+  --olc-gold:           #F5C130; /* coins, ".com" tag, star ratings */
+  --olc-gold-soft:      #FDECB8; /* coin pill background */
 
-  /* Accents — camp lantern amber + trail moss */
-  --accent-primary: #e8a324;
-  --accent-primary-soft: #fdf3dd;
-  --accent-secondary: #2f7d55;
-  --accent-secondary-soft: #e4f2ea;
+  /* Canadian accents */
+  --olc-rose-bg:        #FCE7EA;
+  --olc-red:            #E23B3B; /* maple leaf. NOT a feedback colour in this app — see role note below. */
 
-  /* Ms Hannah, the OLC teacher who guides the quest.
-   * Placeholder likeness — swap these four values (and the paths in
-   * Teacher.tsx) when the real character art lands. */
-  --teacher-skin: #e5aa7a;
-  --teacher-skin-shade: #cf9264;
-  --teacher-hair: #3d2a1f;
-  --teacher-top: #2f7d55;
-  --teacher-ink: #17362a;
+  /* Ink + neutrals */
+  --olc-ink:            #141B22;
+  --olc-body:           #475569;
+  --olc-muted:          #94A3B8;
+  --olc-line:           #E6EAEF;
+  --olc-surface:        #FFFFFF;
+  --olc-paper:          #FCFBF7;
+  --olc-paper-line:     #DCE8F5;
 
-  /* Story artwork — snow and animal fur in question illustrations.
-   * Needs an outline to read against white surfaces. */
-  --mascot-fur: #ffffff;
-  --mascot-fur-shade: #e8e3d4;
-  --mascot-outline: #17362a;
-  --mascot-nose: #2b3a33;
+  /* Edges used by the DS components for pink / cyan / gold pressables */
+  --olc-pink-edge:      #D63C86;
+  --olc-cyan-edge:      #1E97C9;
+  --olc-gold-edge:      #D19E12;
 
-  /* Feedback — parent-facing UI only.
-   * There is deliberately NO error/red role available to the child flow. */
-  --info-surface: #e4f2ea;
-  --info-text: #2c5c45;
-
-  /* Elevation */
-  --shadow-card: 0 12px 32px rgba(23, 54, 42, 0.10);
-  --shadow-lift: 0 6px 16px rgba(23, 54, 42, 0.14);
-
-  /* Shape */
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  /* Radii */
+  --radius-sm:   12px;
+  --radius-md:   16px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
   --radius-pill: 999px;
 
-  /* Spacing */
+  /* Shadows — flat offsets are the brand; soft blur only under white cards */
+  --shadow-btn:       0 6px 0 var(--olc-green-dark);
+  --shadow-btn-press: 0 2px 0 var(--olc-green-dark);
+  --shadow-soft:      0 12px 30px rgba(20, 27, 34, 0.10);
+  --shadow-tile:      0 4px 0 rgba(20, 27, 34, 0.06);
+
+  /* Spacing (4pt) */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -65,14 +71,95 @@
   --space-7: 48px;
   --space-8: 64px;
 
-  /* Type */
-  --font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  /* Type scales with the viewport between an iPad portrait (768) and a
-   * landscape 10-11" tablet (1024-1280), so the same layout reads at both. */
-  --font-size-display: clamp(26px, 4.2vw, 44px);
-  --font-size-title: clamp(21px, 3vw, 32px);
-  --font-size-heading: clamp(17px, 2.3vw, 24px);
-  --font-size-body: clamp(15px, 1.8vw, 19px);
+  /* Type — Nunito is the single brand face */
+  --font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-body: 1.55;
+  --tag-tilt: -2deg;
+
+  /* ---------- 2. App roles ---------- */
+
+  /* Surfaces */
+  --surface-canvas: var(--olc-paper);
+  --surface-card: var(--olc-surface);
+  --surface-card-raised: var(--olc-surface);
+  --surface-inset: #F1F4F7; /* the kit's neutral chip / Badge neutral */
+
+  /* Borders */
+  --border-subtle: var(--olc-line);
+  --border-strong: var(--olc-muted);
+
+  /* Text — headings in deep green ink, copy in slate */
+  --text-primary: var(--olc-green-deep);
+  --text-secondary: var(--olc-body);
+  --text-muted: var(--olc-muted);
+  --text-on-accent: #FFFFFF; /* white on the green/pink/cyan tiles */
+  --text-on-bright: var(--olc-ink); /* ink on lime / gold */
+
+  /* Primary action + selection: green, with its pressable edge */
+  --accent-primary: var(--olc-green);
+  --accent-primary-edge: var(--olc-green-dark);
+  --accent-primary-soft: #E4F7E8; /* Badge green background */
+
+  /* Secondary accent: cyan — links, focus, read-aloud controls */
+  --accent-secondary: var(--olc-cyan);
+  --accent-secondary-edge: var(--olc-cyan-edge);
+  --accent-secondary-soft: #E3F6FD; /* Badge cyan background */
+
+  /* Coins and rewards */
+  --accent-gold: var(--olc-gold);
+  --accent-gold-soft: var(--olc-gold-soft);
+  --accent-gold-edge: var(--olc-gold-edge);
+  --text-on-gold: #8A5A00; /* CoinPill text */
+
+  /* Highlighter fills */
+  --accent-lime: var(--olc-lime);
+  --accent-lime-edge: var(--olc-lime-dark);
+  --accent-pink: var(--olc-pink);
+  --accent-pink-edge: var(--olc-pink-edge);
+  --accent-pink-soft: var(--olc-pink-soft);
+  --accent-cyan-soft: var(--olc-cyan-soft);
+
+  /* The three strands take the three O·L·C tile hues, in tile order */
+  --strand-reading: var(--olc-green);
+  --strand-reading-edge: var(--olc-green-dark);
+  --strand-math: var(--olc-cyan);
+  --strand-math-edge: var(--olc-cyan-edge);
+  --strand-writing: var(--olc-pink);
+  --strand-writing-edge: var(--olc-pink-edge);
+
+  /* Parent-facing information note — cyan tone, never red.
+   * --olc-red exists above for the maple leaf. The DS SelectTile also has
+   * correct/wrong states; this app never uses them. No feedback colour
+   * reaches the child flow. */
+  --info-surface: #E3F6FD;
+  --info-text: #1487B8;
+
+  /* Ms Hannah — placeholder likeness, brand green top, gold neckerchief */
+  --teacher-skin: #E5AA7A;
+  --teacher-skin-shade: #CF9264;
+  --teacher-hair: #3D2A1F;
+  --teacher-top: var(--olc-green);
+  --teacher-ink: var(--olc-ink);
+
+  /* Story artwork — snow and fur in question illustrations */
+  --mascot-fur: #FFFFFF;
+  --mascot-fur-shade: #E8E3D4;
+  --mascot-outline: var(--olc-ink);
+  --mascot-nose: var(--olc-ink);
+
+  /* Type scale — DS sizes (h1 40 / h2 30 / h3 22 / body 17 / sm 15 / xs 13),
+   * scaled with the viewport between phone and landscape tablet. */
+  --font-size-display: clamp(28px, 4vw, 40px);
+  --font-size-title: clamp(22px, 3vw, 30px);
+  --font-size-heading: clamp(18px, 2.2vw, 22px);
+  --font-size-body: clamp(15px, 1.7vw, 17px);
   --font-size-label: 13px;
 
   /* Screen edge padding — proportional, never a fixed gutter. */

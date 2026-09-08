@@ -1,0 +1,48 @@
+/* OLC — Color system
+   Pulled from the marketing site + onboarding app screenshots.
+   The brand runs on three "letter-tile" hues (green / pink / cyan),
+   a lime highlighter, and a warm gold. Everything else is neutral. */
+:root {
+  /* Brand core — the O·L·C letter tiles */
+  --olc-green:        #2FBF4E; /* primary action, "O" tile, progress */
+  --olc-green-dark:   #1E9E3C; /* button bottom-edge shadow, press, hover */
+  --olc-green-deep:   #0F3D22; /* dark-green heading ink (onboarding) */
+  --olc-pink:         #F35EA6; /* "L" tile, hot accent */
+  --olc-cyan:         #37BDF3; /* "C" tile, secondary accent, links */
+
+  /* Highlighter + card fills (soft, playful blocks) */
+  --olc-lime:         #A4E552; /* highlighted words: "Online", "Joyful" */
+  --olc-lime-dark:    #7FBF33; /* hard bottom edge under lime cards */
+  --olc-pink-soft:    #F9C4DC; /* highlighted words + soft pink card */
+  --olc-pink-soft-dark:#E39ABC; /* hard bottom edge under pink cards */
+  --olc-cyan-soft:    #9FE6F7; /* highlighted words + soft cyan card */
+  --olc-cyan-soft-dark:#6FC8DE; /* hard bottom edge under cyan cards */
+  --olc-gold:         #F5C130; /* coins, ".com" tag, star ratings */
+  --olc-gold-soft:    #FDECB8; /* coin pill background */
+
+  /* Canadian accents */
+  --olc-rose-bg:      #FCE7EA; /* "Aligned to Canadian Curriculum" pill */
+  --olc-red:          #E23B3B; /* maple leaf, curriculum accent */
+
+  /* Ink + neutrals */
+  --olc-ink:          #141B22; /* near-black text on bright tags/buttons */
+  --olc-body:         #475569; /* default body copy (slate) */
+  --olc-muted:        #94A3B8; /* captions, helper text */
+  --olc-line:         #E6EAEF; /* hairline borders, tile outlines */
+  --olc-surface:      #FFFFFF; /* cards, sheets */
+  --olc-paper:        #FCFBF7; /* app canvas / notebook background */
+  --olc-paper-line:   #DCE8F5; /* faint ruled-paper lines */
+
+  /* Semantic aliases — prefer these in product code */
+  --color-primary:        var(--olc-green);
+  --color-primary-press:  var(--olc-green-dark);
+  --color-accent-pink:    var(--olc-pink);
+  --color-accent-cyan:    var(--olc-cyan);
+  --text-heading:         var(--olc-green-deep);
+  --text-body:            var(--olc-body);
+  --text-muted:           var(--olc-muted);
+  --text-on-bright:       var(--olc-ink);
+  --surface-card:         var(--olc-surface);
+  --surface-canvas:       var(--olc-paper);
+  --border-hairline:      var(--olc-line);
+}

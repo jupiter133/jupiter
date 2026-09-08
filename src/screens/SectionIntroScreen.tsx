@@ -1,22 +1,26 @@
 import { Teacher } from '../components/Teacher';
+import { STRAND_TAG, Tag } from '../components/Tag';
 import type { Subject } from '../assessment/types';
 
-const COPY: Record<Subject, { eyebrow: string; heading: string; body: string; cta: string }> = {
+const COPY: Record<Subject, { eyebrow: string; lead: string; place: string; body: string; cta: string }> = {
   reading: {
     eyebrow: 'Leg 1 of 3',
-    heading: 'First stop: the Story Woods',
+    lead: 'First stop: the',
+    place: 'Story Woods',
     body: 'We’ll read some short stories and puzzle out a few words together. Pick whatever you think fits.',
     cta: 'Into the woods',
   },
   math: {
     eyebrow: 'Leg 2 of 3',
-    heading: 'Next stop: the Number Ridge',
+    lead: 'Next stop: the',
+    place: 'Number Ridge',
     body: 'Now some numbers and puzzles. Take your time — counting on your fingers is allowed up here.',
     cta: 'Climb the ridge',
   },
   writing: {
     eyebrow: 'Leg 3 of 3',
-    heading: 'Last stop: the Word Workshop',
+    lead: 'Last stop: the',
+    place: 'Word Workshop',
     body: 'Almost done! Help me fix up some sentences before I write them in the trail journal.',
     cta: 'Finish the trail',
   },
@@ -39,7 +43,9 @@ export function SectionIntroScreen({ subject, onStart }: Props) {
           <div className="stack">
             <div className="speech-bubble stack stack--tight">
               <p className="label">{copy.eyebrow}</p>
-              <h1 className="display">{copy.heading}</h1>
+              <h1 className="display">
+                {copy.lead} <Tag color={STRAND_TAG[subject]}>{copy.place}</Tag>
+              </h1>
               <p className="body" style={{ color: 'var(--text-primary)' }}>{copy.body}</p>
             </div>
             <button type="button" className="btn btn--primary" onClick={onStart}>

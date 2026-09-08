@@ -229,21 +229,47 @@ unserved items, so a short bank can never dead-end the flow.
 
 ## Design system
 
-### Guide character
+The app uses the **OLC design system**. Its palette, radii, shadows, spacing
+and type foundations are vendored verbatim into `src/styles/tokens.css`
+(Section 1), and the DS source files it came from are kept for reference in
+`design/olc/` — `olc-tokens.tokens.json` (Tokens Studio format), the
+`colors.css` / `layout.css` / `typography.css` foundations, and the DS readme.
 
-**Ms Hannah**, an OLC teacher, guides the quest — `src/components/Teacher.tsx`.
-Her likeness is a **placeholder**: the four `--teacher-*` roles in `tokens.css`
-carry every colour, so real character art drops in without touching a screen.
+Section 2 of `tokens.css` maps the app's **semantic roles** onto those
+foundations. Screens reference roles only, never raw hex; add a role there
+before using it anywhere.
 
-Note the split with the story artwork. The bear glyph in `glyphs.tsx` is still
-used by question illustrations (the "bear cubs" passage scene, and a vocabulary
-item), and stays a bear — only the guide character changed. Guide styling lives
-under `.guide*` classes; `--mascot-*` roles now belong to the animal artwork.
+DS patterns in use:
 
-`src/styles/tokens.css` holds the locked color role system — light theme: warm
-paper white surfaces, deep forest green text, lantern amber and moss accents,
-Nunito type. Components reference role variables only, never raw hex. Add a role
-to that file before using it anywhere.
+- **Pressable buttons** — green on a hard darker bottom edge (`0 6px 0`);
+  pressing collapses the edge. Secondary buttons are white with a cyan
+  uppercase label and a hairline edge.
+- **SelectTile answers** — white tiles with a hairline and a flat tile shadow;
+  the chosen tile goes solid green on a green-dark edge. The DS also defines
+  `correct` / `wrong` tile states. **This app never uses them** — selection is
+  acknowledged, never judged.
+- **Highlighter word-tags** (`src/components/Tag.tsx`) — the signature tilted
+  colour block. The three strands take the three O·L·C tile hues in tile
+  order: reading green, math cyan, writing pink. That mapping runs through the
+  quest bar, the section intros and the results cards.
+- **Progress** — green→cyan gradient on a hairline track, bouncy easing.
+- **CoinPill** — gold-soft pill with a gold coin dot, in the quest bar and on
+  the completion screen.
+- **Cards** — white floating cards with the soft blur; lime colour cards with a
+  lime-dark edge for the "start here" module.
+- **Type** — Nunito throughout; Black (900) for display and titles, ExtraBold
+  for headings, SemiBold for body. Sizes follow the DS scale, scaled with the
+  viewport via `clamp()`.
+
+Not adopted, on purpose: the DS's ruled-paper and confetti backgrounds (the
+product is focus-first; nothing decorative sits behind a question), and Lucide
+as a runtime dependency (the few icons needed are inline SVG drawn to the same
+round-capped, chunky spec). `--olc-red` is vendored for the maple leaf but no
+feedback colour reaches the child flow.
+
+A caveat the DS readme itself carries: its hex values were eyeball-matched
+from product screenshots rather than pulled from Figma. If a value is off, fix
+it once in Section 1 of `tokens.css` and every screen follows.
 
 ## Out of scope for this pass
 

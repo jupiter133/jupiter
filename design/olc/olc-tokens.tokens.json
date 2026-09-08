@@ -1,0 +1,94 @@
+{
+  "global": {
+    "color": {
+      "olc-green": {
+        "value": "#2FBF4E",
+        "type": "color"
+      },
+      "olc-green-dark": {
+        "value": "#1E9E3C",
+        "type": "color"
+      },
+      "olc-green-deep": {
+        "value": "#0F3D22",
+        "type": "color"
+      },
+      "olc-pink": {
+        "value": "#F35EA6",
+        "type": "color"
+      },
+      "olc-cyan": {
+        "value": "#37BDF3",
+        "type": "color"
+      },
+      "olc-lime": {
+        "value": "#A4E552",
+        "type": "color"
+      },
+      "olc-lime-dark": {
+        "value": "#7FBF33",
+        "type": "color"
+      },
+      "olc-pink-soft": {
+        "value": "#F9C4DC",
+        "type": "color"
+      },
+      "olc-pink-soft-dark": {
+        "value": "#E39ABC",
+        "type": "color"
+      },
+      "olc-cyan-soft": {
+        "value": "#9FE6F7",
+        "type": "color"
+      },
+      "olc-cyan-soft-dark": {
+        "value": "#6FC8DE",
+        "type": "color"
+      },
+      "olc-gold": {
+        "value": "#F5C130",
+        "type": "color"
+      },
+      "olc-gold-soft": {
+        "value": "#FDECB8",
+        "type": "color"
+      },
+      "olc-rose-bg": {
+        "value": "#FCE7EA",
+        "type": "color"
+      },
+      "olc-red": {
+        "value": "#E23B3B",
+        "type": "color"
+      },
+      "olc-ink": {
+        "value": "#141B22",
+        "type": "color"
+      },
+      "olc-body": {
+        "value": "#475569",
+        "type": "color"
+      },
+      "olc-muted": {
+        "value": "#94A3B8",
+        "type": "color"
+      },
+      "olc-line": {
+        "value": "#E6EAEF",
+        "type": "color"
+      },
+      "olc-surface": {
+        "value": "#FFFFFF",
+        "type": "color"
+      },
+      "olc-paper": {
+        "value": "#FCFBF7",
+        "type": "color"
+      },
+      "olc-paper-line": {
+        "value": "#DCE8F5",
+        "type": "color"
+      }
+    }
+  }
+}

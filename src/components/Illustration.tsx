@@ -143,7 +143,7 @@ export function Illustration({ art, variant = 'panel' }: Props) {
                 y={4}
                 width={cell}
                 height={56}
-                fill={i < art.n ? 'var(--accent-primary)' : 'var(--surface-inset)'}
+                fill={i < art.n ? 'var(--accent-gold)' : 'var(--surface-inset)'}
                 stroke="var(--text-primary)"
                 strokeWidth="3"
               />

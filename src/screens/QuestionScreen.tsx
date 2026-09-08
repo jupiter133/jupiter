@@ -3,6 +3,7 @@ import type { AgeBand, Question, Subject } from '../assessment/types';
 import { SUBJECT_LABEL, SUBJECT_ORDER, questionTextFor } from '../assessment/types';
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
+import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
 import { speechRateFor, speechScriptFor } from '../audio/speechScript';
 
@@ -23,6 +24,8 @@ interface Props {
   questionNumber: number;
   /** Questions in each strand, used only to render progress. */
   questionsPerSubject: number;
+  /** Coins earned so far — participation only, never a score. */
+  coins: number;
   audioEnabled: boolean;
   onToggleAudio: () => void;
   onAnswer: (selectedAnswerId: string) => void;
@@ -47,6 +50,7 @@ export function QuestionScreen({
   band,
   questionNumber,
   questionsPerSubject,
+  coins,
   audioEnabled,
   onToggleAudio,
   onAnswer,
@@ -95,8 +99,10 @@ export function QuestionScreen({
       <div className={`card card--tight question-screen question-screen--${band}`}>
         <div className="quest-bar">
           <span className="label">
-            Leg {leg} · {SUBJECT_LABEL[subject]} · Stop {questionNumber}
+            Leg {leg} · <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · Stop{' '}
+            {questionNumber}
           </span>
+          <span className="coin-pill" aria-label={`${coins} coins so far`}>{coins}</span>
           <div
             className="progress-track"
             role="progressbar"

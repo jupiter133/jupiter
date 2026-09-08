@@ -36,7 +36,7 @@ export function Teacher({ size = 220, mood = 'greeting', float = true }: Props) 
         <path d="M40 200v-14a34 34 0 0 1 26-33l34-8 34 8a34 34 0 0 1 26 33v14z" fill="var(--teacher-top)" />
         {/* collar + scout neckerchief, keeping the camp thread */}
         <path d="M84 146l16 16 16-16" fill="none" />
-        <path d="M100 160l16 6-16 22-16-22z" fill="var(--accent-primary)" />
+        <path d="M100 160l16 6-16 22-16-22z" fill="var(--accent-gold)" />
         {/* neck */}
         <path d="M86 126h28v18a14 14 0 0 1-28 0z" fill="var(--teacher-skin-shade)" />
         {/* hair behind the face */}

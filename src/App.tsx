@@ -46,6 +46,7 @@ export default function App() {
           band={flow.band}
           questionNumber={flow.questionNumber}
           questionsPerSubject={flow.questionsPerSubject}
+          coins={flow.coins}
           audioEnabled={flow.audioEnabled}
           onToggleAudio={flow.toggleAudio}
           onAnswer={flow.answer}

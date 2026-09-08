@@ -1,0 +1,30 @@
+/* OLC — Typography
+   One family does all the work: Nunito, the friendly rounded brand sans.
+   • Display / headlines / wordmark / numbers → Black (900) or ExtraBold (800).
+   • Body → Regular/SemiBold (400/600). */
+:root {
+  --font-display: 'Nunito', system-ui, -apple-system, sans-serif;
+  --font-body:    'Nunito', system-ui, -apple-system, sans-serif;
+
+  /* Type scale (px) — display sizes are generous and playful */
+  --fs-display:  56px;  /* hero headline */
+  --fs-h1:       40px;
+  --fs-h2:       30px;
+  --fs-h3:       22px;
+  --fs-lg:       19px;
+  --fs-body:     17px;
+  --fs-sm:       15px;
+  --fs-xs:       13px;
+
+  /* Weights */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+  --fw-black:    900; /* @kind font */
+
+  --lh-tight:    1.05; /* @kind font */
+  --lh-snug:     1.2; /* @kind font */
+  --lh-body:     1.55; /* @kind font */
+  --tracking-tight: -0.01em;
+}

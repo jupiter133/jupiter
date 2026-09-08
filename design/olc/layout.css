@@ -1,0 +1,32 @@
+/* OLC — Radii, shadows, spacing
+   The signature look: soft rounded blocks with a HARD offset shadow
+   (a flat second color underneath), not blurry drop shadows. Buttons
+   sit on a darker bottom edge so they look pressable. */
+:root {
+  /* Corner radii — everything is rounded, generously */
+  --radius-sm:   12px; /* chips, small tags */
+  --radius-md:   16px; /* cards, inputs */
+  --radius-lg:   20px; /* selection tiles, larger cards */
+  --radius-xl:   28px; /* hero cards, sheets */
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-btn:      0 6px 0 var(--olc-green-dark);          /* 3D pressable button */
+  --shadow-btn-press:0 2px 0 var(--olc-green-dark);          /* pressed state */
+  --shadow-card:     0 6px 0 var(--olc-lime-dark);            /* hard bottom edge under color cards — per-fill darks: --olc-lime-dark / --olc-cyan-soft-dark / --olc-pink-soft-dark */
+  --shadow-soft:     0 12px 30px rgba(20,27,34,.10);         /* floating white cards */
+  --shadow-tile:     0 4px 0 rgba(20,27,34,.06);             /* selection tiles */
+
+  /* Spacing scale (4pt base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Signature tilt for highlighted word tags */
+  --tag-tilt: -2deg; /* @kind other */
+}

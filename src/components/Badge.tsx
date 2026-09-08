@@ -14,14 +14,14 @@ export function Badge({ size = 180 }: Props) {
       role="img"
       aria-label="Trail Blazer badge"
     >
-      <circle cx="80" cy="80" r="66" fill="var(--accent-primary)" />
-      <circle cx="80" cy="80" r="56" fill="var(--accent-secondary)" />
+      <circle cx="80" cy="80" r="66" fill="var(--accent-gold)" />
+      <circle cx="80" cy="80" r="56" fill="var(--accent-primary)" />
       <circle
         cx="80"
         cy="80"
         r="56"
         fill="none"
-        stroke="var(--accent-primary)"
+        stroke="var(--accent-gold)"
         strokeWidth="3"
         strokeDasharray="6 8"
       />
@@ -29,12 +29,12 @@ export function Badge({ size = 180 }: Props) {
       <path d="M46 100 L68 62 L84 88 L96 72 L116 100 Z" fill="var(--surface-card)" />
       <path
         d="M52 104 q22 -10 30 4 q10 12 30 2"
-        stroke="var(--accent-primary)"
+        stroke="var(--accent-gold)"
         strokeWidth="4"
         strokeLinecap="round"
         fill="none"
       />
-      <circle cx="68" cy="46" r="6" fill="var(--accent-primary)" />
+      <circle cx="68" cy="46" r="6" fill="var(--accent-gold)" />
     </svg>
   );
 }
