@@ -1,7 +1,9 @@
 import { Badge } from '../components/Badge';
 import { PolarBear } from '../components/PolarBear';
+import { firstName } from '../assessment/childName';
 
 interface Props {
+  childName: string;
   coins: number;
   onHandBack: () => void;
 }
@@ -14,8 +16,9 @@ interface Props {
  * Laid out as two columns so the whole celebration fits a landscape tablet
  * without scrolling — the CTA must always be on screen.
  */
-export function KidCompletionScreen({ coins, onHandBack }: Props) {
+export function KidCompletionScreen({ childName, coins, onHandBack }: Props) {
   const coinPips = Array.from({ length: 5 });
+  const name = firstName(childName);
 
   return (
     <div className="stage" style={{ maxWidth: 980 }}>
@@ -31,7 +34,8 @@ export function KidCompletionScreen({ coins, onHandBack }: Props) {
           <p className="label">Quest complete</p>
           <h1 className="display">You mapped the whole trail!</h1>
           <p className="body">
-            Nanuk says you’re officially a Trail Blazer. Every stop is on the map now.
+            Nanuk says {name ? `you’re officially a Trail Blazer, ${name}` : 'you’re officially a Trail Blazer'}.
+            Every stop is on the map now.
           </p>
 
           <div className="coin-row" aria-hidden="true">

@@ -72,6 +72,7 @@ body {
 }
 
 .stack > .btn { align-self: flex-start; }
+.start > .btn { align-self: center; }
 
 .btn:active:not(:disabled) { transform: translateY(2px); }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
@@ -589,4 +590,78 @@ body {
   .question-anim,
   .question-anim--out { animation: none; }
   .question-anim--out { opacity: 0; }
+}
+
+/* ---------- Start screen ---------- */
+
+.stage--narrow { max-width: 720px; }
+
+/* No card — the invitation sits on the canvas so it reads as an opening
+   moment rather than another form. */
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-4);
+}
+
+.start__headline { line-height: 1.25; }
+
+.avatar-chip {
+  display: inline-grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-primary-soft);
+  border: 3px solid var(--accent-primary);
+  /* Sits on the text baseline so it reads as part of the sentence. */
+  vertical-align: -18px;
+}
+
+.start__field { width: 100%; max-width: 340px; align-items: center; }
+.start__sub { max-width: 520px; }
+
+.text-input {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  min-height: 56px;
+  width: 100%;
+}
+
+.text-input--center { text-align: center; }
+.text-input::placeholder { color: var(--text-muted); font-weight: 600; }
+.text-input:focus-visible { outline: none; border-color: var(--accent-secondary); }
+
+.btn--large {
+  font-size: 22px;
+  padding: var(--space-4) var(--space-8);
+  min-height: 68px;
+}
+
+.text-btn {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: 800;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  padding: var(--space-3) var(--space-4);
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.text-btn:hover { color: var(--text-secondary); }
+.text-btn:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 2px; border-radius: var(--radius-pill); }
+
+@media (max-width: 900px), (orientation: portrait) {
+  .avatar-chip { width: 46px; height: 46px; vertical-align: -12px; }
 }

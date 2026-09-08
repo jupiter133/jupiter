@@ -1,5 +1,6 @@
 import type { ParentContext, PlacementResult } from '../assessment/types';
 import { SUBJECT_LABEL } from '../assessment/types';
+import { displayName, possessiveName } from '../assessment/childName';
 
 interface Props {
   context: ParentContext;
@@ -28,7 +29,7 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
       <div className="card stack">
         <div className="stack stack--tight">
           <p className="label">Discovery quest complete · For the grown-up</p>
-          <h1 className="title">Here’s where your child is starting</h1>
+          <h1 className="title">Here’s where {displayName(context.childName)} is starting</h1>
           <p className="body">{result.recommendedStartingModule}</p>
         </div>
 
@@ -76,14 +77,14 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
                 <p className="label">What you told us</p>
                 <p className="body">{context.learningChallenges}</p>
                 <p className="body">
-                  We’ve flagged this on the profile so lesson length and repetition can be
-                  adjusted as your child works through the tracks.
+                  We’ve flagged this on {possessiveName(context.childName)} profile so lesson
+                  length and repetition can be adjusted through the tracks.
                 </p>
               </div>
             )}
             <p className="note">
-              We don’t show your child a score, and we don’t recommend sharing one. Placement
-              moves as they learn — it’s a starting point, not a label.
+              We don’t show {displayName(context.childName)} a score, and we don’t recommend
+              sharing one. Placement moves as they learn — it’s a starting point, not a label.
             </p>
           </div>
         </div>

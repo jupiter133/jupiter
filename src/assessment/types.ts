@@ -98,6 +98,8 @@ export function questionTextFor(question: Question, band: AgeBand): string {
 }
 
 export interface ParentContext {
+  /** Child's first name. Optional — every screen degrades gracefully without it. */
+  childName: string;
   grade: Grade;
   /** Optional, self-reported. Never used to gate content — only surfaced back
    *  to the parent on the results screen so pacing advice can account for it. */

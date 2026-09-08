@@ -5,15 +5,27 @@ import { ParentContextScreen } from './screens/ParentContextScreen';
 import { ParentResultsScreen } from './screens/ParentResultsScreen';
 import { QuestionScreen } from './screens/QuestionScreen';
 import { SectionIntroScreen } from './screens/SectionIntroScreen';
+import { StartScreen } from './screens/StartScreen';
+import { DeferredScreen } from './screens/DeferredScreen';
 
 export default function App() {
   const flow = usePlacementFlow();
 
   return (
     <div className="app-shell">
-      {flow.step === 'parent-context' && <ParentContextScreen onContinue={flow.submitContext} />}
+      {flow.step === 'start' && (
+        <StartScreen onStart={flow.beginIntake} onDefer={flow.defer} />
+      )}
 
-      {flow.step === 'handoff' && <HandoffScreen onStart={flow.beginQuest} />}
+      {flow.step === 'deferred' && <DeferredScreen onResume={flow.resume} />}
+
+      {flow.step === 'parent-context' && (
+        <ParentContextScreen childName={flow.childName} onContinue={flow.submitContext} />
+      )}
+
+      {flow.step === 'handoff' && (
+        <HandoffScreen childName={flow.childName} onStart={flow.beginQuest} />
+      )}
 
       {flow.step === 'section-intro' && flow.subject && (
         <SectionIntroScreen subject={flow.subject} onStart={flow.startSection} />
@@ -34,7 +46,11 @@ export default function App() {
       )}
 
       {flow.step === 'kid-complete' && (
-        <KidCompletionScreen coins={flow.coins} onHandBack={flow.handBackToParent} />
+        <KidCompletionScreen
+          childName={flow.childName}
+          coins={flow.coins}
+          onHandBack={flow.handBackToParent}
+        />
       )}
 
       {flow.step === 'parent-results' && flow.context && flow.result && (

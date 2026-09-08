@@ -20,6 +20,8 @@ import {
 } from './engine';
 
 export type FlowStep =
+  | 'start'
+  | 'deferred'
   | 'parent-context'
   | 'handoff'
   | 'section-intro'
@@ -29,6 +31,8 @@ export type FlowStep =
 
 interface Flow {
   step: FlowStep;
+  /** Captured on the start screen, before the rest of the intake. */
+  childName: string;
   context: ParentContext | null;
   session: SessionState | null;
   subject: Subject | null;
@@ -45,6 +49,9 @@ interface Flow {
   overallNumber: number;
   coins: number;
   result: PlacementResult | null;
+  beginIntake: (childName: string) => void;
+  defer: () => void;
+  resume: () => void;
   submitContext: (context: ParentContext) => void;
   beginQuest: () => void;
   startSection: () => void;
@@ -56,7 +63,8 @@ interface Flow {
 /** Owns the whole placement flow: which screen is showing, the session state,
  *  and the derived result. Screens stay presentational. */
 export function usePlacementFlow(): Flow {
-  const [step, setStep] = useState<FlowStep>('parent-context');
+  const [step, setStep] = useState<FlowStep>('start');
+  const [childName, setChildName] = useState('');
   const [context, setContext] = useState<ParentContext | null>(null);
   const [session, setSession] = useState<SessionState | null>(null);
   // null until a grade is known; the band then sets the starting preference.
@@ -71,6 +79,14 @@ export function usePlacementFlow(): Flow {
     () => (session && !session.finishedAt ? selectNextQuestion(session) : null),
     [session],
   );
+
+  const beginIntake = useCallback((name: string) => {
+    setChildName(name);
+    setStep('parent-context');
+  }, []);
+
+  const defer = useCallback(() => setStep('deferred'), []);
+  const resume = useCallback(() => setStep('start'), []);
 
   const submitContext = useCallback((next: ParentContext) => {
     setContext(next);
@@ -112,8 +128,9 @@ export function usePlacementFlow(): Flow {
   const restart = useCallback(() => {
     setSession(null);
     setContext(null);
+    setChildName('');
     setAudioOverride(null);
-    setStep('parent-context');
+    setStep('start');
   }, []);
 
   const result = useMemo(
@@ -125,6 +142,7 @@ export function usePlacementFlow(): Flow {
 
   return {
     step,
+    childName,
     context,
     session,
     subject,
@@ -137,6 +155,9 @@ export function usePlacementFlow(): Flow {
     overallNumber: (session?.questionsAnswered.length ?? 0) + 1,
     coins: session ? coinsEarned(session) : 0,
     result,
+    beginIntake,
+    defer,
+    resume,
     submitContext,
     beginQuest,
     startSection,
