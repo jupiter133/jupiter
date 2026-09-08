@@ -27,6 +27,18 @@ function formatDuration(ms: number): string {
   return `${minutes} min ${seconds} sec`;
 }
 
+/** A one-word read per strand so the row can be scanned without reading prose. */
+function strandTag(
+  subject: PlacementResult['subjects'][number]['subject'],
+  result: PlacementResult,
+): { text: string; tone: 'strong' | 'grow' } | null {
+  const { even, strongest, weakest } = result.profile;
+  if (even) return null;
+  if (subject === strongest) return { text: 'Strongest', tone: 'strong' };
+  if (subject === weakest) return { text: 'Most room to grow', tone: 'grow' };
+  return null;
+}
+
 /**
  * Screen 5 — parent-facing results.
  *
@@ -55,17 +67,23 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
         </div>
 
         <div className="subject-results">
-          {result.subjects.map((placement) => (
-            <div key={placement.subject} className="panel panel--strand" data-strand={placement.subject}>
-              <p className="label">{SUBJECT_LABEL[placement.subject]}</p>
-              <h2 className="heading heading--sm">{placement.gradeEquivalentDisplay}</h2>
-              <p className="body body--sm">{placement.summary}</p>
-              <div className="start-here">
-                <span className="label">Start here</span>
-                <span className="start-here__module">{placement.recommendedStartingModule}</span>
+          {result.subjects.map((placement) => {
+            const tag = strandTag(placement.subject, result);
+            return (
+              <div key={placement.subject} className="panel panel--strand" data-strand={placement.subject}>
+                <div className="strand-head">
+                  <p className="label">{SUBJECT_LABEL[placement.subject]}</p>
+                  {tag ? <span className="strand-tag" data-tone={tag.tone}>{tag.text}</span> : null}
+                </div>
+                <h2 className="heading heading--sm">{placement.gradeEquivalentDisplay}</h2>
+                <p className="body body--sm">{placement.summary}</p>
+                <div className="start-here">
+                  <span className="label">Start here</span>
+                  <span className="start-here__module">{placement.recommendedStartingModule}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="results-meta">
@@ -86,10 +104,7 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
         </div>
 
         <div className="results-actions">
-          <button type="button" className="btn btn--ghost" onClick={onRestart}>
-            Start over
-          </button>
-          <button type="button" className="btn btn--primary" onClick={onRestart}>
+          <button type="button" className="btn btn--primary btn--large" onClick={onRestart}>
             Start these tracks
           </button>
         </div>
