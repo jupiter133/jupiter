@@ -18,7 +18,7 @@ npm run build   # typecheck + production build
 
 | # | Screen | Audience | File |
 |---|--------|----------|------|
-| 0 | Start — personalised invitation, optional child name | Parent | `src/screens/StartScreen.tsx` |
+| 0 | Start — personalised invitation | Parent | `src/screens/StartScreen.tsx` |
 | 0b | Deferred — where "Maybe later" lands | Parent | `src/screens/DeferredScreen.tsx` |
 | 1 | Parent context (grade + optional learning-challenges flag) | Parent | `src/screens/ParentContextScreen.tsx` |
 | 2 | Mascot handoff — Nanuk introduces the discovery quest | Child | `src/screens/HandoffScreen.tsx` |
@@ -30,12 +30,23 @@ npm run build   # typecheck + production build
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
 
+### Tablet mockup
+
+The whole flow renders inside a tablet shell (`src/components/TabletFrame.tsx`).
+The screen is a fixed logical 1280x800 landscape canvas, scaled with a transform
+to fit whatever space it's given, so the mockup always shows the layout that was
+designed rather than a reflowed browser approximation. Bezel colors live in
+`tokens.css` under `--device-*` and are used by nothing inside the app screens.
+
 ### Child name
 
-Collected on the start screen and **optional** — personalising the headline is
-the point of that screen, but gating entry on a text field would cost more
-parents than it wins. `src/assessment/childName.ts` owns the fallbacks, and the
-split matters:
+The name comes from the **child's profile** — by the time a parent reaches this
+flow the app already knows who is being placed, so the flow never asks.
+`src/profile.ts` is the seam where the host injects it; the demo build seeds a
+placeholder and accepts `?name=` for trying other values.
+
+`src/assessment/childName.ts` still owns the empty-name fallbacks, because a
+profile name can be blank, and the split matters:
 
 - **Parent-facing** copy falls back to "your child" / "your child's", which reads
   fine in a sentence (`displayName`, `possessiveName`).
@@ -43,8 +54,8 @@ split matters:
   drops the name entirely. Nanuk greeting "Hi your child!" is worse than no
   greeting at all.
 
-The name threads through the handoff greeting, the completion screen and the
-parent results.
+The name threads through the start screen, the intake copy, the handoff
+greeting, the completion screen and the parent results.
 
 "Maybe later" lands on a deferred screen that holds the door open. In the host
 app that slot is wherever the parent came from.

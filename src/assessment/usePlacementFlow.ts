@@ -31,7 +31,7 @@ export type FlowStep =
 
 interface Flow {
   step: FlowStep;
-  /** Captured on the start screen, before the rest of the intake. */
+  /** From the child's profile — the flow never asks for it. */
   childName: string;
   context: ParentContext | null;
   session: SessionState | null;
@@ -49,7 +49,7 @@ interface Flow {
   overallNumber: number;
   coins: number;
   result: PlacementResult | null;
-  beginIntake: (childName: string) => void;
+  beginIntake: () => void;
   defer: () => void;
   resume: () => void;
   submitContext: (context: ParentContext) => void;
@@ -62,9 +62,8 @@ interface Flow {
 
 /** Owns the whole placement flow: which screen is showing, the session state,
  *  and the derived result. Screens stay presentational. */
-export function usePlacementFlow(): Flow {
+export function usePlacementFlow(childName: string): Flow {
   const [step, setStep] = useState<FlowStep>('start');
-  const [childName, setChildName] = useState('');
   const [context, setContext] = useState<ParentContext | null>(null);
   const [session, setSession] = useState<SessionState | null>(null);
   // null until a grade is known; the band then sets the starting preference.
@@ -80,10 +79,7 @@ export function usePlacementFlow(): Flow {
     [session],
   );
 
-  const beginIntake = useCallback((name: string) => {
-    setChildName(name);
-    setStep('parent-context');
-  }, []);
+  const beginIntake = useCallback(() => setStep('parent-context'), []);
 
   const defer = useCallback(() => setStep('deferred'), []);
   const resume = useCallback(() => setStep('start'), []);
@@ -128,7 +124,6 @@ export function usePlacementFlow(): Flow {
   const restart = useCallback(() => {
     setSession(null);
     setContext(null);
-    setChildName('');
     setAudioOverride(null);
     setStep('start');
   }, []);

@@ -35,6 +35,13 @@
   --info-surface: #e4f2ea;
   --info-text: #2c5c45;
 
+  /* Device mockup — the tablet shell the flow is presented inside.
+   * Not part of the product surface; nothing in the app screens uses these. */
+  --device-backdrop: #e6e1d4;
+  --device-bezel: #23302b;
+  --device-bezel-edge: #384a43;
+  --device-camera: #55665f;
+
   /* Elevation */
   --shadow-card: 0 12px 32px rgba(23, 54, 42, 0.10);
   --shadow-lift: 0 6px 16px rgba(23, 54, 42, 0.14);
