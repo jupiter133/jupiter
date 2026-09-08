@@ -8,6 +8,7 @@ import type {
   Subject,
 } from './types';
 import { SUBJECT_ORDER, ageBandForGrade } from './types';
+import { audioDefaultFor } from '../audio/speechScript';
 import {
   QUESTIONS_PER_SUBJECT,
   buildResult,
@@ -33,6 +34,9 @@ interface Flow {
   subject: Subject | null;
   /** Presentation mode for this child, fixed for the session by stated grade. */
   band: AgeBand;
+  /** Whether each question is read aloud automatically. */
+  audioEnabled: boolean;
+  toggleAudio: () => void;
   currentQuestion: Question | null;
   /** Position within the active strand, 1-based. */
   questionNumber: number;
@@ -55,6 +59,8 @@ export function usePlacementFlow(): Flow {
   const [step, setStep] = useState<FlowStep>('parent-context');
   const [context, setContext] = useState<ParentContext | null>(null);
   const [session, setSession] = useState<SessionState | null>(null);
+  // null until a grade is known; the band then sets the starting preference.
+  const [audioOverride, setAudioOverride] = useState<boolean | null>(null);
 
   const subject = useMemo(
     () => (session && !session.finishedAt ? currentSubject(session) : null),
@@ -68,6 +74,7 @@ export function usePlacementFlow(): Flow {
 
   const submitContext = useCallback((next: ParentContext) => {
     setContext(next);
+    setAudioOverride(null);
     setStep('handoff');
   }, []);
 
@@ -98,9 +105,14 @@ export function usePlacementFlow(): Flow {
 
   const handBackToParent = useCallback(() => setStep('parent-results'), []);
 
+  const toggleAudio = useCallback(() => {
+    setAudioOverride((prev) => !(prev ?? audioDefaultFor(ageBandForGrade(context!.grade))));
+  }, [context]);
+
   const restart = useCallback(() => {
     setSession(null);
     setContext(null);
+    setAudioOverride(null);
     setStep('parent-context');
   }, []);
 
@@ -109,12 +121,16 @@ export function usePlacementFlow(): Flow {
     [session],
   );
 
+  const band: AgeBand = context ? ageBandForGrade(context.grade) : 'junior';
+
   return {
     step,
     context,
     session,
     subject,
-    band: context ? ageBandForGrade(context.grade) : 'junior',
+    band,
+    audioEnabled: audioOverride ?? audioDefaultFor(band),
+    toggleAudio,
     currentQuestion,
     questionNumber: subject ? session!.subjects[subject].answeredCount + 1 : 1,
     questionsPerSubject: QUESTIONS_PER_SUBJECT,

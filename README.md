@@ -54,6 +54,45 @@ set consistent and cheap to extend.
 Subtraction art fades the taken-away items rather than crossing them out — the
 no-X rule applies inside illustrations too.
 
+## Read-aloud
+
+Every question screen carries a **Read to me** button, tappable as often as the
+child likes — each press restarts the narration rather than queueing behind the
+last one. A second control toggles auto-read, which fires the narration on every
+new question.
+
+- **On by default for K–3**, off (but one tap away) for Grade 4+ —
+  `audioDefaultFor()` in `src/audio/speechScript.ts`.
+- Junior narration includes the **answer options**. A child who can't read the
+  question can't read the options either, so stopping at the question would
+  leave them exactly as stuck. Senior narration is passage + question only.
+- Junior is read more slowly (rate 0.85 vs 0.95).
+- Built on the Web Speech API with no network dependency. Where the browser has
+  no synthesis support the controls are hidden rather than offered dead.
+
+`speechScriptFor()` is a pure function, so what gets spoken is unit-tested —
+including a test that re-points the answer key at a different option and asserts
+the narration comes out byte-identical, so audio can never leak the answer.
+
+## Motion and engagement
+
+All decoration, no meaning — every animation plays identically for a right and a
+wrong answer, and `QuestionScreen` is never told which it was.
+
+- **Trail progress** (`src/components/TrailProgress.tsx`) replaces the plain
+  bar: a route of camp stops with Nanuk walking it, solid behind and dotted
+  ahead, with a flag at the end of the strand. Remaining effort is countable at
+  a glance instead of an abstract percentage.
+- **Answer sparkles** — a small fixed-angle burst of coins and stars on the
+  tapped option. Fires on every answer; nothing about it varies by correctness.
+- **Mascot reactions** — Nanuk hops as he moves to the next stop, bobs gently
+  while idle, and blinks on the handoff and section screens.
+- **Card transitions** — the question body slides out left and the next slides
+  in from the right, keyed by question id, instead of a hard cut.
+
+Everything above collapses under `prefers-reduced-motion: reduce`: states change
+instantly, sparkles are removed entirely, and nothing about the flow is lost.
+
 ## Tone rules baked into the code
 
 - No right/wrong feedback during the activity. Selecting an option gives a neutral
@@ -64,6 +103,8 @@ no-X rule applies inside illustrations too.
 - There is deliberately **no error/red color role** in the token set, so a red X
   cannot be added to the child flow without a design-system change.
 - The word "test" appears nowhere in child-facing copy.
+- Celebration animations and narration are correctness-blind by construction —
+  the question screen never receives whether the answer was right.
 
 ## Branching logic
 

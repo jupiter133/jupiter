@@ -71,8 +71,8 @@ export function PolarBear({ size = 220, mood = 'greeting', float = true }: Props
         </>
       ) : (
         <>
-          <circle cx="85" cy="76" r="5.5" fill="var(--mascot-nose)" />
-          <circle cx="115" cy="76" r="5.5" fill="var(--mascot-nose)" />
+          <circle className="mascot__eye" cx="85" cy="76" r="5.5" fill="var(--mascot-nose)" />
+          <circle className="mascot__eye" cx="115" cy="76" r="5.5" fill="var(--mascot-nose)" />
           <circle cx="87" cy="74" r="2" fill="var(--mascot-fur)" />
           <circle cx="117" cy="74" r="2" fill="var(--mascot-fur)" />
         </>

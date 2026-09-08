@@ -188,24 +188,11 @@ body {
 .quest-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--space-4);
+  flex-wrap: wrap;
 }
 
-.progress-track {
-  flex: 1;
-  height: 14px;
-  border-radius: var(--radius-pill);
-  background: var(--surface-inset);
-  border: 1px solid var(--border-subtle);
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: var(--radius-pill);
-  background: var(--accent-secondary);
-  transition: width 420ms cubic-bezier(0.22, 1, 0.36, 1);
-}
 
 .question-body { display: grid; gap: var(--space-6); align-items: start; }
 .question-body--with-passage { grid-template-columns: 1fr 1fr; }
@@ -330,7 +317,6 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .mascot--float, .badge-pop, .coin { animation: none; }
-  .question-fade, .progress-fill { transition: none; }
 }
 
 /* ---------- Parent results ---------- */
@@ -462,4 +448,182 @@ body {
 @media (max-width: 900px), (orientation: portrait) {
   .options--picture { grid-template-columns: repeat(2, 1fr); }
   .art-panel--senior { transform: none; margin: 0; }
+}
+
+/* ---------- Read-aloud controls ---------- */
+
+.audio-controls { display: flex; align-items: center; gap: var(--space-2); }
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family);
+  font-size: var(--font-size-label);
+  font-weight: 800;
+  color: var(--text-primary);
+  background: var(--accent-secondary-soft);
+  border: 2px solid var(--accent-secondary);
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-4);
+  /* Comfortably tappable for a six-year-old, per WCAG target size. */
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.icon-btn--active { background: var(--accent-secondary); color: var(--surface-card); }
+
+.icon-btn--quiet {
+  background: transparent;
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.icon-btn--quiet[aria-pressed='true'] {
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.icon-btn:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 2px; }
+
+.speaker-wave { opacity: 0.35; }
+.speaker-wave--on { opacity: 1; animation: wave-pulse 1s ease-in-out infinite; }
+
+@keyframes wave-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+/* ---------- Trail progress ---------- */
+
+.trail { display: block; overflow: visible; }
+
+.trail__route {
+  fill: none;
+  stroke: var(--border-subtle);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 2 14;
+}
+
+.trail__route--walked {
+  stroke: var(--accent-secondary);
+  stroke-dasharray: none;
+  stroke-width: 7;
+}
+
+.trail__stop-dot {
+  fill: var(--surface-card);
+  stroke: var(--border-strong);
+  stroke-width: 3;
+  transition: r 300ms ease;
+}
+
+.trail__stop--done .trail__stop-dot { fill: var(--accent-secondary); stroke: var(--accent-secondary); }
+
+.trail__flagpole { stroke: var(--text-secondary); stroke-width: 3; stroke-linecap: round; }
+.trail__flag { fill: var(--accent-primary); }
+
+.trail__mascot { transition: transform 520ms cubic-bezier(0.34, 1.3, 0.64, 1); }
+
+.trail__mascot-bob { animation: mascot-bob 2.6s ease-in-out infinite; transform-origin: center bottom; }
+
+@keyframes mascot-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(-2deg); }
+}
+
+/* The hop that plays as the mascot moves to the next stop. */
+.trail__mascot--cheer .trail__mascot-bob { animation: mascot-hop 560ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+@keyframes mascot-hop {
+  0% { transform: translateY(0) rotate(0deg); }
+  35% { transform: translateY(-16px) rotate(-9deg); }
+  70% { transform: translateY(-4px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ---------- Idle mascot life ---------- */
+
+.mascot__eye {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 5.5s infinite;
+}
+
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.12); }
+}
+
+/* ---------- Question transitions ---------- */
+
+/* Enter runs on mount (the body is keyed by question id); exit swaps to a
+   second animation. Two animations, no transition, so they never fight. */
+.question-anim { animation: question-in 380ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.question-anim--out { animation: question-out 300ms cubic-bezier(0.55, 0, 1, 0.45) both; }
+
+@keyframes question-in {
+  from { opacity: 0; transform: translateX(34px) scale(0.985); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes question-out {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to { opacity: 0; transform: translateX(-40px) scale(0.985); }
+}
+
+/* ---------- Answer sparkles ---------- */
+
+.option { position: relative; overflow: visible; }
+
+.sparkles {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.spark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  animation: spark-fly 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.spark--coin { border-radius: var(--radius-pill); background: var(--accent-primary); }
+
+.spark--star {
+  background: var(--accent-secondary);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@keyframes spark-fly {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.3) rotate(0deg); }
+  25% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(var(--spark-dx), var(--spark-dy)) scale(1) rotate(140deg);
+  }
+}
+
+/* ---------- Motion preferences ----------
+   Everything above is decoration. With reduced motion the flow still works:
+   states change instantly instead of animating, and nothing is lost. */
+
+@media (prefers-reduced-motion: reduce) {
+  .trail__mascot { transition: none; }
+  .trail__mascot-bob,
+  .trail__mascot--cheer .trail__mascot-bob,
+  .mascot__eye,
+  .speaker-wave--on,
+  .spark { animation: none; }
+  .sparkles { display: none; }
+  .question-anim,
+  .question-anim--out { animation: none; }
+  .question-anim--out { opacity: 0; }
 }
