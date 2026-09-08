@@ -30,26 +30,25 @@ npm run build   # typecheck + production build
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
 
-### Tablet mockup
+### Viewport
 
-The whole flow renders inside a tablet shell (`src/components/TabletFrame.tsx`).
-The screen is a fixed logical 1280x800 landscape canvas, scaled with a transform
-to fit whatever space it's given, so the mockup always shows the layout that was
-designed rather than a reflowed browser approximation. Bezel colors live in
-`tokens.css` under `--device-*` and are used by nothing inside the app screens.
+The app is the screen. There is no device frame, no centred card and no
+max-width cap — the root fills the real viewport (`100dvh`), every screen fills
+the root, and only real device chrome (browser / OS) frames the content.
 
-**The bezel is part of the fit calculation.** Sizing the shell to the screen and
-then padding it outwards pushes the canvas past the frame, and the overflow gets
-clipped. Since the bezel scales with the screen, the footprint is
-`s * (1280 + 2 * 0.035 * 800)` wide and `s * 800 * (1 + 2 * 0.035)` tall;
-solving both against the available box gives the largest scale that fits whole.
-The shell is `content-box` so its content box is exactly the screen, and the
-edge highlight is an inset shadow rather than a border, which would add to the
-footprint.
+Target sizes are iPad landscape (1024x768) and portrait (768x1024). Layout is
+flex/grid so content stretches edge-to-edge: the quest bar pins full-width at
+the top, the question body claims the remaining height, and the answer grid
+stretches its rows to fill it (`grid-auto-rows: minmax(min-content, 1fr)`, with
+a 64px tap-target floor). Type scales with the viewport via `clamp()` in
+`tokens.css`, so the same layout reads at both sizes.
 
-Every screen is budgeted to fit 1280x800 without scrolling — including the
-parent results with a long learning-challenges note. `scratchpad/audit.mjs`
-walks the whole flow and reports any screen whose content exceeds the canvas.
+Portrait stacks the passage above the question (passage capped at 34vh so the
+answers stay on screen) and keeps answers two-up. Every screen — including the
+parent results with a long learning-challenges note — fits both sizes without
+scrolling. `scratchpad/audit2.mjs` walks the whole flow at both sizes and
+reports any horizontal scroll, side gutter, vertical overflow, or dead space
+under the answer grid.
 
 ### Child name
 

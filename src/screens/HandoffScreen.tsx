@@ -15,7 +15,7 @@ export function HandoffScreen({ childName, onStart }: Props) {
 
   return (
     <div className="stage">
-      <div className="card">
+      <div className="card card--center">
         <div className="handoff">
           <Teacher size={260} mood="greeting" />
 

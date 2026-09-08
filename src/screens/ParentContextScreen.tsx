@@ -17,7 +17,7 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
   const [learningChallenges, setLearningChallenges] = useState('');
 
   return (
-    <div className="stage" style={{ maxWidth: 820 }}>
+    <div className="stage">
       <div className="card stack">
         <div className="stack stack--tight">
           <p className="label">Step 1 of 2 · For the grown-up</p>

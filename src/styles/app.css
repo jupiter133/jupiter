@@ -6,38 +6,51 @@ html, body, #root {
 }
 
 body {
-  background: var(--surface-canvas);
+  background: var(--surface-card);
   color: var(--text-primary);
   font-family: var(--font-family);
   font-size: var(--font-size-body);
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- Layout shell (tablet-first, landscape) ---------- */
+/* ---------- Layout shell ----------
+   The app is the screen. The root fills the real viewport and every screen
+   fills the root; there is no frame, no centred card and no max-width cap.
+   Real device chrome (browser / OS) is the only thing that frames content. */
 
 .app-shell {
-  min-height: 100%;
-  display: flex;
-  padding: var(--space-6);
-  background: var(--surface-canvas);
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--surface-card);
 }
 
+/* A screen: at least the full viewport, growing (and scrolling the shell) only
+   when its content genuinely cannot fit. */
 .stage {
   width: 100%;
-  max-width: 1180px;
-  /* Auto margins centre the card but let a tall one scroll instead of clipping. */
-  margin: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
+/* The screen's content surface. Full bleed, proportional padding; stretches to
+   the bottom so children can claim the remaining height. */
 .card {
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-7);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: var(--screen-pad);
 }
 
-.card--tight { padding: var(--space-6); }
+/* Screens with a single centred moment (handoff, section intro, completion)
+   centre their content vertically; task screens stretch instead. */
+.card--center { justify-content: center; }
+
+.card--tight { padding: var(--screen-pad); }
 
 /* ---------- Typography ---------- */
 
@@ -179,23 +192,25 @@ body {
 
 .handoff {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--space-7);
+  grid-template-columns: minmax(200px, 28%) 1fr;
+  gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
 
 /* ---------- Question screen ---------- */
 
-.question-screen { display: flex; flex-direction: column; gap: var(--space-5); }
+.question-screen { display: flex; flex-direction: column; gap: clamp(14px, 2vh, 24px); }
 
 .quest-bar {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  flex-wrap: wrap;
 }
 
 .progress-track {
-  flex: 1;
+  flex: 1 1 160px;
   height: 14px;
   border-radius: var(--radius-pill);
   background: var(--surface-inset);
@@ -211,21 +226,41 @@ body {
 }
 
 
-.question-body { display: grid; gap: var(--space-6); align-items: start; }
-.question-body--with-passage { grid-template-columns: 1fr 1fr; }
+/* Claims all remaining height below the quest bar. Grid rows are minmax(0,1fr)
+   so children may shrink to fit rather than forcing a scroll. */
+.question-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+  align-items: stretch;
+}
+.question-body--with-passage { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+
+/* The question column stretches; the options grid takes what the art and
+   heading leave behind. */
+.question-body > .stack { min-height: 0; }
 
 .passage {
   background: var(--surface-inset);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: var(--space-5);
-  max-height: 46vh;
+  padding: clamp(16px, 2.2vw, 24px);
+  min-height: 0;
   overflow-y: auto;
 }
 
 .passage__text { line-height: 1.75; color: var(--text-primary); margin: var(--space-3) 0 0; }
 
-.options { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.options {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(min-content, 1fr);
+  gap: clamp(10px, 1.4vw, 16px);
+}
 .options--single { grid-template-columns: 1fr; }
 
 .option {
@@ -338,8 +373,9 @@ body {
 
 /* ---------- Parent results ---------- */
 
-/* Results are budgeted to fit the tablet screen without scrolling. */
-.results { display: flex; flex-direction: column; gap: var(--space-4); }
+/* Results fill the screen in landscape; portrait stacks and scrolls. */
+.results { display: flex; flex-direction: column; gap: clamp(12px, 1.8vh, 20px); }
+.results > .subject-results { flex: 1; min-height: 0; }
 
 .subject-results {
   display: grid;
@@ -390,6 +426,8 @@ body {
 .fact__value { font-size: 16px; font-weight: 800; white-space: nowrap; }
 
 .results-actions {
+  /* Pinned to the bottom of the screen; any slack sits above, not below. */
+  margin-top: auto;
   display: flex;
   gap: var(--space-4);
   justify-content: flex-end;
@@ -426,12 +464,27 @@ body {
   line-height: 1.6;
 }
 
-/* Portrait / small tablet fallback — the flow is designed for landscape. */
+/* Portrait tablet (768x1024): single column, passage capped so the answers
+   stay on screen, options stay two-up so four choices don't stack tall. */
 @media (max-width: 900px), (orientation: portrait) {
-  .handoff, .question-body--with-passage, .subject-results, .results-meta, .celebration-split { grid-template-columns: 1fr; }
-  .options { grid-template-columns: 1fr; }
+  .handoff, .subject-results, .results-meta, .celebration-split { grid-template-columns: 1fr; }
+  .question-body--with-passage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .passage { max-height: 34vh; }
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
-  .card { padding: var(--space-5); }
+  /* Three strand cards stack here; trim them so the page still fits 1024px. */
+  .results { gap: 10px; }
+  .results > .subject-results { flex: 0 0 auto; gap: 10px; }
+  .panel--strand { padding: var(--space-3); gap: 6px; }
+  .start-here {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+  }
+  .fact-strip { gap: var(--space-4); padding: var(--space-2) var(--space-3); }
 }
 
 /* ---------- Question illustrations ---------- */
@@ -465,10 +518,11 @@ body {
 .count-item--gone { opacity: 0.22; }
 
 .art-panel {
+  flex: 0 0 auto;
   background: var(--surface-card-raised);
   border: 2px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  padding: clamp(12px, 2vh, 24px);
 }
 
 /* Junior: the picture leads the screen. */
@@ -490,8 +544,8 @@ body {
 /* ---------- Band-specific question layout ---------- */
 
 /* Junior gets larger tap targets and calmer information density. */
-.question-screen--junior .option { min-height: 88px; font-size: 22px; }
-.question-screen--junior .passage__text { font-size: 21px; line-height: 1.8; }
+.question-screen--junior .option { min-height: 76px; font-size: clamp(18px, 2.1vw, 22px); }
+.question-screen--junior .passage__text { font-size: clamp(17px, 2vw, 21px); line-height: 1.8; }
 
 .options--picture { grid-template-columns: repeat(4, 1fr); }
 
@@ -500,7 +554,7 @@ body {
   gap: var(--space-2);
   justify-content: center;
   text-align: center;
-  min-height: 150px;
+  min-height: 120px;
 }
 
 @media (max-width: 900px), (orientation: portrait) {
@@ -510,7 +564,7 @@ body {
 
 /* ---------- Read-aloud controls ---------- */
 
-.audio-controls { display: flex; align-items: center; gap: var(--space-2); }
+.audio-controls { display: flex; align-items: center; gap: var(--space-2); margin-left: auto; }
 
 .icon-btn {
   display: inline-flex;
@@ -637,17 +691,20 @@ body {
 
 /* ---------- Start screen ---------- */
 
-.stage--narrow { max-width: 720px; }
-
-/* No card — the invitation sits on the canvas so it reads as an opening
-   moment rather than another form. */
+/* The invitation is one centred moment on a full-bleed screen. The measure
+   cap is on the text block only, never on the screen. */
 .start {
+  flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: var(--space-5);
-  padding: var(--space-6) var(--space-4);
+  padding: var(--screen-pad);
 }
 
 .start__headline { line-height: 1.25; }
@@ -691,57 +748,3 @@ body {
 @media (max-width: 900px), (orientation: portrait) {
   .avatar-chip { width: 46px; height: 46px; vertical-align: -12px; }
 }
-
-/* ---------- Tablet mockup ---------- */
-
-.device-stage {
-  height: 100%;
-  display: flex;
-  padding: clamp(10px, 2.5vmin, 40px);
-  background: var(--device-backdrop);
-  /* The shell is sized to fit; nothing here should ever scroll the page. */
-  overflow: hidden;
-}
-
-.device-well {
-  flex: 1;
-  display: grid;
-  place-items: center;
-  min-width: 0;
-  min-height: 0;
-}
-
-.tablet {
-  position: relative;
-  background: var(--device-bezel);
-  /* Content box is the screen exactly; TabletFrame sets size, padding (the
-     bezel) and radius from the measured scale. A border would add to the
-     footprint, so the edge highlight is an inset shadow instead. */
-  box-sizing: content-box;
-  box-shadow:
-    0 30px 60px rgba(23, 54, 42, 0.26),
-    inset 0 0 0 2px var(--device-bezel-edge);
-}
-
-.tablet__camera {
-  position: absolute;
-  left: 50%;
-  width: 9px;
-  height: 9px;
-  margin-left: -4.5px;
-  border-radius: var(--radius-pill);
-  background: var(--device-camera);
-  box-shadow: inset 0 0 0 1.5px rgba(0, 0, 0, 0.4);
-}
-
-.tablet__screen {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: var(--surface-canvas);
-}
-
-/* The canvas is always the logical screen size; the frame scales it to fit. */
-.tablet__canvas { transform-origin: top left; }
-
-.tablet__canvas > .app-shell { width: 100%; height: 100%; overflow-y: auto; }

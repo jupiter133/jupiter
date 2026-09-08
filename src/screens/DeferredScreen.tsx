@@ -11,7 +11,7 @@ interface Props {
  */
 export function DeferredScreen({ onResume }: Props) {
   return (
-    <div className="stage stage--narrow">
+    <div className="stage">
       <div className="start">
         <Teacher size={180} mood="greeting" />
         <h1 className="title">No rush — the trail isn’t going anywhere.</h1>

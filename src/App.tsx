@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { usePlacementFlow } from './assessment/usePlacementFlow';
-import { TabletFrame } from './components/TabletFrame';
 import { loadChildProfile } from './profile';
 import { HandoffScreen } from './screens/HandoffScreen';
 import { KidCompletionScreen } from './screens/KidCompletionScreen';
@@ -16,60 +15,58 @@ export default function App() {
   const flow = usePlacementFlow(profile.name);
 
   return (
-    <TabletFrame>
-      <div className="app-shell">
-        {flow.step === 'start' && (
-          <StartScreen
-            childName={flow.childName}
-            onStart={flow.beginIntake}
-            onDefer={flow.defer}
-          />
-        )}
+    <div className="app-shell">
+      {flow.step === 'start' && (
+        <StartScreen
+          childName={flow.childName}
+          onStart={flow.beginIntake}
+          onDefer={flow.defer}
+        />
+      )}
 
-        {flow.step === 'deferred' && <DeferredScreen onResume={flow.resume} />}
+      {flow.step === 'deferred' && <DeferredScreen onResume={flow.resume} />}
 
-        {flow.step === 'parent-context' && (
-          <ParentContextScreen childName={flow.childName} onContinue={flow.submitContext} />
-        )}
+      {flow.step === 'parent-context' && (
+        <ParentContextScreen childName={flow.childName} onContinue={flow.submitContext} />
+      )}
 
-        {flow.step === 'handoff' && (
-          <HandoffScreen childName={flow.childName} onStart={flow.beginQuest} />
-        )}
+      {flow.step === 'handoff' && (
+        <HandoffScreen childName={flow.childName} onStart={flow.beginQuest} />
+      )}
 
-        {flow.step === 'section-intro' && flow.subject && (
-          <SectionIntroScreen subject={flow.subject} onStart={flow.startSection} />
-        )}
+      {flow.step === 'section-intro' && flow.subject && (
+        <SectionIntroScreen subject={flow.subject} onStart={flow.startSection} />
+      )}
 
-        {flow.step === 'question' && flow.currentQuestion && flow.subject && (
-          <QuestionScreen
-            key={flow.currentQuestion.id}
-            question={flow.currentQuestion}
-            subject={flow.subject}
-            band={flow.band}
-            questionNumber={flow.questionNumber}
-            questionsPerSubject={flow.questionsPerSubject}
-            audioEnabled={flow.audioEnabled}
-            onToggleAudio={flow.toggleAudio}
-            onAnswer={flow.answer}
-          />
-        )}
+      {flow.step === 'question' && flow.currentQuestion && flow.subject && (
+        <QuestionScreen
+          key={flow.currentQuestion.id}
+          question={flow.currentQuestion}
+          subject={flow.subject}
+          band={flow.band}
+          questionNumber={flow.questionNumber}
+          questionsPerSubject={flow.questionsPerSubject}
+          audioEnabled={flow.audioEnabled}
+          onToggleAudio={flow.toggleAudio}
+          onAnswer={flow.answer}
+        />
+      )}
 
-        {flow.step === 'kid-complete' && (
-          <KidCompletionScreen
-            childName={flow.childName}
-            coins={flow.coins}
-            onHandBack={flow.handBackToParent}
-          />
-        )}
+      {flow.step === 'kid-complete' && (
+        <KidCompletionScreen
+          childName={flow.childName}
+          coins={flow.coins}
+          onHandBack={flow.handBackToParent}
+        />
+      )}
 
-        {flow.step === 'parent-results' && flow.context && flow.result && (
-          <ParentResultsScreen
-            context={flow.context}
-            result={flow.result}
-            onRestart={flow.restart}
-          />
-        )}
-      </div>
-    </TabletFrame>
+      {flow.step === 'parent-results' && flow.context && flow.result && (
+        <ParentResultsScreen
+          context={flow.context}
+          result={flow.result}
+          onRestart={flow.restart}
+        />
+      )}
+    </div>
   );
 }

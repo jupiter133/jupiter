@@ -21,8 +21,8 @@ export function KidCompletionScreen({ childName, coins, onHandBack }: Props) {
   const name = firstName(childName);
 
   return (
-    <div className="stage" style={{ maxWidth: 980 }}>
-      <div className="card card--tight celebration-split">
+    <div className="stage">
+      <div className="card card--center celebration-split">
         <div className="celebration-art">
           <Badge size={200} />
           <div className="celebration-art__guide">

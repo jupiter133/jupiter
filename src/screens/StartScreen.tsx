@@ -16,7 +16,7 @@ interface Props {
  */
 export function StartScreen({ childName, onStart, onDefer }: Props) {
   return (
-    <div className="stage stage--narrow">
+    <div className="stage">
       <div className="start">
         <h1 className="display start__headline">
           What lesson should{' '}

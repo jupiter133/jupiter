@@ -33,7 +33,7 @@ export function SectionIntroScreen({ subject, onStart }: Props) {
   const copy = COPY[subject];
   return (
     <div className="stage">
-      <div className="card">
+      <div className="card card--center">
         <div className="handoff">
           <Teacher size={240} mood="greeting" />
           <div className="stack">
