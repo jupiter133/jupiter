@@ -1,3 +1,5 @@
+import type { GlyphName } from '../components/glyphs';
+
 /** Difficulty tiers for v1. Tier data ships in the content JSON; these are the
  *  only three tiers the placement engine knows about. */
 export type Tier = 1 | 2 | 3;
@@ -7,6 +9,50 @@ export const MIN_TIER: Tier = 1;
 export const MAX_TIER: Tier = 3;
 
 export type Grade = 'K' | '1' | '2' | '3' | '4' | '5' | '6';
+
+/**
+ * How a question is *presented*, derived from the grade the parent entered.
+ * This is a separate axis from difficulty tier: a Grade 5 child who drops to
+ * tier 1 still gets the senior presentation, because a struggling ten-year-old
+ * should not be handed cartoon bunnies.
+ *
+ * - `junior`  (K–3): art-led, big type, simplest wording, picture answers.
+ * - `senior`  (4–6): text-led, art supports rather than carries, fuller wording.
+ */
+export type AgeBand = 'junior' | 'senior';
+
+const JUNIOR_GRADES: Grade[] = ['K', '1', '2', '3'];
+
+export function ageBandForGrade(grade: Grade): AgeBand {
+  return JUNIOR_GRADES.includes(grade) ? 'junior' : 'senior';
+}
+
+export type SceneName =
+  | 'lost-mitten'
+  | 'camp-breakfast'
+  | 'compass'
+  | 'aurora'
+  | 'ice-road'
+  | 'two-maps'
+  | 'bear-cubs'
+  | 'narrow-trail'
+  | 'trail-guide'
+  | 'pack-list'
+  | 'wind-out'
+  | 'moose'
+  | 'canoe';
+
+/** Declarative illustration spec. Content stays in JSON; drawing stays in code. */
+export type ArtSpec =
+  | { kind: 'glyph'; glyph: GlyphName }
+  | { kind: 'count'; glyph: GlyphName; n: number }
+  | { kind: 'countPlus'; glyph: GlyphName; n: number; m: number }
+  | { kind: 'countTakeAway'; glyph: GlyphName; n: number; takeAway: number }
+  | { kind: 'shape'; shape: 'triangle' | 'square' | 'circle' | 'rectangle' }
+  | { kind: 'fraction'; n: number; d: number }
+  | { kind: 'areaGrid'; w: number; h: number }
+  | { kind: 'pair'; left: GlyphName; right: GlyphName }
+  | { kind: 'scene'; scene: SceneName };
 
 /** The three strands assessed in v1. Order here is the order they are asked. */
 export type Subject = 'reading' | 'math' | 'writing';
@@ -22,6 +68,8 @@ export const SUBJECT_LABEL: Record<Subject, string> = {
 export interface AnswerOption {
   id: string;
   text: string;
+  /** Picture answer. Rendered for the junior band; hidden for senior. */
+  art?: ArtSpec;
 }
 
 export interface Question {
@@ -33,9 +81,20 @@ export interface Question {
   /** Present on comprehension items — rendered beside the question. */
   passage?: string;
   passageTitle?: string;
+  /** Illustration for the item. Leads the layout for junior, supports for senior. */
+  art?: ArtSpec;
+  /** Default wording, used as-is for the senior band. */
   questionText: string;
+  /** Shorter, plainer wording for the junior band. Falls back to questionText. */
+  questionTextJunior?: string;
   options: AnswerOption[];
   correctAnswerId: string;
+}
+
+/** Resolves the wording to show for a band. */
+export function questionTextFor(question: Question, band: AgeBand): string {
+  if (band === 'junior' && question.questionTextJunior) return question.questionTextJunior;
+  return question.questionText;
 }
 
 export interface ParentContext {

@@ -10,8 +10,8 @@ import {
   submitAnswer,
 } from './engine';
 import { QUESTIONS } from './questionBank';
-import type { SessionState, Subject } from './types';
-import { SUBJECT_ORDER } from './types';
+import type { Grade, SessionState, Subject } from './types';
+import { SUBJECT_ORDER, ageBandForGrade, questionTextFor } from './types';
 
 function answer(state: SessionState, correct: boolean, at?: number): SessionState {
   const q = selectNextQuestion(state)!;
@@ -40,11 +40,51 @@ describe('question bank', () => {
     }
   });
 
+  it('gives junior-band items art or picture answers to lean on', () => {
+    // Tiers 1 and 2 are what a K-3 child actually sees most of the time, so
+    // those items must carry a visual rather than being a wall of text.
+    const early = QUESTIONS.filter((q) => q.tier <= 2);
+    const visual = early.filter((q) => q.art || q.options.some((o) => o.art));
+    expect(visual.length / early.length).toBeGreaterThanOrEqual(0.9);
+  });
+
+  it('keeps junior wording within an early-primary vocabulary', () => {
+    // Raw length is the wrong proxy for "simpler" — two short sentences can beat
+    // one long clause and still run longer. What holds is the vocabulary: the
+    // junior variant must not reach past words a Grade 1-3 reader can decode.
+    // "reluctant" is exempt: that item is *about* the word.
+    const EXEMPT = new Set(['r-t3-01']);
+    for (const q of QUESTIONS) {
+      if (!q.questionTextJunior || EXEMPT.has(q.id)) continue;
+      const longest = q.questionTextJunior
+        .split(/\s+/)
+        .map((w) => w.replace(/[^A-Za-z]/g, ''))
+        .reduce((a, b) => (b.length > a.length ? b : a), '');
+      expect(longest.length, `${q.id} uses "${longest}"`).toBeLessThanOrEqual(10);
+    }
+  });
+
   it('uses unique ids and valid correct answers', () => {
     expect(new Set(QUESTIONS.map((q) => q.id)).size).toBe(QUESTIONS.length);
     for (const q of QUESTIONS) {
       expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
     }
+  });
+});
+
+describe('age band', () => {
+  it('splits at grade 4, by stated grade rather than by tier', () => {
+    const junior: Grade[] = ['K', '1', '2', '3'];
+    const senior: Grade[] = ['4', '5', '6'];
+    for (const g of junior) expect(ageBandForGrade(g), g).toBe('junior');
+    for (const g of senior) expect(ageBandForGrade(g), g).toBe('senior');
+  });
+
+  it('gives the senior band the fuller wording even on easy items', () => {
+    // A Grade 5 child who drops to tier 1 must not get the simplified copy.
+    const simplified = QUESTIONS.find((q) => q.tier === 1 && q.questionTextJunior)!;
+    expect(questionTextFor(simplified, 'senior')).toBe(simplified.questionText);
+    expect(questionTextFor(simplified, 'junior')).toBe(simplified.questionTextJunior);
   });
 });
 

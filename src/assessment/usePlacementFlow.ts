@@ -1,12 +1,13 @@
 import { useCallback, useMemo, useState } from 'react';
 import type {
+  AgeBand,
   ParentContext,
   PlacementResult,
   Question,
   SessionState,
   Subject,
 } from './types';
-import { SUBJECT_ORDER } from './types';
+import { SUBJECT_ORDER, ageBandForGrade } from './types';
 import {
   QUESTIONS_PER_SUBJECT,
   buildResult,
@@ -30,6 +31,8 @@ interface Flow {
   context: ParentContext | null;
   session: SessionState | null;
   subject: Subject | null;
+  /** Presentation mode for this child, fixed for the session by stated grade. */
+  band: AgeBand;
   currentQuestion: Question | null;
   /** Position within the active strand, 1-based. */
   questionNumber: number;
@@ -111,6 +114,7 @@ export function usePlacementFlow(): Flow {
     context,
     session,
     subject,
+    band: context ? ageBandForGrade(context.grade) : 'junior',
     currentQuestion,
     questionNumber: subject ? session!.subjects[subject].answeredCount + 1 : 1,
     questionsPerSubject: QUESTIONS_PER_SUBJECT,

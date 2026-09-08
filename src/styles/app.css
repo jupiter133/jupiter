@@ -389,3 +389,77 @@ body {
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
   .card { padding: var(--space-5); }
 }
+
+/* ---------- Question illustrations ---------- */
+
+.art { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--space-3); }
+
+.art--equation { gap: var(--space-4); }
+
+.art__operator {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--text-secondary);
+}
+
+.art--pair { gap: var(--space-7); }
+
+.art__pair-item {
+  display: grid;
+  place-items: center;
+  padding: var(--space-3);
+  background: var(--surface-inset);
+  border-radius: var(--radius-md);
+}
+
+.count-row { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+
+.count-item { display: inline-flex; }
+
+/* Taken-away items fade out rather than being crossed through — the child flow
+   never marks anything with an X, illustrations included. */
+.count-item--gone { opacity: 0.22; }
+
+.art-panel {
+  background: var(--surface-card-raised);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+/* Junior: the picture leads the screen. */
+.art-panel--junior { padding: var(--space-5) var(--space-6); }
+
+/* Senior: art supports the text. Smaller, quieter, no card of its own. */
+.art-panel--senior {
+  background: transparent;
+  border: none;
+  padding: 0;
+  align-self: flex-start;
+  transform: scale(0.62);
+  transform-origin: left center;
+  margin: calc(var(--space-4) * -1) 0;
+}
+
+.passage .art { margin-bottom: var(--space-3); }
+
+/* ---------- Band-specific question layout ---------- */
+
+/* Junior gets larger tap targets and calmer information density. */
+.question-screen--junior .option { min-height: 88px; font-size: 22px; }
+.question-screen--junior .passage__text { font-size: 21px; line-height: 1.8; }
+
+.options--picture { grid-template-columns: repeat(4, 1fr); }
+
+.option--picture {
+  flex-direction: column;
+  gap: var(--space-2);
+  justify-content: center;
+  text-align: center;
+  min-height: 150px;
+}
+
+@media (max-width: 900px), (orientation: portrait) {
+  .options--picture { grid-template-columns: repeat(2, 1fr); }
+  .art-panel--senior { transform: none; margin: 0; }
+}

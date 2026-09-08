@@ -1,12 +1,18 @@
 {
-  "version": "0.2.0-placeholder",
+  "version": "0.3.0-placeholder",
   "questions": [
     {
       "id": "r-t1-01",
       "subject": "reading",
       "tier": 1,
       "skill": "vocabulary",
+      "art": {
+        "kind": "pair",
+        "left": "bearcub",
+        "right": "berry"
+      },
       "questionText": "Which word means the same as big?",
+      "questionTextJunior": "Which word means big?",
       "options": [
         {
           "id": "a",
@@ -32,7 +38,13 @@
       "subject": "reading",
       "tier": 1,
       "skill": "vocabulary",
+      "art": {
+        "kind": "pair",
+        "left": "sun",
+        "right": "moon"
+      },
       "questionText": "Which word is the opposite of day?",
+      "questionTextJunior": "Which is the opposite of day?",
       "options": [
         {
           "id": "a",
@@ -58,23 +70,40 @@
       "subject": "reading",
       "tier": 1,
       "skill": "vocabulary",
-      "questionText": "Which word names an animal?",
+      "questionText": "Which one names an animal?",
+      "questionTextJunior": "Which one is an animal?",
       "options": [
         {
           "id": "a",
-          "text": "river"
+          "text": "river",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
         },
         {
           "id": "b",
-          "text": "fox"
+          "text": "fox",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
         },
         {
           "id": "c",
-          "text": "tent"
+          "text": "tent",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
         },
         {
           "id": "d",
-          "text": "blue"
+          "text": "star",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
         }
       ],
       "correctAnswerId": "b"
@@ -86,6 +115,10 @@
       "skill": "comprehension",
       "passageTitle": "The Lost Mitten",
       "passage": "Nina walked to the pond with her red mittens. She threw a snowball at the old pine tree. When she got home, only one mitten was left in her pocket.",
+      "art": {
+        "kind": "scene",
+        "scene": "lost-mitten"
+      },
       "questionText": "What did Nina lose?",
       "options": [
         {
@@ -114,6 +147,10 @@
       "skill": "comprehension",
       "passageTitle": "Camp Breakfast",
       "passage": "The campers woke up when the sun came over the hill. Sam stirred the oatmeal in a big pot. Everyone ate two bowls before the morning hike.",
+      "art": {
+        "kind": "scene",
+        "scene": "camp-breakfast"
+      },
       "questionText": "What did the campers eat?",
       "options": [
         {
@@ -140,7 +177,12 @@
       "subject": "reading",
       "tier": 2,
       "skill": "vocabulary",
+      "art": {
+        "kind": "scene",
+        "scene": "narrow-trail"
+      },
       "questionText": "The trail was narrow. What does narrow mean?",
+      "questionTextJunior": "The trail was narrow. What does narrow mean?",
       "options": [
         {
           "id": "a",
@@ -166,7 +208,12 @@
       "subject": "reading",
       "tier": 2,
       "skill": "vocabulary",
+      "art": {
+        "kind": "scene",
+        "scene": "bear-cubs"
+      },
       "questionText": "The bear moved ______ so it would not wake the cubs.",
+      "questionTextJunior": "The bear did not want to wake the cubs. How did it move?",
       "options": [
         {
           "id": "a",
@@ -192,7 +239,12 @@
       "subject": "reading",
       "tier": 2,
       "skill": "vocabulary",
-      "questionText": "A person who guides visitors through the woods is a ______.",
+      "art": {
+        "kind": "scene",
+        "scene": "trail-guide"
+      },
+      "questionText": "A person who leads visitors through the woods is a ______.",
+      "questionTextJunior": "Someone who shows you the way in the woods is a ______.",
       "options": [
         {
           "id": "a",
@@ -220,6 +272,10 @@
       "skill": "comprehension",
       "passageTitle": "The Compass",
       "passage": "Aya's compass needle always pointed north, even when the trail curved. Her group followed the river instead, because the map showed the camp was downstream. By noon they could smell woodsmoke from the campfire.",
+      "art": {
+        "kind": "scene",
+        "scene": "compass"
+      },
       "questionText": "Why did the group follow the river instead of the compass?",
       "options": [
         {
@@ -248,7 +304,12 @@
       "skill": "comprehension",
       "passageTitle": "Northern Lights",
       "passage": "Ben stayed up past bedtime because his uncle promised the sky would glow. At first there was nothing but stars. Then a green ribbon slid across the dark, and Ben forgot how cold his hands were.",
+      "art": {
+        "kind": "scene",
+        "scene": "aurora"
+      },
       "questionText": "How did Ben feel when the lights appeared?",
+      "questionTextJunior": "How did Ben feel when the lights came out?",
       "options": [
         {
           "id": "a",
@@ -274,7 +335,12 @@
       "subject": "reading",
       "tier": 3,
       "skill": "vocabulary",
+      "art": {
+        "kind": "glyph",
+        "glyph": "snowflake"
+      },
       "questionText": "The guide was reluctant to cross the ice. Reluctant means:",
+      "questionTextJunior": "The guide was reluctant to cross the ice. Reluctant means:",
       "options": [
         {
           "id": "a",
@@ -300,6 +366,11 @@
       "subject": "reading",
       "tier": 3,
       "skill": "vocabulary",
+      "art": {
+        "kind": "count",
+        "glyph": "berry",
+        "n": 6
+      },
       "questionText": "Which word is closest in meaning to abundant?",
       "options": [
         {
@@ -354,6 +425,10 @@
       "skill": "comprehension",
       "passageTitle": "The Ice Road",
       "passage": "Every winter the road to the village freezes solid enough to carry trucks. Drivers move slowly, not because the ice is weak, but because speed sends a wave through the water beneath it. That wave can crack the surface far ahead of the truck itself.",
+      "art": {
+        "kind": "scene",
+        "scene": "ice-road"
+      },
       "questionText": "Why do drivers keep their speed low on the ice road?",
       "options": [
         {
@@ -382,6 +457,10 @@
       "skill": "comprehension",
       "passageTitle": "Two Maps",
       "passage": "The old map showed the creek running east of the ridge. The new survey put it west. Rather than argue, the scouts walked the ridge themselves and found the creek had simply changed course after the flood.",
+      "art": {
+        "kind": "scene",
+        "scene": "two-maps"
+      },
       "questionText": "What is the main idea of this passage?",
       "options": [
         {
@@ -408,7 +487,13 @@
       "subject": "math",
       "tier": 1,
       "skill": "number-sense",
+      "art": {
+        "kind": "count",
+        "glyph": "pinecone",
+        "n": 7
+      },
       "questionText": "Which number comes right after 7?",
+      "questionTextJunior": "Count the pinecones. What number comes next?",
       "options": [
         {
           "id": "a",
@@ -434,7 +519,14 @@
       "subject": "math",
       "tier": 1,
       "skill": "operations",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "fish",
+        "n": 4,
+        "m": 3
+      },
       "questionText": "4 + 3 = ?",
+      "questionTextJunior": "How many fish altogether?",
       "options": [
         {
           "id": "a",
@@ -460,7 +552,14 @@
       "subject": "math",
       "tier": 1,
       "skill": "operations",
+      "art": {
+        "kind": "countTakeAway",
+        "glyph": "berry",
+        "n": 10,
+        "takeAway": 6
+      },
       "questionText": "10 - 6 = ?",
+      "questionTextJunior": "6 berries were eaten. How many are left?",
       "options": [
         {
           "id": "a",
@@ -486,7 +585,14 @@
       "subject": "math",
       "tier": 1,
       "skill": "word-problem",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "pinecone",
+        "n": 5,
+        "m": 4
+      },
       "questionText": "Sam has 5 pinecones. He finds 4 more. How many does he have now?",
+      "questionTextJunior": "Sam has 5 pinecones. He finds 4 more. How many now?",
       "options": [
         {
           "id": "a",
@@ -511,24 +617,41 @@
       "id": "m-t1-05",
       "subject": "math",
       "tier": 1,
-      "skill": "number-sense",
+      "skill": "geometry",
       "questionText": "Which shape has 3 sides?",
+      "questionTextJunior": "Which shape has 3 sides?",
       "options": [
         {
           "id": "a",
-          "text": "Square"
+          "text": "Square",
+          "art": {
+            "kind": "shape",
+            "shape": "square"
+          }
         },
         {
           "id": "b",
-          "text": "Triangle"
+          "text": "Triangle",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle"
+          }
         },
         {
           "id": "c",
-          "text": "Circle"
+          "text": "Circle",
+          "art": {
+            "kind": "shape",
+            "shape": "circle"
+          }
         },
         {
           "id": "d",
-          "text": "Rectangle"
+          "text": "Rectangle",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle"
+          }
         }
       ],
       "correctAnswerId": "b"
@@ -538,7 +661,13 @@
       "subject": "math",
       "tier": 2,
       "skill": "operations",
+      "art": {
+        "kind": "areaGrid",
+        "w": 7,
+        "h": 6
+      },
       "questionText": "7 x 6 = ?",
+      "questionTextJunior": "6 rows of 7. How many squares?",
       "options": [
         {
           "id": "a",
@@ -591,22 +720,43 @@
       "tier": 2,
       "skill": "number-sense",
       "questionText": "Which fraction is the largest?",
+      "questionTextJunior": "Which bar has the most filled in?",
       "options": [
         {
           "id": "a",
-          "text": "1/2"
+          "text": "1/2",
+          "art": {
+            "kind": "fraction",
+            "n": 1,
+            "d": 2
+          }
         },
         {
           "id": "b",
-          "text": "1/3"
+          "text": "1/3",
+          "art": {
+            "kind": "fraction",
+            "n": 1,
+            "d": 3
+          }
         },
         {
           "id": "c",
-          "text": "1/4"
+          "text": "1/4",
+          "art": {
+            "kind": "fraction",
+            "n": 1,
+            "d": 4
+          }
         },
         {
           "id": "d",
-          "text": "1/8"
+          "text": "1/8",
+          "art": {
+            "kind": "fraction",
+            "n": 1,
+            "d": 8
+          }
         }
       ],
       "correctAnswerId": "a"
@@ -616,7 +766,12 @@
       "subject": "math",
       "tier": 2,
       "skill": "word-problem",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tent"
+      },
       "questionText": "A tent holds 4 campers. How many tents are needed for 26 campers?",
+      "questionTextJunior": "A tent holds 4 campers. How many tents for 26 campers?",
       "options": [
         {
           "id": "a",
@@ -642,7 +797,13 @@
       "subject": "math",
       "tier": 2,
       "skill": "measurement",
+      "art": {
+        "kind": "areaGrid",
+        "w": 8,
+        "h": 3
+      },
       "questionText": "A rectangle is 8 cm long and 3 cm wide. What is its area?",
+      "questionTextJunior": "Count the squares. What is the area?",
       "options": [
         {
           "id": "a",
@@ -668,6 +829,11 @@
       "subject": "math",
       "tier": 3,
       "skill": "operations",
+      "art": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 4
+      },
       "questionText": "What is 3/4 + 1/8?",
       "options": [
         {
@@ -694,6 +860,10 @@
       "subject": "math",
       "tier": 3,
       "skill": "word-problem",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
       "questionText": "A hike is 12 km. The group has walked 7.5 km. What fraction of the hike is left?",
       "options": [
         {
@@ -720,6 +890,11 @@
       "subject": "math",
       "tier": 3,
       "skill": "number-sense",
+      "art": {
+        "kind": "fraction",
+        "n": 3,
+        "d": 5
+      },
       "questionText": "Which decimal is equal to 3/5?",
       "options": [
         {
@@ -746,6 +921,10 @@
       "subject": "math",
       "tier": 3,
       "skill": "word-problem",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
       "questionText": "Canoes rent for $18 for the first hour and $11 for each hour after. What is the cost of 4 hours?",
       "options": [
         {
@@ -772,6 +951,11 @@
       "subject": "math",
       "tier": 3,
       "skill": "measurement",
+      "art": {
+        "kind": "areaGrid",
+        "w": 9,
+        "h": 9
+      },
       "questionText": "A square field has an area of 81 sq m. How long is one side?",
       "options": [
         {
@@ -798,7 +982,12 @@
       "subject": "writing",
       "tier": 1,
       "skill": "conventions",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
       "questionText": "Which sentence is written correctly?",
+      "questionTextJunior": "Which one is written the right way?",
       "options": [
         {
           "id": "a",
@@ -825,6 +1014,7 @@
       "tier": 1,
       "skill": "conventions",
       "questionText": "Which word should start with a capital letter?",
+      "questionTextJunior": "Which word needs a big letter at the start?",
       "options": [
         {
           "id": "a",
@@ -850,7 +1040,12 @@
       "subject": "writing",
       "tier": 1,
       "skill": "conventions",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
       "questionText": "What punctuation ends this sentence? Where is my backpack",
+      "questionTextJunior": "Where is my backpack ___ Which mark goes at the end?",
       "options": [
         {
           "id": "a",
@@ -876,7 +1071,12 @@
       "subject": "writing",
       "tier": 1,
       "skill": "grammar",
+      "art": {
+        "kind": "scene",
+        "scene": "bear-cubs"
+      },
       "questionText": "Choose the correct word. The two bears ______ fishing.",
+      "questionTextJunior": "The two bears ______ fishing.",
       "options": [
         {
           "id": "a",
@@ -902,7 +1102,12 @@
       "subject": "writing",
       "tier": 1,
       "skill": "grammar",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tent"
+      },
       "questionText": "Which word is a naming word (noun)?",
+      "questionTextJunior": "Which word names a thing?",
       "options": [
         {
           "id": "a",
@@ -928,6 +1133,10 @@
       "subject": "writing",
       "tier": 2,
       "skill": "grammar",
+      "art": {
+        "kind": "glyph",
+        "glyph": "bottle"
+      },
       "questionText": "Choose the correct word. She ______ her water bottle yesterday.",
       "options": [
         {
@@ -954,7 +1163,12 @@
       "subject": "writing",
       "tier": 2,
       "skill": "conventions",
+      "art": {
+        "kind": "scene",
+        "scene": "pack-list"
+      },
       "questionText": "Which sentence uses commas correctly?",
+      "questionTextJunior": "Which sentence has the commas in the right places?",
       "options": [
         {
           "id": "a",
@@ -980,7 +1194,12 @@
       "subject": "writing",
       "tier": 2,
       "skill": "sentence-structure",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
       "questionText": "Which of these is a complete sentence?",
+      "questionTextJunior": "Which one is a whole sentence?",
       "options": [
         {
           "id": "a",
@@ -1006,7 +1225,12 @@
       "subject": "writing",
       "tier": 2,
       "skill": "word-choice",
+      "art": {
+        "kind": "glyph",
+        "glyph": "moose"
+      },
       "questionText": "Which word best replaces said to show excitement? \"Look at that!\" she said.",
+      "questionTextJunior": "\"Look at that!\" she said. Which word shows she was excited?",
       "options": [
         {
           "id": "a",
@@ -1032,6 +1256,10 @@
       "subject": "writing",
       "tier": 2,
       "skill": "grammar",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
       "questionText": "Choose the correct word. That backpack is ______.",
       "options": [
         {
@@ -1084,6 +1312,10 @@
       "subject": "writing",
       "tier": 3,
       "skill": "editing",
+      "art": {
+        "kind": "scene",
+        "scene": "wind-out"
+      },
       "questionText": "Which revision fixes the run-on? \"The fire went out it was too windy.\"",
       "options": [
         {
@@ -1110,6 +1342,10 @@
       "subject": "writing",
       "tier": 3,
       "skill": "organization",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
       "questionText": "Which sentence is the best topic sentence for a paragraph about packing light?",
       "options": [
         {
@@ -1136,6 +1372,10 @@
       "subject": "writing",
       "tier": 3,
       "skill": "word-choice",
+      "art": {
+        "kind": "scene",
+        "scene": "moose"
+      },
       "questionText": "Which sentence uses the most precise language?",
       "options": [
         {

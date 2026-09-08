@@ -24,6 +24,7 @@ export default function App() {
           key={flow.currentQuestion.id}
           question={flow.currentQuestion}
           subject={flow.subject}
+          band={flow.band}
           questionNumber={flow.questionNumber}
           questionsPerSubject={flow.questionsPerSubject}
           onAnswer={flow.answer}

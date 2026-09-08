@@ -28,6 +28,32 @@ npm run build   # typecheck + production build
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
 
+## Age-scaled presentation
+
+Presentation is a **separate axis from difficulty**. The tier decides *what* a
+child is asked; the age band decides *how* it looks. The band is fixed for the
+session by the grade the parent entered on screen 1 — so a Grade 5 child who
+drops to tier 1 still gets the senior presentation, rather than being handed
+cartoon bunnies.
+
+| Band | Grades | Illustration | Wording | Answers |
+|------|--------|-------------|---------|---------|
+| `junior` | K–3 | Leads the layout — full art panel, scene above each passage | `questionTextJunior` — short, plain, early-primary vocabulary | Picture answers where they help; larger tap targets |
+| `senior` | 4–6 | Supports the text — smaller, quieter, no card of its own | `questionText` — fuller phrasing | Word answers only; picture answers suppressed |
+
+`ageBandForGrade()` in `src/assessment/types.ts` owns the split.
+
+Illustrations are inline SVG, drawn from a shared glyph set in
+`src/components/glyphs.tsx` and composed by `src/components/Illustration.tsx`.
+Art is declared in the content JSON as a small spec — `count`, `countPlus`,
+`countTakeAway`, `shape`, `fraction`, `areaGrid`, `pair`, `glyph`, `scene` — so
+content stays in JSON and drawing stays in code. Scenes are compositions of
+existing glyphs laid out on a shared baseline, not bespoke art, which keeps the
+set consistent and cheap to extend.
+
+Subtraction art fades the taken-away items rather than crossing them out — the
+no-X rule applies inside illustrations too.
+
 ## Tone rules baked into the code
 
 - No right/wrong feedback during the activity. Selecting an option gives a neutral
@@ -73,6 +99,10 @@ JSON, so dropping in the real bank needs no engine change.
 
 Writing items are multiple choice — editing and grammar judgements rather than
 free-form composition — so the strand stays auto-scorable in this pass.
+
+37 of the 45 items carry an illustration, and every tier 1–2 item (what a K–3
+child mostly sees) has art or picture answers to lean on. A test enforces that
+coverage, and another keeps junior wording inside an early-primary vocabulary.
 
 Question shape:
 
