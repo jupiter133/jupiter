@@ -7,8 +7,8 @@ const withPassage = QUESTIONS.find((q) => q.passage)! as Question;
 const noPassage = QUESTIONS.find((q) => !q.passage)! as Question;
 
 describe('read-aloud defaults', () => {
-  it('starts on for the junior band and off for senior', () => {
-    expect(audioDefaultFor('junior')).toBe(true);
+  it('starts off for every band', () => {
+    expect(audioDefaultFor('junior')).toBe(false);
     expect(audioDefaultFor('senior')).toBe(false);
   });
 

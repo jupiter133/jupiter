@@ -36,7 +36,8 @@ The app is the screen. There is no device frame, no centred card and no
 max-width cap — the root fills the real viewport (`100dvh`), every screen fills
 the root, and only real device chrome (browser / OS) frames the content.
 
-Target sizes are iPad landscape (1024x768) and portrait (768x1024). Layout is
+Target sizes are iPad landscape (1024x768) and portrait (768x1024), and it is
+usable on phones (390x844 portrait, 844x390 landscape). Layout is
 flex/grid so content stretches edge-to-edge: the quest bar pins full-width at
 the top, the question body claims the remaining height, and the answer grid
 stretches its rows to fill it (`grid-auto-rows: minmax(min-content, 1fr)`, with
@@ -45,10 +46,27 @@ a 64px tap-target floor). Type scales with the viewport via `clamp()` in
 
 Portrait stacks the passage above the question (passage capped at 34vh so the
 answers stay on screen) and keeps answers two-up. Every screen — including the
-parent results with a long learning-challenges note — fits both sizes without
-scrolling. `scratchpad/audit2.mjs` walks the whole flow at both sizes and
-reports any horizontal scroll, side gutter, vertical overflow, or dead space
-under the answer grid.
+parent results with a long learning-challenges note — fits both iPad sizes
+without scrolling.
+
+**The screen's height is definite, not a min-height.** Flex and grid children
+only get definite sizes from a definite parent; with `min-height: 100%` the
+passage panel could never shrink to its row, and sized the row to its own
+content instead. `.stage` is exactly the viewport and `.card` is the scroll
+container, so a passage scrolls inside its panel and a tall parent page
+scrolls inside the screen.
+
+Phones: text answers go one-up; sentence-length answers go one-up everywhere
+(two-up wraps them into a tall mess); the main read-aloud control is icon-only.
+Landscape phones have width and no height, so the art sits beside the question
+instead of above it, answers pack rather than stretch, and the heading drops a
+size. Only the parent intake form and results scroll there.
+
+`scratchpad/audit3.mjs` walks the whole flow at 1024x768, 390x844 and 844x390
+and reports horizontal scroll, side gutters, a stage that isn't exactly the
+viewport, vertical overflow (allowed on phones for parent pages), dead space
+under the answer grid, auto-read firing unasked, or an answer speaker that
+chooses the answer.
 
 ### Child name
 
@@ -105,8 +123,13 @@ child likes — each press restarts the narration rather than queueing behind th
 last one. A second control toggles auto-read, which fires the narration on every
 new question.
 
-- **On by default for K–3**, off (but one tap away) for Grade 4+ —
-  `audioDefaultFor()` in `src/audio/speechScript.ts`.
+- **Auto-read is off by default for every band** (`audioDefaultFor()` in
+  `src/audio/speechScript.ts`). Narration that fires unasked on each question
+  is a lot of sound for a shared room; one tap when it's wanted beats an
+  interruption when it isn't.
+- **Every answer has its own speaker.** Tapping it reads that option without
+  choosing it — the answer and its speaker are sibling buttons, not nested,
+  so the speaker can fire independently and the markup stays valid.
 - Junior narration includes the **answer options**. A child who can't read the
   question can't read the options either, so stopping at the question would
   leave them exactly as stuck. Senior narration is passage + question only.

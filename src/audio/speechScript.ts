@@ -37,7 +37,12 @@ export function speechRateFor(band: AgeBand): number {
   return band === 'junior' ? 0.85 : 0.95;
 }
 
-/** Read-aloud starts on for the youngest, off (but available) for Grade 4+. */
-export function audioDefaultFor(band: AgeBand): boolean {
-  return band === 'junior';
+/**
+ * Auto-read starts off for every band. Narration that fires unasked on each
+ * question is a lot of sound for a shared room, and every question already
+ * carries a "Read to me" control plus a speaker on each answer — one tap when
+ * it's wanted beats an interruption when it isn't.
+ */
+export function audioDefaultFor(_band: AgeBand): boolean {
+  return false;
 }

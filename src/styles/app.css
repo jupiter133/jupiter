@@ -5,6 +5,13 @@ html, body, #root {
   margin: 0;
 }
 
+button {
+  /* No 300ms tap delay, no grey flash, no accidental text selection. */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
 body {
   background: var(--surface-card);
   color: var(--text-primary);
@@ -27,22 +34,26 @@ body {
   background: var(--surface-card);
 }
 
-/* A screen: at least the full viewport, growing (and scrolling the shell) only
-   when its content genuinely cannot fit. */
+/* A screen is exactly the viewport. Its height must be *definite*, not a
+   min-height: flex and grid children only get definite sizes from a definite
+   parent, and without that a passage panel can never shrink to its row — it
+   sizes the row to its own content and pushes the screen past the bottom. */
 .stage {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* The screen's content surface. Full bleed, proportional padding; stretches to
-   the bottom so children can claim the remaining height. */
+/* The screen's content surface, and its scroll container. Full bleed with
+   proportional padding; stretches to the bottom so children can claim the
+   remaining height, and scrolls itself when content genuinely cannot fit. */
 .card {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow-y: auto;
   padding: var(--screen-pad);
 }
 
@@ -80,9 +91,9 @@ body {
   font-weight: 800;
   border-radius: var(--radius-pill);
   border: none;
-  padding: var(--space-4) var(--space-7);
+  padding: var(--space-4) clamp(24px, 4vw, 48px);
   cursor: pointer;
-  min-height: 60px;
+  min-height: 56px;
   transition: transform 120ms ease, filter 120ms ease;
 }
 
@@ -159,7 +170,7 @@ body {
 
 /* ---------- Guide character ---------- */
 
-.guide { display: block; }
+.guide { display: block; width: clamp(120px, 26vw, 260px); height: auto; }
 .guide--float { animation: guide-float 3.4s ease-in-out infinite; }
 
 @keyframes guide-float {
@@ -257,11 +268,45 @@ body {
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: minmax(min-content, 1fr);
   gap: clamp(10px, 1.4vw, 16px);
 }
-.options--single { grid-template-columns: 1fr; }
+.options--single { grid-template-columns: minmax(0, 1fr); }
+
+.option-row { position: relative; display: flex; min-height: 0; }
+
+.option-row > .option {
+  flex: 1;
+  width: 100%;
+  /* Leave room for the speaker so text never sits under it. */
+  padding-right: 68px;
+}
+
+.option__speak {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--border-subtle);
+  background: var(--surface-card);
+  color: var(--accent-secondary);
+  cursor: pointer;
+}
+
+.option__speak:hover:not(:disabled) { border-color: var(--accent-secondary); }
+.option__speak:active:not(:disabled) { background: var(--accent-secondary-soft); }
+.option__speak:disabled { opacity: 0.35; cursor: default; }
+.option__speak:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 2px; }
+
+/* Picture answers put the speaker in the corner, clear of the art. */
+.option-row--picture > .option { padding-right: clamp(16px, 2vw, 24px); }
+.option-row--picture .option__speak { top: 8px; right: 8px; transform: none; width: 40px; height: 40px; }
 
 .option {
   display: flex;
@@ -414,7 +459,8 @@ body {
 
 .fact-strip {
   display: flex;
-  gap: var(--space-5);
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
   margin: 0;
   padding: var(--space-3) var(--space-4);
   background: var(--surface-inset);
@@ -464,9 +510,11 @@ body {
   line-height: 1.6;
 }
 
-/* Portrait tablet (768x1024): single column, passage capped so the answers
-   stay on screen, options stay two-up so four choices don't stack tall. */
-@media (max-width: 900px), (orientation: portrait) {
+/* Portrait, or a phone: single column, passage capped so the answers stay on
+   screen, options stay two-up so four choices don't stack tall. A landscape
+   phone keeps the two-column passage layout — stacking would push the
+   answers below a 390px-tall screen. */
+@media (orientation: portrait), (max-width: 600px) {
   .handoff, .subject-results, .results-meta, .celebration-split { grid-template-columns: 1fr; }
   .question-body--with-passage {
     grid-template-columns: minmax(0, 1fr);
@@ -547,7 +595,7 @@ body {
 .question-screen--junior .option { min-height: 76px; font-size: clamp(18px, 2.1vw, 22px); }
 .question-screen--junior .passage__text { font-size: clamp(17px, 2vw, 21px); line-height: 1.8; }
 
-.options--picture { grid-template-columns: repeat(4, 1fr); }
+.options--picture { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 .option--picture {
   flex-direction: column;
@@ -557,9 +605,94 @@ body {
   min-height: 120px;
 }
 
-@media (max-width: 900px), (orientation: portrait) {
-  .options--picture { grid-template-columns: repeat(2, 1fr); }
+@media (orientation: portrait), (max-width: 600px) {
+  .options--picture { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .art-panel--senior { transform: none; margin: 0; }
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 600px) {
+  /* Text answers one-up: two columns at 390px leaves no room for words. */
+  .options { grid-template-columns: minmax(0, 1fr); }
+  .option { min-height: 58px; }
+  .question-screen--junior .option { min-height: 66px; }
+  .option-row--picture .option { min-height: 104px; }
+
+  /* Speaker icon alone is enough on a phone; the label costs the whole row. */
+  .icon-btn__text { display: none; }
+  .icon-btn { padding: var(--space-2) var(--space-3); min-height: 44px; }
+  .quest-bar { gap: var(--space-2) var(--space-3); }
+
+  .btn--large { font-size: 18px; padding: var(--space-3) var(--space-5); min-height: 56px; }
+  .results-actions { flex-direction: column-reverse; }
+  .results-actions .btn { width: 100%; }
+
+  .grade-grid { grid-template-columns: repeat(4, 1fr); }
+  .grade-chip { min-height: 56px; }
+  .avatar-chip { width: 40px; height: 40px; vertical-align: -10px; }
+  /* The guide peeks past the badge on wide screens; on a phone that peek
+     runs off the edge. Keep her inside the column. */
+  .celebration-art__guide { right: 0; bottom: -12px; }
+  .celebration-art .badge-pop { width: 150px; height: 150px; }
+  .speech-bubble { padding: var(--space-4); }
+  .speech-bubble::after { display: none; }
+}
+
+/* ---------- Short screens (landscape phones) ---------- */
+
+@media (max-height: 520px) {
+  .question-screen { gap: 10px; }
+  .art-panel { padding: 8px 12px; }
+  /* Shrink glyphs, not scenes — a scene is sized by its panel. */
+  .art > svg:not(.art__scene) { width: 56px; height: 56px; }
+  .art--pair svg { width: 60px; height: 60px; }
+  .count-item svg { width: 34px; height: 34px; }
+  .art__scene { height: 110px; }
+  .guide { width: clamp(90px, 22vh, 160px); }
+  .passage { max-height: none; }
+  .card--center { justify-content: flex-start; }
+  .handoff { gap: 16px; }
+  .speech-bubble { padding: var(--space-3) var(--space-4); }
+  .celebration-art .badge-pop { width: 120px; height: 120px; }
+
+  /* No height to fill here, so pack the answers instead of stretching them,
+     and drop the heading a size so it holds to two lines. */
+  .question-screen .display, .question-screen .title { font-size: clamp(20px, 3vw, 28px); line-height: 1.15; }
+  .question-body > .stack { gap: 10px; justify-content: flex-start; }
+  .options { flex: 0 0 auto; grid-auto-rows: auto; gap: 8px; }
+  .option, .question-screen--junior .option { min-height: 48px; padding: 8px 16px; }
+  .option-row > .option { padding-right: 58px; }
+  .option__speak { width: 38px; height: 38px; right: 6px; }
+}
+
+/* Landscape phone: there is width to spare and no height, so the art sits
+   beside the question instead of above it, and passage answers go two-up. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .question-body:not(.question-body--with-passage) > .stack {
+    display: grid;
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 10px;
+  }
+  .question-body:not(.question-body--with-passage) > .stack > .art-panel {
+    grid-row: 1 / span 2;
+    align-self: stretch;
+    display: grid;
+    place-items: center;
+  }
+  .question-body:not(.question-body--with-passage) > .stack > .options { grid-column: 2; }
+  .options--single { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Long sentences stay one-up even here; two-up wraps them into a tall mess. */
+  .options--long { grid-template-columns: minmax(0, 1fr); }
+  /* Sentence answers need the width more than the art does. */
+  .question-body--long > .stack { grid-template-columns: minmax(0, 26%) minmax(0, 1fr); }
+  .celebration-copy { gap: 8px; }
+  .celebration-copy .display { font-size: 24px; }
+  .coin { width: 30px; height: 30px; }
+  .coin-total { font-size: 22px; }
+  .textarea { min-height: 72px; }
 }
 
 /* ---------- Read-aloud controls ---------- */
@@ -695,6 +828,8 @@ body {
    cap is on the text block only, never on the screen. */
 .start {
   flex: 1;
+  min-height: 0;
+  overflow-y: auto;
   width: 100%;
   max-width: 760px;
   margin: 0 auto;

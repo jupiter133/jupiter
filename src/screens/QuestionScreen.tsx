@@ -83,6 +83,9 @@ export function QuestionScreen({
   const isJunior = band === 'junior';
   const hasPassage = Boolean(question.passage);
   const showOptionArt = isJunior && question.options.some((o) => o.art);
+  /* Sentence-length answers read better one-up; two columns wrap them into
+     three or four lines each. */
+  const longOptions = question.options.some((o) => o.text.length > 36);
   const leg = SUBJECT_ORDER.indexOf(subject) + 1;
   const progress = Math.min(100, (questionNumber / questionsPerSubject) * 100);
   const prompt = questionTextFor(question, band);
@@ -132,7 +135,7 @@ export function QuestionScreen({
           key={question.id}
           className={`question-body question-anim${leaving ? ' question-anim--out' : ''}${
             hasPassage ? ' question-body--with-passage' : ''
-          }`}
+          }${longOptions && !showOptionArt ? ' question-body--long' : ''}`}
         >
           {hasPassage && (
             <section className="passage">
@@ -156,31 +159,53 @@ export function QuestionScreen({
 
             <div
               className={`options${
-                showOptionArt ? ' options--picture' : hasPassage ? ' options--single' : ''
-              }`}
+                showOptionArt
+                  ? ' options--picture'
+                  : hasPassage || longOptions
+                    ? ' options--single'
+                    : ''
+              }${longOptions && !showOptionArt ? ' options--long' : ''}`}
               role="group"
               aria-label="Answer choices"
             >
               {question.options.map((option, index) => (
-                <button
+                /* The answer and its speaker are siblings, not nested — a
+                   button inside a button is invalid, and the speaker must be
+                   able to fire without choosing the answer. */
+                <div
                   key={option.id}
-                  type="button"
-                  className={`option${chosenId === option.id ? ' option--chosen' : ''}${
-                    showOptionArt ? ' option--picture' : ''
-                  }`}
-                  disabled={chosenId !== null}
-                  onClick={() => choose(option.id)}
+                  className={`option-row${showOptionArt ? ' option-row--picture' : ''}`}
                 >
-                  {showOptionArt && option.art ? (
-                    <Illustration art={option.art} variant="option" />
-                  ) : (
-                    <span className="option__key" aria-hidden="true">
-                      {OPTION_KEYS[index] ?? index + 1}
-                    </span>
+                  <button
+                    type="button"
+                    className={`option${chosenId === option.id ? ' option--chosen' : ''}${
+                      showOptionArt ? ' option--picture' : ''
+                    }`}
+                    disabled={chosenId !== null}
+                    onClick={() => choose(option.id)}
+                  >
+                    {showOptionArt && option.art ? (
+                      <Illustration art={option.art} variant="option" />
+                    ) : (
+                      <span className="option__key" aria-hidden="true">
+                        {OPTION_KEYS[index] ?? index + 1}
+                      </span>
+                    )}
+                    <span>{option.text}</span>
+                    {chosenId === option.id && <AnswerSparkles />}
+                  </button>
+                  {canSpeak && (
+                    <button
+                      type="button"
+                      className="option__speak"
+                      disabled={chosenId !== null}
+                      onClick={() => speak([option.text], rate)}
+                      aria-label={`Read answer ${OPTION_KEYS[index] ?? index + 1}: ${option.text}`}
+                    >
+                      <SpeakerIcon speaking={false} size={22} />
+                    </button>
                   )}
-                  <span>{option.text}</span>
-                  {chosenId === option.id && <AnswerSparkles />}
-                </button>
+                </div>
               ))}
             </div>
           </div>
@@ -190,9 +215,9 @@ export function QuestionScreen({
   );
 }
 
-function SpeakerIcon({ speaking }: { speaking: boolean }) {
+function SpeakerIcon({ speaking, size = 26 }: { speaking: boolean; size?: number }) {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" fill="none">
       <path
         d="M4 9v6h4l5 4V5L8 9H4z"
         fill="currentColor"

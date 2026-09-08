@@ -31,6 +31,7 @@ function Scene({ scene, height }: { scene: SceneName; height: number }) {
 
   return (
     <svg
+      className="art__scene"
       width="100%"
       height={height}
       viewBox={`0 0 ${SCENE_W} ${SCENE_H}`}
