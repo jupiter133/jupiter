@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import type { AgeBand, Question, Subject } from '../assessment/types';
 import { SUBJECT_LABEL, SUBJECT_ORDER, questionTextFor } from '../assessment/types';
 import { Illustration } from '../components/Illustration';
-import { TrailProgress } from '../components/TrailProgress';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { useSpeech } from '../audio/useSpeech';
 import { speechRateFor, speechScriptFor } from '../audio/speechScript';
@@ -22,7 +21,7 @@ interface Props {
   band: AgeBand;
   /** Position within the active strand, 1-based. */
   questionNumber: number;
-  /** Questions in each strand, used only to render trail progress. */
+  /** Questions in each strand, used only to render progress. */
   questionsPerSubject: number;
   audioEnabled: boolean;
   onToggleAudio: () => void;
@@ -33,9 +32,8 @@ interface Props {
  * Screen 3 — the reusable question view, looped for the whole session.
  *
  * It never reveals whether an answer was right. Tapping an option highlights it
- * neutrally, sparkles pop, the mascot hops to the next trail stop, and the card
- * slides on. Every one of those plays identically for a right and a wrong
- * answer — the component is not told which it was, it only passes the choice up.
+ * neutrally, sparkles pop, and the card slides on. Every one of those plays
+ * identically for a right and a wrong answer — the component is not told which it was, it only passes the choice up.
  *
  * Presentation scales with the age band:
  *  - junior (K–3): the illustration leads, wording is the short variant,
@@ -86,6 +84,7 @@ export function QuestionScreen({
   const hasPassage = Boolean(question.passage);
   const showOptionArt = isJunior && question.options.some((o) => o.art);
   const leg = SUBJECT_ORDER.indexOf(subject) + 1;
+  const progress = Math.min(100, (questionNumber / questionsPerSubject) * 100);
   const prompt = questionTextFor(question, band);
 
   return (
@@ -95,6 +94,16 @@ export function QuestionScreen({
           <span className="label">
             Leg {leg} · {SUBJECT_LABEL[subject]} · Stop {questionNumber}
           </span>
+          <div
+            className="progress-track"
+            role="progressbar"
+            aria-valuenow={questionNumber}
+            aria-valuemin={0}
+            aria-valuemax={questionsPerSubject}
+            aria-label={`${SUBJECT_LABEL[subject]} progress`}
+          >
+            <div className="progress-fill" style={{ width: `${progress}%` }} />
+          </div>
           {canSpeak && (
             <div className="audio-controls">
               <button
@@ -118,12 +127,6 @@ export function QuestionScreen({
             </div>
           )}
         </div>
-
-        <TrailProgress
-          total={questionsPerSubject}
-          current={questionNumber}
-          cheering={leaving}
-        />
 
         <div
           key={question.id}

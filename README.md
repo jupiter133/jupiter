@@ -79,14 +79,10 @@ the narration comes out byte-identical, so audio can never leak the answer.
 All decoration, no meaning — every animation plays identically for a right and a
 wrong answer, and `QuestionScreen` is never told which it was.
 
-- **Trail progress** (`src/components/TrailProgress.tsx`) replaces the plain
-  bar: a route of camp stops with Nanuk walking it, solid behind and dotted
-  ahead, with a flag at the end of the strand. Remaining effort is countable at
-  a glance instead of an abstract percentage.
 - **Answer sparkles** — a small fixed-angle burst of coins and stars on the
   tapped option. Fires on every answer; nothing about it varies by correctness.
-- **Mascot reactions** — Nanuk hops as he moves to the next stop, bobs gently
-  while idle, and blinks on the handoff and section screens.
+- **Mascot reactions** — Nanuk floats gently and blinks on the handoff and
+  section screens.
 - **Card transitions** — the question body slides out left and the next slides
   in from the right, keyed by question id, instead of a hard cut.
 
