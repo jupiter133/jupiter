@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { usePlacementFlow } from './assessment/usePlacementFlow';
 import { loadChildProfile } from './profile';
+import { exitToHost } from './host';
 import { HandoffScreen } from './screens/HandoffScreen';
 import { KidCompletionScreen } from './screens/KidCompletionScreen';
 import { ParentContextScreen } from './screens/ParentContextScreen';
@@ -24,7 +25,9 @@ export default function App() {
         />
       )}
 
-      {flow.step === 'deferred' && <DeferredScreen onResume={flow.resume} />}
+      {flow.step === 'deferred' && (
+        <DeferredScreen onResume={flow.resume} onExit={() => exitToHost(flow.restart)} />
+      )}
 
       {flow.step === 'parent-context' && (
         <ParentContextScreen childName={flow.childName} onContinue={flow.submitContext} />
@@ -46,7 +49,6 @@ export default function App() {
           band={flow.band}
           questionNumber={flow.questionNumber}
           questionsPerSubject={flow.questionsPerSubject}
-          coins={flow.coins}
           audioEnabled={flow.audioEnabled}
           onToggleAudio={flow.toggleAudio}
           onAnswer={flow.answer}
@@ -54,11 +56,7 @@ export default function App() {
       )}
 
       {flow.step === 'kid-complete' && (
-        <KidCompletionScreen
-          childName={flow.childName}
-          coins={flow.coins}
-          onHandBack={flow.handBackToParent}
-        />
+        <KidCompletionScreen childName={flow.childName} onHandBack={flow.handBackToParent} />
       )}
 
       {flow.step === 'parent-results' && flow.context && flow.result && (

@@ -1,9 +1,9 @@
 /** Fixed angles rather than random, so the burst looks composed every time. */
 const SPARKS = [
   { dx: -46, dy: -34, delay: 0, kind: 'star' },
-  { dx: -18, dy: -52, delay: 40, kind: 'coin' },
+  { dx: -18, dy: -52, delay: 40, kind: 'dot' },
   { dx: 14, dy: -56, delay: 20, kind: 'star' },
-  { dx: 44, dy: -38, delay: 60, kind: 'coin' },
+  { dx: 44, dy: -38, delay: 60, kind: 'dot' },
   { dx: 0, dy: -30, delay: 90, kind: 'star' },
 ] as const;
 

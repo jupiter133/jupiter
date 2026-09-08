@@ -87,8 +87,10 @@ profile name can be blank, and the split matters:
 The name threads through the start screen, the intake copy, the handoff
 greeting, the completion screen and the parent results.
 
-"Maybe later" lands on a deferred screen that holds the door open. In the host
-app that slot is wherever the parent came from.
+"Maybe later" lands on a deferred screen with two ways out: back into the
+quest, or **Exit**. Exit goes through `src/host.ts`, the host app's navigation
+seam — in the host it returns the parent to wherever they came from; the demo
+falls back to the start screen.
 
 ## Age-scaled presentation
 
@@ -146,8 +148,9 @@ the narration comes out byte-identical, so audio can never leak the answer.
 All decoration, no meaning — every animation plays identically for a right and a
 wrong answer, and `QuestionScreen` is never told which it was.
 
-- **Answer sparkles** — a small fixed-angle burst of coins and stars on the
-  tapped option. Fires on every answer; nothing about it varies by correctness.
+- **Answer sparkles** — a small fixed-angle burst of gold dots and pink stars
+  on the tapped option. Fires on every answer; nothing about it varies by
+  correctness.
 - **Guide reactions** — Ms Hannah floats gently and blinks on the handoff and
   section screens.
 - **Card transitions** — the question body slides out left and the next slides
@@ -162,7 +165,7 @@ instantly, sparkles are removed entirely, and nothing about the flow is lost.
   highlight, then the screen fades to the next question. `QuestionScreen` never
   receives correctness — it only reports the choice upward.
 - The child never sees a score, an accuracy figure, a tier, or a grade level. The
-  completion screen's only number is coins, awarded per question answered.
+  completion screen shows a badge for finishing and nothing numeric.
 - There is deliberately **no error/red color role** in the token set, so a red X
   cannot be added to the child flow without a design-system change.
 - The word "test" appears nowhere in child-facing copy.
@@ -195,9 +198,10 @@ three strands decides it — Trailhead (Grade K–1 level), Ridge Trail (Grade
 2–3) or Summit Path (Grade 4–6) — and `result.program` carries the name,
 grade-equivalent level and a one-sentence description. The parent results
 screen leads with that: the program, its level, and the one button that starts
-it. The per-strand breakdown follows as three colour-keyed rows and explains
-the placement (strongest / weakest, and that each strand is paced to the
-child's own level inside the program); it is not a second decision.
+it. Below it, three one-line strand rows (tag + level) and, when the strands
+differ, a single "strongest / most room to grow" line. Per-strand narrative,
+session facts and the learning-challenges echo stay in the result object for
+the profile; they are not on this page.
 
 ## Content
 
@@ -259,8 +263,6 @@ DS patterns in use:
   order: reading green, math cyan, writing pink. That mapping runs through the
   quest bar, the section intros and the results cards.
 - **Progress** — green→cyan gradient on a hairline track, bouncy easing.
-- **CoinPill** — gold-soft pill with a gold coin dot, in the quest bar and on
-  the completion screen.
 - **Cards** — white floating cards with the soft blur; lime colour cards with a
   lime-dark edge for the "start here" module.
 - **Type** — Nunito throughout; Black (900) for display and titles, ExtraBold

@@ -24,8 +24,6 @@ interface Props {
   questionNumber: number;
   /** Questions in each strand, used only to render progress. */
   questionsPerSubject: number;
-  /** Coins earned so far — participation only, never a score. */
-  coins: number;
   audioEnabled: boolean;
   onToggleAudio: () => void;
   onAnswer: (selectedAnswerId: string) => void;
@@ -50,7 +48,6 @@ export function QuestionScreen({
   band,
   questionNumber,
   questionsPerSubject,
-  coins,
   audioEnabled,
   onToggleAudio,
   onAnswer,
@@ -102,7 +99,6 @@ export function QuestionScreen({
             Leg {leg} · <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · Stop{' '}
             {questionNumber}
           </span>
-          <span className="coin-pill" aria-label={`${coins} coins so far`}>{coins}</span>
           <div
             className="progress-track"
             role="progressbar"

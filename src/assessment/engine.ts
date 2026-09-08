@@ -180,19 +180,19 @@ const PLACEMENT: Record<
 > = {
   reading: {
     1: {
-      gradeEquivalentDisplay: 'Early primary level (Grade K–1)',
+      gradeEquivalentDisplay: 'Grade K–1 level',
       recommendedStartingModule: 'Trailhead Reading: Sounds, Sight Words & First Stories',
       summary:
         'Decoding words and pulling simple facts out of a short story. Starting here keeps every lesson winnable, which is what rebuilds confidence.',
     },
     2: {
-      gradeEquivalentDisplay: 'Early-to-mid primary level (Grade 2–3)',
+      gradeEquivalentDisplay: 'Grade 2–3 level',
       recommendedStartingModule: 'Ridge Trail Reading: Context Clues & Story Details',
       summary:
         'Reads short passages comfortably and finds details in them. The next step is inference — what a story implies rather than states.',
     },
     3: {
-      gradeEquivalentDisplay: 'Junior level (Grade 4–6)',
+      gradeEquivalentDisplay: 'Grade 4–6 level',
       recommendedStartingModule: 'Summit Path Reading: Inference & Main Idea',
       summary:
         'Handles longer passages and reasons about why things happen. This track pushes into main idea, author’s purpose and richer vocabulary.',
@@ -200,19 +200,19 @@ const PLACEMENT: Record<
   },
   math: {
     1: {
-      gradeEquivalentDisplay: 'Early primary level (Grade K–1)',
+      gradeEquivalentDisplay: 'Grade K–1 level',
       recommendedStartingModule: 'Trailhead Math: Counting, Adding & Shapes',
       summary:
         'Working with numbers to twenty and basic shapes. Short daily practice on number facts is the fastest lever here.',
     },
     2: {
-      gradeEquivalentDisplay: 'Early-to-mid primary level (Grade 2–3)',
+      gradeEquivalentDisplay: 'Grade 2–3 level',
       recommendedStartingModule: 'Ridge Trail Math: Times Tables, Fractions & Word Problems',
       summary:
         'Confident with multi-digit addition and starting on multiplication. Fluency with times tables unlocks most of what comes next.',
     },
     3: {
-      gradeEquivalentDisplay: 'Junior level (Grade 4–6)',
+      gradeEquivalentDisplay: 'Grade 4–6 level',
       recommendedStartingModule: 'Summit Path Math: Fractions, Decimals & Multi-Step Problems',
       summary:
         'Handles multi-step problems and fraction reasoning. This track moves into decimals, ratios and problems with more than one operation.',
@@ -220,19 +220,19 @@ const PLACEMENT: Record<
   },
   writing: {
     1: {
-      gradeEquivalentDisplay: 'Early primary level (Grade K–1)',
+      gradeEquivalentDisplay: 'Grade K–1 level',
       recommendedStartingModule: 'Trailhead Writing: Capitals, Periods & Simple Sentences',
       summary:
         'Building sentences with correct capitals and end punctuation. This is the foundation everything else in writing sits on.',
     },
     2: {
-      gradeEquivalentDisplay: 'Early-to-mid primary level (Grade 2–3)',
+      gradeEquivalentDisplay: 'Grade 2–3 level',
       recommendedStartingModule: 'Ridge Trail Writing: Complete Sentences & Word Choice',
       summary:
         'Writes complete sentences and is starting to punctuate lists and dialogue. Next is variety — joining ideas and choosing sharper words.',
     },
     3: {
-      gradeEquivalentDisplay: 'Junior level (Grade 4–6)',
+      gradeEquivalentDisplay: 'Grade 4–6 level',
       recommendedStartingModule: 'Summit Path Writing: Paragraph Structure & Editing',
       summary:
         'Combines ideas and spots run-ons. This track works on paragraph organization, precise language and editing their own drafts.',
@@ -305,7 +305,3 @@ export function buildResult(state: SessionState): PlacementResult {
   };
 }
 
-/** Coin reward is participation-based on purpose — it must not leak a score. */
-export function coinsEarned(state: SessionState): number {
-  return state.questionsAnswered.length * 10;
-}

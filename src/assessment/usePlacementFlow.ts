@@ -12,7 +12,6 @@ import { audioDefaultFor } from '../audio/speechScript';
 import {
   QUESTIONS_PER_SUBJECT,
   buildResult,
-  coinsEarned,
   createSession,
   currentSubject,
   selectNextQuestion,
@@ -47,7 +46,6 @@ interface Flow {
   questionsPerSubject: number;
   /** Position across the whole session, 1-based. */
   overallNumber: number;
-  coins: number;
   result: PlacementResult | null;
   beginIntake: () => void;
   defer: () => void;
@@ -148,7 +146,6 @@ export function usePlacementFlow(childName: string): Flow {
     questionNumber: subject ? session!.subjects[subject].answeredCount + 1 : 1,
     questionsPerSubject: QUESTIONS_PER_SUBJECT,
     overallNumber: (session?.questionsAnswered.length ?? 0) + 1,
-    coins: session ? coinsEarned(session) : 0,
     result,
     beginIntake,
     defer,

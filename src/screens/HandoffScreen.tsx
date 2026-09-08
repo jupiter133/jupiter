@@ -32,7 +32,6 @@ export function HandoffScreen({ childName, onStart }: Props) {
               </p>
               <p className="body">
                 There’s no score and nothing to get wrong — just pick what you think fits.
-                Every stop on the trail earns you coins.
               </p>
             </div>
 
