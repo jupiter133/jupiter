@@ -18,16 +18,15 @@ body {
 .app-shell {
   min-height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: var(--space-6);
-  background:
-    radial-gradient(120% 90% at 50% -10%, #1a3b2c 0%, var(--surface-canvas) 62%);
+  background: var(--surface-canvas);
 }
 
 .stage {
   width: 100%;
   max-width: 1180px;
+  /* Auto margins centre the card but let a tall one scroll instead of clipping. */
+  margin: auto;
 }
 
 .card {
@@ -71,6 +70,8 @@ body {
   min-height: 60px;
   transition: transform 120ms ease, filter 120ms ease;
 }
+
+.stack > .btn { align-self: flex-start; }
 
 .btn:active:not(:disabled) { transform: translateY(2px); }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
@@ -237,6 +238,7 @@ body {
   border-radius: var(--radius-md);
   padding: var(--space-4) var(--space-5);
   min-height: 76px;
+  box-shadow: 0 2px 0 var(--border-subtle);
   cursor: pointer;
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }
@@ -288,8 +290,8 @@ body {
 
 .celebration-art__mascot {
   position: absolute;
-  right: 0;
-  bottom: -18px;
+  right: -26px;
+  bottom: -26px;
 }
 
 .celebration-copy { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
@@ -310,8 +312,8 @@ body {
   height: 44px;
   border-radius: var(--radius-pill);
   background: var(--accent-primary);
-  border: 3px solid var(--accent-primary);
-  box-shadow: inset 0 0 0 4px var(--surface-card);
+  border: 3px solid var(--text-on-accent);
+  box-shadow: inset 0 0 0 3px var(--accent-primary-soft);
   animation: coin-rise 520ms ease-out both;
 }
 
@@ -333,10 +335,19 @@ body {
 
 /* ---------- Parent results ---------- */
 
-.results-grid {
+.subject-results {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: var(--space-6);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.subject-results > .panel { display: flex; flex-direction: column; }
+
+.results-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
   align-items: start;
 }
 
@@ -373,7 +384,7 @@ body {
 
 /* Portrait / small tablet fallback — the flow is designed for landscape. */
 @media (max-width: 900px), (orientation: portrait) {
-  .handoff, .question-body--with-passage, .results-grid, .celebration-split { grid-template-columns: 1fr; }
+  .handoff, .question-body--with-passage, .subject-results, .results-footer, .celebration-split { grid-template-columns: 1fr; }
   .options { grid-template-columns: 1fr; }
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
   .card { padding: var(--space-5); }

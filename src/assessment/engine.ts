@@ -4,23 +4,28 @@ import type {
   PlacementResult,
   Question,
   SessionState,
+  Subject,
+  SubjectPlacement,
+  SubjectState,
   Tier,
 } from './types';
-import { MAX_TIER, MIN_TIER } from './types';
+import { MAX_TIER, MIN_TIER, SUBJECT_LABEL, SUBJECT_ORDER } from './types';
 import { QUESTIONS } from './questionBank';
 
-/** Session length guardrails. */
-export const MAX_QUESTIONS = 14;
-/** Number of trailing questions that must share a tier to call placement stable. */
-export const STABILITY_WINDOW = 4;
-/** Never end before this — a stable window alone shouldn't cut a session short. */
-export const MIN_QUESTIONS = 6;
-/** Consecutive answers needed to move a tier. */
+/**
+ * Session length. Each strand gets a fixed number of questions so the total run
+ * time is predictable — roughly five minutes at ~14s per item. Length is fixed
+ * rather than cut short on a stable tier, because a consistent sitting is worth
+ * more here than shaving a question off.
+ */
+export const QUESTIONS_PER_SUBJECT = 7;
+export const TOTAL_QUESTIONS = QUESTIONS_PER_SUBJECT * SUBJECT_ORDER.length;
+/** Consecutive answers needed to move a tier, within a subject. */
 export const STREAK_TO_MOVE = 2;
 
-/** Where a child starts, by the grade the parent stated. Kindergarten–1 start
- *  at the foundation tier, 2–4 mid, 5–6 at the top. The engine moves them from
- *  there within a couple of questions if the start was wrong. */
+/** Where a child starts, by the grade the parent stated. Kindergarten–1 start at
+ *  the foundation tier, 2–4 mid, 5–6 at the top. The engine moves them from there
+ *  within a couple of questions if the start was wrong. */
 const GRADE_START_TIER: Record<Grade, Tier> = {
   K: 1,
   '1': 1,
@@ -35,14 +40,28 @@ export function startTierForGrade(grade: Grade): Tier {
   return GRADE_START_TIER[grade];
 }
 
-export function createSession(grade: Grade, now: number = Date.now()): SessionState {
+function freshSubjectState(tier: Tier): SubjectState {
   return {
-    currentTier: startTierForGrade(grade),
-    questionsAnswered: [],
+    currentTier: tier,
     consecutiveCorrect: 0,
     consecutiveIncorrect: 0,
-    startedAt: now,
+    answeredCount: 0,
     tierHistory: [],
+  };
+}
+
+export function createSession(grade: Grade, now: number = Date.now()): SessionState {
+  const startTier = startTierForGrade(grade);
+  return {
+    grade,
+    subjectIndex: 0,
+    subjects: {
+      reading: freshSubjectState(startTier),
+      math: freshSubjectState(startTier),
+      writing: freshSubjectState(startTier),
+    },
+    questionsAnswered: [],
+    startedAt: now,
     servedQuestionIds: [],
   };
 }
@@ -51,42 +70,48 @@ function clampTier(tier: number): Tier {
   return Math.min(MAX_TIER, Math.max(MIN_TIER, tier)) as Tier;
 }
 
-/**
- * Picks the next unserved question, preferring the current tier. If that tier is
- * exhausted it walks outward to the nearest tier with items left, so a short
- * placeholder bank can never dead-end the flow.
- */
-export function selectNextQuestion(state: SessionState): Question | null {
-  const served = new Set(state.servedQuestionIds);
-  const byDistance = [...QUESTIONS]
-    .filter((q) => !served.has(q.id))
-    .sort(
-      (a, b) =>
-        Math.abs(a.tier - state.currentTier) - Math.abs(b.tier - state.currentTier),
-    );
-  return byDistance[0] ?? null;
+export function currentSubject(state: SessionState): Subject | null {
+  return SUBJECT_ORDER[state.subjectIndex] ?? null;
 }
 
-/** True once the trailing window of answers has all sat at the same tier. */
-export function isTierStable(state: SessionState): boolean {
-  if (state.tierHistory.length < STABILITY_WINDOW) return false;
-  const window = state.tierHistory.slice(-STABILITY_WINDOW);
-  return window.every((t) => t === window[0]);
+/**
+ * Picks the next unserved question in the active subject, preferring that
+ * subject's current tier. If the tier is exhausted it walks outward to the
+ * nearest tier with items left, so a short placeholder bank can never dead-end
+ * the flow. Never crosses into another subject.
+ */
+export function selectNextQuestion(state: SessionState): Question | null {
+  const subject = currentSubject(state);
+  if (subject === null) return null;
+
+  const tier = state.subjects[subject].currentTier;
+  const served = new Set(state.servedQuestionIds);
+
+  const candidates = QUESTIONS.filter((q) => q.subject === subject && !served.has(q.id)).sort(
+    (a, b) => Math.abs(a.tier - tier) - Math.abs(b.tier - tier),
+  );
+  return candidates[0] ?? null;
+}
+
+/** True once the active subject has had its full allotment of questions. */
+export function isSubjectComplete(state: SessionState, subject: Subject): boolean {
+  if (state.subjects[subject].answeredCount >= QUESTIONS_PER_SUBJECT) return true;
+  // Guard against a bank too small to fill the allotment.
+  const served = new Set(state.servedQuestionIds);
+  return !QUESTIONS.some((q) => q.subject === subject && !served.has(q.id));
 }
 
 export function isSessionComplete(state: SessionState): boolean {
-  if (state.questionsAnswered.length >= MAX_QUESTIONS) return true;
-  if (selectNextQuestion(state) === null) return true;
-  if (state.questionsAnswered.length < MIN_QUESTIONS) return false;
-  return isTierStable(state);
+  return currentSubject(state) === null;
 }
 
 /**
  * Applies one answer and returns the next session state.
  *
- * Branching: two correct in a row moves up a tier, two incorrect in a row moves
- * down. Either move resets both streaks so a child needs a fresh pair at the new
- * tier before moving again.
+ * Branching, scoped to the active subject: two correct in a row moves that
+ * subject up a tier, two incorrect moves it down. Either move resets both
+ * streaks, so a fresh pair is needed at the new tier before moving again. When a
+ * subject uses up its allotment the session advances to the next strand.
  */
 export function submitAnswer(
   state: SessionState,
@@ -94,13 +119,15 @@ export function submitAnswer(
   selectedAnswerId: string,
   now: number = Date.now(),
 ): SessionState {
+  const subject = question.subject;
+  const prevSubject = state.subjects[subject];
   const wasCorrect = selectedAnswerId === question.correctAnswerId;
   const lastAnsweredAt =
-    state.questionsAnswered[state.questionsAnswered.length - 1]?.answeredAt ??
-    state.startedAt;
+    state.questionsAnswered[state.questionsAnswered.length - 1]?.answeredAt ?? state.startedAt;
 
   const record: AnsweredQuestion = {
     questionId: question.id,
+    subject,
     tier: question.tier,
     selectedAnswerId,
     wasCorrect,
@@ -108,9 +135,9 @@ export function submitAnswer(
     elapsedMs: Math.max(0, now - lastAnsweredAt),
   };
 
-  let consecutiveCorrect = wasCorrect ? state.consecutiveCorrect + 1 : 0;
-  let consecutiveIncorrect = wasCorrect ? 0 : state.consecutiveIncorrect + 1;
-  let currentTier = state.currentTier;
+  let consecutiveCorrect = wasCorrect ? prevSubject.consecutiveCorrect + 1 : 0;
+  let consecutiveIncorrect = wasCorrect ? 0 : prevSubject.consecutiveIncorrect + 1;
+  let currentTier = prevSubject.currentTier;
 
   if (consecutiveCorrect >= STREAK_TO_MOVE) {
     currentTier = clampTier(currentTier + 1);
@@ -122,50 +149,126 @@ export function submitAnswer(
     consecutiveIncorrect = 0;
   }
 
-  const next: SessionState = {
-    ...state,
+  const nextSubjectState: SubjectState = {
     currentTier,
     consecutiveCorrect,
     consecutiveIncorrect,
+    answeredCount: prevSubject.answeredCount + 1,
+    tierHistory: [...prevSubject.tierHistory, currentTier],
+  };
+
+  const next: SessionState = {
+    ...state,
+    subjects: { ...state.subjects, [subject]: nextSubjectState },
     questionsAnswered: [...state.questionsAnswered, record],
-    tierHistory: [...state.tierHistory, currentTier],
     servedQuestionIds: [...state.servedQuestionIds, question.id],
   };
+
+  if (isSubjectComplete(next, subject)) {
+    next.subjectIndex = state.subjectIndex + 1;
+  }
 
   return isSessionComplete(next) ? { ...next, finishedAt: now } : next;
 }
 
-/** Parent-facing placement language. Deliberately never exposes the tier number. */
-const TIER_PLACEMENT: Record<
-  Tier,
-  { gradeEquivalentDisplay: string; recommendedStartingModule: string; summary: string }
+/** Parent-facing placement language, per strand.
+ *  Deliberately never exposes the tier number. */
+const PLACEMENT: Record<
+  Subject,
+  Record<Tier, { gradeEquivalentDisplay: string; recommendedStartingModule: string; summary: string }>
 > = {
-  1: {
-    gradeEquivalentDisplay: 'Reading at an early primary level (Grade K–1)',
-    recommendedStartingModule: 'Trailhead: Sounds, Sight Words & First Stories',
-    summary:
-      'Your child is building the foundations — decoding words and pulling simple facts out of a short story. Starting here keeps every lesson winnable, which is what rebuilds confidence and attention.',
+  reading: {
+    1: {
+      gradeEquivalentDisplay: 'Early primary level (Grade K–1)',
+      recommendedStartingModule: 'Trailhead Reading: Sounds, Sight Words & First Stories',
+      summary:
+        'Decoding words and pulling simple facts out of a short story. Starting here keeps every lesson winnable, which is what rebuilds confidence.',
+    },
+    2: {
+      gradeEquivalentDisplay: 'Early-to-mid primary level (Grade 2–3)',
+      recommendedStartingModule: 'Ridge Trail Reading: Context Clues & Story Details',
+      summary:
+        'Reads short passages comfortably and finds details in them. The next step is inference — what a story implies rather than states.',
+    },
+    3: {
+      gradeEquivalentDisplay: 'Junior level (Grade 4–6)',
+      recommendedStartingModule: 'Summit Path Reading: Inference & Main Idea',
+      summary:
+        'Handles longer passages and reasons about why things happen. This track pushes into main idea, author’s purpose and richer vocabulary.',
+    },
   },
-  2: {
-    gradeEquivalentDisplay: 'Reading at an early-to-mid primary level (Grade 2–3)',
-    recommendedStartingModule: 'Ridge Trail: Context Clues & Story Details',
-    summary:
-      'Your child reads short passages comfortably and can find details in them. The next step is inference — figuring out what a story implies rather than states outright.',
+  math: {
+    1: {
+      gradeEquivalentDisplay: 'Early primary level (Grade K–1)',
+      recommendedStartingModule: 'Trailhead Math: Counting, Adding & Shapes',
+      summary:
+        'Working with numbers to twenty and basic shapes. Short daily practice on number facts is the fastest lever here.',
+    },
+    2: {
+      gradeEquivalentDisplay: 'Early-to-mid primary level (Grade 2–3)',
+      recommendedStartingModule: 'Ridge Trail Math: Times Tables, Fractions & Word Problems',
+      summary:
+        'Confident with multi-digit addition and starting on multiplication. Fluency with times tables unlocks most of what comes next.',
+    },
+    3: {
+      gradeEquivalentDisplay: 'Junior level (Grade 4–6)',
+      recommendedStartingModule: 'Summit Path Math: Fractions, Decimals & Multi-Step Problems',
+      summary:
+        'Handles multi-step problems and fraction reasoning. This track moves into decimals, ratios and problems with more than one operation.',
+    },
   },
-  3: {
-    gradeEquivalentDisplay: 'Reading at a junior level (Grade 4–6)',
-    recommendedStartingModule: 'Summit Path: Inference, Main Idea & Author’s Purpose',
-    summary:
-      'Your child handles longer passages and reasons about why things happen, not just what happened. This track pushes into main idea, author’s purpose and richer vocabulary.',
+  writing: {
+    1: {
+      gradeEquivalentDisplay: 'Early primary level (Grade K–1)',
+      recommendedStartingModule: 'Trailhead Writing: Capitals, Periods & Simple Sentences',
+      summary:
+        'Building sentences with correct capitals and end punctuation. This is the foundation everything else in writing sits on.',
+    },
+    2: {
+      gradeEquivalentDisplay: 'Early-to-mid primary level (Grade 2–3)',
+      recommendedStartingModule: 'Ridge Trail Writing: Complete Sentences & Word Choice',
+      summary:
+        'Writes complete sentences and is starting to punctuate lists and dialogue. Next is variety — joining ideas and choosing sharper words.',
+    },
+    3: {
+      gradeEquivalentDisplay: 'Junior level (Grade 4–6)',
+      recommendedStartingModule: 'Summit Path Writing: Paragraph Structure & Editing',
+      summary:
+        'Combines ideas and spots run-ons. This track works on paragraph organization, precise language and editing their own drafts.',
+    },
   },
 };
 
 export function buildResult(state: SessionState): PlacementResult {
-  const placement = TIER_PLACEMENT[state.currentTier];
   const finishedAt = state.finishedAt ?? Date.now();
+
+  const subjects: SubjectPlacement[] = SUBJECT_ORDER.map((subject) => {
+    const tier = state.subjects[subject].currentTier;
+    return {
+      subject,
+      finalTier: tier,
+      questionsAnswered: state.subjects[subject].answeredCount,
+      ...PLACEMENT[subject][tier],
+    };
+  });
+
+  // Overall placement is the average across strands, rounded to the nearest tier.
+  const averageTier = clampTier(
+    Math.round(subjects.reduce((sum, s) => sum + s.finalTier, 0) / subjects.length),
+  );
+  const strongest = subjects.reduce((a, b) => (b.finalTier > a.finalTier ? b : a));
+  const weakest = subjects.reduce((a, b) => (b.finalTier < a.finalTier ? b : a));
+
+  const overall =
+    strongest.finalTier === weakest.finalTier
+      ? `Your child places at a similar level across all three strands. Start with ${PLACEMENT.reading[averageTier].recommendedStartingModule.split(':')[0]} and run the three tracks together.`
+      : `Your child is strongest in ${SUBJECT_LABEL[strongest.subject].toLowerCase()} and has the most room to grow in ${SUBJECT_LABEL[weakest.subject].toLowerCase()}. Each strand starts at its own level — no single grade label fits all three.`;
+
   return {
-    finalTier: state.currentTier,
-    ...placement,
+    finalTier: averageTier,
+    gradeEquivalentDisplay: PLACEMENT.reading[averageTier].gradeEquivalentDisplay,
+    recommendedStartingModule: overall,
+    subjects,
     questionsAnswered: state.questionsAnswered.length,
     durationMs: Math.max(0, finishedAt - state.startedAt),
     history: state.questionsAnswered,

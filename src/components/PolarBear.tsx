@@ -18,6 +18,8 @@ export function PolarBear({ size = 220, mood = 'greeting', float = true }: Props
       width={size}
       height={size}
       viewBox="0 0 200 200"
+      stroke="var(--mascot-outline)"
+      strokeWidth="3"
       role="img"
       aria-label="Nanuk the polar bear, your guide"
     >

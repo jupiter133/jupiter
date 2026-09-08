@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import type { Question } from '../assessment/types';
+import type { Question, Subject } from '../assessment/types';
+import { SUBJECT_LABEL, SUBJECT_ORDER } from '../assessment/types';
 
 const OPTION_KEYS = ['A', 'B', 'C', 'D', 'E'];
 /** Beat between tapping an answer and the next question sliding in. Long enough
@@ -8,9 +9,11 @@ const TRANSITION_MS = 320;
 
 interface Props {
   question: Question;
+  subject: Subject;
+  /** Position within the active strand, 1-based. */
   questionNumber: number;
-  /** Upper bound on session length, used only to render trail progress. */
-  totalEstimate: number;
+  /** Questions in each strand, used only to render trail progress. */
+  questionsPerSubject: number;
   onAnswer: (selectedAnswerId: string) => void;
 }
 
@@ -21,7 +24,13 @@ interface Props {
  * neutrally, then the screen fades to the next question. The component holds no
  * knowledge of correctness beyond passing the choice up to the engine.
  */
-export function QuestionScreen({ question, questionNumber, totalEstimate, onAnswer }: Props) {
+export function QuestionScreen({
+  question,
+  subject,
+  questionNumber,
+  questionsPerSubject,
+  onAnswer,
+}: Props) {
   const [chosenId, setChosenId] = useState<string | null>(null);
   const [leaving, setLeaving] = useState(false);
 
@@ -39,20 +48,23 @@ export function QuestionScreen({ question, questionNumber, totalEstimate, onAnsw
   }
 
   const hasPassage = Boolean(question.passage);
-  const progress = Math.min(100, (questionNumber / totalEstimate) * 100);
+  const progress = Math.min(100, (questionNumber / questionsPerSubject) * 100);
+  const leg = SUBJECT_ORDER.indexOf(subject) + 1;
 
   return (
     <div className="stage">
       <div className="card card--tight question-screen">
         <div className="quest-bar">
-          <span className="label">Stop {questionNumber} on the trail</span>
+          <span className="label">
+            Leg {leg} · {SUBJECT_LABEL[subject]} · Stop {questionNumber}
+          </span>
           <div
             className="progress-track"
             role="progressbar"
             aria-valuenow={questionNumber}
             aria-valuemin={0}
-            aria-valuemax={totalEstimate}
-            aria-label="Quest progress"
+            aria-valuemax={questionsPerSubject}
+            aria-label={`${SUBJECT_LABEL[subject]} progress`}
           >
             <div className="progress-fill" style={{ width: `${progress}%` }} />
           </div>

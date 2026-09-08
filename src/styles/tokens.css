@@ -1,42 +1,43 @@
-/* OLC color role system.
+/* OLC color role system — light theme.
  * Roles are locked — screens reference roles only, never raw hex values.
  * Add a role here before using it anywhere in the app. */
 :root {
-  /* Surfaces — dark forest green family */
-  --surface-canvas: #0d1f18;
-  --surface-card: #143024;
-  --surface-card-raised: #1b3d2e;
-  --surface-inset: #0a1a14;
+  /* Surfaces — warm paper / field-notebook whites */
+  --surface-canvas: #f4f1e8;
+  --surface-card: #ffffff;
+  --surface-card-raised: #fbf9f3;
+  --surface-inset: #f2eee2;
 
   /* Borders / dividers */
-  --border-subtle: #24523d;
-  --border-strong: #35735a;
+  --border-subtle: #e3ddcc;
+  --border-strong: #c8bfa6;
 
-  /* Text */
-  --text-primary: #f2efe4;
-  --text-secondary: #b9cfc0;
-  --text-muted: #85a494;
-  --text-on-accent: #0d1f18;
+  /* Text — deep forest green carries the brand on light surfaces */
+  --text-primary: #17362a;
+  --text-secondary: #4a6558;
+  --text-muted: #7b8f83;
+  --text-on-accent: #17362a;
 
   /* Accents — camp lantern amber + trail moss */
-  --accent-primary: #f2b544;
-  --accent-primary-soft: rgba(242, 181, 68, 0.16);
-  --accent-secondary: #6fbf8f;
-  --accent-secondary-soft: rgba(111, 191, 143, 0.16);
+  --accent-primary: #e8a324;
+  --accent-primary-soft: #fdf3dd;
+  --accent-secondary: #2f7d55;
+  --accent-secondary-soft: #e4f2ea;
 
-  /* Mascot / snow */
-  --mascot-fur: #f7f4ea;
-  --mascot-fur-shade: #ddd7c6;
+  /* Mascot / snow — needs an outline to read against white surfaces */
+  --mascot-fur: #ffffff;
+  --mascot-fur-shade: #e8e3d4;
+  --mascot-outline: #17362a;
   --mascot-nose: #2b3a33;
 
-  /* Feedback — used for parent-facing UI only.
+  /* Feedback — parent-facing UI only.
    * There is deliberately NO error/red role available to the child flow. */
-  --info-surface: #143a30;
-  --info-text: #a7d8bf;
+  --info-surface: #e4f2ea;
+  --info-text: #2c5c45;
 
   /* Elevation */
-  --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.35);
-  --shadow-lift: 0 10px 24px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 12px 32px rgba(23, 54, 42, 0.10);
+  --shadow-lift: 0 6px 16px rgba(23, 54, 42, 0.14);
 
   /* Shape */
   --radius-sm: 10px;

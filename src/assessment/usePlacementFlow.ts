@@ -1,27 +1,46 @@
 import { useCallback, useMemo, useState } from 'react';
-import type { ParentContext, PlacementResult, Question, SessionState } from './types';
+import type {
+  ParentContext,
+  PlacementResult,
+  Question,
+  SessionState,
+  Subject,
+} from './types';
+import { SUBJECT_ORDER } from './types';
 import {
-  MAX_QUESTIONS,
+  QUESTIONS_PER_SUBJECT,
   buildResult,
   coinsEarned,
   createSession,
+  currentSubject,
   selectNextQuestion,
   submitAnswer,
 } from './engine';
 
-export type FlowStep = 'parent-context' | 'handoff' | 'question' | 'kid-complete' | 'parent-results';
+export type FlowStep =
+  | 'parent-context'
+  | 'handoff'
+  | 'section-intro'
+  | 'question'
+  | 'kid-complete'
+  | 'parent-results';
 
 interface Flow {
   step: FlowStep;
   context: ParentContext | null;
   session: SessionState | null;
+  subject: Subject | null;
   currentQuestion: Question | null;
+  /** Position within the active strand, 1-based. */
   questionNumber: number;
-  totalEstimate: number;
+  questionsPerSubject: number;
+  /** Position across the whole session, 1-based. */
+  overallNumber: number;
   coins: number;
   result: PlacementResult | null;
   submitContext: (context: ParentContext) => void;
   beginQuest: () => void;
+  startSection: () => void;
   answer: (selectedAnswerId: string) => void;
   handBackToParent: () => void;
   restart: () => void;
@@ -33,6 +52,11 @@ export function usePlacementFlow(): Flow {
   const [step, setStep] = useState<FlowStep>('parent-context');
   const [context, setContext] = useState<ParentContext | null>(null);
   const [session, setSession] = useState<SessionState | null>(null);
+
+  const subject = useMemo(
+    () => (session && !session.finishedAt ? currentSubject(session) : null),
+    [session],
+  );
 
   const currentQuestion = useMemo(
     () => (session && !session.finishedAt ? selectNextQuestion(session) : null),
@@ -47,22 +71,27 @@ export function usePlacementFlow(): Flow {
   const beginQuest = useCallback(() => {
     if (!context) return;
     setSession(createSession(context.grade));
-    setStep('question');
+    setStep('section-intro');
   }, [context]);
 
-  const answer = useCallback(
-    (selectedAnswerId: string) => {
-      setSession((prev) => {
-        if (!prev) return prev;
-        const question = selectNextQuestion(prev);
-        if (!question) return prev;
-        const next = submitAnswer(prev, question, selectedAnswerId);
-        if (next.finishedAt) setStep('kid-complete');
-        return next;
-      });
-    },
-    [],
-  );
+  const startSection = useCallback(() => setStep('question'), []);
+
+  const answer = useCallback((selectedAnswerId: string) => {
+    setSession((prev) => {
+      if (!prev) return prev;
+      const question = selectNextQuestion(prev);
+      if (!question) return prev;
+
+      const next = submitAnswer(prev, question, selectedAnswerId);
+      if (next.finishedAt) {
+        setStep('kid-complete');
+      } else if (next.subjectIndex !== prev.subjectIndex) {
+        // Strand finished — introduce the next one before resuming questions.
+        setStep('section-intro');
+      }
+      return next;
+    });
+  }, []);
 
   const handBackToParent = useCallback(() => setStep('parent-results'), []);
 
@@ -81,15 +110,20 @@ export function usePlacementFlow(): Flow {
     step,
     context,
     session,
+    subject,
     currentQuestion,
-    questionNumber: (session?.questionsAnswered.length ?? 0) + 1,
-    totalEstimate: MAX_QUESTIONS,
+    questionNumber: subject ? session!.subjects[subject].answeredCount + 1 : 1,
+    questionsPerSubject: QUESTIONS_PER_SUBJECT,
+    overallNumber: (session?.questionsAnswered.length ?? 0) + 1,
     coins: session ? coinsEarned(session) : 0,
     result,
     submitContext,
     beginQuest,
+    startSection,
     answer,
     handBackToParent,
     restart,
   };
 }
+
+export { SUBJECT_ORDER };

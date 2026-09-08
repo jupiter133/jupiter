@@ -4,6 +4,7 @@ import { KidCompletionScreen } from './screens/KidCompletionScreen';
 import { ParentContextScreen } from './screens/ParentContextScreen';
 import { ParentResultsScreen } from './screens/ParentResultsScreen';
 import { QuestionScreen } from './screens/QuestionScreen';
+import { SectionIntroScreen } from './screens/SectionIntroScreen';
 
 export default function App() {
   const flow = usePlacementFlow();
@@ -14,12 +15,17 @@ export default function App() {
 
       {flow.step === 'handoff' && <HandoffScreen onStart={flow.beginQuest} />}
 
-      {flow.step === 'question' && flow.currentQuestion && (
+      {flow.step === 'section-intro' && flow.subject && (
+        <SectionIntroScreen subject={flow.subject} onStart={flow.startSection} />
+      )}
+
+      {flow.step === 'question' && flow.currentQuestion && flow.subject && (
         <QuestionScreen
           key={flow.currentQuestion.id}
           question={flow.currentQuestion}
+          subject={flow.subject}
           questionNumber={flow.questionNumber}
-          totalEstimate={flow.totalEstimate}
+          questionsPerSubject={flow.questionsPerSubject}
           onAnswer={flow.answer}
         />
       )}
