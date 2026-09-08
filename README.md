@@ -21,8 +21,8 @@ npm run build   # typecheck + production build
 | 0 | Start — personalised invitation | Parent | `src/screens/StartScreen.tsx` |
 | 0b | Deferred — where "Maybe later" lands | Parent | `src/screens/DeferredScreen.tsx` |
 | 1 | Parent context (grade + optional learning-challenges flag) | Parent | `src/screens/ParentContextScreen.tsx` |
-| 2 | Mascot handoff — Nanuk introduces the discovery quest | Child | `src/screens/HandoffScreen.tsx` |
-| 2b | Section intro — Nanuk introduces each strand | Child | `src/screens/SectionIntroScreen.tsx` |
+| 2 | Handoff — Ms Hannah introduces the discovery quest | Child | `src/screens/HandoffScreen.tsx` |
+| 2b | Section intro — Ms Hannah introduces each strand | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
 | 4 | Completion — badge + coins, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
 | 5 | Results — grade-equivalent placement + starting module | Parent | `src/screens/ParentResultsScreen.tsx` |
@@ -51,7 +51,7 @@ profile name can be blank, and the split matters:
 - **Parent-facing** copy falls back to "your child" / "your child's", which reads
   fine in a sentence (`displayName`, `possessiveName`).
 - **Child-facing** copy uses `firstName`, which returns `null` when blank, and
-  drops the name entirely. Nanuk greeting "Hi your child!" is worse than no
+  drops the name entirely. Ms Hannah greeting "Hi your child!" is worse than no
   greeting at all.
 
 The name threads through the start screen, the intake copy, the handoff
@@ -113,7 +113,7 @@ wrong answer, and `QuestionScreen` is never told which it was.
 
 - **Answer sparkles** — a small fixed-angle burst of coins and stars on the
   tapped option. Fires on every answer; nothing about it varies by correctness.
-- **Mascot reactions** — Nanuk floats gently and blinks on the handoff and
+- **Guide reactions** — Ms Hannah floats gently and blinks on the handoff and
   section screens.
 - **Card transitions** — the question body slides out left and the next slides
   in from the right, keyed by question id, instead of a hard cut.
@@ -193,6 +193,17 @@ Item selection prefers the current tier and walks outward to the nearest tier wi
 unserved items, so a short bank can never dead-end the flow.
 
 ## Design system
+
+### Guide character
+
+**Ms Hannah**, an OLC teacher, guides the quest — `src/components/Teacher.tsx`.
+Her likeness is a **placeholder**: the four `--teacher-*` roles in `tokens.css`
+carry every colour, so real character art drops in without touching a screen.
+
+Note the split with the story artwork. The bear glyph in `glyphs.tsx` is still
+used by question illustrations (the "bear cubs" passage scene, and a vocabulary
+item), and stays a bear — only the guide character changed. Guide styling lives
+under `.guide*` classes; `--mascot-*` roles now belong to the animal artwork.
 
 `src/styles/tokens.css` holds the locked color role system — light theme: warm
 paper white surfaces, deep forest green text, lantern amber and moss accents,

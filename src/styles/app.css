@@ -142,12 +142,12 @@ body {
 .textarea::placeholder { color: var(--text-muted); }
 .textarea:focus-visible { outline: none; border-color: var(--accent-secondary); }
 
-/* ---------- Mascot ---------- */
+/* ---------- Guide character ---------- */
 
-.mascot { display: block; }
-.mascot--float { animation: mascot-float 3.4s ease-in-out infinite; }
+.guide { display: block; }
+.guide--float { animation: guide-float 3.4s ease-in-out infinite; }
 
-@keyframes mascot-float {
+@keyframes guide-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
@@ -290,7 +290,7 @@ body {
 
 .celebration-art { position: relative; display: grid; place-items: center; }
 
-.celebration-art__mascot {
+.celebration-art__guide {
   position: absolute;
   right: -26px;
   bottom: -26px;
@@ -331,7 +331,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mascot--float, .badge-pop, .coin { animation: none; }
+  .guide--float, .badge-pop, .coin { animation: none; }
 }
 
 /* ---------- Parent results ---------- */
@@ -510,9 +510,9 @@ body {
   50% { opacity: 1; }
 }
 
-/* ---------- Idle mascot life ---------- */
+/* ---------- Idle guide life ---------- */
 
-.mascot__eye {
+.guide__eye {
   transform-box: fill-box;
   transform-origin: center;
   animation: blink 5.5s infinite;
@@ -583,7 +583,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .progress-fill { transition: none; }
-  .mascot__eye,
+  .guide__eye,
   .speaker-wave--on,
   .spark { animation: none; }
   .sparkles { display: none; }

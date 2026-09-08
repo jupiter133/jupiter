@@ -9,7 +9,7 @@ import { speechRateFor, speechScriptFor } from '../audio/speechScript';
 const OPTION_KEYS = ['A', 'B', 'C', 'D', 'E'];
 /**
  * Beat between tapping an answer and the next question arriving. Long enough
- * for the sparkles and the mascot's hop to land, short enough that nobody
+ * for the sparkles to land, short enough that nobody
  * starts waiting for a verdict that is never coming.
  */
 const TRANSITION_MS = 620;

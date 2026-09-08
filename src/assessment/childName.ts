@@ -2,7 +2,7 @@
  * Name handling for a field the parent may leave blank.
  *
  * Parent-facing copy falls back to "your child", which reads fine in a sentence.
- * Child-facing copy cannot — Nanuk greeting "Hi your child!" is worse than no
+ * Child-facing copy cannot — Ms Hannah greeting "Hi your child!" is worse than no
  * greeting at all — so those screens use `firstName` and drop the name entirely
  * when there isn't one.
  */

@@ -11,7 +11,7 @@ interface Props {
 }
 
 /** Screen 1 — parent-facing. Deliberately a plain form: no gamification,
- *  no mascot. This is the only place a grown-up enters data. */
+ *  no guide character. This is the only place a grown-up enters data. */
 export function ParentContextScreen({ childName, onContinue }: Props) {
   const [grade, setGrade] = useState<Grade | null>(null);
   const [learningChallenges, setLearningChallenges] = useState('');

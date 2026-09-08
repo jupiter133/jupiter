@@ -1,4 +1,4 @@
-import { PolarBear } from '../components/PolarBear';
+import { Teacher } from '../components/Teacher';
 import type { Subject } from '../assessment/types';
 
 const COPY: Record<Subject, { eyebrow: string; heading: string; body: string; cta: string }> = {
@@ -35,7 +35,7 @@ export function SectionIntroScreen({ subject, onStart }: Props) {
     <div className="stage">
       <div className="card">
         <div className="handoff">
-          <PolarBear size={240} mood="greeting" />
+          <Teacher size={240} mood="greeting" />
           <div className="stack">
             <div className="speech-bubble stack stack--tight">
               <p className="label">{copy.eyebrow}</p>

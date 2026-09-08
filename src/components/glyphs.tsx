@@ -31,7 +31,8 @@ export type GlyphName =
   | 'fox'
   | 'river'
   | 'rope'
-  | 'match';
+  | 'match'
+  | 'teacher';
 
 const FUR = 'var(--mascot-fur)';
 const AMBER = 'var(--accent-primary)';
@@ -43,6 +44,21 @@ const SAND = 'var(--surface-inset)';
 const S = { stroke: INK, strokeWidth: 4, strokeLinejoin: 'round' as const, strokeLinecap: 'round' as const };
 
 export const GLYPHS: Record<GlyphName, ReactElement> = {
+  /** Ms Hannah's head, for avatar chips. The full figure lives in Teacher.tsx. */
+  teacher: (
+    <g {...S}>
+      <path d="M18 46a32 32 0 0 1 64 0v26l-9-5V50H27v17l-9 5z" fill="var(--teacher-hair)" />
+      <ellipse cx="50" cy="50" rx="26" ry="29" fill="var(--teacher-skin)" />
+      <path d="M24 42a26 26 0 0 1 52 0c-8-6-16 1-26 1s-18-7-26-1z" fill="var(--teacher-hair)" />
+      <g fill="none" strokeWidth="3">
+        <rect x="29" y="44" width="18" height="14" rx="6" />
+        <rect x="53" y="44" width="18" height="14" rx="6" />
+        <path d="M47 51h6" />
+      </g>
+      <path d="M42 66q8 6 16 0" fill="none" strokeWidth="3" />
+      <path d="M50 80l11 4-11 14-11-14z" fill="var(--accent-primary)" />
+    </g>
+  ),
   sun: (
     <g {...S}>
       <circle cx="50" cy="50" r="22" fill={AMBER} />

@@ -1,5 +1,5 @@
 import { Badge } from '../components/Badge';
-import { PolarBear } from '../components/PolarBear';
+import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
 
 interface Props {
@@ -25,8 +25,8 @@ export function KidCompletionScreen({ childName, coins, onHandBack }: Props) {
       <div className="card card--tight celebration-split">
         <div className="celebration-art">
           <Badge size={200} />
-          <div className="celebration-art__mascot">
-            <PolarBear size={130} mood="cheering" float={false} />
+          <div className="celebration-art__guide">
+            <Teacher size={130} mood="cheering" float={false} />
           </div>
         </div>
 
@@ -34,7 +34,7 @@ export function KidCompletionScreen({ childName, coins, onHandBack }: Props) {
           <p className="label">Quest complete</p>
           <h1 className="display">You mapped the whole trail!</h1>
           <p className="body">
-            Nanuk says {name ? `you’re officially a Trail Blazer, ${name}` : 'you’re officially a Trail Blazer'}.
+            Ms Hannah says {name ? `you’re officially a Trail Blazer, ${name}` : 'you’re officially a Trail Blazer'}.
             Every stop is on the map now.
           </p>
 

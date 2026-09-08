@@ -1,4 +1,4 @@
-import { PolarBear } from '../components/PolarBear';
+import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
 
 interface Props {
@@ -6,10 +6,10 @@ interface Props {
   onStart: () => void;
 }
 
-/** Screen 2 — the handoff. The parent passes the tablet over here, and Nanuk
+/** Screen 2 — the handoff. The parent passes the tablet over here, and Ms Hannah
  *  frames what follows as a quest. The word "test" appears nowhere. */
 export function HandoffScreen({ childName, onStart }: Props) {
-  // Child-facing copy has no fallback for a missing name — Nanuk greets by
+  // Child-facing copy has no fallback for a missing name — Ms Hannah greets by
   // name or not at all.
   const name = firstName(childName);
 
@@ -17,18 +17,18 @@ export function HandoffScreen({ childName, onStart }: Props) {
     <div className="stage">
       <div className="card">
         <div className="handoff">
-          <PolarBear size={260} mood="greeting" />
+          <Teacher size={260} mood="greeting" />
 
           <div className="stack">
             <div className="speech-bubble stack stack--tight">
               <p className="label">
                 Pass the tablet to {name ?? 'your explorer'}
               </p>
-              <h1 className="display">{name ? `Hi ${name}! I’m Nanuk.` : 'Hi! I’m Nanuk.'}</h1>
+              <h1 className="display">{name ? `Hi ${name}! I’m Ms Hannah.` : 'Hi! I’m Ms Hannah.'}</h1>
               <p className="body" style={{ color: 'var(--text-primary)' }}>
-                I’m mapping out a brand new trail, and I need a reading buddy to help me
-                explore it. We’ll read some short stories and puzzle out a few words
-                together.
+                I’m one of the teachers here, and I’ve been mapping out a brand new trail.
+                I need someone to explore it with me — we’ll read a few short stories, work
+                out some numbers, and fix up some sentences together.
               </p>
               <p className="body">
                 There’s no score and nothing to get wrong — just pick what you think fits.
@@ -40,7 +40,7 @@ export function HandoffScreen({ childName, onStart }: Props) {
               <button type="button" className="btn btn--primary" onClick={onStart}>
                 Start the discovery quest
               </button>
-              <span className="field__hint">About 10 minutes · You can stop any time</span>
+              <span className="field__hint">About 5 minutes · You can stop any time</span>
             </div>
           </div>
         </div>

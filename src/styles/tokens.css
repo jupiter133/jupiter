@@ -24,7 +24,17 @@
   --accent-secondary: #2f7d55;
   --accent-secondary-soft: #e4f2ea;
 
-  /* Mascot / snow — needs an outline to read against white surfaces */
+  /* Ms Hannah, the OLC teacher who guides the quest.
+   * Placeholder likeness — swap these four values (and the paths in
+   * Teacher.tsx) when the real character art lands. */
+  --teacher-skin: #e5aa7a;
+  --teacher-skin-shade: #cf9264;
+  --teacher-hair: #3d2a1f;
+  --teacher-top: #2f7d55;
+  --teacher-ink: #17362a;
+
+  /* Story artwork — snow and animal fur in question illustrations.
+   * Needs an outline to read against white surfaces. */
   --mascot-fur: #ffffff;
   --mascot-fur-shade: #e8e3d4;
   --mascot-outline: #17362a;

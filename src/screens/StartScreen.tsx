@@ -21,7 +21,7 @@ export function StartScreen({ childName, onStart, onDefer }: Props) {
         <h1 className="display start__headline">
           What lesson should{' '}
           <span className="avatar-chip" aria-hidden="true">
-            <Glyph name="bearcub" size={44} />
+            <Glyph name="teacher" size={44} />
           </span>{' '}
           {displayName(childName)} begin at?
         </h1>

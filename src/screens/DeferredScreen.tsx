@@ -1,4 +1,4 @@
-import { PolarBear } from '../components/PolarBear';
+import { Teacher } from '../components/Teacher';
 
 interface Props {
   onResume: () => void;
@@ -13,7 +13,7 @@ export function DeferredScreen({ onResume }: Props) {
   return (
     <div className="stage stage--narrow">
       <div className="start">
-        <PolarBear size={180} mood="greeting" />
+        <Teacher size={180} mood="greeting" />
         <h1 className="title">No rush — the trail isn’t going anywhere.</h1>
         <p className="body start__sub">
           You can run the discovery quest whenever it suits. It works best when your child
