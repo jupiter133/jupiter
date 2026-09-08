@@ -1,6 +1,7 @@
 import type { ParentContext, PlacementResult } from '../assessment/types';
 import { SUBJECT_LABEL } from '../assessment/types';
 import { displayName, possessiveName } from '../assessment/childName';
+import { STRAND_TAG, Tag } from '../components/Tag';
 
 interface Props {
   context: ParentContext;
@@ -8,15 +9,13 @@ interface Props {
   onRestart: () => void;
 }
 
-/** The overall read across strands. Lives here, not in the engine, because it
- *  is the only layer that knows the child's name. */
-function overallSummary(childName: string, result: PlacementResult): string {
+/** The one-line read across strands. Lives here, not in the engine, because
+ *  this is the only layer that knows the child's name. */
+function strandSummary(childName: string, result: PlacementResult): string {
   const { even, strongest, weakest } = result.profile;
   const name = displayName(childName);
-  if (even) {
-    return `${name} places at a similar level across all three strands. Start with ${result.recommendedStartingModule} and run the three tracks together.`;
-  }
-  return `${name} is strongest in ${SUBJECT_LABEL[strongest].toLowerCase()} and has the most room to grow in ${SUBJECT_LABEL[weakest].toLowerCase()}. Each strand starts at its own level — no single grade label fits all three.`;
+  if (even) return `${name} placed at a similar level in all three strands.`;
+  return `${name} is strongest in ${SUBJECT_LABEL[strongest].toLowerCase()} and has the most room to grow in ${SUBJECT_LABEL[weakest].toLowerCase()}. Inside the program, each strand is paced to ${possessiveName(childName)} own level.`;
 }
 
 function formatDuration(ms: number): string {
@@ -30,19 +29,18 @@ function formatDuration(ms: number): string {
 /**
  * Screen 5 — parent-facing results.
  *
- * Shows grade-equivalent placement language per strand and a recommended
- * starting module for each. The internal tier number is intentionally never
- * rendered; it stays in the result object for the app to consume.
- *
- * Budgeted to fit the tablet screen without scrolling: three strand cards in a
- * row, session facts as a single chip strip rather than a stacked panel.
+ * Leads with the one thing a parent needs: the program the child is placed
+ * into, with its grade-equivalent level and the button that starts it. The
+ * per-strand breakdown follows as three scannable rows — it explains the
+ * placement, it is not a second decision. Tier numbers are never rendered.
  */
 export function ParentResultsScreen({ context, result, onRestart }: Props) {
+  const name = displayName(context.childName);
+  const { program } = result;
   const facts: [string, string][] = [
     ['Grade', context.grade],
     ['Questions', String(result.questionsAnswered)],
     ['Time on task', formatDuration(result.durationMs)],
-    ['Strands', 'Reading · Math · Writing'],
   ];
 
   return (
@@ -50,25 +48,47 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
       <div className="card card--tight results">
         <div className="stack stack--tight">
           <p className="label">Discovery quest complete · For the grown-up</p>
-          <h1 className="title">Here’s where {displayName(context.childName)} is starting</h1>
-          <p className="body body--sm">{overallSummary(context.childName, result)}</p>
+          <h1 className="title">{possessiveName(context.childName)} placement</h1>
         </div>
 
-        <div className="subject-results">
-          {result.subjects.map((placement) => (
-            <div key={placement.subject} className="panel panel--strand" data-strand={placement.subject}>
-              <p className="label">{SUBJECT_LABEL[placement.subject]}</p>
-              <h2 className="heading heading--sm">{placement.gradeEquivalentDisplay}</h2>
-              <p className="body body--sm">{placement.summary}</p>
-              <div className="start-here">
-                <span className="label">Start here</span>
-                <span className="start-here__module">{placement.recommendedStartingModule}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* The decision. One program, one button. */}
+        <section className="program-hero" aria-labelledby="program-name">
+          <div className="program-hero__body">
+            <p className="label program-hero__eyebrow">{name} is placed in</p>
+            <h2 id="program-name" className="display program-hero__name">
+              {program.name}
+            </h2>
+            <p className="program-hero__level">
+              Working at a <strong>{program.gradeEquivalentDisplay}</strong> overall
+            </p>
+            <p className="body body--sm program-hero__desc">{program.description}</p>
+          </div>
+          <button type="button" className="btn btn--primary btn--large program-hero__cta" onClick={onRestart}>
+            Start {program.name}
+          </button>
+        </section>
 
-        <div className="results-meta">
+        {/* The reasoning, beside the session facts on a landscape tablet. */}
+        <div className="results-body">
+        <section className="strands" aria-labelledby="strands-heading">
+          <div className="strands__head">
+            <h3 id="strands-heading" className="heading heading--sm">How {name} did by strand</h3>
+            <p className="body body--sm">{strandSummary(context.childName, result)}</p>
+          </div>
+          <ul className="strand-list">
+            {result.subjects.map((placement) => (
+              <li key={placement.subject} className="strand-row" data-strand={placement.subject}>
+                <div className="strand-row__head">
+                  <Tag color={STRAND_TAG[placement.subject]}>{SUBJECT_LABEL[placement.subject]}</Tag>
+                  <span className="strand-row__level">{placement.gradeEquivalentDisplay}</span>
+                </div>
+                <p className="body body--sm strand-row__summary">{placement.summary}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <aside className="results-meta">
           <dl className="fact-strip">
             {facts.map(([term, value]) => (
               <div key={term} className="fact">
@@ -77,21 +97,15 @@ export function ParentResultsScreen({ context, result, onRestart }: Props) {
               </div>
             ))}
           </dl>
-
           <p className="note">
             {context.learningChallenges
-              ? `You told us: “${context.learningChallenges}” — we’ve flagged this on ${possessiveName(context.childName)} profile so lesson length and repetition adjust through the tracks.`
-              : `We don’t show ${displayName(context.childName)} a score, and we don’t recommend sharing one. Placement moves as they learn — it’s a starting point, not a label.`}
+              ? `You told us: “${context.learningChallenges}” — we’ve flagged this on ${possessiveName(context.childName)} profile so lesson length and repetition adjust as ${name} goes.`
+              : `We don’t show ${name} a score, and we don’t recommend sharing one. Placement moves as they learn — it’s a starting point, not a label.`}
           </p>
-        </div>
-
-        <div className="results-actions">
-          <button type="button" className="btn btn--ghost" onClick={onRestart}>
-            Start over
+          <button type="button" className="text-btn text-btn--sm" onClick={onRestart}>
+            Run the quest again
           </button>
-          <button type="button" className="btn btn--primary" onClick={onRestart}>
-            Start these tracks
-          </button>
+        </aside>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import type {
   AnsweredQuestion,
   Grade,
   PlacementResult,
+  ProgramPlacement,
   Question,
   SessionState,
   Subject,
@@ -239,6 +240,32 @@ const PLACEMENT: Record<
   },
 };
 
+/**
+ * The three programs. A child is placed into exactly one, decided by the
+ * average tier across strands; inside the program each strand is paced to
+ * the child's own level, which is what the per-strand breakdown is for.
+ */
+const PROGRAMS: Record<Tier, Omit<ProgramPlacement, 'tier'>> = {
+  1: {
+    name: 'Trailhead',
+    gradeEquivalentDisplay: 'Grade K–1 level',
+    description:
+      'Our foundations program: letters and sounds, numbers to twenty, and first sentences. Short daily lessons that keep every step winnable.',
+  },
+  2: {
+    name: 'Ridge Trail',
+    gradeEquivalentDisplay: 'Grade 2–3 level',
+    description:
+      'Our core program: reading for detail, times tables and fractions, and writing complete sentences. Lessons build in inference and word choice.',
+  },
+  3: {
+    name: 'Summit Path',
+    gradeEquivalentDisplay: 'Grade 4–6 level',
+    description:
+      'Our junior program: main idea and author’s purpose, multi-step problems and decimals, and paragraph structure and editing.',
+  },
+};
+
 export function buildResult(state: SessionState): PlacementResult {
   const finishedAt = state.finishedAt ?? Date.now();
 
@@ -259,13 +286,13 @@ export function buildResult(state: SessionState): PlacementResult {
   const strongest = subjects.reduce((a, b) => (b.finalTier > a.finalTier ? b : a));
   const weakest = subjects.reduce((a, b) => (b.finalTier < a.finalTier ? b : a));
 
+  const program: ProgramPlacement = { tier: averageTier, ...PROGRAMS[averageTier] };
+
   return {
     finalTier: averageTier,
-    gradeEquivalentDisplay: PLACEMENT.reading[averageTier].gradeEquivalentDisplay,
-    // Track name only — the screen writes the sentence, since only it knows
-    // the child's name.
-    recommendedStartingModule:
-      PLACEMENT.reading[averageTier].recommendedStartingModule.split(':')[0],
+    gradeEquivalentDisplay: program.gradeEquivalentDisplay,
+    recommendedStartingModule: program.name,
+    program,
     profile: {
       even: strongest.finalTier === weakest.finalTier,
       strongest: strongest.subject,

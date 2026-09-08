@@ -158,12 +158,23 @@ export interface StrandProfile {
   weakest: Subject;
 }
 
+/** The one program the child is placed into. Parent-facing language only —
+ *  the tier number stays internal. */
+export interface ProgramPlacement {
+  tier: Tier;
+  name: string;
+  gradeEquivalentDisplay: string;
+  /** What the program is, in one sentence a parent can act on. */
+  description: string;
+}
+
 export interface PlacementResult {
-  /** Rounded average across strands — drives the overall starting point. */
+  /** Rounded average across strands — decides the program. */
   finalTier: Tier;
   gradeEquivalentDisplay: string;
-  /** Overall track name, e.g. "Trailhead". */
+  /** The program name — kept for the original output contract. */
   recommendedStartingModule: string;
+  program: ProgramPlacement;
   profile: StrandProfile;
   subjects: SubjectPlacement[];
   questionsAnswered: number;

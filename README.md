@@ -190,8 +190,14 @@ Static rules, no ML or adaptive model. See `src/assessment/engine.ts`.
 Tracked per session: final tier per strand, full answer history (question id,
 subject, tier, choice, correctness, per-item elapsed time), and session duration.
 
-The parent results screen shows placement per strand and calls out the strongest
-and weakest when they differ, rather than flattening everything into one label.
+**A child is placed into exactly one program.** The average tier across the
+three strands decides it — Trailhead (Grade K–1 level), Ridge Trail (Grade
+2–3) or Summit Path (Grade 4–6) — and `result.program` carries the name,
+grade-equivalent level and a one-sentence description. The parent results
+screen leads with that: the program, its level, and the one button that starts
+it. The per-strand breakdown follows as three colour-keyed rows and explains
+the placement (strongest / weakest, and that each strand is paced to the
+child's own level inside the program); it is not a second decision.
 
 ## Content
 

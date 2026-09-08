@@ -205,6 +205,20 @@ describe('result', () => {
     expect(result.history).toHaveLength(TOTAL_QUESTIONS);
   });
 
+  it('places the child into exactly one program, from the average tier', () => {
+    // Ace reading (tier 3), bomb math and writing (tier 1): average 5/3 → 2.
+    let s = createSession('3');
+    while (currentSubject(s) === 'reading') s = answer(s, true);
+    while (!s.finishedAt) s = answer(s, false);
+    const result = buildResult(s);
+
+    expect(result.program.tier).toBe(result.finalTier);
+    expect(result.program.name).toBe('Ridge Trail');
+    expect(result.recommendedStartingModule).toBe(result.program.name);
+    expect(result.program.gradeEquivalentDisplay).not.toMatch(/tier/i);
+    expect(result.program.description.length).toBeGreaterThan(0);
+  });
+
   it('surfaces an uneven profile when strands differ', () => {
     // Ace reading, bomb math and writing.
     let s = createSession('3');
