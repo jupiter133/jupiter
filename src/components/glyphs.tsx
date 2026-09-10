@@ -47,16 +47,20 @@ export const GLYPHS: Record<GlyphName, ReactElement> = {
   /** Ms Hannah's head, for avatar chips. The full figure lives in Teacher.tsx. */
   teacher: (
     <g {...S}>
-      <path d="M18 46a32 32 0 0 1 64 0v26l-9-5V50H27v17l-9 5z" fill="var(--teacher-hair)" />
+      <path d="M18 46a32 32 0 0 1 64 0v30c0 8-4 14-10 18l-4-12-4 14c-6 3-10 4-14 4s-8-1-14-4l-4-14-4 12c-6-4-10-10-10-18z" fill="var(--teacher-hair)" />
       <ellipse cx="50" cy="50" rx="26" ry="29" fill="var(--teacher-skin)" />
-      <path d="M24 42a26 26 0 0 1 52 0c-8-6-16 1-26 1s-18-7-26-1z" fill="var(--teacher-hair)" />
+      <path d="M24 44a26 26 0 0 1 52 0c-4-7-11-5-18-3-8 3-15 5-22 4-5-1-9 0-12-1z" fill="var(--teacher-hair)" />
+      <g fill="var(--teacher-skin-shade)" stroke="none">
+        <circle cx="36" cy="61" r="1.2" /><circle cx="40" cy="64" r="1.2" /><circle cx="60" cy="61" r="1.2" /><circle cx="64" cy="64" r="1.2" />
+      </g>
       <g fill="none" strokeWidth="3">
-        <rect x="29" y="44" width="18" height="14" rx="6" />
-        <rect x="53" y="44" width="18" height="14" rx="6" />
-        <path d="M47 51h6" />
+        <circle cx="39" cy="52" r="9" />
+        <circle cx="61" cy="52" r="9" />
+        <path d="M48 52h4" />
       </g>
       <path d="M42 66q8 6 16 0" fill="none" strokeWidth="3" />
-      <path d="M50 80l11 4-11 14-11-14z" fill="var(--accent-gold)" />
+      <path d="M30 96a20 20 0 0 1 40 0z" fill="var(--teacher-top)" />
+      <path d="M42 84h16v12H42z" fill="var(--teacher-blouse)" />
     </g>
   ),
   sun: (

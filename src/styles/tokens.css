@@ -145,10 +145,15 @@
   --info-text: #1487B8;
 
   /* Ms Hannah — placeholder likeness, brand green top, gold neckerchief */
-  --teacher-skin: #E5AA7A;
-  --teacher-skin-shade: #CF9264;
-  --teacher-hair: #3D2A1F;
-  --teacher-top: var(--olc-green);
+  /* Ms Hannah, matched to the character reference: auburn waves, round
+   * glasses, freckles, white blouse under a mustard cardigan. */
+  --teacher-skin: #F2CBA8;
+  --teacher-skin-shade: #E0B08A;
+  --teacher-hair: #A0491F;
+  --teacher-hair-shade: #7E3614;
+  --teacher-top: #D9A441;
+  --teacher-top-shade: #B8842C;
+  --teacher-blouse: #FFFFFF;
   --teacher-ink: var(--olc-ink);
 
   /* Story artwork — snow and fur in question illustrations */

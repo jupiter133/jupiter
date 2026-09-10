@@ -27,8 +27,8 @@ export function HandoffScreen({ childName, onStart }: Props) {
               <h1 className="display">{name ? `Hi ${name}! I’m Ms Hannah.` : 'Hi! I’m Ms Hannah.'}</h1>
               <p className="body" style={{ color: 'var(--text-primary)' }}>
                 I’m one of the teachers here, and I’ve been mapping out a brand new trail.
-                I need someone to explore it with me — we’ll read a few short stories, work
-                out some numbers, and fix up some sentences together.
+                I need someone to explore it with me — we’ll read a few short stories, spell
+                some words, fix up some sentences, and work out some numbers together.
               </p>
               <p className="body">
                 There’s no score and nothing to get wrong — just pick what you think fits.
