@@ -61,7 +61,7 @@ export function ParentResultsScreen({
           <section className="program-hero" aria-labelledby="program-name">
             <p className="label program-hero__eyebrow">{name} is placed in</p>
             <h2 id="program-name" className="display program-hero__name">
-              {program.name}
+              {program.name.replace(/(\d)-(\d)/, '$1\u2011$2')}
             </h2>
             <p className="program-hero__level">{program.gradeEquivalentDisplay}</p>
             <button
@@ -126,26 +126,27 @@ export function ParentResultsScreen({
           </ul>
         </section>
 
-        {readingGated && (
-          <p className="note">
-            Reading comes first. {name} is reading below a Grade 3 level, and spelling,
-            writing and math all sit on top of reading — a spelling question a child
-            cannot read is a reading question. So the other three are recorded as
-            observations, not levels, and get measured once reading is solid.
-          </p>
-        )}
+        <div className="notes">
+          {readingGated && (
+            <p className="note">
+              Reading comes first. {name} is reading below a Grade 3 level, and spelling,
+              writing and math all sit on top of reading — so the other three are recorded as
+              observations, not levels, and get measured once reading is solid.
+            </p>
+          )}
 
-        {result.ageGradeMismatch && (
-          <p className="note">
-            Flagged for teacher review: {possessiveName(context?.childName ?? childName)} age
-            and grade are two or more years apart. Placement is measured against grade, so a
-            teacher will confirm this is the right comparison before the program starts.
-          </p>
-        )}
+          {result.ageGradeMismatch && (
+            <p className="note">
+              Flagged for teacher review: {possessiveName(context?.childName ?? childName)} age
+              and grade are two or more years apart. A teacher will confirm the grade is the
+              right comparison before the program starts.
+            </p>
+          )}
 
-        <p className="note">
-          We don’t show {name} a score. Placement is a starting point, not a label.
-        </p>
+          <p className="note">
+            {name} never sees a score. Placement is a starting point, not a label.
+          </p>
+        </div>
         </div>
         </div>
 
