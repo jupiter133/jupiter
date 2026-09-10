@@ -61,8 +61,8 @@ Landscape phones have width and no height, so the art sits beside the question
 instead of above it, answers pack rather than stretch, and the heading drops a
 size. Only the parent intake form and results scroll there.
 
-`scratchpad/audit4.mjs` walks both placement paths (a K child and a Grade 4–6
-child across all three sittings) at 1024x768 and 390x844
+`scratchpad/audit5.mjs` walks the whole flow (all four sittings, several
+age/grade pairings) at 1024x768, 768x1024 and 390x844
 and reports horizontal scroll, side gutters, a stage that isn't exactly the
 viewport, vertical overflow (allowed on phones for parent pages), dead space
 under the answer grid, auto-read firing unasked, or an answer speaker that
@@ -96,16 +96,16 @@ falls back to the start screen.
 
 Presentation is a **separate axis from difficulty**. The tier decides *what* a
 child is asked; the age band decides *how* it looks. The band is fixed for the
-session by the grade the parent entered on screen 1 — so a Grade 5 child who
-drops to tier 1 still gets the senior presentation, rather than being handed
+session by the **age** the parent entered on screen 1 — so an eleven-year-old
+who drops to tier 1 still gets the senior presentation, rather than being handed
 cartoon bunnies.
 
-| Band | Grades | Illustration | Wording | Answers |
-|------|--------|-------------|---------|---------|
-| `junior` | K–3 | Leads the layout — full art panel, scene above each passage | `questionTextJunior` — short, plain, early-primary vocabulary | Picture answers where they help; larger tap targets |
-| `senior` | 4–6 | Supports the text — smaller, quieter, no card of its own | `questionText` — fuller phrasing | Word answers only; picture answers suppressed |
+| Band | Age | Illustration | Wording | Answers |
+|------|-----|-------------|---------|---------|
+| `junior` | 8 and under | Leads the layout — full art panel, scene above each passage | `questionTextJunior` — short, plain, early-primary vocabulary | Picture answers where they help; larger tap targets |
+| `senior` | 9 and up | Supports the text — smaller, quieter, no card of its own | `questionText` — fuller phrasing | Word answers only; picture answers suppressed |
 
-`ageBandForGrade()` in `src/assessment/types.ts` owns the split.
+`ageBandForAge()` in `src/assessment/intake.ts` owns the split.
 
 Illustrations are inline SVG, drawn from a shared glyph set in
 `src/components/glyphs.tsx` and composed by `src/components/Illustration.tsx`.
@@ -125,10 +125,11 @@ child likes — each press restarts the narration rather than queueing behind th
 last one. A second control toggles auto-read, which fires the narration on every
 new question.
 
-- **Auto-read is on by default for K–3** and off for Grade 4–6
-  (`audioDefaultFor()` in `src/audio/speechScript.ts`). Many K–3 children cannot
-  read the question they are being asked; by Grade 4 they can, and unasked
-  narration is noise in a shared room.
+- **Auto-read is on by default for the junior band** (age 8 and under) and off
+  for senior (`audioDefaultFor()` in `src/audio/speechScript.ts`). Many younger
+  children cannot read the question they are being asked; older ones can, and
+  unasked narration is noise in a shared room. A floored sitting forces it on
+  whatever the age.
 - **Every answer has its own speaker.** Tapping it reads that option without
   choosing it — the answer and its speaker are sibling buttons, not nested,
   so the speaker can fire independently and the markup stays valid.
@@ -172,41 +173,156 @@ instantly, sparkles are removed entirely, and nothing about the flow is lost.
 - Celebration animations and narration are correctness-blind by construction —
   the question screen never receives whether the answer was right.
 
-## Subjects by grade
+## Intake: age and grade do different jobs
 
-Which subjects a child sits is decided by grade, in `subjectsForGrade()`.
+Screen 1 asks for **both**, and they are never used interchangeably
+(`src/assessment/intake.ts`).
 
-| Grade | Subjects | Questions | Read-aloud | Presentation |
-|-------|----------|-----------|-----------|--------------|
-| K–1 | Reading only | 8 | **On** by default | Art-led, picture answers |
-| 2–3 | Reading only | 8 | **On** by default | Art-supported |
-| 4–6 | Reading, then math, then writing | 8 each | **Off** by default, toggle available | Text-led, art supports |
+- **Grade drives placement.** Every "grades behind" figure is measured against
+  it, and it picks the Core Skills band (1–3 vs 4–6). Nothing else.
+- **Age drives presentation.** Read-aloud default, art-led vs text-led layout,
+  tone, session length. It never touches the placement.
 
-**Math and writing are never served below Grade 4.** A seven-year-old's writing
-score would measure handwriting stamina and reading ability rather than writing,
-and placing on that is worse than not placing.
+A nine-year-old in Grade 2 is measured against Grade 2 and shown the older
+child's screen. Neither fact is allowed to contaminate the other.
+
+When age and grade are **two or more years apart either way**, the result is
+flagged for teacher review on the parent screen rather than quietly absorbed —
+held back, started late, newly arrived, skipped ahead. The placement is only as
+good as the grade it is measured against, so a human confirms the comparison.
+
+## Subjects
+
+**Every child sits all four subjects, in this order: reading, spelling,
+writing, math.** Nobody is stopped early. A result we did not gather is a result
+a teacher cannot look at.
+
+Reading goes first because it is what the other three are built on. If reading
+comes in below a Grade 3 level, the child is placed on the Reading track
+whatever the later sittings say — those sittings still run, and their results
+are recorded and flagged as **non-determining** (see below).
+
+Spelling is assessed **separately from writing**, with its own tier-tagged bank,
+and feeds the gate as an input rather than sitting on the results page as
+decoration. The current spelling bank is a **stub** — 27 correct-spelling-choice
+items across tiers 0–8 — pending real content.
 
 Skills by band, per the content plan:
 
-- **K–1 reading:** letter-sound recognition, phonemic awareness, sight words.
-- **2–3 reading:** decoding, fluency, literal comprehension (what happened, who
-  did what).
-- **4–6 reading:** vocabulary in context, inferential comprehension, main idea,
-  sequencing — passage-based.
-- **4–6 math:** number sense and operations, fractions and decimals,
-  measurement, word problems. Word problems stay light on purpose: a wordy math
-  item doubles as a reading test.
-- **4–6 writing:** multiple choice on sub-skills only, no open response —
+- **Early reading:** letter-sound recognition, phonemic awareness, sight words.
+- **Middle reading:** decoding, fluency, literal comprehension.
+- **Upper reading:** vocabulary in context, inference, main idea, sequencing —
+  passage-based.
+- **Math:** number sense and operations, fractions and decimals, measurement,
+  word problems. Word problems stay light on purpose: a wordy math item doubles
+  as a reading test.
+- **Writing:** multiple choice on sub-skills only, no open response —
   punctuation and capitalization, complete sentence vs fragment, word choice,
   paragraph sequencing.
+- **Spelling:** pick the correctly spelled word. Stub content.
+
+## The priority gate
+
+Placement is **one program**, chosen by an ordered gate — not an average of four
+subject scores. Averaging a Grade 1 reading level with a Grade 5 math level
+produces a Grade 3 child who does not exist.
+
+The gate runs on **gap**, not on tier: `gap = assessed tier − grade tier`.
+"More than one grade behind" means `gap ≤ −2`. See `src/assessment/gate.ts`.
+
+Rules are evaluated in order and **the first match wins**:
+
+| # | Condition | Outcome |
+|---|-----------|---------|
+| 1 | Reading below a **Grade 3 level** (absolute, not gap) | Reading track |
+| 2 | Reading more than one grade behind | Core Skills Reading |
+| 3 | Reading within one grade **and** writing or spelling more than one behind | Core Skills Writing |
+| 4 | Reading, writing and spelling all within one grade **and** math more than one behind | Core Skills Math |
+| 5 | All four within one grade | Core Skills Enriched |
+
+Two **hard blocks** fall out of that order, and are asserted by an exhaustive
+test sweeping every gap combination from −3 to +1 across all four subjects and
+all seven grades:
+
+- Never Writing when reading is more than one grade behind.
+- Never Math unless reading, writing **and** spelling are all within one grade.
+
+Steps 3 and 4 restate their predecessors' conditions rather than relying on
+falling through, so each rule is true on its own terms and the blocks hold even
+if the order is ever edited.
+
+**Math content level is set by grade, never by assessed math tier**
+(`mathContentLevel` on the result). The assessed math tier only feeds gate
+step 4.
+
+### A consequence worth knowing
+
+Step 1 reads an **absolute** level. A child in Grade K, 1 or 2 who is reading
+*at* grade level is by definition reading below a Grade 3 level, so they route
+to the Reading track. Gate steps 2–5 are only reachable by a Grade 3+ child, or
+by a younger child reading ahead. That is what the specified rules say; it is
+flagged here because the parent-facing copy has to make sense for a Grade 1
+family who did nothing wrong.
+
+### Program names
+
+All names live in `src/assessment/programs.ts` as config tables, not as strings
+scattered through the code. **They are placeholders pending a naming decision.**
+
+| Band | Gate outcome | Program |
+|------|--------------|---------|
+| Reading track | step 1 | Core Reading 1–6 |
+| Grades 1–3 | reading *or* writing | Core Skills Reading and Writing 1-3 |
+| Grades 1–3 | math | Core Skills Math 1-3 |
+| Grades 1–3 | enriched | Core Skills Enriched 1-3 |
+| Grades 4–6 | reading | Core Skills Reading 4-6 |
+| Grades 4–6 | writing | Core Skills Writing 4-6 |
+| Grades 4–6 | math | Core Skills Math 4-6 |
+| Grades 4–6 | enriched | Core Skills Enriched 4-6 |
+
+The 1–3 band has **no separate reading and writing planners** — gate steps 2 and
+3 both resolve to the one combined planner. Kindergarten folds into the 1–3
+band. Both are **flagged for teacher sign-off**.
+
+Which of the six **Core Reading** levels a gated child lands on is
+`CORE_READING_LEVEL_BY_TIER` — also a placeholder, also **flagged for teacher
+sign-off**. Only tiers 0, 1 and 2 can reach the Reading track, so three tiers
+have to address six levels; separating all six needs a finer measure than the
+tier alone, which is a content decision, not a code one.
+
+## Floored sittings
+
+When reading gates, the spelling, writing and math sittings still run, but:
+
+- they **start at the lowest tier** rather than the grade tier,
+- adaptive branching still moves **upward**, so a child who can spell climbs
+  out,
+- there is no downward move — the floor is already the bottom,
+- **read-aloud is forced on**, whatever the age band.
+
+A Grade 5 spelling question put to a child reading at a Grade 1 level measures
+the reading, not the spelling, and hands them eight straight failures on the way
+down.
+
+A floored result is never fed to the gate, and never rendered as a level.
+
+## Non-determining results
+
+Every subject result carries a `nonDetermining` flag. It is set when the sitting
+was floored, or when the gate stopped before reading that subject. Downstream
+views **must not** present a non-determining result as a measured level — the
+parent screen shows those rows as observations, with copy explaining that
+reading is the foundation.
 
 ## Sessions
 
-- **K–3:** one session, reading, done.
-- **Grade 4–6:** **one subject per session**, not all three in a sitting.
-  Progress is stored between sessions, so returning picks up at the next subject
-  without re-asking the intake questions — the start screen reads "Continue
-  <name>'s placement" and names what is next.
+**One subject per session**, four sessions, in order: reading, spelling,
+writing, math. They are not run in one block — that is 32 questions for a child
+who was promised five minutes.
+
+Progress is stored between sessions, so returning picks up at the next subject
+without re-asking the intake questions; the start screen reads "Continue
+<name>'s placement" and names what is next.
 
 `src/assessment/placementStore.ts` is the seam. In the host app this is the
 child's profile record on the server; the demo build keeps it in `localStorage`
@@ -220,7 +336,8 @@ Static rules, no ML or adaptive model. See `src/assessment/engine.ts`.
   grades past Grade 6 so a strong Grade 6 child has somewhere to go — otherwise
   the ceiling, not the child, is what the result measures. Tier 0 gives a
   struggling Grade 4 room to fall.
-- The sitting starts at the child's grade tier (`K → 0`, `Grade n → n`).
+- The sitting starts at the child's grade tier (`K → 0`, `Grade n → n`) —
+  except a floored sitting, which starts at tier 0.
 - **2 correct in a row → serve the next question one tier up.**
   **2 incorrect in a row → one tier down.** Either move resets both streaks, so
   a fresh pair is needed at the new tier before moving again.
@@ -235,9 +352,9 @@ parent-facing label ever contains the word "tier".
 
 ## Content
 
-`src/content/questionBank.json` — placeholder bank: 88 items tagged by subject
-and tier, covering **every tier 0–8 in all three subjects** (at least 3 per
-cell). Subject and tier data live in the JSON, so dropping in the real bank
+`src/content/questionBank.json` — placeholder bank: 115 items tagged by subject
+and tier, covering **every tier 0–8 in all four subjects** (at least 3 per
+cell). Spelling is a stub. Subject and tier data live in the JSON, so dropping in the real bank
 needs no engine change.
 
 Production content should carry **6+ items per subject/tier cell**. A sitting
@@ -248,7 +365,7 @@ correct behaviour, but it serves an item one tier off the session's tier.
 Writing items are multiple choice — editing and grammar judgements rather than
 free-form composition — so the strand stays auto-scorable in this pass.
 
-Tier 0–3 items (what a K–3 child sees) lean on art and picture answers; tier 4+
+Tier 0–3 items lean on art and picture answers; tier 4+
 items are text-forward. A test keeps junior wording inside an early-primary
 vocabulary.
 

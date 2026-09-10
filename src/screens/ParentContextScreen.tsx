@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import type { Grade, ParentContext } from '../assessment/types';
+import { MAX_AGE, MIN_AGE, hasAgeGradeMismatch } from '../assessment/types';
 import { displayName, possessiveName } from '../assessment/childName';
 
 const GRADES: Grade[] = ['K', '1', '2', '3', '4', '5', '6'];
+const AGES: number[] = Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, i) => MIN_AGE + i);
 
 interface Props {
   /** Collected on the start screen; carried through, not re-asked. */
@@ -13,7 +15,11 @@ interface Props {
 /** Screen 1 — parent-facing. Deliberately a plain form: no gamification,
  *  no guide character. This is the only place a grown-up enters data. */
 export function ParentContextScreen({ childName, onContinue }: Props) {
+  const [age, setAge] = useState<number | null>(null);
   const [grade, setGrade] = useState<Grade | null>(null);
+  // Shown, never blocking: an unusual pairing is a fact about the child, not an
+  // input error, and the parent is the one who knows why.
+  const mismatch = age !== null && grade !== null && hasAgeGradeMismatch(age, grade);
   const [learningChallenges, setLearningChallenges] = useState('');
 
   return (
@@ -23,9 +29,34 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
           <p className="label">Step 1 of 2 · For the grown-up</p>
           <h1 className="title">Let’s find {possessiveName(childName)} starting point</h1>
           <p className="body">
-            Two quick questions, then we’ll hand the tablet over for a short reading, math
-            and writing activity. It takes about five minutes and there is no pass or fail.
+            A few quick questions, then we’ll hand the tablet over.{' '}
+            {displayName(childName)} does four short activities — reading, spelling, writing and math — one at a
+            time, and can stop and pick up again whenever. There is no pass or fail.
           </p>
+        </div>
+
+        <div className="intake-pair">
+        <div className="field">
+          <label className="heading" id="age-label">
+            How old is {displayName(childName)}?
+          </label>
+          <span className="field__hint">
+            Age sets how the activity looks and sounds — how much is read aloud, how much
+            is pictures. It never changes what we place {displayName(childName)} in.
+          </span>
+          <div className="grade-grid grade-grid--age" role="group" aria-labelledby="age-label">
+            {AGES.map((a) => (
+              <button
+                key={a}
+                type="button"
+                className="grade-chip"
+                aria-pressed={age === a}
+                onClick={() => setAge(a)}
+              >
+                {a}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="field">
@@ -33,7 +64,8 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
             What grade is {displayName(childName)} in?
           </label>
           <span className="field__hint">
-            We use this only to choose the first question. The activity adjusts from there.
+            Grade is what the placement is measured against. The activity adjusts from
+            the first question onward.
           </span>
           <div className="grade-grid" role="group" aria-labelledby="grade-label">
             {GRADES.map((g) => (
@@ -49,6 +81,15 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
             ))}
           </div>
         </div>
+
+        </div>
+
+        {mismatch && (
+          <p className="note">
+            That age and grade are a couple of years apart. Nothing is wrong — we’ll just
+            flag it on your results so a teacher can take a look at the placement.
+          </p>
+        )}
 
         <div className="field">
           <label className="heading" htmlFor="challenges">
@@ -73,10 +114,16 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
           <button
             type="button"
             className="btn btn--primary"
-            disabled={grade === null}
+            disabled={grade === null || age === null}
             onClick={() =>
-              grade &&
-              onContinue({ childName, grade, learningChallenges: learningChallenges.trim() })
+              grade !== null &&
+              age !== null &&
+              onContinue({
+                childName,
+                age,
+                grade,
+                learningChallenges: learningChallenges.trim(),
+              })
             }
           >
             Continue

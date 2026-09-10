@@ -473,6 +473,7 @@ body {
   text-align: left;
 }
 .strand-row[data-strand='reading'] { --strand-colour: var(--strand-reading); }
+.strand-row[data-strand='spelling'] { --strand-colour: var(--strand-spelling); }
 .strand-row[data-strand='math'] { --strand-colour: var(--strand-math); }
 .strand-row[data-strand='writing'] { --strand-colour: var(--strand-writing); }
 .strand-row .tag { font-size: 14px; }
@@ -512,6 +513,39 @@ body {
   .passage { max-height: 34vh; }
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
   .program-hero__cta { width: 100%; white-space: normal; }
+}
+
+/* Landscape tablet has width and not much height. Intake now asks age as well
+   as grade, and results now list four subjects plus their notes, so both pages
+   go two-column here rather than scrolling — a parent should see the whole
+   decision without moving anything. */
+@media (orientation: landscape) and (min-width: 900px) {
+  .intake-pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .intake-pair .grade-grid { gap: var(--space-2); }
+  /* Eleven ages, so they get their own column count and wrap evenly. */
+  .grade-grid--age { grid-template-columns: repeat(6, 1fr); }
+  .intake-pair .grade-chip { font-size: 20px; padding: var(--space-3) 0; }
+
+  .results { text-align: left; align-items: stretch; }
+  .results > * { max-width: none; }
+  .results__head { text-align: center; }
+  .results-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+  }
+  /* The hero hugs its content: a green block stretched to match a tall column
+     of notes reads as a rendering fault, not emphasis. */
+  .results-split .program-hero { text-align: center; align-self: start; }
+  .results-split .note { font-size: 13px; padding: var(--space-3) var(--space-4); }
+  .results-detail { display: flex; flex-direction: column; gap: var(--space-2); }
+  .results-split .strand-row { padding: 7px var(--space-4); }
 }
 
 /* ---------- Question illustrations ---------- */

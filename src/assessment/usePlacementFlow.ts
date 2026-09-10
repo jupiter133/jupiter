@@ -8,7 +8,8 @@ import type {
   SessionState,
   Subject,
 } from './types';
-import { ageBandForGrade, subjectsForGrade } from './types';
+import { ageBandForAge, subjectsForGrade } from './types';
+import { READING_GATE_TIER } from './tiers';
 import { audioDefaultFor } from '../audio/speechScript';
 import {
   QUESTIONS_PER_SUBJECT,
@@ -52,6 +53,8 @@ interface Flow {
   sessionCount: number;
   /** True when a stored placement is being picked up mid-way. */
   isResuming: boolean;
+  /** Reading came in below a Grade 3 level, so later sittings are floored. */
+  readingGated: boolean;
   band: AgeBand;
   audioEnabled: boolean;
   toggleAudio: () => void;
@@ -77,9 +80,9 @@ interface Flow {
  * Owns the placement flow: which screen is showing, the one-subject sitting in
  * progress, and the stored progress across sittings. Screens stay presentational.
  *
- * Grade 4–6 sit reading, then math, then writing as separate sessions. Progress
- * is stored between them, so returning picks up at the next subject without
- * re-asking anything.
+ * Every child sits reading, then spelling, then writing, then math, as separate
+ * sessions. Nobody is stopped early. Progress is stored between sittings, so
+ * returning picks up at the next subject without re-asking anything.
  */
 export function usePlacementFlow(childName: string): Flow {
   const [step, setStep] = useState<FlowStep>('start');
@@ -92,6 +95,17 @@ export function usePlacementFlow(childName: string): Flow {
   const [audioOverride, setAudioOverride] = useState<boolean | null>(null);
 
   const grade: Grade | null = context?.grade ?? progress?.grade ?? null;
+  const age: number | null = context?.age ?? progress?.age ?? null;
+
+  /**
+   * Reading below a Grade 3 level floors every later sitting: it starts at the
+   * lowest tier, branches only upward, and forces read-aloud on. Read straight
+   * off the stored reading result, so it survives a reload mid-placement.
+   */
+  const readingGated = useMemo(() => {
+    const reading = (progress?.completed ?? []).find((r) => r.subject === 'reading');
+    return Boolean(reading && !reading.floored && reading.finalTier < READING_GATE_TIER);
+  }, [progress]);
   const requiredSubjects = useMemo(() => (grade ? subjectsForGrade(grade) : []), [grade]);
   const completed = progress?.completed ?? [];
   const nextSubject = useMemo(
@@ -126,9 +140,9 @@ export function usePlacementFlow(childName: string): Flow {
       setStep('parent-results');
       return;
     }
-    setSession(createSession(grade, nextSubject));
+    setSession(createSession(grade, nextSubject, { floored: readingGated && nextSubject !== 'reading' }));
     setStep('section-intro');
-  }, [grade, nextSubject]);
+  }, [grade, nextSubject, readingGated]);
 
   const startSection = useCallback(() => setStep('question'), []);
 
@@ -144,11 +158,11 @@ export function usePlacementFlow(childName: string): Flow {
       if (next.finishedAt) {
         // Recording happens here, not inside the state updater, so a double
         // render can never write the result twice.
-        setProgress(recordSubjectResult(childName, next.grade, toSubjectResult(next)));
+        setProgress(recordSubjectResult(childName, next.grade, age, toSubjectResult(next)));
         setStep('kid-complete');
       }
     },
-    [session, childName],
+    [session, childName, age],
   );
 
   const handBackToParent = useCallback(() => setStep('parent-results'), []);
@@ -159,8 +173,8 @@ export function usePlacementFlow(childName: string): Flow {
   }, []);
 
   const toggleAudio = useCallback(() => {
-    setAudioOverride((prev) => !(prev ?? audioDefaultFor(grade ? ageBandForGrade(grade) : 'junior')));
-  }, [grade]);
+    setAudioOverride((prev) => !(prev ?? audioDefaultFor(age !== null ? ageBandForAge(age) : 'junior')));
+  }, [age]);
 
   const restart = useCallback(() => {
     clearProgress(childName);
@@ -172,11 +186,14 @@ export function usePlacementFlow(childName: string): Flow {
   }, [childName]);
 
   const result = useMemo(
-    () => (grade ? buildResult(grade, completed) : null),
-    [grade, completed],
+    () => (grade ? buildResult(grade, age, completed) : null),
+    [grade, age, completed],
   );
 
-  const band: AgeBand = grade ? ageBandForGrade(grade) : 'junior';
+  // Presentation follows AGE, never grade and never the tier the child reaches.
+  const band: AgeBand = age !== null ? ageBandForAge(age) : 'junior';
+  // A floored sitting forces read-aloud on: the child cannot read the screen.
+  const forcedAudio = session?.floored ?? false;
   const sittingSubject = session?.subject ?? nextSubject;
 
   return {
@@ -190,8 +207,9 @@ export function usePlacementFlow(childName: string): Flow {
     sessionNumber: sittingSubject ? requiredSubjects.indexOf(sittingSubject) + 1 : 1,
     sessionCount: requiredSubjects.length,
     isResuming,
+    readingGated,
     band,
-    audioEnabled: audioOverride ?? audioDefaultFor(band),
+    audioEnabled: forcedAudio || (audioOverride ?? audioDefaultFor(band)),
     toggleAudio,
     currentQuestion,
     questionNumber: (session?.questionsAnswered.length ?? 0) + 1,

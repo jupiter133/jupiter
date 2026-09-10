@@ -3,14 +3,16 @@ import type { Grade, Subject, SubjectResult } from './types';
 /**
  * Where placement progress lives between sessions.
  *
- * Grade 4–6 sit one subject per session, so a partly-finished placement has to
- * survive the tablet being put down. In the host app this is the child's
+ * Every child sits four subjects, one per session, so a partly-finished
+ * placement has to survive the tablet being put down. In the host app this is the child's
  * profile record on the server; this module is the seam. The demo build keeps
  * it in `localStorage`, keyed by child, and degrades to in-memory when storage
  * is unavailable (private windows, blocked site data).
  */
 export interface PlacementProgress {
   grade: Grade;
+  /** Presentation only, but stored so a resumed sitting looks the same. */
+  age: number | null;
   completed: SubjectResult[];
 }
 
@@ -58,13 +60,18 @@ export function clearProgress(childId: string): void {
 export function recordSubjectResult(
   childId: string,
   grade: Grade,
+  age: number | null,
   result: SubjectResult,
 ): PlacementProgress {
   const existing = loadProgress(childId);
   const keep = (existing?.grade === grade ? existing.completed : []).filter(
     (r) => r.subject !== result.subject,
   );
-  const progress: PlacementProgress = { grade, completed: [...keep, result] };
+  const progress: PlacementProgress = {
+    grade,
+    age: age ?? existing?.age ?? null,
+    completed: [...keep, result],
+  };
   saveProgress(childId, progress);
   return progress;
 }

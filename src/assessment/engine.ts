@@ -8,10 +8,12 @@ import type {
   Subject,
   SubjectPlacement,
   SubjectResult,
-  Tier,
 } from './types';
 import { startTierForGrade, subjectsForGrade, tierGradeLabel } from './types';
-import { MAX_TIER, clampTier } from './tiers';
+import { MIN_TIER, clampTier, gapFor, gradeTier } from './tiers';
+import { evaluateGate, type GateInputs } from './gate';
+import { hasAgeGradeMismatch } from './intake';
+import { PROGRAM_DESCRIPTIONS } from './programs';
 import { QUESTIONS } from './questionBank';
 import { nextSubjectFor } from './placementStore';
 
@@ -22,15 +24,27 @@ export const STABILITY_WINDOW = 4;
 /** Consecutive answers needed to move a tier. */
 export const STREAK_TO_MOVE = 2;
 
+/**
+ * Starts one subject sitting.
+ *
+ * A floored sitting starts at the lowest tier instead of the grade tier. That
+ * is for a child whose reading gated: asking a Grade 5 spelling question of a
+ * child reading at a Grade 1 level measures the reading, not the spelling, and
+ * hands them eight straight failures on the way down. Branching still runs
+ * upward, so a child who can spell climbs out of the floor.
+ */
 export function createSession(
   grade: Grade,
   subject: Subject,
+  options: { floored?: boolean } = {},
   now: number = Date.now(),
 ): SessionState {
+  const floored = options.floored ?? false;
   return {
     grade,
     subject,
-    currentTier: startTierForGrade(grade),
+    floored,
+    currentTier: floored ? MIN_TIER : startTierForGrade(grade),
     consecutiveCorrect: 0,
     consecutiveIncorrect: 0,
     questionsAnswered: [],
@@ -101,7 +115,8 @@ export function submitAnswer(
     currentTier = clampTier(currentTier + 1);
     consecutiveCorrect = 0;
     consecutiveIncorrect = 0;
-  } else if (consecutiveIncorrect >= STREAK_TO_MOVE) {
+  } else if (consecutiveIncorrect >= STREAK_TO_MOVE && !state.floored) {
+    // A floored sitting is already at the bottom; there is nowhere to drop to.
     currentTier = clampTier(currentTier - 1);
     consecutiveCorrect = 0;
     consecutiveIncorrect = 0;
@@ -126,6 +141,7 @@ export function toSubjectResult(state: SessionState): SubjectResult {
   return {
     subject: state.subject,
     finalTier: state.currentTier,
+    floored: state.floored,
     questionsAnswered: state.questionsAnswered.length,
     durationMs: Math.max(0, finishedAt - state.startedAt),
     completedAt: finishedAt,
@@ -133,75 +149,87 @@ export function toSubjectResult(state: SessionState): SubjectResult {
   };
 }
 
-/** The programs a child can be placed into. The product is K–6, so tiers 7–8
- *  place at the top program and read as working above grade level. */
-const PROGRAMS: { maxTier: Tier; name: string; description: string }[] = [
-  {
-    maxTier: 1,
-    name: 'Trailhead',
-    description:
-      'Our foundations program: letters and sounds, sight words, numbers to twenty and first sentences. Short daily lessons that keep every step winnable.',
-  },
-  {
-    maxTier: 3,
-    name: 'Ridge Trail',
-    description:
-      'Our core program: decoding and reading for detail, times tables and fractions, and writing complete sentences.',
-  },
-  {
-    maxTier: MAX_TIER,
-    name: 'Summit Path',
-    description:
-      'Our junior program: inference and main idea, multi-step problems and decimals, and paragraph structure and editing.',
-  },
-];
-
-function programForTier(tier: Tier): ProgramPlacement {
-  const band = PROGRAMS.find((p) => tier <= p.maxTier) ?? PROGRAMS[PROGRAMS.length - 1];
-  return {
-    tier,
-    name: band.name,
-    gradeEquivalentDisplay: tierGradeLabel(tier),
-    description: band.description,
-  };
-}
-
 /**
  * Assembles the parent-facing result from whatever subjects are finished.
  *
- * `subjects` carries only completed sittings, so a K–3 child yields a single
- * reading row and the parent view has no empty math or writing slots to render.
- * The program is withheld until every required subject is done — a placement
- * from a third of the evidence would be a guess wearing a label.
+ * The program comes from the priority gate, not from an average: averaging a
+ * Grade 1 reading level with a Grade 5 math level produces a Grade 3 child who
+ * does not exist. Subjects the gate did not rest on are flagged
+ * non-determining, and floored sittings are flagged too, so no view can present
+ * either as a measured level.
  */
-export function buildResult(grade: Grade, completed: SubjectResult[]): PlacementResult {
+export function buildResult(
+  grade: Grade,
+  age: number | null,
+  completed: SubjectResult[],
+): PlacementResult {
   const requiredSubjects = subjectsForGrade(grade);
   const inOrder = requiredSubjects
     .map((subject) => completed.find((r) => r.subject === subject))
     .filter((r): r is SubjectResult => Boolean(r));
 
+  const by = (subject: Subject): SubjectResult | undefined =>
+    inOrder.find((r) => r.subject === subject);
+  const gapOf = (subject: Subject): number | null => {
+    const r = by(subject);
+    // A floored sitting cannot produce a gap: it did not start where it should.
+    if (!r || r.floored) return null;
+    return gapFor(r.finalTier, grade);
+  };
+
+  const reading = by('reading');
+  const gateInputs: GateInputs = {
+    grade,
+    readingTier: reading ? reading.finalTier : null,
+    readingGap: reading ? gapFor(reading.finalTier, grade) : null,
+    spellingGap: gapOf('spelling'),
+    writingGap: gapOf('writing'),
+    mathGap: gapOf('math'),
+  };
+  const decision = evaluateGate(gateInputs);
+  const readingGated = decision?.readingGated ?? false;
+
+  const nextSubject = nextSubjectFor(requiredSubjects, completed);
+  const complete = nextSubject === null && inOrder.length === requiredSubjects.length;
+
+  const determined = new Set(decision?.determinedBy ?? []);
   const subjects: SubjectPlacement[] = inOrder.map((r) => ({
     subject: r.subject,
     finalTier: r.finalTier,
+    gap: gapFor(r.finalTier, grade),
     gradeEquivalentDisplay: tierGradeLabel(r.finalTier),
     questionsAnswered: r.questionsAnswered,
+    nonDetermining: r.floored || !determined.has(r.subject),
+    floored: r.floored,
   }));
 
-  const nextSubject = nextSubjectFor(requiredSubjects, completed);
-  const complete = nextSubject === null && subjects.length === requiredSubjects.length;
-
-  const finalTier = subjects.length
-    ? clampTier(subjects.reduce((sum, s) => sum + s.finalTier, 0) / subjects.length)
-    : startTierForGrade(grade);
+  const program: ProgramPlacement | null =
+    complete && decision
+      ? {
+          name: decision.programName,
+          gradeEquivalentDisplay: tierGradeLabel(
+            decision.outcome === 'reading-track'
+              ? (reading?.finalTier ?? MIN_TIER)
+              : gradeTier(grade),
+          ),
+          description: PROGRAM_DESCRIPTIONS[decision.outcome],
+          gateStep: decision.step,
+          outcome: decision.outcome,
+        }
+      : null;
 
   return {
     grade,
+    age,
+    ageGradeMismatch: age === null ? false : hasAgeGradeMismatch(age, grade),
     requiredSubjects,
     subjects,
     nextSubject,
     complete,
-    program: complete ? programForTier(finalTier) : null,
-    finalTier,
+    program,
+    readingGated,
+    // Math content follows the grade, never the assessed math tier.
+    mathContentLevel: gradeTier(grade),
     questionsAnswered: inOrder.reduce((sum, r) => sum + r.questionsAnswered, 0),
     durationMs: inOrder.reduce((sum, r) => sum + r.durationMs, 0),
   };

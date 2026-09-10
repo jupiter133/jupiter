@@ -3,11 +3,12 @@ import type { Subject } from '../assessment/types';
 
 export type TagColor = 'green' | 'pink' | 'cyan' | 'gold' | 'lime';
 
-/** The three strands take the three O·L·C tile hues, in tile order. */
+/** The four strands take the O·L·C tile hues, in tile order. */
 export const STRAND_TAG: Record<Subject, TagColor> = {
   reading: 'green',
-  math: 'cyan',
+  spelling: 'lime',
   writing: 'pink',
+  math: 'cyan',
 };
 
 interface Props {

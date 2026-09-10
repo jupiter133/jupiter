@@ -1,4 +1,4 @@
-import type { ParentContext, PlacementResult, Subject } from '../assessment/types';
+import type { ParentContext, PlacementResult, Subject, SubjectPlacement } from '../assessment/types';
 import { SUBJECT_LABEL } from '../assessment/types';
 import { displayName, possessiveName } from '../assessment/childName';
 import { STRAND_TAG, Tag } from '../components/Tag';
@@ -13,12 +13,25 @@ interface Props {
 }
 
 /**
+ * What one subject row says.
+ *
+ * A row only reports a level when the result is a real measure of that subject.
+ * A floored sitting, or one the gate never read, is reported as an observation
+ * instead: it was sat, it is on file, and it is not a level. Presenting it as
+ * one would invite a parent to argue with a number we do not stand behind.
+ */
+function levelTextFor(placement: SubjectPlacement): string {
+  if (placement.floored) return 'Observed only — see note below';
+  if (placement.nonDetermining) return `${placement.gradeEquivalentDisplay} · not used for placement`;
+  return placement.gradeEquivalentDisplay;
+}
+
+/**
  * Screen 5 — parent-facing results.
  *
- * Renders only the subjects actually sat, so a K–3 child shows a single reading
- * row and no empty math or writing slots. Grade 4–6 sit one subject per session,
- * so mid-way this screen reports what is done and what is next; the program is
- * withheld until every required subject is finished. Tier numbers never render.
+ * One program, never a program per subject. All four subjects are listed for
+ * every child, because every child sits all four. Tier and gap numbers never
+ * render; levels are said in grade-equivalent language only.
  */
 export function ParentResultsScreen({
   context,
@@ -28,15 +41,20 @@ export function ParentResultsScreen({
   onRestart,
 }: Props) {
   const name = displayName(context?.childName ?? childName);
-  const { program, subjects, nextSubject, complete } = result;
+  const { program, subjects, nextSubject, complete, readingGated } = result;
+  const bySubject = (subject: Subject) => subjects.find((p) => p.subject === subject);
 
   return (
     <div className="stage">
       <div className="card card--center results">
-        <p className="label">
-          {complete ? 'Placement complete' : 'Progress saved'} · For the grown-up
-        </p>
-        <h1 className="title">{possessiveName(context?.childName ?? childName)} placement</h1>
+        <div className="results__head">
+          <p className="label">
+            {complete ? 'Placement complete' : 'Progress saved'} · For the grown-up
+          </p>
+          <h1 className="title">{possessiveName(context?.childName ?? childName)} placement</h1>
+        </div>
+
+        <div className="results-split">
 
         {complete && program ? (
           /* The decision. One program, one level, one button. */
@@ -76,43 +94,60 @@ export function ParentResultsScreen({
           </section>
         )}
 
+        <div className="results-detail">
+        {complete && program && <p className="body">{program.description}</p>}
+
         <section className="strands" aria-labelledby="strands-heading">
           <h3 id="strands-heading" className="heading heading--sm">
-            {result.requiredSubjects.length === 1 ? 'Result' : 'By subject'}
+            By subject
           </h3>
           <ul className="strand-list">
-            {subjects.map((placement) => (
-              <li
-                key={placement.subject}
-                className="strand-row"
-                data-strand={placement.subject}
-              >
-                <Tag color={STRAND_TAG[placement.subject]}>
-                  {SUBJECT_LABEL[placement.subject]}
-                </Tag>
-                <span className="strand-row__level">{placement.gradeEquivalentDisplay}</span>
-              </li>
-            ))}
-            {result.requiredSubjects
-              .filter((s: Subject) => !subjects.some((p) => p.subject === s))
-              .map((subject) => (
+            {result.requiredSubjects.map((subject) => {
+              const placement = bySubject(subject);
+              return (
                 <li
                   key={subject}
-                  className="strand-row strand-row--pending"
+                  className={`strand-row${placement ? '' : ' strand-row--pending'}`}
                   data-strand={subject}
                 >
                   <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>
-                  <span className="strand-row__level strand-row__level--pending">
-                    Not yet assessed
+                  <span
+                    className={
+                      placement && !placement.nonDetermining
+                        ? 'strand-row__level'
+                        : 'strand-row__level strand-row__level--pending'
+                    }
+                  >
+                    {placement ? levelTextFor(placement) : 'Not yet assessed'}
                   </span>
                 </li>
-              ))}
+              );
+            })}
           </ul>
         </section>
+
+        {readingGated && (
+          <p className="note">
+            Reading comes first. {name} is reading below a Grade 3 level, and spelling,
+            writing and math all sit on top of reading — a spelling question a child
+            cannot read is a reading question. So the other three are recorded as
+            observations, not levels, and get measured once reading is solid.
+          </p>
+        )}
+
+        {result.ageGradeMismatch && (
+          <p className="note">
+            Flagged for teacher review: {possessiveName(context?.childName ?? childName)} age
+            and grade are two or more years apart. Placement is measured against grade, so a
+            teacher will confirm this is the right comparison before the program starts.
+          </p>
+        )}
 
         <p className="note">
           We don’t show {name} a score. Placement is a starting point, not a label.
         </p>
+        </div>
+        </div>
 
         <button type="button" className="text-btn text-btn--sm" onClick={onRestart}>
           Start the placement over

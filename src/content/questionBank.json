@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0-placeholder",
+  "version": "0.5.0-placeholder",
   "questions": [
     {
       "id": "r-t0-01",
@@ -2619,6 +2619,627 @@
         }
       ],
       "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t0-01",
+      "subject": "spelling",
+      "tier": 0,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "cta"
+        },
+        {
+          "id": "b",
+          "text": "cat"
+        },
+        {
+          "id": "c",
+          "text": "kat"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t0-02",
+      "subject": "spelling",
+      "tier": 0,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "dawg"
+        },
+        {
+          "id": "b",
+          "text": "dgo"
+        },
+        {
+          "id": "c",
+          "text": "dog"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t0-03",
+      "subject": "spelling",
+      "tier": 0,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "sun"
+        },
+        {
+          "id": "b",
+          "text": "sn"
+        },
+        {
+          "id": "c",
+          "text": "sunn"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t1-01",
+      "subject": "spelling",
+      "tier": 1,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "tre"
+        },
+        {
+          "id": "b",
+          "text": "treee"
+        },
+        {
+          "id": "c",
+          "text": "tree"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t1-02",
+      "subject": "spelling",
+      "tier": 1,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "jump"
+        },
+        {
+          "id": "b",
+          "text": "jmup"
+        },
+        {
+          "id": "c",
+          "text": "jumpe"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t1-03",
+      "subject": "spelling",
+      "tier": 1,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "hnad"
+        },
+        {
+          "id": "b",
+          "text": "hand"
+        },
+        {
+          "id": "c",
+          "text": "hund"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t2-01",
+      "subject": "spelling",
+      "tier": 2,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "happy"
+        },
+        {
+          "id": "b",
+          "text": "hapy"
+        },
+        {
+          "id": "c",
+          "text": "happie"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t2-02",
+      "subject": "spelling",
+      "tier": 2,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "nigt"
+        },
+        {
+          "id": "b",
+          "text": "night"
+        },
+        {
+          "id": "c",
+          "text": "nite"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t2-03",
+      "subject": "spelling",
+      "tier": 2,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "freind"
+        },
+        {
+          "id": "b",
+          "text": "frend"
+        },
+        {
+          "id": "c",
+          "text": "friend"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t3-01",
+      "subject": "spelling",
+      "tier": 3,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "becuse"
+        },
+        {
+          "id": "b",
+          "text": "because"
+        },
+        {
+          "id": "c",
+          "text": "becuase"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t3-02",
+      "subject": "spelling",
+      "tier": 3,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "cought"
+        },
+        {
+          "id": "b",
+          "text": "caut"
+        },
+        {
+          "id": "c",
+          "text": "caught"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t3-03",
+      "subject": "spelling",
+      "tier": 3,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "morning"
+        },
+        {
+          "id": "b",
+          "text": "moring"
+        },
+        {
+          "id": "c",
+          "text": "mornning"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t4-01",
+      "subject": "spelling",
+      "tier": 4,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "beleive"
+        },
+        {
+          "id": "b",
+          "text": "belive"
+        },
+        {
+          "id": "c",
+          "text": "believe"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t4-02",
+      "subject": "spelling",
+      "tier": 4,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "separate"
+        },
+        {
+          "id": "b",
+          "text": "seperate"
+        },
+        {
+          "id": "c",
+          "text": "separete"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t4-03",
+      "subject": "spelling",
+      "tier": 4,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "quitely"
+        },
+        {
+          "id": "b",
+          "text": "quietly"
+        },
+        {
+          "id": "c",
+          "text": "quietley"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t5-01",
+      "subject": "spelling",
+      "tier": 5,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "necessary"
+        },
+        {
+          "id": "b",
+          "text": "neccessary"
+        },
+        {
+          "id": "c",
+          "text": "necesary"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t5-02",
+      "subject": "spelling",
+      "tier": 5,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "occassion"
+        },
+        {
+          "id": "b",
+          "text": "occasion"
+        },
+        {
+          "id": "c",
+          "text": "ocassion"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t5-03",
+      "subject": "spelling",
+      "tier": 5,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "definately"
+        },
+        {
+          "id": "b",
+          "text": "defiantly"
+        },
+        {
+          "id": "c",
+          "text": "definitely"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t6-01",
+      "subject": "spelling",
+      "tier": 6,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "embarras"
+        },
+        {
+          "id": "b",
+          "text": "embarrass"
+        },
+        {
+          "id": "c",
+          "text": "embarass"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t6-02",
+      "subject": "spelling",
+      "tier": 6,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "rythm"
+        },
+        {
+          "id": "b",
+          "text": "rhythem"
+        },
+        {
+          "id": "c",
+          "text": "rhythm"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t6-03",
+      "subject": "spelling",
+      "tier": 6,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "privilege"
+        },
+        {
+          "id": "b",
+          "text": "priviledge"
+        },
+        {
+          "id": "c",
+          "text": "privilage"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t7-01",
+      "subject": "spelling",
+      "tier": 7,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "consience"
+        },
+        {
+          "id": "b",
+          "text": "consceince"
+        },
+        {
+          "id": "c",
+          "text": "conscience"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "s-t7-02",
+      "subject": "spelling",
+      "tier": 7,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "maintenance"
+        },
+        {
+          "id": "b",
+          "text": "maintainance"
+        },
+        {
+          "id": "c",
+          "text": "maintenence"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t7-03",
+      "subject": "spelling",
+      "tier": 7,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "acknowlege"
+        },
+        {
+          "id": "b",
+          "text": "acknowledge"
+        },
+        {
+          "id": "c",
+          "text": "aknowledge"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t8-01",
+      "subject": "spelling",
+      "tier": 8,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "bureaucracy"
+        },
+        {
+          "id": "b",
+          "text": "beaurocracy"
+        },
+        {
+          "id": "c",
+          "text": "bureacracy"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "s-t8-02",
+      "subject": "spelling",
+      "tier": 8,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "perseverence"
+        },
+        {
+          "id": "b",
+          "text": "perseverance"
+        },
+        {
+          "id": "c",
+          "text": "perserverance"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "s-t8-03",
+      "subject": "spelling",
+      "tier": 8,
+      "skill": "spelling-choice",
+      "questionText": "Which one is spelled correctly?",
+      "questionTextJunior": "Which one is spelled right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "liason"
+        },
+        {
+          "id": "b",
+          "text": "liasion"
+        },
+        {
+          "id": "c",
+          "text": "liaison"
+        }
+      ],
+      "correctAnswerId": "c"
     }
   ]
 }

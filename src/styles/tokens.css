@@ -126,9 +126,12 @@
   --accent-pink-soft: var(--olc-pink-soft);
   --accent-cyan-soft: var(--olc-cyan-soft);
 
-  /* The three strands take the three O·L·C tile hues, in tile order */
+  /* The four strands take the O·L·C tile hues, in tile order. Spelling sits
+   * beside writing in lime, because they read as one family to a parent. */
   --strand-reading: var(--olc-green);
   --strand-reading-edge: var(--olc-green-dark);
+  --strand-spelling: var(--olc-lime);
+  --strand-spelling-edge: var(--olc-lime-dark);
   --strand-math: var(--olc-cyan);
   --strand-math-edge: var(--olc-cyan-edge);
   --strand-writing: var(--olc-pink);

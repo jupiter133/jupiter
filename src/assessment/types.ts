@@ -1,57 +1,35 @@
 import type { GlyphName } from '../components/glyphs';
-import type { Tier } from './tiers';
+import type { Grade, Tier } from './tiers';
+import { gradeTier } from './tiers';
+import type { AgeBand } from './intake';
+import type { Subject } from './subjects';
+import { SUBJECT_ORDER } from './subjects';
+import type { GateOutcome } from './gate';
 
 export type { Tier };
 export { MIN_TIER, MAX_TIER, TIERS, clampTier, tierGradeLabel } from './tiers';
 
-export type Grade = 'K' | '1' | '2' | '3' | '4' | '5' | '6';
+export type { Grade };
+export { GRADES, gradeTier, gapFor, isWithinOneGrade, isMoreThanOneGradeBehind } from './tiers';
 
-export const GRADES: Grade[] = ['K', '1', '2', '3', '4', '5', '6'];
-
-/** Grade K is tier 0, Grade n is tier n. The session starts here. */
+/** Grade K is tier 0, Grade n is tier n. A normal sitting starts here. */
 export function startTierForGrade(grade: Grade): Tier {
-  return grade === 'K' ? 0 : Number(grade);
+  return gradeTier(grade);
 }
 
-/**
- * How a question is *presented*, derived from the child's grade.
- *
- * A separate axis from difficulty tier: a Grade 5 child who drops to tier 1
- * still gets the senior presentation, because a struggling ten-year-old should
- * not be handed cartoon bunnies.
- *
- * - `junior` (K–3): art-led, big type, simplest wording, picture answers,
- *   read-aloud on by default.
- * - `senior` (4–6): text-led, art supports rather than carries, fuller wording,
- *   read-aloud available but off by default.
- */
-export type AgeBand = 'junior' | 'senior';
+export type { AgeBand };
+export { ageBandForAge, hasAgeGradeMismatch, ageGradeOffset, MIN_AGE, MAX_AGE } from './intake';
 
-const JUNIOR_GRADES: Grade[] = ['K', '1', '2', '3'];
-
-export function ageBandForGrade(grade: Grade): AgeBand {
-  return JUNIOR_GRADES.includes(grade) ? 'junior' : 'senior';
-}
-
-export type Subject = 'reading' | 'math' | 'writing';
-
-export const SUBJECT_ORDER: Subject[] = ['reading', 'math', 'writing'];
-
-export const SUBJECT_LABEL: Record<Subject, string> = {
-  reading: 'Reading',
-  math: 'Math',
-  writing: 'Writing',
-};
+export type { Subject };
+export { SUBJECT_ORDER, SUBJECT_LABEL } from './subjects';
 
 /**
- * Which subjects a grade is assessed on, in the order they are sat.
- *
- * K–3 is reading only. Math and writing are never served below Grade 4: a
- * seven-year-old's writing score would measure handwriting stamina and reading
- * ability, not writing, and placing on it would be worse than not placing.
+ * Every child sits all four subjects, in this order, whatever their grade and
+ * whatever the earlier sittings say. Nobody is stopped early: a result we did
+ * not gather is a result a teacher cannot look at.
  */
-export function subjectsForGrade(grade: Grade): Subject[] {
-  return ageBandForGrade(grade) === 'junior' ? ['reading'] : ['reading', 'math', 'writing'];
+export function subjectsForGrade(_grade: Grade): Subject[] {
+  return SUBJECT_ORDER;
 }
 
 export type SceneName =
@@ -117,6 +95,15 @@ export function questionTextFor(question: Question, band: AgeBand): string {
 export interface ParentContext {
   /** Child's first name. Optional — every screen degrades gracefully without it. */
   childName: string;
+  /**
+   * Age in years. Drives PRESENTATION only: read-aloud default, art-led vs
+   * text-led layout, tone, session length. It never touches placement.
+   */
+  age: number;
+  /**
+   * Grade. Drives PLACEMENT only: every "grades behind" figure and the Core
+   * Skills band are measured against it.
+   */
   grade: Grade;
   /** Optional, self-reported. Never used to gate content — only surfaced back
    *  to the parent so pacing advice can account for it. */
@@ -137,8 +124,8 @@ export interface AnsweredQuestion {
 }
 
 /**
- * One sitting assesses ONE subject. K–3 sit reading and are done; Grade 4–6 sit
- * reading, then math, then writing as separate resumable sessions.
+ * One sitting assesses ONE subject. Every child sits four: reading, then
+ * spelling, then writing, then math, as separate resumable sessions.
  */
 export interface SessionState {
   grade: Grade;
@@ -151,6 +138,12 @@ export interface SessionState {
   tierHistory: Tier[];
   /** Ids already served, so the engine never repeats an item. */
   servedQuestionIds: string[];
+  /**
+   * Floored sitting: this child's reading gated, so the sitting starts at the
+   * lowest tier and only ever branches upward. Everything it produces is an
+   * observation, not a measure.
+   */
+  floored: boolean;
   startedAt: number;
   finishedAt?: number;
 }
@@ -160,6 +153,8 @@ export interface SubjectResult {
   subject: Subject;
   /** The placement for this subject. Internal — never rendered raw. */
   finalTier: Tier;
+  /** True when the sitting was floored — see SessionState.floored. */
+  floored: boolean;
   questionsAnswered: number;
   durationMs: number;
   completedAt: number;
@@ -169,33 +164,51 @@ export interface SubjectResult {
 export interface SubjectPlacement {
   subject: Subject;
   finalTier: Tier;
+  /** Assessed tier minus grade tier. Negative is behind. Internal. */
+  gap: number;
   gradeEquivalentDisplay: string;
   questionsAnswered: number;
+  /**
+   * True when this result did not move the placement decision — either the
+   * gate stopped before reading it, or the sitting was floored. Downstream
+   * views MUST NOT present a non-determining result as a measured level.
+   */
+  nonDetermining: boolean;
+  floored: boolean;
 }
 
-/** The one program the child is placed into, once every required subject is
- *  done. Parent-facing language only — the tier number stays internal. */
+/** The one program the child is placed into, once every subject is done.
+ *  Parent-facing language only — the tier number stays internal. */
 export interface ProgramPlacement {
-  tier: Tier;
   name: string;
   gradeEquivalentDisplay: string;
   description: string;
+  /** Which gate rule fired, 1–5. Internal, for teacher review. */
+  gateStep: number;
+  outcome: GateOutcome;
 }
 
 export interface PlacementResult {
   grade: Grade;
-  /** Subjects this grade is assessed on, in sitting order. */
+  age: number | null;
+  /** Age and grade disagree by two years or more. Shown for teacher review. */
+  ageGradeMismatch: boolean;
+  /** Subjects assessed, in sitting order. Always all four. */
   requiredSubjects: Subject[];
-  /** Only the subjects actually completed. K–3 has one entry; the parent view
-   *  iterates this, so empty math / writing slots can never render. */
+  /** Only the subjects actually completed so far. */
   subjects: SubjectPlacement[];
   /** The subject the next session assesses, or null when everything is done. */
   nextSubject: Subject | null;
   complete: boolean;
-  /** Set only when every required subject is done. */
+  /** Set only when every subject is done. */
   program: ProgramPlacement | null;
-  /** Rounded average across completed subjects. Internal. */
-  finalTier: Tier;
+  /** True when reading came in below a Grade 3 level. */
+  readingGated: boolean;
+  /**
+   * Math content level, set by GRADE placement, never by assessed math. The
+   * assessed math tier only feeds gate step 4.
+   */
+  mathContentLevel: Tier;
   questionsAnswered: number;
   durationMs: number;
 }

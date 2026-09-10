@@ -15,7 +15,7 @@ import {
   MAX_TIER,
   MIN_TIER,
   SUBJECT_ORDER,
-  ageBandForGrade,
+  ageBandForAge,
   startTierForGrade,
   subjectsForGrade,
   tierGradeLabel,
@@ -28,8 +28,13 @@ function answer(state: SessionState, correct: boolean, at?: number): SessionStat
 }
 
 /** Runs a whole subject sitting with a fixed answer pattern. */
-function sit(grade: Grade, subject: Subject, correctAt: (i: number) => boolean): SessionState {
-  let s = createSession(grade, subject, 0);
+function sit(
+  grade: Grade,
+  subject: Subject,
+  correctAt: (i: number) => boolean,
+  floored = false,
+): SessionState {
+  let s = createSession(grade, subject, { floored }, 0);
   let i = 0;
   while (!s.finishedAt) {
     i += 1;
@@ -40,26 +45,25 @@ function sit(grade: Grade, subject: Subject, correctAt: (i: number) => boolean):
 
 const ALL_GRADES: Grade[] = ['K', '1', '2', '3', '4', '5', '6'];
 
-describe('subjects by grade', () => {
-  it('gives K–3 reading only and never math or writing', () => {
-    for (const grade of ['K', '1', '2', '3'] as Grade[]) {
-      expect(subjectsForGrade(grade), grade).toEqual(['reading']);
+describe('subjects and bands', () => {
+  it('gives every grade all four subjects, reading first', () => {
+    for (const grade of ALL_GRADES) {
+      expect(subjectsForGrade(grade), grade).toEqual([
+        'reading',
+        'spelling',
+        'writing',
+        'math',
+      ]);
     }
   });
 
-  it('gives Grade 4–6 reading, then math, then writing', () => {
-    for (const grade of ['4', '5', '6'] as Grade[]) {
-      expect(subjectsForGrade(grade), grade).toEqual(['reading', 'math', 'writing']);
-    }
-  });
-
-  it('bands K–3 junior and 4–6 senior', () => {
-    for (const grade of ['K', '1', '2', '3'] as Grade[]) {
-      expect(ageBandForGrade(grade), grade).toBe('junior');
-    }
-    for (const grade of ['4', '5', '6'] as Grade[]) {
-      expect(ageBandForGrade(grade), grade).toBe('senior');
-    }
+  it('bands presentation on age, not grade', () => {
+    // A nine-year-old in Grade 2 gets the older child's screen, measured
+    // against Grade 2. Age and grade do different jobs.
+    expect(ageBandForAge(6)).toBe('junior');
+    expect(ageBandForAge(8)).toBe('junior');
+    expect(ageBandForAge(9)).toBe('senior');
+    expect(ageBandForAge(13)).toBe('senior');
   });
 });
 
@@ -199,48 +203,120 @@ describe('subject result', () => {
   });
 });
 
+describe('floored sittings', () => {
+  it('starts at the lowest tier and never drops below it', () => {
+    const s = sit('5', 'spelling', () => false, true);
+    expect(s.tierHistory.every((t) => t === MIN_TIER)).toBe(true);
+    expect(toSubjectResult(s).floored).toBe(true);
+  });
+
+  it('still branches upward, so a child who can spell climbs out', () => {
+    const s = sit('5', 'spelling', () => true, true);
+    expect(s.currentTier).toBeGreaterThan(MIN_TIER);
+  });
+
+  it('leaves an unfloored sitting starting at the grade tier', () => {
+    expect(createSession('5', 'spelling').currentTier).toBe(5);
+    expect(createSession('5', 'spelling', { floored: true }).currentTier).toBe(MIN_TIER);
+  });
+});
+
 describe('placement result', () => {
-  const resultFor = (grade: Grade, tiers: Partial<Record<Subject, number>>) => {
-    const completed: SubjectResult[] = Object.entries(tiers).map(([subject, finalTier]) => ({
-      subject: subject as Subject,
-      finalTier: finalTier as number,
+  const ALL: Subject[] = ['reading', 'spelling', 'writing', 'math'];
+
+  const resultFor = (
+    grade: Grade,
+    tiers: Partial<Record<Subject, number>>,
+    options: { age?: number; floored?: Subject[] } = {},
+  ) => {
+    const floored = new Set(options.floored ?? []);
+    const completed: SubjectResult[] = ALL.filter((s) => s in tiers).map((subject) => ({
+      subject,
+      finalTier: tiers[subject] as number,
+      floored: floored.has(subject),
       questionsAnswered: 8,
       durationMs: 60_000,
       completedAt: 1,
       history: [],
     }));
-    return buildResult(grade, completed);
+    return buildResult(grade, options.age ?? null, completed);
   };
 
-  it('gives a K–3 child a reading row and no empty math or writing slots', () => {
-    const result = resultFor('1', { reading: 2 });
-    expect(result.requiredSubjects).toEqual(['reading']);
-    expect(result.subjects).toHaveLength(1);
-    expect(result.subjects[0].subject).toBe('reading');
-    expect(result.complete).toBe(true);
-    expect(result.nextSubject).toBeNull();
+  it('assesses all four subjects for every child, and stops nobody early', () => {
+    const result = resultFor('1', { reading: 0 });
+    expect(result.requiredSubjects).toEqual(ALL);
+    expect(result.complete).toBe(false);
+    expect(result.nextSubject).toBe('spelling');
   });
 
-  it('withholds the program until every required subject is sat', () => {
-    const partial = resultFor('5', { reading: 5 });
+  it('withholds the program until every subject is sat', () => {
+    const partial = resultFor('5', { reading: 5, spelling: 5 });
     expect(partial.complete).toBe(false);
     expect(partial.program).toBeNull();
-    expect(partial.nextSubject).toBe('math');
-    expect(partial.subjects).toHaveLength(1);
+    expect(partial.nextSubject).toBe('writing');
 
-    const done = resultFor('5', { reading: 5, math: 4, writing: 3 });
+    const done = resultFor('5', { reading: 5, spelling: 5, writing: 5, math: 5 });
     expect(done.complete).toBe(true);
-    expect(done.program).not.toBeNull();
-    expect(done.nextSubject).toBeNull();
+    expect(done.program!.name).toBe('Core Skills Enriched 4-6');
+  });
+
+  it('places on the reading track when reading is below a Grade 3 level', () => {
+    const result = resultFor(
+      '5',
+      { reading: 1, spelling: 0, writing: 0, math: 0 },
+      { floored: ['spelling', 'writing', 'math'] },
+    );
+    expect(result.readingGated).toBe(true);
+    expect(result.program!.name).toMatch(/^Core Reading /);
+  });
+
+  it('flags every subject the decision did not rest on', () => {
+    const gated = resultFor(
+      '5',
+      { reading: 1, spelling: 0, writing: 0, math: 0 },
+      { floored: ['spelling', 'writing', 'math'] },
+    );
+    const nonDetermining = gated.subjects.filter((s) => s.nonDetermining).map((s) => s.subject);
+    expect(nonDetermining).toEqual(['spelling', 'writing', 'math']);
+    expect(gated.subjects.find((s) => s.subject === 'reading')!.nonDetermining).toBe(false);
+
+    const enriched = resultFor('5', { reading: 5, spelling: 5, writing: 5, math: 5 });
+    expect(enriched.subjects.every((s) => !s.nonDetermining)).toBe(true);
+  });
+
+  it('never lets a floored result feed the gate', () => {
+    // Floored spelling reads as tier 0 — five grades behind. If that reached
+    // the gate it would route this child on spelling instead of reading.
+    const result = resultFor(
+      '5',
+      { reading: 1, spelling: 0, writing: 0, math: 0 },
+      { floored: ['spelling', 'writing', 'math'] },
+    );
+    expect(result.program!.gateStep).toBe(1);
+    expect(result.subjects.filter((s) => s.floored)).toHaveLength(3);
+  });
+
+  it('sets math content by grade, never by the assessed math tier', () => {
+    const behind = resultFor('5', { reading: 5, spelling: 5, writing: 5, math: 1 });
+    const ahead = resultFor('5', { reading: 5, spelling: 5, writing: 5, math: 8 });
+    expect(behind.mathContentLevel).toBe(5);
+    expect(ahead.mathContentLevel).toBe(5);
+    expect(behind.program!.name).toBe('Core Skills Math 4-6');
+  });
+
+  it('flags an age and grade two or more years apart', () => {
+    expect(resultFor('2', { reading: 3 }, { age: 7 }).ageGradeMismatch).toBe(false);
+    expect(resultFor('2', { reading: 3 }, { age: 10 }).ageGradeMismatch).toBe(true);
+    expect(resultFor('2', { reading: 3 }, { age: 5 }).ageGradeMismatch).toBe(true);
   });
 
   it('orders subjects by the sitting order, not completion order', () => {
-    const result = buildResult('4', [
-      { subject: 'writing', finalTier: 3, questionsAnswered: 8, durationMs: 1, completedAt: 3, history: [] },
-      { subject: 'reading', finalTier: 5, questionsAnswered: 8, durationMs: 1, completedAt: 1, history: [] },
-      { subject: 'math', finalTier: 4, questionsAnswered: 8, durationMs: 1, completedAt: 2, history: [] },
+    const result = buildResult('4', null, [
+      { subject: 'math', finalTier: 4, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 3, history: [] },
+      { subject: 'reading', finalTier: 5, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 1, history: [] },
+      { subject: 'writing', finalTier: 4, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 2, history: [] },
     ]);
-    expect(result.subjects.map((s) => s.subject)).toEqual(['reading', 'math', 'writing']);
+    expect(result.subjects.map((s) => s.subject)).toEqual(['reading', 'writing', 'math']);
   });
 
   it('never renders a raw tier number in parent-facing language', () => {
@@ -249,7 +325,7 @@ describe('placement result', () => {
       expect(label).not.toMatch(/tier/i);
       expect(label).toBe(tier === 0 ? 'Kindergarten level' : `Grade ${tier} level`);
     }
-    const result = resultFor('6', { reading: 7, math: 6, writing: 6 });
+    const result = resultFor('6', { reading: 7, spelling: 6, writing: 6, math: 6 });
     expect(result.program!.gradeEquivalentDisplay).not.toMatch(/tier/i);
     for (const s of result.subjects) expect(s.gradeEquivalentDisplay).not.toMatch(/tier/i);
   });

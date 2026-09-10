@@ -9,6 +9,12 @@ const COPY: Record<Subject, { lead: string; place: string; body: string; cta: st
     body: 'We’ll read some short pieces and puzzle out a few words together. Pick whatever you think fits.',
     cta: 'Into the woods',
   },
+  spelling: {
+    lead: 'Welcome to the',
+    place: 'Spelling Camp',
+    body: 'A few words to look at. Pick the one that looks right to you — guessing is fine.',
+    cta: 'Head to camp',
+  },
   math: {
     lead: 'Welcome to the',
     place: 'Number Ridge',
@@ -35,7 +41,7 @@ interface Props {
  *  framing across a ~5 minute sitting. */
 export function SectionIntroScreen({ subject, sessionNumber, sessionCount, onStart }: Props) {
   const copy = COPY[subject];
-  // K-3 sit one subject, so there is no "part 1 of 3" to announce.
+  // Every child sits four parts, so the count always has something to say.
   const eyebrow = sessionCount > 1 ? `Part ${sessionNumber} of ${sessionCount}` : 'Your turn';
   return (
     <div className="stage">

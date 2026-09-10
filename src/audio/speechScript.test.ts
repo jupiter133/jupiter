@@ -7,9 +7,9 @@ const withPassage = QUESTIONS.find((q) => q.passage)! as Question;
 const noPassage = QUESTIONS.find((q) => !q.passage)! as Question;
 
 describe('read-aloud defaults', () => {
-  it('starts on for K–3 and off for Grade 4–6', () => {
-    // Many K–3 children cannot read the question they are being asked; by
-    // Grade 4 they can, and unasked narration is just noise in a shared room.
+  it('starts on for junior and off for senior', () => {
+    // Many children aged 8 and under cannot read the question they are being
+    // asked; by 9 they can, and unasked narration is noise in a shared room.
     expect(audioDefaultFor('junior')).toBe(true);
     expect(audioDefaultFor('senior')).toBe(false);
   });
