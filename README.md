@@ -152,8 +152,9 @@ wrong answer, and `QuestionScreen` is never told which it was.
 - **Answer sparkles** — a small fixed-angle burst of gold dots and pink stars
   on the tapped option. Fires on every answer; nothing about it varies by
   correctness.
-- **Guide reactions** — Ms Hannah floats gently and blinks on the handoff and
-  section screens.
+- **Guide** — Ms Hannah stands still. Her introduction (the handoff screen)
+  shows once, before the first sitting; later sittings go straight to the
+  section intro.
 - **Card transitions** — the question body slides out left and the next slides
   in from the right, keyed by question id, instead of a hard cut.
 

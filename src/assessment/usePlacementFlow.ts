@@ -99,7 +99,7 @@ export function usePlacementFlow(childName: string): Flow {
 
   /**
    * Reading below a Grade 3 level floors every later sitting: it starts at the
-   * lowest tier, branches only upward, and forces read-aloud on. Read straight
+   * lowest tier and branches only upward. Read straight
    * off the stored reading result, so it survives a reload mid-placement.
    */
   const readingGated = useMemo(() => {
@@ -120,10 +120,27 @@ export function usePlacementFlow(childName: string): Flow {
 
   const isResuming = Boolean(progress && nextSubject && completed.length > 0);
 
+  /**
+   * Starts the next sitting directly: builds the session and goes to the
+   * section intro. Ms Hannah's handoff introduction is shown once, before the
+   * first sitting; every later sitting skips it.
+   */
+  const startNextSitting = useCallback(() => {
+    if (!grade) return;
+    if (!nextSubject) {
+      setStep('parent-results');
+      return;
+    }
+    setSession(createSession(grade, nextSubject, { floored: readingGated && nextSubject !== 'reading' }));
+    setStep('section-intro');
+  }, [grade, nextSubject, readingGated]);
+
   const beginIntake = useCallback(() => {
-    // A stored grade means the intake questions are already answered.
-    setStep(progress?.grade && nextSubject ? 'handoff' : 'parent-context');
-  }, [progress, nextSubject]);
+    // A stored grade means the intake questions are already answered, and the
+    // introduction has already been seen.
+    if (progress?.grade && nextSubject) startNextSitting();
+    else setStep('parent-context');
+  }, [progress, nextSubject, startNextSitting]);
 
   const defer = useCallback(() => setStep('deferred'), []);
   const resume = useCallback(() => setStep('start'), []);
@@ -134,15 +151,7 @@ export function usePlacementFlow(childName: string): Flow {
     setStep('handoff');
   }, []);
 
-  const beginQuest = useCallback(() => {
-    if (!grade) return;
-    if (!nextSubject) {
-      setStep('parent-results');
-      return;
-    }
-    setSession(createSession(grade, nextSubject, { floored: readingGated && nextSubject !== 'reading' }));
-    setStep('section-intro');
-  }, [grade, nextSubject, readingGated]);
+  const beginQuest = startNextSitting;
 
   const startSection = useCallback(() => setStep('question'), []);
 
@@ -169,8 +178,8 @@ export function usePlacementFlow(childName: string): Flow {
 
   const continueNext = useCallback(() => {
     setSession(null);
-    setStep('handoff');
-  }, []);
+    startNextSitting();
+  }, [startNextSitting]);
 
   const toggleAudio = useCallback(() => {
     setAudioOverride((prev) => !(prev ?? audioDefaultFor(age !== null ? ageBandForAge(age) : 'junior')));
