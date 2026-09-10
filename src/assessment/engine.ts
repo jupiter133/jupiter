@@ -14,6 +14,13 @@ import { MIN_TIER, clampTier, gapFor, gradeTier } from './tiers';
 import { evaluateGate, type GateInputs } from './gate';
 import { hasAgeGradeMismatch } from './intake';
 import { PROGRAM_DESCRIPTIONS } from './programs';
+import {
+  QUESTIONS_PER_SUB_SKILL,
+  SUB_SKILL_STABILITY_WINDOW,
+  deriveReadingLevel,
+  type ReadingSubSkill,
+  type SubSkillResult,
+} from './readingSkills';
 import { QUESTIONS } from './questionBank';
 import { nextSubjectFor } from './placementStore';
 
@@ -36,13 +43,18 @@ export const STREAK_TO_MOVE = 2;
 export function createSession(
   grade: Grade,
   subject: Subject,
-  options: { floored?: boolean } = {},
+  options: { floored?: boolean; subSkill?: ReadingSubSkill } = {},
   now: number = Date.now(),
 ): SessionState {
   const floored = options.floored ?? false;
+  const isSubSkill = options.subSkill !== undefined;
   return {
     grade,
     subject,
+    subSkill: options.subSkill,
+    // A reading sub-skill sitting is shorter, with a shorter early stop.
+    maxQuestions: isSubSkill ? QUESTIONS_PER_SUB_SKILL : QUESTIONS_PER_SUBJECT,
+    stabilityWindow: isSubSkill ? SUB_SKILL_STABILITY_WINDOW : STABILITY_WINDOW,
     floored,
     currentTier: floored ? MIN_TIER : startTierForGrade(grade),
     consecutiveCorrect: 0,
@@ -62,20 +74,24 @@ export function createSession(
 export function selectNextQuestion(state: SessionState): Question | null {
   const served = new Set(state.servedQuestionIds);
   const candidates = QUESTIONS.filter(
-    (q) => q.subject === state.subject && !served.has(q.id),
+    (q) =>
+      q.subject === state.subject &&
+      (state.subSkill === undefined || q.subSkill === state.subSkill) &&
+      !served.has(q.id),
   ).sort((a, b) => Math.abs(a.tier - state.currentTier) - Math.abs(b.tier - state.currentTier));
   return candidates[0] ?? null;
 }
 
 /** True once the tier has not changed across the trailing window. */
 export function isTierStable(state: SessionState): boolean {
-  if (state.tierHistory.length < STABILITY_WINDOW) return false;
-  const window = state.tierHistory.slice(-STABILITY_WINDOW);
+  const size = state.stabilityWindow ?? STABILITY_WINDOW;
+  if (state.tierHistory.length < size) return false;
+  const window = state.tierHistory.slice(-size);
   return window.every((t) => t === window[0]);
 }
 
 export function isSessionComplete(state: SessionState): boolean {
-  if (state.questionsAnswered.length >= QUESTIONS_PER_SUBJECT) return true;
+  if (state.questionsAnswered.length >= (state.maxQuestions ?? QUESTIONS_PER_SUBJECT)) return true;
   if (selectNextQuestion(state) === null) return true;
   return isTierStable(state);
 }
@@ -133,6 +149,37 @@ export function submitAnswer(
   };
 
   return isSessionComplete(next) ? { ...next, finishedAt: now } : next;
+}
+
+/** One finished reading sub-skill sitting. */
+export function toSubSkillResult(state: SessionState): SubSkillResult {
+  if (!state.subSkill) throw new Error('not a sub-skill sitting');
+  return {
+    subSkill: state.subSkill,
+    finalTier: state.currentTier,
+    questionsAnswered: state.questionsAnswered.length,
+  };
+}
+
+/**
+ * Folds the four sub-skill sittings into the one reading result the gate
+ * consumes. The level is DERIVED by the rule in readingSkills.ts, never the
+ * tier of any single sitting.
+ */
+export function toReadingResult(parts: SessionState[]): SubjectResult {
+  const subSkills = parts.map(toSubSkillResult);
+  const startedAt = Math.min(...parts.map((p) => p.startedAt));
+  const finishedAt = Math.max(...parts.map((p) => p.finishedAt ?? Date.now()));
+  return {
+    subject: 'reading',
+    finalTier: deriveReadingLevel(subSkills),
+    subSkills,
+    floored: false,
+    questionsAnswered: subSkills.reduce((sum, r) => sum + r.questionsAnswered, 0),
+    durationMs: Math.max(0, finishedAt - startedAt),
+    completedAt: finishedAt,
+    history: parts.flatMap((p) => p.questionsAnswered),
+  };
 }
 
 /** The tier the session ended on is the placement for that subject. */
@@ -201,6 +248,11 @@ export function buildResult(
     questionsAnswered: r.questionsAnswered,
     nonDetermining: r.floored || !determined.has(r.subject),
     floored: r.floored,
+    subSkills: r.subSkills?.map((s) => ({
+      subSkill: s.subSkill,
+      finalTier: s.finalTier,
+      gradeEquivalentDisplay: tierGradeLabel(s.finalTier),
+    })),
   }));
 
   const program: ProgramPlacement | null =

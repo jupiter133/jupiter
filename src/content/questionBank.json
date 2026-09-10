@@ -42,7 +42,8 @@
           }
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "word-recognition"
     },
     {
       "id": "r-t0-02",
@@ -85,7 +86,8 @@
           }
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "word-recognition"
     },
     {
       "id": "r-t0-03",
@@ -112,7 +114,8 @@
           "text": "go"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "word-recognition"
     },
     {
       "id": "r-t0-04",
@@ -143,7 +146,8 @@
           "text": "cup"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t1-01",
@@ -186,7 +190,8 @@
           }
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t1-02",
@@ -217,7 +222,8 @@
           "text": "tint"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t1-03",
@@ -244,7 +250,8 @@
           "text": "Done"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "word-recognition"
     },
     {
       "id": "r-t1-04",
@@ -275,7 +282,8 @@
           "text": "5"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t2-01",
@@ -302,7 +310,8 @@
           "text": "run"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t2-02",
@@ -334,7 +343,8 @@
           "text": "A snowball"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t2-03",
@@ -366,7 +376,8 @@
           "text": "Berries"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t2-04",
@@ -397,7 +408,8 @@
           "text": "foxies"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t3-01",
@@ -429,7 +441,8 @@
           "text": "Nina"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t3-02",
@@ -457,7 +470,8 @@
           "text": "They went swimming"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t3-03",
@@ -483,7 +497,8 @@
           "text": "begginning"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "oral-reading"
     },
     {
       "id": "r-t3-04",
@@ -513,7 +528,8 @@
           "text": "Long and straight"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "r-t4-01",
@@ -543,7 +559,8 @@
           "text": "Going uphill"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "r-t4-02",
@@ -575,7 +592,8 @@
           "text": "Angry at his uncle"
         }
       ],
-      "correctAnswerId": "c"
+      "correctAnswerId": "c",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t4-03",
@@ -607,7 +625,8 @@
           "text": "They read the map"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t4-04",
@@ -635,7 +654,8 @@
           "text": "How to build a fire"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t5-01",
@@ -665,7 +685,8 @@
           "text": "Exhausted"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "r-t5-02",
@@ -697,7 +718,8 @@
           "text": "Trucks use less fuel when slow"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t5-03",
@@ -729,7 +751,8 @@
           "text": "The scouts got lost on the ridge"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t5-04",
@@ -760,7 +783,8 @@
           "text": "Distant"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "r-t6-01",
@@ -788,7 +812,8 @@
           "text": "It was never really used"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t6-02",
@@ -816,7 +841,8 @@
           "text": "To make the trip sound dangerous"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t6-03",
@@ -842,7 +868,8 @@
           "text": "Expensive"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "r-t6-04",
@@ -870,7 +897,8 @@
           "text": "3, 2, 1"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t7-01",
@@ -898,7 +926,8 @@
           "text": "Indifferent"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "b",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t7-02",
@@ -926,7 +955,8 @@
           "text": "Difficult to find"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "r-t7-03",
@@ -954,7 +984,8 @@
           "text": "Hiking should be difficult"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t8-01",
@@ -982,7 +1013,8 @@
           "text": "Explain how forests grow"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t8-02",
@@ -1010,7 +1042,8 @@
           "text": "That new trails cost more to build"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "passage-comprehension"
     },
     {
       "id": "r-t8-03",
@@ -1038,7 +1071,8 @@
           "text": "Trail difficulty"
         }
       ],
-      "correctAnswerId": "a"
+      "correctAnswerId": "a",
+      "subSkill": "reading-vocabulary"
     },
     {
       "id": "m-t0-01",

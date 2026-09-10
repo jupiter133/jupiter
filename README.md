@@ -211,7 +211,9 @@ kindergarten content. Two consequences, both content decisions rather than code:
 writing, math.** Nobody is stopped early. A result we did not gather is a result
 a teacher cannot look at.
 
-Reading goes first because it is what the other three are built on. If reading
+Reading goes first because it is what the other three are built on. It is
+assessed as **four sub-skills sat back to back in one session** — see
+**Reading sub-skills** below. If reading
 comes in below a Grade 3 level, the child is placed on the Reading track
 whatever the later sittings say — those sittings still run, and their results
 are recorded and flagged as **non-determining** (see below).
@@ -234,6 +236,50 @@ Skills by band, per the content plan:
   punctuation and capitalization, complete sentence vs fragment, word choice,
   paragraph sequencing.
 - **Spelling:** pick the correctly spelled word. Stub content.
+
+## Reading sub-skills
+
+The reading sitting is four short sittings run back to back, in this order:
+
+1. Word recognition
+2. Oral reading / decoding
+3. Reading vocabulary
+4. Passage comprehension
+
+Each one has its own tier-tagged bank (`subSkill` on the item), starts at the
+child's grade tier, branches exactly like every other sitting, and runs
+**5 questions** with the early stop at **3 answers** on the same tier
+(`QUESTIONS_PER_SUB_SKILL`, `SUB_SKILL_STABILITY_WINDOW` in
+`src/assessment/readingSkills.ts`). About 20 questions in all. The child sees
+one continuous reading quest: one progress bar across all four, no break and no
+score between them.
+
+**The overall reading level is derived, not measured.** The gate consumes it
+exactly as it consumed the old single level. The derivation is a config table
+in `readingSkills.ts` — `ACTIVE_READING_LEVEL_RULE` — with two rules on offer:
+
+- `lowest` (default): the lowest of the four sub-skill tiers. A child is only
+  as strong a reader as their weakest sub-skill.
+- `weighted`: a weighted mean, rounded down, using `READING_LEVEL_WEIGHTS`
+  (decoding and comprehension weighted 2, the others 1, as a starting point).
+
+**Pending teacher sign-off.** Switching rule or weights is a one-line config
+edit, not a code change.
+
+On the parent screen the reading row shows the derived level and opens (it is
+the only row with a chevron) to the four sub-skill levels in grade-equivalent
+language. For a child stopped by the reading gate, the open row names the
+sub-skill holding them back.
+
+### The reading bank is a STUB
+
+`src/content/readingBank.stub.json` is **template-generated** by
+`scripts/generate-reading-stub.py`: six items per sub-skill per tier so the
+engine and screens can be exercised end to end. It is not assessment content.
+`READING_BANK_IS_STUB` in `src/assessment/questionBank.ts` is `true` while it
+is in use and a test asserts it, so the swap to teacher-written banks is a
+deliberate act. **Do not ship on it.** The 36 hand-written reading items in
+`questionBank.json` are tagged into the sub-skills and stay.
 
 ## The priority gate
 
@@ -371,7 +417,8 @@ parent-facing label ever contains the word "tier".
 
 `src/content/questionBank.json` — placeholder bank: 115 items tagged by subject
 and tier, covering **every tier 0–8 in all four subjects** (at least 3 per
-cell). Spelling is a stub. Subject and tier data live in the JSON, so dropping in the real bank
+cell). Spelling is a stub. Reading is split into four sub-skill banks — see
+**Reading sub-skills** above — with a separate, clearly marked stub file. Subject and tier data live in the JSON, so dropping in the real bank
 needs no engine change.
 
 Production content should carry **6+ items per subject/tier cell**. A sitting

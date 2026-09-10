@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import type { ParentContext, PlacementResult, Subject, SubjectPlacement } from '../assessment/types';
-import { SUBJECT_LABEL } from '../assessment/types';
+import { READING_SUB_SKILL_LABEL, SUBJECT_LABEL } from '../assessment/types';
+import { readingBottleneck } from '../assessment/readingSkills';
 import { displayName, possessiveName } from '../assessment/childName';
 import { STRAND_TAG, Tag } from '../components/Tag';
 
@@ -43,6 +45,11 @@ export function ParentResultsScreen({
   const name = displayName(context?.childName ?? childName);
   const { program, subjects, nextSubject, complete, readingGated } = result;
   const bySubject = (subject: Subject) => subjects.find((p) => p.subject === subject);
+  // The reading row opens to show its four sub-skills. Collapsed by default:
+  // the main view stays one line per subject.
+  const [readingOpen, setReadingOpen] = useState(false);
+  const reading = bySubject('reading');
+  const bottleneck = reading?.subSkills ? readingBottleneck(reading.subSkills) : null;
 
   return (
     <div className="stage">
@@ -104,22 +111,76 @@ export function ParentResultsScreen({
           <ul className="strand-list">
             {result.requiredSubjects.map((subject) => {
               const placement = bySubject(subject);
+              const levelClass =
+                placement && !placement.nonDetermining
+                  ? 'strand-row__level'
+                  : 'strand-row__level strand-row__level--pending';
+              const expandable = subject === 'reading' && Boolean(placement?.subSkills?.length);
+
+              if (!expandable) {
+                return (
+                  <li
+                    key={subject}
+                    className={`strand-row${placement ? '' : ' strand-row--pending'}`}
+                    data-strand={subject}
+                  >
+                    <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>
+                    <span className={levelClass}>
+                      {placement ? levelTextFor(placement) : 'Not yet assessed'}
+                    </span>
+                  </li>
+                );
+              }
+
+              /* Reading: the one row that opens. The chevron is the tell. */
               return (
                 <li
                   key={subject}
-                  className={`strand-row${placement ? '' : ' strand-row--pending'}`}
+                  className={`strand-row strand-row--expandable${readingOpen ? ' strand-row--open' : ''}`}
                   data-strand={subject}
                 >
-                  <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>
-                  <span
-                    className={
-                      placement && !placement.nonDetermining
-                        ? 'strand-row__level'
-                        : 'strand-row__level strand-row__level--pending'
-                    }
+                  <button
+                    type="button"
+                    className="strand-row__toggle"
+                    aria-expanded={readingOpen}
+                    aria-controls="reading-detail"
+                    onClick={() => setReadingOpen((open) => !open)}
                   >
-                    {placement ? levelTextFor(placement) : 'Not yet assessed'}
-                  </span>
+                    <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>
+                    <span className={levelClass}>{levelTextFor(placement!)}</span>
+                    <span className="strand-row__chevron" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </span>
+                  </button>
+
+                  {readingOpen && (
+                    <div id="reading-detail" className="sub-skills">
+                      <ul className="sub-skill-list">
+                        {placement!.subSkills!.map((s) => (
+                          <li key={s.subSkill} className="sub-skill-row">
+                            <span className="sub-skill-row__name">
+                              {READING_SUB_SKILL_LABEL[s.subSkill]}
+                            </span>
+                            <span className="sub-skill-row__level">{s.gradeEquivalentDisplay}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {readingGated && bottleneck ? (
+                        <p className="sub-skills__note">
+                          Reading is the foundation the other three subjects sit on, so it comes
+                          first. The sub-skill holding {name} back is{' '}
+                          <strong>{READING_SUB_SKILL_LABEL[bottleneck.subSkill].toLowerCase()}</strong>
+                          {' '}— that is where the reading program starts.
+                        </p>
+                      ) : (
+                        <p className="sub-skills__note">
+                          The overall reading level is taken from these four together.
+                        </p>
+                      )}
+                    </div>
+                  )}
                 </li>
               );
             })}

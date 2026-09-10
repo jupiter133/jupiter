@@ -10,6 +10,7 @@ import type {
 } from './types';
 import { ageBandForAge, subjectsForGrade } from './types';
 import { READING_GATE_TIER } from './tiers';
+import { QUESTIONS_PER_SUB_SKILL, READING_SUB_SKILLS } from './readingSkills';
 import { audioDefaultFor } from '../audio/speechScript';
 import {
   QUESTIONS_PER_SUBJECT,
@@ -17,6 +18,7 @@ import {
   createSession,
   selectNextQuestion,
   submitAnswer,
+  toReadingResult,
   toSubjectResult,
 } from './engine';
 import {
@@ -88,6 +90,9 @@ export function usePlacementFlow(childName: string): Flow {
   const [step, setStep] = useState<FlowStep>('start');
   const [context, setContext] = useState<ParentContext | null>(null);
   const [session, setSession] = useState<SessionState | null>(null);
+  // Reading runs four sub-skill sittings back to back; finished ones wait here
+  // until the last completes and they fold into one reading result.
+  const [readingParts, setReadingParts] = useState<SessionState[]>([]);
   const [progress, setProgress] = useState<PlacementProgress | null>(() =>
     loadProgress(childName),
   );
@@ -131,7 +136,12 @@ export function usePlacementFlow(childName: string): Flow {
       setStep('parent-results');
       return;
     }
-    setSession(createSession(grade, nextSubject, { floored: readingGated && nextSubject !== 'reading' }));
+    setReadingParts([]);
+    setSession(
+      nextSubject === 'reading'
+        ? createSession(grade, 'reading', { subSkill: READING_SUB_SKILLS[0] })
+        : createSession(grade, nextSubject, { floored: readingGated }),
+    );
     setStep('section-intro');
   }, [grade, nextSubject, readingGated]);
 
@@ -163,21 +173,37 @@ export function usePlacementFlow(childName: string): Flow {
 
       const next = submitAnswer(session, question, selectedAnswerId);
       setSession(next);
+      if (!next.finishedAt) return;
 
-      if (next.finishedAt) {
-        // Recording happens here, not inside the state updater, so a double
-        // render can never write the result twice.
-        setProgress(recordSubjectResult(childName, next.grade, age, toSubjectResult(next)));
+      // Recording happens here, not inside the state updater, so a double
+      // render can never write the result twice.
+      if (next.subSkill) {
+        const parts = [...readingParts, next];
+        const index = READING_SUB_SKILLS.indexOf(next.subSkill);
+        const following = READING_SUB_SKILLS[index + 1];
+        if (following) {
+          // Straight into the next sub-skill: no break, no score, one quest.
+          setReadingParts(parts);
+          setSession(createSession(next.grade, 'reading', { subSkill: following }));
+          return;
+        }
+        setReadingParts([]);
+        setProgress(recordSubjectResult(childName, next.grade, age, toReadingResult(parts)));
         setStep('kid-complete');
+        return;
       }
+
+      setProgress(recordSubjectResult(childName, next.grade, age, toSubjectResult(next)));
+      setStep('kid-complete');
     },
-    [session, childName, age],
+    [session, readingParts, childName, age],
   );
 
   const handBackToParent = useCallback(() => setStep('parent-results'), []);
 
   const continueNext = useCallback(() => {
     setSession(null);
+    setReadingParts([]);
     startNextSitting();
   }, [startNextSitting]);
 
@@ -189,6 +215,7 @@ export function usePlacementFlow(childName: string): Flow {
     clearProgress(childName);
     setProgress(null);
     setSession(null);
+    setReadingParts([]);
     setContext(null);
     setAudioOverride(null);
     setStep('start');
@@ -223,8 +250,15 @@ export function usePlacementFlow(childName: string): Flow {
     audioEnabled: forcedAudio || (audioOverride ?? audioDefaultFor(band)),
     toggleAudio,
     currentQuestion,
-    questionNumber: (session?.questionsAnswered.length ?? 0) + 1,
-    questionsPerSubject: QUESTIONS_PER_SUBJECT,
+    // Reading counts across all four sub-skills so the bar never resets.
+    questionNumber:
+      readingParts.reduce((sum, p) => sum + p.questionsAnswered.length, 0) +
+      (session?.questionsAnswered.length ?? 0) +
+      1,
+    questionsPerSubject:
+      session?.subSkill !== undefined
+        ? QUESTIONS_PER_SUB_SKILL * READING_SUB_SKILLS.length
+        : QUESTIONS_PER_SUBJECT,
     result,
     beginIntake,
     defer,

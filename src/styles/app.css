@@ -487,6 +487,54 @@ body {
 .strand-row .tag { font-size: 14px; }
 .strand-row__level { font-weight: var(--fw-extrabold); color: var(--text-primary); }
 
+/* The reading row opens to show its sub-skills. The whole row is the button;
+   the chevron is what tells a parent it opens. */
+.strand-row--expandable { display: block; padding: 0; }
+.strand-row__toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 10px var(--space-4);
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: inherit;
+}
+.strand-row__toggle:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 2px; }
+.strand-row__toggle .strand-row__level { margin-left: auto; }
+.strand-row__chevron {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  color: var(--accent-secondary);
+  transition: transform 160ms ease;
+}
+.strand-row--open .strand-row__chevron { transform: rotate(180deg); }
+.sub-skills {
+  padding: 4px var(--space-4) var(--space-3) var(--space-4);
+  border-top: 1px dashed var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.sub-skill-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.sub-skill-row { display: flex; justify-content: space-between; gap: var(--space-3); padding: 4px 0; font-size: 15px; }
+.sub-skill-row__name { font-weight: var(--fw-semibold); color: var(--text-secondary); }
+.sub-skill-row__level { font-weight: var(--fw-extrabold); color: var(--text-primary); }
+.sub-skills__note { margin: 0; font-size: 13px; line-height: 1.5; color: var(--text-secondary); font-weight: var(--fw-semibold); }
+/* An open reading row spans both columns of the 2x2 block so it has room. */
+.strand-row--open { grid-column: 1 / -1; }
+
 /* A subject the child has not sat yet: present but visibly not a result. */
 .strand-row--pending { background: transparent; border-style: dashed; }
 .strand-row--pending .tag { opacity: 0.55; }

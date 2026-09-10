@@ -1,0 +1,6163 @@
+{
+  "version": "STUB-reading-0.1",
+  "stub": true,
+  "note": "TEMPLATE-GENERATED STUB. Not assessment content. Replace before shipping.",
+  "questions": [
+    {
+      "id": "rs-wr-t0-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 0,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “cat”?",
+      "questionTextJunior": "Find “cat”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "caa"
+        },
+        {
+          "id": "b",
+          "text": "cat"
+        },
+        {
+          "id": "c",
+          "text": "cab"
+        },
+        {
+          "id": "d",
+          "text": "caat"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t0-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 0,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ron"
+        },
+        {
+          "id": "b",
+          "text": "san"
+        },
+        {
+          "id": "c",
+          "text": "cat"
+        },
+        {
+          "id": "d",
+          "text": "dag"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t0-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 0,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “dog”?",
+      "questionTextJunior": "Find “dog”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "dos"
+        },
+        {
+          "id": "b",
+          "text": "gog"
+        },
+        {
+          "id": "c",
+          "text": "dot"
+        },
+        {
+          "id": "d",
+          "text": "dog"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t0-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 0,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "hot"
+        },
+        {
+          "id": "b",
+          "text": "sin"
+        },
+        {
+          "id": "c",
+          "text": "bag"
+        },
+        {
+          "id": "d",
+          "text": "dog"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t0-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 0,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “sun”?",
+      "questionTextJunior": "Find “sun”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "sun"
+        },
+        {
+          "id": "b",
+          "text": "sue"
+        },
+        {
+          "id": "c",
+          "text": "son"
+        },
+        {
+          "id": "d",
+          "text": "sur"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t0-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 0,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "cip"
+        },
+        {
+          "id": "b",
+          "text": "dig"
+        },
+        {
+          "id": "c",
+          "text": "mop"
+        },
+        {
+          "id": "d",
+          "text": "sun"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t0-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 0,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “hat”?",
+      "questionTextJunior": "Find “hat”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "hat"
+        },
+        {
+          "id": "b",
+          "text": "het"
+        },
+        {
+          "id": "c",
+          "text": "har"
+        },
+        {
+          "id": "d",
+          "text": "hbt"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t0-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 0,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "cap"
+        },
+        {
+          "id": "b",
+          "text": "ran"
+        },
+        {
+          "id": "c",
+          "text": "bog"
+        },
+        {
+          "id": "d",
+          "text": "hat"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t0-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 0,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “big”?",
+      "questionTextJunior": "Find “big”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "btg"
+        },
+        {
+          "id": "b",
+          "text": "big"
+        },
+        {
+          "id": "c",
+          "text": "bmg"
+        },
+        {
+          "id": "d",
+          "text": "bin"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t0-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 0,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "cut"
+        },
+        {
+          "id": "b",
+          "text": "hit"
+        },
+        {
+          "id": "c",
+          "text": "dug"
+        },
+        {
+          "id": "d",
+          "text": "big"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t0-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 0,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “run”?",
+      "questionTextJunior": "Find “run”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "run"
+        },
+        {
+          "id": "b",
+          "text": "rpn"
+        },
+        {
+          "id": "c",
+          "text": "runn"
+        },
+        {
+          "id": "d",
+          "text": "rug"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t0-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 0,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "run"
+        },
+        {
+          "id": "b",
+          "text": "cep"
+        },
+        {
+          "id": "c",
+          "text": "cut"
+        },
+        {
+          "id": "d",
+          "text": "deg"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t0-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 0,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Big” means:",
+      "questionTextJunior": "What does “big” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "large"
+        },
+        {
+          "id": "b",
+          "text": "small"
+        },
+        {
+          "id": "c",
+          "text": "close"
+        },
+        {
+          "id": "d",
+          "text": "quick"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t0-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 0,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Little” means:",
+      "questionTextJunior": "What does “little” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "small"
+        },
+        {
+          "id": "b",
+          "text": "large"
+        },
+        {
+          "id": "c",
+          "text": "quick"
+        },
+        {
+          "id": "d",
+          "text": "begin"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t0-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 0,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Fast” means:",
+      "questionTextJunior": "What does “fast” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "close"
+        },
+        {
+          "id": "b",
+          "text": "large"
+        },
+        {
+          "id": "c",
+          "text": "quick"
+        },
+        {
+          "id": "d",
+          "text": "small"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t0-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 0,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Happy” means:",
+      "questionTextJunior": "What does “happy” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "small"
+        },
+        {
+          "id": "b",
+          "text": "close"
+        },
+        {
+          "id": "c",
+          "text": "glad"
+        },
+        {
+          "id": "d",
+          "text": "large"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t0-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 0,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Shut” means:",
+      "questionTextJunior": "What does “shut” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "begin"
+        },
+        {
+          "id": "b",
+          "text": "glad"
+        },
+        {
+          "id": "c",
+          "text": "large"
+        },
+        {
+          "id": "d",
+          "text": "close"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t0-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 0,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Start” means:",
+      "questionTextJunior": "What does “start” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "close"
+        },
+        {
+          "id": "b",
+          "text": "large"
+        },
+        {
+          "id": "c",
+          "text": "small"
+        },
+        {
+          "id": "d",
+          "text": "begin"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-pc-t0-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 0,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does Aya roll?",
+      "questionTextJunior": "What does Aya roll?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A cup"
+        },
+        {
+          "id": "b",
+          "text": "A hat"
+        },
+        {
+          "id": "c",
+          "text": "A ball"
+        },
+        {
+          "id": "d",
+          "text": "A cat"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Aya has a red ball. Aya rolls it to the dog.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t0-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 0,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does Ben roll?",
+      "questionTextJunior": "What does Ben roll?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A ball"
+        },
+        {
+          "id": "b",
+          "text": "A hat"
+        },
+        {
+          "id": "c",
+          "text": "A cat"
+        },
+        {
+          "id": "d",
+          "text": "A cup"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Ben has a red ball. Ben rolls it to the dog.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t0-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 0,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does Nina roll?",
+      "questionTextJunior": "What does Nina roll?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A hat"
+        },
+        {
+          "id": "b",
+          "text": "A cup"
+        },
+        {
+          "id": "c",
+          "text": "A ball"
+        },
+        {
+          "id": "d",
+          "text": "A cat"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Nina has a red ball. Nina rolls it to the dog.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t0-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 0,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does Sam roll?",
+      "questionTextJunior": "What does Sam roll?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A ball"
+        },
+        {
+          "id": "b",
+          "text": "A cup"
+        },
+        {
+          "id": "c",
+          "text": "A hat"
+        },
+        {
+          "id": "d",
+          "text": "A cat"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Sam has a red ball. Sam rolls it to the dog.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t0-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 0,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does Leo roll?",
+      "questionTextJunior": "What does Leo roll?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A cup"
+        },
+        {
+          "id": "b",
+          "text": "A ball"
+        },
+        {
+          "id": "c",
+          "text": "A hat"
+        },
+        {
+          "id": "d",
+          "text": "A cat"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "Leo has a red ball. Leo rolls it to the dog.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t0-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 0,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does Mira roll?",
+      "questionTextJunior": "What does Mira roll?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A cup"
+        },
+        {
+          "id": "b",
+          "text": "A cat"
+        },
+        {
+          "id": "c",
+          "text": "A ball"
+        },
+        {
+          "id": "d",
+          "text": "A hat"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Mira has a red ball. Mira rolls it to the dog.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t1-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 1,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “ship”?",
+      "questionTextJunior": "Find “ship”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "sip"
+        },
+        {
+          "id": "b",
+          "text": "ship"
+        },
+        {
+          "id": "c",
+          "text": "shp"
+        },
+        {
+          "id": "d",
+          "text": "shiip"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t1-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 1,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "troe"
+        },
+        {
+          "id": "b",
+          "text": "ship"
+        },
+        {
+          "id": "c",
+          "text": "melk"
+        },
+        {
+          "id": "d",
+          "text": "wesh"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t1-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 1,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “frog”?",
+      "questionTextJunior": "Find “frog”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "fog"
+        },
+        {
+          "id": "b",
+          "text": "feog"
+        },
+        {
+          "id": "c",
+          "text": "frug"
+        },
+        {
+          "id": "d",
+          "text": "frog"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t1-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 1,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "molk"
+        },
+        {
+          "id": "b",
+          "text": "nust"
+        },
+        {
+          "id": "c",
+          "text": "jemp"
+        },
+        {
+          "id": "d",
+          "text": "frog"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t1-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 1,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “jump”?",
+      "questionTextJunior": "Find “jump”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "jumpp"
+        },
+        {
+          "id": "b",
+          "text": "jupm"
+        },
+        {
+          "id": "c",
+          "text": "jup"
+        },
+        {
+          "id": "d",
+          "text": "jump"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t1-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 1,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "hond"
+        },
+        {
+          "id": "b",
+          "text": "jump"
+        },
+        {
+          "id": "c",
+          "text": "nist"
+        },
+        {
+          "id": "d",
+          "text": "frug"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t1-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 1,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “milk”?",
+      "questionTextJunior": "Find “milk”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "mlk"
+        },
+        {
+          "id": "b",
+          "text": "mik"
+        },
+        {
+          "id": "c",
+          "text": "milk"
+        },
+        {
+          "id": "d",
+          "text": "miilk"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t1-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 1,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "hind"
+        },
+        {
+          "id": "b",
+          "text": "milk"
+        },
+        {
+          "id": "c",
+          "text": "shop"
+        },
+        {
+          "id": "d",
+          "text": "true"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t1-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 1,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “nest”?",
+      "questionTextJunior": "Find “nest”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "nrst"
+        },
+        {
+          "id": "b",
+          "text": "nest"
+        },
+        {
+          "id": "c",
+          "text": "nesst"
+        },
+        {
+          "id": "d",
+          "text": "nast"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t1-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 1,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "frag"
+        },
+        {
+          "id": "b",
+          "text": "melk"
+        },
+        {
+          "id": "c",
+          "text": "trie"
+        },
+        {
+          "id": "d",
+          "text": "nest"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t1-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 1,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “wish”?",
+      "questionTextJunior": "Find “wish”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "wsih"
+        },
+        {
+          "id": "b",
+          "text": "wiish"
+        },
+        {
+          "id": "c",
+          "text": "wsh"
+        },
+        {
+          "id": "d",
+          "text": "wish"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t1-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 1,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "wish"
+        },
+        {
+          "id": "b",
+          "text": "hund"
+        },
+        {
+          "id": "c",
+          "text": "shop"
+        },
+        {
+          "id": "d",
+          "text": "nost"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t1-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 1,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Tiny” means:",
+      "questionTextJunior": "What does “tiny” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "yell"
+        },
+        {
+          "id": "b",
+          "text": "very small"
+        },
+        {
+          "id": "c",
+          "text": "present"
+        },
+        {
+          "id": "d",
+          "text": "see"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t1-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 1,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Loud” means:",
+      "questionTextJunior": "What does “loud” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "present"
+        },
+        {
+          "id": "b",
+          "text": "yell"
+        },
+        {
+          "id": "c",
+          "text": "see"
+        },
+        {
+          "id": "d",
+          "text": "noisy"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t1-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 1,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Shout” means:",
+      "questionTextJunior": "What does “shout” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "present"
+        },
+        {
+          "id": "b",
+          "text": "see"
+        },
+        {
+          "id": "c",
+          "text": "yell"
+        },
+        {
+          "id": "d",
+          "text": "very small"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t1-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 1,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Chilly” means:",
+      "questionTextJunior": "What does “chilly” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "noisy"
+        },
+        {
+          "id": "b",
+          "text": "cold"
+        },
+        {
+          "id": "c",
+          "text": "present"
+        },
+        {
+          "id": "d",
+          "text": "yell"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t1-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 1,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Gift” means:",
+      "questionTextJunior": "What does “gift” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "noisy"
+        },
+        {
+          "id": "b",
+          "text": "present"
+        },
+        {
+          "id": "c",
+          "text": "cold"
+        },
+        {
+          "id": "d",
+          "text": "very small"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t1-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 1,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Look” means:",
+      "questionTextJunior": "What does “look” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "see"
+        },
+        {
+          "id": "b",
+          "text": "cold"
+        },
+        {
+          "id": "c",
+          "text": "noisy"
+        },
+        {
+          "id": "d",
+          "text": "yell"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-pc-t1-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 1,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Where was the mitten?",
+      "questionTextJunior": "Where was the mitten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Under the tree"
+        },
+        {
+          "id": "b",
+          "text": "In the car"
+        },
+        {
+          "id": "c",
+          "text": "On the hill"
+        },
+        {
+          "id": "d",
+          "text": "In the house"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Aya lost a mitten in the snow. Aya looked under the tree and found it.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t1-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 1,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Where was the mitten?",
+      "questionTextJunior": "Where was the mitten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On the hill"
+        },
+        {
+          "id": "b",
+          "text": "In the house"
+        },
+        {
+          "id": "c",
+          "text": "In the car"
+        },
+        {
+          "id": "d",
+          "text": "Under the tree"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Ben lost a mitten in the snow. Ben looked under the tree and found it.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t1-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 1,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Where was the mitten?",
+      "questionTextJunior": "Where was the mitten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On the hill"
+        },
+        {
+          "id": "b",
+          "text": "In the car"
+        },
+        {
+          "id": "c",
+          "text": "In the house"
+        },
+        {
+          "id": "d",
+          "text": "Under the tree"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Nina lost a mitten in the snow. Nina looked under the tree and found it.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t1-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 1,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Where was the mitten?",
+      "questionTextJunior": "Where was the mitten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "In the house"
+        },
+        {
+          "id": "b",
+          "text": "Under the tree"
+        },
+        {
+          "id": "c",
+          "text": "In the car"
+        },
+        {
+          "id": "d",
+          "text": "On the hill"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "Sam lost a mitten in the snow. Sam looked under the tree and found it.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t1-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 1,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Where was the mitten?",
+      "questionTextJunior": "Where was the mitten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Under the tree"
+        },
+        {
+          "id": "b",
+          "text": "In the car"
+        },
+        {
+          "id": "c",
+          "text": "In the house"
+        },
+        {
+          "id": "d",
+          "text": "On the hill"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Leo lost a mitten in the snow. Leo looked under the tree and found it.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t1-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 1,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Where was the mitten?",
+      "questionTextJunior": "Where was the mitten?",
+      "options": [
+        {
+          "id": "a",
+          "text": "In the house"
+        },
+        {
+          "id": "b",
+          "text": "In the car"
+        },
+        {
+          "id": "c",
+          "text": "On the hill"
+        },
+        {
+          "id": "d",
+          "text": "Under the tree"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Mira lost a mitten in the snow. Mira looked under the tree and found it.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t2-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 2,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “bridge”?",
+      "questionTextJunior": "Find “bridge”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "briddge"
+        },
+        {
+          "id": "b",
+          "text": "birdge"
+        },
+        {
+          "id": "c",
+          "text": "bridge"
+        },
+        {
+          "id": "d",
+          "text": "brdige"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t2-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 2,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "friind"
+        },
+        {
+          "id": "b",
+          "text": "picket"
+        },
+        {
+          "id": "c",
+          "text": "littlo"
+        },
+        {
+          "id": "d",
+          "text": "bridge"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t2-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 2,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “candle”?",
+      "questionTextJunior": "Find “candle”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "cnadle"
+        },
+        {
+          "id": "b",
+          "text": "gandle"
+        },
+        {
+          "id": "c",
+          "text": "candle"
+        },
+        {
+          "id": "d",
+          "text": "caandle"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t2-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 2,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "wandow"
+        },
+        {
+          "id": "b",
+          "text": "bridgo"
+        },
+        {
+          "id": "c",
+          "text": "candle"
+        },
+        {
+          "id": "d",
+          "text": "froend"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t2-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 2,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “spring”?",
+      "questionTextJunior": "Find “spring”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "spring"
+        },
+        {
+          "id": "b",
+          "text": "sppring"
+        },
+        {
+          "id": "c",
+          "text": "spriing"
+        },
+        {
+          "id": "d",
+          "text": "sping"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t2-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 2,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "rabbot"
+        },
+        {
+          "id": "b",
+          "text": "cendle"
+        },
+        {
+          "id": "c",
+          "text": "lottle"
+        },
+        {
+          "id": "d",
+          "text": "spring"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t2-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 2,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “pocket”?",
+      "questionTextJunior": "Find “pocket”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "pockot"
+        },
+        {
+          "id": "b",
+          "text": "pocket"
+        },
+        {
+          "id": "c",
+          "text": "ppcket"
+        },
+        {
+          "id": "d",
+          "text": "pockte"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t2-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 2,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fraend"
+        },
+        {
+          "id": "b",
+          "text": "cundle"
+        },
+        {
+          "id": "c",
+          "text": "sprang"
+        },
+        {
+          "id": "d",
+          "text": "pocket"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t2-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 2,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “window”?",
+      "questionTextJunior": "Find “window”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "window"
+        },
+        {
+          "id": "b",
+          "text": "windwo"
+        },
+        {
+          "id": "c",
+          "text": "windoww"
+        },
+        {
+          "id": "d",
+          "text": "wandow"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t2-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 2,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "window"
+        },
+        {
+          "id": "b",
+          "text": "brodge"
+        },
+        {
+          "id": "c",
+          "text": "candlo"
+        },
+        {
+          "id": "d",
+          "text": "pockat"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-wr-t2-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 2,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “rabbit”?",
+      "questionTextJunior": "Find “rabbit”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "rabibt"
+        },
+        {
+          "id": "b",
+          "text": "rabbbit"
+        },
+        {
+          "id": "c",
+          "text": "rabbit"
+        },
+        {
+          "id": "d",
+          "text": "rbbit"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t2-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 2,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "sprang"
+        },
+        {
+          "id": "b",
+          "text": "rabbit"
+        },
+        {
+          "id": "c",
+          "text": "wondow"
+        },
+        {
+          "id": "d",
+          "text": "cindle"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t2-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 2,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Brave” means:",
+      "questionTextJunior": "What does “brave” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "end"
+        },
+        {
+          "id": "b",
+          "text": "not afraid"
+        },
+        {
+          "id": "c",
+          "text": "huge"
+        },
+        {
+          "id": "d",
+          "text": "quiet"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t2-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 2,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Silent” means:",
+      "questionTextJunior": "What does “silent” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "quiet"
+        },
+        {
+          "id": "b",
+          "text": "huge"
+        },
+        {
+          "id": "c",
+          "text": "not afraid"
+        },
+        {
+          "id": "d",
+          "text": "fast"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t2-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 2,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Enormous” means:",
+      "questionTextJunior": "What does “enormous” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fast"
+        },
+        {
+          "id": "b",
+          "text": "end"
+        },
+        {
+          "id": "c",
+          "text": "huge"
+        },
+        {
+          "id": "d",
+          "text": "quiet"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t2-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 2,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Rapid” means:",
+      "questionTextJunior": "What does “rapid” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "collect"
+        },
+        {
+          "id": "b",
+          "text": "huge"
+        },
+        {
+          "id": "c",
+          "text": "quiet"
+        },
+        {
+          "id": "d",
+          "text": "fast"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t2-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 2,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Finish” means:",
+      "questionTextJunior": "What does “finish” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "end"
+        },
+        {
+          "id": "b",
+          "text": "fast"
+        },
+        {
+          "id": "c",
+          "text": "collect"
+        },
+        {
+          "id": "d",
+          "text": "not afraid"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t2-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 2,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Gather” means:",
+      "questionTextJunior": "What does “gather” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "not afraid"
+        },
+        {
+          "id": "b",
+          "text": "quiet"
+        },
+        {
+          "id": "c",
+          "text": "fast"
+        },
+        {
+          "id": "d",
+          "text": "collect"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-pc-t2-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 2,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Aya walk to the pond?",
+      "questionTextJunior": "Why did Aya walk to the pond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To see the ducks"
+        },
+        {
+          "id": "b",
+          "text": "To swim"
+        },
+        {
+          "id": "c",
+          "text": "To find a friend"
+        },
+        {
+          "id": "d",
+          "text": "To eat lunch"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Aya wanted to see the ducks, so Aya walked to the pond after lunch. The ducks were sleeping in the reeds.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t2-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 2,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Ben walk to the pond?",
+      "questionTextJunior": "Why did Ben walk to the pond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To swim"
+        },
+        {
+          "id": "b",
+          "text": "To find a friend"
+        },
+        {
+          "id": "c",
+          "text": "To eat lunch"
+        },
+        {
+          "id": "d",
+          "text": "To see the ducks"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Ben wanted to see the ducks, so Ben walked to the pond after lunch. The ducks were sleeping in the reeds.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t2-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 2,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Nina walk to the pond?",
+      "questionTextJunior": "Why did Nina walk to the pond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To eat lunch"
+        },
+        {
+          "id": "b",
+          "text": "To find a friend"
+        },
+        {
+          "id": "c",
+          "text": "To swim"
+        },
+        {
+          "id": "d",
+          "text": "To see the ducks"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Nina wanted to see the ducks, so Nina walked to the pond after lunch. The ducks were sleeping in the reeds.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t2-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 2,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Sam walk to the pond?",
+      "questionTextJunior": "Why did Sam walk to the pond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To swim"
+        },
+        {
+          "id": "b",
+          "text": "To see the ducks"
+        },
+        {
+          "id": "c",
+          "text": "To eat lunch"
+        },
+        {
+          "id": "d",
+          "text": "To find a friend"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "Sam wanted to see the ducks, so Sam walked to the pond after lunch. The ducks were sleeping in the reeds.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t2-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 2,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Leo walk to the pond?",
+      "questionTextJunior": "Why did Leo walk to the pond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To eat lunch"
+        },
+        {
+          "id": "b",
+          "text": "To find a friend"
+        },
+        {
+          "id": "c",
+          "text": "To see the ducks"
+        },
+        {
+          "id": "d",
+          "text": "To swim"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Leo wanted to see the ducks, so Leo walked to the pond after lunch. The ducks were sleeping in the reeds.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t2-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 2,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Mira walk to the pond?",
+      "questionTextJunior": "Why did Mira walk to the pond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To see the ducks"
+        },
+        {
+          "id": "b",
+          "text": "To find a friend"
+        },
+        {
+          "id": "c",
+          "text": "To swim"
+        },
+        {
+          "id": "d",
+          "text": "To eat lunch"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Mira wanted to see the ducks, so Mira walked to the pond after lunch. The ducks were sleeping in the reeds.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t3-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 3,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “thunder”?",
+      "questionTextJunior": "Find “thunder”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "thunedr"
+        },
+        {
+          "id": "b",
+          "text": "thunden"
+        },
+        {
+          "id": "c",
+          "text": "thunder"
+        },
+        {
+          "id": "d",
+          "text": "thhunder"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t3-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 3,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "whasper"
+        },
+        {
+          "id": "b",
+          "text": "surprose"
+        },
+        {
+          "id": "c",
+          "text": "kitchan"
+        },
+        {
+          "id": "d",
+          "text": "thunder"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t3-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 3,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “journey”?",
+      "questionTextJunior": "Find “journey”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "joubney"
+        },
+        {
+          "id": "b",
+          "text": "journey"
+        },
+        {
+          "id": "c",
+          "text": "journney"
+        },
+        {
+          "id": "d",
+          "text": "jotrney"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t3-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 3,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "whispir"
+        },
+        {
+          "id": "b",
+          "text": "thundor"
+        },
+        {
+          "id": "c",
+          "text": "journey"
+        },
+        {
+          "id": "d",
+          "text": "mornang"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t3-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 3,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “stretch”?",
+      "questionTextJunior": "Find “stretch”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "sttretch"
+        },
+        {
+          "id": "b",
+          "text": "streetch"
+        },
+        {
+          "id": "c",
+          "text": "stretch"
+        },
+        {
+          "id": "d",
+          "text": "streth"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t3-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 3,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "stretch"
+        },
+        {
+          "id": "b",
+          "text": "kitchun"
+        },
+        {
+          "id": "c",
+          "text": "thundor"
+        },
+        {
+          "id": "d",
+          "text": "marning"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-wr-t3-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 3,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “whisper”?",
+      "questionTextJunior": "Find “whisper”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "whbsper"
+        },
+        {
+          "id": "b",
+          "text": "whhisper"
+        },
+        {
+          "id": "c",
+          "text": "whisper"
+        },
+        {
+          "id": "d",
+          "text": "whissper"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t3-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 3,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "whisper"
+        },
+        {
+          "id": "b",
+          "text": "stratch"
+        },
+        {
+          "id": "c",
+          "text": "surprose"
+        },
+        {
+          "id": "d",
+          "text": "thonder"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-wr-t3-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 3,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “morning”?",
+      "questionTextJunior": "Find “morning”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "morningg"
+        },
+        {
+          "id": "b",
+          "text": "mroning"
+        },
+        {
+          "id": "c",
+          "text": "morning"
+        },
+        {
+          "id": "d",
+          "text": "morinng"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t3-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 3,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "captein"
+        },
+        {
+          "id": "b",
+          "text": "whosper"
+        },
+        {
+          "id": "c",
+          "text": "stritch"
+        },
+        {
+          "id": "d",
+          "text": "morning"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t3-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 3,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “captain”?",
+      "questionTextJunior": "Find “captain”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "captani"
+        },
+        {
+          "id": "b",
+          "text": "captein"
+        },
+        {
+          "id": "c",
+          "text": "captain"
+        },
+        {
+          "id": "d",
+          "text": "captaain"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t3-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 3,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "captain"
+        },
+        {
+          "id": "b",
+          "text": "surprisi"
+        },
+        {
+          "id": "c",
+          "text": "whispor"
+        },
+        {
+          "id": "d",
+          "text": "strutch"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t3-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 3,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Muddy” means:",
+      "questionTextJunior": "What does “muddy” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "dark and sad"
+        },
+        {
+          "id": "b",
+          "text": "easily broken"
+        },
+        {
+          "id": "c",
+          "text": "wet with dirt"
+        },
+        {
+          "id": "d",
+          "text": "very old"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t3-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 3,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Ancient” means:",
+      "questionTextJunior": "What does “ancient” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "very old"
+        },
+        {
+          "id": "b",
+          "text": "disappear"
+        },
+        {
+          "id": "c",
+          "text": "dark and sad"
+        },
+        {
+          "id": "d",
+          "text": "tired"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t3-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 3,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Fragile” means:",
+      "questionTextJunior": "What does “fragile” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "wet with dirt"
+        },
+        {
+          "id": "b",
+          "text": "tired"
+        },
+        {
+          "id": "c",
+          "text": "easily broken"
+        },
+        {
+          "id": "d",
+          "text": "disappear"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t3-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 3,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Gloomy” means:",
+      "questionTextJunior": "What does “gloomy” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "easily broken"
+        },
+        {
+          "id": "b",
+          "text": "disappear"
+        },
+        {
+          "id": "c",
+          "text": "very old"
+        },
+        {
+          "id": "d",
+          "text": "dark and sad"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t3-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 3,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Vanish” means:",
+      "questionTextJunior": "What does “vanish” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "tired"
+        },
+        {
+          "id": "b",
+          "text": "dark and sad"
+        },
+        {
+          "id": "c",
+          "text": "disappear"
+        },
+        {
+          "id": "d",
+          "text": "easily broken"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t3-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 3,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Weary” means:",
+      "questionTextJunior": "What does “weary” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "tired"
+        },
+        {
+          "id": "b",
+          "text": "disappear"
+        },
+        {
+          "id": "c",
+          "text": "easily broken"
+        },
+        {
+          "id": "d",
+          "text": "dark and sad"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-pc-t3-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 3,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What made the tent stay up?",
+      "questionTextJunior": "What made the tent stay up?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A second tent"
+        },
+        {
+          "id": "b",
+          "text": "Moving the tent"
+        },
+        {
+          "id": "c",
+          "text": "Tying the rope to a rock"
+        },
+        {
+          "id": "d",
+          "text": "The wind stopping"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The tent kept falling down. Aya tied the rope to a rock, and this time it stayed up all night.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t3-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 3,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What made the tent stay up?",
+      "questionTextJunior": "What made the tent stay up?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tying the rope to a rock"
+        },
+        {
+          "id": "b",
+          "text": "Moving the tent"
+        },
+        {
+          "id": "c",
+          "text": "A second tent"
+        },
+        {
+          "id": "d",
+          "text": "The wind stopping"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "The tent kept falling down. Ben tied the rope to a rock, and this time it stayed up all night.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t3-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 3,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What made the tent stay up?",
+      "questionTextJunior": "What made the tent stay up?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A second tent"
+        },
+        {
+          "id": "b",
+          "text": "Tying the rope to a rock"
+        },
+        {
+          "id": "c",
+          "text": "The wind stopping"
+        },
+        {
+          "id": "d",
+          "text": "Moving the tent"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The tent kept falling down. Nina tied the rope to a rock, and this time it stayed up all night.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t3-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 3,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What made the tent stay up?",
+      "questionTextJunior": "What made the tent stay up?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The wind stopping"
+        },
+        {
+          "id": "b",
+          "text": "A second tent"
+        },
+        {
+          "id": "c",
+          "text": "Moving the tent"
+        },
+        {
+          "id": "d",
+          "text": "Tying the rope to a rock"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "The tent kept falling down. Sam tied the rope to a rock, and this time it stayed up all night.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t3-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 3,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What made the tent stay up?",
+      "questionTextJunior": "What made the tent stay up?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tying the rope to a rock"
+        },
+        {
+          "id": "b",
+          "text": "The wind stopping"
+        },
+        {
+          "id": "c",
+          "text": "Moving the tent"
+        },
+        {
+          "id": "d",
+          "text": "A second tent"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "The tent kept falling down. Leo tied the rope to a rock, and this time it stayed up all night.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t3-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 3,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What made the tent stay up?",
+      "questionTextJunior": "What made the tent stay up?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The wind stopping"
+        },
+        {
+          "id": "b",
+          "text": "Tying the rope to a rock"
+        },
+        {
+          "id": "c",
+          "text": "Moving the tent"
+        },
+        {
+          "id": "d",
+          "text": "A second tent"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The tent kept falling down. Mira tied the rope to a rock, and this time it stayed up all night.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t4-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 4,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “mountain”?",
+      "questionTextJunior": "Find “mountain”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "mountain"
+        },
+        {
+          "id": "b",
+          "text": "bountain"
+        },
+        {
+          "id": "c",
+          "text": "mountais"
+        },
+        {
+          "id": "d",
+          "text": "muntain"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t4-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 4,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "langeage"
+        },
+        {
+          "id": "b",
+          "text": "distancu"
+        },
+        {
+          "id": "c",
+          "text": "creeture"
+        },
+        {
+          "id": "d",
+          "text": "mountain"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t4-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 4,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “distance”?",
+      "questionTextJunior": "Find “distance”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ditsance"
+        },
+        {
+          "id": "b",
+          "text": "distace"
+        },
+        {
+          "id": "c",
+          "text": "distance"
+        },
+        {
+          "id": "d",
+          "text": "distanec"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t4-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 4,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "carious"
+        },
+        {
+          "id": "b",
+          "text": "langoage"
+        },
+        {
+          "id": "c",
+          "text": "distance"
+        },
+        {
+          "id": "d",
+          "text": "horvest"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t4-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 4,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “creature”?",
+      "questionTextJunior": "Find “creature”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "creatrue"
+        },
+        {
+          "id": "b",
+          "text": "creature"
+        },
+        {
+          "id": "c",
+          "text": "creatture"
+        },
+        {
+          "id": "d",
+          "text": "creaature"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t4-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 4,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "dastance"
+        },
+        {
+          "id": "b",
+          "text": "curiois"
+        },
+        {
+          "id": "c",
+          "text": "creature"
+        },
+        {
+          "id": "d",
+          "text": "moontain"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t4-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 4,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “shoulder”?",
+      "questionTextJunior": "Find “shoulder”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "shoulder"
+        },
+        {
+          "id": "b",
+          "text": "shouldr"
+        },
+        {
+          "id": "c",
+          "text": "uhoulder"
+        },
+        {
+          "id": "d",
+          "text": "shoulger"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t4-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 4,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "harvast"
+        },
+        {
+          "id": "b",
+          "text": "shoulder"
+        },
+        {
+          "id": "c",
+          "text": "langoage"
+        },
+        {
+          "id": "d",
+          "text": "creeture"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t4-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 4,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “language”?",
+      "questionTextJunior": "Find “language”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "laanguage"
+        },
+        {
+          "id": "b",
+          "text": "language"
+        },
+        {
+          "id": "c",
+          "text": "langage"
+        },
+        {
+          "id": "d",
+          "text": "lanuage"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t4-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 4,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "harvast"
+        },
+        {
+          "id": "b",
+          "text": "shouldir"
+        },
+        {
+          "id": "c",
+          "text": "language"
+        },
+        {
+          "id": "d",
+          "text": "distanca"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t4-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 4,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “curious”?",
+      "questionTextJunior": "Find “curious”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "cuirous"
+        },
+        {
+          "id": "b",
+          "text": "curious"
+        },
+        {
+          "id": "c",
+          "text": "turious"
+        },
+        {
+          "id": "d",
+          "text": "curtous"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t4-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 4,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "curious"
+        },
+        {
+          "id": "b",
+          "text": "distancu"
+        },
+        {
+          "id": "c",
+          "text": "moentain"
+        },
+        {
+          "id": "d",
+          "text": "croature"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t4-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 4,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Reluctant” means:",
+      "questionTextJunior": "What does “reluctant” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "plenty"
+        },
+        {
+          "id": "b",
+          "text": "pause"
+        },
+        {
+          "id": "c",
+          "text": "careful"
+        },
+        {
+          "id": "d",
+          "text": "unwilling"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t4-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 4,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Cautious” means:",
+      "questionTextJunior": "What does “cautious” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "unwilling"
+        },
+        {
+          "id": "b",
+          "text": "plenty"
+        },
+        {
+          "id": "c",
+          "text": "thick"
+        },
+        {
+          "id": "d",
+          "text": "careful"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t4-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 4,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Abundant” means:",
+      "questionTextJunior": "What does “abundant” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "pause"
+        },
+        {
+          "id": "b",
+          "text": "thick"
+        },
+        {
+          "id": "c",
+          "text": "plenty"
+        },
+        {
+          "id": "d",
+          "text": "careful"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t4-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 4,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Dense” means:",
+      "questionTextJunior": "What does “dense” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "careful"
+        },
+        {
+          "id": "b",
+          "text": "pause"
+        },
+        {
+          "id": "c",
+          "text": "thick"
+        },
+        {
+          "id": "d",
+          "text": "top of a mountain"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t4-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 4,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Hesitate” means:",
+      "questionTextJunior": "What does “hesitate” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "thick"
+        },
+        {
+          "id": "b",
+          "text": "plenty"
+        },
+        {
+          "id": "c",
+          "text": "pause"
+        },
+        {
+          "id": "d",
+          "text": "unwilling"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t4-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 4,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Summit” means:",
+      "questionTextJunior": "What does “summit” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "unwilling"
+        },
+        {
+          "id": "b",
+          "text": "thick"
+        },
+        {
+          "id": "c",
+          "text": "top of a mountain"
+        },
+        {
+          "id": "d",
+          "text": "pause"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-pc-t4-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 4,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What can you tell about Aya by the end of the week?",
+      "questionTextJunior": "What can you tell about Aya by the end of the week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aya gave up paddling"
+        },
+        {
+          "id": "b",
+          "text": "Aya had a new canoe"
+        },
+        {
+          "id": "c",
+          "text": "Aya had learned to steer"
+        },
+        {
+          "id": "d",
+          "text": "Aya was afraid of the lake"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Aya had never paddled a canoe before. By the end of the week, Aya could steer it across the lake without help, though it still tipped whenever anyone laughed.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t4-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 4,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What can you tell about Ben by the end of the week?",
+      "questionTextJunior": "What can you tell about Ben by the end of the week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ben had learned to steer"
+        },
+        {
+          "id": "b",
+          "text": "Ben had a new canoe"
+        },
+        {
+          "id": "c",
+          "text": "Ben gave up paddling"
+        },
+        {
+          "id": "d",
+          "text": "Ben was afraid of the lake"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Ben had never paddled a canoe before. By the end of the week, Ben could steer it across the lake without help, though it still tipped whenever anyone laughed.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t4-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 4,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What can you tell about Nina by the end of the week?",
+      "questionTextJunior": "What can you tell about Nina by the end of the week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nina gave up paddling"
+        },
+        {
+          "id": "b",
+          "text": "Nina had learned to steer"
+        },
+        {
+          "id": "c",
+          "text": "Nina had a new canoe"
+        },
+        {
+          "id": "d",
+          "text": "Nina was afraid of the lake"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "Nina had never paddled a canoe before. By the end of the week, Nina could steer it across the lake without help, though it still tipped whenever anyone laughed.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t4-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 4,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What can you tell about Sam by the end of the week?",
+      "questionTextJunior": "What can you tell about Sam by the end of the week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sam had learned to steer"
+        },
+        {
+          "id": "b",
+          "text": "Sam gave up paddling"
+        },
+        {
+          "id": "c",
+          "text": "Sam had a new canoe"
+        },
+        {
+          "id": "d",
+          "text": "Sam was afraid of the lake"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Sam had never paddled a canoe before. By the end of the week, Sam could steer it across the lake without help, though it still tipped whenever anyone laughed.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t4-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 4,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What can you tell about Leo by the end of the week?",
+      "questionTextJunior": "What can you tell about Leo by the end of the week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leo had a new canoe"
+        },
+        {
+          "id": "b",
+          "text": "Leo had learned to steer"
+        },
+        {
+          "id": "c",
+          "text": "Leo gave up paddling"
+        },
+        {
+          "id": "d",
+          "text": "Leo was afraid of the lake"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "Leo had never paddled a canoe before. By the end of the week, Leo could steer it across the lake without help, though it still tipped whenever anyone laughed.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t4-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 4,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What can you tell about Mira by the end of the week?",
+      "questionTextJunior": "What can you tell about Mira by the end of the week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mira gave up paddling"
+        },
+        {
+          "id": "b",
+          "text": "Mira was afraid of the lake"
+        },
+        {
+          "id": "c",
+          "text": "Mira had a new canoe"
+        },
+        {
+          "id": "d",
+          "text": "Mira had learned to steer"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Mira had never paddled a canoe before. By the end of the week, Mira could steer it across the lake without help, though it still tipped whenever anyone laughed.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t5-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 5,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “ancient”?",
+      "questionTextJunior": "Find “ancient”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ancienn"
+        },
+        {
+          "id": "b",
+          "text": "ancieent"
+        },
+        {
+          "id": "c",
+          "text": "ancient"
+        },
+        {
+          "id": "d",
+          "text": "ancinet"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t5-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 5,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "brilliint"
+        },
+        {
+          "id": "b",
+          "text": "ancient"
+        },
+        {
+          "id": "c",
+          "text": "horuzon"
+        },
+        {
+          "id": "d",
+          "text": "genorous"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t5-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 5,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “generous”?",
+      "questionTextJunior": "Find “generous”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "gtnerous"
+        },
+        {
+          "id": "b",
+          "text": "geneous"
+        },
+        {
+          "id": "c",
+          "text": "geerous"
+        },
+        {
+          "id": "d",
+          "text": "generous"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t5-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 5,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "generous"
+        },
+        {
+          "id": "b",
+          "text": "brolliant"
+        },
+        {
+          "id": "c",
+          "text": "envisible"
+        },
+        {
+          "id": "d",
+          "text": "uncient"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-wr-t5-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 5,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “brilliant”?",
+      "questionTextJunior": "Find “brilliant”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "brlliant"
+        },
+        {
+          "id": "b",
+          "text": "britliant"
+        },
+        {
+          "id": "c",
+          "text": "briliant"
+        },
+        {
+          "id": "d",
+          "text": "brilliant"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t5-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 5,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ruluctant"
+        },
+        {
+          "id": "b",
+          "text": "obstaclo"
+        },
+        {
+          "id": "c",
+          "text": "brilliant"
+        },
+        {
+          "id": "d",
+          "text": "horozon"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t5-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 5,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “horizon”?",
+      "questionTextJunior": "Find “horizon”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "horzon"
+        },
+        {
+          "id": "b",
+          "text": "horizoon"
+        },
+        {
+          "id": "c",
+          "text": "hoizon"
+        },
+        {
+          "id": "d",
+          "text": "horizon"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t5-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 5,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "obstaclu"
+        },
+        {
+          "id": "b",
+          "text": "paculiar"
+        },
+        {
+          "id": "c",
+          "text": "genarous"
+        },
+        {
+          "id": "d",
+          "text": "horizon"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t5-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 5,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “invisible”?",
+      "questionTextJunior": "Find “invisible”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ivnisible"
+        },
+        {
+          "id": "b",
+          "text": "invisible"
+        },
+        {
+          "id": "c",
+          "text": "invissible"
+        },
+        {
+          "id": "d",
+          "text": "invisable"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t5-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 5,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "obstacla"
+        },
+        {
+          "id": "b",
+          "text": "uncient"
+        },
+        {
+          "id": "c",
+          "text": "brilliont"
+        },
+        {
+          "id": "d",
+          "text": "invisible"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t5-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 5,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “obstacle”?",
+      "questionTextJunior": "Find “obstacle”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "obsacle"
+        },
+        {
+          "id": "b",
+          "text": "ostacle"
+        },
+        {
+          "id": "c",
+          "text": "obsttacle"
+        },
+        {
+          "id": "d",
+          "text": "obstacle"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t5-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 5,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "brelliant"
+        },
+        {
+          "id": "b",
+          "text": "oncient"
+        },
+        {
+          "id": "c",
+          "text": "relictant"
+        },
+        {
+          "id": "d",
+          "text": "obstacle"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t5-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 5,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Brilliant” means:",
+      "questionTextJunior": "What does “brilliant” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "strange"
+        },
+        {
+          "id": "b",
+          "text": "very bright"
+        },
+        {
+          "id": "c",
+          "text": "keep going"
+        },
+        {
+          "id": "d",
+          "text": "clear to see"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t5-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 5,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Peculiar” means:",
+      "questionTextJunior": "What does “peculiar” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "strange"
+        },
+        {
+          "id": "b",
+          "text": "very bright"
+        },
+        {
+          "id": "c",
+          "text": "something in the way"
+        },
+        {
+          "id": "d",
+          "text": "clear to see"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t5-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 5,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Generous” means:",
+      "questionTextJunior": "What does “generous” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "clear to see"
+        },
+        {
+          "id": "b",
+          "text": "giving"
+        },
+        {
+          "id": "c",
+          "text": "keep going"
+        },
+        {
+          "id": "d",
+          "text": "something in the way"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t5-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 5,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Obstacle” means:",
+      "questionTextJunior": "What does “obstacle” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "clear to see"
+        },
+        {
+          "id": "b",
+          "text": "giving"
+        },
+        {
+          "id": "c",
+          "text": "something in the way"
+        },
+        {
+          "id": "d",
+          "text": "strange"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t5-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 5,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Persist” means:",
+      "questionTextJunior": "What does “persist” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "strange"
+        },
+        {
+          "id": "b",
+          "text": "something in the way"
+        },
+        {
+          "id": "c",
+          "text": "keep going"
+        },
+        {
+          "id": "d",
+          "text": "giving"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t5-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 5,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Evident” means:",
+      "questionTextJunior": "What does “evident” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "strange"
+        },
+        {
+          "id": "b",
+          "text": "something in the way"
+        },
+        {
+          "id": "c",
+          "text": "keep going"
+        },
+        {
+          "id": "d",
+          "text": "clear to see"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-pc-t5-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 5,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Aya suggest waiting?",
+      "questionTextJunior": "Why did Aya suggest waiting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The trail was closed"
+        },
+        {
+          "id": "b",
+          "text": "The water was higher than usual"
+        },
+        {
+          "id": "c",
+          "text": "The guide was tired"
+        },
+        {
+          "id": "d",
+          "text": "It was already morning"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The trail guide said the river crossing would be simple. Aya noticed the water was higher than the marker and suggested waiting until morning. Nobody argued.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t5-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 5,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Ben suggest waiting?",
+      "questionTextJunior": "Why did Ben suggest waiting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The trail was closed"
+        },
+        {
+          "id": "b",
+          "text": "It was already morning"
+        },
+        {
+          "id": "c",
+          "text": "The water was higher than usual"
+        },
+        {
+          "id": "d",
+          "text": "The guide was tired"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The trail guide said the river crossing would be simple. Ben noticed the water was higher than the marker and suggested waiting until morning. Nobody argued.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t5-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 5,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Nina suggest waiting?",
+      "questionTextJunior": "Why did Nina suggest waiting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The water was higher than usual"
+        },
+        {
+          "id": "b",
+          "text": "The trail was closed"
+        },
+        {
+          "id": "c",
+          "text": "It was already morning"
+        },
+        {
+          "id": "d",
+          "text": "The guide was tired"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "The trail guide said the river crossing would be simple. Nina noticed the water was higher than the marker and suggested waiting until morning. Nobody argued.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t5-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 5,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Sam suggest waiting?",
+      "questionTextJunior": "Why did Sam suggest waiting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The trail was closed"
+        },
+        {
+          "id": "b",
+          "text": "The guide was tired"
+        },
+        {
+          "id": "c",
+          "text": "It was already morning"
+        },
+        {
+          "id": "d",
+          "text": "The water was higher than usual"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "The trail guide said the river crossing would be simple. Sam noticed the water was higher than the marker and suggested waiting until morning. Nobody argued.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t5-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 5,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Leo suggest waiting?",
+      "questionTextJunior": "Why did Leo suggest waiting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It was already morning"
+        },
+        {
+          "id": "b",
+          "text": "The trail was closed"
+        },
+        {
+          "id": "c",
+          "text": "The water was higher than usual"
+        },
+        {
+          "id": "d",
+          "text": "The guide was tired"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The trail guide said the river crossing would be simple. Leo noticed the water was higher than the marker and suggested waiting until morning. Nobody argued.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t5-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 5,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Mira suggest waiting?",
+      "questionTextJunior": "Why did Mira suggest waiting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The guide was tired"
+        },
+        {
+          "id": "b",
+          "text": "The trail was closed"
+        },
+        {
+          "id": "c",
+          "text": "The water was higher than usual"
+        },
+        {
+          "id": "d",
+          "text": "It was already morning"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The trail guide said the river crossing would be simple. Mira noticed the water was higher than the marker and suggested waiting until morning. Nobody argued.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t6-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 6,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “persistent”?",
+      "questionTextJunior": "Find “persistent”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "pesristent"
+        },
+        {
+          "id": "b",
+          "text": "perssistent"
+        },
+        {
+          "id": "c",
+          "text": "persistgnt"
+        },
+        {
+          "id": "d",
+          "text": "persistent"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t6-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 6,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "landscapi"
+        },
+        {
+          "id": "b",
+          "text": "persistent"
+        },
+        {
+          "id": "c",
+          "text": "necessury"
+        },
+        {
+          "id": "d",
+          "text": "ibandoned"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t6-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 6,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “abandoned”?",
+      "questionTextJunior": "Find “abandoned”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "abandonee"
+        },
+        {
+          "id": "b",
+          "text": "abandbned"
+        },
+        {
+          "id": "c",
+          "text": "abandoned"
+        },
+        {
+          "id": "d",
+          "text": "aandoned"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t6-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 6,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "abandoned"
+        },
+        {
+          "id": "b",
+          "text": "persistont"
+        },
+        {
+          "id": "c",
+          "text": "spectaclu"
+        },
+        {
+          "id": "d",
+          "text": "lundscape"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-wr-t6-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 6,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “temporary”?",
+      "questionTextJunior": "Find “temporary”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "tempoorary"
+        },
+        {
+          "id": "b",
+          "text": "temporaryy"
+        },
+        {
+          "id": "c",
+          "text": "temporary"
+        },
+        {
+          "id": "d",
+          "text": "temportry"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t6-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 6,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "persestent"
+        },
+        {
+          "id": "b",
+          "text": "landscupe"
+        },
+        {
+          "id": "c",
+          "text": "temporary"
+        },
+        {
+          "id": "d",
+          "text": "nucessary"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t6-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 6,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “fortunate”?",
+      "questionTextJunior": "Find “fortunate”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "fortubate"
+        },
+        {
+          "id": "b",
+          "text": "fortunatr"
+        },
+        {
+          "id": "c",
+          "text": "forunate"
+        },
+        {
+          "id": "d",
+          "text": "fortunate"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t6-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 6,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "persistant"
+        },
+        {
+          "id": "b",
+          "text": "ummediate"
+        },
+        {
+          "id": "c",
+          "text": "temporiry"
+        },
+        {
+          "id": "d",
+          "text": "fortunate"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t6-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 6,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “necessary”?",
+      "questionTextJunior": "Find “necessary”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "necessary"
+        },
+        {
+          "id": "b",
+          "text": "ncessary"
+        },
+        {
+          "id": "c",
+          "text": "neessary"
+        },
+        {
+          "id": "d",
+          "text": "necedsary"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t6-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 6,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "necessary"
+        },
+        {
+          "id": "b",
+          "text": "landscapu"
+        },
+        {
+          "id": "c",
+          "text": "tomporary"
+        },
+        {
+          "id": "d",
+          "text": "abanduned"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-wr-t6-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 6,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “landscape”?",
+      "questionTextJunior": "Find “landscape”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ladscape"
+        },
+        {
+          "id": "b",
+          "text": "laandscape"
+        },
+        {
+          "id": "c",
+          "text": "landscape"
+        },
+        {
+          "id": "d",
+          "text": "lanscape"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t6-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 6,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fortunute"
+        },
+        {
+          "id": "b",
+          "text": "tamporary"
+        },
+        {
+          "id": "c",
+          "text": "immodiate"
+        },
+        {
+          "id": "d",
+          "text": "landscape"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t6-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 6,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Permanent” means:",
+      "questionTextJunior": "What does “permanent” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "certain to happen"
+        },
+        {
+          "id": "b",
+          "text": "lasting"
+        },
+        {
+          "id": "c",
+          "text": "lucky"
+        },
+        {
+          "id": "d",
+          "text": "hide"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t6-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 6,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Temporary” means:",
+      "questionTextJunior": "What does “temporary” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "certain to happen"
+        },
+        {
+          "id": "b",
+          "text": "hide"
+        },
+        {
+          "id": "c",
+          "text": "for a short time"
+        },
+        {
+          "id": "d",
+          "text": "lasting"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t6-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 6,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Fortunate” means:",
+      "questionTextJunior": "What does “fortunate” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "lucky"
+        },
+        {
+          "id": "b",
+          "text": "for a short time"
+        },
+        {
+          "id": "c",
+          "text": "hide"
+        },
+        {
+          "id": "d",
+          "text": "lasting"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t6-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 6,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Inevitable” means:",
+      "questionTextJunior": "What does “inevitable” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "certain to happen"
+        },
+        {
+          "id": "b",
+          "text": "hide"
+        },
+        {
+          "id": "c",
+          "text": "in short supply"
+        },
+        {
+          "id": "d",
+          "text": "lasting"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t6-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 6,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Scarce” means:",
+      "questionTextJunior": "What does “scarce” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "lucky"
+        },
+        {
+          "id": "b",
+          "text": "in short supply"
+        },
+        {
+          "id": "c",
+          "text": "lasting"
+        },
+        {
+          "id": "d",
+          "text": "certain to happen"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t6-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 6,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Conceal” means:",
+      "questionTextJunior": "What does “conceal” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "lasting"
+        },
+        {
+          "id": "b",
+          "text": "in short supply"
+        },
+        {
+          "id": "c",
+          "text": "certain to happen"
+        },
+        {
+          "id": "d",
+          "text": "hide"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-pc-t6-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 6,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What is the main idea?",
+      "questionTextJunior": "What is the main idea?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Maps are hard to read"
+        },
+        {
+          "id": "b",
+          "text": "The summit was very high"
+        },
+        {
+          "id": "c",
+          "text": "Going carefully avoided mistakes"
+        },
+        {
+          "id": "d",
+          "text": "The group got lost"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Most hikers rush the last climb. Aya slowed down instead, stopping to check the map at every fork. The group reached the summit later than planned, but nobody took a wrong turn.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t6-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 6,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What is the main idea?",
+      "questionTextJunior": "What is the main idea?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Going carefully avoided mistakes"
+        },
+        {
+          "id": "b",
+          "text": "The group got lost"
+        },
+        {
+          "id": "c",
+          "text": "Maps are hard to read"
+        },
+        {
+          "id": "d",
+          "text": "The summit was very high"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "Most hikers rush the last climb. Ben slowed down instead, stopping to check the map at every fork. The group reached the summit later than planned, but nobody took a wrong turn.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t6-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 6,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What is the main idea?",
+      "questionTextJunior": "What is the main idea?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The group got lost"
+        },
+        {
+          "id": "b",
+          "text": "Maps are hard to read"
+        },
+        {
+          "id": "c",
+          "text": "Going carefully avoided mistakes"
+        },
+        {
+          "id": "d",
+          "text": "The summit was very high"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Most hikers rush the last climb. Nina slowed down instead, stopping to check the map at every fork. The group reached the summit later than planned, but nobody took a wrong turn.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t6-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 6,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What is the main idea?",
+      "questionTextJunior": "What is the main idea?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The summit was very high"
+        },
+        {
+          "id": "b",
+          "text": "The group got lost"
+        },
+        {
+          "id": "c",
+          "text": "Going carefully avoided mistakes"
+        },
+        {
+          "id": "d",
+          "text": "Maps are hard to read"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Most hikers rush the last climb. Sam slowed down instead, stopping to check the map at every fork. The group reached the summit later than planned, but nobody took a wrong turn.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t6-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 6,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What is the main idea?",
+      "questionTextJunior": "What is the main idea?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The summit was very high"
+        },
+        {
+          "id": "b",
+          "text": "The group got lost"
+        },
+        {
+          "id": "c",
+          "text": "Maps are hard to read"
+        },
+        {
+          "id": "d",
+          "text": "Going carefully avoided mistakes"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "Most hikers rush the last climb. Leo slowed down instead, stopping to check the map at every fork. The group reached the summit later than planned, but nobody took a wrong turn.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t6-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 6,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What is the main idea?",
+      "questionTextJunior": "What is the main idea?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The summit was very high"
+        },
+        {
+          "id": "b",
+          "text": "The group got lost"
+        },
+        {
+          "id": "c",
+          "text": "Going carefully avoided mistakes"
+        },
+        {
+          "id": "d",
+          "text": "Maps are hard to read"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "Most hikers rush the last climb. Mira slowed down instead, stopping to check the map at every fork. The group reached the summit later than planned, but nobody took a wrong turn.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t7-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 7,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “deliberate”?",
+      "questionTextJunior": "Find “deliberate”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "deliberate"
+        },
+        {
+          "id": "b",
+          "text": "deliaerate"
+        },
+        {
+          "id": "c",
+          "text": "delibearte"
+        },
+        {
+          "id": "d",
+          "text": "delibrate"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t7-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 7,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "inivitable"
+        },
+        {
+          "id": "b",
+          "text": "tuntative"
+        },
+        {
+          "id": "c",
+          "text": "deliberate"
+        },
+        {
+          "id": "d",
+          "text": "phanomenon"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t7-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 7,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “inevitable”?",
+      "questionTextJunior": "Find “inevitable”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "inevitale"
+        },
+        {
+          "id": "b",
+          "text": "inevtiable"
+        },
+        {
+          "id": "c",
+          "text": "ineviable"
+        },
+        {
+          "id": "d",
+          "text": "inevitable"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t7-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 7,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "uloquent"
+        },
+        {
+          "id": "b",
+          "text": "meticuluus"
+        },
+        {
+          "id": "c",
+          "text": "inevitable"
+        },
+        {
+          "id": "d",
+          "text": "umbiguous"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-wr-t7-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 7,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “phenomenon”?",
+      "questionTextJunior": "Find “phenomenon”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "phneomenon"
+        },
+        {
+          "id": "b",
+          "text": "phenoomenon"
+        },
+        {
+          "id": "c",
+          "text": "phenommenon"
+        },
+        {
+          "id": "d",
+          "text": "phenomenon"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t7-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 7,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "resorvoir"
+        },
+        {
+          "id": "b",
+          "text": "phenomenon"
+        },
+        {
+          "id": "c",
+          "text": "aloquent"
+        },
+        {
+          "id": "d",
+          "text": "ambigeous"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t7-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 7,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “reservoir”?",
+      "questionTextJunior": "Find “reservoir”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "reservoir"
+        },
+        {
+          "id": "b",
+          "text": "reserrvoir"
+        },
+        {
+          "id": "c",
+          "text": "reservir"
+        },
+        {
+          "id": "d",
+          "text": "reserroir"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t7-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 7,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "muticulous"
+        },
+        {
+          "id": "b",
+          "text": "deluberate"
+        },
+        {
+          "id": "c",
+          "text": "eliquent"
+        },
+        {
+          "id": "d",
+          "text": "reservoir"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t7-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 7,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “meticulous”?",
+      "questionTextJunior": "Find “meticulous”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "meitculous"
+        },
+        {
+          "id": "b",
+          "text": "mticulous"
+        },
+        {
+          "id": "c",
+          "text": "meticulous"
+        },
+        {
+          "id": "d",
+          "text": "metciulous"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t7-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 7,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "inevitablo"
+        },
+        {
+          "id": "b",
+          "text": "meticulous"
+        },
+        {
+          "id": "c",
+          "text": "tantative"
+        },
+        {
+          "id": "d",
+          "text": "daliberate"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t7-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 7,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “eloquent”?",
+      "questionTextJunior": "Find “eloquent”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "eeoquent"
+        },
+        {
+          "id": "b",
+          "text": "eolquent"
+        },
+        {
+          "id": "c",
+          "text": "elquent"
+        },
+        {
+          "id": "d",
+          "text": "eloquent"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t7-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 7,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "eloquent"
+        },
+        {
+          "id": "b",
+          "text": "phenimenon"
+        },
+        {
+          "id": "c",
+          "text": "tentativa"
+        },
+        {
+          "id": "d",
+          "text": "ambaguous"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t7-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 7,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Meticulous” means:",
+      "questionTextJunior": "What does “meticulous” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "unclear"
+        },
+        {
+          "id": "b",
+          "text": "very careful"
+        },
+        {
+          "id": "c",
+          "text": "unsure"
+        },
+        {
+          "id": "d",
+          "text": "well spoken"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t7-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 7,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Eloquent” means:",
+      "questionTextJunior": "What does “eloquent” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "honest"
+        },
+        {
+          "id": "b",
+          "text": "well spoken"
+        },
+        {
+          "id": "c",
+          "text": "unsure"
+        },
+        {
+          "id": "d",
+          "text": "shrink"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t7-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 7,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Ambiguous” means:",
+      "questionTextJunior": "What does “ambiguous” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "well spoken"
+        },
+        {
+          "id": "b",
+          "text": "very careful"
+        },
+        {
+          "id": "c",
+          "text": "shrink"
+        },
+        {
+          "id": "d",
+          "text": "unclear"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t7-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 7,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Tentative” means:",
+      "questionTextJunior": "What does “tentative” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "unclear"
+        },
+        {
+          "id": "b",
+          "text": "very careful"
+        },
+        {
+          "id": "c",
+          "text": "well spoken"
+        },
+        {
+          "id": "d",
+          "text": "unsure"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t7-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 7,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Diminish” means:",
+      "questionTextJunior": "What does “diminish” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "unsure"
+        },
+        {
+          "id": "b",
+          "text": "shrink"
+        },
+        {
+          "id": "c",
+          "text": "very careful"
+        },
+        {
+          "id": "d",
+          "text": "well spoken"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t7-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 7,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Candid” means:",
+      "questionTextJunior": "What does “candid” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "unclear"
+        },
+        {
+          "id": "b",
+          "text": "well spoken"
+        },
+        {
+          "id": "c",
+          "text": "very careful"
+        },
+        {
+          "id": "d",
+          "text": "honest"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-pc-t7-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 7,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Aya record both positions?",
+      "questionTextJunior": "Why did Aya record both positions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the creek may have moved over time"
+        },
+        {
+          "id": "b",
+          "text": "Because the survey was useless"
+        },
+        {
+          "id": "c",
+          "text": "Because Aya was unsure how to read a map"
+        },
+        {
+          "id": "d",
+          "text": "Because the group insisted"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "The old survey marked the creek well east of where Aya found it. Rather than assume the survey was wrong, Aya recorded both positions and noted the date. Creeks move; records should say when they were made.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t7-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 7,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Ben record both positions?",
+      "questionTextJunior": "Why did Ben record both positions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the survey was useless"
+        },
+        {
+          "id": "b",
+          "text": "Because the creek may have moved over time"
+        },
+        {
+          "id": "c",
+          "text": "Because the group insisted"
+        },
+        {
+          "id": "d",
+          "text": "Because Ben was unsure how to read a map"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The old survey marked the creek well east of where Ben found it. Rather than assume the survey was wrong, Ben recorded both positions and noted the date. Creeks move; records should say when they were made.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t7-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 7,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Nina record both positions?",
+      "questionTextJunior": "Why did Nina record both positions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the survey was useless"
+        },
+        {
+          "id": "b",
+          "text": "Because the group insisted"
+        },
+        {
+          "id": "c",
+          "text": "Because the creek may have moved over time"
+        },
+        {
+          "id": "d",
+          "text": "Because Nina was unsure how to read a map"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The old survey marked the creek well east of where Nina found it. Rather than assume the survey was wrong, Nina recorded both positions and noted the date. Creeks move; records should say when they were made.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t7-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 7,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Sam record both positions?",
+      "questionTextJunior": "Why did Sam record both positions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the survey was useless"
+        },
+        {
+          "id": "b",
+          "text": "Because Sam was unsure how to read a map"
+        },
+        {
+          "id": "c",
+          "text": "Because the creek may have moved over time"
+        },
+        {
+          "id": "d",
+          "text": "Because the group insisted"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The old survey marked the creek well east of where Sam found it. Rather than assume the survey was wrong, Sam recorded both positions and noted the date. Creeks move; records should say when they were made.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t7-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 7,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Leo record both positions?",
+      "questionTextJunior": "Why did Leo record both positions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because Leo was unsure how to read a map"
+        },
+        {
+          "id": "b",
+          "text": "Because the group insisted"
+        },
+        {
+          "id": "c",
+          "text": "Because the survey was useless"
+        },
+        {
+          "id": "d",
+          "text": "Because the creek may have moved over time"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "The old survey marked the creek well east of where Leo found it. Rather than assume the survey was wrong, Leo recorded both positions and noted the date. Creeks move; records should say when they were made.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t7-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 7,
+      "skill": "stub-passage-comprehension",
+      "questionText": "Why did Mira record both positions?",
+      "questionTextJunior": "Why did Mira record both positions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the group insisted"
+        },
+        {
+          "id": "b",
+          "text": "Because the creek may have moved over time"
+        },
+        {
+          "id": "c",
+          "text": "Because the survey was useless"
+        },
+        {
+          "id": "d",
+          "text": "Because Mira was unsure how to read a map"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The old survey marked the creek well east of where Mira found it. Rather than assume the survey was wrong, Mira recorded both positions and noted the date. Creeks move; records should say when they were made.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-wr-t8-01",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 8,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “unprecedented”?",
+      "questionTextJunior": "Find “unprecedented”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "unprecedented"
+        },
+        {
+          "id": "b",
+          "text": "unpreceednted"
+        },
+        {
+          "id": "c",
+          "text": "unprecudented"
+        },
+        {
+          "id": "d",
+          "text": "unprecdeented"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t8-01",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 8,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "quintessintial"
+        },
+        {
+          "id": "b",
+          "text": "ubiquitoes"
+        },
+        {
+          "id": "c",
+          "text": "ephumeral"
+        },
+        {
+          "id": "d",
+          "text": "unprecedented"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t8-02",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 8,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “conscientious”?",
+      "questionTextJunior": "Find “conscientious”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "conscienious"
+        },
+        {
+          "id": "b",
+          "text": "conscientious"
+        },
+        {
+          "id": "c",
+          "text": "consscientious"
+        },
+        {
+          "id": "d",
+          "text": "conscieutious"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t8-02",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 8,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ephemoral"
+        },
+        {
+          "id": "b",
+          "text": "conscientious"
+        },
+        {
+          "id": "c",
+          "text": "indispensabli"
+        },
+        {
+          "id": "d",
+          "text": "juxtapositien"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t8-03",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 8,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “juxtaposition”?",
+      "questionTextJunior": "Find “juxtaposition”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "juxtaosition"
+        },
+        {
+          "id": "b",
+          "text": "juxtapsition"
+        },
+        {
+          "id": "c",
+          "text": "juxttaposition"
+        },
+        {
+          "id": "d",
+          "text": "juxtaposition"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-or-t8-03",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 8,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "conscoentious"
+        },
+        {
+          "id": "b",
+          "text": "incongreous"
+        },
+        {
+          "id": "c",
+          "text": "ephemural"
+        },
+        {
+          "id": "d",
+          "text": "juxtaposition"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t8-04",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 8,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “indispensable”?",
+      "questionTextJunior": "Find “indispensable”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "indispeasable"
+        },
+        {
+          "id": "b",
+          "text": "indispensable"
+        },
+        {
+          "id": "c",
+          "text": "indispesnable"
+        },
+        {
+          "id": "d",
+          "text": "indisspensable"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-or-t8-04",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 8,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ubiquatous"
+        },
+        {
+          "id": "b",
+          "text": "juxtaposituon"
+        },
+        {
+          "id": "c",
+          "text": "quontessential"
+        },
+        {
+          "id": "d",
+          "text": "indispensable"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-wr-t8-05",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 8,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “ephemeral”?",
+      "questionTextJunior": "Find “ephemeral”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ephemeral"
+        },
+        {
+          "id": "b",
+          "text": "ephemeal"
+        },
+        {
+          "id": "c",
+          "text": "epheemral"
+        },
+        {
+          "id": "d",
+          "text": "ephemeeal"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-or-t8-05",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 8,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "incongrueus"
+        },
+        {
+          "id": "b",
+          "text": "ephemeral"
+        },
+        {
+          "id": "c",
+          "text": "quintessintial"
+        },
+        {
+          "id": "d",
+          "text": "unprecudented"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-wr-t8-06",
+      "subject": "reading",
+      "subSkill": "word-recognition",
+      "tier": 8,
+      "skill": "stub-word-recognition",
+      "questionText": "Which word is “ubiquitous”?",
+      "questionTextJunior": "Find “ubiquitous”.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ubiquious"
+        },
+        {
+          "id": "b",
+          "text": "ubiquitoss"
+        },
+        {
+          "id": "c",
+          "text": "ubiquitous"
+        },
+        {
+          "id": "d",
+          "text": "ubiquituos"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-or-t8-06",
+      "subject": "reading",
+      "subSkill": "oral-reading",
+      "tier": 8,
+      "skill": "stub-oral-reading",
+      "questionText": "Which one is a real word?",
+      "questionTextJunior": "Which one is a real word?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ubiquitous"
+        },
+        {
+          "id": "b",
+          "text": "conscientiuus"
+        },
+        {
+          "id": "c",
+          "text": "ephemaral"
+        },
+        {
+          "id": "d",
+          "text": "juxtiposition"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t8-01",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 8,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Ephemeral” means:",
+      "questionTextJunior": "What does “ephemeral” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "short-lived"
+        },
+        {
+          "id": "b",
+          "text": "practical"
+        },
+        {
+          "id": "c",
+          "text": "out of place"
+        },
+        {
+          "id": "d",
+          "text": "found everywhere"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-rv-t8-02",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 8,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Ubiquitous” means:",
+      "questionTextJunior": "What does “ubiquitous” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "practical"
+        },
+        {
+          "id": "b",
+          "text": "found everywhere"
+        },
+        {
+          "id": "c",
+          "text": "short-lived"
+        },
+        {
+          "id": "d",
+          "text": "lessen"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "rs-rv-t8-03",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 8,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Indispensable” means:",
+      "questionTextJunior": "What does “indispensable” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "lessen"
+        },
+        {
+          "id": "b",
+          "text": "out of place"
+        },
+        {
+          "id": "c",
+          "text": "practical"
+        },
+        {
+          "id": "d",
+          "text": "essential"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t8-04",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 8,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Incongruous” means:",
+      "questionTextJunior": "What does “incongruous” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "practical"
+        },
+        {
+          "id": "b",
+          "text": "lessen"
+        },
+        {
+          "id": "c",
+          "text": "short-lived"
+        },
+        {
+          "id": "d",
+          "text": "out of place"
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "rs-rv-t8-05",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 8,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Mitigate” means:",
+      "questionTextJunior": "What does “mitigate” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "out of place"
+        },
+        {
+          "id": "b",
+          "text": "practical"
+        },
+        {
+          "id": "c",
+          "text": "lessen"
+        },
+        {
+          "id": "d",
+          "text": "essential"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "rs-rv-t8-06",
+      "subject": "reading",
+      "subSkill": "reading-vocabulary",
+      "tier": 8,
+      "skill": "stub-reading-vocabulary",
+      "questionText": "“Pragmatic” means:",
+      "questionTextJunior": "What does “pragmatic” mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "practical"
+        },
+        {
+          "id": "b",
+          "text": "out of place"
+        },
+        {
+          "id": "c",
+          "text": "lessen"
+        },
+        {
+          "id": "d",
+          "text": "essential"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "rs-pc-t8-01",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 8,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does the author suggest about the official account?",
+      "questionTextJunior": "What does the author suggest about the official account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is entirely accurate"
+        },
+        {
+          "id": "b",
+          "text": "It was written by Aya"
+        },
+        {
+          "id": "c",
+          "text": "It leaves out people who mattered"
+        },
+        {
+          "id": "d",
+          "text": "It exaggerates the danger"
+        }
+      ],
+      "correctAnswerId": "c",
+      "passage": "The expedition's success was attributed to its leader, yet Aya's journal tells a different story: supplies were rationed by a cook nobody remembers, and the route was corrected twice by a guide the reports never name.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t8-02",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 8,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does the author suggest about the official account?",
+      "questionTextJunior": "What does the author suggest about the official account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It exaggerates the danger"
+        },
+        {
+          "id": "b",
+          "text": "It is entirely accurate"
+        },
+        {
+          "id": "c",
+          "text": "It was written by Ben"
+        },
+        {
+          "id": "d",
+          "text": "It leaves out people who mattered"
+        }
+      ],
+      "correctAnswerId": "d",
+      "passage": "The expedition's success was attributed to its leader, yet Ben's journal tells a different story: supplies were rationed by a cook nobody remembers, and the route was corrected twice by a guide the reports never name.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t8-03",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 8,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does the author suggest about the official account?",
+      "questionTextJunior": "What does the author suggest about the official account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It exaggerates the danger"
+        },
+        {
+          "id": "b",
+          "text": "It leaves out people who mattered"
+        },
+        {
+          "id": "c",
+          "text": "It was written by Nina"
+        },
+        {
+          "id": "d",
+          "text": "It is entirely accurate"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The expedition's success was attributed to its leader, yet Nina's journal tells a different story: supplies were rationed by a cook nobody remembers, and the route was corrected twice by a guide the reports never name.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t8-04",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 8,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does the author suggest about the official account?",
+      "questionTextJunior": "What does the author suggest about the official account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It leaves out people who mattered"
+        },
+        {
+          "id": "b",
+          "text": "It was written by Sam"
+        },
+        {
+          "id": "c",
+          "text": "It is entirely accurate"
+        },
+        {
+          "id": "d",
+          "text": "It exaggerates the danger"
+        }
+      ],
+      "correctAnswerId": "a",
+      "passage": "The expedition's success was attributed to its leader, yet Sam's journal tells a different story: supplies were rationed by a cook nobody remembers, and the route was corrected twice by a guide the reports never name.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t8-05",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 8,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does the author suggest about the official account?",
+      "questionTextJunior": "What does the author suggest about the official account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It was written by Leo"
+        },
+        {
+          "id": "b",
+          "text": "It leaves out people who mattered"
+        },
+        {
+          "id": "c",
+          "text": "It exaggerates the danger"
+        },
+        {
+          "id": "d",
+          "text": "It is entirely accurate"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The expedition's success was attributed to its leader, yet Leo's journal tells a different story: supplies were rationed by a cook nobody remembers, and the route was corrected twice by a guide the reports never name.",
+      "passageTitle": "A short read"
+    },
+    {
+      "id": "rs-pc-t8-06",
+      "subject": "reading",
+      "subSkill": "passage-comprehension",
+      "tier": 8,
+      "skill": "stub-passage-comprehension",
+      "questionText": "What does the author suggest about the official account?",
+      "questionTextJunior": "What does the author suggest about the official account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It was written by Mira"
+        },
+        {
+          "id": "b",
+          "text": "It leaves out people who mattered"
+        },
+        {
+          "id": "c",
+          "text": "It exaggerates the danger"
+        },
+        {
+          "id": "d",
+          "text": "It is entirely accurate"
+        }
+      ],
+      "correctAnswerId": "b",
+      "passage": "The expedition's success was attributed to its leader, yet Mira's journal tells a different story: supplies were rationed by a cook nobody remembers, and the route was corrected twice by a guide the reports never name.",
+      "passageTitle": "A short read"
+    }
+  ]
+}

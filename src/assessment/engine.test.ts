@@ -9,7 +9,15 @@ import {
   submitAnswer,
   toSubjectResult,
 } from './engine';
-import { QUESTIONS } from './questionBank';
+import { QUESTIONS, READING_BANK_IS_STUB } from './questionBank';
+import {
+  QUESTIONS_PER_SUB_SKILL,
+  READING_SUB_SKILLS,
+  SUB_SKILL_STABILITY_WINDOW,
+  deriveReadingLevel,
+  readingBottleneck,
+} from './readingSkills';
+import { toReadingResult } from './engine';
 import type { Grade, SessionState, Subject, SubjectResult } from './types';
 import {
   MAX_TIER,
@@ -33,8 +41,9 @@ function sit(
   subject: Subject,
   correctAt: (i: number) => boolean,
   floored = false,
+  subSkill?: (typeof READING_SUB_SKILLS)[number],
 ): SessionState {
-  let s = createSession(grade, subject, { floored }, 0);
+  let s = createSession(grade, subject, { floored, subSkill }, 0);
   let i = 0;
   while (!s.finishedAt) {
     i += 1;
@@ -75,6 +84,28 @@ describe('question bank', () => {
         expect(n, `${subject} tier ${tier}`).toBeGreaterThanOrEqual(3);
       }
     }
+  });
+
+  it('holds at least six items per reading sub-skill per tier', () => {
+    for (const subSkill of READING_SUB_SKILLS) {
+      for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
+        const n = QUESTIONS.filter(
+          (q) => q.subject === 'reading' && q.subSkill === subSkill && q.tier === tier,
+        ).length;
+        expect(n, `${subSkill} tier ${tier}`).toBeGreaterThanOrEqual(6);
+      }
+    }
+  });
+
+  it('tags every reading item with a sub-skill', () => {
+    for (const q of QUESTIONS.filter((q) => q.subject === 'reading')) {
+      expect(READING_SUB_SKILLS, q.id).toContain(q.subSkill);
+    }
+  });
+
+  it('knows the reading bank is a stub, so nobody ships on it by accident', () => {
+    // Flip this expectation when the teacher-written banks land.
+    expect(READING_BANK_IS_STUB).toBe(true);
   });
 
   it('uses unique ids and valid answer keys', () => {
@@ -202,6 +233,66 @@ describe('subject result', () => {
     expect(result.subject).toBe('reading');
     expect(result.questionsAnswered).toBe(s.questionsAnswered.length);
     expect(result.durationMs).toBeGreaterThan(0);
+  });
+});
+
+describe('reading sub-skill sittings', () => {
+  it('serves only its own sub-skill', () => {
+    for (const subSkill of READING_SUB_SKILLS) {
+      const s = sit('3', 'reading', () => true, false, subSkill);
+      for (const a of s.questionsAnswered) {
+        const q = QUESTIONS.find((x) => x.id === a.questionId)!;
+        expect(q.subSkill).toBe(subSkill);
+      }
+    }
+  });
+
+  it('runs five questions at most and stops once the tier holds for three', () => {
+    const longest = sit('3', 'reading', (i) => i % 4 === 1 || i % 4 === 2, false, 'oral-reading');
+    expect(longest.questionsAnswered.length).toBeLessThanOrEqual(QUESTIONS_PER_SUB_SKILL);
+    const steady = sit('3', 'reading', (i) => i % 2 === 0, false, 'oral-reading');
+    expect(steady.questionsAnswered.length).toBe(SUB_SKILL_STABILITY_WINDOW);
+  });
+
+  it('starts at the grade tier and branches like every other sitting', () => {
+    let s = createSession('4', 'reading', { subSkill: 'word-recognition' });
+    expect(s.currentTier).toBe(4);
+    s = answer(s, true); s = answer(s, true);
+    expect(s.currentTier).toBe(5);
+  });
+
+  it('folds four parts into one reading result with the derived level', () => {
+    const parts = READING_SUB_SKILLS.map((subSkill, i) =>
+      sit('3', 'reading', () => i !== 2, false, subSkill),
+    );
+    const result = toReadingResult(parts);
+    expect(result.subject).toBe('reading');
+    expect(result.subSkills!.map((r) => r.subSkill)).toEqual(READING_SUB_SKILLS);
+    expect(result.finalTier).toBe(deriveReadingLevel(result.subSkills!));
+    expect(result.questionsAnswered).toBe(parts.reduce((n, p) => n + p.questionsAnswered.length, 0));
+  });
+});
+
+describe('reading level derivation', () => {
+  const results = [
+    { subSkill: 'word-recognition' as const, finalTier: 5, questionsAnswered: 5 },
+    { subSkill: 'oral-reading' as const, finalTier: 2, questionsAnswered: 5 },
+    { subSkill: 'reading-vocabulary' as const, finalTier: 6, questionsAnswered: 5 },
+    { subSkill: 'passage-comprehension' as const, finalTier: 4, questionsAnswered: 5 },
+  ];
+
+  it('defaults to the lowest of the four', () => {
+    expect(deriveReadingLevel(results)).toBe(2);
+  });
+
+  it('offers a weighted rule the teachers can switch to', () => {
+    const weighted = deriveReadingLevel(results, 'weighted');
+    expect(weighted).toBeGreaterThan(2);
+    expect(weighted).toBeLessThanOrEqual(6);
+  });
+
+  it('names the weakest sub-skill as the bottleneck', () => {
+    expect(readingBottleneck(results)!.subSkill).toBe('oral-reading');
   });
 });
 
