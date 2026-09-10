@@ -1,4 +1,3 @@
-import { Badge } from '../components/Badge';
 import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
 import { Tag } from '../components/Tag';
@@ -22,10 +21,7 @@ export function KidCompletionScreen({ childName, onHandBack }: Props) {
     <div className="stage">
       <div className="card card--center celebration-split">
         <div className="celebration-art">
-          <Badge size={200} />
-          <div className="celebration-art__guide">
-            <Teacher size={130} mood="cheering" float={false} />
-          </div>
+          <Teacher size={300} mood="cheering" />
         </div>
 
         <div className="celebration-copy">

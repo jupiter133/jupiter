@@ -38,14 +38,11 @@ export function speechRateFor(band: AgeBand): number {
 }
 
 /**
- * Auto-read starts ON for the junior band (age 8 and under), where many
- * children cannot yet read the question they are being asked, and OFF for
- * senior, who can — they still get the "Read to me" control and a speaker on
- * every answer, one tap away.
- *
- * A floored sitting overrides this and forces it on, whatever the age: a child
- * whose reading gated cannot read the screen they are being asked to answer.
+ * Auto-read starts OFF for every band until someone turns it on. The
+ * "Read to me" control and a speaker on every answer are always one tap away,
+ * so nothing is lost; what is avoided is unasked narration in a shared room.
+ * The band still sets the speaking rate.
  */
-export function audioDefaultFor(band: AgeBand): boolean {
-  return band === 'junior';
+export function audioDefaultFor(_band: AgeBand): boolean {
+  return false;
 }

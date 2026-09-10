@@ -192,8 +192,10 @@ export function usePlacementFlow(childName: string): Flow {
 
   // Presentation follows AGE, never grade and never the tier the child reaches.
   const band: AgeBand = age !== null ? ageBandForAge(age) : 'junior';
-  // A floored sitting forces read-aloud on: the child cannot read the screen.
-  const forcedAudio = session?.floored ?? false;
+  // Auto-read is off until the user turns it on, floored sittings included —
+  // the per-answer speakers and "Read to me" are always there for a child who
+  // cannot read the screen.
+  const forcedAudio = false;
   const sittingSubject = session?.subject ?? nextSubject;
 
   return {

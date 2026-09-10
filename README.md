@@ -125,11 +125,11 @@ child likes — each press restarts the narration rather than queueing behind th
 last one. A second control toggles auto-read, which fires the narration on every
 new question.
 
-- **Auto-read is on by default for the junior band** (age 8 and under) and off
-  for senior (`audioDefaultFor()` in `src/audio/speechScript.ts`). Many younger
-  children cannot read the question they are being asked; older ones can, and
-  unasked narration is noise in a shared room. A floored sitting forces it on
-  whatever the age.
+- **Auto-read is off for every band until the user turns it on**
+  (`audioDefaultFor()` in `src/audio/speechScript.ts`). The "Read to me"
+  control and a speaker on every answer are always one tap away, so a child
+  who cannot read the screen is never stuck; what is avoided is unasked
+  narration in a shared room.
 - **Every answer has its own speaker.** Tapping it reads that option without
   choosing it — the answer and its speaker are sibling buttons, not nested,
   so the speaker can fire independently and the markup stays valid.
@@ -310,8 +310,10 @@ When reading gates, the spelling, writing and math sittings still run, but:
 - they **start at the lowest tier** rather than the grade tier,
 - adaptive branching still moves **upward**, so a child who can spell climbs
   out,
-- there is no downward move — the floor is already the bottom,
-- **read-aloud is forced on**, whatever the age band.
+- there is no downward move — the floor is already the bottom.
+
+Read-aloud is not forced on for a floored sitting; the per-answer speakers
+and "Read to me" are there, and auto-read stays off until someone turns it on.
 
 A Grade 5 spelling question put to a child reading at a Grade 1 level measures
 the reading, not the spelling, and hands them eight straight failures on the way

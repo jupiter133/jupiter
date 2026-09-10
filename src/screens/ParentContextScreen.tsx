@@ -41,8 +41,7 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
             How old is {displayName(childName)}?
           </label>
           <span className="field__hint">
-            Age sets how the activity looks and sounds — how much is read aloud, how much
-            is pictures. It never changes what we place {displayName(childName)} in.
+            Sets how the activity looks and sounds. Never changes the placement.
           </span>
           <div className="grade-grid grade-grid--age" role="group" aria-labelledby="age-label">
             {AGES.map((a) => (
@@ -64,8 +63,7 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
             What grade is {displayName(childName)} in?
           </label>
           <span className="field__hint">
-            Grade is what the placement is measured against. The activity adjusts from
-            the first question onward.
+            What the placement is measured against.
           </span>
           <div className="grade-grid grade-grid--grade" role="group" aria-labelledby="grade-label">
             {GRADES.map((g) => (
@@ -99,13 +97,12 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
             <span style={{ color: 'var(--text-muted)', fontWeight: 600 }}>(optional)</span>
           </label>
           <span className="field__hint">
-            For example dyslexia, ADHD, or an IEP. This never changes the questions
-            {' '}{displayName(childName)} sees — it helps us tailor the pacing advice in your
-            results.
+            For example dyslexia, ADHD, or an IEP. It never changes the questions — it
+            shapes the pacing advice in your results.
           </span>
           <textarea
             id="challenges"
-            className="textarea"
+            className="textarea textarea--short"
             placeholder="Leave blank if none, or tell us anything that helps."
             value={learningChallenges}
             onChange={(e) => setLearningChallenges(e.target.value)}
