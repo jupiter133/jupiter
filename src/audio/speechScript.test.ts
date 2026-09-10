@@ -7,8 +7,10 @@ const withPassage = QUESTIONS.find((q) => q.passage)! as Question;
 const noPassage = QUESTIONS.find((q) => !q.passage)! as Question;
 
 describe('read-aloud defaults', () => {
-  it('starts off for every band', () => {
-    expect(audioDefaultFor('junior')).toBe(false);
+  it('starts on for K–3 and off for Grade 4–6', () => {
+    // Many K–3 children cannot read the question they are being asked; by
+    // Grade 4 they can, and unasked narration is just noise in a shared room.
+    expect(audioDefaultFor('junior')).toBe(true);
     expect(audioDefaultFor('senior')).toBe(false);
   });
 
@@ -27,12 +29,21 @@ describe('speech script', () => {
   });
 
   it('reads the answer options for junior but not senior', () => {
-    const junior = speechScriptFor(noPassage, 'junior').join(' ');
-    const senior = speechScriptFor(noPassage, 'senior').join(' ');
+    const junior = speechScriptFor(noPassage, 'junior');
+    const senior = speechScriptFor(noPassage, 'senior');
+
+    // Options are spoken as their own "A. <text>" utterances. Checking for the
+    // prefix beats substring-matching the option text, which false-matches on
+    // ordinary words (an option "star" is a substring of "starts").
+    const optionLine = /^[A-E]\. /;
+    expect(junior.filter((line) => optionLine.test(line))).toHaveLength(
+      noPassage.options.length,
+    );
+    expect(senior.filter((line) => optionLine.test(line))).toHaveLength(0);
+
     for (const option of noPassage.options) {
-      expect(junior).toContain(option.text);
+      expect(junior.some((line) => line.endsWith(option.text))).toBe(true);
     }
-    expect(senior).not.toContain(noPassage.options[noPassage.options.length - 1].text);
   });
 
   it('speaks the simplified wording to the junior band', () => {

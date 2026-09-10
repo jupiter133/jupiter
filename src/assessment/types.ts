@@ -1,23 +1,29 @@
 import type { GlyphName } from '../components/glyphs';
+import type { Tier } from './tiers';
 
-/** Difficulty tiers for v1. Tier data ships in the content JSON; these are the
- *  only three tiers the placement engine knows about. */
-export type Tier = 1 | 2 | 3;
-
-export const TIERS: Tier[] = [1, 2, 3];
-export const MIN_TIER: Tier = 1;
-export const MAX_TIER: Tier = 3;
+export type { Tier };
+export { MIN_TIER, MAX_TIER, TIERS, clampTier, tierGradeLabel } from './tiers';
 
 export type Grade = 'K' | '1' | '2' | '3' | '4' | '5' | '6';
 
+export const GRADES: Grade[] = ['K', '1', '2', '3', '4', '5', '6'];
+
+/** Grade K is tier 0, Grade n is tier n. The session starts here. */
+export function startTierForGrade(grade: Grade): Tier {
+  return grade === 'K' ? 0 : Number(grade);
+}
+
 /**
- * How a question is *presented*, derived from the grade the parent entered.
- * This is a separate axis from difficulty tier: a Grade 5 child who drops to
- * tier 1 still gets the senior presentation, because a struggling ten-year-old
- * should not be handed cartoon bunnies.
+ * How a question is *presented*, derived from the child's grade.
  *
- * - `junior`  (K–3): art-led, big type, simplest wording, picture answers.
- * - `senior`  (4–6): text-led, art supports rather than carries, fuller wording.
+ * A separate axis from difficulty tier: a Grade 5 child who drops to tier 1
+ * still gets the senior presentation, because a struggling ten-year-old should
+ * not be handed cartoon bunnies.
+ *
+ * - `junior` (K–3): art-led, big type, simplest wording, picture answers,
+ *   read-aloud on by default.
+ * - `senior` (4–6): text-led, art supports rather than carries, fuller wording,
+ *   read-aloud available but off by default.
  */
 export type AgeBand = 'junior' | 'senior';
 
@@ -25,6 +31,27 @@ const JUNIOR_GRADES: Grade[] = ['K', '1', '2', '3'];
 
 export function ageBandForGrade(grade: Grade): AgeBand {
   return JUNIOR_GRADES.includes(grade) ? 'junior' : 'senior';
+}
+
+export type Subject = 'reading' | 'math' | 'writing';
+
+export const SUBJECT_ORDER: Subject[] = ['reading', 'math', 'writing'];
+
+export const SUBJECT_LABEL: Record<Subject, string> = {
+  reading: 'Reading',
+  math: 'Math',
+  writing: 'Writing',
+};
+
+/**
+ * Which subjects a grade is assessed on, in the order they are sat.
+ *
+ * K–3 is reading only. Math and writing are never served below Grade 4: a
+ * seven-year-old's writing score would measure handwriting stamina and reading
+ * ability, not writing, and placing on it would be worse than not placing.
+ */
+export function subjectsForGrade(grade: Grade): Subject[] {
+  return ageBandForGrade(grade) === 'junior' ? ['reading'] : ['reading', 'math', 'writing'];
 }
 
 export type SceneName =
@@ -54,17 +81,6 @@ export type ArtSpec =
   | { kind: 'pair'; left: GlyphName; right: GlyphName }
   | { kind: 'scene'; scene: SceneName };
 
-/** The three strands assessed in v1. Order here is the order they are asked. */
-export type Subject = 'reading' | 'math' | 'writing';
-
-export const SUBJECT_ORDER: Subject[] = ['reading', 'math', 'writing'];
-
-export const SUBJECT_LABEL: Record<Subject, string> = {
-  reading: 'Reading',
-  math: 'Math',
-  writing: 'Writing',
-};
-
 export interface AnswerOption {
   id: string;
   text: string;
@@ -75,8 +91,9 @@ export interface AnswerOption {
 export interface Question {
   id: string;
   subject: Subject;
+  /** 0 (Kindergarten) to 8 (Grade 8). */
   tier: Tier;
-  /** Fine-grained content tag, e.g. "vocabulary", "word-problem", "conventions". */
+  /** Fine-grained content tag, e.g. "letter-sound", "main-idea", "fractions". */
   skill: string;
   /** Present on comprehension items — rendered beside the question. */
   passage?: string;
@@ -102,13 +119,14 @@ export interface ParentContext {
   childName: string;
   grade: Grade;
   /** Optional, self-reported. Never used to gate content — only surfaced back
-   *  to the parent on the results screen so pacing advice can account for it. */
+   *  to the parent so pacing advice can account for it. */
   learningChallenges: string;
 }
 
 export interface AnsweredQuestion {
   questionId: string;
   subject: Subject;
+  /** The tier the question came from. */
   tier: Tier;
   selectedAnswerId: string;
   /** Recorded for later analysis. Never rendered to the child mid-session. */
@@ -118,66 +136,66 @@ export interface AnsweredQuestion {
   elapsedMs: number;
 }
 
-/** Independent branching state for one subject. A child can sit at a different
- *  tier in math than in reading, and each strand moves on its own streaks. */
-export interface SubjectState {
+/**
+ * One sitting assesses ONE subject. K–3 sit reading and are done; Grade 4–6 sit
+ * reading, then math, then writing as separate resumable sessions.
+ */
+export interface SessionState {
+  grade: Grade;
+  subject: Subject;
   currentTier: Tier;
   consecutiveCorrect: number;
   consecutiveIncorrect: number;
-  answeredCount: number;
-  tierHistory: Tier[];
-}
-
-export interface SessionState {
-  grade: Grade;
-  /** Index into SUBJECT_ORDER. */
-  subjectIndex: number;
-  subjects: Record<Subject, SubjectState>;
   questionsAnswered: AnsweredQuestion[];
-  startedAt: number;
+  /** The session tier after each answer — the stop rule reads this. */
+  tierHistory: Tier[];
   /** Ids already served, so the engine never repeats an item. */
   servedQuestionIds: string[];
+  startedAt: number;
   finishedAt?: number;
+}
+
+/** What one completed subject session yields. Stored between sessions. */
+export interface SubjectResult {
+  subject: Subject;
+  /** The placement for this subject. Internal — never rendered raw. */
+  finalTier: Tier;
+  questionsAnswered: number;
+  durationMs: number;
+  completedAt: number;
+  history: AnsweredQuestion[];
 }
 
 export interface SubjectPlacement {
   subject: Subject;
   finalTier: Tier;
   gradeEquivalentDisplay: string;
-  recommendedStartingModule: string;
-  summary: string;
   questionsAnswered: number;
 }
 
-/** Shape of the result across strands, as data rather than prose.
- *  The engine has no business writing sentences about a child by name. */
-export interface StrandProfile {
-  /** True when every strand landed on the same tier. */
-  even: boolean;
-  strongest: Subject;
-  weakest: Subject;
-}
-
-/** The one program the child is placed into. Parent-facing language only —
- *  the tier number stays internal. */
+/** The one program the child is placed into, once every required subject is
+ *  done. Parent-facing language only — the tier number stays internal. */
 export interface ProgramPlacement {
   tier: Tier;
   name: string;
   gradeEquivalentDisplay: string;
-  /** What the program is, in one sentence a parent can act on. */
   description: string;
 }
 
 export interface PlacementResult {
-  /** Rounded average across strands — decides the program. */
-  finalTier: Tier;
-  gradeEquivalentDisplay: string;
-  /** The program name — kept for the original output contract. */
-  recommendedStartingModule: string;
-  program: ProgramPlacement;
-  profile: StrandProfile;
+  grade: Grade;
+  /** Subjects this grade is assessed on, in sitting order. */
+  requiredSubjects: Subject[];
+  /** Only the subjects actually completed. K–3 has one entry; the parent view
+   *  iterates this, so empty math / writing slots can never render. */
   subjects: SubjectPlacement[];
+  /** The subject the next session assesses, or null when everything is done. */
+  nextSubject: Subject | null;
+  complete: boolean;
+  /** Set only when every required subject is done. */
+  program: ProgramPlacement | null;
+  /** Rounded average across completed subjects. Internal. */
+  finalTier: Tier;
   questionsAnswered: number;
   durationMs: number;
-  history: AnsweredQuestion[];
 }

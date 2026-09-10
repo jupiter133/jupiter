@@ -24,8 +24,8 @@ npm run build   # typecheck + production build
 | 2 | Handoff — Ms Hannah introduces the discovery quest | Child | `src/screens/HandoffScreen.tsx` |
 | 2b | Section intro — Ms Hannah introduces each strand | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
-| 4 | Completion — badge + coins, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
-| 5 | Results — grade-equivalent placement + starting module | Parent | `src/screens/ParentResultsScreen.tsx` |
+| 4 | Completion — badge, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
+| 5 | Results — grade-equivalent placement per subject | Parent | `src/screens/ParentResultsScreen.tsx` |
 
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
@@ -45,9 +45,8 @@ a 64px tap-target floor). Type scales with the viewport via `clamp()` in
 `tokens.css`, so the same layout reads at both sizes.
 
 Portrait stacks the passage above the question (passage capped at 34vh so the
-answers stay on screen) and keeps answers two-up. Every screen — including the
-parent results with a long learning-challenges note — fits both iPad sizes
-without scrolling.
+answers stay on screen) and keeps answers two-up. Every screen fits both iPad
+sizes without scrolling.
 
 **The screen's height is definite, not a min-height.** Flex and grid children
 only get definite sizes from a definite parent; with `min-height: 100%` the
@@ -62,7 +61,8 @@ Landscape phones have width and no height, so the art sits beside the question
 instead of above it, answers pack rather than stretch, and the heading drops a
 size. Only the parent intake form and results scroll there.
 
-`scratchpad/audit3.mjs` walks the whole flow at 1024x768, 390x844 and 844x390
+`scratchpad/audit4.mjs` walks both placement paths (a K child and a Grade 4–6
+child across all three sittings) at 1024x768 and 390x844
 and reports horizontal scroll, side gutters, a stage that isn't exactly the
 viewport, vertical overflow (allowed on phones for parent pages), dead space
 under the answer grid, auto-read firing unasked, or an answer speaker that
@@ -125,10 +125,10 @@ child likes — each press restarts the narration rather than queueing behind th
 last one. A second control toggles auto-read, which fires the narration on every
 new question.
 
-- **Auto-read is off by default for every band** (`audioDefaultFor()` in
-  `src/audio/speechScript.ts`). Narration that fires unasked on each question
-  is a lot of sound for a shared room; one tap when it's wanted beats an
-  interruption when it isn't.
+- **Auto-read is on by default for K–3** and off for Grade 4–6
+  (`audioDefaultFor()` in `src/audio/speechScript.ts`). Many K–3 children cannot
+  read the question they are being asked; by Grade 4 they can, and unasked
+  narration is noise in a shared room.
 - **Every answer has its own speaker.** Tapping it reads that option without
   choosing it — the answer and its speaker are sibling buttons, not nested,
   so the speaker can fire independently and the markup stays valid.
@@ -172,51 +172,85 @@ instantly, sparkles are removed entirely, and nothing about the flow is lost.
 - Celebration animations and narration are correctness-blind by construction —
   the question screen never receives whether the answer was right.
 
+## Subjects by grade
+
+Which subjects a child sits is decided by grade, in `subjectsForGrade()`.
+
+| Grade | Subjects | Questions | Read-aloud | Presentation |
+|-------|----------|-----------|-----------|--------------|
+| K–1 | Reading only | 8 | **On** by default | Art-led, picture answers |
+| 2–3 | Reading only | 8 | **On** by default | Art-supported |
+| 4–6 | Reading, then math, then writing | 8 each | **Off** by default, toggle available | Text-led, art supports |
+
+**Math and writing are never served below Grade 4.** A seven-year-old's writing
+score would measure handwriting stamina and reading ability rather than writing,
+and placing on that is worse than not placing.
+
+Skills by band, per the content plan:
+
+- **K–1 reading:** letter-sound recognition, phonemic awareness, sight words.
+- **2–3 reading:** decoding, fluency, literal comprehension (what happened, who
+  did what).
+- **4–6 reading:** vocabulary in context, inferential comprehension, main idea,
+  sequencing — passage-based.
+- **4–6 math:** number sense and operations, fractions and decimals,
+  measurement, word problems. Word problems stay light on purpose: a wordy math
+  item doubles as a reading test.
+- **4–6 writing:** multiple choice on sub-skills only, no open response —
+  punctuation and capitalization, complete sentence vs fragment, word choice,
+  paragraph sequencing.
+
+## Sessions
+
+- **K–3:** one session, reading, done.
+- **Grade 4–6:** **one subject per session**, not all three in a sitting.
+  Progress is stored between sessions, so returning picks up at the next subject
+  without re-asking the intake questions — the start screen reads "Continue
+  <name>'s placement" and names what is next.
+
+`src/assessment/placementStore.ts` is the seam. In the host app this is the
+child's profile record on the server; the demo build keeps it in `localStorage`
+per child and falls back to memory when storage is unavailable.
+
 ## Branching logic
 
 Static rules, no ML or adaptive model. See `src/assessment/engine.ts`.
 
-- Three difficulty tiers. Every strand starts at the tier matching the grade the
-  parent stated (`K–1 → 1`, `2–4 → 2`, `5–6 → 3`).
-- **Each subject carries its own tier and its own streaks.** A child can place at
-  a junior level in reading and an early-primary level in math; the strands never
-  affect each other.
-- **2 correct in a row → up one tier.** **2 incorrect in a row → down one tier.**
-  Either move resets both streaks, so a fresh pair is needed at the new tier.
-- Tiers clamp at 1 and 3.
-- Strands are asked in blocks — never interleaved — in the order
-  reading → math → writing, `QUESTIONS_PER_SUBJECT` (7) items each.
-- Session length is **fixed**, not cut short on a stable tier. A predictable
-  five-minute sitting is worth more here than shaving off a question or two.
-  Change `QUESTIONS_PER_SUBJECT` in `engine.ts` to retune the duration.
+- **Tiers span Kindergarten (0) through Grade 8 (8).** The bank reaches two
+  grades past Grade 6 so a strong Grade 6 child has somewhere to go — otherwise
+  the ceiling, not the child, is what the result measures. Tier 0 gives a
+  struggling Grade 4 room to fall.
+- The sitting starts at the child's grade tier (`K → 0`, `Grade n → n`).
+- **2 correct in a row → serve the next question one tier up.**
+  **2 incorrect in a row → one tier down.** Either move resets both streaks, so
+  a fresh pair is needed at the new tier before moving again.
+- Tiers clamp at 0 and 8.
+- **8 questions per subject**, ending early once the tier has not changed across
+  the last 4 answers (`STABILITY_WINDOW`).
+- **The tier the sitting ends on is the placement for that subject.**
 
-Tracked per session: final tier per strand, full answer history (question id,
-subject, tier, choice, correctness, per-item elapsed time), and session duration.
-
-**A child is placed into exactly one program.** The average tier across the
-three strands decides it — Trailhead (Grade K–1 level), Ridge Trail (Grade
-2–3) or Summit Path (Grade 4–6) — and `result.program` carries the name,
-grade-equivalent level and a one-sentence description. The parent results
-screen leads with that: the program, its level, and the one button that starts
-it. Below it, three one-line strand rows (tag + level) and, when the strands
-differ, a single "strongest / most room to grow" line. Per-strand narrative,
-session facts and the learning-challenges echo stay in the result object for
-the profile; they are not on this page.
+The tier number is internal. `tierGradeLabel()` maps it to the parent-facing
+string ("Kindergarten level", "Grade 4 level"), and a test asserts no
+parent-facing label ever contains the word "tier".
 
 ## Content
 
-`src/content/questionBank.json` — placeholder bank: 45 items, **5 per tier per
-subject** across reading (vocabulary + comprehension), math (number sense,
-operations, word problems, measurement) and writing (conventions, grammar,
-sentence structure, word choice, organization). Subject and tier data live in the
-JSON, so dropping in the real bank needs no engine change.
+`src/content/questionBank.json` — placeholder bank: 88 items tagged by subject
+and tier, covering **every tier 0–8 in all three subjects** (at least 3 per
+cell). Subject and tier data live in the JSON, so dropping in the real bank
+needs no engine change.
+
+Production content should carry **6+ items per subject/tier cell**. A sitting
+can draw 5 questions from one tier before the stop rule fires, and when a tier
+runs dry the selector walks outward to the nearest tier that still has items —
+correct behaviour, but it serves an item one tier off the session's tier.
 
 Writing items are multiple choice — editing and grammar judgements rather than
 free-form composition — so the strand stays auto-scorable in this pass.
 
-37 of the 45 items carry an illustration, and every tier 1–2 item (what a K–3
-child mostly sees) has art or picture answers to lean on. A test enforces that
-coverage, and another keeps junior wording inside an early-primary vocabulary.
+Tier 0–3 items (what a K–3 child sees) lean on art and picture answers; tier 4+
+items are text-forward. A test keeps junior wording inside an early-primary
+vocabulary.
 
 Question shape:
 

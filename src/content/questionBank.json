@@ -1,92 +1,28 @@
 {
-  "version": "0.3.0-placeholder",
+  "version": "0.4.0-placeholder",
   "questions": [
     {
-      "id": "r-t1-01",
+      "id": "r-t0-01",
       "subject": "reading",
-      "tier": 1,
-      "skill": "vocabulary",
-      "art": {
-        "kind": "pair",
-        "left": "bearcub",
-        "right": "berry"
-      },
-      "questionText": "Which word means the same as big?",
-      "questionTextJunior": "Which word means big?",
+      "tier": 0,
+      "skill": "letter-sound",
+      "questionText": "Which one starts with the /f/ sound?",
+      "questionTextJunior": "Which one starts with /f/?",
       "options": [
         {
           "id": "a",
-          "text": "large"
-        },
-        {
-          "id": "b",
-          "text": "tiny"
-        },
-        {
-          "id": "c",
-          "text": "cold"
-        },
-        {
-          "id": "d",
-          "text": "loud"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "r-t1-02",
-      "subject": "reading",
-      "tier": 1,
-      "skill": "vocabulary",
-      "art": {
-        "kind": "pair",
-        "left": "sun",
-        "right": "moon"
-      },
-      "questionText": "Which word is the opposite of day?",
-      "questionTextJunior": "Which is the opposite of day?",
-      "options": [
-        {
-          "id": "a",
-          "text": "morning"
-        },
-        {
-          "id": "b",
-          "text": "night"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "week"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "r-t1-03",
-      "subject": "reading",
-      "tier": 1,
-      "skill": "vocabulary",
-      "questionText": "Which one names an animal?",
-      "questionTextJunior": "Which one is an animal?",
-      "options": [
-        {
-          "id": "a",
-          "text": "river",
-          "art": {
-            "kind": "glyph",
-            "glyph": "river"
-          }
-        },
-        {
-          "id": "b",
           "text": "fox",
           "art": {
             "kind": "glyph",
             "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "moon",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
           }
         },
         {
@@ -106,13 +42,273 @@
           }
         }
       ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t0-02",
+      "subject": "reading",
+      "tier": 0,
+      "skill": "letter-sound",
+      "questionText": "Which one starts with the /m/ sound?",
+      "questionTextJunior": "Which one starts with /m/?",
+      "options": [
+        {
+          "id": "a",
+          "text": "tree",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "map",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "c",
+          "text": "fish",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "d",
+          "text": "berry",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
       "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t0-03",
+      "subject": "reading",
+      "tier": 0,
+      "skill": "sight-word",
+      "questionText": "Which word says “the”?",
+      "questionTextJunior": "Which word says “the”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "the"
+        },
+        {
+          "id": "b",
+          "text": "and"
+        },
+        {
+          "id": "c",
+          "text": "see"
+        },
+        {
+          "id": "d",
+          "text": "go"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t0-04",
+      "subject": "reading",
+      "tier": 0,
+      "skill": "phonemic-awareness",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fox"
+      },
+      "questionText": "Which word rhymes with “cat”?",
+      "questionTextJunior": "Which word rhymes with “cat”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "hat"
+        },
+        {
+          "id": "b",
+          "text": "dog"
+        },
+        {
+          "id": "c",
+          "text": "sun"
+        },
+        {
+          "id": "d",
+          "text": "cup"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t1-01",
+      "subject": "reading",
+      "tier": 1,
+      "skill": "phonemic-awareness",
+      "questionText": "Which one ends with the /n/ sound?",
+      "questionTextJunior": "Which one ends with /n/?",
+      "options": [
+        {
+          "id": "a",
+          "text": "sun",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "map",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "c",
+          "text": "fox",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "d",
+          "text": "leaf",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t1-02",
+      "subject": "reading",
+      "tier": 1,
+      "skill": "decoding",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tent"
+      },
+      "questionText": "Which word is “tent”?",
+      "questionTextJunior": "Which word is “tent”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "tent"
+        },
+        {
+          "id": "b",
+          "text": "test"
+        },
+        {
+          "id": "c",
+          "text": "then"
+        },
+        {
+          "id": "d",
+          "text": "tint"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t1-03",
+      "subject": "reading",
+      "tier": 1,
+      "skill": "sight-word",
+      "questionText": "Which word completes it? ______ you like to read?",
+      "questionTextJunior": "______ you like to read?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Do"
+        },
+        {
+          "id": "b",
+          "text": "Dog"
+        },
+        {
+          "id": "c",
+          "text": "Did not"
+        },
+        {
+          "id": "d",
+          "text": "Done"
+        }
+      ],
+      "correctAnswerId": "a"
     },
     {
       "id": "r-t1-04",
       "subject": "reading",
       "tier": 1,
-      "skill": "comprehension",
+      "skill": "phonemic-awareness",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fish"
+      },
+      "questionText": "How many sounds are in the word “fish”?",
+      "questionTextJunior": "How many sounds in “fish”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "2"
+        },
+        {
+          "id": "b",
+          "text": "3"
+        },
+        {
+          "id": "c",
+          "text": "4"
+        },
+        {
+          "id": "d",
+          "text": "5"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t2-01",
+      "subject": "reading",
+      "tier": 2,
+      "skill": "decoding",
+      "questionText": "Which word has the same vowel sound as “rain”?",
+      "questionTextJunior": "Which word sounds like “rain”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "play"
+        },
+        {
+          "id": "b",
+          "text": "rat"
+        },
+        {
+          "id": "c",
+          "text": "rock"
+        },
+        {
+          "id": "d",
+          "text": "run"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t2-02",
+      "subject": "reading",
+      "tier": 2,
+      "skill": "literal-comprehension",
       "passageTitle": "The Lost Mitten",
       "passage": "Nina walked to the pond with her red mittens. She threw a snowball at the old pine tree. When she got home, only one mitten was left in her pocket.",
       "art": {
@@ -141,10 +337,10 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "r-t1-05",
+      "id": "r-t2-03",
       "subject": "reading",
-      "tier": 1,
-      "skill": "comprehension",
+      "tier": 2,
+      "skill": "literal-comprehension",
       "passageTitle": "Camp Breakfast",
       "passage": "The campers woke up when the sun came over the hill. Sam stirred the oatmeal in a big pot. Everyone ate two bowls before the morning hike.",
       "art": {
@@ -173,16 +369,162 @@
       "correctAnswerId": "a"
     },
     {
-      "id": "r-t2-01",
+      "id": "r-t2-04",
       "subject": "reading",
       "tier": 2,
+      "skill": "decoding",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fox"
+      },
+      "questionText": "Which word means more than one “fox”?",
+      "questionTextJunior": "More than one fox is...",
+      "options": [
+        {
+          "id": "a",
+          "text": "foxes"
+        },
+        {
+          "id": "b",
+          "text": "foxs"
+        },
+        {
+          "id": "c",
+          "text": "foxen"
+        },
+        {
+          "id": "d",
+          "text": "foxies"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t3-01",
+      "subject": "reading",
+      "tier": 3,
+      "skill": "literal-comprehension",
+      "passageTitle": "The Split Trail",
+      "passage": "Aya carried the map and the compass. Ben walked in front, counting his steps out loud. When the trail split in two, Aya opened the map and pointed left.",
+      "art": {
+        "kind": "scene",
+        "scene": "compass"
+      },
+      "questionText": "Who carried the map?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aya"
+        },
+        {
+          "id": "b",
+          "text": "Ben"
+        },
+        {
+          "id": "c",
+          "text": "Sam"
+        },
+        {
+          "id": "d",
+          "text": "Nina"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t3-02",
+      "subject": "reading",
+      "tier": 3,
+      "skill": "literal-comprehension",
+      "passageTitle": "Sudden Rain",
+      "passage": "The group had just finished lunch when the rain started. They put up the tent as fast as they could. Once they were dry, Ben found the map at the bottom of his bag.",
+      "questionText": "What happened right after the rain started?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They found the map"
+        },
+        {
+          "id": "b",
+          "text": "They put up the tent"
+        },
+        {
+          "id": "c",
+          "text": "They ate lunch"
+        },
+        {
+          "id": "d",
+          "text": "They went swimming"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t3-03",
+      "subject": "reading",
+      "tier": 3,
+      "skill": "decoding",
+      "questionText": "Which word is spelled correctly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "begining"
+        },
+        {
+          "id": "b",
+          "text": "beginning"
+        },
+        {
+          "id": "c",
+          "text": "beggining"
+        },
+        {
+          "id": "d",
+          "text": "begginning"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t3-04",
+      "subject": "reading",
+      "tier": 3,
       "skill": "vocabulary",
       "art": {
         "kind": "scene",
         "scene": "narrow-trail"
       },
-      "questionText": "The trail was narrow. What does narrow mean?",
-      "questionTextJunior": "The trail was narrow. What does narrow mean?",
+      "questionText": "The path was “muddy”. Muddy means:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wet and soft with dirt"
+        },
+        {
+          "id": "b",
+          "text": "Very steep"
+        },
+        {
+          "id": "c",
+          "text": "Full of trees"
+        },
+        {
+          "id": "d",
+          "text": "Long and straight"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t4-01",
+      "subject": "reading",
+      "tier": 4,
+      "skill": "vocabulary-in-context",
+      "art": {
+        "kind": "scene",
+        "scene": "narrow-trail"
+      },
+      "questionText": "The trail was “narrow”. In this sentence, narrow means:",
       "options": [
         {
           "id": "a",
@@ -204,104 +546,10 @@
       "correctAnswerId": "a"
     },
     {
-      "id": "r-t2-02",
+      "id": "r-t4-02",
       "subject": "reading",
-      "tier": 2,
-      "skill": "vocabulary",
-      "art": {
-        "kind": "scene",
-        "scene": "bear-cubs"
-      },
-      "questionText": "The bear moved ______ so it would not wake the cubs.",
-      "questionTextJunior": "The bear did not want to wake the cubs. How did it move?",
-      "options": [
-        {
-          "id": "a",
-          "text": "quickly"
-        },
-        {
-          "id": "b",
-          "text": "quietly"
-        },
-        {
-          "id": "c",
-          "text": "brightly"
-        },
-        {
-          "id": "d",
-          "text": "hungrily"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "r-t2-03",
-      "subject": "reading",
-      "tier": 2,
-      "skill": "vocabulary",
-      "art": {
-        "kind": "scene",
-        "scene": "trail-guide"
-      },
-      "questionText": "A person who leads visitors through the woods is a ______.",
-      "questionTextJunior": "Someone who shows you the way in the woods is a ______.",
-      "options": [
-        {
-          "id": "a",
-          "text": "guest"
-        },
-        {
-          "id": "b",
-          "text": "guide"
-        },
-        {
-          "id": "c",
-          "text": "gardener"
-        },
-        {
-          "id": "d",
-          "text": "grocer"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "r-t2-04",
-      "subject": "reading",
-      "tier": 2,
-      "skill": "comprehension",
-      "passageTitle": "The Compass",
-      "passage": "Aya's compass needle always pointed north, even when the trail curved. Her group followed the river instead, because the map showed the camp was downstream. By noon they could smell woodsmoke from the campfire.",
-      "art": {
-        "kind": "scene",
-        "scene": "compass"
-      },
-      "questionText": "Why did the group follow the river instead of the compass?",
-      "options": [
-        {
-          "id": "a",
-          "text": "The compass was broken"
-        },
-        {
-          "id": "b",
-          "text": "The map showed camp was downstream"
-        },
-        {
-          "id": "c",
-          "text": "They wanted to go swimming"
-        },
-        {
-          "id": "d",
-          "text": "The trail was closed"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "r-t2-05",
-      "subject": "reading",
-      "tier": 2,
-      "skill": "comprehension",
+      "tier": 4,
+      "skill": "inferential",
       "passageTitle": "Northern Lights",
       "passage": "Ben stayed up past bedtime because his uncle promised the sky would glow. At first there was nothing but stars. Then a green ribbon slid across the dark, and Ben forgot how cold his hands were.",
       "art": {
@@ -309,7 +557,6 @@
         "scene": "aurora"
       },
       "questionText": "How did Ben feel when the lights appeared?",
-      "questionTextJunior": "How did Ben feel when the lights came out?",
       "options": [
         {
           "id": "a",
@@ -331,16 +578,75 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "r-t3-01",
+      "id": "r-t4-03",
       "subject": "reading",
-      "tier": 3,
-      "skill": "vocabulary",
+      "tier": 4,
+      "skill": "sequencing",
+      "passageTitle": "Downstream",
+      "passage": "Aya checked the compass, which pointed north even when the trail curved. Then she read the map and saw that camp was downstream. The group followed the river, and by noon they could smell woodsmoke.",
+      "art": {
+        "kind": "scene",
+        "scene": "compass"
+      },
+      "questionText": "Which happened FIRST?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They smelled woodsmoke"
+        },
+        {
+          "id": "b",
+          "text": "Aya checked the compass"
+        },
+        {
+          "id": "c",
+          "text": "The group followed the river"
+        },
+        {
+          "id": "d",
+          "text": "They read the map"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t4-04",
+      "subject": "reading",
+      "tier": 4,
+      "skill": "main-idea",
+      "passageTitle": "Reading the Land",
+      "passage": "For two days the group had followed the compass. On the third day the batteries in the GPS died and clouds hid the sun. They started reading the shape of the land instead — ridges, streams, the way water runs downhill.",
+      "questionText": "What is this passage mostly about?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Why the group changed how they navigated"
+        },
+        {
+          "id": "b",
+          "text": "How cold the river was"
+        },
+        {
+          "id": "c",
+          "text": "What the campers ate"
+        },
+        {
+          "id": "d",
+          "text": "How to build a fire"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t5-01",
+      "subject": "reading",
+      "tier": 5,
+      "skill": "vocabulary-in-context",
       "art": {
         "kind": "glyph",
         "glyph": "snowflake"
       },
-      "questionText": "The guide was reluctant to cross the ice. Reluctant means:",
-      "questionTextJunior": "The guide was reluctant to cross the ice. Reluctant means:",
+      "questionText": "The guide was “reluctant” to cross the ice. Reluctant means:",
       "options": [
         {
           "id": "a",
@@ -362,67 +668,10 @@
       "correctAnswerId": "a"
     },
     {
-      "id": "r-t3-02",
+      "id": "r-t5-02",
       "subject": "reading",
-      "tier": 3,
-      "skill": "vocabulary",
-      "art": {
-        "kind": "count",
-        "glyph": "berry",
-        "n": 6
-      },
-      "questionText": "Which word is closest in meaning to abundant?",
-      "options": [
-        {
-          "id": "a",
-          "text": "Rare"
-        },
-        {
-          "id": "b",
-          "text": "Plentiful"
-        },
-        {
-          "id": "c",
-          "text": "Fragile"
-        },
-        {
-          "id": "d",
-          "text": "Distant"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "r-t3-03",
-      "subject": "reading",
-      "tier": 3,
-      "skill": "vocabulary",
-      "questionText": "The storm was brief, but the damage was permanent. Permanent means:",
-      "options": [
-        {
-          "id": "a",
-          "text": "Lasting"
-        },
-        {
-          "id": "b",
-          "text": "Sudden"
-        },
-        {
-          "id": "c",
-          "text": "Minor"
-        },
-        {
-          "id": "d",
-          "text": "Expensive"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "r-t3-04",
-      "subject": "reading",
-      "tier": 3,
-      "skill": "comprehension",
+      "tier": 5,
+      "skill": "inferential",
       "passageTitle": "The Ice Road",
       "passage": "Every winter the road to the village freezes solid enough to carry trucks. Drivers move slowly, not because the ice is weak, but because speed sends a wave through the water beneath it. That wave can crack the surface far ahead of the truck itself.",
       "art": {
@@ -451,10 +700,10 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "r-t3-05",
+      "id": "r-t5-03",
       "subject": "reading",
-      "tier": 3,
-      "skill": "comprehension",
+      "tier": 5,
+      "skill": "main-idea",
       "passageTitle": "Two Maps",
       "passage": "The old map showed the creek running east of the ridge. The new survey put it west. Rather than argue, the scouts walked the ridge themselves and found the creek had simply changed course after the flood.",
       "art": {
@@ -483,50 +732,325 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "m-t1-01",
+      "id": "r-t5-04",
+      "subject": "reading",
+      "tier": 5,
+      "skill": "vocabulary-in-context",
+      "art": {
+        "kind": "count",
+        "glyph": "berry",
+        "n": 6
+      },
+      "questionText": "Which word is closest in meaning to “abundant”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rare"
+        },
+        {
+          "id": "b",
+          "text": "Plentiful"
+        },
+        {
+          "id": "c",
+          "text": "Fragile"
+        },
+        {
+          "id": "d",
+          "text": "Distant"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t6-01",
+      "subject": "reading",
+      "tier": 6,
+      "skill": "inferential",
+      "passageTitle": "Two Ways Up",
+      "passage": "The new trail reaches the lake in forty minutes. The old one takes three hours and crosses two ridges. Walk the new one and you arrive; walk the old one and you learn how the valley is put together — which slope holds snow, where the water goes.",
+      "questionText": "What can you conclude about the author's view of the old trail?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It was safer than the new one"
+        },
+        {
+          "id": "b",
+          "text": "It was longer but taught more"
+        },
+        {
+          "id": "c",
+          "text": "It should be closed"
+        },
+        {
+          "id": "d",
+          "text": "It was never really used"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t6-02",
+      "subject": "reading",
+      "tier": 6,
+      "skill": "authors-purpose",
+      "passageTitle": "Reading the Land",
+      "passage": "For two days the group had followed the compass. On the third day the batteries in the GPS died and clouds hid the sun. They started reading the shape of the land instead — ridges, streams, the way water runs downhill.",
+      "questionText": "Why does the author include the detail about the batteries?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To explain why the group changed methods"
+        },
+        {
+          "id": "b",
+          "text": "To show the group was careless"
+        },
+        {
+          "id": "c",
+          "text": "To describe the weather"
+        },
+        {
+          "id": "d",
+          "text": "To make the trip sound dangerous"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t6-03",
+      "subject": "reading",
+      "tier": 6,
+      "skill": "vocabulary-in-context",
+      "questionText": "The storm was brief, but the damage was “permanent”. Permanent means:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lasting"
+        },
+        {
+          "id": "b",
+          "text": "Sudden"
+        },
+        {
+          "id": "c",
+          "text": "Minor"
+        },
+        {
+          "id": "d",
+          "text": "Expensive"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t6-04",
+      "subject": "reading",
+      "tier": 6,
+      "skill": "sequencing",
+      "passageTitle": "Two Maps",
+      "passage": "The old map showed the creek running east of the ridge. The new survey put it west. The scouts walked the ridge and found the creek had changed course after the flood.",
+      "questionText": "Put the events in order: (1) the creek moved (2) the survey was drawn (3) the flood came",
+      "options": [
+        {
+          "id": "a",
+          "text": "3, 1, 2"
+        },
+        {
+          "id": "b",
+          "text": "1, 2, 3"
+        },
+        {
+          "id": "c",
+          "text": "2, 3, 1"
+        },
+        {
+          "id": "d",
+          "text": "3, 2, 1"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t7-01",
+      "subject": "reading",
+      "tier": 7,
+      "skill": "inferential",
+      "passageTitle": "No Lookout",
+      "passage": "Nobody photographs the old trail. It has no lookout, no waterfall, nothing to point a camera at. It simply climbs, patiently, through the kind of forest that takes a century to make and an afternoon to walk.",
+      "questionText": "The narrator's tone in this passage is best described as:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Impatient"
+        },
+        {
+          "id": "b",
+          "text": "Quietly admiring"
+        },
+        {
+          "id": "c",
+          "text": "Openly critical"
+        },
+        {
+          "id": "d",
+          "text": "Indifferent"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "r-t7-02",
+      "subject": "reading",
+      "tier": 7,
+      "skill": "vocabulary-in-context",
+      "passageTitle": "No Lookout",
+      "passage": "It simply climbs, patiently, through the kind of forest that takes a century to make and an afternoon to walk.",
+      "questionText": "In context, “patiently” suggests the trail is:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Slow to gain height"
+        },
+        {
+          "id": "b",
+          "text": "Poorly maintained"
+        },
+        {
+          "id": "c",
+          "text": "Rarely open"
+        },
+        {
+          "id": "d",
+          "text": "Difficult to find"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t7-03",
+      "subject": "reading",
+      "tier": 7,
+      "skill": "main-idea",
+      "passageTitle": "Two Ways Up",
+      "passage": "The new trail reaches the lake in forty minutes. The old one takes three hours. Walk the new one and you arrive; walk the old one and you learn how the valley is put together.",
+      "questionText": "Which statement best captures the author's argument?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Speed of travel costs you understanding of a place"
+        },
+        {
+          "id": "b",
+          "text": "New trails are badly built"
+        },
+        {
+          "id": "c",
+          "text": "Maps are unreliable"
+        },
+        {
+          "id": "d",
+          "text": "Hiking should be difficult"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t8-01",
+      "subject": "reading",
+      "tier": 8,
+      "skill": "authors-purpose",
+      "passageTitle": "No Lookout",
+      "passage": "It simply climbs, patiently, through the kind of forest that takes a century to make and an afternoon to walk.",
+      "questionText": "The contrast between 'a century to make' and 'an afternoon to walk' mainly serves to:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set the forest's age against how easily it is passed through"
+        },
+        {
+          "id": "b",
+          "text": "Argue the trail is too short"
+        },
+        {
+          "id": "c",
+          "text": "Show the author is tired"
+        },
+        {
+          "id": "d",
+          "text": "Explain how forests grow"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t8-02",
+      "subject": "reading",
+      "tier": 8,
+      "skill": "inferential",
+      "passageTitle": "Two Ways Up",
+      "passage": "Walk the new one and you arrive; walk the old one and you learn how the valley is put together — which slope holds snow, where the water goes.",
+      "questionText": "Which assumption does the author's argument depend on?",
+      "options": [
+        {
+          "id": "a",
+          "text": "That understanding a place has value beyond arriving"
+        },
+        {
+          "id": "b",
+          "text": "That the old trail is safer"
+        },
+        {
+          "id": "c",
+          "text": "That most hikers dislike waterfalls"
+        },
+        {
+          "id": "d",
+          "text": "That new trails cost more to build"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "r-t8-03",
+      "subject": "reading",
+      "tier": 8,
+      "skill": "vocabulary-in-context",
+      "passageTitle": "No Lookout",
+      "passage": "Nobody photographs the old trail. It has no lookout, no waterfall, nothing to point a camera at.",
+      "questionText": "'Nobody photographs the old trail' implies that value here is measured by:",
+      "options": [
+        {
+          "id": "a",
+          "text": "What can be displayed to others"
+        },
+        {
+          "id": "b",
+          "text": "Distance covered"
+        },
+        {
+          "id": "c",
+          "text": "Time of year"
+        },
+        {
+          "id": "d",
+          "text": "Trail difficulty"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "m-t0-01",
       "subject": "math",
-      "tier": 1,
+      "tier": 0,
       "skill": "number-sense",
       "art": {
         "kind": "count",
         "glyph": "pinecone",
         "n": 7
       },
-      "questionText": "Which number comes right after 7?",
-      "questionTextJunior": "Count the pinecones. What number comes next?",
-      "options": [
-        {
-          "id": "a",
-          "text": "6"
-        },
-        {
-          "id": "b",
-          "text": "8"
-        },
-        {
-          "id": "c",
-          "text": "9"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "m-t1-02",
-      "subject": "math",
-      "tier": 1,
-      "skill": "operations",
-      "art": {
-        "kind": "countPlus",
-        "glyph": "fish",
-        "n": 4,
-        "m": 3
-      },
-      "questionText": "4 + 3 = ?",
-      "questionTextJunior": "How many fish altogether?",
+      "questionText": "Count the pinecones. How many are there?",
       "options": [
         {
           "id": "a",
@@ -542,84 +1066,17 @@
         },
         {
           "id": "d",
-          "text": "9"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "m-t1-03",
-      "subject": "math",
-      "tier": 1,
-      "skill": "operations",
-      "art": {
-        "kind": "countTakeAway",
-        "glyph": "berry",
-        "n": 10,
-        "takeAway": 6
-      },
-      "questionText": "10 - 6 = ?",
-      "questionTextJunior": "6 berries were eaten. How many are left?",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
           "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
         }
       ],
       "correctAnswerId": "b"
     },
     {
-      "id": "m-t1-04",
+      "id": "m-t0-02",
       "subject": "math",
-      "tier": 1,
-      "skill": "word-problem",
-      "art": {
-        "kind": "countPlus",
-        "glyph": "pinecone",
-        "n": 5,
-        "m": 4
-      },
-      "questionText": "Sam has 5 pinecones. He finds 4 more. How many does he have now?",
-      "questionTextJunior": "Sam has 5 pinecones. He finds 4 more. How many now?",
-      "options": [
-        {
-          "id": "a",
-          "text": "8"
-        },
-        {
-          "id": "b",
-          "text": "9"
-        },
-        {
-          "id": "c",
-          "text": "10"
-        },
-        {
-          "id": "d",
-          "text": "11"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "m-t1-05",
-      "subject": "math",
-      "tier": 1,
-      "skill": "geometry",
+      "tier": 0,
+      "skill": "number-sense",
       "questionText": "Which shape has 3 sides?",
-      "questionTextJunior": "Which shape has 3 sides?",
       "options": [
         {
           "id": "a",
@@ -657,16 +1114,221 @@
       "correctAnswerId": "b"
     },
     {
+      "id": "m-t0-03",
+      "subject": "math",
+      "tier": 0,
+      "skill": "operations",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "fish",
+        "n": 4,
+        "m": 3
+      },
+      "questionText": "How many fish altogether?",
+      "options": [
+        {
+          "id": "a",
+          "text": "6"
+        },
+        {
+          "id": "b",
+          "text": "7"
+        },
+        {
+          "id": "c",
+          "text": "8"
+        },
+        {
+          "id": "d",
+          "text": "9"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t1-01",
+      "subject": "math",
+      "tier": 1,
+      "skill": "operations",
+      "art": {
+        "kind": "countTakeAway",
+        "glyph": "berry",
+        "n": 10,
+        "takeAway": 6
+      },
+      "questionText": "10 − 6 = ?",
+      "questionTextJunior": "6 berries were eaten. How many are left?",
+      "options": [
+        {
+          "id": "a",
+          "text": "3"
+        },
+        {
+          "id": "b",
+          "text": "4"
+        },
+        {
+          "id": "c",
+          "text": "5"
+        },
+        {
+          "id": "d",
+          "text": "6"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t1-02",
+      "subject": "math",
+      "tier": 1,
+      "skill": "word-problem",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "pinecone",
+        "n": 5,
+        "m": 4
+      },
+      "questionText": "Sam has 5 pinecones. He finds 4 more. How many now?",
+      "options": [
+        {
+          "id": "a",
+          "text": "8"
+        },
+        {
+          "id": "b",
+          "text": "9"
+        },
+        {
+          "id": "c",
+          "text": "10"
+        },
+        {
+          "id": "d",
+          "text": "11"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t1-03",
+      "subject": "math",
+      "tier": 1,
+      "skill": "number-sense",
+      "questionText": "Which number is between 12 and 15?",
+      "options": [
+        {
+          "id": "a",
+          "text": "11"
+        },
+        {
+          "id": "b",
+          "text": "14"
+        },
+        {
+          "id": "c",
+          "text": "16"
+        },
+        {
+          "id": "d",
+          "text": "18"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
       "id": "m-t2-01",
       "subject": "math",
       "tier": 2,
+      "skill": "operations",
+      "questionText": "45 + 38 = ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "73"
+        },
+        {
+          "id": "b",
+          "text": "83"
+        },
+        {
+          "id": "c",
+          "text": "93"
+        },
+        {
+          "id": "d",
+          "text": "81"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t2-02",
+      "subject": "math",
+      "tier": 2,
+      "skill": "number-sense",
+      "questionText": "Count by fives: 5, 10, 15, ___",
+      "options": [
+        {
+          "id": "a",
+          "text": "16"
+        },
+        {
+          "id": "b",
+          "text": "20"
+        },
+        {
+          "id": "c",
+          "text": "25"
+        },
+        {
+          "id": "d",
+          "text": "30"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t2-03",
+      "subject": "math",
+      "tier": 2,
+      "skill": "measurement",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
+      "questionText": "Which is the best tool to measure how long a canoe is?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A measuring tape"
+        },
+        {
+          "id": "b",
+          "text": "A cup"
+        },
+        {
+          "id": "c",
+          "text": "A thermometer"
+        },
+        {
+          "id": "d",
+          "text": "A clock"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "m-t3-01",
+      "subject": "math",
+      "tier": 3,
       "skill": "operations",
       "art": {
         "kind": "areaGrid",
         "w": 7,
         "h": 6
       },
-      "questionText": "7 x 6 = ?",
+      "questionText": "7 × 6 = ?",
       "questionTextJunior": "6 rows of 7. How many squares?",
       "options": [
         {
@@ -689,36 +1351,10 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "m-t2-02",
+      "id": "m-t3-02",
       "subject": "math",
-      "tier": 2,
-      "skill": "operations",
-      "questionText": "145 + 78 = ?",
-      "options": [
-        {
-          "id": "a",
-          "text": "213"
-        },
-        {
-          "id": "b",
-          "text": "223"
-        },
-        {
-          "id": "c",
-          "text": "233"
-        },
-        {
-          "id": "d",
-          "text": "243"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "m-t2-03",
-      "subject": "math",
-      "tier": 2,
-      "skill": "number-sense",
+      "tier": 3,
+      "skill": "fractions",
       "questionText": "Which fraction is the largest?",
       "questionTextJunior": "Which bar has the most filled in?",
       "options": [
@@ -762,16 +1398,15 @@
       "correctAnswerId": "a"
     },
     {
-      "id": "m-t2-04",
+      "id": "m-t3-03",
       "subject": "math",
-      "tier": 2,
+      "tier": 3,
       "skill": "word-problem",
       "art": {
         "kind": "glyph",
         "glyph": "tent"
       },
-      "questionText": "A tent holds 4 campers. How many tents are needed for 26 campers?",
-      "questionTextJunior": "A tent holds 4 campers. How many tents for 26 campers?",
+      "questionText": "A tent holds 4 campers. How many tents for 26 campers?",
       "options": [
         {
           "id": "a",
@@ -793,9 +1428,35 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "m-t2-05",
+      "id": "m-t4-01",
       "subject": "math",
-      "tier": 2,
+      "tier": 4,
+      "skill": "operations",
+      "questionText": "145 + 78 = ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "213"
+        },
+        {
+          "id": "b",
+          "text": "223"
+        },
+        {
+          "id": "c",
+          "text": "233"
+        },
+        {
+          "id": "d",
+          "text": "243"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t4-02",
+      "subject": "math",
+      "tier": 4,
       "skill": "measurement",
       "art": {
         "kind": "areaGrid",
@@ -803,7 +1464,6 @@
         "h": 3
       },
       "questionText": "A rectangle is 8 cm long and 3 cm wide. What is its area?",
-      "questionTextJunior": "Count the squares. What is the area?",
       "options": [
         {
           "id": "a",
@@ -825,10 +1485,41 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "m-t3-01",
+      "id": "m-t4-03",
       "subject": "math",
-      "tier": 3,
-      "skill": "operations",
+      "tier": 4,
+      "skill": "fractions",
+      "art": {
+        "kind": "fraction",
+        "n": 2,
+        "d": 4
+      },
+      "questionText": "Which fraction is equal to 1/2?",
+      "options": [
+        {
+          "id": "a",
+          "text": "2/4"
+        },
+        {
+          "id": "b",
+          "text": "1/3"
+        },
+        {
+          "id": "c",
+          "text": "3/8"
+        },
+        {
+          "id": "d",
+          "text": "2/5"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "m-t5-01",
+      "subject": "math",
+      "tier": 5,
+      "skill": "fractions",
       "art": {
         "kind": "fraction",
         "n": 3,
@@ -856,40 +1547,10 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "m-t3-02",
+      "id": "m-t5-02",
       "subject": "math",
-      "tier": 3,
-      "skill": "word-problem",
-      "art": {
-        "kind": "glyph",
-        "glyph": "backpack"
-      },
-      "questionText": "A hike is 12 km. The group has walked 7.5 km. What fraction of the hike is left?",
-      "options": [
-        {
-          "id": "a",
-          "text": "3/8"
-        },
-        {
-          "id": "b",
-          "text": "1/4"
-        },
-        {
-          "id": "c",
-          "text": "3/4"
-        },
-        {
-          "id": "d",
-          "text": "4.5/12"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "m-t3-03",
-      "subject": "math",
-      "tier": 3,
-      "skill": "number-sense",
+      "tier": 5,
+      "skill": "decimals",
       "art": {
         "kind": "fraction",
         "n": 3,
@@ -917,39 +1578,9 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "m-t3-04",
+      "id": "m-t5-03",
       "subject": "math",
-      "tier": 3,
-      "skill": "word-problem",
-      "art": {
-        "kind": "scene",
-        "scene": "canoe"
-      },
-      "questionText": "Canoes rent for $18 for the first hour and $11 for each hour after. What is the cost of 4 hours?",
-      "options": [
-        {
-          "id": "a",
-          "text": "$44"
-        },
-        {
-          "id": "b",
-          "text": "$51"
-        },
-        {
-          "id": "c",
-          "text": "$62"
-        },
-        {
-          "id": "d",
-          "text": "$72"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "m-t3-05",
-      "subject": "math",
-      "tier": 3,
+      "tier": 5,
       "skill": "measurement",
       "art": {
         "kind": "areaGrid",
@@ -978,16 +1609,267 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "w-t1-01",
-      "subject": "writing",
-      "tier": 1,
-      "skill": "conventions",
+      "id": "m-t6-01",
+      "subject": "math",
+      "tier": 6,
+      "skill": "word-problem",
       "art": {
         "kind": "scene",
         "scene": "canoe"
       },
-      "questionText": "Which sentence is written correctly?",
-      "questionTextJunior": "Which one is written the right way?",
+      "questionText": "Canoes rent for $18 for the first hour and $11 for each hour after. What is the cost of 4 hours?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$44"
+        },
+        {
+          "id": "b",
+          "text": "$51"
+        },
+        {
+          "id": "c",
+          "text": "$62"
+        },
+        {
+          "id": "d",
+          "text": "$72"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t6-02",
+      "subject": "math",
+      "tier": 6,
+      "skill": "fractions",
+      "questionText": "A hike is 12 km. The group has walked 7.5 km. What fraction is left?",
+      "options": [
+        {
+          "id": "a",
+          "text": "3/8"
+        },
+        {
+          "id": "b",
+          "text": "1/4"
+        },
+        {
+          "id": "c",
+          "text": "3/4"
+        },
+        {
+          "id": "d",
+          "text": "5/12"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "m-t6-03",
+      "subject": "math",
+      "tier": 6,
+      "skill": "measurement",
+      "art": {
+        "kind": "glyph",
+        "glyph": "bottle"
+      },
+      "questionText": "How many millilitres are in 2.4 litres?",
+      "options": [
+        {
+          "id": "a",
+          "text": "24"
+        },
+        {
+          "id": "b",
+          "text": "240"
+        },
+        {
+          "id": "c",
+          "text": "2400"
+        },
+        {
+          "id": "d",
+          "text": "24000"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "m-t7-01",
+      "subject": "math",
+      "tier": 7,
+      "skill": "ratios",
+      "art": {
+        "kind": "count",
+        "glyph": "berry",
+        "n": 4
+      },
+      "questionText": "A trail mix uses 3 cups of oats to 2 cups of berries. For 12 cups of oats, how many cups of berries?",
+      "options": [
+        {
+          "id": "a",
+          "text": "6"
+        },
+        {
+          "id": "b",
+          "text": "8"
+        },
+        {
+          "id": "c",
+          "text": "9"
+        },
+        {
+          "id": "d",
+          "text": "10"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t7-02",
+      "subject": "math",
+      "tier": 7,
+      "skill": "operations",
+      "questionText": "What is 15 − 3 × 4 + 2?",
+      "options": [
+        {
+          "id": "a",
+          "text": "50"
+        },
+        {
+          "id": "b",
+          "text": "5"
+        },
+        {
+          "id": "c",
+          "text": "-5"
+        },
+        {
+          "id": "d",
+          "text": "11"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "m-t7-03",
+      "subject": "math",
+      "tier": 7,
+      "skill": "percentages",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
+      "questionText": "A $40 pack is 25% off. What is the sale price?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$10"
+        },
+        {
+          "id": "b",
+          "text": "$25"
+        },
+        {
+          "id": "c",
+          "text": "$30"
+        },
+        {
+          "id": "d",
+          "text": "$35"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "m-t8-01",
+      "subject": "math",
+      "tier": 8,
+      "skill": "integers",
+      "questionText": "What is −7 + 12 − 5?",
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "-10"
+        },
+        {
+          "id": "c",
+          "text": "10"
+        },
+        {
+          "id": "d",
+          "text": "24"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "m-t8-02",
+      "subject": "math",
+      "tier": 8,
+      "skill": "expressions",
+      "questionText": "If n = 4, what is 3n² − 5?",
+      "options": [
+        {
+          "id": "a",
+          "text": "43"
+        },
+        {
+          "id": "b",
+          "text": "31"
+        },
+        {
+          "id": "c",
+          "text": "19"
+        },
+        {
+          "id": "d",
+          "text": "7"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "m-t8-03",
+      "subject": "math",
+      "tier": 8,
+      "skill": "measurement",
+      "questionText": "A box is 3 m × 2 m × 1.5 m. What is its volume?",
+      "options": [
+        {
+          "id": "a",
+          "text": "6.5 cu m"
+        },
+        {
+          "id": "b",
+          "text": "9 cu m"
+        },
+        {
+          "id": "c",
+          "text": "11 cu m"
+        },
+        {
+          "id": "d",
+          "text": "13.5 cu m"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t0-01",
+      "subject": "writing",
+      "tier": 0,
+      "skill": "capitalization",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
+      "questionText": "Which sentence starts the right way?",
+      "questionTextJunior": "Which one starts the right way?",
       "options": [
         {
           "id": "a",
@@ -999,114 +1881,52 @@
         },
         {
           "id": "c",
-          "text": "we Went to the lake"
+          "text": "wE went to the lake."
         },
         {
           "id": "d",
-          "text": "We went to the lake"
+          "text": "WE went to the lake."
         }
       ],
       "correctAnswerId": "b"
     },
     {
-      "id": "w-t1-02",
+      "id": "w-t0-02",
       "subject": "writing",
-      "tier": 1,
-      "skill": "conventions",
-      "questionText": "Which word should start with a capital letter?",
-      "questionTextJunior": "Which word needs a big letter at the start?",
+      "tier": 0,
+      "skill": "punctuation",
+      "questionText": "What goes at the end of a sentence?",
+      "questionTextJunior": "What goes at the end?",
       "options": [
         {
           "id": "a",
-          "text": "dog"
+          "text": "A period"
         },
         {
           "id": "b",
-          "text": "monday"
+          "text": "A letter"
         },
         {
           "id": "c",
-          "text": "tree"
+          "text": "A number"
         },
         {
           "id": "d",
-          "text": "happy"
+          "text": "A space"
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "a"
     },
     {
-      "id": "w-t1-03",
+      "id": "w-t0-03",
       "subject": "writing",
-      "tier": 1,
-      "skill": "conventions",
-      "art": {
-        "kind": "glyph",
-        "glyph": "backpack"
-      },
-      "questionText": "What punctuation ends this sentence? Where is my backpack",
-      "questionTextJunior": "Where is my backpack ___ Which mark goes at the end?",
-      "options": [
-        {
-          "id": "a",
-          "text": "."
-        },
-        {
-          "id": "b",
-          "text": ","
-        },
-        {
-          "id": "c",
-          "text": "?"
-        },
-        {
-          "id": "d",
-          "text": "!"
-        }
-      ],
-      "correctAnswerId": "c"
-    },
-    {
-      "id": "w-t1-04",
-      "subject": "writing",
-      "tier": 1,
-      "skill": "grammar",
-      "art": {
-        "kind": "scene",
-        "scene": "bear-cubs"
-      },
-      "questionText": "Choose the correct word. The two bears ______ fishing.",
-      "questionTextJunior": "The two bears ______ fishing.",
-      "options": [
-        {
-          "id": "a",
-          "text": "is"
-        },
-        {
-          "id": "b",
-          "text": "are"
-        },
-        {
-          "id": "c",
-          "text": "am"
-        },
-        {
-          "id": "d",
-          "text": "be"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "w-t1-05",
-      "subject": "writing",
-      "tier": 1,
+      "tier": 0,
       "skill": "grammar",
       "art": {
         "kind": "glyph",
         "glyph": "tent"
       },
-      "questionText": "Which word is a naming word (noun)?",
+      "questionText": "Which word names a thing?",
       "questionTextJunior": "Which word names a thing?",
       "options": [
         {
@@ -1129,68 +1949,94 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "w-t2-01",
+      "id": "w-t1-01",
       "subject": "writing",
-      "tier": 2,
-      "skill": "grammar",
-      "art": {
-        "kind": "glyph",
-        "glyph": "bottle"
-      },
-      "questionText": "Choose the correct word. She ______ her water bottle yesterday.",
+      "tier": 1,
+      "skill": "capitalization",
+      "questionText": "Which word needs a capital letter?",
+      "questionTextJunior": "Which word needs a big letter?",
       "options": [
         {
           "id": "a",
-          "text": "forget"
+          "text": "dog"
         },
         {
           "id": "b",
-          "text": "forgets"
+          "text": "monday"
         },
         {
           "id": "c",
-          "text": "forgot"
+          "text": "tree"
         },
         {
           "id": "d",
-          "text": "forgetting"
+          "text": "happy"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t1-02",
+      "subject": "writing",
+      "tier": 1,
+      "skill": "punctuation",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
+      "questionText": "Where is my backpack ___ Which mark goes at the end?",
+      "options": [
+        {
+          "id": "a",
+          "text": "."
+        },
+        {
+          "id": "b",
+          "text": ","
+        },
+        {
+          "id": "c",
+          "text": "?"
+        },
+        {
+          "id": "d",
+          "text": "!"
         }
       ],
       "correctAnswerId": "c"
     },
     {
-      "id": "w-t2-02",
+      "id": "w-t1-03",
       "subject": "writing",
-      "tier": 2,
-      "skill": "conventions",
+      "tier": 1,
+      "skill": "grammar",
       "art": {
         "kind": "scene",
-        "scene": "pack-list"
+        "scene": "bear-cubs"
       },
-      "questionText": "Which sentence uses commas correctly?",
-      "questionTextJunior": "Which sentence has the commas in the right places?",
+      "questionText": "Choose the correct word. The two bears ______ fishing.",
       "options": [
         {
           "id": "a",
-          "text": "We packed rope, a map and matches."
+          "text": "is"
         },
         {
           "id": "b",
-          "text": "We packed rope a map, and matches."
+          "text": "are"
         },
         {
           "id": "c",
-          "text": "We packed, rope, a map and matches."
+          "text": "am"
         },
         {
           "id": "d",
-          "text": "We packed rope, a map, and matches."
+          "text": "be"
         }
       ],
-      "correctAnswerId": "d"
+      "correctAnswerId": "b"
     },
     {
-      "id": "w-t2-03",
+      "id": "w-t2-01",
       "subject": "writing",
       "tier": 2,
       "skill": "sentence-structure",
@@ -1221,16 +2067,77 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "w-t2-04",
+      "id": "w-t2-02",
       "subject": "writing",
       "tier": 2,
+      "skill": "punctuation",
+      "art": {
+        "kind": "scene",
+        "scene": "pack-list"
+      },
+      "questionText": "Which sentence uses commas correctly?",
+      "questionTextJunior": "Which has the commas right?",
+      "options": [
+        {
+          "id": "a",
+          "text": "We packed rope, a map and matches."
+        },
+        {
+          "id": "b",
+          "text": "We packed rope a map, and matches."
+        },
+        {
+          "id": "c",
+          "text": "We packed, rope, a map and matches."
+        },
+        {
+          "id": "d",
+          "text": "We packed rope, a map, and matches."
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "w-t2-03",
+      "subject": "writing",
+      "tier": 2,
+      "skill": "grammar",
+      "art": {
+        "kind": "glyph",
+        "glyph": "bottle"
+      },
+      "questionText": "Choose the correct word. She ______ her water bottle yesterday.",
+      "options": [
+        {
+          "id": "a",
+          "text": "forget"
+        },
+        {
+          "id": "b",
+          "text": "forgets"
+        },
+        {
+          "id": "c",
+          "text": "forgot"
+        },
+        {
+          "id": "d",
+          "text": "forgetting"
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "w-t3-01",
+      "subject": "writing",
+      "tier": 3,
       "skill": "word-choice",
       "art": {
         "kind": "glyph",
         "glyph": "moose"
       },
-      "questionText": "Which word best replaces said to show excitement? \"Look at that!\" she said.",
-      "questionTextJunior": "\"Look at that!\" she said. Which word shows she was excited?",
+      "questionText": "Which word best replaces “said” to show excitement?",
+      "questionTextJunior": "Which word shows excitement?",
       "options": [
         {
           "id": "a",
@@ -1252,9 +2159,9 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "w-t2-05",
+      "id": "w-t3-02",
       "subject": "writing",
-      "tier": 2,
+      "tier": 3,
       "skill": "grammar",
       "art": {
         "kind": "glyph",
@@ -1282,41 +2189,67 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "w-t3-01",
+      "id": "w-t3-03",
       "subject": "writing",
       "tier": 3,
       "skill": "sentence-structure",
-      "questionText": "Which sentence combines these best? The rain started. We kept hiking.",
+      "questionText": "Which is a fragment, not a sentence?",
       "options": [
         {
           "id": "a",
-          "text": "The rain started we kept hiking."
+          "text": "The fire went out."
         },
         {
           "id": "b",
-          "text": "The rain started, we kept hiking."
+          "text": "Because the wind picked up."
         },
         {
           "id": "c",
-          "text": "Although the rain started, we kept hiking."
+          "text": "We set up camp."
         },
         {
           "id": "d",
-          "text": "The rain started but we kept hiking then."
+          "text": "It rained all night."
         }
       ],
-      "correctAnswerId": "c"
+      "correctAnswerId": "b"
     },
     {
-      "id": "w-t3-02",
+      "id": "w-t4-01",
       "subject": "writing",
-      "tier": 3,
-      "skill": "editing",
+      "tier": 4,
+      "skill": "punctuation",
+      "questionText": "Which sentence is punctuated correctly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "“Look at that” she said."
+        },
+        {
+          "id": "b",
+          "text": "“Look at that,” she said."
+        },
+        {
+          "id": "c",
+          "text": "“Look at that,” She said."
+        },
+        {
+          "id": "d",
+          "text": "Look at that, she said."
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t4-02",
+      "subject": "writing",
+      "tier": 4,
+      "skill": "sentence-structure",
       "art": {
         "kind": "scene",
         "scene": "wind-out"
       },
-      "questionText": "Which revision fixes the run-on? \"The fire went out it was too windy.\"",
+      "questionText": "Which revision fixes the run-on? “The fire went out it was too windy.”",
       "options": [
         {
           "id": "a",
@@ -1338,15 +2271,15 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "w-t3-03",
+      "id": "w-t4-03",
       "subject": "writing",
-      "tier": 3,
-      "skill": "organization",
+      "tier": 4,
+      "skill": "paragraph-sequencing",
       "art": {
         "kind": "glyph",
         "glyph": "backpack"
       },
-      "questionText": "Which sentence is the best topic sentence for a paragraph about packing light?",
+      "questionText": "Which sentence should come FIRST in a paragraph about packing light?",
       "options": [
         {
           "id": "a",
@@ -1368,9 +2301,9 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "w-t3-04",
+      "id": "w-t5-01",
       "subject": "writing",
-      "tier": 3,
+      "tier": 5,
       "skill": "word-choice",
       "art": {
         "kind": "scene",
@@ -1398,10 +2331,66 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "w-t3-05",
+      "id": "w-t5-02",
       "subject": "writing",
-      "tier": 3,
+      "tier": 5,
+      "skill": "sentence-structure",
+      "questionText": "Which sentence combines these best? The rain started. We kept hiking.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The rain started we kept hiking."
+        },
+        {
+          "id": "b",
+          "text": "The rain started, we kept hiking."
+        },
+        {
+          "id": "c",
+          "text": "Although the rain started, we kept hiking."
+        },
+        {
+          "id": "d",
+          "text": "The rain started but we kept hiking then."
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "w-t5-03",
+      "subject": "writing",
+      "tier": 5,
+      "skill": "paragraph-sequencing",
+      "questionText": "Which sentence best follows: “Carrying less weight makes a long hike far easier.”",
+      "options": [
+        {
+          "id": "a",
+          "text": "My pack was blue."
+        },
+        {
+          "id": "b",
+          "text": "Start by laying everything out and removing what you have not used in a year."
+        },
+        {
+          "id": "c",
+          "text": "We reached the lake at noon."
+        },
+        {
+          "id": "d",
+          "text": "Trail mix is my favourite snack."
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t6-01",
+      "subject": "writing",
+      "tier": 6,
       "skill": "grammar",
+      "art": {
+        "kind": "scene",
+        "scene": "compass"
+      },
       "questionText": "Choose the correct word. Neither the map nor the compasses ______ helping us.",
       "options": [
         {
@@ -1419,6 +2408,214 @@
         {
           "id": "d",
           "text": "has"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t6-02",
+      "subject": "writing",
+      "tier": 6,
+      "skill": "punctuation",
+      "questionText": "Which sentence uses the semicolon correctly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "We packed light; the trail was long."
+        },
+        {
+          "id": "b",
+          "text": "We packed light; and the trail was long."
+        },
+        {
+          "id": "c",
+          "text": "We packed light, the trail was long;"
+        },
+        {
+          "id": "d",
+          "text": "We; packed light the trail was long."
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "w-t6-03",
+      "subject": "writing",
+      "tier": 6,
+      "skill": "paragraph-sequencing",
+      "questionText": "A paragraph argues that packing light matters. Which sentence does NOT belong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Start by laying everything out."
+        },
+        {
+          "id": "b",
+          "text": "Remove what you have not used in a year."
+        },
+        {
+          "id": "c",
+          "text": "My cousin has a red canoe."
+        },
+        {
+          "id": "d",
+          "text": "Weigh the pack before you leave."
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "w-t7-01",
+      "subject": "writing",
+      "tier": 7,
+      "skill": "sentence-structure",
+      "questionText": "Which sentence has parallel structure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She likes hiking, to swim, and canoe trips."
+        },
+        {
+          "id": "b",
+          "text": "She likes hiking, swimming, and canoeing."
+        },
+        {
+          "id": "c",
+          "text": "She likes to hike, swimming, and canoe."
+        },
+        {
+          "id": "d",
+          "text": "She likes hiking, swimming, and to canoe."
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t7-02",
+      "subject": "writing",
+      "tier": 7,
+      "skill": "word-choice",
+      "questionText": "Which transition best signals a contrast?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Furthermore"
+        },
+        {
+          "id": "b",
+          "text": "However"
+        },
+        {
+          "id": "c",
+          "text": "Similarly"
+        },
+        {
+          "id": "d",
+          "text": "Therefore"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t7-03",
+      "subject": "writing",
+      "tier": 7,
+      "skill": "grammar",
+      "questionText": "Which sentence has no dangling modifier?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Walking to the lake, the rain started."
+        },
+        {
+          "id": "b",
+          "text": "Walking to the lake, we were caught by the rain."
+        },
+        {
+          "id": "c",
+          "text": "Walking to the lake, the packs got wet."
+        },
+        {
+          "id": "d",
+          "text": "Walking to the lake, it rained."
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t8-01",
+      "subject": "writing",
+      "tier": 8,
+      "skill": "sentence-structure",
+      "questionText": "Which revision is most concise without losing meaning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Due to the fact that it was raining, we stopped."
+        },
+        {
+          "id": "b",
+          "text": "Because it was raining, we stopped."
+        },
+        {
+          "id": "c",
+          "text": "It was raining, and due to this, we stopped."
+        },
+        {
+          "id": "d",
+          "text": "On account of rain, it was that we stopped."
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t8-02",
+      "subject": "writing",
+      "tier": 8,
+      "skill": "word-choice",
+      "questionText": "Which sentence maintains a consistent formal register?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The survey was flawed, so the data is basically junk."
+        },
+        {
+          "id": "b",
+          "text": "The survey was flawed, so the data are unreliable."
+        },
+        {
+          "id": "c",
+          "text": "The survey was kinda off, therefore the data are unreliable."
+        },
+        {
+          "id": "d",
+          "text": "The survey was flawed; the data is whatever."
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "w-t8-03",
+      "subject": "writing",
+      "tier": 8,
+      "skill": "paragraph-sequencing",
+      "questionText": "Which sentence best concludes a paragraph arguing for packing light?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trail mix is a good snack."
+        },
+        {
+          "id": "b",
+          "text": "The lightest pack is the one you notice least."
+        },
+        {
+          "id": "c",
+          "text": "My pack weighed 14 kilos."
+        },
+        {
+          "id": "d",
+          "text": "We left on Saturday."
         }
       ],
       "correctAnswerId": "b"

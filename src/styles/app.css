@@ -477,6 +477,11 @@ body {
 .strand-row[data-strand='writing'] { --strand-colour: var(--strand-writing); }
 .strand-row .tag { font-size: 14px; }
 .strand-row__level { font-weight: var(--fw-extrabold); color: var(--text-primary); }
+
+/* A subject the child has not sat yet: present but visibly not a result. */
+.strand-row--pending { background: transparent; border-style: dashed; }
+.strand-row--pending .tag { opacity: 0.55; }
+.strand-row__level--pending { font-weight: var(--fw-semibold); color: var(--text-muted); }
 .strands__note { margin-top: 2px; }
 
 .results .text-btn--sm { font-size: 15px; min-height: 0; padding: var(--space-2) 0; width: auto; }

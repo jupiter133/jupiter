@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { AgeBand, Question, Subject } from '../assessment/types';
-import { SUBJECT_LABEL, SUBJECT_ORDER, questionTextFor } from '../assessment/types';
+import { SUBJECT_LABEL, questionTextFor } from '../assessment/types';
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { STRAND_TAG, Tag } from '../components/Tag';
@@ -87,7 +87,6 @@ export function QuestionScreen({
   /* Sentence-length answers read better one-up; two columns wrap them into
      three or four lines each. */
   const longOptions = question.options.some((o) => o.text.length > 36);
-  const leg = SUBJECT_ORDER.indexOf(subject) + 1;
   const progress = Math.min(100, (questionNumber / questionsPerSubject) * 100);
   const prompt = questionTextFor(question, band);
 
@@ -96,7 +95,7 @@ export function QuestionScreen({
       <div className={`card card--tight question-screen question-screen--${band}`}>
         <div className="quest-bar">
           <span className="label">
-            Leg {leg} · <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · Stop{' '}
+            <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · Question{' '}
             {questionNumber}
           </span>
           <div

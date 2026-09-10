@@ -38,11 +38,10 @@ export function speechRateFor(band: AgeBand): number {
 }
 
 /**
- * Auto-read starts off for every band. Narration that fires unasked on each
- * question is a lot of sound for a shared room, and every question already
- * carries a "Read to me" control plus a speaker on each answer — one tap when
- * it's wanted beats an interruption when it isn't.
+ * Auto-read starts ON for K–3, where many children cannot yet read the question
+ * they are being asked, and OFF for Grade 4–6, who can — they still get the
+ * "Read to me" control and a speaker on every answer, one tap away.
  */
-export function audioDefaultFor(_band: AgeBand): boolean {
-  return false;
+export function audioDefaultFor(band: AgeBand): boolean {
+  return band === 'junior';
 }
