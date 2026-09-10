@@ -11,9 +11,9 @@ import type { Grade, Tier } from './tiers';
 export type CoreBand = '1-3' | '4-6';
 
 /**
- * Kindergarten folds into the 1–3 band: the published bands start at Grade 1,
- * and a K child who reads at a Grade 3 level has nowhere else to go.
- * FLAGGED FOR TEACHER SIGN-OFF.
+ * Early Learners, JK and SK fold into the 1–3 band: the published bands start
+ * at Grade 1, and a kindergartener who reads at a Grade 3 level has nowhere
+ * else to go. FLAGGED FOR TEACHER SIGN-OFF.
  */
 export function coreBandForGrade(grade: Grade): CoreBand {
   return grade === '4' || grade === '5' || grade === '6' ? '4-6' : '1-3';

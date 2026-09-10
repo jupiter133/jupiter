@@ -191,6 +191,19 @@ flagged for teacher review on the parent screen rather than quietly absorbed —
 held back, started late, newly arrived, skipped ahead. The placement is only as
 good as the grade it is measured against, so a human confirms the comparison.
 
+### Grades before Grade 1
+
+Intake offers **Early Learners** (before kindergarten), **Junior Kindergarten**
+and **Senior Kindergarten** as well as Grades 1–6, and ages **2 to 12**. All
+three pre-Grade-1 years start at tier 0, because the bank floors at
+kindergarten content. Two consequences, both content decisions rather than code:
+
+- A pre-Grade-1 child's gap can never go negative on this scale, so they are
+  never "behind" — only reading below a Grade 3 level (which they will be)
+  routes them, via step 1.
+- Telling an Early Learner from an SK child needs items below tier 0, which do
+  not exist yet.
+
 ## Subjects
 
 **Every child sits all four subjects, in this order: reading, spelling,
@@ -257,7 +270,7 @@ step 4.
 
 ### A consequence worth knowing
 
-Step 1 reads an **absolute** level. A child in Grade K, 1 or 2 who is reading
+Step 1 reads an **absolute** level. A child before Grade 3 who is reading
 *at* grade level is by definition reading below a Grade 3 level, so they route
 to the Reading track. Gate steps 2–5 are only reachable by a Grade 3+ child, or
 by a younger child reading ahead. That is what the specified rules say; it is
@@ -281,7 +294,7 @@ scattered through the code. **They are placeholders pending a naming decision.**
 | Grades 4–6 | enriched | Core Skills Enriched 4-6 |
 
 The 1–3 band has **no separate reading and writing planners** — gate steps 2 and
-3 both resolve to the one combined planner. Kindergarten folds into the 1–3
+3 both resolve to the one combined planner. Early Learners, JK and SK fold into the 1–3
 band. Both are **flagged for teacher sign-off**.
 
 Which of the six **Core Reading** levels a gated child lands on is
@@ -336,7 +349,8 @@ Static rules, no ML or adaptive model. See `src/assessment/engine.ts`.
   grades past Grade 6 so a strong Grade 6 child has somewhere to go — otherwise
   the ceiling, not the child, is what the result measures. Tier 0 gives a
   struggling Grade 4 room to fall.
-- The sitting starts at the child's grade tier (`K → 0`, `Grade n → n`) —
+- The sitting starts at the child's grade tier (`EL / JK / SK → 0`,
+  `Grade n → n`) —
   except a floored sitting, which starts at tier 0.
 - **2 correct in a row → serve the next question one tier up.**
   **2 incorrect in a row → one tier down.** Either move resets both streaks, so

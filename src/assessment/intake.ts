@@ -14,7 +14,9 @@ import type { Grade } from './tiers';
 
 /** Typical age at the start of each grade, used only to spot a mismatch. */
 const EXPECTED_AGE: Record<Grade, number> = {
-  K: 5,
+  EL: 3,
+  JK: 4,
+  SK: 5,
   '1': 6,
   '2': 7,
   '3': 8,
@@ -23,8 +25,8 @@ const EXPECTED_AGE: Record<Grade, number> = {
   '6': 11,
 };
 
-export const MIN_AGE = 4;
-export const MAX_AGE = 14;
+export const MIN_AGE = 2;
+export const MAX_AGE = 12;
 
 /** Years apart before the pairing is worth a teacher's eye. */
 export const MISMATCH_THRESHOLD = 2;

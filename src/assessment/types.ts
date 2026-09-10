@@ -10,9 +10,9 @@ export type { Tier };
 export { MIN_TIER, MAX_TIER, TIERS, clampTier, tierGradeLabel } from './tiers';
 
 export type { Grade };
-export { GRADES, gradeTier, gapFor, isWithinOneGrade, isMoreThanOneGradeBehind } from './tiers';
+export { GRADES, GRADE_LABEL, GRADE_SHORT, isPreGrade1, gradeTier, gapFor, isWithinOneGrade, isMoreThanOneGradeBehind } from './tiers';
 
-/** Grade K is tier 0, Grade n is tier n. A normal sitting starts here. */
+/** Everything before Grade 1 is tier 0, Grade n is tier n. A normal sitting starts here. */
 export function startTierForGrade(grade: Grade): Tier {
   return gradeTier(grade);
 }

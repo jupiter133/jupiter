@@ -43,7 +43,7 @@ function sit(
   return s;
 }
 
-const ALL_GRADES: Grade[] = ['K', '1', '2', '3', '4', '5', '6'];
+const ALL_GRADES: Grade[] = ['EL', 'JK', 'SK', '1', '2', '3', '4', '5', '6'];
 
 describe('subjects and bands', () => {
   it('gives every grade all four subjects, reading first', () => {
@@ -102,8 +102,10 @@ describe('question bank', () => {
 });
 
 describe('start tier', () => {
-  it('maps Kindergarten to 0 and Grade n to n', () => {
-    expect(startTierForGrade('K')).toBe(0);
+  it('maps everything before Grade 1 to 0 and Grade n to n', () => {
+    expect(startTierForGrade('EL')).toBe(0);
+    expect(startTierForGrade('JK')).toBe(0);
+    expect(startTierForGrade('SK')).toBe(0);
     expect(startTierForGrade('1')).toBe(1);
     expect(startTierForGrade('6')).toBe(6);
   });
@@ -136,7 +138,7 @@ describe('branching', () => {
   });
 
   it('clamps at Kindergarten and Grade 8', () => {
-    const low = sit('K', 'reading', () => false);
+    const low = sit('SK', 'reading', () => false);
     expect(low.currentTier).toBe(MIN_TIER);
 
     let high = createSession('6', 'reading');

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import type { Grade, ParentContext } from '../assessment/types';
-import { MAX_AGE, MIN_AGE, hasAgeGradeMismatch } from '../assessment/types';
+import type { ParentContext } from '../assessment/types';
+import { GRADES, GRADE_LABEL, GRADE_SHORT, MAX_AGE, MIN_AGE, hasAgeGradeMismatch } from '../assessment/types';
+import type { Grade } from '../assessment/types';
 import { displayName, possessiveName } from '../assessment/childName';
 
-const GRADES: Grade[] = ['K', '1', '2', '3', '4', '5', '6'];
 const AGES: number[] = Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, i) => MIN_AGE + i);
 
 interface Props {
@@ -67,16 +67,18 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
             Grade is what the placement is measured against. The activity adjusts from
             the first question onward.
           </span>
-          <div className="grade-grid" role="group" aria-labelledby="grade-label">
+          <div className="grade-grid grade-grid--grade" role="group" aria-labelledby="grade-label">
             {GRADES.map((g) => (
               <button
                 key={g}
                 type="button"
                 className="grade-chip"
                 aria-pressed={grade === g}
+                aria-label={GRADE_LABEL[g]}
+                title={GRADE_LABEL[g]}
                 onClick={() => setGrade(g)}
               >
-                {g}
+                {GRADE_SHORT[g]}
               </button>
             ))}
           </div>

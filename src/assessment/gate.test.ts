@@ -9,7 +9,7 @@ function inputs(
   gaps: { reading?: number; spelling?: number; writing?: number; math?: number },
   readingTierOverride?: Tier,
 ): GateInputs {
-  const gradeT = grade === 'K' ? 0 : Number(grade);
+  const gradeT = Number.isNaN(Number(grade)) ? 0 : Number(grade);
   const readingGap = gaps.reading ?? 0;
   return {
     grade,
