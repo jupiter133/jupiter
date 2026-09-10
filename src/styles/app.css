@@ -206,12 +206,6 @@ body {
 
 /* A full-length standing figure: size by height, let width follow. */
 .guide { display: block; height: clamp(220px, 58vh, 460px); width: auto; max-width: 100%; object-fit: contain; }
-.guide--float { animation: guide-float 3.4s ease-in-out infinite; }
-
-@keyframes guide-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
 .speech-bubble {
   position: relative;
@@ -431,7 +425,7 @@ body {
 
 
 @media (prefers-reduced-motion: reduce) {
-  .guide--float, .badge-pop { animation: none; }
+  .badge-pop { animation: none; }
 }
 
 /* ---------- Parent results ---------- */
@@ -520,6 +514,11 @@ body {
   .program-hero__cta { width: 100%; white-space: normal; }
 }
 
+/* The right-hand (or lower) half of results: description, subject rows, notes. */
+.results-detail { display: flex; flex-direction: column; gap: var(--space-3); }
+.results-split { display: flex; flex-direction: column; gap: clamp(12px, 2vh, 20px); }
+.intake-pair { display: flex; flex-direction: column; gap: var(--space-5); }
+
 /* Landscape tablet has width and not much height. Intake now asks age as well
    as grade, and results now list four subjects plus their notes, so both pages
    go two-column here rather than scrolling — a parent should see the whole
@@ -552,8 +551,19 @@ body {
      of notes reads as a rendering fault, not emphasis. */
   .results-split .program-hero { text-align: center; align-self: start; }
   .results-split .note { font-size: 13px; padding: var(--space-3) var(--space-4); }
-  .results-detail { display: flex; flex-direction: column; gap: var(--space-2); }
+  .results-detail { gap: var(--space-2); }
   .results-split .strand-row { padding: 7px var(--space-4); }
+}
+
+/* Portrait tablet: wide enough for a full row of chips, tall enough that
+   answer tiles must not stretch to fill the height. */
+@media (orientation: portrait) and (min-width: 600px) {
+  .grade-grid--age { grid-template-columns: repeat(6, 1fr); }
+  .grade-grid--grade { grid-template-columns: repeat(9, 1fr); }
+  .grade-grid--grade .grade-chip { font-size: 20px; padding-inline: 4px; }
+  .options { flex: 0 0 auto; grid-auto-rows: auto; align-content: start; }
+  .option { min-height: 84px; }
+  .option--picture { min-height: 150px; }
 }
 
 /* ---------- Question illustrations ---------- */
