@@ -1,4 +1,4 @@
-import { Glyph } from '../components/glyphs';
+import head from '../assets/ms-hannah-head.png';
 import { displayName, possessiveName } from '../assessment/childName';
 
 interface Props {
@@ -31,7 +31,7 @@ export function StartScreen({
         <h1 className="display start__headline">
           What lesson should{' '}
           <span className="avatar-chip" aria-hidden="true">
-            <Glyph name="teacher" size={44} />
+            <img className="avatar-chip__img" src={head} alt="" draggable={false} />
           </span>{' '}
           {displayName(childName)} begin at?
         </h1>

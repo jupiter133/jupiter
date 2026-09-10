@@ -204,7 +204,8 @@ body {
 
 /* ---------- Guide character ---------- */
 
-.guide { display: block; width: clamp(120px, 26vw, 260px); height: auto; }
+/* A full-length standing figure: size by height, let width follow. */
+.guide { display: block; height: clamp(220px, 58vh, 460px); width: auto; max-width: 100%; object-fit: contain; }
 .guide--float { animation: guide-float 3.4s ease-in-out infinite; }
 
 @keyframes guide-float {
@@ -415,7 +416,7 @@ body {
 }
 /* She peeks from behind the badge here, so she must stay smaller than it —
    the viewport-scaled .guide width is for the handoff and section screens. */
-.celebration-art__guide .guide { width: clamp(90px, 12vw, 130px); }
+.celebration-art__guide .guide { height: clamp(140px, 26vh, 220px); width: auto; }
 
 .celebration-copy { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
 .celebration-copy .btn { margin-top: var(--space-2); }
@@ -506,11 +507,15 @@ body {
    answers below a 390px-tall screen. */
 @media (orientation: portrait), (max-width: 600px) {
   .handoff, .celebration-split { grid-template-columns: 1fr; }
+  /* Stacked, the two halves sit together instead of splitting the height. */
+  .celebration-split { grid-template-rows: auto auto; align-content: center; gap: var(--space-5); }
   .question-body--with-passage {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr);
   }
   .passage { max-height: 34vh; }
+  /* Stacked above the bubble, the figure has to leave room for it. */
+  .guide { height: clamp(140px, 26vh, 240px); }
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
   .program-hero__cta { width: 100%; white-space: normal; }
 }
@@ -665,7 +670,7 @@ body {
   .art--pair svg { width: 60px; height: 60px; }
   .count-item svg { width: 34px; height: 34px; }
   .art__scene { height: 110px; }
-  .guide { width: clamp(90px, 22vh, 160px); }
+  .guide { height: clamp(150px, 62vh, 240px); width: auto; }
   .passage { max-height: none; }
   .card--center { justify-content: flex-start; }
   .handoff { gap: 16px; }
@@ -882,7 +887,9 @@ body {
   border: 3px solid var(--accent-gold);
   /* Sits on the text baseline so it reads as part of the sentence. */
   vertical-align: -18px;
+  overflow: hidden;
 }
+.avatar-chip__img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; display: block; }
 
 .start__field { width: 100%; max-width: 340px; align-items: center; }
 .start__sub { max-width: 520px; }
