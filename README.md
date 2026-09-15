@@ -68,12 +68,41 @@ viewport, vertical overflow (allowed on phones for parent pages), dead space
 under the answer grid, auto-read firing unasked, or an answer speaker that
 chooses the answer.
 
-### Child name
+### The account seam
 
-The name comes from the **child's profile** — by the time a parent reaches this
-flow the app already knows who is being placed, so the flow never asks.
-`src/profile.ts` is the seam where the host injects it; the demo build seeds a
-placeholder and accepts `?name=` for trying other values.
+Name, age and grade all come from the **signed-in family's account**, captured
+at sign-up. `src/profile.ts` is the seam where the host injects that record; the
+demo build seeds a placeholder and accepts `?name=`, `?age=` and `?grade=` for
+trying values.
+
+```ts
+interface ChildProfile {
+  name: string;
+  age: number | null;   // null = sign-up never captured it
+  grade: Grade | null;  // null = sign-up never captured it
+}
+```
+
+`?grade=` takes the code (`EL`, `JK`, `SK`, `1`–`6`) or the short label the
+chips show (`Early`), case-insensitively. An out-of-range age or an unrecognised
+grade comes back **null rather than a guess** — a grade quietly accepted wrong
+produces a placement measured against nothing, and nobody downstream can see it
+happened.
+
+Age and grade are nullable on purpose: an older account, a migrated one, or a
+second child added in a hurry may be missing either.
+
+The intake screen therefore has two modes, and never re-asks for the name:
+
+- **Both known** (the normal path): a single "From your account" line showing
+  age and grade, with a **Change** button. One glance, one tap on Continue.
+- **Either missing, or Change tapped**: the age and grade pickers, pre-selected
+  with whatever the account did supply.
+
+The values are shown rather than silently used because **a grade goes stale
+every September**, and grade is what the whole placement is measured against.
+The parent is the only one in the loop who knows the child repeated a year or
+started late.
 
 `src/assessment/childName.ts` still owns the empty-name fallbacks, because a
 profile name can be blank, and the split matters:

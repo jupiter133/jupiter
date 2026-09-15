@@ -33,7 +33,12 @@ export default function App() {
       )}
 
       {flow.step === 'parent-context' && (
-        <ParentContextScreen childName={flow.childName} onContinue={flow.submitContext} />
+        <ParentContextScreen
+          childName={flow.childName}
+          knownAge={profile.age}
+          knownGrade={profile.grade}
+          onContinue={flow.submitContext}
+        />
       )}
 
       {flow.step === 'handoff' && (

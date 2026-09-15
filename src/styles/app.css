@@ -152,6 +152,30 @@ body {
 
 /* ---------- Form controls (parent screens) ---------- */
 
+/* What the account already knows: shown, not hidden, with one way to fix it.
+   A grade goes stale every September and a placement measured against the
+   wrong grade is wrong in a way nobody downstream can see. */
+.known {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-4) var(--space-5);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-canvas);
+}
+.known__facts { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.known__source { color: var(--text-muted); }
+.known__value {
+  margin: 0;
+  font-size: var(--font-size-heading);
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+}
+.known__edit { flex: 0 0 auto; min-height: 48px; padding: var(--space-3) var(--space-5); margin-bottom: 0; }
+
 .field { display: flex; flex-direction: column; gap: var(--space-2); }
 
 .field__hint { font-size: var(--font-size-label); color: var(--text-muted); }

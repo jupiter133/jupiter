@@ -7,20 +7,34 @@ import { displayName, possessiveName } from '../assessment/childName';
 const AGES: number[] = Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, i) => MIN_AGE + i);
 
 interface Props {
-  /** Collected on the start screen; carried through, not re-asked. */
+  /** From the child's profile; carried through, never re-asked. */
   childName: string;
+  /** From the account, set at sign-up. null means it was never captured. */
+  knownAge: number | null;
+  knownGrade: Grade | null;
   onContinue: (context: ParentContext) => void;
 }
 
-/** Screen 1 — parent-facing. Deliberately a plain form: no gamification,
- *  no guide character. This is the only place a grown-up enters data. */
-export function ParentContextScreen({ childName, onContinue }: Props) {
-  const [age, setAge] = useState<number | null>(null);
-  const [grade, setGrade] = useState<Grade | null>(null);
+/**
+ * Screen 1 — parent-facing. A plain form: no gamification, no guide character.
+ *
+ * Age and grade come from the account, so the normal path is a glance and one
+ * tap on Continue. They are shown rather than hidden because a grade goes stale
+ * every September and a placement measured against the wrong grade is wrong in
+ * a way nobody downstream can see. Tapping Change opens the pickers; when
+ * sign-up never captured one, the pickers are open from the start.
+ */
+export function ParentContextScreen({ childName, knownAge, knownGrade, onContinue }: Props) {
+  const [age, setAge] = useState<number | null>(knownAge);
+  const [grade, setGrade] = useState<Grade | null>(knownGrade);
+  // Anything the account is missing has to be asked for straight away.
+  const [editing, setEditing] = useState(knownAge === null || knownGrade === null);
+  const [learningChallenges, setLearningChallenges] = useState('');
+
   // Shown, never blocking: an unusual pairing is a fact about the child, not an
   // input error, and the parent is the one who knows why.
   const mismatch = age !== null && grade !== null && hasAgeGradeMismatch(age, grade);
-  const [learningChallenges, setLearningChallenges] = useState('');
+  const name = displayName(childName);
 
   return (
     <div className="stage">
@@ -29,60 +43,76 @@ export function ParentContextScreen({ childName, onContinue }: Props) {
           <p className="label">Step 1 of 2 · For the grown-up</p>
           <h1 className="title">Let’s find {possessiveName(childName)} starting point</h1>
           <p className="body">
-            A few quick questions, then we’ll hand the tablet over.{' '}
-            {displayName(childName)} does four short activities — reading, spelling, writing and math — one at a
-            time, and can stop and pick up again whenever. There is no pass or fail.
+            {editing ? 'A couple of questions' : 'A quick check'}, then we’ll hand the tablet
+            over. {name} does four short activities — reading, spelling, writing and math —
+            one at a time, and can stop and pick up again whenever. There is no pass or fail.
           </p>
         </div>
 
-        <div className="intake-pair">
-        <div className="field">
-          <label className="heading" id="age-label">
-            How old is {displayName(childName)}?
-          </label>
-          <span className="field__hint">
-            Sets how the activity looks and sounds. Never changes the placement.
-          </span>
-          <div className="grade-grid grade-grid--age" role="group" aria-labelledby="age-label">
-            {AGES.map((a) => (
-              <button
-                key={a}
-                type="button"
-                className="grade-chip"
-                aria-pressed={age === a}
-                onClick={() => setAge(a)}
-              >
-                {a}
-              </button>
-            ))}
-          </div>
-        </div>
+        {editing ? (
+          <div className="intake-pair">
+            <div className="field">
+              <label className="heading" id="age-label">
+                How old is {name}?
+              </label>
+              <span className="field__hint">
+                Sets how the activity looks and sounds. Never changes the placement.
+              </span>
+              <div className="grade-grid grade-grid--age" role="group" aria-labelledby="age-label">
+                {AGES.map((a) => (
+                  <button
+                    key={a}
+                    type="button"
+                    className="grade-chip"
+                    aria-pressed={age === a}
+                    onClick={() => setAge(a)}
+                  >
+                    {a}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-        <div className="field">
-          <label className="heading" id="grade-label">
-            What grade is {displayName(childName)} in?
-          </label>
-          <span className="field__hint">
-            What the placement is measured against.
-          </span>
-          <div className="grade-grid grade-grid--grade" role="group" aria-labelledby="grade-label">
-            {GRADES.map((g) => (
-              <button
-                key={g}
-                type="button"
-                className="grade-chip"
-                aria-pressed={grade === g}
-                aria-label={GRADE_LABEL[g]}
-                title={GRADE_LABEL[g]}
-                onClick={() => setGrade(g)}
-              >
-                {GRADE_SHORT[g]}
-              </button>
-            ))}
+            <div className="field">
+              <label className="heading" id="grade-label">
+                What grade is {name} in?
+              </label>
+              <span className="field__hint">What the placement is measured against.</span>
+              <div className="grade-grid grade-grid--grade" role="group" aria-labelledby="grade-label">
+                {GRADES.map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    className="grade-chip"
+                    aria-pressed={grade === g}
+                    aria-label={GRADE_LABEL[g]}
+                    title={GRADE_LABEL[g]}
+                    onClick={() => setGrade(g)}
+                  >
+                    {GRADE_SHORT[g]}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-
-        </div>
+        ) : (
+          /* The account already knows both. Confirm at a glance, edit if wrong. */
+          <div className="known">
+            <div className="known__facts">
+              <p className="label known__source">From your account</p>
+              <p className="known__value">
+                Age {age} · {GRADE_LABEL[grade!]}
+              </p>
+              <span className="field__hint">
+                Age sets how the activity looks and sounds. Grade is what the placement is
+                measured against.
+              </span>
+            </div>
+            <button type="button" className="btn btn--ghost known__edit" onClick={() => setEditing(true)}>
+              Change
+            </button>
+          </div>
+        )}
 
         {mismatch && (
           <p className="note">
