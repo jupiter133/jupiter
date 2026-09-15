@@ -9,16 +9,11 @@ export const STRAND_TAG: Record<Subject, TagColor> = SUBJECT_COLOR;
 
 interface Props {
   color?: TagColor;
-  /** Alternate the tilt across a run of tags so they look hand-placed. */
-  alt?: boolean;
-  /** No tilt. The intro headings set the subject tags straight. */
-  straight?: boolean;
   children: ReactNode;
 }
 
 /** The DS highlighter word-tag: a solid colour block with black-weight text,
- *  a slight tilt and a soft shadow, like a marker swipe over the word. */
-export function Tag({ color = 'green', alt = false, straight = false, children }: Props) {
-  const tilt = straight ? ' tag--straight' : alt ? ' tag--tilt-alt' : '';
-  return <span className={`tag tag--${color}${tilt}`}>{children}</span>;
+ *  sitting straight so a small subject name stays easy to read. */
+export function Tag({ color = 'green', children }: Props) {
+  return <span className={`tag tag--${color}`}>{children}</span>;
 }

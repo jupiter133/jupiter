@@ -81,7 +81,7 @@
   --lh-tight: 1.05;
   --lh-snug: 1.2;
   --lh-body: 1.55;
-  --tag-tilt: -2deg;
+  --tag-tilt: 0deg; /* tags sit straight — see .tag in app.css */
 
   /* ---------- 2. App roles ---------- */
 

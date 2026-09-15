@@ -27,7 +27,7 @@ export function SectionIntroScreen({ subject, onStart, onDoLater }: Props) {
             <p className="label intro__kicker">{intro.kicker}</p>
             <h1 className="display intro__title">
               The{' '}
-              <Tag color={STRAND_TAG[subject]} straight>
+              <Tag color={STRAND_TAG[subject]}>
                 {SUBJECT_LABEL[subject]}
               </Tag>{' '}
               test

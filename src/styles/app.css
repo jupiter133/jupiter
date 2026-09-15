@@ -83,27 +83,28 @@ body {
 
 /* The signature highlighter word-tag: a solid colour block, black-weight text,
    a slight tilt and a soft shadow — a marker swipe over the word. */
+/* Tags sit straight. The hand-placed tilt looked charming on a marketing
+   headline and made a 12px subject name on the quest bar harder to read, which
+   is the opposite of what a name above a question should do. */
 .tag {
   display: inline-block;
   font-weight: var(--fw-black);
   line-height: 1.1;
-  padding: 0.12em 0.5em;
+  padding: 0.18em 0.6em;
   border-radius: 10px;
-  transform: rotate(var(--tag-tilt));
-  box-shadow: 0 5px 12px rgba(20, 27, 34, 0.15);
+  box-shadow: 0 4px 10px rgba(20, 27, 34, 0.12);
   color: var(--text-on-accent);
   background: var(--accent-primary);
   white-space: nowrap;
 }
 .tag--green { background: var(--olc-green); }
 .tag--pink { background: var(--olc-pink); }
-.tag--cyan { background: var(--olc-cyan); }
+/* Cyan, gold and lime are light fills: they carry ink, not white. White on
+   cyan is about 2.2:1, which fails at any size and badly at 12px. */
+.tag--cyan { background: var(--olc-cyan); color: var(--text-on-bright); }
 .tag--gold { background: var(--accent-gold); color: var(--text-on-bright); }
 .tag--lime { background: var(--accent-lime); color: var(--text-on-bright); }
-.tag--tilt-alt { transform: rotate(1.5deg); }
-/* The intro headings set their subject tag straight. */
-.tag--straight { transform: none; }
-.label .tag { font-size: 12px; letter-spacing: 0.02em; text-transform: none; vertical-align: 1px; }
+.label .tag { font-size: 13px; letter-spacing: 0.02em; text-transform: none; vertical-align: 1px; }
 
 .stack { display: flex; flex-direction: column; gap: var(--space-5); }
 .stack--tight { gap: var(--space-3); }
@@ -629,8 +630,8 @@ body {
 
 /* ---------- Subject intro (one per subject) ---------- */
 
-.intro { width: 100%; max-width: 680px; margin-inline: auto; display: flex; flex-direction: column; gap: clamp(14px, 2vh, 24px); }
-.intro__head { text-align: center; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.intro { width: 100%; max-width: 680px; margin-inline: auto; display: flex; flex-direction: column; gap: clamp(12px, 1.6vh, 20px); }
+.intro__head { text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center; }
 .intro__kicker { color: var(--text-muted); }
 .intro__title { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.25; }
 .intro__lead { max-width: 440px; margin: 0 auto; }
@@ -644,12 +645,12 @@ body {
   font-size: 15px;
   font-weight: var(--fw-black);
   color: var(--text-on-bright);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 /* Four rule cards, collapsed. A child can start without reading them; the
    grown-up beside them can open the one they care about. */
-.rules { display: flex; flex-direction: column; gap: 9px; }
+.rules { display: flex; flex-direction: column; gap: 8px; }
 .rule {
   background: var(--surface-card);
   border: 2px solid var(--border-subtle);

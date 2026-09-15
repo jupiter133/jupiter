@@ -264,6 +264,13 @@ Two colour systems, both from the design: the **soft tile palette**
 (`SUBJECT_TILE`) for the subject tiles and the results name chips, and the
 **saturated highlighter** (`SUBJECT_COLOR`) for the subject-intro headings.
 
+**Tags sit straight.** The design system's word-tag carries a -2° tilt, which
+reads as hand-placed on a marketing headline and as a printing fault on a 13px
+subject name above a question. `--tag-tilt` is 0.
+
+**Cyan, gold and lime tags carry ink, not white.** They are light fills: white
+on cyan is about 2.2:1, which fails at any size and badly at 13px.
+
 ## Subjects
 
 **Every child sits all five subjects, in this order**, named exactly as the
