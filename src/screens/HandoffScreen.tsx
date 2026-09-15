@@ -1,41 +1,20 @@
 import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
-import {
-  INCLUDED_STRANDS,
-  coinAwardLabel,
-  estimatedTimeLabel,
-} from '../assessment/sessionMeta';
+import { CoinPill } from '../components/CoinPill';
+import { SUBJECT_LABEL, SUBJECT_ORDER, SUBJECT_TILE } from '../assessment/types';
+import { PLACEMENT_COIN_AWARD, estimatedTimeLabel } from '../assessment/sessionMeta';
 
 interface Props {
   childName: string;
   onStart: () => void;
 }
 
-/** A check in a circle, drawn to the same weight as the question glyphs. */
-function Check() {
-  return (
-    <svg className="included-row__check" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-      <circle cx="12" cy="12" r="11" fill="var(--accent-primary)" />
-      <path
-        d="M7 12.5l3.2 3.2L17 9"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="2.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 /**
- * Screen 2 — the handoff. The parent passes the tablet over here, and Ms Hannah
- * frames what follows as a quest. The word "test" appears nowhere.
+ * Screen 2 — meet Ms Hannah. The parent passes the tablet over here.
  *
- * The brief under the bubble is the last thing a grown-up reads before letting
- * go of the tablet: how long it takes, what the child earns, and what is
- * actually covered. The covered list is derived from the assessment, so it
- * cannot promise something the child is never asked.
+ * The five numbered tiles are the whole assessment at a glance, built from
+ * SUBJECT_ORDER so they cannot drift from what the child is actually asked.
+ * The word "test" appears nowhere on this screen.
  */
 export function HandoffScreen({ childName, onStart }: Props) {
   // Child-facing copy has no fallback for a missing name — Ms Hannah greets by
@@ -45,57 +24,52 @@ export function HandoffScreen({ childName, onStart }: Props) {
   return (
     <div className="stage">
       <div className="card card--center">
-        <div className="handoff">
-          <Teacher size={260} mood="greeting" />
+        <div className="meet">
+          <Teacher size={440} mood="greeting" />
 
-          <div className="stack">
-            <div className="speech-bubble stack stack--tight">
-              <p className="label">
+          <div className="meet__col">
+            <div className="meet-card">
+              <p className="label meet-card__kicker">
                 Pass the tablet to {name ?? 'your explorer'}
               </p>
-              <h1 className="display">{name ? `Hi ${name}! I’m Ms Hannah.` : 'Hi! I’m Ms Hannah.'}</h1>
-              <p className="body" style={{ color: 'var(--text-primary)' }}>
-                I’m one of the teachers here, and I’ve been mapping out a brand new trail.
-                I need someone to explore it with me — there’s no score and nothing to get
-                wrong, just pick what you think fits.
+              <h1 className="display meet-card__title">
+                {name ? `Hi ${name}! I’m Ms Hannah.` : 'Hi! I’m Ms Hannah.'}
+              </h1>
+              <p className="body meet-card__lead">
+                I’ve been mapping out a brand new trail and I need an explorer. There’s no
+                score and nothing to get wrong — just pick what you think fits.
               </p>
-            </div>
 
-            <div className="quest-brief">
-              <section className="included" aria-labelledby="included-heading">
-                <h2 id="included-heading" className="label included__heading">
-                  What’s included
-                </h2>
-                <ul className="included-list">
-                  {INCLUDED_STRANDS.map((strand) => (
-                    <li key={strand.subject} className="included-row">
-                      <Check />
-                      <span className="included-row__body">
-                        <span className="included-row__label">{strand.label}</span>
-                      </span>
+              <ol className="subject-tiles">
+                {SUBJECT_ORDER.map((subject, i) => {
+                  const tile = SUBJECT_TILE[subject];
+                  return (
+                    <li
+                      key={subject}
+                      className="subject-tile"
+                      style={{
+                        background: tile.bg,
+                        boxShadow: `0 4px 0 ${tile.edge}`,
+                        transform: `rotate(${tile.tilt})`,
+                      }}
+                    >
+                      <span className="subject-tile__num">{i + 1}</span>
+                      <span className="subject-tile__name">{SUBJECT_LABEL[subject]}</span>
                     </li>
-                  ))}
-                </ul>
-              </section>
+                  );
+                })}
+              </ol>
 
-              <div className="quest-stats">
-                <div className="quest-stat">
-                  <span className="label">Estimated time</span>
-                  <span className="quest-stat__value">{estimatedTimeLabel()}</span>
-                </div>
-                <div className="quest-stat quest-stat--coins">
-                  <span className="label">Earn</span>
-                  <span className="quest-stat__value">{coinAwardLabel()}</span>
-                </div>
+              <div className="meet-pills">
+                <span className="meet-pill">{estimatedTimeLabel()} total</span>
+                <CoinPill amount={`+${PLACEMENT_COIN_AWARD.toLocaleString('en-CA')} coins`} />
+                <span className="meet-pill">Stop any time</span>
               </div>
             </div>
 
-            <div className="handoff__go">
-              <button type="button" className="btn btn--primary" onClick={onStart}>
-                Start the discovery quest
-              </button>
-              <span className="field__hint">One subject at a time · Stop any time</span>
-            </div>
+            <button type="button" className="btn btn--primary btn--large" onClick={onStart}>
+              Start the discovery quest
+            </button>
           </div>
         </div>
       </div>

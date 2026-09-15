@@ -1,7 +1,6 @@
 import type { ParentContext, PlacementResult, Subject, SubjectPlacement } from '../assessment/types';
-import { SUBJECT_LABEL, SUBJECT_SHORT } from '../assessment/types';
+import { SUBJECT_LABEL, SUBJECT_SHORT, SUBJECT_TILE } from '../assessment/types';
 import { displayName, possessiveName } from '../assessment/childName';
-import { STRAND_TAG, Tag } from '../components/Tag';
 
 interface Props {
   context: ParentContext | null;
@@ -16,21 +15,20 @@ interface Props {
  * What one subject row says.
  *
  * A row only reports a level when the result is a real measure of that
- * subject. A floored sitting, or one the gate never read, is reported as an
- * observation instead: it was sat, it is on file, and it is not a level.
+ * subject. A floored sitting, or one the gate never read, reads "Observed
+ * only": it was sat, it is on file, and it is not a level.
  */
-function levelTextFor(placement: SubjectPlacement): string {
-  if (placement.floored) return 'Observed only';
-  if (placement.nonDetermining) return `${placement.gradeEquivalentDisplay} · observed only`;
+function levelTextFor(placement: SubjectPlacement | undefined): string {
+  if (!placement) return 'Not yet assessed';
+  if (placement.floored || placement.nonDetermining) return 'Observed only';
   return placement.gradeEquivalentDisplay;
 }
 
 /**
- * Screen 5 — parent-facing results.
+ * Screen 5 — parent-facing results, built to the assessment intro design.
  *
- * One program, never a program per subject. All five subjects are listed for
- * every child, because every child sits all five. Tier and gap numbers never
- * render; levels are said in grade-equivalent language only.
+ * One program on the left, all five subjects on the right. Tier and gap
+ * numbers never render; levels are said in grade-equivalent language only.
  */
 export function ParentResultsScreen({
   context,
@@ -45,113 +43,103 @@ export function ParentResultsScreen({
 
   return (
     <div className="stage">
-      <div className="card card--center results">
-        <div className="results__head">
-          <p className="label">
-            {complete ? 'Placement complete' : 'Progress saved'} · For the grown-up
-          </p>
-          <h1 className="title">{possessiveName(context?.childName ?? childName)} placement</h1>
-        </div>
+      <div className="card card--center">
+        <div className="placement">
+          <div className="placement__head">
+            <p className="label placement__kicker">
+              {complete ? 'Placement complete' : 'Progress saved'} · For the grown-up
+            </p>
+            <h1 className="title placement__title">
+              {possessiveName(context?.childName ?? childName)} placement
+            </h1>
+          </div>
 
-        <div className="results-split">
-          {complete && program ? (
-            /* The decision. One program, one level, one button. */
-            <section className="program-hero" aria-labelledby="program-name">
-              <p className="label program-hero__eyebrow">{name} is placed in</p>
-              <h2 id="program-name" className="display program-hero__name">
-                {program.name.replace(/(\d)-(\d)/, '$1‑$2')}
-              </h2>
-              <p className="program-hero__level">{program.gradeEquivalentDisplay}</p>
-              <button
-                type="button"
-                className="btn btn--primary btn--large program-hero__cta"
-                onClick={onRestart}
-              >
-                Start {program.name}
-              </button>
-            </section>
-          ) : (
-            /* Mid-placement: what is left, and the way back in. */
-            <section className="program-hero" aria-labelledby="next-subject">
-              <p className="label program-hero__eyebrow">
-                {subjects.length} of {result.requiredSubjects.length} done · next up
-              </p>
-              <h2 id="next-subject" className="display program-hero__name">
-                {nextSubject ? SUBJECT_LABEL[nextSubject] : 'All done'}
-              </h2>
-              <p className="program-hero__level">
-                A few minutes. {name} can pick this up any time.
-              </p>
-              <button
-                type="button"
-                className="btn btn--primary btn--large program-hero__cta"
-                onClick={onContinue}
-              >
-                {nextSubject ? `Start ${SUBJECT_SHORT[nextSubject]}` : 'See placement'}
-              </button>
-            </section>
-          )}
+          <div className="placement__split">
+            {complete && program ? (
+              /* The decision. One program, one level, one button. */
+              <section className="placement-card" aria-labelledby="program-name">
+                <p className="label placement-card__eyebrow">{name} is placed in</p>
+                <h2 id="program-name" className="placement-card__name">
+                  {program.name.replace(/(\d)-(\d)/, '$1‑$2')}
+                </h2>
+                <p className="placement-card__level">{program.gradeEquivalentDisplay}</p>
+                <button type="button" className="btn btn--primary" onClick={onRestart}>
+                  Start {program.name}
+                </button>
+                <p className="placement-card__blurb">{program.description}</p>
+              </section>
+            ) : (
+              /* Mid-placement: what is left, and the way back in. */
+              <section className="placement-card" aria-labelledby="next-subject">
+                <p className="label placement-card__eyebrow">
+                  {subjects.length} of {result.requiredSubjects.length} done · next up
+                </p>
+                <h2 id="next-subject" className="placement-card__name">
+                  {nextSubject ? SUBJECT_SHORT[nextSubject] : 'All done'}
+                </h2>
+                <p className="placement-card__level">A few minutes, any time</p>
+                <button type="button" className="btn btn--primary" onClick={onContinue}>
+                  {nextSubject ? `Start ${SUBJECT_SHORT[nextSubject]}` : 'See placement'}
+                </button>
+                <p className="placement-card__blurb">
+                  {name} can pick this up whenever suits — nothing is lost in between.
+                </p>
+              </section>
+            )}
 
-          <div className="results-detail">
-            {complete && program && <p className="body">{program.description}</p>}
+            <div className="placement__rows">
+              <p className="label placement__rows-heading">By subject</p>
 
-            <section className="strands" aria-labelledby="strands-heading">
-              <h3 id="strands-heading" className="heading heading--sm">
-                By subject
-              </h3>
-              <ul className="strand-list">
-                {result.requiredSubjects.map((subject) => {
-                  const placement = bySubject(subject);
-                  return (
-                    <li
-                      key={subject}
-                      className={`strand-row${placement ? '' : ' strand-row--pending'}`}
-                      data-strand={subject}
+              {result.requiredSubjects.map((subject) => {
+                const placement = bySubject(subject);
+                const measured = Boolean(placement && !placement.nonDetermining);
+                const tile = SUBJECT_TILE[subject];
+                return (
+                  <div key={subject} className="placement-row">
+                    <span
+                      className="placement-row__name"
+                      style={{ background: tile.bg, boxShadow: `0 3px 0 ${tile.edge}` }}
                     >
-                      <Tag color={STRAND_TAG[subject]}>{SUBJECT_SHORT[subject]}</Tag>
-                      <span
-                        className={
-                          placement && !placement.nonDetermining
-                            ? 'strand-row__level'
-                            : 'strand-row__level strand-row__level--pending'
-                        }
-                      >
-                        {placement ? levelTextFor(placement) : 'Not yet assessed'}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
+                      {SUBJECT_LABEL[subject]}
+                    </span>
+                    <span
+                      className={`placement-row__value${measured ? '' : ' placement-row__value--muted'}`}
+                    >
+                      {levelTextFor(placement)}
+                    </span>
+                  </div>
+                );
+              })}
 
-            <div className="notes">
               {readingGated && (
-                <p className="note">
-                  Reading comes first. {name} is reading below a Grade 3 level, and
-                  comprehension, vocabulary, writing and math all sit on top of reading — so
-                  the other four are recorded as observations for now, and get measured once
-                  reading is solid.
+                <p className="placement-explainer">
+                  Reading comes first. {name} is reading below a Grade&nbsp;3 level, and
+                  comprehension, vocabulary, writing and math all sit on top of reading — so the
+                  other four are recorded as observations for now, and get measured once reading
+                  is solid.
                 </p>
               )}
 
               {result.ageGradeMismatch && (
-                <p className="note">
-                  Flagged for teacher review: {possessiveName(context?.childName ?? childName)}{' '}
-                  age and grade are two or more years apart. A teacher will confirm the grade
-                  is the right comparison before the program starts.
+                <p className="placement-explainer">
+                  Flagged for teacher review: {possessiveName(context?.childName ?? childName)} age
+                  and grade are two or more years apart. A teacher will confirm the grade is the
+                  right comparison before the program starts.
                 </p>
               )}
 
-              <p className="note">
+              <p className="placement-footnote">
                 {name} never sees a score. Placement is a starting point, not a label.
               </p>
             </div>
           </div>
-        </div>
 
-        <button type="button" className="text-btn text-btn--sm" onClick={onRestart}>
-          Start the placement over
-        </button>
+          <div className="placement__restart">
+            <button type="button" className="text-btn text-btn--sm" onClick={onRestart}>
+              Start the placement over
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

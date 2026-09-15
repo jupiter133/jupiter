@@ -24,7 +24,7 @@ export { ageBandForAge, hasAgeGradeMismatch, ageGradeOffset, MIN_AGE, MAX_AGE } 
 export type { Subject };
 export { SUBJECT_ORDER, SUBJECT_LABEL } from './subjects';
 
-export { SUBJECT_SHORT, SUBJECT_COLOR } from './subjects';
+export { SUBJECT_SHORT, SUBJECT_COLOR, SUBJECT_TILE } from './subjects';
 export { READING_SUBJECTS, isReadingSubject, deriveReadingLevel, readingBottleneck } from './readingLevel';
 
 /**

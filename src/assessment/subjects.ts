@@ -47,3 +47,24 @@ export const SUBJECT_COLOR: Record<Subject, 'cyan' | 'green' | 'pink' | 'gold' |
   'sentence-writing': 'gold',
   math: 'lime',
 };
+
+/**
+ * Soft tile fill, hard bottom edge and tilt per subject, from the intro
+ * design. Used by the subject tiles on the handoff and the name chips on the
+ * results page — the saturated highlighter colours are for the intro headings.
+ */
+export const SUBJECT_TILE: Record<Subject, { bg: string; edge: string; tilt: string }> = {
+  'oral-reading': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)', tilt: '-1.5deg' },
+  'reading-comprehension': {
+    bg: 'var(--olc-cyan-soft)',
+    edge: 'var(--olc-cyan-soft-dark)',
+    tilt: '1deg',
+  },
+  'vocabulary-spelling': {
+    bg: 'var(--olc-pink-soft)',
+    edge: 'var(--olc-pink-soft-dark)',
+    tilt: '-1deg',
+  },
+  'sentence-writing': { bg: 'var(--olc-gold-soft)', edge: '#E5C46A', tilt: '1.5deg' },
+  math: { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)', tilt: '-1deg' },
+};
