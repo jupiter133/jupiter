@@ -266,6 +266,47 @@ body {
   align-items: center;
 }
 
+/* The brief a grown-up reads before letting go of the tablet: what is covered,
+   how long it takes, what the child earns. Two columns where there is width,
+   stacked where there isn't. */
+.quest-brief {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(12px, 2vw, 24px);
+  align-items: start;
+  padding: clamp(12px, 1.8vw, 20px) clamp(14px, 2vw, 22px);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-canvas);
+}
+.included { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.included-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.included-row { display: flex; align-items: flex-start; gap: var(--space-3); min-width: 0; }
+/* Aligned to the tag on the first line, not to the middle of a two-line row. */
+.included-row__check { flex: 0 0 auto; margin-top: 1px; }
+.included-row__body { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; }
+.included-row .tag { font-size: 14px; }
+.included-row__detail { font-size: 13px; font-weight: var(--fw-semibold); color: var(--text-muted); }
+
+.quest-stats { display: flex; flex-direction: column; gap: var(--space-2); flex: 0 0 auto; }
+.quest-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  white-space: nowrap;
+}
+.quest-stat__value { font-size: 18px; font-weight: var(--fw-black); color: var(--text-primary); }
+/* Coins take the gold role the design system reserves for them. */
+.quest-stat--coins { background: var(--accent-gold-soft); border-color: var(--accent-gold); }
+.quest-stat--coins .label { color: var(--text-on-gold); opacity: 0.8; }
+.quest-stat--coins .quest-stat__value { color: var(--text-on-gold); }
+
+.handoff__go { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; }
+
 /* ---------- Question screen ---------- */
 
 .question-screen { display: flex; flex-direction: column; gap: clamp(14px, 2vh, 24px); }
@@ -587,6 +628,9 @@ body {
    answers below a 390px-tall screen. */
 @media (orientation: portrait), (max-width: 600px) {
   .handoff, .celebration-split { grid-template-columns: 1fr; }
+  .quest-brief { grid-template-columns: minmax(0, 1fr); }
+  .quest-stats { flex-direction: row; flex-wrap: wrap; }
+  .quest-stat { flex: 1 1 auto; }
   /* Stacked, the two halves sit together instead of splitting the height. */
   .celebration-split { grid-template-rows: auto auto; align-content: center; gap: var(--space-5); }
   .question-body--with-passage {
@@ -746,6 +790,13 @@ body {
 
   .grade-grid { grid-template-columns: repeat(4, 1fr); }
   .grade-chip { min-height: 56px; }
+  /* A phone has to fit the brief and still keep the CTA on screen. */
+  .handoff .guide { height: clamp(110px, 18vh, 160px); }
+  .handoff .stack { gap: 12px; }
+  .handoff .display { font-size: 26px; }
+  .quest-brief { padding: 6px 12px; gap: 8px; }
+  .included-list { gap: 4px; }
+  .included-row__detail { display: none; }
   .avatar-chip { width: 40px; height: 40px; vertical-align: -10px; }
   /* The guide peeks past the badge on wide screens; on a phone that peek
      runs off the edge. Keep her inside the column. */
@@ -802,6 +853,22 @@ body {
   /* Sentence answers need the width more than the art does. */
   .question-body--long > .stack { grid-template-columns: minmax(0, 26%) minmax(0, 1fr); }
   .celebration-copy { gap: 8px; }
+  /* A landscape phone is all width and no height: the figure gives way, and
+     the greeting drops a size, so the brief and the CTA both stay on screen. */
+  .handoff .guide { height: clamp(120px, 40vh, 170px); }
+  .handoff .stack { gap: 10px; }
+  .handoff .display { font-size: 22px; line-height: 1.1; }
+  .handoff .speech-bubble .body { font-size: 14px; line-height: 1.45; }
+  .handoff .speech-bubble { padding: 8px 12px; }
+  .quest-brief { padding: 3px 12px; gap: 6px; }
+  .quest-stats { gap: 4px; }
+  .included { gap: 2px; }
+  .included-list { gap: 0; }
+  .included-row__detail { display: none; }
+  .included-row__check { width: 18px; height: 18px; }
+  .quest-stat { padding: 2px var(--space-3); }
+  .quest-stat__value { font-size: 15px; }
+  .handoff__go { gap: var(--space-3); }
   .celebration-copy .display { font-size: 24px; }
   .textarea { min-height: 72px; }
 }

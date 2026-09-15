@@ -25,6 +25,14 @@ export const READING_SUB_SKILL_LABEL: Record<ReadingSubSkill, string> = {
   'passage-comprehension': 'Passage comprehension',
 };
 
+/** Compact forms, for places that list all four on one line. */
+export const READING_SUB_SKILL_SHORT: Record<ReadingSubSkill, string> = {
+  'word-recognition': 'word recognition',
+  'oral-reading': 'decoding',
+  'reading-vocabulary': 'vocabulary',
+  'passage-comprehension': 'comprehension',
+};
+
 /** A sub-skill sitting is shorter than a full subject sitting. */
 export const QUESTIONS_PER_SUB_SKILL = 5;
 /** And so its early stop fires sooner: tier held for three answers, not four. */

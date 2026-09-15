@@ -21,7 +21,7 @@ npm run build   # typecheck + production build
 | 0 | Start — personalised invitation | Parent | `src/screens/StartScreen.tsx` |
 | 0b | Deferred — where "Maybe later" lands | Parent | `src/screens/DeferredScreen.tsx` |
 | 1 | Parent context (grade + optional learning-challenges flag) | Parent | `src/screens/ParentContextScreen.tsx` |
-| 2 | Handoff — Ms Hannah introduces the discovery quest | Child | `src/screens/HandoffScreen.tsx` |
+| 2 | Handoff — Ms Hannah introduces the quest, with the brief | Child | `src/screens/HandoffScreen.tsx` |
 | 2b | Section intro — Ms Hannah introduces each strand | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
 | 4 | Completion — badge, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
@@ -265,6 +265,24 @@ Skills by band, per the content plan:
   punctuation and capitalization, complete sentence vs fragment, word choice,
   paragraph sequencing.
 - **Spelling:** pick the correctly spelled word. Stub content.
+
+## The handoff brief
+
+The last thing a grown-up reads before letting go of the tablet, on screen 2:
+
+- **Estimated time** — the whole placement, all four sittings.
+- **Earn up to N coins** — in the gold role the design system reserves for
+  coins.
+- **What's included** — one row per subject, with reading's four sub-skills on
+  a sub-line.
+
+All three come from `src/assessment/sessionMeta.ts`. The included list is
+**derived from the assessment itself** rather than typed out, so the promise
+cannot drift from what a child is actually asked.
+
+**The coins are only promised here.** Nothing in this flow awards or banks
+them: there is no wallet, and the completion screen still shows no score.
+Wiring the award to the child's account is the host app's job.
 
 ## Reading sub-skills
 
