@@ -258,6 +258,11 @@ body {
 /* ---------- Handoff screen ---------- */
 
 .handoff {
+  /* Capped and centred: past this width the bubble's lines stop being a
+     readable measure and start being a paragraph you have to track across. */
+  max-width: 1040px;
+  margin-inline: auto;
+  width: 100%;
   display: grid;
   /* The figure column hugs the render, so the bubble sits beside her rather
      than across a fixed-width gap. */
@@ -267,42 +272,75 @@ body {
 }
 
 /* The brief a grown-up reads before letting go of the tablet: what is covered,
-   how long it takes, what the child earns. Two columns where there is width,
-   stacked where there isn't. */
+   how long it takes, what the child earns. Three facts, one card, one weight —
+   the subject colours belong to the results page, where they carry data; here
+   they would be four competing shouts. */
 .quest-brief {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(12px, 2vw, 24px);
-  align-items: start;
-  padding: clamp(12px, 1.8vw, 20px) clamp(14px, 2vw, 22px);
+  gap: clamp(16px, 2.4vw, 32px);
+  align-items: stretch;
+  padding: clamp(14px, 1.8vw, 20px) clamp(16px, 2vw, 24px);
   border: 2px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   background: var(--surface-canvas);
 }
-.included { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
-.included-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-.included-row { display: flex; align-items: flex-start; gap: var(--space-3); min-width: 0; }
-/* Aligned to the tag on the first line, not to the middle of a two-line row. */
-.included-row__check { flex: 0 0 auto; margin-top: 1px; }
-.included-row__body { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; }
-.included-row .tag { font-size: 14px; }
-.included-row__detail { font-size: 13px; font-weight: var(--fw-semibold); color: var(--text-muted); }
 
-.quest-stats { display: flex; flex-direction: column; gap: var(--space-2); flex: 0 0 auto; }
+.included { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.included__heading { color: var(--text-muted); }
+.included-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* Reading spans the row above; the other three sit evenly beneath it, so
+     no cell is left empty. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px clamp(12px, 2vw, 24px);
+}
+.included-row { display: flex; align-items: flex-start; gap: var(--space-3); min-width: 0; }
+/* Aligned to the label on the first line, not to the middle of a two-line row. */
+.included-row__check { flex: 0 0 auto; margin-top: 1px; }
+.included-row__body { display: flex; flex-direction: column; min-width: 0; }
+.included-row__label {
+  font-size: 16px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+.included-row__detail {
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+/* Reading carries a sub-line, so it takes the full width above the other three. */
+.included-row--wide { grid-column: 1 / -1; }
+
+/* The two numbers, a matched pair, divided from the list rather than floating. */
+.quest-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 0 0 auto;
+  padding-left: clamp(16px, 2.4vw, 32px);
+  border-left: 2px solid var(--border-subtle);
+}
 .quest-stat {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
+  min-width: 148px;
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
   background: var(--surface-card);
   border: 2px solid var(--border-subtle);
   white-space: nowrap;
 }
-.quest-stat__value { font-size: 18px; font-weight: var(--fw-black); color: var(--text-primary); }
+.quest-stat__value { font-size: 17px; font-weight: var(--fw-black); color: var(--text-primary); }
 /* Coins take the gold role the design system reserves for them. */
 .quest-stat--coins { background: var(--accent-gold-soft); border-color: var(--accent-gold); }
-.quest-stat--coins .label { color: var(--text-on-gold); opacity: 0.8; }
+.quest-stat--coins .label { color: var(--text-on-gold); opacity: 0.75; }
 .quest-stat--coins .quest-stat__value { color: var(--text-on-gold); }
 
 .handoff__go { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; }
@@ -794,8 +832,11 @@ body {
   .handoff .guide { height: clamp(110px, 18vh, 160px); }
   .handoff .stack { gap: 12px; }
   .handoff .display { font-size: 26px; }
-  .quest-brief { padding: 6px 12px; gap: 8px; }
-  .included-list { gap: 4px; }
+  .quest-brief { padding: 10px 14px; gap: 10px; }
+  .quest-stats { padding-left: 0; border-left: none; padding-top: 10px; border-top: 2px solid var(--border-subtle); }
+  /* Four even cells: with the sub-line hidden, reading has no reason to span. */
+  .included-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
+  .included-row--wide { grid-column: auto; }
   .included-row__detail { display: none; }
   .avatar-chip { width: 40px; height: 40px; vertical-align: -10px; }
   /* The guide peeks past the badge on wide screens; on a phone that peek
@@ -863,7 +904,8 @@ body {
   .quest-brief { padding: 3px 12px; gap: 6px; }
   .quest-stats { gap: 4px; }
   .included { gap: 2px; }
-  .included-list { gap: 0; }
+  .included-list { gap: 2px 12px; }
+  .included-row--wide { grid-column: auto; }
   .included-row__detail { display: none; }
   .included-row__check { width: 18px; height: 18px; }
   .quest-stat { padding: 2px var(--space-3); }

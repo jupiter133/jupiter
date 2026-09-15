@@ -1,6 +1,5 @@
 import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
-import { STRAND_TAG, Tag } from '../components/Tag';
 import {
   INCLUDED_STRANDS,
   coinAwardLabel,
@@ -15,7 +14,7 @@ interface Props {
 /** A check in a circle, drawn to the same weight as the question glyphs. */
 function Check() {
   return (
-    <svg className="included-row__check" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <svg className="included-row__check" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
       <circle cx="12" cy="12" r="11" fill="var(--accent-primary)" />
       <path
         d="M7 12.5l3.2 3.2L17 9"
@@ -64,15 +63,18 @@ export function HandoffScreen({ childName, onStart }: Props) {
 
             <div className="quest-brief">
               <section className="included" aria-labelledby="included-heading">
-                <h2 id="included-heading" className="heading heading--sm">
+                <h2 id="included-heading" className="label included__heading">
                   What’s included
                 </h2>
                 <ul className="included-list">
                   {INCLUDED_STRANDS.map((strand) => (
-                    <li key={strand.subject} className="included-row">
+                    <li
+                      key={strand.subject}
+                      className={`included-row${strand.detail ? ' included-row--wide' : ''}`}
+                    >
                       <Check />
                       <span className="included-row__body">
-                        <Tag color={STRAND_TAG[strand.subject]}>{strand.label}</Tag>
+                        <span className="included-row__label">{strand.label}</span>
                         {strand.detail && (
                           <span className="included-row__detail">{strand.detail}</span>
                         )}
