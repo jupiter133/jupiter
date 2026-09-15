@@ -18,14 +18,14 @@ npm run build   # typecheck + production build
 
 | # | Screen | Audience | File |
 |---|--------|----------|------|
-| 0 | Start — personalised invitation | Parent | `src/screens/StartScreen.tsx` |
+| 0 | Parent hook — "Where should {child} begin?" | Parent | `src/screens/StartScreen.tsx` |
 | 0b | Deferred — where "Maybe later" lands | Parent | `src/screens/DeferredScreen.tsx` |
 | 1 | Grown-up setup — confirm age/grade, optional note | Parent | `src/screens/ParentContextScreen.tsx` |
-| 2 | Handoff — Ms Hannah introduces the quest, with the brief | Child | `src/screens/HandoffScreen.tsx` |
+| 2 | Meet Ms Hannah — the five subject tiles, time and coins | Child | `src/screens/HandoffScreen.tsx` |
 | 2b | Subject intro — one per subject, with its rule cards | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
 | 4 | Completion — badge, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
-| 5 | Results — grade-equivalent placement per subject | Parent | `src/screens/ParentResultsScreen.tsx` |
+| 5 | Placement results — one program, five subject rows | Parent | `src/screens/ParentResultsScreen.tsx` |
 
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
@@ -245,6 +245,25 @@ kindergarten content. Two consequences, both content decisions rather than code:
 - Telling an Early Learner from an SK child needs items below tier 0, which do
   not exist yet.
 
+## The nine screens come from the design bundle
+
+Screens 0, 1, 2, the five subject intros and the results page are all built to
+`design_handoff_olc_assessment_intro`, with its copy. The pieces that carry
+numbers live in `src/assessment/sessionMeta.ts`:
+
+- **Estimated time** for the whole placement, and per sitting.
+- **Coins** — shown on the hook and on Ms Hannah's card as a CoinPill.
+- **What's included** — the five subject tiles, derived from `SUBJECT_ORDER`
+  so the promise cannot drift from what a child is actually asked.
+
+**The coins are only promised.** Nothing in this flow awards or banks them:
+there is no wallet, and the completion screen still shows no score. Wiring the
+award to the child's account is the host app's job.
+
+Two colour systems, both from the design: the **soft tile palette**
+(`SUBJECT_TILE`) for the subject tiles and the results name chips, and the
+**saturated highlighter** (`SUBJECT_COLOR`) for the subject-intro headings.
+
 ## Subjects
 
 **Every child sits all five subjects, in this order**, named exactly as the
@@ -309,9 +328,9 @@ Rules are evaluated in order and **the first match wins**:
 |---|-----------|---------|
 | 1 | Reading below a **Grade 3 level** (absolute, not gap) | Reading track |
 | 2 | Reading more than one grade behind | Core Skills Reading |
-| 3 | Reading within one grade **and** writing or spelling more than one behind | Core Skills Writing |
-| 4 | Reading, writing and spelling all within one grade **and** math more than one behind | Core Skills Math |
-| 5 | All four within one grade | Core Skills Enriched |
+| 3 | Reading within one grade **and** writing or vocabulary/spelling more than one behind | Core Skills Writing |
+| 4 | Reading, writing and vocabulary/spelling all within one grade **and** math more than one behind | Core Skills Math |
+| 5 | All five within one grade | Core Skills Enriched |
 
 Two **hard blocks** fall out of that order, and are asserted by an exhaustive
 test sweeping every gap combination from −3 to +1 across all four subjects and
