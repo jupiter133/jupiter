@@ -20,9 +20,9 @@ npm run build   # typecheck + production build
 |---|--------|----------|------|
 | 0 | Start — personalised invitation | Parent | `src/screens/StartScreen.tsx` |
 | 0b | Deferred — where "Maybe later" lands | Parent | `src/screens/DeferredScreen.tsx` |
-| 1 | Parent context (grade + optional learning-challenges flag) | Parent | `src/screens/ParentContextScreen.tsx` |
+| 1 | Grown-up setup — confirm age/grade, optional note | Parent | `src/screens/ParentContextScreen.tsx` |
 | 2 | Handoff — Ms Hannah introduces the quest, with the brief | Child | `src/screens/HandoffScreen.tsx` |
-| 2b | Section intro — Ms Hannah introduces each strand | Child | `src/screens/SectionIntroScreen.tsx` |
+| 2b | Subject intro — one per subject, with its rule cards | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
 | 4 | Completion — badge, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
 | 5 | Results — grade-equivalent placement per subject | Parent | `src/screens/ParentResultsScreen.tsx` |
@@ -61,7 +61,7 @@ Landscape phones have width and no height, so the art sits beside the question
 instead of above it, answers pack rather than stretch, and the heading drops a
 size. Only the parent intake form and results scroll there.
 
-`scratchpad/audit5.mjs` walks the whole flow (all four sittings, several
+`scratchpad/audit5.mjs` walks the whole flow (all five sittings, several
 age/grade pairings) at 1024x768, 768x1024 and 390x844
 and reports horizontal scroll, side gutters, a stage that isn't exactly the
 viewport, vertical overflow (allowed on phones for parent pages), dead space
@@ -92,12 +92,23 @@ happened.
 Age and grade are nullable on purpose: an older account, a migrated one, or a
 second child added in a hurry may be missing either.
 
-The intake screen therefore has two modes, and never re-asks for the name:
+The grown-up setup screen is two numbered cards and nothing else, built to the
+design bundle. It never re-asks for the name:
 
-- **Both known** (the normal path): a single "From your account" line showing
-  age and grade, with a **Change** button. One glance, one tap on Continue.
-- **Either missing, or Change tapped**: the age and grade pickers, pre-selected
-  with whatever the account did supply.
+- **Card 1 — "Is this {child}? · from your account"**: age and grade on one
+  line with a **Change** button. Change opens two selects; when sign-up never
+  captured one, they are open from the start and the line reads "Not set yet".
+- **Card 2 — "Anything we should know?"**: the optional note.
+
+### Global chrome
+
+`src/components/FlowChrome.tsx` draws the nine progress pills top-right and the
+back link at the foot. The nine are the design's steps: hook, grown-up setup,
+meet Ms Hannah, the five subjects, results.
+
+Back is offered on the grown-up setup, the handoff and a subject intro. It is
+**withheld mid-question and after a sitting finishes**: rewinding would throw
+away answers the child has already given, which is worse than no back button.
 
 The values are shown rather than silently used because **a grade goes stale
 every September**, and grade is what the whole placement is measured against.

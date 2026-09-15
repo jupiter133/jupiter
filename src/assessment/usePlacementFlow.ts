@@ -76,6 +76,10 @@ interface Flow {
   continueNext: () => void;
   /** "Do this one later" — skips this subject without recording a result. */
   doThisLater: () => void;
+  /** 0–8, for the nine progress pills. */
+  stepIndex: number;
+  /** Null on the first step, and wherever rewinding would lose answers. */
+  goBack: (() => void) | null;
   restart: () => void;
 }
 
@@ -224,6 +228,40 @@ export function usePlacementFlow(childName: string): Flow {
     [grade, age, completed],
   );
 
+  const sittingSubjectForIndex = session?.subject ?? nextSubject;
+
+  /**
+   * Where we are in the design's nine steps: hook, grown-up setup, meet
+   * Ms Hannah, the five subjects, results.
+   */
+  const stepIndex = useMemo(() => {
+    if (step === 'start' || step === 'deferred') return 0;
+    if (step === 'parent-context') return 1;
+    if (step === 'handoff') return 2;
+    if (step === 'parent-results') {
+      if (!nextSubject) return 8;
+      return 3 + requiredSubjects.indexOf(nextSubject);
+    }
+    return sittingSubjectForIndex ? 3 + requiredSubjects.indexOf(sittingSubjectForIndex) : 3;
+  }, [step, nextSubject, requiredSubjects, sittingSubjectForIndex]);
+
+  /**
+   * Back is offered where it costs nothing. Mid-question and post-completion
+   * it is withheld: rewinding a sitting would throw away answers the child has
+   * already given, which is worse than no back button.
+   */
+  const goBack = useMemo(() => {
+    if (step === 'parent-context') return () => setStep('start');
+    if (step === 'handoff') return () => setStep('parent-context');
+    if (step === 'section-intro') {
+      return () => {
+        setSession(null);
+        setStep(completed.length === 0 ? 'handoff' : 'parent-results');
+      };
+    }
+    return null;
+  }, [step, completed.length]);
+
   // Presentation follows AGE, never grade and never the tier the child reaches.
   const band: AgeBand = age !== null ? ageBandForAge(age) : 'junior';
   // Auto-read is off until the user turns it on, floored sittings included —
@@ -261,6 +299,8 @@ export function usePlacementFlow(childName: string): Flow {
     handBackToParent,
     continueNext,
     doThisLater,
+    stepIndex,
+    goBack,
     restart,
   };
 }

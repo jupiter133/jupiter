@@ -11,13 +11,15 @@ import { SUBJECT_LABEL } from './assessment/types';
 import { SectionIntroScreen } from './screens/SectionIntroScreen';
 import { StartScreen } from './screens/StartScreen';
 import { DeferredScreen } from './screens/DeferredScreen';
+import { FlowChrome } from './components/FlowChrome';
 
 export default function App() {
   const profile = useMemo(loadChildProfile, []);
   const flow = usePlacementFlow(profile.name);
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell${flow.goBack ? ' app-shell--has-back' : ''}`}>
+      <FlowChrome current={flow.stepIndex} onBack={flow.goBack} />
       {flow.step === 'start' && (
         <StartScreen
           childName={flow.childName}
