@@ -15,8 +15,8 @@ function inputs(
     grade,
     readingTier: readingTierOverride ?? Math.max(0, gradeT + readingGap),
     readingGap,
-    spellingGap: gaps.spelling ?? 0,
-    writingGap: gaps.writing ?? 0,
+    vocabularySpellingGap: gaps.spelling ?? 0,
+    sentenceWritingGap: gaps.writing ?? 0,
     mathGap: gaps.math ?? 0,
   };
 }
@@ -58,7 +58,7 @@ describe('gate order', () => {
     )!;
     expect(decision.step).toBe(1);
     expect(decision.readingGated).toBe(true);
-    expect(decision.determinedBy).toEqual(['reading']);
+    expect(decision.determinedBy).toEqual(['oral-reading', 'reading-comprehension']);
   });
 
   it('sends a reader at Grade 3 level or better to Core Skills, not Core Reading', () => {
@@ -112,8 +112,8 @@ describe('hard blocks', () => {
       const decision = evaluateGate(input)!;
       if (decision.outcome === 'core-math') {
         expect(input.readingGap!).toBeGreaterThan(-2);
-        expect(input.writingGap!).toBeGreaterThan(-2);
-        expect(input.spellingGap!).toBeGreaterThan(-2);
+        expect(input.sentenceWritingGap!).toBeGreaterThan(-2);
+        expect(input.vocabularySpellingGap!).toBeGreaterThan(-2);
       }
     }
   });
@@ -122,7 +122,7 @@ describe('hard blocks', () => {
     for (const input of everyCase()) {
       const decision = evaluateGate(input)!;
       if (decision.outcome === 'enriched') {
-        for (const gap of [input.readingGap!, input.writingGap!, input.spellingGap!, input.mathGap!]) {
+        for (const gap of [input.readingGap!, input.sentenceWritingGap!, input.vocabularySpellingGap!, input.mathGap!]) {
           expect(gap).toBeGreaterThan(-2);
         }
       }
@@ -162,30 +162,37 @@ describe('grade band', () => {
 
 describe('non-determining results', () => {
   it('marks only the subjects the decision rested on', () => {
-    expect(evaluateGate(inputs('5', { reading: -4 }))!.determinedBy).toEqual(['reading']);
-    expect(evaluateGate(inputs('5', { reading: -2 }))!.determinedBy).toEqual(['reading']);
-    expect(evaluateGate(inputs('5', { writing: -2 }))!.determinedBy).toEqual([
-      'reading',
-      'spelling',
-      'writing',
+    expect(evaluateGate(inputs('5', { reading: -4 }))!.determinedBy).toEqual([
+      'oral-reading',
+      'reading-comprehension',
     ]);
-    expect(evaluateGate(inputs('5', { math: -2 }))!.determinedBy).toHaveLength(4);
+    expect(evaluateGate(inputs('5', { reading: -2 }))!.determinedBy).toEqual([
+      'oral-reading',
+      'reading-comprehension',
+    ]);
+    expect(evaluateGate(inputs('5', { writing: -2 }))!.determinedBy).toEqual([
+      'oral-reading',
+      'reading-comprehension',
+      'vocabulary-spelling',
+      'sentence-writing',
+    ]);
+    expect(evaluateGate(inputs('5', { math: -2 }))!.determinedBy).toHaveLength(5);
   });
 });
 
 describe('partial evidence', () => {
   it('withholds a decision until the rule in play can be evaluated', () => {
-    const base = { grade: '5' as Grade, readingTier: 5, readingGap: 0, spellingGap: null, writingGap: null, mathGap: null };
+    const base = { grade: '5' as Grade, readingTier: 5, readingGap: 0, vocabularySpellingGap: null, sentenceWritingGap: null, mathGap: null };
     expect(evaluateGate(base)).toBeNull();
-    expect(evaluateGate({ ...base, spellingGap: 0, writingGap: 0 })).toBeNull();
-    expect(evaluateGate({ ...base, spellingGap: 0, writingGap: 0, mathGap: 0 })).not.toBeNull();
+    expect(evaluateGate({ ...base, vocabularySpellingGap: 0, sentenceWritingGap: 0 })).toBeNull();
+    expect(evaluateGate({ ...base, vocabularySpellingGap: 0, sentenceWritingGap: 0, mathGap: 0 })).not.toBeNull();
   });
 
   it('decides on reading alone when reading gates or is far behind', () => {
-    const gated = { grade: '5' as Grade, readingTier: 2, readingGap: -3, spellingGap: null, writingGap: null, mathGap: null };
+    const gated = { grade: '5' as Grade, readingTier: 2, readingGap: -3, vocabularySpellingGap: null, sentenceWritingGap: null, mathGap: null };
     expect(evaluateGate(gated)!.step).toBe(1);
 
-    const behind = { grade: '5' as Grade, readingTier: 3, readingGap: -2, spellingGap: null, writingGap: null, mathGap: null };
+    const behind = { grade: '5' as Grade, readingTier: 3, readingGap: -2, vocabularySpellingGap: null, sentenceWritingGap: null, mathGap: null };
     expect(evaluateGate(behind)!.step).toBe(2);
   });
 });

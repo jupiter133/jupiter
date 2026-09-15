@@ -100,6 +100,8 @@ body {
 .tag--gold { background: var(--accent-gold); color: var(--text-on-bright); }
 .tag--lime { background: var(--accent-lime); color: var(--text-on-bright); }
 .tag--tilt-alt { transform: rotate(1.5deg); }
+/* The intro headings set their subject tag straight. */
+.tag--straight { transform: none; }
 .label .tag { font-size: 12px; letter-spacing: 0.02em; text-transform: none; vertical-align: 1px; }
 
 .stack { display: flex; flex-direction: column; gap: var(--space-5); }
@@ -345,7 +347,66 @@ body {
 
 .handoff__go { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; }
 
-/* ---------- Question screen ---------- */
+/* ---------- Subject intro (one per subject) ---------- */
+
+.intro { width: 100%; max-width: 680px; margin-inline: auto; display: flex; flex-direction: column; gap: clamp(14px, 2vh, 24px); }
+.intro__head { text-align: center; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.intro__kicker { color: var(--text-muted); }
+.intro__title { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.25; }
+.intro__lead { max-width: 440px; margin: 0 auto; }
+
+.intro-chips { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.intro-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: var(--fw-black);
+  color: var(--text-on-bright);
+  margin-bottom: 4px;
+}
+
+/* Four rule cards, collapsed. A child can start without reading them; the
+   grown-up beside them can open the one they care about. */
+.rules { display: flex; flex-direction: column; gap: 10px; }
+.rule {
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.rule__summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+}
+.rule__summary::-webkit-details-marker { display: none; }
+.rule__summary:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: -3px; }
+.rule__num {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: var(--fw-black);
+  color: var(--text-on-bright);
+  flex-shrink: 0;
+}
+.rule__title { font-size: clamp(16px, 1.8vw, 18px); font-weight: var(--fw-black); color: var(--text-primary); flex: 1; }
+.rule__chevron { color: var(--text-muted); display: grid; place-items: center; transition: transform 160ms ease; }
+.rule[open] .rule__chevron { transform: rotate(180deg); }
+.rule__body { margin: 0; padding: 0 20px 16px 66px; font-size: 15px; line-height: 1.55; color: var(--text-secondary); }
+
+.intro__go { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.intro__go .btn { margin-bottom: 6px; }
+
+/* ---------- Question screen ---------- *//* ---------- Question screen ---------- */
 
 .question-screen { display: flex; flex-direction: column; gap: clamp(14px, 2vh, 24px); }
 
@@ -583,10 +644,11 @@ body {
   background: var(--surface-canvas);
   text-align: left;
 }
-.strand-row[data-strand='reading'] { --strand-colour: var(--strand-reading); }
-.strand-row[data-strand='spelling'] { --strand-colour: var(--strand-spelling); }
+.strand-row[data-strand='oral-reading'] { --strand-colour: var(--strand-oral-reading); }
+.strand-row[data-strand='reading-comprehension'] { --strand-colour: var(--strand-reading-comprehension); }
+.strand-row[data-strand='vocabulary-spelling'] { --strand-colour: var(--strand-vocabulary-spelling); }
+.strand-row[data-strand='sentence-writing'] { --strand-colour: var(--strand-sentence-writing); }
 .strand-row[data-strand='math'] { --strand-colour: var(--strand-math); }
-.strand-row[data-strand='writing'] { --strand-colour: var(--strand-writing); }
 .strand-row .tag { font-size: 14px; }
 .strand-row__level { font-weight: var(--fw-extrabold); color: var(--text-primary); }
 
@@ -720,7 +782,8 @@ body {
   .results-split .program-hero { text-align: center; align-self: start; }
   .results-split .note { font-size: 13px; }
   .results-detail { gap: var(--space-2); }
-  .results-split .strand-row { padding: 7px var(--space-3); }
+  .results-split .strand-row { padding: 5px var(--space-3); }
+  .results-split .strand-list { gap: 6px; }
   .results-split .strand-list { grid-template-columns: 1fr; }
 }
 
@@ -831,11 +894,13 @@ body {
   /* A phone has to fit the brief and still keep the CTA on screen. */
   .handoff .guide { height: clamp(110px, 18vh, 160px); }
   .handoff .stack { gap: 12px; }
+  .step__number { width: 26px; height: 26px; font-size: 14px; }
   .handoff .display { font-size: 26px; }
-  .quest-brief { padding: 10px 14px; gap: 10px; }
+  .quest-brief { padding: 8px 14px; gap: 8px; }
+  .included-row__label { font-size: 15px; }
   .quest-stats { padding-left: 0; border-left: none; padding-top: 10px; border-top: 2px solid var(--border-subtle); }
   /* Four even cells: with the sub-line hidden, reading has no reason to span. */
-  .included-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; }
+  .included-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 12px; }
   .included-row--wide { grid-column: auto; }
   .included-row__detail { display: none; }
   .avatar-chip { width: 40px; height: 40px; vertical-align: -10px; }
@@ -899,6 +964,16 @@ body {
   .handoff .guide { height: clamp(120px, 40vh, 170px); }
   .handoff .stack { gap: 10px; }
   .handoff .display { font-size: 22px; line-height: 1.1; }
+  .intro { gap: 8px; }
+  .intro__title { font-size: 22px; }
+  .intro__lead, .intro-chips { display: none; }
+  .rules { gap: 6px; }
+  .rule__summary { padding: 8px 14px; }
+  .rule__num { width: 26px; height: 26px; font-size: 14px; }
+  .rule__body { padding: 0 16px 12px 54px; font-size: 14px; }
+  .steps { gap: 4px; }
+  .step__number { width: 24px; height: 24px; font-size: 13px; }
+  .step__text { font-size: 14px; }
   .handoff .speech-bubble .body { font-size: 14px; line-height: 1.45; }
   .handoff .speech-bubble { padding: 8px 12px; }
   .quest-brief { padding: 3px 12px; gap: 6px; }

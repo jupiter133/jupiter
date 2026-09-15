@@ -1,6 +1,5 @@
 import type { Subject } from './subjects';
 import { SUBJECT_LABEL, SUBJECT_ORDER } from './subjects';
-import { READING_SUB_SKILLS, READING_SUB_SKILL_SHORT } from './readingSkills';
 
 /**
  * What the handoff screen promises before a child starts. All product
@@ -28,29 +27,39 @@ export function estimatedTimeLabel(): string {
  * job, and until it happens this is a promise the product has to keep
  * somewhere else.
  */
-export const PLACEMENT_COIN_AWARD = 400;
+export const PLACEMENT_COIN_AWARD = 4000;
 
 export function coinAwardLabel(): string {
-  return `Up to ${PLACEMENT_COIN_AWARD} coins`;
+  return `+${PLACEMENT_COIN_AWARD.toLocaleString('en-CA')} coins`;
+}
+
+/**
+ * Roughly how long one sitting takes. Reading is the long one: four sub-skill
+ * sittings back to back, about twenty questions. The others are eight.
+ */
+/** Per-sitting minutes, as the intro chips promise them. */
+export const SUBJECT_MINUTES: Record<Subject, number> = {
+  'oral-reading': 3,
+  'reading-comprehension': 5,
+  'vocabulary-spelling': 4,
+  'sentence-writing': 5,
+  math: 5,
+};
+
+export function subjectTimeLabel(subject: Subject): string {
+  return `About ${SUBJECT_MINUTES[subject]} min`;
 }
 
 export interface IncludedStrand {
   subject: Subject;
   label: string;
-  /** Reading only: the sub-skills inside it. */
-  detail?: string;
 }
 
 /**
  * What's included, derived from the assessment itself rather than typed out,
  * so the promise cannot drift from what a child is actually asked.
  */
-export const INCLUDED_STRANDS: IncludedStrand[] = SUBJECT_ORDER.map((subject) =>
-  subject === 'reading'
-    ? {
-        subject,
-        label: SUBJECT_LABEL[subject],
-        detail: READING_SUB_SKILLS.map((s) => READING_SUB_SKILL_SHORT[s]).join(' · '),
-      }
-    : { subject, label: SUBJECT_LABEL[subject] },
-);
+export const INCLUDED_STRANDS: IncludedStrand[] = SUBJECT_ORDER.map((subject) => ({
+  subject,
+  label: SUBJECT_LABEL[subject],
+}));

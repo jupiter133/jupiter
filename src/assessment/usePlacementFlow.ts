@@ -10,7 +10,8 @@ import type {
 } from './types';
 import { ageBandForAge, subjectsForGrade } from './types';
 import { READING_GATE_TIER } from './tiers';
-import { QUESTIONS_PER_SUB_SKILL, READING_SUB_SKILLS } from './readingSkills';
+import { deriveReadingLevel } from './readingLevel';
+import { isReadingSubject } from './readingLevel';
 import { audioDefaultFor } from '../audio/speechScript';
 import {
   QUESTIONS_PER_SUBJECT,
@@ -18,13 +19,11 @@ import {
   createSession,
   selectNextQuestion,
   submitAnswer,
-  toReadingResult,
   toSubjectResult,
 } from './engine';
 import {
   clearProgress,
   loadProgress,
-  nextSubjectFor,
   recordSubjectResult,
   type PlacementProgress,
 } from './placementStore';
@@ -75,6 +74,8 @@ interface Flow {
   handBackToParent: () => void;
   /** Hands the tablet back for the next subject sitting. */
   continueNext: () => void;
+  /** "Do this one later" — skips this subject without recording a result. */
+  doThisLater: () => void;
   restart: () => void;
 }
 
@@ -90,9 +91,8 @@ export function usePlacementFlow(childName: string): Flow {
   const [step, setStep] = useState<FlowStep>('start');
   const [context, setContext] = useState<ParentContext | null>(null);
   const [session, setSession] = useState<SessionState | null>(null);
-  // Reading runs four sub-skill sittings back to back; finished ones wait here
-  // until the last completes and they fold into one reading result.
-  const [readingParts, setReadingParts] = useState<SessionState[]>([]);
+  /** Subjects the child chose to leave for later, in this run. */
+  const [skipped, setSkipped] = useState<Subject[]>([]);
   const [progress, setProgress] = useState<PlacementProgress | null>(() =>
     loadProgress(childName),
   );
@@ -108,15 +108,19 @@ export function usePlacementFlow(childName: string): Flow {
    * off the stored reading result, so it survives a reload mid-placement.
    */
   const readingGated = useMemo(() => {
-    const reading = (progress?.completed ?? []).find((r) => r.subject === 'reading');
-    return Boolean(reading && !reading.floored && reading.finalTier < READING_GATE_TIER);
+    const parts = (progress?.completed ?? []).filter(
+      (r) => isReadingSubject(r.subject) && !r.floored,
+    );
+    const level = deriveReadingLevel(parts);
+    return level !== null && level < READING_GATE_TIER;
   }, [progress]);
   const requiredSubjects = useMemo(() => (grade ? subjectsForGrade(grade) : []), [grade]);
   const completed = progress?.completed ?? [];
-  const nextSubject = useMemo(
-    () => (grade ? nextSubjectFor(requiredSubjects, completed) : null),
-    [grade, requiredSubjects, completed],
-  );
+  const nextSubject = useMemo(() => {
+    if (!grade) return null;
+    const done = new Set([...completed.map((r) => r.subject), ...skipped]);
+    return requiredSubjects.find((s) => !done.has(s)) ?? null;
+  }, [grade, requiredSubjects, completed, skipped]);
 
   const currentQuestion = useMemo(
     () => (session && !session.finishedAt ? selectNextQuestion(session) : null),
@@ -136,11 +140,10 @@ export function usePlacementFlow(childName: string): Flow {
       setStep('parent-results');
       return;
     }
-    setReadingParts([]);
     setSession(
-      nextSubject === 'reading'
-        ? createSession(grade, 'reading', { subSkill: READING_SUB_SKILLS[0] })
-        : createSession(grade, nextSubject, { floored: readingGated }),
+      createSession(grade, nextSubject, {
+        floored: readingGated && !isReadingSubject(nextSubject),
+      }),
     );
     setStep('section-intro');
   }, [grade, nextSubject, readingGated]);
@@ -177,35 +180,30 @@ export function usePlacementFlow(childName: string): Flow {
 
       // Recording happens here, not inside the state updater, so a double
       // render can never write the result twice.
-      if (next.subSkill) {
-        const parts = [...readingParts, next];
-        const index = READING_SUB_SKILLS.indexOf(next.subSkill);
-        const following = READING_SUB_SKILLS[index + 1];
-        if (following) {
-          // Straight into the next sub-skill: no break, no score, one quest.
-          setReadingParts(parts);
-          setSession(createSession(next.grade, 'reading', { subSkill: following }));
-          return;
-        }
-        setReadingParts([]);
-        setProgress(recordSubjectResult(childName, next.grade, age, toReadingResult(parts)));
-        setStep('kid-complete');
-        return;
-      }
-
       setProgress(recordSubjectResult(childName, next.grade, age, toSubjectResult(next)));
       setStep('kid-complete');
     },
-    [session, readingParts, childName, age],
+    [session, childName, age],
   );
 
   const handBackToParent = useCallback(() => setStep('parent-results'), []);
 
   const continueNext = useCallback(() => {
     setSession(null);
-    setReadingParts([]);
     startNextSitting();
   }, [startNextSitting]);
+
+  /**
+   * "Do this one later" — moves past this subject without recording a result.
+   * The skip is remembered for this run so the flow does not loop back to it,
+   * and the subject reads as "not yet assessed" until it is actually sat.
+   */
+  const doThisLater = useCallback(() => {
+    const subject = session?.subject ?? nextSubject;
+    if (!subject) return;
+    setSkipped((prev) => (prev.includes(subject) ? prev : [...prev, subject]));
+    setSession(null);
+  }, [session, nextSubject]);
 
   const toggleAudio = useCallback(() => {
     setAudioOverride((prev) => !(prev ?? audioDefaultFor(age !== null ? ageBandForAge(age) : 'junior')));
@@ -215,7 +213,7 @@ export function usePlacementFlow(childName: string): Flow {
     clearProgress(childName);
     setProgress(null);
     setSession(null);
-    setReadingParts([]);
+    setSkipped([]);
     setContext(null);
     setAudioOverride(null);
     setStep('start');
@@ -250,15 +248,8 @@ export function usePlacementFlow(childName: string): Flow {
     audioEnabled: forcedAudio || (audioOverride ?? audioDefaultFor(band)),
     toggleAudio,
     currentQuestion,
-    // Reading counts across all four sub-skills so the bar never resets.
-    questionNumber:
-      readingParts.reduce((sum, p) => sum + p.questionsAnswered.length, 0) +
-      (session?.questionsAnswered.length ?? 0) +
-      1,
-    questionsPerSubject:
-      session?.subSkill !== undefined
-        ? QUESTIONS_PER_SUB_SKILL * READING_SUB_SKILLS.length
-        : QUESTIONS_PER_SUBJECT,
+    questionNumber: (session?.questionsAnswered.length ?? 0) + 1,
+    questionsPerSubject: sittingSubject ? QUESTIONS_PER_SUBJECT[sittingSubject] : 8,
     result,
     beginIntake,
     defer,
@@ -269,6 +260,7 @@ export function usePlacementFlow(childName: string): Flow {
     answer,
     handBackToParent,
     continueNext,
+    doThisLater,
     restart,
   };
 }

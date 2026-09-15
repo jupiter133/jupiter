@@ -5,8 +5,7 @@
   "questions": [
     {
       "id": "rs-wr-t0-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “cat”?",
@@ -33,8 +32,7 @@
     },
     {
       "id": "rs-or-t0-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -61,8 +59,7 @@
     },
     {
       "id": "rs-wr-t0-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “dog”?",
@@ -89,8 +86,7 @@
     },
     {
       "id": "rs-or-t0-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -117,8 +113,7 @@
     },
     {
       "id": "rs-wr-t0-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “sun”?",
@@ -145,8 +140,7 @@
     },
     {
       "id": "rs-or-t0-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -173,8 +167,7 @@
     },
     {
       "id": "rs-wr-t0-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “hat”?",
@@ -201,8 +194,7 @@
     },
     {
       "id": "rs-or-t0-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -229,8 +221,7 @@
     },
     {
       "id": "rs-wr-t0-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “big”?",
@@ -257,8 +248,7 @@
     },
     {
       "id": "rs-or-t0-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -285,8 +275,7 @@
     },
     {
       "id": "rs-wr-t0-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “run”?",
@@ -313,8 +302,7 @@
     },
     {
       "id": "rs-or-t0-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 0,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -341,8 +329,7 @@
     },
     {
       "id": "rs-rv-t0-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 0,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Big” means:",
@@ -369,8 +356,7 @@
     },
     {
       "id": "rs-rv-t0-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 0,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Little” means:",
@@ -397,8 +383,7 @@
     },
     {
       "id": "rs-rv-t0-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 0,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Fast” means:",
@@ -425,8 +410,7 @@
     },
     {
       "id": "rs-rv-t0-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 0,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Happy” means:",
@@ -453,8 +437,7 @@
     },
     {
       "id": "rs-rv-t0-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 0,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Shut” means:",
@@ -481,8 +464,7 @@
     },
     {
       "id": "rs-rv-t0-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 0,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Start” means:",
@@ -509,8 +491,7 @@
     },
     {
       "id": "rs-pc-t0-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 0,
       "skill": "stub-passage-comprehension",
       "questionText": "What does Aya roll?",
@@ -539,8 +520,7 @@
     },
     {
       "id": "rs-pc-t0-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 0,
       "skill": "stub-passage-comprehension",
       "questionText": "What does Ben roll?",
@@ -569,8 +549,7 @@
     },
     {
       "id": "rs-pc-t0-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 0,
       "skill": "stub-passage-comprehension",
       "questionText": "What does Nina roll?",
@@ -599,8 +578,7 @@
     },
     {
       "id": "rs-pc-t0-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 0,
       "skill": "stub-passage-comprehension",
       "questionText": "What does Sam roll?",
@@ -629,8 +607,7 @@
     },
     {
       "id": "rs-pc-t0-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 0,
       "skill": "stub-passage-comprehension",
       "questionText": "What does Leo roll?",
@@ -659,8 +636,7 @@
     },
     {
       "id": "rs-pc-t0-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 0,
       "skill": "stub-passage-comprehension",
       "questionText": "What does Mira roll?",
@@ -689,8 +665,7 @@
     },
     {
       "id": "rs-wr-t1-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “ship”?",
@@ -717,8 +692,7 @@
     },
     {
       "id": "rs-or-t1-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -745,8 +719,7 @@
     },
     {
       "id": "rs-wr-t1-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “frog”?",
@@ -773,8 +746,7 @@
     },
     {
       "id": "rs-or-t1-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -801,8 +773,7 @@
     },
     {
       "id": "rs-wr-t1-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “jump”?",
@@ -829,8 +800,7 @@
     },
     {
       "id": "rs-or-t1-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -857,8 +827,7 @@
     },
     {
       "id": "rs-wr-t1-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “milk”?",
@@ -885,8 +854,7 @@
     },
     {
       "id": "rs-or-t1-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -913,8 +881,7 @@
     },
     {
       "id": "rs-wr-t1-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “nest”?",
@@ -941,8 +908,7 @@
     },
     {
       "id": "rs-or-t1-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -969,8 +935,7 @@
     },
     {
       "id": "rs-wr-t1-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “wish”?",
@@ -997,8 +962,7 @@
     },
     {
       "id": "rs-or-t1-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 1,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1025,8 +989,7 @@
     },
     {
       "id": "rs-rv-t1-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 1,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Tiny” means:",
@@ -1053,8 +1016,7 @@
     },
     {
       "id": "rs-rv-t1-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 1,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Loud” means:",
@@ -1081,8 +1043,7 @@
     },
     {
       "id": "rs-rv-t1-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 1,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Shout” means:",
@@ -1109,8 +1070,7 @@
     },
     {
       "id": "rs-rv-t1-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 1,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Chilly” means:",
@@ -1137,8 +1097,7 @@
     },
     {
       "id": "rs-rv-t1-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 1,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Gift” means:",
@@ -1165,8 +1124,7 @@
     },
     {
       "id": "rs-rv-t1-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 1,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Look” means:",
@@ -1193,8 +1151,7 @@
     },
     {
       "id": "rs-pc-t1-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 1,
       "skill": "stub-passage-comprehension",
       "questionText": "Where was the mitten?",
@@ -1223,8 +1180,7 @@
     },
     {
       "id": "rs-pc-t1-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 1,
       "skill": "stub-passage-comprehension",
       "questionText": "Where was the mitten?",
@@ -1253,8 +1209,7 @@
     },
     {
       "id": "rs-pc-t1-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 1,
       "skill": "stub-passage-comprehension",
       "questionText": "Where was the mitten?",
@@ -1283,8 +1238,7 @@
     },
     {
       "id": "rs-pc-t1-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 1,
       "skill": "stub-passage-comprehension",
       "questionText": "Where was the mitten?",
@@ -1313,8 +1267,7 @@
     },
     {
       "id": "rs-pc-t1-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 1,
       "skill": "stub-passage-comprehension",
       "questionText": "Where was the mitten?",
@@ -1343,8 +1296,7 @@
     },
     {
       "id": "rs-pc-t1-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 1,
       "skill": "stub-passage-comprehension",
       "questionText": "Where was the mitten?",
@@ -1373,8 +1325,7 @@
     },
     {
       "id": "rs-wr-t2-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “bridge”?",
@@ -1401,8 +1352,7 @@
     },
     {
       "id": "rs-or-t2-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1429,8 +1379,7 @@
     },
     {
       "id": "rs-wr-t2-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “candle”?",
@@ -1457,8 +1406,7 @@
     },
     {
       "id": "rs-or-t2-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1485,8 +1433,7 @@
     },
     {
       "id": "rs-wr-t2-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “spring”?",
@@ -1513,8 +1460,7 @@
     },
     {
       "id": "rs-or-t2-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1541,8 +1487,7 @@
     },
     {
       "id": "rs-wr-t2-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “pocket”?",
@@ -1569,8 +1514,7 @@
     },
     {
       "id": "rs-or-t2-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1597,8 +1541,7 @@
     },
     {
       "id": "rs-wr-t2-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “window”?",
@@ -1625,8 +1568,7 @@
     },
     {
       "id": "rs-or-t2-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1653,8 +1595,7 @@
     },
     {
       "id": "rs-wr-t2-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “rabbit”?",
@@ -1681,8 +1622,7 @@
     },
     {
       "id": "rs-or-t2-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 2,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -1709,8 +1649,7 @@
     },
     {
       "id": "rs-rv-t2-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 2,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Brave” means:",
@@ -1737,8 +1676,7 @@
     },
     {
       "id": "rs-rv-t2-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 2,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Silent” means:",
@@ -1765,8 +1703,7 @@
     },
     {
       "id": "rs-rv-t2-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 2,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Enormous” means:",
@@ -1793,8 +1730,7 @@
     },
     {
       "id": "rs-rv-t2-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 2,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Rapid” means:",
@@ -1821,8 +1757,7 @@
     },
     {
       "id": "rs-rv-t2-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 2,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Finish” means:",
@@ -1849,8 +1784,7 @@
     },
     {
       "id": "rs-rv-t2-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 2,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Gather” means:",
@@ -1877,8 +1811,7 @@
     },
     {
       "id": "rs-pc-t2-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 2,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Aya walk to the pond?",
@@ -1907,8 +1840,7 @@
     },
     {
       "id": "rs-pc-t2-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 2,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Ben walk to the pond?",
@@ -1937,8 +1869,7 @@
     },
     {
       "id": "rs-pc-t2-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 2,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Nina walk to the pond?",
@@ -1967,8 +1898,7 @@
     },
     {
       "id": "rs-pc-t2-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 2,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Sam walk to the pond?",
@@ -1997,8 +1927,7 @@
     },
     {
       "id": "rs-pc-t2-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 2,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Leo walk to the pond?",
@@ -2027,8 +1956,7 @@
     },
     {
       "id": "rs-pc-t2-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 2,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Mira walk to the pond?",
@@ -2057,8 +1985,7 @@
     },
     {
       "id": "rs-wr-t3-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “thunder”?",
@@ -2085,8 +2012,7 @@
     },
     {
       "id": "rs-or-t3-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2113,8 +2039,7 @@
     },
     {
       "id": "rs-wr-t3-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “journey”?",
@@ -2141,8 +2066,7 @@
     },
     {
       "id": "rs-or-t3-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2169,8 +2093,7 @@
     },
     {
       "id": "rs-wr-t3-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “stretch”?",
@@ -2197,8 +2120,7 @@
     },
     {
       "id": "rs-or-t3-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2225,8 +2147,7 @@
     },
     {
       "id": "rs-wr-t3-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “whisper”?",
@@ -2253,8 +2174,7 @@
     },
     {
       "id": "rs-or-t3-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2281,8 +2201,7 @@
     },
     {
       "id": "rs-wr-t3-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “morning”?",
@@ -2309,8 +2228,7 @@
     },
     {
       "id": "rs-or-t3-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2337,8 +2255,7 @@
     },
     {
       "id": "rs-wr-t3-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “captain”?",
@@ -2365,8 +2282,7 @@
     },
     {
       "id": "rs-or-t3-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 3,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2393,8 +2309,7 @@
     },
     {
       "id": "rs-rv-t3-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 3,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Muddy” means:",
@@ -2421,8 +2336,7 @@
     },
     {
       "id": "rs-rv-t3-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 3,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Ancient” means:",
@@ -2449,8 +2363,7 @@
     },
     {
       "id": "rs-rv-t3-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 3,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Fragile” means:",
@@ -2477,8 +2390,7 @@
     },
     {
       "id": "rs-rv-t3-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 3,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Gloomy” means:",
@@ -2505,8 +2417,7 @@
     },
     {
       "id": "rs-rv-t3-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 3,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Vanish” means:",
@@ -2533,8 +2444,7 @@
     },
     {
       "id": "rs-rv-t3-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 3,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Weary” means:",
@@ -2561,8 +2471,7 @@
     },
     {
       "id": "rs-pc-t3-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 3,
       "skill": "stub-passage-comprehension",
       "questionText": "What made the tent stay up?",
@@ -2591,8 +2500,7 @@
     },
     {
       "id": "rs-pc-t3-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 3,
       "skill": "stub-passage-comprehension",
       "questionText": "What made the tent stay up?",
@@ -2621,8 +2529,7 @@
     },
     {
       "id": "rs-pc-t3-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 3,
       "skill": "stub-passage-comprehension",
       "questionText": "What made the tent stay up?",
@@ -2651,8 +2558,7 @@
     },
     {
       "id": "rs-pc-t3-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 3,
       "skill": "stub-passage-comprehension",
       "questionText": "What made the tent stay up?",
@@ -2681,8 +2587,7 @@
     },
     {
       "id": "rs-pc-t3-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 3,
       "skill": "stub-passage-comprehension",
       "questionText": "What made the tent stay up?",
@@ -2711,8 +2616,7 @@
     },
     {
       "id": "rs-pc-t3-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 3,
       "skill": "stub-passage-comprehension",
       "questionText": "What made the tent stay up?",
@@ -2741,8 +2645,7 @@
     },
     {
       "id": "rs-wr-t4-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “mountain”?",
@@ -2769,8 +2672,7 @@
     },
     {
       "id": "rs-or-t4-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2797,8 +2699,7 @@
     },
     {
       "id": "rs-wr-t4-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “distance”?",
@@ -2825,8 +2726,7 @@
     },
     {
       "id": "rs-or-t4-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2853,8 +2753,7 @@
     },
     {
       "id": "rs-wr-t4-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “creature”?",
@@ -2881,8 +2780,7 @@
     },
     {
       "id": "rs-or-t4-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2909,8 +2807,7 @@
     },
     {
       "id": "rs-wr-t4-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “shoulder”?",
@@ -2937,8 +2834,7 @@
     },
     {
       "id": "rs-or-t4-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -2965,8 +2861,7 @@
     },
     {
       "id": "rs-wr-t4-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “language”?",
@@ -2993,8 +2888,7 @@
     },
     {
       "id": "rs-or-t4-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3021,8 +2915,7 @@
     },
     {
       "id": "rs-wr-t4-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “curious”?",
@@ -3049,8 +2942,7 @@
     },
     {
       "id": "rs-or-t4-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 4,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3077,8 +2969,7 @@
     },
     {
       "id": "rs-rv-t4-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 4,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Reluctant” means:",
@@ -3105,8 +2996,7 @@
     },
     {
       "id": "rs-rv-t4-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 4,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Cautious” means:",
@@ -3133,8 +3023,7 @@
     },
     {
       "id": "rs-rv-t4-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 4,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Abundant” means:",
@@ -3161,8 +3050,7 @@
     },
     {
       "id": "rs-rv-t4-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 4,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Dense” means:",
@@ -3189,8 +3077,7 @@
     },
     {
       "id": "rs-rv-t4-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 4,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Hesitate” means:",
@@ -3217,8 +3104,7 @@
     },
     {
       "id": "rs-rv-t4-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 4,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Summit” means:",
@@ -3245,8 +3131,7 @@
     },
     {
       "id": "rs-pc-t4-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 4,
       "skill": "stub-passage-comprehension",
       "questionText": "What can you tell about Aya by the end of the week?",
@@ -3275,8 +3160,7 @@
     },
     {
       "id": "rs-pc-t4-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 4,
       "skill": "stub-passage-comprehension",
       "questionText": "What can you tell about Ben by the end of the week?",
@@ -3305,8 +3189,7 @@
     },
     {
       "id": "rs-pc-t4-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 4,
       "skill": "stub-passage-comprehension",
       "questionText": "What can you tell about Nina by the end of the week?",
@@ -3335,8 +3218,7 @@
     },
     {
       "id": "rs-pc-t4-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 4,
       "skill": "stub-passage-comprehension",
       "questionText": "What can you tell about Sam by the end of the week?",
@@ -3365,8 +3247,7 @@
     },
     {
       "id": "rs-pc-t4-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 4,
       "skill": "stub-passage-comprehension",
       "questionText": "What can you tell about Leo by the end of the week?",
@@ -3395,8 +3276,7 @@
     },
     {
       "id": "rs-pc-t4-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 4,
       "skill": "stub-passage-comprehension",
       "questionText": "What can you tell about Mira by the end of the week?",
@@ -3425,8 +3305,7 @@
     },
     {
       "id": "rs-wr-t5-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “ancient”?",
@@ -3453,8 +3332,7 @@
     },
     {
       "id": "rs-or-t5-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3481,8 +3359,7 @@
     },
     {
       "id": "rs-wr-t5-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “generous”?",
@@ -3509,8 +3386,7 @@
     },
     {
       "id": "rs-or-t5-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3537,8 +3413,7 @@
     },
     {
       "id": "rs-wr-t5-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “brilliant”?",
@@ -3565,8 +3440,7 @@
     },
     {
       "id": "rs-or-t5-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3593,8 +3467,7 @@
     },
     {
       "id": "rs-wr-t5-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “horizon”?",
@@ -3621,8 +3494,7 @@
     },
     {
       "id": "rs-or-t5-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3649,8 +3521,7 @@
     },
     {
       "id": "rs-wr-t5-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “invisible”?",
@@ -3677,8 +3548,7 @@
     },
     {
       "id": "rs-or-t5-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3705,8 +3575,7 @@
     },
     {
       "id": "rs-wr-t5-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “obstacle”?",
@@ -3733,8 +3602,7 @@
     },
     {
       "id": "rs-or-t5-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 5,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -3761,8 +3629,7 @@
     },
     {
       "id": "rs-rv-t5-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 5,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Brilliant” means:",
@@ -3789,8 +3656,7 @@
     },
     {
       "id": "rs-rv-t5-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 5,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Peculiar” means:",
@@ -3817,8 +3683,7 @@
     },
     {
       "id": "rs-rv-t5-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 5,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Generous” means:",
@@ -3845,8 +3710,7 @@
     },
     {
       "id": "rs-rv-t5-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 5,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Obstacle” means:",
@@ -3873,8 +3737,7 @@
     },
     {
       "id": "rs-rv-t5-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 5,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Persist” means:",
@@ -3901,8 +3764,7 @@
     },
     {
       "id": "rs-rv-t5-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 5,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Evident” means:",
@@ -3929,8 +3791,7 @@
     },
     {
       "id": "rs-pc-t5-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 5,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Aya suggest waiting?",
@@ -3959,8 +3820,7 @@
     },
     {
       "id": "rs-pc-t5-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 5,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Ben suggest waiting?",
@@ -3989,8 +3849,7 @@
     },
     {
       "id": "rs-pc-t5-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 5,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Nina suggest waiting?",
@@ -4019,8 +3878,7 @@
     },
     {
       "id": "rs-pc-t5-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 5,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Sam suggest waiting?",
@@ -4049,8 +3907,7 @@
     },
     {
       "id": "rs-pc-t5-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 5,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Leo suggest waiting?",
@@ -4079,8 +3936,7 @@
     },
     {
       "id": "rs-pc-t5-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 5,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Mira suggest waiting?",
@@ -4109,8 +3965,7 @@
     },
     {
       "id": "rs-wr-t6-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “persistent”?",
@@ -4137,8 +3992,7 @@
     },
     {
       "id": "rs-or-t6-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4165,8 +4019,7 @@
     },
     {
       "id": "rs-wr-t6-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “abandoned”?",
@@ -4193,8 +4046,7 @@
     },
     {
       "id": "rs-or-t6-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4221,8 +4073,7 @@
     },
     {
       "id": "rs-wr-t6-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “temporary”?",
@@ -4249,8 +4100,7 @@
     },
     {
       "id": "rs-or-t6-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4277,8 +4127,7 @@
     },
     {
       "id": "rs-wr-t6-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “fortunate”?",
@@ -4305,8 +4154,7 @@
     },
     {
       "id": "rs-or-t6-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4333,8 +4181,7 @@
     },
     {
       "id": "rs-wr-t6-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “necessary”?",
@@ -4361,8 +4208,7 @@
     },
     {
       "id": "rs-or-t6-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4389,8 +4235,7 @@
     },
     {
       "id": "rs-wr-t6-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “landscape”?",
@@ -4417,8 +4262,7 @@
     },
     {
       "id": "rs-or-t6-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 6,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4445,8 +4289,7 @@
     },
     {
       "id": "rs-rv-t6-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 6,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Permanent” means:",
@@ -4473,8 +4316,7 @@
     },
     {
       "id": "rs-rv-t6-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 6,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Temporary” means:",
@@ -4501,8 +4343,7 @@
     },
     {
       "id": "rs-rv-t6-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 6,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Fortunate” means:",
@@ -4529,8 +4370,7 @@
     },
     {
       "id": "rs-rv-t6-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 6,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Inevitable” means:",
@@ -4557,8 +4397,7 @@
     },
     {
       "id": "rs-rv-t6-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 6,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Scarce” means:",
@@ -4585,8 +4424,7 @@
     },
     {
       "id": "rs-rv-t6-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 6,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Conceal” means:",
@@ -4613,8 +4451,7 @@
     },
     {
       "id": "rs-pc-t6-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 6,
       "skill": "stub-passage-comprehension",
       "questionText": "What is the main idea?",
@@ -4643,8 +4480,7 @@
     },
     {
       "id": "rs-pc-t6-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 6,
       "skill": "stub-passage-comprehension",
       "questionText": "What is the main idea?",
@@ -4673,8 +4509,7 @@
     },
     {
       "id": "rs-pc-t6-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 6,
       "skill": "stub-passage-comprehension",
       "questionText": "What is the main idea?",
@@ -4703,8 +4538,7 @@
     },
     {
       "id": "rs-pc-t6-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 6,
       "skill": "stub-passage-comprehension",
       "questionText": "What is the main idea?",
@@ -4733,8 +4567,7 @@
     },
     {
       "id": "rs-pc-t6-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 6,
       "skill": "stub-passage-comprehension",
       "questionText": "What is the main idea?",
@@ -4763,8 +4596,7 @@
     },
     {
       "id": "rs-pc-t6-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 6,
       "skill": "stub-passage-comprehension",
       "questionText": "What is the main idea?",
@@ -4793,8 +4625,7 @@
     },
     {
       "id": "rs-wr-t7-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “deliberate”?",
@@ -4821,8 +4652,7 @@
     },
     {
       "id": "rs-or-t7-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4849,8 +4679,7 @@
     },
     {
       "id": "rs-wr-t7-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “inevitable”?",
@@ -4877,8 +4706,7 @@
     },
     {
       "id": "rs-or-t7-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4905,8 +4733,7 @@
     },
     {
       "id": "rs-wr-t7-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “phenomenon”?",
@@ -4933,8 +4760,7 @@
     },
     {
       "id": "rs-or-t7-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -4961,8 +4787,7 @@
     },
     {
       "id": "rs-wr-t7-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “reservoir”?",
@@ -4989,8 +4814,7 @@
     },
     {
       "id": "rs-or-t7-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5017,8 +4841,7 @@
     },
     {
       "id": "rs-wr-t7-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “meticulous”?",
@@ -5045,8 +4868,7 @@
     },
     {
       "id": "rs-or-t7-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5073,8 +4895,7 @@
     },
     {
       "id": "rs-wr-t7-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “eloquent”?",
@@ -5101,8 +4922,7 @@
     },
     {
       "id": "rs-or-t7-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 7,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5129,8 +4949,7 @@
     },
     {
       "id": "rs-rv-t7-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 7,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Meticulous” means:",
@@ -5157,8 +4976,7 @@
     },
     {
       "id": "rs-rv-t7-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 7,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Eloquent” means:",
@@ -5185,8 +5003,7 @@
     },
     {
       "id": "rs-rv-t7-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 7,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Ambiguous” means:",
@@ -5213,8 +5030,7 @@
     },
     {
       "id": "rs-rv-t7-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 7,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Tentative” means:",
@@ -5241,8 +5057,7 @@
     },
     {
       "id": "rs-rv-t7-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 7,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Diminish” means:",
@@ -5269,8 +5084,7 @@
     },
     {
       "id": "rs-rv-t7-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 7,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Candid” means:",
@@ -5297,8 +5111,7 @@
     },
     {
       "id": "rs-pc-t7-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 7,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Aya record both positions?",
@@ -5327,8 +5140,7 @@
     },
     {
       "id": "rs-pc-t7-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 7,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Ben record both positions?",
@@ -5357,8 +5169,7 @@
     },
     {
       "id": "rs-pc-t7-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 7,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Nina record both positions?",
@@ -5387,8 +5198,7 @@
     },
     {
       "id": "rs-pc-t7-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 7,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Sam record both positions?",
@@ -5417,8 +5227,7 @@
     },
     {
       "id": "rs-pc-t7-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 7,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Leo record both positions?",
@@ -5447,8 +5256,7 @@
     },
     {
       "id": "rs-pc-t7-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 7,
       "skill": "stub-passage-comprehension",
       "questionText": "Why did Mira record both positions?",
@@ -5477,8 +5285,7 @@
     },
     {
       "id": "rs-wr-t8-01",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “unprecedented”?",
@@ -5505,8 +5312,7 @@
     },
     {
       "id": "rs-or-t8-01",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5533,8 +5339,7 @@
     },
     {
       "id": "rs-wr-t8-02",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “conscientious”?",
@@ -5561,8 +5366,7 @@
     },
     {
       "id": "rs-or-t8-02",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5589,8 +5393,7 @@
     },
     {
       "id": "rs-wr-t8-03",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “juxtaposition”?",
@@ -5617,8 +5420,7 @@
     },
     {
       "id": "rs-or-t8-03",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5645,8 +5447,7 @@
     },
     {
       "id": "rs-wr-t8-04",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “indispensable”?",
@@ -5673,8 +5474,7 @@
     },
     {
       "id": "rs-or-t8-04",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5701,8 +5501,7 @@
     },
     {
       "id": "rs-wr-t8-05",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “ephemeral”?",
@@ -5729,8 +5528,7 @@
     },
     {
       "id": "rs-or-t8-05",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5757,8 +5555,7 @@
     },
     {
       "id": "rs-wr-t8-06",
-      "subject": "reading",
-      "subSkill": "word-recognition",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-word-recognition",
       "questionText": "Which word is “ubiquitous”?",
@@ -5785,8 +5582,7 @@
     },
     {
       "id": "rs-or-t8-06",
-      "subject": "reading",
-      "subSkill": "oral-reading",
+      "subject": "oral-reading",
       "tier": 8,
       "skill": "stub-oral-reading",
       "questionText": "Which one is a real word?",
@@ -5813,8 +5609,7 @@
     },
     {
       "id": "rs-rv-t8-01",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 8,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Ephemeral” means:",
@@ -5841,8 +5636,7 @@
     },
     {
       "id": "rs-rv-t8-02",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 8,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Ubiquitous” means:",
@@ -5869,8 +5663,7 @@
     },
     {
       "id": "rs-rv-t8-03",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 8,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Indispensable” means:",
@@ -5897,8 +5690,7 @@
     },
     {
       "id": "rs-rv-t8-04",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 8,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Incongruous” means:",
@@ -5925,8 +5717,7 @@
     },
     {
       "id": "rs-rv-t8-05",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 8,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Mitigate” means:",
@@ -5953,8 +5744,7 @@
     },
     {
       "id": "rs-rv-t8-06",
-      "subject": "reading",
-      "subSkill": "reading-vocabulary",
+      "subject": "vocabulary-spelling",
       "tier": 8,
       "skill": "stub-reading-vocabulary",
       "questionText": "“Pragmatic” means:",
@@ -5981,8 +5771,7 @@
     },
     {
       "id": "rs-pc-t8-01",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 8,
       "skill": "stub-passage-comprehension",
       "questionText": "What does the author suggest about the official account?",
@@ -6011,8 +5800,7 @@
     },
     {
       "id": "rs-pc-t8-02",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 8,
       "skill": "stub-passage-comprehension",
       "questionText": "What does the author suggest about the official account?",
@@ -6041,8 +5829,7 @@
     },
     {
       "id": "rs-pc-t8-03",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 8,
       "skill": "stub-passage-comprehension",
       "questionText": "What does the author suggest about the official account?",
@@ -6071,8 +5858,7 @@
     },
     {
       "id": "rs-pc-t8-04",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 8,
       "skill": "stub-passage-comprehension",
       "questionText": "What does the author suggest about the official account?",
@@ -6101,8 +5887,7 @@
     },
     {
       "id": "rs-pc-t8-05",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 8,
       "skill": "stub-passage-comprehension",
       "questionText": "What does the author suggest about the official account?",
@@ -6131,8 +5916,7 @@
     },
     {
       "id": "rs-pc-t8-06",
-      "subject": "reading",
-      "subSkill": "passage-comprehension",
+      "subject": "reading-comprehension",
       "tier": 8,
       "skill": "stub-passage-comprehension",
       "questionText": "What does the author suggest about the official account?",

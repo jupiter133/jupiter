@@ -48,9 +48,8 @@ export default function App() {
       {flow.step === 'section-intro' && flow.subject && (
         <SectionIntroScreen
           subject={flow.subject}
-          sessionNumber={flow.sessionNumber}
-          sessionCount={flow.sessionCount}
           onStart={flow.startSection}
+          onDoLater={flow.doThisLater}
         />
       )}
 

@@ -5,6 +5,7 @@ import {
   isWithinOneGrade,
 } from './tiers';
 import type { Subject } from './subjects';
+import { READING_SUBJECTS } from './readingLevel';
 import { CORE_SKILLS_PROGRAMS, coreBandForGrade, coreReadingProgramFor } from './programs';
 
 export type GateOutcome =
@@ -16,11 +17,11 @@ export type GateOutcome =
 
 export interface GateInputs {
   grade: Grade;
-  /** Assessed reading tier — step 1 reads the absolute level, not the gap. */
+  /** DERIVED reading tier — step 1 reads the absolute level, not the gap. */
   readingTier: Tier | null;
   readingGap: number | null;
-  spellingGap: number | null;
-  writingGap: number | null;
+  vocabularySpellingGap: number | null;
+  sentenceWritingGap: number | null;
   mathGap: number | null;
 }
 
@@ -51,7 +52,14 @@ export interface GateDecision {
  * Returns null when a rule needs evidence that has not been gathered yet.
  */
 export function evaluateGate(inputs: GateInputs): GateDecision | null {
-  const { grade, readingTier, readingGap, spellingGap, writingGap, mathGap } = inputs;
+  const {
+    grade,
+    readingTier,
+    readingGap,
+    vocabularySpellingGap: spellingGap,
+    sentenceWritingGap: writingGap,
+    mathGap,
+  } = inputs;
   const band = coreBandForGrade(grade);
   const core = CORE_SKILLS_PROGRAMS[band];
 
@@ -62,7 +70,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 1,
       outcome: 'reading-track',
       programName: coreReadingProgramFor(readingTier),
-      determinedBy: ['reading'],
+      determinedBy: READING_SUBJECTS,
       readingGated: true,
     };
   }
@@ -74,7 +82,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 2,
       outcome: 'core-reading',
       programName: core.reading,
-      determinedBy: ['reading'],
+      determinedBy: READING_SUBJECTS,
       readingGated: false,
     };
   }
@@ -89,7 +97,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 3,
       outcome: 'core-writing',
       programName: core.writing,
-      determinedBy: ['reading', 'spelling', 'writing'],
+      determinedBy: [...READING_SUBJECTS, 'vocabulary-spelling', 'sentence-writing'],
       readingGated: false,
     };
   }
@@ -105,7 +113,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 4,
       outcome: 'core-math',
       programName: core.math,
-      determinedBy: ['reading', 'spelling', 'writing', 'math'],
+      determinedBy: [...READING_SUBJECTS, 'vocabulary-spelling', 'sentence-writing', 'math'],
       readingGated: false,
     };
   }
@@ -115,7 +123,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
     step: 5,
     outcome: 'enriched',
     programName: core.enriched,
-    determinedBy: ['reading', 'spelling', 'writing', 'math'],
+    determinedBy: [...READING_SUBJECTS, 'vocabulary-spelling', 'sentence-writing', 'math'],
     readingGated: false,
   };
 }

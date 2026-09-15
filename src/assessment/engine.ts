@@ -14,18 +14,21 @@ import { MIN_TIER, clampTier, gapFor, gradeTier } from './tiers';
 import { evaluateGate, type GateInputs } from './gate';
 import { hasAgeGradeMismatch } from './intake';
 import { PROGRAM_DESCRIPTIONS } from './programs';
-import {
-  QUESTIONS_PER_SUB_SKILL,
-  SUB_SKILL_STABILITY_WINDOW,
-  deriveReadingLevel,
-  type ReadingSubSkill,
-  type SubSkillResult,
-} from './readingSkills';
+import { READING_SUBJECTS, deriveReadingLevel } from './readingLevel';
 import { QUESTIONS } from './questionBank';
 import { nextSubjectFor } from './placementStore';
 
-/** Questions in one subject sitting, at most. */
-export const QUESTIONS_PER_SUBJECT = 8;
+/**
+ * Questions in one subject sitting, at most. Math runs longer because its
+ * intro promises about ten puzzles; the rest sit eight.
+ */
+export const QUESTIONS_PER_SUBJECT: Record<Subject, number> = {
+  'oral-reading': 8,
+  'reading-comprehension': 8,
+  'vocabulary-spelling': 8,
+  'sentence-writing': 8,
+  math: 10,
+};
 /** End the subject early once the tier has held for this many answers. */
 export const STABILITY_WINDOW = 4;
 /** Consecutive answers needed to move a tier. */
@@ -43,18 +46,15 @@ export const STREAK_TO_MOVE = 2;
 export function createSession(
   grade: Grade,
   subject: Subject,
-  options: { floored?: boolean; subSkill?: ReadingSubSkill } = {},
+  options: { floored?: boolean } = {},
   now: number = Date.now(),
 ): SessionState {
   const floored = options.floored ?? false;
-  const isSubSkill = options.subSkill !== undefined;
   return {
     grade,
     subject,
-    subSkill: options.subSkill,
-    // A reading sub-skill sitting is shorter, with a shorter early stop.
-    maxQuestions: isSubSkill ? QUESTIONS_PER_SUB_SKILL : QUESTIONS_PER_SUBJECT,
-    stabilityWindow: isSubSkill ? SUB_SKILL_STABILITY_WINDOW : STABILITY_WINDOW,
+    maxQuestions: QUESTIONS_PER_SUBJECT[subject],
+    stabilityWindow: STABILITY_WINDOW,
     floored,
     currentTier: floored ? MIN_TIER : startTierForGrade(grade),
     consecutiveCorrect: 0,
@@ -74,10 +74,7 @@ export function createSession(
 export function selectNextQuestion(state: SessionState): Question | null {
   const served = new Set(state.servedQuestionIds);
   const candidates = QUESTIONS.filter(
-    (q) =>
-      q.subject === state.subject &&
-      (state.subSkill === undefined || q.subSkill === state.subSkill) &&
-      !served.has(q.id),
+    (q) => q.subject === state.subject && !served.has(q.id),
   ).sort((a, b) => Math.abs(a.tier - state.currentTier) - Math.abs(b.tier - state.currentTier));
   return candidates[0] ?? null;
 }
@@ -91,7 +88,8 @@ export function isTierStable(state: SessionState): boolean {
 }
 
 export function isSessionComplete(state: SessionState): boolean {
-  if (state.questionsAnswered.length >= (state.maxQuestions ?? QUESTIONS_PER_SUBJECT)) return true;
+  if (state.questionsAnswered.length >= (state.maxQuestions ?? QUESTIONS_PER_SUBJECT[state.subject]))
+    return true;
   if (selectNextQuestion(state) === null) return true;
   return isTierStable(state);
 }
@@ -151,37 +149,6 @@ export function submitAnswer(
   return isSessionComplete(next) ? { ...next, finishedAt: now } : next;
 }
 
-/** One finished reading sub-skill sitting. */
-export function toSubSkillResult(state: SessionState): SubSkillResult {
-  if (!state.subSkill) throw new Error('not a sub-skill sitting');
-  return {
-    subSkill: state.subSkill,
-    finalTier: state.currentTier,
-    questionsAnswered: state.questionsAnswered.length,
-  };
-}
-
-/**
- * Folds the four sub-skill sittings into the one reading result the gate
- * consumes. The level is DERIVED by the rule in readingSkills.ts, never the
- * tier of any single sitting.
- */
-export function toReadingResult(parts: SessionState[]): SubjectResult {
-  const subSkills = parts.map(toSubSkillResult);
-  const startedAt = Math.min(...parts.map((p) => p.startedAt));
-  const finishedAt = Math.max(...parts.map((p) => p.finishedAt ?? Date.now()));
-  return {
-    subject: 'reading',
-    finalTier: deriveReadingLevel(subSkills),
-    subSkills,
-    floored: false,
-    questionsAnswered: subSkills.reduce((sum, r) => sum + r.questionsAnswered, 0),
-    durationMs: Math.max(0, finishedAt - startedAt),
-    completedAt: finishedAt,
-    history: parts.flatMap((p) => p.questionsAnswered),
-  };
-}
-
 /** The tier the session ended on is the placement for that subject. */
 export function toSubjectResult(state: SessionState): SubjectResult {
   const finishedAt = state.finishedAt ?? Date.now();
@@ -224,13 +191,17 @@ export function buildResult(
     return gapFor(r.finalTier, grade);
   };
 
-  const reading = by('reading');
+  // Reading is two subjects; the level the gate reads is derived from both.
+  const readingParts = READING_SUBJECTS.map((subject) => by(subject)).filter(
+    (r): r is SubjectResult => Boolean(r),
+  );
+  const readingTier = deriveReadingLevel(readingParts);
   const gateInputs: GateInputs = {
     grade,
-    readingTier: reading ? reading.finalTier : null,
-    readingGap: reading ? gapFor(reading.finalTier, grade) : null,
-    spellingGap: gapOf('spelling'),
-    writingGap: gapOf('writing'),
+    readingTier,
+    readingGap: readingTier === null ? null : gapFor(readingTier, grade),
+    vocabularySpellingGap: gapOf('vocabulary-spelling'),
+    sentenceWritingGap: gapOf('sentence-writing'),
     mathGap: gapOf('math'),
   };
   const decision = evaluateGate(gateInputs);
@@ -248,11 +219,6 @@ export function buildResult(
     questionsAnswered: r.questionsAnswered,
     nonDetermining: r.floored || !determined.has(r.subject),
     floored: r.floored,
-    subSkills: r.subSkills?.map((s) => ({
-      subSkill: s.subSkill,
-      finalTier: s.finalTier,
-      gradeEquivalentDisplay: tierGradeLabel(s.finalTier),
-    })),
   }));
 
   const program: ProgramPlacement | null =
@@ -261,7 +227,7 @@ export function buildResult(
           name: decision.programName,
           gradeEquivalentDisplay: tierGradeLabel(
             decision.outcome === 'reading-track'
-              ? (reading?.finalTier ?? MIN_TIER)
+              ? (readingTier ?? MIN_TIER)
               : gradeTier(grade),
           ),
           description: PROGRAM_DESCRIPTIONS[decision.outcome],
@@ -280,6 +246,7 @@ export function buildResult(
     complete,
     program,
     readingGated,
+    readingTier,
     // Math content follows the grade, never the assessed math tier.
     mathContentLevel: gradeTier(grade),
     questionsAnswered: inOrder.reduce((sum, r) => sum + r.questionsAnswered, 0),

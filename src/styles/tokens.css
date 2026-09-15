@@ -126,16 +126,12 @@
   --accent-pink-soft: var(--olc-pink-soft);
   --accent-cyan-soft: var(--olc-cyan-soft);
 
-  /* The four strands take the O·L·C tile hues, in tile order. Spelling sits
-   * beside writing in lime, because they read as one family to a parent. */
-  --strand-reading: var(--olc-green);
-  --strand-reading-edge: var(--olc-green-dark);
-  --strand-spelling: var(--olc-lime);
-  --strand-spelling-edge: var(--olc-lime-dark);
-  --strand-math: var(--olc-cyan);
-  --strand-math-edge: var(--olc-cyan-edge);
-  --strand-writing: var(--olc-pink);
-  --strand-writing-edge: var(--olc-pink-edge);
+  /* One hue per subject, from the assessment intro design. */
+  --strand-oral-reading: var(--olc-cyan);
+  --strand-reading-comprehension: var(--olc-green);
+  --strand-vocabulary-spelling: var(--olc-pink);
+  --strand-sentence-writing: var(--olc-gold);
+  --strand-math: var(--olc-lime);
 
   /* Parent-facing information note — cyan tone, never red.
    * --olc-red exists above for the maple leaf. The DS SelectTile also has

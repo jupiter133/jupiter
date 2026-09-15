@@ -68,16 +68,10 @@ export function HandoffScreen({ childName, onStart }: Props) {
                 </h2>
                 <ul className="included-list">
                   {INCLUDED_STRANDS.map((strand) => (
-                    <li
-                      key={strand.subject}
-                      className={`included-row${strand.detail ? ' included-row--wide' : ''}`}
-                    >
+                    <li key={strand.subject} className="included-row">
                       <Check />
                       <span className="included-row__body">
                         <span className="included-row__label">{strand.label}</span>
-                        {strand.detail && (
-                          <span className="included-row__detail">{strand.detail}</span>
-                        )}
                       </span>
                     </li>
                   ))}
@@ -100,7 +94,7 @@ export function HandoffScreen({ childName, onStart }: Props) {
               <button type="button" className="btn btn--primary" onClick={onStart}>
                 Start the discovery quest
               </button>
-              <span className="field__hint">One subject at a time · You can stop any time</span>
+              <span className="field__hint">One subject at a time · Stop any time</span>
             </div>
           </div>
         </div>

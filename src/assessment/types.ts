@@ -5,7 +5,7 @@ import type { AgeBand } from './intake';
 import type { Subject } from './subjects';
 import { SUBJECT_ORDER } from './subjects';
 import type { GateOutcome } from './gate';
-import type { ReadingSubSkill, SubSkillResult } from './readingSkills';
+
 
 export type { Tier };
 export { MIN_TIER, MAX_TIER, TIERS, clampTier, tierGradeLabel } from './tiers';
@@ -24,13 +24,8 @@ export { ageBandForAge, hasAgeGradeMismatch, ageGradeOffset, MIN_AGE, MAX_AGE } 
 export type { Subject };
 export { SUBJECT_ORDER, SUBJECT_LABEL } from './subjects';
 
-export type { ReadingSubSkill, SubSkillResult };
-export {
-  READING_SUB_SKILLS,
-  READING_SUB_SKILL_LABEL,
-  QUESTIONS_PER_SUB_SKILL,
-  SUB_SKILL_STABILITY_WINDOW,
-} from './readingSkills';
+export { SUBJECT_SHORT, SUBJECT_COLOR } from './subjects';
+export { READING_SUBJECTS, isReadingSubject, deriveReadingLevel, readingBottleneck } from './readingLevel';
 
 /**
  * Every child sits all four subjects, in this order, whatever their grade and
@@ -78,8 +73,6 @@ export interface AnswerOption {
 export interface Question {
   id: string;
   subject: Subject;
-  /** Reading items belong to one of the four reading sub-skills. */
-  subSkill?: ReadingSubSkill;
   /** 0 (Kindergarten) to 8 (Grade 8). */
   tier: Tier;
   /** Fine-grained content tag, e.g. "letter-sound", "main-idea", "fractions". */
@@ -141,8 +134,6 @@ export interface AnsweredQuestion {
 export interface SessionState {
   grade: Grade;
   subject: Subject;
-  /** Set for a reading sub-skill sitting; the selector then stays inside it. */
-  subSkill?: ReadingSubSkill;
   /** Length and early-stop window for this sitting. */
   maxQuestions: number;
   stabilityWindow: number;
@@ -167,11 +158,8 @@ export interface SessionState {
 /** What one completed subject session yields. Stored between sessions. */
 export interface SubjectResult {
   subject: Subject;
-  /** The placement for this subject. Internal — never rendered raw. For
-   *  reading this is DERIVED from the sub-skills, see readingSkills.ts. */
+  /** The placement for this subject. Internal — never rendered raw. */
   finalTier: Tier;
-  /** Reading only: the four sub-skill results, in sitting order. */
-  subSkills?: SubSkillResult[];
   /** True when the sitting was floored — see SessionState.floored. */
   floored: boolean;
   questionsAnswered: number;
@@ -194,14 +182,6 @@ export interface SubjectPlacement {
    */
   nonDetermining: boolean;
   floored: boolean;
-  /** Reading only: per sub-skill, for the expandable row. */
-  subSkills?: SubSkillPlacement[];
-}
-
-export interface SubSkillPlacement {
-  subSkill: ReadingSubSkill;
-  finalTier: Tier;
-  gradeEquivalentDisplay: string;
 }
 
 /** The one program the child is placed into, once every subject is done.
@@ -229,8 +209,10 @@ export interface PlacementResult {
   complete: boolean;
   /** Set only when every subject is done. */
   program: ProgramPlacement | null;
-  /** True when reading came in below a Grade 3 level. */
+  /** True when the derived reading level came in below a Grade 3 level. */
   readingGated: boolean;
+  /** The derived reading level, once both reading sittings are done. */
+  readingTier: Tier | null;
   /**
    * Math content level, set by GRADE placement, never by assessed math. The
    * assessed math tier only feeds gate step 4.

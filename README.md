@@ -236,97 +236,52 @@ kindergarten content. Two consequences, both content decisions rather than code:
 
 ## Subjects
 
-**Every child sits all four subjects, in this order: reading, spelling,
-writing, math.** Nobody is stopped early. A result we did not gather is a result
-a teacher cannot look at.
+**Every child sits all five subjects, in this order**, named exactly as the
+assessment intro design names them:
 
-Reading goes first because it is what the other three are built on. It is
-assessed as **four sub-skills sat back to back in one session** — see
-**Reading sub-skills** below. If reading
-comes in below a Grade 3 level, the child is placed on the Reading track
-whatever the later sittings say — those sittings still run, and their results
-are recorded and flagged as **non-determining** (see below).
+| # | Subject | Colour | Sitting |
+|---|---------|--------|---------|
+| 1 | Oral Reading & Fluency | cyan | 8 questions |
+| 2 | Reading Comprehension | green | 8 questions |
+| 3 | Vocabulary & Spelling | pink | 8 questions |
+| 4 | Sentence Writing | gold | 8 questions |
+| 5 | Mathematics | lime | 10 questions |
 
-Spelling is assessed **separately from writing**, with its own tier-tagged bank,
-and feeds the gate as an input rather than sitting on the results page as
-decoration. The current spelling bank is a **stub** — 27 correct-spelling-choice
-items across tiers 0–8 — pending real content.
+Nobody is stopped early. A result we did not gather is a result a teacher
+cannot look at. Each sitting is separate and resumable, and a child can tap
+**"Do this one later"** on a subject intro to skip past it — the skip is
+remembered for that run and the subject reads as "not yet assessed" until it
+is actually sat.
 
-Skills by band, per the content plan:
+### Reading is two of the five
 
-- **Early reading:** letter-sound recognition, phonemic awareness, sight words.
-- **Middle reading:** decoding, fluency, literal comprehension.
-- **Upper reading:** vocabulary in context, inference, main idea, sequencing —
-  passage-based.
-- **Math:** number sense and operations, fractions and decimals, measurement,
-  word problems. Word problems stay light on purpose: a wordy math item doubles
-  as a reading test.
-- **Writing:** multiple choice on sub-skills only, no open response —
-  punctuation and capitalization, complete sentence vs fragment, word choice,
-  paragraph sequencing.
-- **Spelling:** pick the correctly spelled word. Stub content.
+The gate needs one reading level, and it comes from **both reading subjects**
+(`src/assessment/readingLevel.ts`):
 
-## The handoff brief
+- `lowest` (default): the lower of oral reading and comprehension. A child is
+  only as strong a reader as their weaker half, and a gap between decoding and
+  comprehension is exactly what the reading gate exists to catch.
+- `weighted`: a weighted mean, rounded down, using `READING_LEVEL_WEIGHTS`.
 
-The last thing a grown-up reads before letting go of the tablet, on screen 2:
+**Pending teacher sign-off.** Switching is a one-line config edit. The level is
+withheld entirely until both reading sittings are done — half a reader is not a
+reading level, and the gate waits rather than guessing.
 
-- **Estimated time** — the whole placement, all four sittings.
-- **Earn up to N coins** — in the gold role the design system reserves for
-  coins.
-- **What's included** — one row per subject, with reading's four sub-skills on
-  a sub-line.
+### ⚠️ The intros promise input modes the engine does not have
 
-All three come from `src/assessment/sessionMeta.ts`. The included list is
-**derived from the assessment itself** rather than typed out, so the promise
-cannot drift from what a child is actually asked.
+The subject intro copy is verbatim from the design bundle
+(`src/content/subjectIntros.ts`). Three of the five describe interactions that
+**do not exist in this build**, where every item is multiple choice:
 
-**The coins are only promised here.** Nothing in this flow awards or banks
-them: there is no wallet, and the completion screen still shows no score.
-Wiring the award to the child's account is the host app's job.
+| Subject | The intro says | The engine does |
+|---------|----------------|-----------------|
+| Oral Reading & Fluency | speak each word aloud, 3s per word, the tablet listens | taps a written answer, no timer, no microphone |
+| Vocabulary & Spelling | type the word on the keyboard | taps one of four spellings |
+| Sentence Writing | write a few sentences about a picture | taps the best-written version |
 
-## Reading sub-skills
-
-The reading sitting is four short sittings run back to back, in this order:
-
-1. Word recognition
-2. Oral reading / decoding
-3. Reading vocabulary
-4. Passage comprehension
-
-Each one has its own tier-tagged bank (`subSkill` on the item), starts at the
-child's grade tier, branches exactly like every other sitting, and runs
-**5 questions** with the early stop at **3 answers** on the same tier
-(`QUESTIONS_PER_SUB_SKILL`, `SUB_SKILL_STABILITY_WINDOW` in
-`src/assessment/readingSkills.ts`). About 20 questions in all. The child sees
-one continuous reading quest: one progress bar across all four, no break and no
-score between them.
-
-**The overall reading level is derived, not measured.** The gate consumes it
-exactly as it consumed the old single level. The derivation is a config table
-in `readingSkills.ts` — `ACTIVE_READING_LEVEL_RULE` — with two rules on offer:
-
-- `lowest` (default): the lowest of the four sub-skill tiers. A child is only
-  as strong a reader as their weakest sub-skill.
-- `weighted`: a weighted mean, rounded down, using `READING_LEVEL_WEIGHTS`
-  (decoding and comprehension weighted 2, the others 1, as a starting point).
-
-**Pending teacher sign-off.** Switching rule or weights is a one-line config
-edit, not a code change.
-
-On the parent screen the reading row shows the derived level and opens (it is
-the only row with a chevron) to the four sub-skill levels in grade-equivalent
-language. For a child stopped by the reading gate, the open row names the
-sub-skill holding them back.
-
-### The reading bank is a STUB
-
-`src/content/readingBank.stub.json` is **template-generated** by
-`scripts/generate-reading-stub.py`: six items per sub-skill per tier so the
-engine and screens can be exercised end to end. It is not assessment content.
-`READING_BANK_IS_STUB` in `src/assessment/questionBank.ts` is `true` while it
-is in use and a test asserts it, so the swap to teacher-written banks is a
-deliberate act. **Do not ship on it.** The 36 hand-written reading items in
-`questionBank.json` are tagged into the sub-skills and stay.
+Closing this needs speech capture and scoring, a typed-answer item type with
+fuzzy matching, and a rubric (or a human) for free writing. Until then these
+screens over-promise. **Decide before this goes near a child.**
 
 ## The priority gate
 
@@ -462,10 +417,11 @@ parent-facing label ever contains the word "tier".
 
 ## Content
 
-`src/content/questionBank.json` — placeholder bank: 115 items tagged by subject
-and tier, covering **every tier 0–8 in all four subjects** (at least 3 per
-cell). Spelling is a stub. Reading is split into four sub-skill banks — see
-**Reading sub-skills** above — with a separate, clearly marked stub file. Subject and tier data live in the JSON, so dropping in the real bank
+`src/content/questionBank.json` — placeholder bank, tagged by subject and
+tier, covering **every tier 0–8 in all five subjects** (at least 3 per
+cell). The two reading subjects carry 6+ per tier; the rest carry 3, and
+production wants 6+ everywhere. Reading and spelling items come from a
+separate, clearly marked stub file (`readingBank.stub.json`). Subject and tier data live in the JSON, so dropping in the real bank
 needs no engine change.
 
 Production content should carry **6+ items per subject/tier cell**. A sitting
