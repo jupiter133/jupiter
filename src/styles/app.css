@@ -549,6 +549,17 @@ body {
   color: var(--text-on-bright);
 }
 .placement-footnote { margin: 0; padding: 0 4px; font-size: 14px; color: var(--text-muted); }
+
+/* Seven rows, not five. In a short landscape window the list is what runs the
+   screen past its height, so the rows tighten rather than the decision card. */
+@media (orientation: landscape) and (max-height: 820px) {
+  .placement__rows { gap: 8px; }
+  .placement-row { padding: 8px 16px; }
+  .placement-row__name { padding: 4px 12px; font-size: 14px; }
+  .placement-row__value { font-size: 15px; }
+  .placement-explainer { padding: 12px 16px; font-size: 14px; line-height: 1.45; }
+  .placement { gap: clamp(10px, 1.6vh, 18px); }
+}
 .placement__restart { text-align: center; }
 
 /* ---------- Grown-up setup (screen 1) ---------- */
