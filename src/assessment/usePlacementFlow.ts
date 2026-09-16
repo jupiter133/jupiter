@@ -35,6 +35,7 @@ export type FlowStep =
   | 'handoff'
   | 'section-intro'
   | 'question'
+  | 'section-complete'
   | 'parent-results';
 
 interface Flow {
@@ -59,6 +60,8 @@ interface Flow {
   audioEnabled: boolean;
   toggleAudio: () => void;
   currentQuestion: Question | null;
+  /** The question just answered. Keeps the quest on screen behind the popup. */
+  lastQuestion: Question | null;
   /** Position within this sitting, 1-based. */
   questionNumber: number;
   questionsPerSubject: number;
@@ -74,6 +77,8 @@ interface Flow {
   continueNext: () => void;
   /** "Do this one later" — skips this subject without recording a result. */
   doThisLater: () => void;
+  /** Dismisses the section-complete popup. */
+  dismissSectionComplete: () => void;
   /** 0–8, for the nine progress pills. */
   stepIndex: number;
   /** Null on the first step, and wherever rewinding would lose answers. */
@@ -95,6 +100,8 @@ export function usePlacementFlow(childName: string): Flow {
   const [session, setSession] = useState<SessionState | null>(null);
   /** Subjects the child chose to leave for later, in this run. */
   const [skipped, setSkipped] = useState<Subject[]>([]);
+  /** The question just answered, so the popup has the quest behind it. */
+  const [lastQuestion, setLastQuestion] = useState<Question | null>(null);
   const [progress, setProgress] = useState<PlacementProgress | null>(() =>
     loadProgress(childName),
   );
@@ -142,6 +149,7 @@ export function usePlacementFlow(childName: string): Flow {
       setStep('parent-results');
       return;
     }
+    setLastQuestion(null);
     setSession(
       createSession(grade, nextSubject, {
         floored: readingGated && !isReadingSubject(nextSubject),
@@ -175,6 +183,7 @@ export function usePlacementFlow(childName: string): Flow {
       if (!session || session.finishedAt) return;
       const question = selectNextQuestion(session);
       if (!question) return;
+      setLastQuestion(question);
 
       const next = submitAnswer(session, question, selectedAnswerId);
       setSession(next);
@@ -182,14 +191,16 @@ export function usePlacementFlow(childName: string): Flow {
 
       // Recording happens here, not inside the state updater, so a double
       // render can never write the result twice.
-      // Straight to the grown-up's page: the child's part of this sitting is
-      // over, and a "well done" screen in between is one more tap for a child
-      // who is already being asked to hand the tablet back.
       setProgress(recordSubjectResult(childName, next.grade, age, toSubjectResult(next)));
-      setStep('parent-results');
+      // A popup over the quest, not a screen of its own: the section ending is
+      // a moment, not a destination.
+      setStep('section-complete');
     },
     [session, childName, age],
   );
+
+  /** Dismisses the section-complete popup and hands back to the grown-up. */
+  const dismissSectionComplete = useCallback(() => setStep('parent-results'), []);
 
   const continueNext = useCallback(() => {
     setSession(null);
@@ -217,6 +228,7 @@ export function usePlacementFlow(childName: string): Flow {
     setProgress(null);
     setSession(null);
     setSkipped([]);
+    setLastQuestion(null);
     setContext(null);
     setAudioOverride(null);
     setStep('start');
@@ -237,6 +249,9 @@ export function usePlacementFlow(childName: string): Flow {
     if (step === 'start' || step === 'deferred') return 0;
     if (step === 'parent-context') return 1;
     if (step === 'handoff') return 2;
+    if (step === 'section-complete') {
+      return sittingSubjectForIndex ? 3 + requiredSubjects.indexOf(sittingSubjectForIndex) : 3;
+    }
     if (step === 'parent-results') {
       if (!nextSubject) return 8;
       return 3 + requiredSubjects.indexOf(nextSubject);
@@ -285,6 +300,7 @@ export function usePlacementFlow(childName: string): Flow {
     audioEnabled: forcedAudio || (audioOverride ?? audioDefaultFor(band)),
     toggleAudio,
     currentQuestion,
+    lastQuestion,
     questionNumber: (session?.questionsAnswered.length ?? 0) + 1,
     questionsPerSubject: sittingSubject ? QUESTIONS_PER_SUBJECT[sittingSubject] : 8,
     result,
@@ -297,6 +313,7 @@ export function usePlacementFlow(childName: string): Flow {
     answer,
     continueNext,
     doThisLater,
+    dismissSectionComplete,
     stepIndex,
     goBack,
     restart,

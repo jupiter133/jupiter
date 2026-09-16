@@ -11,6 +11,7 @@ import { SectionIntroScreen } from './screens/SectionIntroScreen';
 import { StartScreen } from './screens/StartScreen';
 import { DeferredScreen } from './screens/DeferredScreen';
 import { FlowChrome } from './components/FlowChrome';
+import { SectionCompleteDialog } from './components/SectionCompleteDialog';
 
 export default function App() {
   const profile = useMemo(loadChildProfile, []);
@@ -54,10 +55,15 @@ export default function App() {
         />
       )}
 
-      {flow.step === 'question' && flow.currentQuestion && flow.subject && (
+      {(flow.step === 'question' || flow.step === 'section-complete') &&
+        (flow.currentQuestion ?? flow.lastQuestion) &&
+        flow.subject && (
         <QuestionScreen
-          key={flow.currentQuestion.id}
-          question={flow.currentQuestion}
+          /* Re-keyed for the popup step: the card had already faded itself out
+             on the way to the result, so it needs a fresh mount to sit behind
+             the scrim rather than leaving a blank screen. */
+          key={`${(flow.currentQuestion ?? flow.lastQuestion)!.id}-${flow.step}`}
+          question={(flow.currentQuestion ?? flow.lastQuestion)!}
           subject={flow.subject}
           band={flow.band}
           questionNumber={flow.questionNumber}
@@ -65,6 +71,15 @@ export default function App() {
           audioEnabled={flow.audioEnabled}
           onToggleAudio={flow.toggleAudio}
           onAnswer={flow.answer}
+        />
+      )}
+
+      {flow.step === 'section-complete' && flow.subject && flow.result && (
+        <SectionCompleteDialog
+          subject={flow.subject}
+          done={flow.result.subjects.length}
+          total={flow.requiredSubjects.length}
+          onContinue={flow.dismissSectionComplete}
         />
       )}
 
