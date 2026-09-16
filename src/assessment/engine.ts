@@ -162,7 +162,7 @@ function worseOf(a: number | null, b: number | null): number | null {
 }
 
 /**
- * The Little Reader Adventure has no writing or comprehension to route on, so
+ * Little Readers has no writing or comprehension to route on, so
  * the five-step gate does not apply: everyone who sits it is placed on the
  * reading track, at the level their two reading activities give.
  *

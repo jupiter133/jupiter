@@ -283,7 +283,7 @@ on cyan is about 2.2:1, which fails at any size and badly at 13px.
 **Age chooses the assessment.** A five-year-old and a ten-year-old are not
 doing the same thing, so they do not sit the same activities.
 
-| | Little Reader Adventure | Grade Level Challenge |
+| | Little Readers | Grade Level |
 |---|---|---|
 | Who | age 6 and under | age 7 and up |
 | Theme | the park | Scholar's Tower |
@@ -307,7 +307,7 @@ the results rows, and which subjects a placement decision may rest on.
 **Every child sits all seven subjects in their track, in this order**, named
 exactly as the assessment intro design names them:
 
-### Little Reader Adventure
+### Little Readers
 
 | # | Activity | Colour | Sitting |
 |---|---------|--------|---------|
@@ -319,7 +319,7 @@ exactly as the assessment intro design names them:
 | 6 | Letter Sounds | pink | 8 questions |
 | 7 | Word Practice | green | 8 questions |
 
-### Grade Level Challenge
+### Grade Level
 
 | # | Chamber | Colour | Sitting |
 |---|---------|--------|---------|

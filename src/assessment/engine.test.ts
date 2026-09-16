@@ -54,7 +54,7 @@ function sit(
 const ALL_GRADES: Grade[] = ['EL', 'JK', 'SK', '1', '2', '3', '4', '5', '6'];
 
 describe('tracks and bands', () => {
-  it('sends six and under to the Little Reader Adventure and everyone older to the tower', () => {
+  it('sends six and under to Little Readers and everyone older to the tower', () => {
     expect(trackFor(5, '1')).toBe('little-reader');
     expect(trackFor(6, '1')).toBe('little-reader');
     expect(trackFor(7, '1')).toBe('grade-level');
@@ -279,7 +279,7 @@ describe('reading level derivation', () => {
     expect(readingBottleneck(parts)!.subject).toBe('oral-reading');
   });
 
-  it('reads the Little Reader Adventure off its own two activities', () => {
+  it('reads Little Readers off its own two activities', () => {
     const little = [
       { subject: 'letter-sounds' as const, finalTier: 1 },
       { subject: 'word-practice' as const, finalTier: 0 },

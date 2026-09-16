@@ -2,14 +2,14 @@
  * Two assessments, one product.
  *
  * A five-year-old and a ten-year-old are not doing the same thing, so they do
- * not sit the same activities. The **Little Reader Adventure** is pre-reading
- * and readiness; the **Grade Level Challenge** is the full academic set. Age
+ * not sit the same activities. **Little Readers** is pre-reading
+ * and readiness; **Grade Level** is the full academic set. Age
  * chooses between them.
  */
 export type Track = 'little-reader' | 'grade-level';
 
 export type Subject =
-  // Little Reader Adventure
+  // Little Readers
   | 'find-the-same'
   | 'match-making'
   | 'spot-the-difference'
@@ -17,7 +17,7 @@ export type Subject =
   | 'number-fun'
   | 'letter-sounds'
   | 'word-practice'
-  // Grade Level Challenge
+  // Grade Level
   | 'words-speaking'
   | 'oral-reading'
   | 'vocabulary'
@@ -115,7 +115,7 @@ export interface TrackConfig {
 export const TRACKS: Record<Track, TrackConfig> = {
   'little-reader': {
     id: 'little-reader',
-    name: 'Little Reader Adventure',
+    name: 'Little Readers',
     kicker: 'Welcome to the park',
     lead: 'Step right up! Pick a ride and show off your reading superpowers!',
     cta: 'Enter the Park!',
@@ -138,7 +138,7 @@ export const TRACKS: Record<Track, TrackConfig> = {
   },
   'grade-level': {
     id: 'grade-level',
-    name: 'Grade Level Challenge',
+    name: 'Grade Level',
     kicker: "Scholar's chamber",
     lead: 'Step into the tower — 7 chambers of wisdom await your mind!',
     cta: 'Ascend the Tower!',
@@ -163,8 +163,8 @@ export const TRACKS: Record<Track, TrackConfig> = {
 /**
  * WHICH TRACK — CONFIG. PENDING TEACHER SIGN-OFF.
  *
- * Age chooses. Six and under sit the Little Reader Adventure, which lines up
- * with Grade 1 and below; seven and up sit the Grade Level Challenge. The
+ * Age chooses. Six and under sit Little Readers, which lines up
+ * with Grade 1 and below; seven and up sit Grade Level. The
  * boundary is here, in one place, because it is a judgement about children
  * rather than a fact about code.
  */

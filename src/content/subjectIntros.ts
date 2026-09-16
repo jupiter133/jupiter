@@ -3,10 +3,10 @@ import type { Subject } from '../assessment/subjects';
 /**
  * Subject intro copy.
  *
- * The Grade Level Challenge intros for oral reading, comprehension, sentence
+ * The Grade Level intros for oral reading, comprehension, sentence
  * writing and math are verbatim from the OLC assessment intro design bundle.
  * Vocabulary and spelling are that bundle's combined "Vocabulary & Spelling"
- * intro split in two. The Little Reader Adventure intros and Words Speaking
+ * intro split in two. The Little Readers intros and Words Speaking
  * are written to the same shape and are PLACEHOLDER — teacher copy pending.
  *
  * NOTE: several of these describe input modes the question engine does not
@@ -54,7 +54,7 @@ function rules(items: [string, string][]): IntroSection[] {
 }
 
 export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
-  /* ---------- Little Reader Adventure ---------- */
+  /* ---------- Little Readers ---------- */
   'find-the-same': {
     lead: 'Look at the pictures and find the two that match.',
     cta: 'Start matching',
@@ -133,7 +133,7 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
 
-  /* ---------- Grade Level Challenge ---------- */
+  /* ---------- Grade Level ---------- */
   'words-speaking': {
     lead: 'Say each word out loud, clearly, so Ms Hannah can hear you.',
     cta: 'Start speaking',

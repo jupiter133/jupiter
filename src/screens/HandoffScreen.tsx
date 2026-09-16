@@ -15,8 +15,8 @@ interface Props {
 /**
  * Screen 2 — meet Ms Hannah. The parent passes the tablet over here.
  *
- * Everything on it comes from the track config: the Little Reader Adventure
- * and the Grade Level Challenge are different assessments with different
+ * Everything on it comes from the track config: Little Readers
+ * and Grade Level are different assessments with different
  * names, leads, units and tiles, and this screen renders whichever one the
  * child's age selected. The numbered tiles are built from the track's own
  * subject list so they cannot drift from what the child is actually asked.
