@@ -855,33 +855,6 @@ body {
 .question-fade { opacity: 1; transition: opacity 200ms ease, transform 200ms ease; }
 .question-fade--out { opacity: 0; transform: translateY(-8px); }
 
-/* ---------- Completion screen ---------- */
-
-.celebration-split {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(16px, 2.5vw, 32px);
-  align-items: center;
-}
-
-.celebration-art { display: grid; place-items: center; }
-
-.celebration-copy { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
-.celebration-copy .btn { margin-top: var(--space-2); }
-
-.badge-pop { animation: badge-pop 620ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
-
-@keyframes badge-pop {
-  0% { transform: scale(0.4) rotate(-14deg); opacity: 0; }
-  70% { transform: scale(1.08) rotate(3deg); opacity: 1; }
-  100% { transform: scale(1) rotate(0); opacity: 1; }
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-  .badge-pop { animation: none; }
-}
-
 /* ---------- Parent results ---------- */
 
 /* Results: one centred column, nothing a parent has to hunt for. The measure
@@ -1008,7 +981,7 @@ body {
    phone keeps the two-column passage layout — stacking would push the
    answers below a 390px-tall screen. */
 @media (orientation: portrait), (max-width: 600px) {
-  .handoff, .celebration-split { grid-template-columns: 1fr; }
+  .handoff { grid-template-columns: 1fr; }
   .meet { grid-template-columns: 1fr; }
   .meet .guide { height: clamp(150px, 22vh, 260px); }
   .placement__split { grid-template-columns: minmax(0, 1fr); }
@@ -1016,8 +989,6 @@ body {
   .quest-brief { grid-template-columns: minmax(0, 1fr); }
   .quest-stats { flex-direction: row; flex-wrap: wrap; }
   .quest-stat { flex: 1 1 auto; }
-  /* Stacked, the two halves sit together instead of splitting the height. */
-  .celebration-split { grid-template-rows: auto auto; align-content: center; gap: var(--space-5); }
   .question-body--with-passage {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr);
@@ -1255,7 +1226,6 @@ body {
   .options--long { grid-template-columns: minmax(0, 1fr); }
   /* Sentence answers need the width more than the art does. */
   .question-body--long > .stack { grid-template-columns: minmax(0, 26%) minmax(0, 1fr); }
-  .celebration-copy { gap: 8px; }
   /* A landscape phone is all width and no height: the figure gives way, and
      the greeting drops a size, so the brief and the CTA both stay on screen. */
   .handoff .guide { height: clamp(120px, 40vh, 170px); }
@@ -1296,7 +1266,6 @@ body {
   .quest-stat { padding: 2px var(--space-3); }
   .quest-stat__value { font-size: 15px; }
   .handoff__go { gap: var(--space-3); }
-  .celebration-copy .display { font-size: 24px; }
   .textarea { min-height: 72px; }
 }
 

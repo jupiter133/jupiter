@@ -35,7 +35,6 @@ export type FlowStep =
   | 'handoff'
   | 'section-intro'
   | 'question'
-  | 'kid-complete'
   | 'parent-results';
 
 interface Flow {
@@ -71,7 +70,6 @@ interface Flow {
   beginQuest: () => void;
   startSection: () => void;
   answer: (selectedAnswerId: string) => void;
-  handBackToParent: () => void;
   /** Hands the tablet back for the next subject sitting. */
   continueNext: () => void;
   /** "Do this one later" — skips this subject without recording a result. */
@@ -184,13 +182,14 @@ export function usePlacementFlow(childName: string): Flow {
 
       // Recording happens here, not inside the state updater, so a double
       // render can never write the result twice.
+      // Straight to the grown-up's page: the child's part of this sitting is
+      // over, and a "well done" screen in between is one more tap for a child
+      // who is already being asked to hand the tablet back.
       setProgress(recordSubjectResult(childName, next.grade, age, toSubjectResult(next)));
-      setStep('kid-complete');
+      setStep('parent-results');
     },
     [session, childName, age],
   );
-
-  const handBackToParent = useCallback(() => setStep('parent-results'), []);
 
   const continueNext = useCallback(() => {
     setSession(null);
@@ -296,7 +295,6 @@ export function usePlacementFlow(childName: string): Flow {
     beginQuest,
     startSection,
     answer,
-    handBackToParent,
     continueNext,
     doThisLater,
     stepIndex,

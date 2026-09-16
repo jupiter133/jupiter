@@ -3,7 +3,6 @@ import { usePlacementFlow } from './assessment/usePlacementFlow';
 import { loadChildProfile } from './profile';
 import { exitToHost } from './host';
 import { HandoffScreen } from './screens/HandoffScreen';
-import { KidCompletionScreen } from './screens/KidCompletionScreen';
 import { ParentContextScreen } from './screens/ParentContextScreen';
 import { ParentResultsScreen } from './screens/ParentResultsScreen';
 import { QuestionScreen } from './screens/QuestionScreen';
@@ -67,10 +66,6 @@ export default function App() {
           onToggleAudio={flow.toggleAudio}
           onAnswer={flow.answer}
         />
-      )}
-
-      {flow.step === 'kid-complete' && (
-        <KidCompletionScreen childName={flow.childName} onHandBack={flow.handBackToParent} />
       )}
 
       {flow.step === 'parent-results' && flow.result && (

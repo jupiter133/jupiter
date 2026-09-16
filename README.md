@@ -24,8 +24,7 @@ npm run build   # typecheck + production build
 | 2 | Meet Ms Hannah — the five subject tiles, time and coins | Child | `src/screens/HandoffScreen.tsx` |
 | 2b | Subject intro — one per subject, with its rule cards | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
-| 4 | Completion — badge, **no score** | Child | `src/screens/KidCompletionScreen.tsx` |
-| 5 | Placement results — one program, five subject rows | Parent | `src/screens/ParentResultsScreen.tsx` |
+| 4 | Placement results — one program, five subject rows | Parent | `src/screens/ParentResultsScreen.tsx` |
 
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
@@ -125,7 +124,7 @@ profile name can be blank, and the split matters:
   greeting at all.
 
 The name threads through the start screen, the intake copy, the handoff
-greeting, the completion screen and the parent results.
+greeting and the parent results.
 
 "Maybe later" lands on a deferred screen with two ways out: back into the
 quest, or **Exit**. Exit goes through `src/host.ts`, the host app's navigation
@@ -206,11 +205,14 @@ instantly, sparkles are removed entirely, and nothing about the flow is lost.
 - No right/wrong feedback during the activity. Selecting an option gives a neutral
   highlight, then the screen fades to the next question. `QuestionScreen` never
   receives correctness — it only reports the choice upward.
-- The child never sees a score, an accuracy figure, a tier, or a grade level. The
-  completion screen shows a badge for finishing and nothing numeric.
+- The child never sees a score, an accuracy figure, a tier, or a grade level.
+  The last thing a child sees is the final question of a sitting; the placement
+  page that follows it is written for the grown-up.
 - There is deliberately **no error/red color role** in the token set, so a red X
   cannot be added to the child flow without a design-system change.
-- The word "test" appears nowhere in child-facing copy.
+- The word "test" **does** appear, in the subject intro headings ("The Oral
+  Reading & Fluency test"). That comes from the design bundle and reverses the
+  original no-"test" rule — noted here so nobody thinks it slipped through.
 - Celebration animations and narration are correctness-blind by construction —
   the question screen never receives whether the answer was right.
 
@@ -257,7 +259,7 @@ numbers live in `src/assessment/sessionMeta.ts`:
   so the promise cannot drift from what a child is actually asked.
 
 **The coins are only promised.** Nothing in this flow awards or banks them:
-there is no wallet, and the completion screen still shows no score. Wiring the
+there is no wallet, and no screen shows a child a score. Wiring the
 award to the child's account is the host app's job.
 
 Two colour systems, both from the design: the **soft tile palette**
