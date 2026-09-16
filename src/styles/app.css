@@ -904,7 +904,10 @@ body {
 .dialog__kicker { color: var(--text-muted); }
 .dialog__title { margin: 0; font-size: clamp(22px, 3vw, 28px); font-weight: var(--fw-black); color: var(--text-primary); line-height: 1.2; }
 .dialog__body { margin: 0 0 var(--space-3); }
+.dialog__actions { display: flex; flex-direction: column; gap: 8px; width: 100%; }
 .dialog .btn { width: 100%; white-space: normal; }
+/* Not shouted: this is the quiet option, in a sentence. */
+.dialog .btn--ghost { min-height: 48px; text-transform: none; letter-spacing: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .dialog-scrim, .dialog { animation: none; }

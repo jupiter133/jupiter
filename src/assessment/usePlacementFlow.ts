@@ -47,6 +47,8 @@ interface Flow {
   session: SessionState | null;
   /** The subject this sitting assesses. */
   subject: Subject | null;
+  /** The subject after this one, or null when the placement is finished. */
+  nextSubject: Subject | null;
   /** Every subject this grade is assessed on, in sitting order. */
   requiredSubjects: Subject[];
   /** Which sitting this is, 1-based, and how many there are. */
@@ -291,6 +293,7 @@ export function usePlacementFlow(childName: string): Flow {
     grade,
     session,
     subject: sittingSubject,
+    nextSubject,
     requiredSubjects,
     sessionNumber: sittingSubject ? requiredSubjects.indexOf(sittingSubject) + 1 : 1,
     sessionCount: requiredSubjects.length,

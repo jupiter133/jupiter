@@ -79,7 +79,9 @@ export default function App() {
           subject={flow.subject}
           done={flow.result.subjects.length}
           total={flow.requiredSubjects.length}
-          onContinue={flow.dismissSectionComplete}
+          nextSubject={flow.nextSubject}
+          onKeepGoing={flow.continueNext}
+          onHandBack={flow.dismissSectionComplete}
         />
       )}
 

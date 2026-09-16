@@ -24,7 +24,7 @@ npm run build   # typecheck + production build
 | 2 | Meet Ms Hannah — the five subject tiles, time and coins | Child | `src/screens/HandoffScreen.tsx` |
 | 2b | Subject intro — one per subject, with its rule cards | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
-| 3b | Section complete — a popup over the quest | Child | `src/components/SectionCompleteDialog.tsx` |
+| 3b | Section complete — popup: keep going, or hand back | Child | `src/components/SectionCompleteDialog.tsx` |
 | 4 | Placement results — one program, five subject rows | Parent | `src/screens/ParentResultsScreen.tsx` |
 
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
@@ -208,8 +208,11 @@ instantly, sparkles are removed entirely, and nothing about the flow is lost.
   receives correctness — it only reports the choice upward.
 - The child never sees a score, an accuracy figure, a tier, or a grade level.
   A sitting ends on a popup over the quest that names the part just finished
-  and how many of the five are done — progress, never performance. The
-  placement page behind it is written for the grown-up.
+  and how many of the five are done — progress, never performance. It offers
+  two ways on: **keep going** into the next subject, or **hand the tablet
+  back**. A child in flow should not need an adult to continue, and a tired one
+  should not be pushed on. The last part offers only the hand-back. Escape
+  takes the cautious exit.
 - There is deliberately **no error/red color role** in the token set, so a red X
   cannot be added to the child flow without a design-system change.
 - The word "test" **does** appear, in the subject intro headings ("The Oral
