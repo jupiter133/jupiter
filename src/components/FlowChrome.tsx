@@ -3,7 +3,7 @@
  * top-right, and a back link at the foot of every step except the first.
  *
  * The nine map to the design's steps: hook, grown-up setup, meet Ms Hannah,
- * the five subjects, results.
+ * the track’s seven subjects, results.
  */
 export const FLOW_STEPS = 9;
 

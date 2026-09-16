@@ -173,10 +173,11 @@ describe('non-determining results', () => {
     expect(evaluateGate(inputs('5', { writing: -2 }))!.determinedBy).toEqual([
       'oral-reading',
       'reading-comprehension',
-      'vocabulary-spelling',
+      'vocabulary',
+      'spelling',
       'sentence-writing',
     ]);
-    expect(evaluateGate(inputs('5', { math: -2 }))!.determinedBy).toHaveLength(5);
+    expect(evaluateGate(inputs('5', { math: -2 }))!.determinedBy).toHaveLength(6);
   });
 });
 

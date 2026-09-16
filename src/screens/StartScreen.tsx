@@ -1,10 +1,13 @@
 import head from '../assets/ms-hannah-head.png';
 import { displayName, possessiveName } from '../assessment/childName';
 import { CoinPill } from '../components/CoinPill';
+import type { Track } from '../assessment/types';
 import { PLACEMENT_COIN_AWARD, estimatedTimeLabel } from '../assessment/sessionMeta';
 
 interface Props {
   childName: string;
+  /** Which assessment is waiting — sets the time estimate. */
+  track: Track;
   /** True when a stored placement is part-finished. */
   isResuming: boolean;
   /** Copy for what the next sitting covers, e.g. "Mathematics". */
@@ -23,6 +26,7 @@ interface Props {
  */
 export function StartScreen({
   childName,
+  track,
   isResuming,
   nextSubjectLabel,
   onStart,
@@ -52,7 +56,7 @@ export function StartScreen({
         <div className="hook-stats">
           <div className="hook-stat">
             <span className="label">Takes about</span>
-            <span className="hook-stat__value">{estimatedTimeLabel()}</span>
+            <span className="hook-stat__value">{estimatedTimeLabel(track)}</span>
           </div>
           <div className="hook-stat">
             <span className="label">{name} earns</span>

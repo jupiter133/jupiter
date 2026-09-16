@@ -21,11 +21,11 @@ npm run build   # typecheck + production build
 | 0 | Parent hook — "Where should {child} begin?" | Parent | `src/screens/StartScreen.tsx` |
 | 0b | Deferred — where "Maybe later" lands | Parent | `src/screens/DeferredScreen.tsx` |
 | 1 | Grown-up setup — confirm age/grade, optional note | Parent | `src/screens/ParentContextScreen.tsx` |
-| 2 | Meet Ms Hannah — the five subject tiles, time and coins | Child | `src/screens/HandoffScreen.tsx` |
+| 2 | Meet Ms Hannah — the track's seven subject tiles, time and coins | Child | `src/screens/HandoffScreen.tsx` |
 | 2b | Subject intro — one per subject, with its rule cards | Child | `src/screens/SectionIntroScreen.tsx` |
 | 3 | Question (reusable, looped; passage + question layout) | Child | `src/screens/QuestionScreen.tsx` |
 | 3b | Section complete — popup: keep going, or hand back | Child | `src/components/SectionCompleteDialog.tsx` |
-| 4 | Placement results — one program, five subject rows | Parent | `src/screens/ParentResultsScreen.tsx` |
+| 4 | Placement results — one program, seven subject rows | Parent | `src/screens/ParentResultsScreen.tsx` |
 
 `src/assessment/usePlacementFlow.ts` owns the step machine and session state; the
 screens are presentational.
@@ -104,7 +104,7 @@ design bundle. It never re-asks for the name:
 
 `src/components/FlowChrome.tsx` draws the nine progress pills top-right and the
 back link at the foot. The nine are the design's steps: hook, grown-up setup,
-meet Ms Hannah, the five subjects, results.
+meet Ms Hannah, the seven subjects, results.
 
 Back is offered on the grown-up setup, the handoff and a subject intro. It is
 **withheld mid-question and after a sitting finishes**: rewinding would throw
@@ -254,13 +254,13 @@ kindergarten content. Two consequences, both content decisions rather than code:
 
 ## The nine screens come from the design bundle
 
-Screens 0, 1, 2, the five subject intros and the results page are all built to
+Screens 0, 1, 2, the subject intros and the results page are all built to
 `design_handoff_olc_assessment_intro`, with its copy. The pieces that carry
 numbers live in `src/assessment/sessionMeta.ts`:
 
 - **Estimated time** for the whole placement, and per sitting.
 - **Coins** — shown on the hook and on Ms Hannah's card as a CoinPill.
-- **What's included** — the five subject tiles, derived from `SUBJECT_ORDER`
+- **What's included** — the seven subject tiles, derived from the track's own subject list
   so the promise cannot drift from what a child is actually asked.
 
 **The coins are only promised.** Nothing in this flow awards or banks them:
@@ -278,18 +278,58 @@ subject name above a question. `--tag-tilt` is 0.
 **Cyan, gold and lime tags carry ink, not white.** They are light fills: white
 on cyan is about 2.2:1, which fails at any size and badly at 13px.
 
+## Two tracks
+
+**Age chooses the assessment.** A five-year-old and a ten-year-old are not
+doing the same thing, so they do not sit the same activities.
+
+| | Little Reader Adventure | Grade Level Challenge |
+|---|---|---|
+| Who | age 6 and under | age 7 and up |
+| Theme | the park | Scholar's Tower |
+| Lead | "Step right up! Pick a ride and show off your reading superpowers!" | "Step into the tower — 7 chambers of wisdom await your mind!" |
+| Call to action | Enter the Park! | Ascend the Tower! |
+| Shape | 7 Activities · ~15 min · Fun & Easy | 7 Chambers · ~30 min · Adaptive |
+
+The boundary is `LITTLE_READER_MAX_AGE` in `src/assessment/tracks.ts`, in one
+place, **pending teacher sign-off** — it is a judgement about children, not a
+fact about code. `trackFor(age, grade)` falls back to grade (Early Learners
+through Grade 1) only for an account that never captured an age; guessing from
+grade beats defaulting a five-year-old into the tower.
+
+Everything downstream reads the track rather than hard-coding a subject list:
+the hero screen's name, lead, tiles, stat chips and button, the section-intro
+kicker ("Chamber 2 of 7" / "Activity 3 of 7") and noun (a *ride*, or a *test*),
+the results rows, and which subjects a placement decision may rest on.
+
 ## Subjects
 
-**Every child sits all five subjects, in this order**, named exactly as the
-assessment intro design names them:
+**Every child sits all seven subjects in their track, in this order**, named
+exactly as the assessment intro design names them:
 
-| # | Subject | Colour | Sitting |
+### Little Reader Adventure
+
+| # | Activity | Colour | Sitting |
 |---|---------|--------|---------|
-| 1 | Oral Reading & Fluency | cyan | 8 questions |
-| 2 | Reading Comprehension | green | 8 questions |
-| 3 | Vocabulary & Spelling | pink | 8 questions |
-| 4 | Sentence Writing | gold | 8 questions |
-| 5 | Mathematics | lime | 10 questions |
+| 1 | Find the Same | pink | 6 questions |
+| 2 | Match Making | gold | 6 questions |
+| 3 | Spot the Difference | green | 6 questions |
+| 4 | Shapes & Colors | cyan | 6 questions |
+| 5 | Number Fun | lime | 6 questions |
+| 6 | Letter Sounds | pink | 8 questions |
+| 7 | Word Practice | green | 8 questions |
+
+### Grade Level Challenge
+
+| # | Chamber | Colour | Sitting |
+|---|---------|--------|---------|
+| 1 | Words Speaking | cyan | 6 questions |
+| 2 | Oral Reading | pink | 8 questions |
+| 3 | Vocabulary | gold | 8 questions |
+| 4 | Reading Comprehension | green | 8 questions |
+| 5 | Spelling | lime | 8 questions |
+| 6 | Sentence Writing | gold | 8 questions |
+| 7 | Math | cyan | 10 questions |
 
 Nobody is stopped early. A result we did not gather is a result a teacher
 cannot look at. Each sitting is separate and resumable, and a child can tap
@@ -297,7 +337,10 @@ cannot look at. Each sitting is separate and resumable, and a child can tap
 remembered for that run and the subject reads as "not yet assessed" until it
 is actually sat.
 
-### Reading is two of the five
+**Words Speaking is never a gate input.** It is recorded as an observation in
+every outcome and always reads as non-determining on the results page.
+
+### Reading is two of the seven
 
 The gate needs one reading level, and it comes from **both reading subjects**
 (`src/assessment/readingLevel.ts`):
@@ -462,11 +505,20 @@ parent-facing label ever contains the word "tier".
 ## Content
 
 `src/content/questionBank.json` — placeholder bank, tagged by subject and
-tier, covering **every tier 0–8 in all five subjects** (at least 3 per
-cell). The two reading subjects carry 6+ per tier; the rest carry 3, and
-production wants 6+ everywhere. Reading and spelling items come from a
-separate, clearly marked stub file (`readingBank.stub.json`). Subject and tier data live in the JSON, so dropping in the real bank
+tier, covering **every tier 0–8 in all fourteen subjects** (at least 3 per
+cell). Subject and tier data live in the JSON, so dropping in the real bank
 needs no engine change.
+
+**Two of the three banks are template-generated stubs, not assessment
+content**, and both are flagged so nothing ships on them quietly:
+
+| File | Covers | Flag |
+|---|---|---|
+| `readingBank.stub.json` | oral reading, comprehension, vocabulary | `READING_BANK_IS_STUB` |
+| `trackBank.stub.json` | the seven Little Reader activities, Words Speaking, Spelling | `TRACK_BANK_IS_STUB` |
+
+A test asserts both flags are still `true`. Flip the expectations when the
+teacher-written banks land.
 
 Production content should carry **6+ items per subject/tier cell**. A sitting
 can draw 5 questions from one tier before the stop rule fires, and when a tier

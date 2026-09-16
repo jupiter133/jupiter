@@ -5,7 +5,7 @@ import {
   isWithinOneGrade,
 } from './tiers';
 import type { Subject } from './subjects';
-import { READING_SUBJECTS } from './readingLevel';
+import { readingSubjectsFor } from './readingLevel';
 import { CORE_SKILLS_PROGRAMS, coreBandForGrade, coreReadingProgramFor } from './programs';
 
 export type GateOutcome =
@@ -70,7 +70,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 1,
       outcome: 'reading-track',
       programName: coreReadingProgramFor(readingTier),
-      determinedBy: READING_SUBJECTS,
+      determinedBy: readingSubjectsFor('grade-level'),
       readingGated: true,
     };
   }
@@ -82,7 +82,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 2,
       outcome: 'core-reading',
       programName: core.reading,
-      determinedBy: READING_SUBJECTS,
+      determinedBy: readingSubjectsFor('grade-level'),
       readingGated: false,
     };
   }
@@ -97,7 +97,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 3,
       outcome: 'core-writing',
       programName: core.writing,
-      determinedBy: [...READING_SUBJECTS, 'vocabulary-spelling', 'sentence-writing'],
+      determinedBy: [...readingSubjectsFor('grade-level'), 'vocabulary', 'spelling', 'sentence-writing'],
       readingGated: false,
     };
   }
@@ -113,7 +113,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
       step: 4,
       outcome: 'core-math',
       programName: core.math,
-      determinedBy: [...READING_SUBJECTS, 'vocabulary-spelling', 'sentence-writing', 'math'],
+      determinedBy: [...readingSubjectsFor('grade-level'), 'vocabulary', 'spelling', 'sentence-writing', 'math'],
       readingGated: false,
     };
   }
@@ -123,7 +123,7 @@ export function evaluateGate(inputs: GateInputs): GateDecision | null {
     step: 5,
     outcome: 'enriched',
     programName: core.enriched,
-    determinedBy: [...READING_SUBJECTS, 'vocabulary-spelling', 'sentence-writing', 'math'],
+    determinedBy: [...readingSubjectsFor('grade-level'), 'vocabulary', 'spelling', 'sentence-writing', 'math'],
     readingGated: false,
   };
 }

@@ -5,30 +5,22 @@ import type {
   ProgramPlacement,
   Question,
   SessionState,
+  Tier,
   Subject,
   SubjectPlacement,
   SubjectResult,
 } from './types';
-import { startTierForGrade, subjectsForGrade, tierGradeLabel } from './types';
+import { startTierForGrade, tierGradeLabel } from './types';
 import { MIN_TIER, clampTier, gapFor, gradeTier } from './tiers';
-import { evaluateGate, type GateInputs } from './gate';
+import { evaluateGate, type GateDecision, type GateInputs } from './gate';
 import { hasAgeGradeMismatch } from './intake';
-import { PROGRAM_DESCRIPTIONS } from './programs';
-import { READING_SUBJECTS, deriveReadingLevel } from './readingLevel';
+import { deriveReadingLevel, readingSubjectsFor } from './readingLevel';
+import { trackFor, subjectsForTrack } from './subjects';
+import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
+import { coreReadingProgramFor, PROGRAM_DESCRIPTIONS as DESCRIPTIONS } from './programs';
 import { QUESTIONS } from './questionBank';
 import { nextSubjectFor } from './placementStore';
 
-/**
- * Questions in one subject sitting, at most. Math runs longer because its
- * intro promises about ten puzzles; the rest sit eight.
- */
-export const QUESTIONS_PER_SUBJECT: Record<Subject, number> = {
-  'oral-reading': 8,
-  'reading-comprehension': 8,
-  'vocabulary-spelling': 8,
-  'sentence-writing': 8,
-  math: 10,
-};
 /** End the subject early once the tier has held for this many answers. */
 export const STABILITY_WINDOW = 4;
 /** Consecutive answers needed to move a tier. */
@@ -163,6 +155,31 @@ export function toSubjectResult(state: SessionState): SubjectResult {
   };
 }
 
+/** The lower of two gaps, or null when either is missing. */
+function worseOf(a: number | null, b: number | null): number | null {
+  if (a === null || b === null) return null;
+  return Math.min(a, b);
+}
+
+/**
+ * The Little Reader Adventure has no writing or comprehension to route on, so
+ * the five-step gate does not apply: everyone who sits it is placed on the
+ * reading track, at the level their two reading activities give.
+ *
+ * PENDING TEACHER SIGN-OFF — the readiness activities (matching, shapes,
+ * numbers) are recorded but do not move the placement.
+ */
+function littleReaderDecision(readingTier: Tier | null): GateDecision | null {
+  if (readingTier === null) return null;
+  return {
+    step: 1,
+    outcome: 'reading-track',
+    programName: coreReadingProgramFor(readingTier),
+    determinedBy: readingSubjectsFor('little-reader'),
+    readingGated: true,
+  };
+}
+
 /**
  * Assembles the parent-facing result from whatever subjects are finished.
  *
@@ -177,7 +194,8 @@ export function buildResult(
   age: number | null,
   completed: SubjectResult[],
 ): PlacementResult {
-  const requiredSubjects = subjectsForGrade(grade);
+  const track = trackFor(age, grade);
+  const requiredSubjects = subjectsForTrack(track);
   const inOrder = requiredSubjects
     .map((subject) => completed.find((r) => r.subject === subject))
     .filter((r): r is SubjectResult => Boolean(r));
@@ -191,20 +209,23 @@ export function buildResult(
     return gapFor(r.finalTier, grade);
   };
 
-  // Reading is two subjects; the level the gate reads is derived from both.
-  const readingParts = READING_SUBJECTS.map((subject) => by(subject)).filter(
-    (r): r is SubjectResult => Boolean(r),
-  );
-  const readingTier = deriveReadingLevel(readingParts);
+  // Reading is measured by more than one subject; the level is derived.
+  const readingParts = readingSubjectsFor(track)
+    .map((subject) => by(subject))
+    .filter((r): r is SubjectResult => Boolean(r));
+  const readingTier = deriveReadingLevel(track, readingParts);
   const gateInputs: GateInputs = {
     grade,
     readingTier,
     readingGap: readingTier === null ? null : gapFor(readingTier, grade),
-    vocabularySpellingGap: gapOf('vocabulary-spelling'),
+    // Either one behind trips step 3, and step 4 needs both within one grade,
+    // so the weaker of the two is the number both rules want.
+    vocabularySpellingGap: worseOf(gapOf('vocabulary'), gapOf('spelling')),
     sentenceWritingGap: gapOf('sentence-writing'),
     mathGap: gapOf('math'),
   };
-  const decision = evaluateGate(gateInputs);
+  const decision =
+    track === 'little-reader' ? littleReaderDecision(readingTier) : evaluateGate(gateInputs);
   const readingGated = decision?.readingGated ?? false;
 
   const nextSubject = nextSubjectFor(requiredSubjects, completed);
@@ -230,7 +251,7 @@ export function buildResult(
               ? (readingTier ?? MIN_TIER)
               : gradeTier(grade),
           ),
-          description: PROGRAM_DESCRIPTIONS[decision.outcome],
+          description: DESCRIPTIONS[decision.outcome],
           gateStep: decision.step,
           outcome: decision.outcome,
         }
@@ -238,6 +259,7 @@ export function buildResult(
 
   return {
     grade,
+    track,
     age,
     ageGradeMismatch: age === null ? false : hasAgeGradeMismatch(age, grade),
     requiredSubjects,

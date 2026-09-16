@@ -2,8 +2,7 @@ import type { GlyphName } from '../components/glyphs';
 import type { Grade, Tier } from './tiers';
 import { gradeTier } from './tiers';
 import type { AgeBand } from './intake';
-import type { Subject } from './subjects';
-import { SUBJECT_ORDER } from './subjects';
+import type { Subject, Track } from './subjects';
 import type { GateOutcome } from './gate';
 
 
@@ -21,20 +20,25 @@ export function startTierForGrade(grade: Grade): Tier {
 export type { AgeBand };
 export { ageBandForAge, hasAgeGradeMismatch, ageGradeOffset, MIN_AGE, MAX_AGE } from './intake';
 
-export type { Subject };
-export { SUBJECT_ORDER, SUBJECT_LABEL } from './subjects';
+export type { Subject, Track };
+export {
+  SUBJECT_LABEL,
+  SUBJECT_SHORT,
+  SUBJECT_COLOR,
+  SUBJECT_TILE,
+  TRACKS,
+  trackFor,
+  trackOf,
+  subjectsForTrack,
+} from './subjects';
 
-export { SUBJECT_SHORT, SUBJECT_COLOR, SUBJECT_TILE } from './subjects';
-export { READING_SUBJECTS, isReadingSubject, deriveReadingLevel, readingBottleneck } from './readingLevel';
+export { readingSubjectsFor, isReadingSubject, deriveReadingLevel, readingBottleneck } from './readingLevel';
 
 /**
- * Every child sits all four subjects, in this order, whatever their grade and
- * whatever the earlier sittings say. Nobody is stopped early: a result we did
- * not gather is a result a teacher cannot look at.
+ * Every child sits every subject in their track, in order, whatever the
+ * earlier sittings say. Nobody is stopped early: a result we did not gather is
+ * a result a teacher cannot look at.
  */
-export function subjectsForGrade(_grade: Grade): Subject[] {
-  return SUBJECT_ORDER;
-}
 
 export type SceneName =
   | 'lost-mitten'
@@ -200,7 +204,9 @@ export interface PlacementResult {
   age: number | null;
   /** Age and grade disagree by two years or more. Shown for teacher review. */
   ageGradeMismatch: boolean;
-  /** Subjects assessed, in sitting order. Always all four. */
+  /** Which assessment this child sat. */
+  track: Track;
+  /** Subjects assessed, in sitting order — every one in the track. */
   requiredSubjects: Subject[];
   /** Only the subjects actually completed so far. */
   subjects: SubjectPlacement[];

@@ -1,18 +1,20 @@
 import type { Subject } from '../assessment/subjects';
 
 /**
- * Subject intro copy, verbatim from the OLC assessment intro design bundle
- * (`design_handoff_olc_assessment_intro`). The design is the source of truth;
- * treat this file as content, not prose to improve.
+ * Subject intro copy.
  *
- * NOTE: three of these describe input modes the question engine does not
- * implement yet — speaking into a microphone (oral reading), typing a word on
- * a keyboard (vocabulary & spelling), and free writing about a picture
- * (sentence writing). Today every item is multiple choice. See the README.
+ * The Grade Level Challenge intros for oral reading, comprehension, sentence
+ * writing and math are verbatim from the OLC assessment intro design bundle.
+ * Vocabulary and spelling are that bundle's combined "Vocabulary & Spelling"
+ * intro split in two. The Little Reader Adventure intros and Words Speaking
+ * are written to the same shape and are PLACEHOLDER — teacher copy pending.
+ *
+ * NOTE: several of these describe input modes the question engine does not
+ * implement yet — speaking into a microphone, typing a word, free writing.
+ * Today every item is multiple choice. See the README.
  */
 export interface IntroChip {
   label: string;
-  /** Fill and hard bottom edge, as CSS custom property names. */
   bg: string;
   edge: string;
 }
@@ -25,7 +27,6 @@ export interface IntroSection {
 }
 
 export interface SubjectIntro {
-  kicker: string;
   lead: string;
   cta: string;
   chips: IntroChip[];
@@ -36,185 +37,178 @@ const CYAN = { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)' };
 const LIME = { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)' };
 const PINK = { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)' };
 
+const C1 = 'var(--olc-cyan-soft)';
+const C2 = 'var(--olc-lime)';
+const C3 = 'var(--olc-gold-soft)';
+const C4 = 'var(--olc-pink-soft)';
+
+/** Four rule cards, in the design's fixed colour order. */
+function rules(items: [string, string][]): IntroSection[] {
+  const chips = [C1, C2, C3, C4];
+  return items.map(([title, body], i) => ({
+    num: String(i + 1),
+    chip: chips[i] ?? C1,
+    title,
+    body,
+  }));
+}
+
 export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
+  /* ---------- Little Reader Adventure ---------- */
+  'find-the-same': {
+    lead: 'Look at the pictures and find the two that match.',
+    cta: 'Start matching',
+    chips: [{ label: 'Look closely', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~2 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'You’ll see a row of pictures. Two of them are exactly the same — tap the one that matches.'],
+      ['Take your time', 'There’s no clock. Look at each picture for as long as you like before you choose.'],
+      ['Need a hand?', 'Tap the speaker to hear the question read out loud, any time you want.'],
+      ['The rules', 'One puzzle at a time. A guess is always okay — nothing here can go wrong.'],
+    ]),
+  },
+  'match-making': {
+    lead: 'Match each picture to the one that goes with it.',
+    cta: 'Start the matching game',
+    chips: [{ label: 'Pairs', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~2 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'You’ll see one picture at the top and a few below. Tap the one that belongs with it.'],
+      ['Things that go together', 'A sock and a shoe. A bird and a nest. Think about which two are friends.'],
+      ['Need a hand?', 'Tap the speaker to hear it read out loud whenever you like.'],
+      ['The rules', 'No timer, no score. Pick the one you think fits best.'],
+    ]),
+  },
+  'spot-the-difference': {
+    lead: 'One of these is not like the others — can you spot it?',
+    cta: 'Start spotting',
+    chips: [{ label: 'Odd one out', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~2 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'You’ll see a few pictures. All of them go together except one — tap the odd one out.'],
+      ['Look carefully', 'Sometimes it’s the shape, sometimes the colour, sometimes what it is. Trust your eyes.'],
+      ['Need a hand?', 'Tap the speaker to hear the question again.'],
+      ['The rules', 'One at a time, no rush, no wrong way to think about it.'],
+    ]),
+  },
+  'shapes-colors': {
+    lead: 'Shapes and colours — find the one being asked for.',
+    cta: 'Start shapes & colours',
+    chips: [{ label: 'Shapes', ...CYAN }, { label: 'Colours', ...LIME }, { label: '~2 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'A question asks for a shape or a colour. Tap the picture that matches it.'],
+      ['The shapes', 'Circles, squares, triangles and rectangles — the ones you already know.'],
+      ['Need a hand?', 'Tap the speaker to hear the shape or colour said out loud.'],
+      ['The rules', 'One question at a time. Best guesses count for plenty.'],
+    ]),
+  },
+  'number-fun': {
+    lead: 'Counting and numbers, one little puzzle at a time.',
+    cta: 'Start counting',
+    chips: [{ label: 'Counting', ...CYAN }, { label: 'Starts easy', ...LIME }, { label: '~2 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'You’ll see things to count, or numbers to pick. Tap your answer.'],
+      ['Fingers allowed', 'Count on your fingers, out loud, or in your head — whatever helps you.'],
+      ['Need a hand?', 'Tap the speaker to hear the question read to you.'],
+      ['The rules', 'It starts easy and only gets trickier while you’re doing well.'],
+    ]),
+  },
+  'letter-sounds': {
+    lead: 'Letters and the sounds they make.',
+    cta: 'Start letter sounds',
+    chips: [{ label: 'Listen', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~3 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'A sound or a letter comes up, and you tap the picture or word that goes with it.'],
+      ['Sound it out', 'Say the sound to yourself first. Your mouth often knows before your eyes do.'],
+      ['Need a hand?', 'Tap the speaker to hear the sound again, as many times as you like.'],
+      ['The rules', 'One at a time, no timer. Guessing is part of learning.'],
+    ]),
+  },
+  'word-practice': {
+    lead: 'Words you’re starting to know by sight.',
+    cta: 'Start word practice',
+    chips: [{ label: 'Whole words', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~3 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'You’ll see a word and a few choices. Tap the one that matches.'],
+      ['Sight words', 'Some words you just know by looking — the, and, see, go. Those are the ones.'],
+      ['Need a hand?', 'Tap the speaker to hear the word out loud.'],
+      ['The rules', 'No pass or fail here. Every answer tells Ms Hannah something useful.'],
+    ]),
+  },
+
+  /* ---------- Grade Level Challenge ---------- */
+  'words-speaking': {
+    lead: 'Say each word out loud, clearly, so Ms Hannah can hear you.',
+    cta: 'Start speaking',
+    chips: [{ label: 'Speak aloud', ...CYAN }, { label: 'One word at a time', ...LIME }, { label: '~3 minutes', ...PINK }],
+    sections: rules([
+      ['Before you start', 'Find a quiet spot and make sure the sound is on. Your grown-up can sit nearby.'],
+      ['Saying the words', 'A word appears on screen. Say it out loud, nice and clearly. Not sure? Your best try is exactly right.'],
+      ['How we listen', 'The tablet listens while you speak and marks each one for Ms Hannah. Nothing is saved except your answers.'],
+      ['The rules', 'One word at a time, and you can pause between them whenever you need to.'],
+    ]),
+  },
   'oral-reading': {
-    kicker: 'First up · Part 1 of 5',
     lead: 'Read the words and short sentences out loud, clearly — you have 3 seconds per word.',
     cta: 'Start reading aloud',
-    chips: [
-      { label: 'Speak aloud', ...CYAN },
-      { label: '3s per word', ...LIME },
-      { label: '~3 minutes', ...PINK },
-    ],
-    sections: [
-      {
-        num: '1',
-        chip: 'var(--olc-cyan-soft)',
-        title: 'Before you start',
-        body: 'Find a quiet spot and sit with your grown-up nearby. Make sure the sound is on so Ms Hannah can hear you.',
-      },
-      {
-        num: '2',
-        chip: 'var(--olc-lime)',
-        title: 'Reading out loud',
-        body: 'A word or short sentence appears on the screen. Read it out loud, nice and clearly. Not sure? Take your best guess — guessing is part of exploring!',
-      },
-      {
-        num: '3',
-        chip: 'var(--olc-gold-soft)',
-        title: 'How we listen',
-        body: 'The tablet listens while you read and marks each one for Ms Hannah. Nothing is saved except your answers.',
-      },
-      {
-        num: '4',
-        chip: 'var(--olc-pink-soft)',
-        title: 'The rules',
-        body: 'One at a time, about 3 seconds each. You can pause between words whenever you need a break.',
-      },
-    ],
+    chips: [{ label: 'Speak aloud', ...CYAN }, { label: '3s per word', ...LIME }, { label: '~3 minutes', ...PINK }],
+    sections: rules([
+      ['Before you start', 'Find a quiet spot and sit with your grown-up nearby. Make sure the sound is on so Ms Hannah can hear you.'],
+      ['Reading out loud', 'A word or short sentence appears on the screen. Read it out loud, nice and clearly. Not sure? Take your best guess — guessing is part of exploring!'],
+      ['How we listen', 'The tablet listens while you read and marks each one for Ms Hannah. Nothing is saved except your answers.'],
+      ['The rules', 'One at a time, about 3 seconds each. You can pause between words whenever you need a break.'],
+    ]),
+  },
+  vocabulary: {
+    lead: 'What words mean — match each one to its meaning.',
+    cta: 'Start the word round',
+    chips: [{ label: 'Word meanings', ...CYAN }, { label: 'Tap answers', ...LIME }, { label: '~4 minutes', ...PINK }],
+    sections: rules([
+      ['How it works', 'A question shows a word and four meanings or pictures — tap the one that matches.'],
+      ['In a sentence', 'Some words come inside a sentence. The sentence is a clue: read it before you choose.'],
+      ['Need it read to you?', 'Tap the speaker to hear the word and the choices out loud — that’s allowed.'],
+      ['The rules', 'No time limit. Your best guess always beats a blank.'],
+    ]),
   },
   'reading-comprehension': {
-    kicker: 'Next · Part 2 of 5',
     lead: 'Read a short story, then answer a few questions about what happened.',
     cta: 'Start the story questions',
-    chips: [
-      { label: 'Short stories', ...CYAN },
-      { label: 'Tap answers', ...LIME },
-      { label: '~5 minutes', ...PINK },
-    ],
-    sections: [
-      {
-        num: '1',
-        chip: 'var(--olc-cyan-soft)',
-        title: 'The stories',
-        body: 'You’ll read two or three very short stories. Read at your own pace — you can look back at the story any time.',
-      },
-      {
-        num: '2',
-        chip: 'var(--olc-lime)',
-        title: 'The questions',
-        body: 'After each story, a few questions ask what happened, who did it, or why. Tap the answer you think is right.',
-      },
-      {
-        num: '3',
-        chip: 'var(--olc-gold-soft)',
-        title: 'Need it read to you?',
-        body: 'Tap the speaker to hear a story out loud — that’s allowed, and it tells Ms Hannah something helpful too.',
-      },
-      {
-        num: '4',
-        chip: 'var(--olc-pink-soft)',
-        title: 'The rules',
-        body: 'No time limit. Your best guess always beats a blank — there’s no losing points.',
-      },
-    ],
+    chips: [{ label: 'Short stories', ...CYAN }, { label: 'Tap answers', ...LIME }, { label: '~5 minutes', ...PINK }],
+    sections: rules([
+      ['The stories', 'You’ll read two or three very short stories. Read at your own pace — you can look back at the story any time.'],
+      ['The questions', 'After each story, a few questions ask what happened, who did it, or why. Tap the answer you think is right.'],
+      ['Need it read to you?', 'Tap the speaker to hear a story out loud — that’s allowed, and it tells Ms Hannah something helpful too.'],
+      ['The rules', 'No time limit. Your best guess always beats a blank — there’s no losing points.'],
+    ]),
   },
-  'vocabulary-spelling': {
-    kicker: 'Next · Part 3 of 5',
-    lead: 'Ms Hannah says a word out loud — type it the way you think it’s spelled, and match words to their meanings.',
-    cta: 'Start the word round',
-    chips: [
-      { label: 'Listen first', ...CYAN },
-      { label: 'Type the word', ...LIME },
-      { label: '~4 minutes', ...PINK },
-    ],
-    sections: [
-      {
-        num: '1',
-        chip: 'var(--olc-cyan-soft)',
-        title: 'Hearing the word',
-        body: 'Ms Hannah says each word out loud, then uses it in a sentence so you know exactly which word she means. Tap the speaker to hear it again.',
-      },
-      {
-        num: '2',
-        chip: 'var(--olc-lime)',
-        title: 'Typing your answer',
-        body: 'Type the word with the keyboard, then press the green check. Your best guess is always okay.',
-      },
-      {
-        num: '3',
-        chip: 'var(--olc-gold-soft)',
-        title: 'Word meanings',
-        body: 'A few questions show a word and four pictures or meanings — tap the one that matches.',
-      },
-      {
-        num: '4',
-        chip: 'var(--olc-pink-soft)',
-        title: 'The rules',
-        body: 'One word at a time, no time limit. Once you press the check we move on — no going back, and that’s fine.',
-      },
-    ],
+  spelling: {
+    lead: 'Ms Hannah says a word out loud — spell it the way you think it’s spelled.',
+    cta: 'Start spelling',
+    chips: [{ label: 'Listen first', ...CYAN }, { label: 'Pick the spelling', ...LIME }, { label: '~4 minutes', ...PINK }],
+    sections: rules([
+      ['Hearing the word', 'Ms Hannah says each word out loud, then uses it in a sentence so you know exactly which word she means. Tap the speaker to hear it again.'],
+      ['Your answer', 'Choose the spelling that looks right to you. Your best guess is always okay.'],
+      ['Tricky on purpose', 'Some of these are meant to be hard. A hard one means you’re doing well.'],
+      ['The rules', 'One word at a time, no time limit. Once you choose we move on — no going back, and that’s fine.'],
+    ]),
   },
   'sentence-writing': {
-    kicker: 'Next · Part 4 of 5',
     lead: 'Look at a picture, then write a few sentences about what you see.',
     cta: 'Start writing',
-    chips: [
-      { label: 'One picture', ...CYAN },
-      { label: 'Write freely', ...LIME },
-      { label: '~5 minutes', ...PINK },
-    ],
-    sections: [
-      {
-        num: '1',
-        chip: 'var(--olc-cyan-soft)',
-        title: 'The picture',
-        body: 'You’ll see one fun picture. Look at it for as long as you like — who’s there, what’s happening, what might happen next?',
-      },
-      {
-        num: '2',
-        chip: 'var(--olc-lime)',
-        title: 'Your writing',
-        body: 'Write a few sentences about the picture. There’s no right answer — your own ideas are exactly what we want.',
-      },
-      {
-        num: '3',
-        chip: 'var(--olc-gold-soft)',
-        title: 'Spelling doesn’t count here',
-        body: 'Don’t worry about perfect spelling — this one is about your ideas and sentences.',
-      },
-      {
-        num: '4',
-        chip: 'var(--olc-pink-soft)',
-        title: 'The rules',
-        body: 'One picture, about 5 minutes. When you’re happy with your writing, press the green check.',
-      },
-    ],
+    chips: [{ label: 'One picture', ...CYAN }, { label: 'Write freely', ...LIME }, { label: '~5 minutes', ...PINK }],
+    sections: rules([
+      ['The picture', 'You’ll see one fun picture. Look at it for as long as you like — who’s there, what’s happening, what might happen next?'],
+      ['Your writing', 'Write a few sentences about the picture. There’s no right answer — your own ideas are exactly what we want.'],
+      ['Spelling doesn’t count here', 'Don’t worry about perfect spelling — this one is about your ideas and sentences.'],
+      ['The rules', 'One picture, about 5 minutes. When you’re happy with your writing, press the green check.'],
+    ]),
   },
   math: {
-    kicker: 'Last one · Part 5 of 5',
     lead: 'Solve some number puzzles — they start easy and only get harder if you’re doing great.',
     cta: 'Start the math puzzles',
-    chips: [
-      { label: 'Number puzzles', ...CYAN },
-      { label: 'Starts easy', ...LIME },
-      { label: '~10 puzzles', ...PINK },
-    ],
-    sections: [
-      {
-        num: '1',
-        chip: 'var(--olc-cyan-soft)',
-        title: 'How it works',
-        body: 'Each puzzle shows numbers or shapes with one question. Tap the answer you think is right.',
-      },
-      {
-        num: '2',
-        chip: 'var(--olc-lime)',
-        title: 'It adjusts to you',
-        body: 'The puzzles start easy and only get trickier while you’re doing well — so a hard one means you’re doing great!',
-      },
-      {
-        num: '3',
-        chip: 'var(--olc-gold-soft)',
-        title: 'Scratch space',
-        body: 'You can count on your fingers or ask your grown-up for paper — whatever helps you think.',
-      },
-      {
-        num: '4',
-        chip: 'var(--olc-pink-soft)',
-        title: 'The rules',
-        body: 'About 10 puzzles, no time limit. It’s okay to say “I don’t know yet” — that helps us too.',
-      },
-    ],
+    chips: [{ label: 'Number puzzles', ...CYAN }, { label: 'Starts easy', ...LIME }, { label: '~10 puzzles', ...PINK }],
+    sections: rules([
+      ['How it works', 'Each puzzle shows numbers or shapes with one question. Tap the answer you think is right.'],
+      ['It adjusts to you', 'The puzzles start easy and only get trickier while you’re doing well — so a hard one means you’re doing great!'],
+      ['Scratch space', 'You can count on your fingers or ask your grown-up for paper — whatever helps you think.'],
+      ['The rules', 'About 10 puzzles, no time limit. It’s okay to say “I don’t know yet” — that helps us too.'],
+    ]),
   },
 };

@@ -23,6 +23,7 @@ export default function App() {
       {flow.step === 'start' && (
         <StartScreen
           childName={flow.childName}
+          track={flow.track}
           isResuming={flow.isResuming}
           nextSubjectLabel={flow.subject ? SUBJECT_LABEL[flow.subject] : null}
           onStart={flow.beginIntake}
@@ -44,12 +45,13 @@ export default function App() {
       )}
 
       {flow.step === 'handoff' && (
-        <HandoffScreen childName={flow.childName} onStart={flow.beginQuest} />
+        <HandoffScreen childName={flow.childName} track={flow.track} onStart={flow.beginQuest} />
       )}
 
       {flow.step === 'section-intro' && flow.subject && (
         <SectionIntroScreen
           subject={flow.subject}
+          track={flow.track}
           onStart={flow.startSection}
           onDoLater={flow.doThisLater}
         />

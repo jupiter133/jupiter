@@ -2,19 +2,21 @@ import { useCallback, useMemo, useState } from 'react';
 import type {
   AgeBand,
   Grade,
+  Track,
   ParentContext,
   PlacementResult,
   Question,
   SessionState,
   Subject,
 } from './types';
-import { ageBandForAge, subjectsForGrade } from './types';
+import { ageBandForAge } from './types';
+import { subjectsForTrack, trackFor } from './subjects';
 import { READING_GATE_TIER } from './tiers';
 import { deriveReadingLevel } from './readingLevel';
 import { isReadingSubject } from './readingLevel';
 import { audioDefaultFor } from '../audio/speechScript';
+import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
 import {
-  QUESTIONS_PER_SUBJECT,
   buildResult,
   createSession,
   selectNextQuestion,
@@ -51,6 +53,8 @@ interface Flow {
   nextSubject: Subject | null;
   /** Every subject this grade is assessed on, in sitting order. */
   requiredSubjects: Subject[];
+  /** Which assessment this child is sitting. */
+  track: Track;
   /** Which sitting this is, 1-based, and how many there are. */
   sessionNumber: number;
   sessionCount: number;
@@ -118,18 +122,20 @@ export function usePlacementFlow(childName: string): Flow {
    * lowest tier and branches only upward. Read straight
    * off the stored reading result, so it survives a reload mid-placement.
    */
+  const track = useMemo(() => trackFor(age, grade), [age, grade]);
+
   const readingGated = useMemo(() => {
     const parts = (progress?.completed ?? []).filter(
       (r) => isReadingSubject(r.subject) && !r.floored,
     );
-    const level = deriveReadingLevel(parts);
+    const level = deriveReadingLevel(track, parts);
     return level !== null && level < READING_GATE_TIER;
-  }, [progress]);
-  const requiredSubjects = useMemo(() => (grade ? subjectsForGrade(grade) : []), [grade]);
+  }, [progress, track]);
+  const requiredSubjects = useMemo(() => (grade ? subjectsForTrack(track) : []), [grade, track]);
   const completed = progress?.completed ?? [];
   const nextSubject = useMemo(() => {
     if (!grade) return null;
-    const done = new Set([...completed.map((r) => r.subject), ...skipped]);
+    const done = new Set<Subject>([...completed.map((r) => r.subject), ...skipped]);
     return requiredSubjects.find((s) => !done.has(s)) ?? null;
   }, [grade, requiredSubjects, completed, skipped]);
 
@@ -245,7 +251,7 @@ export function usePlacementFlow(childName: string): Flow {
 
   /**
    * Where we are in the design's nine steps: hook, grown-up setup, meet
-   * Ms Hannah, the five subjects, results.
+   * Ms Hannah, the track’s seven subjects, results.
    */
   const stepIndex = useMemo(() => {
     if (step === 'start' || step === 'deferred') return 0;
@@ -294,6 +300,7 @@ export function usePlacementFlow(childName: string): Flow {
     session,
     subject: sittingSubject,
     nextSubject,
+    track,
     requiredSubjects,
     sessionNumber: sittingSubject ? requiredSubjects.indexOf(sittingSubject) + 1 : 1,
     sessionCount: requiredSubjects.length,

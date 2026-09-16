@@ -5,7 +5,7 @@ import { SUBJECT_LABEL, SUBJECT_SHORT } from '../assessment/types';
 interface Props {
   /** The sitting that just finished. */
   subject: Subject;
-  /** How many of the five are done, and how many there are. */
+  /** How many of the track’s sittings are done, and how many there are. */
   done: number;
   total: number;
   /** The next sitting, or null when that was the last one. */

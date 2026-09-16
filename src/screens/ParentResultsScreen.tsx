@@ -27,7 +27,7 @@ function levelTextFor(placement: SubjectPlacement | undefined): string {
 /**
  * Screen 5 — parent-facing results, built to the assessment intro design.
  *
- * One program on the left, all five subjects on the right. Tier and gap
+ * One program on the left, all seven of the track’s subjects on the right. Tier and gap
  * numbers never render; levels are said in grade-equivalent language only.
  */
 export function ParentResultsScreen({

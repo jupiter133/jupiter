@@ -1,25 +1,33 @@
 import { Teacher } from '../components/Teacher';
 import { firstName } from '../assessment/childName';
 import { CoinPill } from '../components/CoinPill';
-import { SUBJECT_LABEL, SUBJECT_ORDER, SUBJECT_TILE } from '../assessment/types';
-import { PLACEMENT_COIN_AWARD, estimatedTimeLabel } from '../assessment/sessionMeta';
+import type { Track } from '../assessment/types';
+import { SUBJECT_LABEL, SUBJECT_TILE, TRACKS } from '../assessment/types';
+import { PLACEMENT_COIN_AWARD, estimatedTimeLabel, includedStrands } from '../assessment/sessionMeta';
 
 interface Props {
   childName: string;
+  /** Which assessment this child sits — chosen by age, never by this screen. */
+  track: Track;
   onStart: () => void;
 }
 
 /**
  * Screen 2 — meet Ms Hannah. The parent passes the tablet over here.
  *
- * The five numbered tiles are the whole assessment at a glance, built from
- * SUBJECT_ORDER so they cannot drift from what the child is actually asked.
+ * Everything on it comes from the track config: the Little Reader Adventure
+ * and the Grade Level Challenge are different assessments with different
+ * names, leads, units and tiles, and this screen renders whichever one the
+ * child's age selected. The numbered tiles are built from the track's own
+ * subject list so they cannot drift from what the child is actually asked.
  * The word "test" appears nowhere on this screen.
  */
-export function HandoffScreen({ childName, onStart }: Props) {
+export function HandoffScreen({ childName, track, onStart }: Props) {
   // Child-facing copy has no fallback for a missing name — Ms Hannah greets by
   // name or not at all.
   const name = firstName(childName);
+  const config = TRACKS[track];
+  const strands = includedStrands(track);
 
   return (
     <div className="stage">
@@ -29,19 +37,14 @@ export function HandoffScreen({ childName, onStart }: Props) {
 
           <div className="meet__col">
             <div className="meet-card">
-              <p className="label meet-card__kicker">
-                Pass the tablet to {name ?? 'your explorer'}
-              </p>
+              <p className="label meet-card__kicker">{config.kicker}</p>
               <h1 className="display meet-card__title">
-                {name ? `Hi ${name}! I’m Ms Hannah.` : 'Hi! I’m Ms Hannah.'}
+                {name ? `Hi ${name}! I’m Ms Hannah.` : 'Hi! I’m Ms Hannah.'}
               </h1>
-              <p className="body meet-card__lead">
-                I’ve been mapping out a brand new trail and I need an explorer. There’s no
-                score and nothing to get wrong — just pick what you think fits.
-              </p>
+              <p className="body meet-card__lead">{config.lead}</p>
 
               <ol className="subject-tiles">
-                {SUBJECT_ORDER.map((subject, i) => {
+                {strands.map(({ subject }, i) => {
                   const tile = SUBJECT_TILE[subject];
                   return (
                     <li
@@ -61,14 +64,17 @@ export function HandoffScreen({ childName, onStart }: Props) {
               </ol>
 
               <div className="meet-pills">
-                <span className="meet-pill">{estimatedTimeLabel()} total</span>
+                <span className="meet-pill">
+                  {strands.length} {config.unitPlural}
+                </span>
+                <span className="meet-pill">{estimatedTimeLabel(track)}</span>
+                <span className="meet-pill">{config.character}</span>
                 <CoinPill amount={`+${PLACEMENT_COIN_AWARD.toLocaleString('en-CA')} coins`} />
-                <span className="meet-pill">Stop any time</span>
               </div>
             </div>
 
             <button type="button" className="btn btn--primary btn--large" onClick={onStart}>
-              Start the discovery quest
+              {config.cta}
             </button>
           </div>
         </div>

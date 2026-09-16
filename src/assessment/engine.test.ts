@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import {
-  QUESTIONS_PER_SUBJECT,
   STABILITY_WINDOW,
   buildResult,
   createSession,
@@ -9,22 +8,26 @@ import {
   submitAnswer,
   toSubjectResult,
 } from './engine';
-import { QUESTIONS, READING_BANK_IS_STUB } from './questionBank';
-import {
-  READING_SUBJECTS,
-  deriveReadingLevel,
-  readingBottleneck,
-} from './readingLevel';
-import type { Grade, SessionState, Subject, SubjectResult } from './types';
+import { QUESTIONS, READING_BANK_IS_STUB, TRACK_BANK_IS_STUB } from './questionBank';
+import { deriveReadingLevel, readingBottleneck, readingSubjectsFor } from './readingLevel';
+import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
+import type { Grade, SessionState, Subject, SubjectResult, Track } from './types';
 import {
   MAX_TIER,
   MIN_TIER,
-  SUBJECT_ORDER,
+  TRACKS,
   ageBandForAge,
   startTierForGrade,
-  subjectsForGrade,
+  subjectsForTrack,
+  trackFor,
   tierGradeLabel,
 } from './types';
+
+/** Every subject in the product, both tracks, in sitting order. */
+const EVERY_SUBJECT: Subject[] = [
+  ...subjectsForTrack('little-reader'),
+  ...subjectsForTrack('grade-level'),
+];
 
 function answer(state: SessionState, correct: boolean, at?: number): SessionState {
   const q = selectNextQuestion(state)!;
@@ -50,16 +53,51 @@ function sit(
 
 const ALL_GRADES: Grade[] = ['EL', 'JK', 'SK', '1', '2', '3', '4', '5', '6'];
 
-describe('subjects and bands', () => {
-  it('gives every grade all five subjects, in the design’s order', () => {
-    for (const grade of ALL_GRADES) {
-      expect(subjectsForGrade(grade), grade).toEqual([
-        'oral-reading',
-        'reading-comprehension',
-        'vocabulary-spelling',
-        'sentence-writing',
-        'math',
-      ]);
+describe('tracks and bands', () => {
+  it('sends six and under to the Little Reader Adventure and everyone older to the tower', () => {
+    expect(trackFor(5, '1')).toBe('little-reader');
+    expect(trackFor(6, '1')).toBe('little-reader');
+    expect(trackFor(7, '1')).toBe('grade-level');
+    expect(trackFor(11, '5')).toBe('grade-level');
+  });
+
+  it('falls back to grade only when the account never captured an age', () => {
+    expect(trackFor(null, 'SK')).toBe('little-reader');
+    expect(trackFor(null, '1')).toBe('little-reader');
+    expect(trackFor(null, '2')).toBe('grade-level');
+    expect(trackFor(null, null)).toBe('grade-level');
+  });
+
+  it('gives each track seven sittings, in the design’s order', () => {
+    expect(subjectsForTrack('little-reader')).toEqual([
+      'find-the-same',
+      'match-making',
+      'spot-the-difference',
+      'shapes-colors',
+      'number-fun',
+      'letter-sounds',
+      'word-practice',
+    ]);
+    expect(subjectsForTrack('grade-level')).toEqual([
+      'words-speaking',
+      'oral-reading',
+      'vocabulary',
+      'reading-comprehension',
+      'spelling',
+      'sentence-writing',
+      'math',
+    ]);
+  });
+
+  it('keeps the two tracks disjoint, so no subject belongs to both', () => {
+    const little = new Set<Subject>(subjectsForTrack('little-reader'));
+    expect(subjectsForTrack('grade-level').some((s) => little.has(s))).toBe(false);
+  });
+
+  it('rests each track’s decision only on subjects that track actually sits', () => {
+    for (const track of ['little-reader', 'grade-level'] as Track[]) {
+      const sat = new Set<Subject>(subjectsForTrack(track));
+      for (const subject of readingSubjectsFor(track)) expect(sat.has(subject), subject).toBe(true);
     }
   });
 
@@ -73,7 +111,7 @@ describe('subjects and bands', () => {
 
 describe('question bank', () => {
   it('covers every tier from K through Grade 8 in every subject', () => {
-    for (const subject of SUBJECT_ORDER) {
+    for (const subject of EVERY_SUBJECT) {
       for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
         const n = QUESTIONS.filter((q) => q.subject === subject && q.tier === tier).length;
         expect(n, `${subject} tier ${tier}`).toBeGreaterThanOrEqual(3);
@@ -82,7 +120,7 @@ describe('question bank', () => {
   });
 
   it('holds at least six items per tier in the two reading subjects', () => {
-    for (const subject of READING_SUBJECTS) {
+    for (const subject of [...readingSubjectsFor('little-reader'), ...readingSubjectsFor('grade-level')]) {
       for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
         const n = QUESTIONS.filter((q) => q.subject === subject && q.tier === tier).length;
         expect(n, `${subject} tier ${tier}`).toBeGreaterThanOrEqual(6);
@@ -93,6 +131,7 @@ describe('question bank', () => {
   it('knows the reading bank is a stub, so nobody ships on it by accident', () => {
     // Flip this expectation when the teacher-written banks land.
     expect(READING_BANK_IS_STUB).toBe(true);
+    expect(TRACK_BANK_IS_STUB).toBe(true);
   });
 
   it('uses unique ids and valid answer keys', () => {
@@ -103,7 +142,7 @@ describe('question bank', () => {
   });
 
   it('holds enough items to run every sitting to its full length', () => {
-    for (const subject of SUBJECT_ORDER) {
+    for (const subject of EVERY_SUBJECT) {
       const n = QUESTIONS.filter((q) => q.subject === subject).length;
       expect(n, subject).toBeGreaterThanOrEqual(QUESTIONS_PER_SUBJECT[subject]);
     }
@@ -167,7 +206,7 @@ describe('branching', () => {
 describe('length and stop rule', () => {
   it('never runs past its subject’s length', () => {
     for (const grade of ALL_GRADES) {
-      for (const subject of subjectsForGrade(grade)) {
+      for (const subject of subjectsForTrack(trackFor(null, grade))) {
         const s = sit(grade, subject, (i) => i % 3 === 0);
         expect(s.questionsAnswered.length, `${grade} ${subject}`).toBeLessThanOrEqual(
           QUESTIONS_PER_SUBJECT[subject],
@@ -200,7 +239,7 @@ describe('length and stop rule', () => {
   });
 
   it('only serves questions from the subject being sat', () => {
-    for (const subject of SUBJECT_ORDER) {
+    for (const subject of EVERY_SUBJECT) {
       const s = sit('5', subject, () => true);
       for (const a of s.questionsAnswered) expect(a.subject).toBe(subject);
     }
@@ -225,45 +264,56 @@ describe('reading level derivation', () => {
   ];
 
   it('defaults to the lower of the two reading subjects', () => {
-    expect(deriveReadingLevel(parts)).toBe(2);
+    expect(deriveReadingLevel('grade-level', parts)).toBe(2);
   });
 
   it('withholds a level until both reading subjects are sat', () => {
-    expect(deriveReadingLevel([parts[0]])).toBeNull();
+    expect(deriveReadingLevel('grade-level', [parts[0]])).toBeNull();
   });
 
   it('offers a weighted rule the teachers can switch to', () => {
-    expect(deriveReadingLevel(parts, 'weighted')).toBe(3);
+    expect(deriveReadingLevel('grade-level', parts, 'weighted')).toBe(3);
   });
 
   it('names the weaker reading subject as the bottleneck', () => {
     expect(readingBottleneck(parts)!.subject).toBe('oral-reading');
   });
+
+  it('reads the Little Reader Adventure off its own two activities', () => {
+    const little = [
+      { subject: 'letter-sounds' as const, finalTier: 1 },
+      { subject: 'word-practice' as const, finalTier: 0 },
+    ];
+    expect(deriveReadingLevel('little-reader', little)).toBe(0);
+    expect(deriveReadingLevel('little-reader', [little[0]])).toBeNull();
+  });
 });
 
 describe('floored sittings', () => {
   it('starts at the lowest tier and never drops below it', () => {
-    const s = sit('5', 'vocabulary-spelling', () => false, true);
+    const s = sit('5', 'vocabulary', () => false, true);
     expect(s.tierHistory.every((t) => t === MIN_TIER)).toBe(true);
     expect(toSubjectResult(s).floored).toBe(true);
   });
 
   it('still branches upward, so a child who can spell climbs out', () => {
-    const s = sit('5', 'vocabulary-spelling', () => true, true);
+    const s = sit('5', 'vocabulary', () => true, true);
     expect(s.currentTier).toBeGreaterThan(MIN_TIER);
   });
 
   it('leaves an unfloored sitting starting at the grade tier', () => {
-    expect(createSession('5', 'vocabulary-spelling').currentTier).toBe(5);
-    expect(createSession('5', 'vocabulary-spelling', { floored: true }).currentTier).toBe(MIN_TIER);
+    expect(createSession('5', 'vocabulary').currentTier).toBe(5);
+    expect(createSession('5', 'vocabulary', { floored: true }).currentTier).toBe(MIN_TIER);
   });
 });
 
 describe('placement result', () => {
   const ALL: Subject[] = [
+    'words-speaking',
     'oral-reading',
+    'vocabulary',
     'reading-comprehension',
-    'vocabulary-spelling',
+    'spelling',
     'sentence-writing',
     'math',
   ];
@@ -286,19 +336,22 @@ describe('placement result', () => {
     return buildResult(grade, options.age ?? null, completed);
   };
 
-  const onLevel = (grade: number) => ({
-    'oral-reading': grade,
-    'reading-comprehension': grade,
-    'vocabulary-spelling': grade,
-    'sentence-writing': grade,
-    math: grade,
-  });
+  const onLevel = (grade: number) =>
+    Object.fromEntries(ALL.map((s) => [s, grade])) as Partial<Record<Subject, number>>;
 
-  it('assesses all five subjects for every child, and stops nobody early', () => {
-    const result = resultFor('1', { 'oral-reading': 0 });
+  it('assesses all seven subjects for every child, and stops nobody early', () => {
+    const result = resultFor('5', { 'words-speaking': 5 }, { age: 10 });
+    expect(result.track).toBe('grade-level');
     expect(result.requiredSubjects).toEqual(ALL);
     expect(result.complete).toBe(false);
-    expect(result.nextSubject).toBe('reading-comprehension');
+    expect(result.nextSubject).toBe('oral-reading');
+  });
+
+  it('puts a little one on the park track instead', () => {
+    const result = buildResult('1', 5, []);
+    expect(result.track).toBe('little-reader');
+    expect(result.requiredSubjects).toEqual(TRACKS['little-reader'].subjects);
+    expect(result.nextSubject).toBe('find-the-same');
   });
 
   it('withholds the program until every subject is sat', () => {
@@ -321,14 +374,19 @@ describe('placement result', () => {
   it('flags every subject the decision did not rest on', () => {
     const gated = resultFor(
       '5',
-      { 'oral-reading': 1, 'reading-comprehension': 1, 'vocabulary-spelling': 0, 'sentence-writing': 0, math: 0 },
-      { floored: ['vocabulary-spelling', 'sentence-writing', 'math'] },
+      { ...onLevel(0), 'oral-reading': 1, 'reading-comprehension': 1 },
+      { floored: ['vocabulary', 'spelling', 'sentence-writing', 'math'] },
     );
     const nonDetermining = gated.subjects.filter((s) => s.nonDetermining).map((s) => s.subject);
-    expect(nonDetermining).toEqual(['vocabulary-spelling', 'sentence-writing', 'math']);
+    expect(nonDetermining).toContain('sentence-writing');
+    expect(nonDetermining).toContain('math');
+    expect(nonDetermining).not.toContain('oral-reading');
 
+    // Words Speaking is an observation in every outcome — it is never a gate
+    // input, so it is non-determining even when everything is on level.
     const enriched = resultFor('5', onLevel(5));
-    expect(enriched.subjects.every((s) => !s.nonDetermining)).toBe(true);
+    const flagged = enriched.subjects.filter((s) => s.nonDetermining).map((s) => s.subject);
+    expect(flagged).toEqual(['words-speaking']);
   });
 
   it('sets math content by grade, never by the assessed math tier', () => {
@@ -346,7 +404,7 @@ describe('placement result', () => {
   });
 
   it('orders subjects by the sitting order, not completion order', () => {
-    const result = buildResult('4', null, [
+    const result = buildResult('4', 10, [
       { subject: 'math', finalTier: 4, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 3, history: [] },
       { subject: 'oral-reading', finalTier: 5, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 1, history: [] },
       { subject: 'sentence-writing', finalTier: 4, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 2, history: [] },

@@ -1,10 +1,12 @@
-import type { Subject } from '../assessment/types';
-import { SUBJECT_LABEL } from '../assessment/types';
+import type { Subject, Track } from '../assessment/types';
+import { SUBJECT_LABEL, TRACKS } from '../assessment/types';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { SUBJECT_INTROS } from '../content/subjectIntros';
 
 interface Props {
   subject: Subject;
+  /** Which assessment this sitting belongs to — sets the unit wording. */
+  track: Track;
   onStart: () => void;
   /** "Do this one later" — skips to the next subject without a result. */
   onDoLater: () => void;
@@ -16,15 +18,23 @@ interface Props {
  * lead, three fact chips, and four collapsible rule cards a child (or the
  * grown-up beside them) can open before starting.
  */
-export function SectionIntroScreen({ subject, onStart, onDoLater }: Props) {
+export function SectionIntroScreen({ subject, track, onStart, onDoLater }: Props) {
   const intro = SUBJECT_INTROS[subject];
+  const config = TRACKS[track];
+  // The kicker is the child's place in the track — "Chamber 2 of 7" — rather
+  // than copy held per subject, so it stays true if a track's list changes.
+  const position = config.subjects.indexOf(subject);
+  const kicker =
+    position < 0
+      ? config.kicker
+      : `${position === 0 ? 'First up' : 'Next up'} · ${config.unit} ${position + 1} of ${config.subjects.length}`;
 
   return (
     <div className="stage">
       <div className="card card--center">
         <div className="intro">
           <div className="intro__head">
-            <p className="label intro__kicker">{intro.kicker}</p>
+            <p className="label intro__kicker">{kicker}</p>
             <h1 className="display intro__title">
               The{' '}
               <Tag color={STRAND_TAG[subject]}>
