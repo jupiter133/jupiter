@@ -111,12 +111,21 @@ export function ParentResultsScreen({
                 );
               })}
 
-              {readingGated && (
+              {readingGated && result.track === 'grade-level' && (
                 <p className="placement-explainer">
                   Reading comes first. {name} is reading below a Grade&nbsp;3 level, and
                   comprehension, vocabulary, writing and math all sit on top of reading — so the
-                  other four are recorded as observations for now, and get measured once reading
+                  other five are recorded as observations for now, and get measured once reading
                   is solid.
+                </p>
+              )}
+
+              {result.track === 'little-reader' && (
+                <p className="placement-explainer">
+                  Reading comes first. The placement rests on Letter Sounds and Word Practice;
+                  the five earlier activities are readiness, recorded as observations rather than
+                  measured. At this age that is the point — {name} is starting to read, and the
+                  program starts where the reading does.
                 </p>
               )}
 
