@@ -126,66 +126,6 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "r-t3-04",
-      "subject": "vocabulary",
-      "tier": 3,
-      "skill": "vocabulary",
-      "art": {
-        "kind": "scene",
-        "scene": "narrow-trail"
-      },
-      "questionText": "The path was “muddy”. Muddy means:",
-      "options": [
-        {
-          "id": "a",
-          "text": "Wet and soft with dirt"
-        },
-        {
-          "id": "b",
-          "text": "Very steep"
-        },
-        {
-          "id": "c",
-          "text": "Full of trees"
-        },
-        {
-          "id": "d",
-          "text": "Long and straight"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "r-t4-01",
-      "subject": "vocabulary",
-      "tier": 4,
-      "skill": "vocabulary-in-context",
-      "art": {
-        "kind": "scene",
-        "scene": "narrow-trail"
-      },
-      "questionText": "The trail was “narrow”. In this sentence, narrow means:",
-      "options": [
-        {
-          "id": "a",
-          "text": "Not wide"
-        },
-        {
-          "id": "b",
-          "text": "Very long"
-        },
-        {
-          "id": "c",
-          "text": "Full of rocks"
-        },
-        {
-          "id": "d",
-          "text": "Going uphill"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
       "id": "r-t4-02",
       "subject": "reading-comprehension",
       "tier": 4,
@@ -278,36 +218,6 @@
       "correctAnswerId": "a"
     },
     {
-      "id": "r-t5-01",
-      "subject": "vocabulary",
-      "tier": 5,
-      "skill": "vocabulary-in-context",
-      "art": {
-        "kind": "glyph",
-        "glyph": "snowflake"
-      },
-      "questionText": "The guide was “reluctant” to cross the ice. Reluctant means:",
-      "options": [
-        {
-          "id": "a",
-          "text": "Unwilling or hesitant"
-        },
-        {
-          "id": "b",
-          "text": "Eager and excited"
-        },
-        {
-          "id": "c",
-          "text": "Careless"
-        },
-        {
-          "id": "d",
-          "text": "Exhausted"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
       "id": "r-t5-02",
       "subject": "reading-comprehension",
       "tier": 5,
@@ -372,37 +282,6 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "r-t5-04",
-      "subject": "vocabulary",
-      "tier": 5,
-      "skill": "vocabulary-in-context",
-      "art": {
-        "kind": "count",
-        "glyph": "berry",
-        "n": 6
-      },
-      "questionText": "Which word is closest in meaning to “abundant”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "Rare"
-        },
-        {
-          "id": "b",
-          "text": "Plentiful"
-        },
-        {
-          "id": "c",
-          "text": "Fragile"
-        },
-        {
-          "id": "d",
-          "text": "Distant"
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
       "id": "r-t6-01",
       "subject": "reading-comprehension",
       "tier": 6,
@@ -454,32 +333,6 @@
         {
           "id": "d",
           "text": "To make the trip sound dangerous"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "r-t6-03",
-      "subject": "vocabulary",
-      "tier": 6,
-      "skill": "vocabulary-in-context",
-      "questionText": "The storm was brief, but the damage was “permanent”. Permanent means:",
-      "options": [
-        {
-          "id": "a",
-          "text": "Lasting"
-        },
-        {
-          "id": "b",
-          "text": "Sudden"
-        },
-        {
-          "id": "c",
-          "text": "Minor"
-        },
-        {
-          "id": "d",
-          "text": "Expensive"
         }
       ],
       "correctAnswerId": "a"
@@ -539,34 +392,6 @@
         }
       ],
       "correctAnswerId": "b"
-    },
-    {
-      "id": "r-t7-02",
-      "subject": "vocabulary",
-      "tier": 7,
-      "skill": "vocabulary-in-context",
-      "passageTitle": "No Lookout",
-      "passage": "It simply climbs, patiently, through the kind of forest that takes a century to make and an afternoon to walk.",
-      "questionText": "In context, “patiently” suggests the trail is:",
-      "options": [
-        {
-          "id": "a",
-          "text": "Slow to gain height"
-        },
-        {
-          "id": "b",
-          "text": "Poorly maintained"
-        },
-        {
-          "id": "c",
-          "text": "Rarely open"
-        },
-        {
-          "id": "d",
-          "text": "Difficult to find"
-        }
-      ],
-      "correctAnswerId": "a"
     },
     {
       "id": "r-t7-03",
@@ -648,34 +473,6 @@
         {
           "id": "d",
           "text": "That new trails cost more to build"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "r-t8-03",
-      "subject": "vocabulary",
-      "tier": 8,
-      "skill": "vocabulary-in-context",
-      "passageTitle": "No Lookout",
-      "passage": "Nobody photographs the old trail. It has no lookout, no waterfall, nothing to point a camera at.",
-      "questionText": "'Nobody photographs the old trail' implies that value here is measured by:",
-      "options": [
-        {
-          "id": "a",
-          "text": "What can be displayed to others"
-        },
-        {
-          "id": "b",
-          "text": "Distance covered"
-        },
-        {
-          "id": "c",
-          "text": "Time of year"
-        },
-        {
-          "id": "d",
-          "text": "Trail difficulty"
         }
       ],
       "correctAnswerId": "a"

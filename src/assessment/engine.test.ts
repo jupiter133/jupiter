@@ -23,6 +23,7 @@ import {
   trackFor,
   tierGradeLabel,
   isSpokenQuestion,
+  isStudyQuestion,
 } from './types';
 
 /** Every subject in the product, both tracks, in sitting order. */
@@ -120,6 +121,33 @@ describe('question bank', () => {
         const n = QUESTIONS.filter((q) => q.subject === subject && q.tier === tier).length;
         expect(n, `${subject} tier ${tier}`).toBeGreaterThanOrEqual(3);
       }
+    }
+  });
+
+  it('makes every vocabulary item a study item with both halves and a key', () => {
+    const items = QUESTIONS.filter((q) => q.subject === 'vocabulary');
+    expect(items.length).toBeGreaterThan(0);
+    for (const q of items) {
+      expect(isStudyQuestion(q), q.id).toBe(true);
+      expect(q.studyWord, q.id).toBeTruthy();
+      expect(q.studyMeaning, q.id).toBeTruthy();
+      // The question is answered normally, so it still needs a valid key.
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+      expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
+    }
+  });
+
+  it('never gives the answer away by word-matching', () => {
+    // A question may use the studied word — "What is deteriorating?" is a fair
+    // question and unanswerable without the meaning. What it must not do is
+    // let a child match letters: if the correct option is the only one echoed
+    // in the question text, the word can be picked without understanding it.
+    for (const q of QUESTIONS.filter(isStudyQuestion)) {
+      const asked = q.questionText.toLowerCase();
+      const echoed = q.options.filter((o) => asked.includes(o.text.toLowerCase()));
+      const giveaway =
+        echoed.length === 1 && echoed[0].id === q.correctAnswerId;
+      expect(giveaway, `${q.id}: ${q.questionText}`).toBe(false);
     }
   });
 

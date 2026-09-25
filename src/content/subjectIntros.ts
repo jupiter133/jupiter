@@ -157,14 +157,14 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   vocabulary: {
-    lead: 'What words mean — match each one to its meaning.',
+    lead: 'Read a word and what it means. Then it disappears, and a question comes.',
     cta: 'Start the word round',
-    chips: [{ label: 'Word meanings', ...CYAN }, { label: 'Tap answers', ...LIME }, { label: '~4 minutes', ...PINK }],
+    chips: [{ label: 'Read, then answer', ...CYAN }, { label: 'One word at a time', ...LIME }, { label: '~4 minutes', ...PINK }],
     sections: rules([
-      ['How it works', 'A question shows a word and four meanings or pictures — tap the one that matches.'],
-      ['In a sentence', 'Some words come inside a sentence. The sentence is a clue: read it before you choose.'],
-      ['Need it read to you?', 'Tap the speaker to hear the word and the choices out loud — that’s allowed.'],
-      ['The rules', 'No time limit. Your best guess always beats a blank.'],
+      ['Read it first', 'A word appears with what it means. Read both, as slowly as you like — nothing is being timed.'],
+      ['Then it disappears', 'When you tap “I’ve read it”, the word and its meaning go away and a question takes their place. You get one chance to look again before that happens.'],
+      ['Answering', 'The question is about what the word means, not about remembering the exact words you read. If you understood it, you can answer it.'],
+      ['Need it read to you?', 'Tap the speaker to hear the word, its meaning and the choices out loud — that’s allowed.'],
     ]),
   },
   'reading-comprehension': {

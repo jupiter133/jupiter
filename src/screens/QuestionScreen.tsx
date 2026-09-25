@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { AgeBand, Question, Subject } from '../assessment/types';
-import { SUBJECT_LABEL, questionTextFor } from '../assessment/types';
+import { SUBJECT_LABEL, isStudyQuestion, questionTextFor } from '../assessment/types';
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { STRAND_TAG, Tag } from '../components/Tag';
@@ -42,6 +42,9 @@ interface Props {
  *  - senior (4–6): text leads, art is a smaller supporting strip, picture
  *    answers are suppressed, and read-aloud is available but off by default.
  */
+/** A study item runs in three beats: read it, confirm, then answer it. */
+type StudyPhase = 'study' | 'confirm' | 'recall';
+
 export function QuestionScreen({
   question,
   subject,
@@ -54,6 +57,8 @@ export function QuestionScreen({
 }: Props) {
   const [chosenId, setChosenId] = useState<string | null>(null);
   const [leaving, setLeaving] = useState(false);
+  const isStudy = isStudyQuestion(question);
+  const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
 
   const script = speechScriptFor(question, band);
@@ -63,15 +68,18 @@ export function QuestionScreen({
   useEffect(() => {
     setChosenId(null);
     setLeaving(false);
+    setPhase(isStudyQuestion(question) ? 'study' : 'recall');
   }, [question.id]);
 
   // Auto-read when the preference is on. Replays are the button's job.
   useEffect(() => {
-    if (audioEnabled) speak(script, rate);
+    if (!audioEnabled) return;
+    if (phase === 'study') speak([question.studyWord ?? '', question.studyMeaning ?? ''], rate);
+    else if (phase === 'recall') speak(script, rate);
     return stop;
     // Re-reading is keyed to the item and the preference, not to every render.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [question.id, audioEnabled]);
+  }, [question.id, audioEnabled, phase]);
 
   function choose(optionId: string) {
     if (chosenId !== null) return;
@@ -95,8 +103,10 @@ export function QuestionScreen({
       <div className={`card card--tight question-screen question-screen--${band}`}>
         <div className="quest-bar">
           <span className="label">
-            <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · Question{' '}
-            {questionNumber}
+            {/* A vocabulary sitting counts words, not questions — the study
+                card and the question it leads to are one item. */}
+            <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>{' '}
+            · {isStudy ? 'Word' : 'Question'} {questionNumber}
           </span>
           <div
             className="progress-track"
@@ -132,6 +142,40 @@ export function QuestionScreen({
           )}
         </div>
 
+        {phase !== 'recall' && (
+          /* The study beat. The word and its meaning are on screen together,
+             and only here — the question that follows is answerable from
+             having understood the meaning, not from copying it down. */
+          <div key={`${question.id}-study`} className="study question-anim">
+            <p className="label study__kicker">Read this, then it disappears</p>
+            <div className="study__word-card">
+              <span className="study__word">{question.studyWord}</span>
+            </div>
+            <div className="study__meaning-card">
+              <p className="study__meaning">{question.studyMeaning}</p>
+            </div>
+            <div className="study__go">
+              <button
+                type="button"
+                className="btn btn--primary btn--large"
+                onClick={() => setPhase('confirm')}
+              >
+                I’ve read it
+              </button>
+              <span className="field__hint">Take as long as you like · No timer</span>
+            </div>
+          </div>
+        )}
+
+        {phase === 'confirm' && (
+          <ConfirmStudyDialog
+            word={question.studyWord ?? ''}
+            onContinue={() => setPhase('recall')}
+            onBack={() => setPhase('study')}
+          />
+        )}
+
+        {phase === 'recall' && (
         <div
           key={question.id}
           className={`question-body question-anim${leaving ? ' question-anim--out' : ''}${
@@ -210,6 +254,59 @@ export function QuestionScreen({
               ))}
             </div>
           </div>
+        </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * The one confirmation in the whole flow.
+ *
+ * It exists because the next tap takes the meaning away, and a child who
+ * tapped by accident cannot get it back. It is a question, not a warning:
+ * there is no error colour here and nothing has gone wrong.
+ */
+function ConfirmStudyDialog({
+  word,
+  onContinue,
+  onBack,
+}: {
+  word: string;
+  onContinue: () => void;
+  onBack: () => void;
+}) {
+  const first = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    first.current?.focus();
+  }, []);
+  return (
+    <div
+      className="dialog-scrim"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="study-confirm"
+      /* Escape goes back to the word rather than past it: the safe way out of
+         an accidental tap keeps the meaning on screen. */
+      onKeyDown={(e) => e.key === 'Escape' && onBack()}
+    >
+      <div className="dialog">
+        <p className="label dialog__kicker">Ready?</p>
+        <h2 id="study-confirm" className="dialog__title">
+          Have you read {word ? `“${word}”` : 'the word'} and what it means?
+        </h2>
+        <p className="body dialog__body">
+          They disappear next, and the question comes after. You can go back and look again —
+          nothing is being timed.
+        </p>
+        <div className="dialog__actions">
+          <button type="button" ref={first} className="btn btn--primary" onClick={onContinue}>
+            Yes, I’ve read it
+          </button>
+          <button type="button" className="btn btn--ghost" onClick={onBack}>
+            Let me look again
+          </button>
         </div>
       </div>
     </div>

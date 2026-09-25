@@ -325,7 +325,7 @@ exactly as the assessment intro design names them:
 |---|---------|--------|---------|
 | 1 | Words Speaking | cyan | 6 words, **spoken** |
 | 2 | Oral Reading | pink | 5 passages, **read aloud** |
-| 3 | Vocabulary | gold | 8 questions |
+| 3 | Vocabulary | gold | 8 words, **study then recall** |
 | 4 | Reading Comprehension | green | 8 questions |
 | 5 | Spelling | lime | 8 questions |
 | 6 | Sentence Writing | gold | 8 questions |
@@ -339,6 +339,43 @@ is actually sat.
 
 **Words Speaking is never a gate input.** It is recorded as an observation in
 every outcome and always reads as non-determining on the results page.
+
+## Vocabulary: study, then recall
+
+A vocabulary item is two beats, not one. The child reads a word **and what it
+means** on a card of its own; then the card is taken away and a question about
+that meaning takes its place.
+
+```
+"deteriorate"                    →   confirm   →   What is deteriorating?
+To get steadily worse over time.                   ○ A bridge slowly rusting through
+                                                   ○ A freshly painted fence
+                                                   ○ A new pair of boots
+```
+
+`Question.format === 'study'` with `studyWord` and `studyMeaning`; the recall
+half is an ordinary tapped question with real options and a real key, so the
+sitting is scored and branches like any other. `QuestionScreen` runs the three
+phases — study, confirm, recall — off one item, which keeps the answering path
+(sparkles, progress, read-aloud, correctness-blindness) identical to every
+other tapped subject.
+
+**Why the confirmation exists.** The next tap takes the meaning away and a
+child who tapped by accident cannot get it back. It is the only confirmation in
+the flow. It is written as a question, not a warning — nothing has gone wrong,
+and there is no error colour in this product to render one with. Escape goes
+*back* to the word rather than past it: the safe way out of an accidental tap
+is the one that keeps the meaning on screen.
+
+**What the question may and may not do.** It may use the studied word —
+"What is deteriorating?" is fair and unanswerable without the meaning. It must
+not let a child match letters: a test asserts that the correct option is never
+the only one echoed in the question text, which would let the answer be picked
+without understanding anything.
+
+Read-aloud follows the phase: in the study beat it reads the word and its
+meaning, in the recall beat it reads the question and the choices. It never
+reads the meaning back once the card is gone.
 
 ## Spoken items
 

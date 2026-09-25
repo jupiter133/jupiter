@@ -79,7 +79,7 @@ export interface AnswerOption {
  * out loud into the microphone. The screen, the engine and the bank all read
  * this rather than guessing from the subject.
  */
-export type QuestionFormat = 'choice' | 'speak';
+export type QuestionFormat = 'choice' | 'speak' | 'study';
 
 export interface Question {
   id: string;
@@ -90,6 +90,14 @@ export interface Question {
   spokenWord?: string;
   /** The passage to read aloud. Present on read-aloud 'speak' items. */
   spokenPassage?: string;
+  /** The word to study. Present on 'study' items only. */
+  studyWord?: string;
+  /**
+   * What the word means, shown with it and then taken away. The question is
+   * answerable from having understood this, never from having memorised it
+   * word for word.
+   */
+  studyMeaning?: string;
   /** 0 (Kindergarten) to 8 (Grade 8). */
   tier: Tier;
   /** Fine-grained content tag, e.g. "letter-sound", "main-idea", "fractions". */
@@ -111,6 +119,11 @@ export interface Question {
 /** True when this item is answered by speaking rather than tapping. */
 export function isSpokenQuestion(question: Question): boolean {
   return question.format === 'speak';
+}
+
+/** True when the child studies a word and its meaning before answering. */
+export function isStudyQuestion(question: Question): boolean {
+  return question.format === 'study' && Boolean(question.studyWord);
 }
 
 /** What a spoken item asks for: one word, or a whole passage read aloud. */
