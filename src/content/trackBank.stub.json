@@ -178,6 +178,37 @@
       "correctAnswerId": "a"
     },
     {
+      "id": "ts-sp-t0-drag",
+      "subject": "spelling",
+      "tier": 0,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "man",
+      "listenSentence": "The man has a big red hat.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "man"
+        },
+        {
+          "id": "b",
+          "text": "mam"
+        },
+        {
+          "id": "c",
+          "text": "men"
+        },
+        {
+          "id": "d",
+          "text": "mann"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
       "id": "ts-sp-t1-01",
       "subject": "spelling",
       "tier": 1,
@@ -347,6 +378,37 @@
         {
           "id": "d",
           "text": "treee"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sp-t1-drag",
+      "subject": "spelling",
+      "tier": 1,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "ship",
+      "listenSentence": "The ship sailed out past the rocks.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ship"
+        },
+        {
+          "id": "b",
+          "text": "shipp"
+        },
+        {
+          "id": "c",
+          "text": "shep"
+        },
+        {
+          "id": "d",
+          "text": "sipp"
         }
       ],
       "correctAnswerId": "a"
@@ -526,6 +588,37 @@
       "correctAnswerId": "a"
     },
     {
+      "id": "ts-sp-t2-drag",
+      "subject": "spelling",
+      "tier": 2,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "morning",
+      "listenSentence": "We leave early in the morning.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "morning"
+        },
+        {
+          "id": "b",
+          "text": "morrning"
+        },
+        {
+          "id": "c",
+          "text": "moring"
+        },
+        {
+          "id": "d",
+          "text": "mourning"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
       "id": "ts-sp-t3-01",
       "subject": "spelling",
       "tier": 3,
@@ -695,6 +788,37 @@
         {
           "id": "d",
           "text": "differant"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sp-t3-drag",
+      "subject": "spelling",
+      "tier": 3,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "caught",
+      "listenSentence": "She caught the ball with one hand.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "caught"
+        },
+        {
+          "id": "b",
+          "text": "cauhgt"
+        },
+        {
+          "id": "c",
+          "text": "cought"
+        },
+        {
+          "id": "d",
+          "text": "caugt"
         }
       ],
       "correctAnswerId": "a"
@@ -874,6 +998,37 @@
       "correctAnswerId": "a"
     },
     {
+      "id": "ts-sp-t4-drag",
+      "subject": "spelling",
+      "tier": 4,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "weather",
+      "listenSentence": "The weather turned cold overnight.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "weather"
+        },
+        {
+          "id": "b",
+          "text": "wether"
+        },
+        {
+          "id": "c",
+          "text": "weathor"
+        },
+        {
+          "id": "d",
+          "text": "wheather"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
       "id": "ts-sp-t5-01",
       "subject": "spelling",
       "tier": 5,
@@ -1043,6 +1198,37 @@
         {
           "id": "d",
           "text": "arguemant"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sp-t5-drag",
+      "subject": "spelling",
+      "tier": 5,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "through",
+      "listenSentence": "We walked through the tunnel together.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "through"
+        },
+        {
+          "id": "b",
+          "text": "thruogh"
+        },
+        {
+          "id": "c",
+          "text": "throught"
+        },
+        {
+          "id": "d",
+          "text": "throuh"
         }
       ],
       "correctAnswerId": "a"
@@ -1222,6 +1408,37 @@
       "correctAnswerId": "a"
     },
     {
+      "id": "ts-sp-t6-drag",
+      "subject": "spelling",
+      "tier": 6,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "privilege",
+      "listenSentence": "Voting is a privilege worth protecting.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "privilege"
+        },
+        {
+          "id": "b",
+          "text": "priviledge"
+        },
+        {
+          "id": "c",
+          "text": "privelege"
+        },
+        {
+          "id": "d",
+          "text": "privilage"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
       "id": "ts-sp-t7-01",
       "subject": "spelling",
       "tier": 7,
@@ -1396,6 +1613,37 @@
       "correctAnswerId": "a"
     },
     {
+      "id": "ts-sp-t7-drag",
+      "subject": "spelling",
+      "tier": 7,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "occurrence",
+      "listenSentence": "A total eclipse is a rare occurrence.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "occurrence"
+        },
+        {
+          "id": "b",
+          "text": "occurence"
+        },
+        {
+          "id": "c",
+          "text": "ocurrence"
+        },
+        {
+          "id": "d",
+          "text": "occurrance"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
       "id": "ts-sp-t8-01",
       "subject": "spelling",
       "tier": 8,
@@ -1565,6 +1813,37 @@
         {
           "id": "d",
           "text": "liaision"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sp-t8-drag",
+      "subject": "spelling",
+      "tier": 8,
+      "skill": "hear-in-a-sentence",
+      "format": "listen",
+      "answerMode": "drag",
+      "listenWord": "bureaucratic",
+      "listenSentence": "The delay was entirely bureaucratic.",
+      "questionText": "Drag the right spelling into the gap.",
+      "questionTextJunior": "Drag the right spelling into the gap.",
+      "options": [
+        {
+          "id": "a",
+          "text": "bureaucratic"
+        },
+        {
+          "id": "b",
+          "text": "beaurocratic"
+        },
+        {
+          "id": "c",
+          "text": "bureacratic"
+        },
+        {
+          "id": "d",
+          "text": "bureaucratick"
         }
       ],
       "correctAnswerId": "a"

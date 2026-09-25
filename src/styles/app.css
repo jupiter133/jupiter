@@ -1902,3 +1902,86 @@ body {
   .listen__button { width: 60px; height: 60px; }
   .listen__button svg { width: 26px; height: 26px; }
 }
+
+/* ---------- Drag a spelling into the gap ---------- */
+
+.drag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.8vh, 18px);
+  width: 100%;
+}
+/* The gap. Dashed until something is in it, so it reads as somewhere to put
+   a thing rather than as an empty answer. */
+.drag__slot {
+  width: 100%;
+  max-width: 460px;
+  min-height: clamp(64px, 9vh, 82px);
+  display: grid;
+  place-items: center;
+  padding: var(--space-2);
+  border: 3px dashed var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-canvas);
+  transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
+}
+.drag__slot--over { border-color: var(--accent-secondary); background: var(--accent-secondary-soft); transform: scale(1.02); }
+.drag__slot--filled { border-style: solid; border-color: var(--accent-primary); background: var(--accent-primary-soft); }
+.drag__hint { font-size: 15px; font-weight: var(--fw-extrabold); color: var(--text-muted); }
+
+.drag__tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(8px, 1.4vw, 14px);
+}
+.drag__tile {
+  font-family: var(--font-family);
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: var(--fw-black);
+  color: var(--text-primary);
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 0 var(--border-subtle);
+  padding: clamp(10px, 1.4vh, 16px) clamp(16px, 2.4vw, 26px);
+  cursor: grab;
+  touch-action: none;
+  transition: transform 80ms ease, box-shadow 80ms ease, opacity 140ms ease;
+}
+.drag__tile:hover:not(:disabled) { border-color: var(--border-strong); }
+.drag__tile:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 3px; }
+.drag__tile--lifting { opacity: 0.25; }
+/* Its home stays reserved while it sits in the gap, so the row does not
+   reshuffle under a child who is still deciding. */
+.drag__tile--gone { opacity: 0; pointer-events: none; }
+.drag__tile--placed {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  border-color: transparent;
+  box-shadow: 0 4px 0 var(--accent-primary-edge);
+  cursor: pointer;
+}
+.drag__ghost {
+  position: fixed;
+  z-index: 20;
+  pointer-events: none;
+  font-family: var(--font-family);
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: var(--fw-black);
+  color: var(--text-primary);
+  background: var(--surface-card);
+  border: 2px solid var(--accent-secondary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(10px, 1.4vh, 16px) clamp(16px, 2.4vw, 26px);
+  transform: rotate(-2deg) scale(1.04);
+}
+.drag__go { margin-top: var(--space-2); }
+
+@media (max-height: 560px) {
+  .drag { gap: 8px; }
+  .drag__slot { min-height: 52px; }
+  .drag__tile, .drag__ghost { font-size: 17px; padding: 8px 16px; }
+}

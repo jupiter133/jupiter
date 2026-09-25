@@ -186,7 +186,7 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
       ['Hearing the word', 'The word plays by itself when it appears — the word is never written down, so listening is the whole game. Turn the sound up before you start.'],
       ['Three more listens', 'Tap the big speaker to hear it again. You get three more listens per word, and the counter tells you how many are left.'],
       ['Your answer', 'Choose the spelling that looks right to you. Your best guess is always okay, even on the last listen.'],
-      ['Tricky on purpose', 'Some of these are meant to be hard. A hard one means you’re doing well.'],
+      ['One of them is a sentence', 'For one word you hear a whole sentence instead, and you drag the spelling into the gap — or just tap it, whichever you like.'],
     ]),
   },
   'sentence-writing': {

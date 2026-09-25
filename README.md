@@ -416,6 +416,25 @@ reads "your best guess is fine".
 The generic "Read to me" control and the per-option speakers are **hidden on a
 spelling item**: reading the choices aloud would say the answer.
 
+### One item is a sentence, dragged
+
+The **second** question of every spelling sitting plays a whole sentence rather
+than a bare word, and the answer is dragged into a gap instead of tapped.
+Hearing a word in context is a fairer ask than hearing it cold, and dragging is
+slower and more deliberate than tapping — which makes it worth doing once and
+tiring to do eight times. `DRAG_QUESTION_POSITION` in `engine.ts` is where that
+choice lives; `selectNextQuestion` reaches for a drag item only at that
+position, and falls back to a tapped one rather than ever leaving a sitting
+short.
+
+**Dragging is not the only way in.** Tapping a tile places it, tapping the
+placed tile takes it back, and the tiles are real buttons so a keyboard reaches
+them. HTML5 drag-and-drop does not fire on touch at all and this is a tablet
+product, so the drag is built on pointer events — one code path for mouse, pen
+and finger. A tile dropped anywhere but the gap goes home rather than being
+lost or counted. The tile's place in the row is held while it sits in the gap,
+so the row does not reshuffle under a child who is still deciding.
+
 **Without speech synthesis the item cannot be administered.** Rather than
 recording a guess as a spelling result, the panel says so plainly, shows the
 word for a grown-up to read, and the answer is submitted **unscored** — the

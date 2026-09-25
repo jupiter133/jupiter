@@ -95,6 +95,17 @@ export interface Question {
    * never rendered — putting it on screen would answer the question.
    */
   listenWord?: string;
+  /**
+   * A whole sentence to play instead of the bare word, so the child hears it
+   * in context. Never rendered either: it contains the word.
+   */
+  listenSentence?: string;
+  /**
+   * How the answer is given. 'tap' is the default everywhere. 'drag' puts the
+   * choices on tiles the child moves into a gap, which is slower on purpose —
+   * it suits an item worth dwelling on, not a whole sitting of them.
+   */
+  answerMode?: 'tap' | 'drag';
   /** The word to study. Present on 'study' items only. */
   studyWord?: string;
   /**
@@ -132,6 +143,16 @@ export function isSpokenQuestion(question: Question): boolean {
  */
 export function isStudyQuestion(question: Question): boolean {
   return question.format === 'study' && Boolean(question.studyWord || question.passage);
+}
+
+/** True when the answer is dragged into a gap rather than tapped. */
+export function isDragQuestion(question: Question): boolean {
+  return question.answerMode === 'drag';
+}
+
+/** What a 'listen' item plays: the sentence where there is one, else the word. */
+export function heardTextFor(question: Question): string {
+  return question.listenSentence ?? question.listenWord ?? '';
 }
 
 /**

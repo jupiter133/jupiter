@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  DRAG_QUESTION_POSITION,
   STABILITY_WINDOW,
   buildResult,
   createSession,
@@ -22,6 +23,8 @@ import {
   subjectsForTrack,
   trackFor,
   tierGradeLabel,
+  heardTextFor,
+  isDragQuestion,
   isListenQuestion,
   isSpokenQuestion,
   isStudyQuestion,
@@ -362,6 +365,58 @@ describe('length and stop rule', () => {
       const s = sit('5', subject, () => true);
       for (const a of s.questionsAnswered) expect(a.subject).toBe(subject);
     }
+  });
+});
+
+describe('the one drag item', () => {
+  it('lands at the second question of a spelling sitting and nowhere else', () => {
+    let s = createSession('5', 'spelling');
+    const positions: number[] = [];
+    for (let i = 0; i < QUESTIONS_PER_SUBJECT.spelling; i += 1) {
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      if (isDragQuestion(q)) positions.push(i + 1);
+      s = submitAnswer(s, q, q.correctAnswerId, (i + 1) * 1000);
+      if (s.finishedAt) break;
+    }
+    expect(positions).toEqual([DRAG_QUESTION_POSITION]);
+  });
+
+  it('is heard as a whole sentence, and the sentence contains the word', () => {
+    const drag = QUESTIONS.filter(isDragQuestion);
+    expect(drag.length).toBeGreaterThan(0);
+    for (const q of drag) {
+      expect(q.listenSentence, q.id).toBeTruthy();
+      const words = (q.listenSentence ?? '').toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/);
+      expect(words, `${q.id}: “${q.listenSentence}” omits “${q.listenWord}”`).toContain(
+        (q.listenWord ?? '').toLowerCase(),
+      );
+      // Sentence or bare word, heardTextFor is what actually gets played.
+      expect(heardTextFor(q)).toBe(q.listenSentence);
+    }
+  });
+
+  it('keeps dragging to spelling, where exactly one item per tier uses it', () => {
+    const bySubject = new Set(QUESTIONS.filter(isDragQuestion).map((q) => q.subject));
+    expect([...bySubject]).toEqual(['spelling']);
+    for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
+      const n = QUESTIONS.filter((q) => isDragQuestion(q) && q.tier === tier).length;
+      expect(n, `tier ${tier}`).toBe(1);
+    }
+  });
+
+  it('falls back to a tapped item when the drag one is used up', () => {
+    // Nothing should ever render a sitting short just because the drag item
+    // for that tier has already been served.
+    let s = createSession('5', 'spelling');
+    const first = selectNextQuestion(s)!;
+    s = submitAnswer(s, first, first.correctAnswerId, 1000);
+    const second = selectNextQuestion(s)!;
+    expect(isDragQuestion(second)).toBe(true);
+    s = submitAnswer(s, second, second.correctAnswerId, 2000);
+    const third = selectNextQuestion(s);
+    expect(third).not.toBeNull();
+    expect(isDragQuestion(third!)).toBe(false);
   });
 });
 

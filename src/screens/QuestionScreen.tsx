@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import type { AgeBand, Question, Subject } from '../assessment/types';
 import {
   SUBJECT_LABEL,
+  heardTextFor,
+  isDragQuestion,
   isListenQuestion,
   isStudyPassage,
   isStudyQuestion,
@@ -9,6 +11,7 @@ import {
 } from '../assessment/types';
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
+import { DragAnswer } from '../components/DragAnswer';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
 import { speechRateFor, speechScriptFor } from '../audio/speechScript';
@@ -76,6 +79,7 @@ export function QuestionScreen({
   const isStudy = isStudyQuestion(question);
   const studiesPassage = isStudyPassage(question);
   const isListen = isListenQuestion(question);
+  const isDrag = isDragQuestion(question);
   const [replaysLeft, setReplaysLeft] = useState(SPELLING_REPLAYS);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
@@ -94,7 +98,7 @@ export function QuestionScreen({
   // Auto-read when the preference is on. Replays are the button's job.
   useEffect(() => {
     if (isListenQuestion(question)) {
-      speak([question.listenWord ?? ''], rate);
+      speak([heardTextFor(question)], rate);
       return stop;
     }
     if (!audioEnabled) return;
@@ -261,7 +265,7 @@ export function QuestionScreen({
                 {!canSpeak && (
                   <p className="listen__silent">
                     This tablet has no voice, so the word cannot be read out.
-                    {question.listenWord ? ` The word is “${question.listenWord}”.` : ''} A
+                    {heardTextFor(question) ? ` It says “${heardTextFor(question)}”.` : ''} A
                     grown-up can read it instead — this one is recorded for review rather than
                     marked.
                   </p>
@@ -274,7 +278,7 @@ export function QuestionScreen({
                     if (speaking) return;
                     if (replaysLeft === 0) return;
                     setReplaysLeft((n) => n - 1);
-                    speak([question.listenWord ?? ''], rate);
+                    speak([heardTextFor(question)], rate);
                   }}
                   aria-label="Hear the word again"
                 >
@@ -292,6 +296,13 @@ export function QuestionScreen({
 
             <h1 className={isJunior ? 'display' : 'title'}>{prompt}</h1>
 
+            {isDrag ? (
+              <DragAnswer
+                options={question.options}
+                disabled={chosenId !== null}
+                onCommit={choose}
+              />
+            ) : (
             <div
               className={`options${
                 showOptionArt
@@ -343,6 +354,7 @@ export function QuestionScreen({
                 </div>
               ))}
             </div>
+            )}
           </div>
         </div>
         )}

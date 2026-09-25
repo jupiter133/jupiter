@@ -10,7 +10,7 @@ import type {
   SubjectPlacement,
   SubjectResult,
 } from './types';
-import { startTierForGrade, tierGradeLabel } from './types';
+import { startTierForGrade, tierGradeLabel, isDragQuestion } from './types';
 import { MIN_TIER, clampTier, gapFor, gradeTier } from './tiers';
 import { evaluateGate, type GateDecision, type GateInputs } from './gate';
 import { hasAgeGradeMismatch } from './intake';
@@ -63,12 +63,30 @@ export function createSession(
  * current tier and walking outward to the nearest tier that still has items.
  * Never crosses into another subject.
  */
+/**
+ * Where in a sitting the one drag item belongs, 1-based.
+ *
+ * Dragging a tile into a gap is slower and more deliberate than tapping, which
+ * makes it worth doing once and tiring to do eight times. Second is early
+ * enough that every child meets it and late enough that they have already
+ * learned how the sitting works.
+ */
+export const DRAG_QUESTION_POSITION = 2;
+
 export function selectNextQuestion(state: SessionState): Question | null {
   const served = new Set(state.servedQuestionIds);
-  const candidates = QUESTIONS.filter(
-    (q) => q.subject === state.subject && !served.has(q.id),
-  ).sort((a, b) => Math.abs(a.tier - state.currentTier) - Math.abs(b.tier - state.currentTier));
-  return candidates[0] ?? null;
+  const position = state.questionsAnswered.length + 1;
+  const wantsDrag = position === DRAG_QUESTION_POSITION;
+  const byNearestTier = (a: Question, b: Question) =>
+    Math.abs(a.tier - state.currentTier) - Math.abs(b.tier - state.currentTier);
+
+  const mine = QUESTIONS.filter((q) => q.subject === state.subject && !served.has(q.id));
+  const drag = mine.filter(isDragQuestion).sort(byNearestTier);
+  const tap = mine.filter((q) => !isDragQuestion(q)).sort(byNearestTier);
+  // A drag item outside its position would make the sitting feel arbitrary, so
+  // it is only ever reached when nothing else is left.
+  if (wantsDrag && drag.length > 0) return drag[0];
+  return tap[0] ?? drag[0] ?? null;
 }
 
 /** True once the tier has not changed across the trailing window. */
