@@ -79,7 +79,7 @@ export interface AnswerOption {
  * out loud into the microphone. The screen, the engine and the bank all read
  * this rather than guessing from the subject.
  */
-export type QuestionFormat = 'choice' | 'speak' | 'study';
+export type QuestionFormat = 'choice' | 'speak' | 'study' | 'listen';
 
 export interface Question {
   id: string;
@@ -90,6 +90,11 @@ export interface Question {
   spokenWord?: string;
   /** The passage to read aloud. Present on read-aloud 'speak' items. */
   spokenPassage?: string;
+  /**
+   * The word the child HEARS and spells. Present on 'listen' items only, and
+   * never rendered — putting it on screen would answer the question.
+   */
+  listenWord?: string;
   /** The word to study. Present on 'study' items only. */
   studyWord?: string;
   /**
@@ -127,6 +132,14 @@ export function isSpokenQuestion(question: Question): boolean {
  */
 export function isStudyQuestion(question: Question): boolean {
   return question.format === 'study' && Boolean(question.studyWord || question.passage);
+}
+
+/**
+ * True when the item is heard rather than read. The prompt is audio only; the
+ * options are spellings of it.
+ */
+export function isListenQuestion(question: Question): boolean {
+  return question.format === 'listen' && Boolean(question.listenWord);
 }
 
 /** True when the thing studied is a passage rather than a single word. */

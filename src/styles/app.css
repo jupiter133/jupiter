@@ -1850,3 +1850,55 @@ body {
   .study__passage-card { padding: 14px 16px; }
   .study__passage { font-size: 17px; line-height: 1.55; }
 }
+
+/* ---------- Spelling: heard, never shown ---------- */
+
+.listen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 0 0 auto;
+}
+/* Big enough to be the obvious thing to tap, and the only control here. */
+.listen__button {
+  width: clamp(88px, 13vh, 116px);
+  height: clamp(88px, 13vh, 116px);
+  border-radius: var(--radius-pill);
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: var(--accent-secondary);
+  color: var(--text-on-accent);
+  box-shadow: 0 6px 0 var(--accent-secondary-edge);
+  transition: transform 80ms ease, box-shadow 80ms ease, background 160ms ease;
+}
+.listen__button:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 2px 0 var(--accent-secondary-edge); }
+.listen__button:focus-visible { outline: 3px solid var(--accent-primary); outline-offset: 4px; }
+.listen__button--playing { background: var(--accent-gold); color: var(--text-on-gold); box-shadow: 0 0 0 10px var(--accent-gold-soft), 0 6px 0 var(--accent-gold-edge); }
+/* Out of listens is not a failure state, so it greys rather than warns. */
+.listen__button:disabled { background: var(--surface-inset); color: var(--text-muted); box-shadow: 0 4px 0 var(--border-subtle); cursor: default; }
+.listen__count {
+  font-size: 14px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-muted);
+  text-align: center;
+}
+.listen__silent {
+  margin: 0 0 var(--space-2);
+  max-width: 440px;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  background: var(--info-surface);
+  color: var(--info-text);
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-height: 560px) {
+  .listen__button { width: 60px; height: 60px; }
+  .listen__button svg { width: 26px; height: 26px; }
+}

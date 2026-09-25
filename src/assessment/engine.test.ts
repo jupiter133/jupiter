@@ -22,6 +22,7 @@ import {
   subjectsForTrack,
   trackFor,
   tierGradeLabel,
+  isListenQuestion,
   isSpokenQuestion,
   isStudyQuestion,
 } from './types';
@@ -137,6 +138,33 @@ describe('question bank', () => {
     }
   });
 
+  it('never writes a heard word anywhere a child could read it', () => {
+    // The whole spelling item is that the word is heard and not seen. If it
+    // appears in the question text, the child is proofreading, not spelling.
+    const listen = QUESTIONS.filter(isListenQuestion);
+    expect(listen.length).toBeGreaterThan(0);
+    for (const q of listen) {
+      const word = (q.listenWord ?? '').toLowerCase();
+      const onScreen = [q.questionText, q.questionTextJunior ?? '', q.passage ?? ''].join(' ');
+      expect(onScreen.toLowerCase().includes(word), `${q.id}: ${q.questionText}`).toBe(false);
+      // Exactly one option spells it, and it is the key.
+      const spellings = q.options.filter((o) => o.text.toLowerCase() === word);
+      expect(spellings, q.id).toHaveLength(1);
+      expect(spellings[0].id, q.id).toBe(q.correctAnswerId);
+    }
+  });
+
+  it('gives every heard word four distinct spellings to choose from', () => {
+    for (const q of QUESTIONS.filter(isListenQuestion)) {
+      const texts = q.options.map((o) => o.text);
+      // A distractor that is the answer with padding, or a repeat, is not a
+      // choice at all — it just makes the item look harder than it is.
+      expect(new Set(texts.map((t) => t.trim().toLowerCase())).size, q.id).toBe(texts.length);
+      for (const t of texts) expect(t.trim(), q.id).toBe(t);
+      expect(texts.length, q.id).toBe(4);
+    }
+  });
+
   it('never shows the same passage in two different subjects', () => {
     // A child sits Oral Reading and then Reading Comprehension in one
     // assessment. Reading the same text twice makes the second sitting a
@@ -179,13 +207,23 @@ describe('question bank', () => {
     }
   });
 
-  it('makes both spoken subjects spoken, all the way through', () => {
-    for (const subject of ['words-speaking', 'oral-reading'] as Subject[]) {
+  it('gives every subject one format, all the way through', () => {
+    // A sitting that mixed formats — a mic screen then tapped options, or a
+    // heard word then a written one — would be incoherent, and a leftover
+    // item in the wrong format silently shadows the new bank. The bank is
+    // where that guarantee has to hold.
+    const shape: Record<string, (q: (typeof QUESTIONS)[number]) => boolean> = {
+      'words-speaking': isSpokenQuestion,
+      'oral-reading': isSpokenQuestion,
+      vocabulary: isStudyQuestion,
+      'reading-comprehension': isStudyQuestion,
+      spelling: isListenQuestion,
+    };
+    for (const [subject, isRight] of Object.entries(shape)) {
       const items = QUESTIONS.filter((q) => q.subject === subject);
       expect(items.length, subject).toBeGreaterThan(0);
-      // A sitting that mixed a mic screen with tapped options would be
-      // incoherent; the bank is the place that guarantee holds.
-      expect(items.every(isSpokenQuestion), subject).toBe(true);
+      const wrong = items.filter((q) => !isRight(q)).map((q) => q.id);
+      expect(wrong, `${subject} has items in the wrong format`).toEqual([]);
     }
   });
 

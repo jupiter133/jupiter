@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import type { AgeBand, Question, Subject } from '../assessment/types';
-import { SUBJECT_LABEL, isStudyPassage, isStudyQuestion, questionTextFor } from '../assessment/types';
+import {
+  SUBJECT_LABEL,
+  isListenQuestion,
+  isStudyPassage,
+  isStudyQuestion,
+  questionTextFor,
+} from '../assessment/types';
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { STRAND_TAG, Tag } from '../components/Tag';
@@ -15,6 +21,16 @@ const OPTION_KEYS = ['A', 'B', 'C', 'D', 'E'];
  */
 const TRANSITION_MS = 620;
 
+/**
+ * Replays of the spoken word, after the one it opens with.
+ *
+ * A limit at all is a product decision, not a technical one: unlimited
+ * replays turn a spelling item into a listening-comprehension item, and the
+ * child can sit on one word forever. Three is generous enough that no child
+ * loses a word for mis-hearing it once.
+ */
+const SPELLING_REPLAYS = 3;
+
 interface Props {
   question: Question;
   subject: Subject;
@@ -26,7 +42,7 @@ interface Props {
   questionsPerSubject: number;
   audioEnabled: boolean;
   onToggleAudio: () => void;
-  onAnswer: (selectedAnswerId: string) => void;
+  onAnswer: (selectedAnswerId: string, options?: { scored?: boolean }) => void;
 }
 
 /**
@@ -59,6 +75,8 @@ export function QuestionScreen({
   const [leaving, setLeaving] = useState(false);
   const isStudy = isStudyQuestion(question);
   const studiesPassage = isStudyPassage(question);
+  const isListen = isListenQuestion(question);
+  const [replaysLeft, setReplaysLeft] = useState(SPELLING_REPLAYS);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
 
@@ -70,10 +88,15 @@ export function QuestionScreen({
     setChosenId(null);
     setLeaving(false);
     setPhase(isStudyQuestion(question) ? 'study' : 'recall');
+    setReplaysLeft(SPELLING_REPLAYS);
   }, [question.id]);
 
   // Auto-read when the preference is on. Replays are the button's job.
   useEffect(() => {
+    if (isListenQuestion(question)) {
+      speak([question.listenWord ?? ''], rate);
+      return stop;
+    }
     if (!audioEnabled) return;
     if (phase === 'study') {
       speak(
@@ -94,7 +117,12 @@ export function QuestionScreen({
     stop();
     setChosenId(optionId);
     setLeaving(true);
-    window.setTimeout(() => onAnswer(optionId), TRANSITION_MS);
+    /* A spelling item with no voice to read the word cannot measure spelling
+       from dictation. The answer is still recorded — it is on file — but it is
+       not scored, the same as an unjudged spoken take. Better a gap a teacher
+       can see than a number nobody measured. */
+    const scored = !(isListen && !canSpeak);
+    window.setTimeout(() => onAnswer(optionId, { scored }), TRANSITION_MS);
   }
 
   const isJunior = band === 'junior';
@@ -114,7 +142,11 @@ export function QuestionScreen({
             {/* A vocabulary sitting counts words, not questions — the study
                 card and the question it leads to are one item. */}
             <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>{' '}
-            · {isStudy && !studiesPassage ? 'Word' : studiesPassage ? 'Passage' : 'Question'}{' '}
+            · {(isStudy && !studiesPassage) || isListen
+              ? 'Word'
+              : studiesPassage
+                ? 'Passage'
+                : 'Question'}{' '}
             {questionNumber}
           </span>
           <div
@@ -127,7 +159,7 @@ export function QuestionScreen({
           >
             <div className="progress-fill" style={{ width: `${progress}%` }} />
           </div>
-          {canSpeak && (
+          {canSpeak && !isListen && (
             <div className="audio-controls">
               <button
                 type="button"
@@ -221,6 +253,43 @@ export function QuestionScreen({
               </div>
             )}
 
+            {isListen && (
+              /* The word is heard and never written. Everything visible here
+                 has to work without giving it away — which is why the panel
+                 shows a speaker and a count, and no text at all. */
+              <div className="listen">
+                {!canSpeak && (
+                  <p className="listen__silent">
+                    This tablet has no voice, so the word cannot be read out.
+                    {question.listenWord ? ` The word is “${question.listenWord}”.` : ''} A
+                    grown-up can read it instead — this one is recorded for review rather than
+                    marked.
+                  </p>
+                )}
+                <button
+                  type="button"
+                  className={`listen__button${speaking ? ' listen__button--playing' : ''}`}
+                  disabled={!canSpeak || (replaysLeft === 0 && !speaking)}
+                  onClick={() => {
+                    if (speaking) return;
+                    if (replaysLeft === 0) return;
+                    setReplaysLeft((n) => n - 1);
+                    speak([question.listenWord ?? ''], rate);
+                  }}
+                  aria-label="Hear the word again"
+                >
+                  <SpeakerIcon speaking={speaking} size={40} />
+                </button>
+                <span className="listen__count">
+                  {speaking
+                    ? 'Listening…'
+                    : replaysLeft > 0
+                      ? `${replaysLeft} more ${replaysLeft === 1 ? 'listen' : 'listens'}`
+                      : 'That was the last listen — your best guess is fine'}
+                </span>
+              </div>
+            )}
+
             <h1 className={isJunior ? 'display' : 'title'}>{prompt}</h1>
 
             <div
@@ -260,7 +329,7 @@ export function QuestionScreen({
                     <span>{option.text}</span>
                     {chosenId === option.id && <AnswerSparkles />}
                   </button>
-                  {canSpeak && (
+                  {canSpeak && !isListen && (
                     <button
                       type="button"
                       className="option__speak"

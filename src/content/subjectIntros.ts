@@ -183,10 +183,10 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     cta: 'Start spelling',
     chips: [{ label: 'Listen first', ...CYAN }, { label: 'Pick the spelling', ...LIME }, { label: '~4 minutes', ...PINK }],
     sections: rules([
-      ['Hearing the word', 'Ms Hannah says each word out loud, then uses it in a sentence so you know exactly which word she means. Tap the speaker to hear it again.'],
-      ['Your answer', 'Choose the spelling that looks right to you. Your best guess is always okay.'],
+      ['Hearing the word', 'The word plays by itself when it appears — the word is never written down, so listening is the whole game. Turn the sound up before you start.'],
+      ['Three more listens', 'Tap the big speaker to hear it again. You get three more listens per word, and the counter tells you how many are left.'],
+      ['Your answer', 'Choose the spelling that looks right to you. Your best guess is always okay, even on the last listen.'],
       ['Tricky on purpose', 'Some of these are meant to be hard. A hard one means you’re doing well.'],
-      ['The rules', 'One word at a time, no time limit. Once you choose we move on — no going back, and that’s fine.'],
     ]),
   },
   'sentence-writing': {

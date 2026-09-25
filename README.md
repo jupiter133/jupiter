@@ -327,7 +327,7 @@ exactly as the assessment intro design names them:
 | 2 | Oral Reading | pink | 5 passages, **read aloud** |
 | 3 | Vocabulary | gold | 8 words, **study then recall** |
 | 4 | Reading Comprehension | green | 8 passages, **study then recall** |
-| 5 | Spelling | lime | 8 questions |
+| 5 | Spelling | lime | 8 words, **heard not seen** |
 | 6 | Sentence Writing | gold | 8 questions |
 | 7 | Math | cyan | 10 questions |
 
@@ -395,6 +395,33 @@ without understanding anything.
 Read-aloud follows the phase: in the study beat it reads the word and its
 meaning, in the recall beat it reads the question and the choices. It never
 reads the meaning back once the card is gone.
+
+## Spelling: heard, never seen
+
+The word plays by itself when the item appears, and is **never written
+anywhere on the screen**. The options are spellings of it; picking one is an
+ordinary tapped answer, so the sitting is scored and branches normally.
+
+`Question.format === 'listen'` with a `listenWord` that the renderer reads and
+never prints. Two tests hold the line: the word must not appear in the question
+text, and exactly one option must spell it, which must be the key.
+
+**Three replays, then no more.** A limit at all is a product decision rather
+than a technical one: unlimited replays turn a spelling item into a listening
+item, and a child can sit on one word forever. The first play is free — it is
+the prompt, not a replay — and three more are offered after it. Running out is
+not a failure state, so the button greys rather than warns and the counter
+reads "your best guess is fine".
+
+The generic "Read to me" control and the per-option speakers are **hidden on a
+spelling item**: reading the choices aloud would say the answer.
+
+**Without speech synthesis the item cannot be administered.** Rather than
+recording a guess as a spelling result, the panel says so plainly, shows the
+word for a grown-up to read, and the answer is submitted **unscored** — the
+same `scored: false` path an unjudged spoken take uses. It lands on the results
+page as "Recorded — for review". Better a gap a teacher can see than a number
+nobody measured.
 
 ## Spoken items
 
