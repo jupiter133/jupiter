@@ -187,7 +187,20 @@ export function usePlacementFlow(childName: string): Flow {
 
   const beginQuest = startNextSitting;
 
-  const startSection = useCallback(() => setStep('question'), []);
+  /**
+   * Opens the sitting the intro just introduced.
+   *
+   * It insists on a session rather than assuming one: "do this one later"
+   * moves the intro to a different subject, and starting a sitting that was
+   * never built renders a screen with no question on it.
+   */
+  const startSection = useCallback(() => {
+    if (!session || session.finishedAt) {
+      startNextSitting();
+      return;
+    }
+    setStep('question');
+  }, [session, startNextSitting]);
 
   const answer = useCallback(
     (
@@ -229,9 +242,26 @@ export function usePlacementFlow(childName: string): Flow {
   const doThisLater = useCallback(() => {
     const subject = session?.subject ?? nextSubject;
     if (!subject) return;
+    const stillToSit = requiredSubjects.filter(
+      (s) => s !== subject && !skipped.includes(s) && !completed.some((r) => r.subject === s),
+    );
     setSkipped((prev) => (prev.includes(subject) ? prev : [...prev, subject]));
     setSession(null);
-  }, [session, nextSubject]);
+    setLastQuestion(null);
+    // Every subject skipped: there is no next intro to show, so hand back.
+    if (stillToSit.length === 0 || !grade) {
+      setStep('parent-results');
+      return;
+    }
+    // Build the next sitting here. Leaving the intro on screen with no session
+    // behind it is what made "start" open an empty question screen.
+    setSession(
+      createSession(grade, stillToSit[0], {
+        floored: readingGated && !isReadingSubject(stillToSit[0]),
+      }),
+    );
+    setStep('section-intro');
+  }, [session, nextSubject, requiredSubjects, skipped, completed, grade, readingGated]);
 
   const toggleAudio = useCallback(() => {
     setAudioOverride((prev) => !(prev ?? audioDefaultFor(age !== null ? ageBandForAge(age) : 'junior')));
