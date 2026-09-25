@@ -8,7 +8,7 @@ import {
   submitAnswer,
   toSubjectResult,
 } from './engine';
-import { QUESTIONS, READING_BANK_IS_STUB, TRACK_BANK_IS_STUB } from './questionBank';
+import { QUESTIONS, TRACK_BANK_IS_STUB } from './questionBank';
 import { deriveReadingLevel, readingBottleneck, readingSubjectsFor } from './readingLevel';
 import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
 import { SPEECH_SCORING_IS_STUB } from './speechScoring';
@@ -137,6 +137,34 @@ describe('question bank', () => {
     }
   });
 
+  it('never shows the same passage in two different subjects', () => {
+    // A child sits Oral Reading and then Reading Comprehension in one
+    // assessment. Reading the same text twice makes the second sitting a
+    // memory check and the first one a rehearsal, and neither measures what
+    // it claims to.
+    const seen = new Map<string, string>();
+    for (const q of QUESTIONS) {
+      const text = (q.spokenPassage ?? q.passage ?? '').trim().toLowerCase();
+      if (!text) continue;
+      const previous = seen.get(text);
+      expect(previous, `${q.id} repeats the passage from ${previous}`).toBeUndefined();
+      seen.set(text, q.id);
+    }
+  });
+
+  it('never reuses a passage title across subjects either', () => {
+    // Different words under the same heading still read as the same piece to
+    // a child, and to a teacher reviewing the session.
+    const titles = new Map<string, string>();
+    for (const q of QUESTIONS) {
+      const title = (q.passageTitle ?? '').trim().toLowerCase();
+      if (!title) continue;
+      const previous = titles.get(title);
+      expect(previous, `${q.id} reuses the title of ${previous}`).toBeUndefined();
+      titles.set(title, q.id);
+    }
+  });
+
   it('never gives the answer away by word-matching', () => {
     // A question may use the studied word — "What is deteriorating?" is a fair
     // question and unanswerable without the meaning. What it must not do is
@@ -174,7 +202,6 @@ describe('question bank', () => {
 
   it('knows the reading bank is a stub, so nobody ships on it by accident', () => {
     // Flip this expectation when the teacher-written banks land.
-    expect(READING_BANK_IS_STUB).toBe(true);
     expect(TRACK_BANK_IS_STUB).toBe(true);
   });
 

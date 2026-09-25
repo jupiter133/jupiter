@@ -326,7 +326,7 @@ exactly as the assessment intro design names them:
 | 1 | Words Speaking | cyan | 6 words, **spoken** |
 | 2 | Oral Reading | pink | 5 passages, **read aloud** |
 | 3 | Vocabulary | gold | 8 words, **study then recall** |
-| 4 | Reading Comprehension | green | 8 questions |
+| 4 | Reading Comprehension | green | 8 passages, **study then recall** |
 | 5 | Spelling | lime | 8 questions |
 | 6 | Sentence Writing | gold | 8 questions |
 | 7 | Math | cyan | 10 questions |
@@ -340,11 +340,17 @@ is actually sat.
 **Words Speaking is never a gate input.** It is recorded as an observation in
 every outcome and always reads as non-determining on the results page.
 
-## Vocabulary: study, then recall
+## Study, then recall
 
-A vocabulary item is two beats, not one. The child reads a word **and what it
-means** on a card of its own; then the card is taken away and a question about
-that meaning takes its place.
+**Vocabulary and Reading Comprehension** are two beats, not one. The child
+reads something on a card of its own; then the card is taken away and a
+question about it takes its place. One format (`Question.format === 'study'`),
+one screen, two shapes:
+
+| Subject | Studies | Carries |
+|---|---|---|
+| Vocabulary | a word and what it means | `studyWord` + `studyMeaning` |
+| Reading Comprehension | a short passage | `passage` + `passageTitle` |
 
 ```
 "deteriorate"                    →   confirm   →   What is deteriorating?
@@ -353,14 +359,27 @@ To get steadily worse over time.                   ○ A bridge slowly rusting t
                                                    ○ A new pair of boots
 ```
 
-`Question.format === 'study'` with `studyWord` and `studyMeaning`; the recall
-half is an ordinary tapped question with real options and a real key, so the
-sitting is scored and branches like any other. `QuestionScreen` runs the three
-phases — study, confirm, recall — off one item, which keeps the answering path
-(sparkles, progress, read-aloud, correctness-blindness) identical to every
-other tapped subject.
+The recall half is an ordinary tapped question with real options and a real
+key, so both sittings are scored and branch like any other. `QuestionScreen`
+runs the three phases — study, confirm, recall — off one item, which keeps the
+answering path (sparkles, progress, read-aloud, correctness-blindness)
+identical to every other tapped subject. In the recall beat the passage is
+gone, so the layout does not reserve a column for it.
 
-**Why the confirmation exists.** The next tap takes the meaning away and a
+**Comprehension passages are deliberately short** — 9 to 37 words, well under
+the Oral Reading ones. The passage is taken away before the question, so length
+is working memory as much as comprehension, and a long passage would measure
+the wrong thing. Questions ask what the passage meant, never a detail a child
+would have had to memorise.
+
+**No passage appears in two subjects.** A child sits Oral Reading and then
+Reading Comprehension in the same assessment; reading the same text twice would
+make the second sitting a memory check and the first a rehearsal. Two tests
+enforce it — one on passage text, one on titles, because different words under
+the same heading still read as the same piece. The first draft of the
+comprehension bank failed both, and was rewritten rather than exempted.
+
+**Why the confirmation exists.** The next tap takes the card away and a
 child who tapped by accident cannot get it back. It is the only confirmation in
 the flow. It is written as a question, not a warning — nothing has gone wrong,
 and there is no error colour in this product to render one with. Escape goes
@@ -653,7 +672,6 @@ content**, and both are flagged so nothing ships on them quietly:
 
 | File | Covers | Flag |
 |---|---|---|
-| `readingBank.stub.json` | oral reading, comprehension, vocabulary | `READING_BANK_IS_STUB` |
 | `trackBank.stub.json` | the seven Little Reader activities, Words Speaking, Spelling | `TRACK_BANK_IS_STUB` |
 
 A test asserts both flags are still `true`. Flip the expectations when the

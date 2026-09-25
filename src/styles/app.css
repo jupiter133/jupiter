@@ -1815,3 +1815,38 @@ body {
   .study__meaning-card { padding: 8px 16px; }
   .study__meaning { font-size: 16px; line-height: 1.4; }
 }
+
+/* Reading Comprehension studies a passage rather than a word. The passage
+   is taken away before the question, so it is kept short by content rather
+   than scrolled — see the bank's note on working memory. */
+.study__passage-card {
+  width: 100%;
+  max-width: 660px;
+  padding: clamp(16px, 2.6vh, 28px) clamp(18px, 3vw, 36px);
+  border: 3px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--surface-canvas);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: left;
+  min-height: 0;
+  overflow-y: auto;
+}
+.study__passage-title { color: var(--accent-secondary); }
+.study__passage {
+  margin: 0;
+  font-size: clamp(18px, 2.3vw, 27px);
+  font-weight: var(--fw-bold);
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+@media (max-height: 560px) {
+  .study__passage-card { padding: 10px 16px; gap: 2px; }
+  .study__passage { font-size: 16px; line-height: 1.45; }
+}
+@media (max-width: 600px) {
+  .study__passage-card { padding: 14px 16px; }
+  .study__passage { font-size: 17px; line-height: 1.55; }
+}

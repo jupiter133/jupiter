@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { AgeBand, Question, Subject } from '../assessment/types';
-import { SUBJECT_LABEL, isStudyQuestion, questionTextFor } from '../assessment/types';
+import { SUBJECT_LABEL, isStudyPassage, isStudyQuestion, questionTextFor } from '../assessment/types';
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { STRAND_TAG, Tag } from '../components/Tag';
@@ -58,6 +58,7 @@ export function QuestionScreen({
   const [chosenId, setChosenId] = useState<string | null>(null);
   const [leaving, setLeaving] = useState(false);
   const isStudy = isStudyQuestion(question);
+  const studiesPassage = isStudyPassage(question);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
 
@@ -74,7 +75,14 @@ export function QuestionScreen({
   // Auto-read when the preference is on. Replays are the button's job.
   useEffect(() => {
     if (!audioEnabled) return;
-    if (phase === 'study') speak([question.studyWord ?? '', question.studyMeaning ?? ''], rate);
+    if (phase === 'study') {
+      speak(
+        isStudyPassage(question)
+          ? [question.passageTitle ?? '', question.passage ?? '']
+          : [question.studyWord ?? '', question.studyMeaning ?? ''],
+        rate,
+      );
+    }
     else if (phase === 'recall') speak(script, rate);
     return stop;
     // Re-reading is keyed to the item and the preference, not to every render.
@@ -90,7 +98,7 @@ export function QuestionScreen({
   }
 
   const isJunior = band === 'junior';
-  const hasPassage = Boolean(question.passage);
+  const hasPassage = Boolean(question.passage) && !isStudy;
   const showOptionArt = isJunior && question.options.some((o) => o.art);
   /* Sentence-length answers read better one-up; two columns wrap them into
      three or four lines each. */
@@ -106,7 +114,8 @@ export function QuestionScreen({
             {/* A vocabulary sitting counts words, not questions — the study
                 card and the question it leads to are one item. */}
             <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>{' '}
-            · {isStudy ? 'Word' : 'Question'} {questionNumber}
+            · {isStudy && !studiesPassage ? 'Word' : studiesPassage ? 'Passage' : 'Question'}{' '}
+            {questionNumber}
           </span>
           <div
             className="progress-track"
@@ -148,12 +157,23 @@ export function QuestionScreen({
              having understood the meaning, not from copying it down. */
           <div key={`${question.id}-study`} className="study question-anim">
             <p className="label study__kicker">Read this, then it disappears</p>
-            <div className="study__word-card">
-              <span className="study__word">{question.studyWord}</span>
-            </div>
-            <div className="study__meaning-card">
-              <p className="study__meaning">{question.studyMeaning}</p>
-            </div>
+            {studiesPassage ? (
+              <div className="study__passage-card">
+                {question.passageTitle && (
+                  <p className="label study__passage-title">{question.passageTitle}</p>
+                )}
+                <p className="study__passage">{question.passage}</p>
+              </div>
+            ) : (
+              <>
+                <div className="study__word-card">
+                  <span className="study__word">{question.studyWord}</span>
+                </div>
+                <div className="study__meaning-card">
+                  <p className="study__meaning">{question.studyMeaning}</p>
+                </div>
+              </>
+            )}
             <div className="study__go">
               <button
                 type="button"
@@ -169,6 +189,7 @@ export function QuestionScreen({
 
         {phase === 'confirm' && (
           <ConfirmStudyDialog
+            what={studiesPassage ? 'passage' : 'word'}
             word={question.studyWord ?? ''}
             onContinue={() => setPhase('recall')}
             onBack={() => setPhase('study')}
@@ -269,10 +290,12 @@ export function QuestionScreen({
  * there is no error colour here and nothing has gone wrong.
  */
 function ConfirmStudyDialog({
+  what,
   word,
   onContinue,
   onBack,
 }: {
+  what: 'word' | 'passage';
   word: string;
   onContinue: () => void;
   onBack: () => void;
@@ -294,11 +317,13 @@ function ConfirmStudyDialog({
       <div className="dialog">
         <p className="label dialog__kicker">Ready?</p>
         <h2 id="study-confirm" className="dialog__title">
-          Have you read {word ? `“${word}”` : 'the word'} and what it means?
+          {what === 'passage'
+            ? 'Have you read the passage?'
+            : `Have you read ${word ? `“${word}”` : 'the word'} and what it means?`}
         </h2>
         <p className="body dialog__body">
-          They disappear next, and the question comes after. You can go back and look again —
-          nothing is being timed.
+          {what === 'passage' ? 'It disappears next' : 'They disappear next'}, and the question
+          comes after. You can go back and look again — nothing is being timed.
         </p>
         <div className="dialog__actions">
           <button type="button" ref={first} className="btn btn--primary" onClick={onContinue}>

@@ -121,9 +121,17 @@ export function isSpokenQuestion(question: Question): boolean {
   return question.format === 'speak';
 }
 
-/** True when the child studies a word and its meaning before answering. */
+/**
+ * True when the child reads something first and answers after it is taken
+ * away — a word with its meaning, or a passage.
+ */
 export function isStudyQuestion(question: Question): boolean {
-  return question.format === 'study' && Boolean(question.studyWord);
+  return question.format === 'study' && Boolean(question.studyWord || question.passage);
+}
+
+/** True when the thing studied is a passage rather than a single word. */
+export function isStudyPassage(question: Question): boolean {
+  return isStudyQuestion(question) && !question.studyWord && Boolean(question.passage);
 }
 
 /** What a spoken item asks for: one word, or a whole passage read aloud. */

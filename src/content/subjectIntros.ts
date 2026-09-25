@@ -168,14 +168,14 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   'reading-comprehension': {
-    lead: 'Read a short story, then answer a few questions about what happened.',
+    lead: 'Read a short passage. Then it disappears, and a question about it comes.',
     cta: 'Start the story questions',
-    chips: [{ label: 'Short stories', ...CYAN }, { label: 'Tap answers', ...LIME }, { label: '~5 minutes', ...PINK }],
+    chips: [{ label: 'Read, then answer', ...CYAN }, { label: 'Short passages', ...LIME }, { label: '~5 minutes', ...PINK }],
     sections: rules([
-      ['The stories', 'You’ll read two or three very short stories. Read at your own pace — you can look back at the story any time.'],
-      ['The questions', 'After each story, a few questions ask what happened, who did it, or why. Tap the answer you think is right.'],
-      ['Need it read to you?', 'Tap the speaker to hear a story out loud — that’s allowed, and it tells Ms Hannah something helpful too.'],
-      ['The rules', 'No time limit. Your best guess always beats a blank — there’s no losing points.'],
+      ['Read it first', 'A short passage appears on its own. Read it at your own pace — nothing is being timed, and it is only a few sentences.'],
+      ['Then it disappears', 'When you tap “I’ve read it”, the passage goes away and a question takes its place. You get one chance to look again before that happens.'],
+      ['The questions', 'They ask what happened, why, or what the passage meant — not the exact words. Understanding it is enough.'],
+      ['Need it read to you?', 'Tap the speaker to hear the passage out loud before it goes — that’s allowed, and it tells Ms Hannah something helpful too.'],
     ]),
   },
   spelling: {

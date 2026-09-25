@@ -1,8 +1,1574 @@
 {
   "version": 1,
   "stub": true,
-  "note": "TEMPLATE-GENERATED PLACEHOLDER — NOT ASSESSMENT CONTENT. Covers the seven Little Readers activities plus Spelling, the Words Speaking word lists and the Oral Reading passages. Words Speaking and Oral Reading are spoken, not tapped, and nothing scores them yet (see speechScoring.ts). Replace before any child sits this.",
+  "note": "TEMPLATE-GENERATED PLACEHOLDER WHERE MARKED — NOT ASSESSMENT CONTENT. The seven Little Readers activities and Spelling are template stubs. Words Speaking, Oral Reading, Vocabulary and Reading Comprehension carry written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet (see speechScoring.ts).",
   "questions": [
+    {
+      "id": "ts-rc-t0-01",
+      "subject": "reading-comprehension",
+      "tier": 0,
+      "skill": "sequence",
+      "format": "study",
+      "passageTitle": "The Hat",
+      "passage": "Kim put on her sun hat. Then she went outside to play.",
+      "questionText": "What did Kim do first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She put on her hat"
+        },
+        {
+          "id": "b",
+          "text": "She went outside"
+        },
+        {
+          "id": "c",
+          "text": "She played"
+        },
+        {
+          "id": "d",
+          "text": "She had lunch"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t0-02",
+      "subject": "reading-comprehension",
+      "tier": 0,
+      "skill": "literal-recall",
+      "format": "study",
+      "passageTitle": "Blue Socks",
+      "passage": "Tom could only find one blue sock. The other one was in the wash.",
+      "questionText": "Where was the missing sock?",
+      "options": [
+        {
+          "id": "a",
+          "text": "In the wash"
+        },
+        {
+          "id": "b",
+          "text": "Under the bed"
+        },
+        {
+          "id": "c",
+          "text": "At school"
+        },
+        {
+          "id": "d",
+          "text": "In his shoe"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t0-03",
+      "subject": "reading-comprehension",
+      "tier": 0,
+      "skill": "literal-recall",
+      "format": "study",
+      "passageTitle": "The Nest",
+      "passage": "Two small birds built a nest in our tree. Now there are eggs in it.",
+      "questionText": "What is in the nest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eggs"
+        },
+        {
+          "id": "b",
+          "text": "Leaves"
+        },
+        {
+          "id": "c",
+          "text": "Nothing"
+        },
+        {
+          "id": "d",
+          "text": "A squirrel"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t0-04",
+      "subject": "reading-comprehension",
+      "tier": 0,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "The Dog",
+      "passage": "My dog ran to the gate. He wanted to go out.",
+      "questionText": "What did the dog want?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To go out"
+        },
+        {
+          "id": "b",
+          "text": "To eat"
+        },
+        {
+          "id": "c",
+          "text": "To sleep"
+        },
+        {
+          "id": "d",
+          "text": "To play inside"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t0-05",
+      "subject": "reading-comprehension",
+      "tier": 0,
+      "skill": "sequence",
+      "format": "study",
+      "passageTitle": "Bedtime",
+      "passage": "Dad read me a story. Then he turned off the light.",
+      "questionText": "What happened last?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dad turned off the light"
+        },
+        {
+          "id": "b",
+          "text": "Dad read a story"
+        },
+        {
+          "id": "c",
+          "text": "I got up"
+        },
+        {
+          "id": "d",
+          "text": "We ate dinner"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t0-06",
+      "subject": "reading-comprehension",
+      "tier": 0,
+      "skill": "literal-recall",
+      "format": "study",
+      "passageTitle": "The Bus",
+      "passage": "The yellow bus stopped. All the children got on.",
+      "questionText": "Who got on the bus?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The children"
+        },
+        {
+          "id": "b",
+          "text": "The driver"
+        },
+        {
+          "id": "c",
+          "text": "A dog"
+        },
+        {
+          "id": "d",
+          "text": "No one"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t1-01",
+      "subject": "reading-comprehension",
+      "tier": 1,
+      "skill": "feelings",
+      "format": "study",
+      "passageTitle": "The Big Wave",
+      "passage": "Ellie stood in the shallow water. A wave knocked her over, and she came up laughing.",
+      "questionText": "How did Ellie feel after the wave?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She thought it was fun"
+        },
+        {
+          "id": "b",
+          "text": "She was hurt"
+        },
+        {
+          "id": "c",
+          "text": "She was angry"
+        },
+        {
+          "id": "d",
+          "text": "She was frightened"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t1-02",
+      "subject": "reading-comprehension",
+      "tier": 1,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "Empty Shelf",
+      "passage": "Raj went to get cereal, but the shelf was empty. He had eaten the last of it yesterday.",
+      "questionText": "Why was the shelf empty?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raj had finished the cereal"
+        },
+        {
+          "id": "b",
+          "text": "The shop was closed"
+        },
+        {
+          "id": "c",
+          "text": "Mum forgot to shop"
+        },
+        {
+          "id": "d",
+          "text": "The box fell down"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t1-03",
+      "subject": "reading-comprehension",
+      "tier": 1,
+      "skill": "sequence",
+      "format": "study",
+      "passageTitle": "The Loose Tooth",
+      "passage": "Ivy wiggled her tooth all through the lesson. At home tea time, it came out in her apple.",
+      "questionText": "When did the tooth come out?",
+      "options": [
+        {
+          "id": "a",
+          "text": "At tea time"
+        },
+        {
+          "id": "b",
+          "text": "During the lesson"
+        },
+        {
+          "id": "c",
+          "text": "In the morning"
+        },
+        {
+          "id": "d",
+          "text": "At bedtime"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t1-04",
+      "subject": "reading-comprehension",
+      "tier": 1,
+      "skill": "literal-recall",
+      "format": "study",
+      "passageTitle": "The Kite",
+      "passage": "Ana's kite went higher and higher. Then the string broke.",
+      "questionText": "What happened to the kite?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The string broke"
+        },
+        {
+          "id": "b",
+          "text": "It landed safely"
+        },
+        {
+          "id": "c",
+          "text": "It got stuck in a tree"
+        },
+        {
+          "id": "d",
+          "text": "It never flew"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t1-05",
+      "subject": "reading-comprehension",
+      "tier": 1,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "Cold Hands",
+      "passage": "Tom forgot his gloves. By the end of the walk his hands hurt.",
+      "questionText": "Why did Tom's hands hurt?",
+      "options": [
+        {
+          "id": "a",
+          "text": "He had no gloves"
+        },
+        {
+          "id": "b",
+          "text": "He fell over"
+        },
+        {
+          "id": "c",
+          "text": "He carried a bag"
+        },
+        {
+          "id": "d",
+          "text": "He hit a wall"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t1-06",
+      "subject": "reading-comprehension",
+      "tier": 1,
+      "skill": "sequence",
+      "format": "study",
+      "passageTitle": "The Window Box",
+      "passage": "Grandma planted seeds in a box on the sill. By summer the whole window was yellow.",
+      "questionText": "What did the seeds become?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Flowers"
+        },
+        {
+          "id": "b",
+          "text": "Trees"
+        },
+        {
+          "id": "c",
+          "text": "Weeds"
+        },
+        {
+          "id": "d",
+          "text": "Vegetables"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t2-01",
+      "subject": "reading-comprehension",
+      "tier": 2,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "Wrong Bag",
+      "passage": "Owen grabbed a backpack that looked just like his. He knew at once, because his own was much heavier.",
+      "questionText": "How did Owen know the bag was not his?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It weighed less than his"
+        },
+        {
+          "id": "b",
+          "text": "It was a different colour"
+        },
+        {
+          "id": "c",
+          "text": "His name was missing"
+        },
+        {
+          "id": "d",
+          "text": "The zip was broken"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t2-02",
+      "subject": "reading-comprehension",
+      "tier": 2,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Quiet Cricket",
+      "passage": "The cricket chirped every night by the back step. On the night it turned cold, the garden went silent.",
+      "questionText": "Why did the garden go quiet?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The cold stopped the cricket"
+        },
+        {
+          "id": "b",
+          "text": "Someone moved the step"
+        },
+        {
+          "id": "c",
+          "text": "It started raining"
+        },
+        {
+          "id": "d",
+          "text": "The cricket got louder"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t2-03",
+      "subject": "reading-comprehension",
+      "tier": 2,
+      "skill": "character",
+      "format": "study",
+      "passageTitle": "Two Umbrellas",
+      "passage": "Dad took an umbrella even though the sky was clear. By the time we walked home, ours was the only dry family on the street.",
+      "questionText": "What does this show about Dad?",
+      "options": [
+        {
+          "id": "a",
+          "text": "He planned ahead"
+        },
+        {
+          "id": "b",
+          "text": "He liked carrying things"
+        },
+        {
+          "id": "c",
+          "text": "He was lucky"
+        },
+        {
+          "id": "d",
+          "text": "He disliked walking"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t2-04",
+      "subject": "reading-comprehension",
+      "tier": 2,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "Saturday Morning",
+      "passage": "Mum stirred while I counted out the raisins. We always drop one, and the dog is always waiting underneath.",
+      "questionText": "What does the dog do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eats the dropped blueberry"
+        },
+        {
+          "id": "b",
+          "text": "Helps stir"
+        },
+        {
+          "id": "c",
+          "text": "Counts berries"
+        },
+        {
+          "id": "d",
+          "text": "Hides"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t2-05",
+      "subject": "reading-comprehension",
+      "tier": 2,
+      "skill": "character",
+      "format": "study",
+      "passageTitle": "The New Boy",
+      "passage": "Nobody sat with the new boy at lunch. Priya moved her tray over and asked his name.",
+      "questionText": "What does Priya’s action show about her?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kind"
+        },
+        {
+          "id": "b",
+          "text": "Shy"
+        },
+        {
+          "id": "c",
+          "text": "Rude"
+        },
+        {
+          "id": "d",
+          "text": "Angry"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t2-06",
+      "subject": "reading-comprehension",
+      "tier": 2,
+      "skill": "literal-recall",
+      "format": "study",
+      "passageTitle": "The Torn Page",
+      "passage": "Leo found a page torn from his library book. He told the librarian right away.",
+      "questionText": "What did Leo do about it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "He told the librarian"
+        },
+        {
+          "id": "b",
+          "text": "He hid the book"
+        },
+        {
+          "id": "c",
+          "text": "He fixed it himself"
+        },
+        {
+          "id": "d",
+          "text": "He kept quiet"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t3-01",
+      "subject": "reading-comprehension",
+      "tier": 3,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "The Broken Clock",
+      "passage": "The kitchen clock stopped at ten past four, and for a week nobody noticed. We had all been reading the time off our phones.",
+      "questionText": "Why did nobody notice?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They checked their phones instead"
+        },
+        {
+          "id": "b",
+          "text": "The clock was hidden"
+        },
+        {
+          "id": "c",
+          "text": "They were away"
+        },
+        {
+          "id": "d",
+          "text": "The clock looked right"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t3-02",
+      "subject": "reading-comprehension",
+      "tier": 3,
+      "skill": "character",
+      "format": "study",
+      "passageTitle": "Last In Line",
+      "passage": "Hugo let three people go ahead of him and ended up last. He said he did not mind, because he got to see everyone else's face when they saw the view.",
+      "questionText": "Why did Hugo not mind being last?",
+      "options": [
+        {
+          "id": "a",
+          "text": "He enjoyed watching the others' reactions"
+        },
+        {
+          "id": "b",
+          "text": "He was not interested in the view"
+        },
+        {
+          "id": "c",
+          "text": "He wanted to leave early"
+        },
+        {
+          "id": "d",
+          "text": "He was tired of waiting"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t3-03",
+      "subject": "reading-comprehension",
+      "tier": 3,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "The Spare Key",
+      "passage": "We keep a spare key with the neighbour rather than under a plant pot. A key everyone knows how to find is not much of a secret.",
+      "questionText": "Why not use the plant pot?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is an obvious hiding place"
+        },
+        {
+          "id": "b",
+          "text": "The pot is too small"
+        },
+        {
+          "id": "c",
+          "text": "The neighbour insisted"
+        },
+        {
+          "id": "d",
+          "text": "The key does not fit"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t3-04",
+      "subject": "reading-comprehension",
+      "tier": 3,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "The Locked Door",
+      "passage": "Maya turned the handle twice before she noticed the note taped at eye level. Closed today, it said.",
+      "questionText": "Why would the door not open?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The place was closed"
+        },
+        {
+          "id": "b",
+          "text": "The handle was broken"
+        },
+        {
+          "id": "c",
+          "text": "She had the wrong key"
+        },
+        {
+          "id": "d",
+          "text": "It was stuck"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t3-05",
+      "subject": "reading-comprehension",
+      "tier": 3,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "First Snow",
+      "passage": "The class stopped listening the moment the first flakes passed the window. Mr Dale sighed and let them watch.",
+      "questionText": "Why did Mr Dale sigh?",
+      "options": [
+        {
+          "id": "a",
+          "text": "He knew he had lost their attention"
+        },
+        {
+          "id": "b",
+          "text": "He was cold"
+        },
+        {
+          "id": "c",
+          "text": "He disliked snow"
+        },
+        {
+          "id": "d",
+          "text": "He was unwell"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t3-06",
+      "subject": "reading-comprehension",
+      "tier": 3,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Recipe",
+      "passage": "The recipe said to let the dough rest for an hour. We were hungry, so we baked it right away, and it came out flat.",
+      "questionText": "Why was the bread flat?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The dough did not rest"
+        },
+        {
+          "id": "b",
+          "text": "The oven was cold"
+        },
+        {
+          "id": "c",
+          "text": "There was no flour"
+        },
+        {
+          "id": "d",
+          "text": "It baked too long"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t4-01",
+      "subject": "reading-comprehension",
+      "tier": 4,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Understudy",
+      "passage": "Priya learned every line of a part she never expected to play. On the third night the lead lost her voice, and Priya walked on without a script.",
+      "questionText": "Why was Priya ready?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She had learned the part anyway"
+        },
+        {
+          "id": "b",
+          "text": "She was told in advance"
+        },
+        {
+          "id": "c",
+          "text": "She read from a script"
+        },
+        {
+          "id": "d",
+          "text": "She wrote the play"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t4-02",
+      "subject": "reading-comprehension",
+      "tier": 4,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "The Slow Train",
+      "passage": "The express reaches the coast in two hours; the local takes four and stops at eleven villages. My grandfather has always chosen the local.",
+      "questionText": "What does his choice suggest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "He values the journey itself"
+        },
+        {
+          "id": "b",
+          "text": "He cannot afford the express"
+        },
+        {
+          "id": "c",
+          "text": "He dislikes the coast"
+        },
+        {
+          "id": "d",
+          "text": "He is always late"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t4-03",
+      "subject": "reading-comprehension",
+      "tier": 4,
+      "skill": "detail",
+      "format": "study",
+      "passageTitle": "The Missing Page",
+      "passage": "The recipe book was passed down three generations, and the page for the honey cake is gone. Nobody knows whether it was lost or taken.",
+      "questionText": "What is uncertain about the page?",
+      "options": [
+        {
+          "id": "a",
+          "text": "How it disappeared"
+        },
+        {
+          "id": "b",
+          "text": "Which cake it held"
+        },
+        {
+          "id": "c",
+          "text": "Who wrote the book"
+        },
+        {
+          "id": "d",
+          "text": "How old the book is"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t4-04",
+      "subject": "reading-comprehension",
+      "tier": 4,
+      "skill": "character",
+      "format": "study",
+      "passageTitle": "The Relay",
+      "passage": "Jonah dropped the baton on the last handover. His team still crowded round him at the finish, laughing.",
+      "questionText": "How did the team treat Jonah?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They stayed friendly"
+        },
+        {
+          "id": "b",
+          "text": "They blamed him"
+        },
+        {
+          "id": "c",
+          "text": "They ignored him"
+        },
+        {
+          "id": "d",
+          "text": "They left early"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t4-05",
+      "subject": "reading-comprehension",
+      "tier": 4,
+      "skill": "author-view",
+      "format": "study",
+      "passageTitle": "The Old Map",
+      "passage": "The map showed a road that no longer exists and a lake that has since been drained. It is useless for finding your way, and priceless for understanding the place.",
+      "questionText": "What is the map good for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Understanding the area's past"
+        },
+        {
+          "id": "b",
+          "text": "Navigating today"
+        },
+        {
+          "id": "c",
+          "text": "Measuring distances"
+        },
+        {
+          "id": "d",
+          "text": "Finding the lake"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t4-06",
+      "subject": "reading-comprehension",
+      "tier": 4,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "The Audition",
+      "passage": "Sara practised the same eight bars for three weeks. When her name was called she found her hands were steady.",
+      "questionText": "Why were her hands steady?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She had prepared thoroughly"
+        },
+        {
+          "id": "b",
+          "text": "She was not nervous by nature"
+        },
+        {
+          "id": "c",
+          "text": "The piece was easy"
+        },
+        {
+          "id": "d",
+          "text": "She had given up caring"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t5-01",
+      "subject": "reading-comprehension",
+      "tier": 5,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Sourdough",
+      "passage": "A baker in Nanaimo has kept the same starter alive since 1974, feeding it flour and water every day. Skip a week and decades of work are gone.",
+      "questionText": "Why must the starter be fed daily?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It dies if neglected"
+        },
+        {
+          "id": "b",
+          "text": "It tastes better fresh"
+        },
+        {
+          "id": "c",
+          "text": "It doubles in size"
+        },
+        {
+          "id": "d",
+          "text": "The law requires it"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t5-02",
+      "subject": "reading-comprehension",
+      "tier": 5,
+      "skill": "author-view",
+      "format": "study",
+      "passageTitle": "The Second Draft",
+      "passage": "Our teacher makes us hand in the rough version stapled behind the neat one. She says she is marking the distance between them.",
+      "questionText": "What is the teacher actually assessing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "How much the work improved"
+        },
+        {
+          "id": "b",
+          "text": "How neat the final copy is"
+        },
+        {
+          "id": "c",
+          "text": "How fast students write"
+        },
+        {
+          "id": "d",
+          "text": "How long the essay is"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t5-03",
+      "subject": "reading-comprehension",
+      "tier": 5,
+      "skill": "inference",
+      "format": "study",
+      "passageTitle": "The Quiet Car",
+      "passage": "One carriage on the morning train has no phone calls and no music. It fills first, every day, before any of the others.",
+      "questionText": "What does filling first suggest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Many passengers want quiet"
+        },
+        {
+          "id": "b",
+          "text": "It has the most seats"
+        },
+        {
+          "id": "c",
+          "text": "It is nearest the door"
+        },
+        {
+          "id": "d",
+          "text": "It is cheaper"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t5-04",
+      "subject": "reading-comprehension",
+      "tier": 5,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Tide",
+      "passage": "Twice a day the bay empties until boats sit on mud, then fills again. Visitors who moor without checking the tables find themselves stranded by lunchtime.",
+      "questionText": "Why do visitors get stranded?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They did not check the tide tables"
+        },
+        {
+          "id": "b",
+          "text": "Their boats are too heavy"
+        },
+        {
+          "id": "c",
+          "text": "The bay never refills"
+        },
+        {
+          "id": "d",
+          "text": "They arrive too early"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t5-05",
+      "subject": "reading-comprehension",
+      "tier": 5,
+      "skill": "character",
+      "format": "study",
+      "passageTitle": "The Volunteer",
+      "passage": "Every Saturday for eleven years Ms Okafor has opened the food bank at eight. She says she keeps a key so nobody has to wait in the rain.",
+      "questionText": "What does her reason reveal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She thinks about others' comfort"
+        },
+        {
+          "id": "b",
+          "text": "She dislikes being late"
+        },
+        {
+          "id": "c",
+          "text": "She wants the job"
+        },
+        {
+          "id": "d",
+          "text": "She lives nearby"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t5-06",
+      "subject": "reading-comprehension",
+      "tier": 5,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Power Line",
+      "passage": "A single fallen line left four thousand homes dark. Crews reached it by snowmobile, because the road had closed hours earlier.",
+      "questionText": "Why did crews use snowmobiles?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The road was closed"
+        },
+        {
+          "id": "b",
+          "text": "It was faster than driving"
+        },
+        {
+          "id": "c",
+          "text": "There were no trucks"
+        },
+        {
+          "id": "d",
+          "text": "The line was on a lake"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t6-01",
+      "subject": "reading-comprehension",
+      "tier": 6,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "Lighthouse Keepers",
+      "passage": "Automation removed the last keepers from Canadian lighthouses in stages, but a handful of stations kept theirs — partly because a person can see a boat in trouble that a lamp cannot.",
+      "questionText": "Why were some keepers kept on?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A person can spot a vessel in distress"
+        },
+        {
+          "id": "b",
+          "text": "The lamps were unreliable"
+        },
+        {
+          "id": "c",
+          "text": "Automation was too costly"
+        },
+        {
+          "id": "d",
+          "text": "The stations were remote"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t6-02",
+      "subject": "reading-comprehension",
+      "tier": 6,
+      "skill": "detail",
+      "format": "study",
+      "passageTitle": "The Rebuilt Violin",
+      "passage": "The instrument was smashed in a fall and glued back from forty pieces. Players say it sounds warmer now, though nobody can explain why.",
+      "questionText": "What is unexplained?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Why the repaired violin sounds warmer"
+        },
+        {
+          "id": "b",
+          "text": "Who dropped it"
+        },
+        {
+          "id": "c",
+          "text": "How it was glued"
+        },
+        {
+          "id": "d",
+          "text": "Where it is kept"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t6-03",
+      "subject": "reading-comprehension",
+      "tier": 6,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "The Long Count",
+      "passage": "Volunteers count migrating hawks from the same ridge every autumn, and have since 1954. One year's numbers mean little; seventy years of them show a trend.",
+      "questionText": "Why does the length of the record matter?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A trend only appears over many years"
+        },
+        {
+          "id": "b",
+          "text": "Volunteers improve with practice"
+        },
+        {
+          "id": "c",
+          "text": "Hawks change route yearly"
+        },
+        {
+          "id": "d",
+          "text": "The ridge is moving"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t6-04",
+      "subject": "reading-comprehension",
+      "tier": 6,
+      "skill": "main-idea",
+      "format": "study",
+      "passageTitle": "Coral",
+      "passage": "Coral looks like rock but is built by animals no larger than a grain of rice. A reef is the accumulated work of generations of them.",
+      "questionText": "What is the passage mainly explaining?",
+      "options": [
+        {
+          "id": "a",
+          "text": "That reefs are built by tiny living animals"
+        },
+        {
+          "id": "b",
+          "text": "That coral is a kind of rock"
+        },
+        {
+          "id": "c",
+          "text": "That reefs are shrinking"
+        },
+        {
+          "id": "d",
+          "text": "That coral grows quickly"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t6-05",
+      "subject": "reading-comprehension",
+      "tier": 6,
+      "skill": "author-view",
+      "format": "study",
+      "passageTitle": "The Rewrite",
+      "passage": "The author threw away her first two hundred pages. She says nothing in them was wasted, because they taught her what the book was not.",
+      "questionText": "What does she mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The discarded work still had value"
+        },
+        {
+          "id": "b",
+          "text": "The pages were badly written"
+        },
+        {
+          "id": "c",
+          "text": "She regrets starting"
+        },
+        {
+          "id": "d",
+          "text": "The book was finished"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t6-06",
+      "subject": "reading-comprehension",
+      "tier": 6,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "Standard Time",
+      "passage": "Before railways, every town kept its own clock by the sun. Timetables only became possible once whole regions agreed to share one time.",
+      "questionText": "Why was shared time needed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "So timetables could work across places"
+        },
+        {
+          "id": "b",
+          "text": "So clocks would be cheaper"
+        },
+        {
+          "id": "c",
+          "text": "So the sun would be accurate"
+        },
+        {
+          "id": "d",
+          "text": "So towns could compete"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t7-01",
+      "subject": "reading-comprehension",
+      "tier": 7,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "The Replica",
+      "passage": "A gallery hangs a painted copy where the original once hung, labelled plainly as a replica. Visitors still stop in front of it for as long as they stopped for the original.",
+      "questionText": "What does visitor behaviour suggest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The image affects people regardless of authorship"
+        },
+        {
+          "id": "b",
+          "text": "Nobody reads the labels"
+        },
+        {
+          "id": "c",
+          "text": "The replica is better"
+        },
+        {
+          "id": "d",
+          "text": "The original was disliked"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t7-02",
+      "subject": "reading-comprehension",
+      "tier": 7,
+      "skill": "main-idea",
+      "format": "study",
+      "passageTitle": "Salting the Roads",
+      "passage": "Road salt keeps winter traffic moving and ends up in the groundwater every spring. Cities are now weighing safety in January against water quality in June.",
+      "questionText": "What is the difficulty described?",
+      "options": [
+        {
+          "id": "a",
+          "text": "One benefit comes at another's cost"
+        },
+        {
+          "id": "b",
+          "text": "Salt does not melt ice"
+        },
+        {
+          "id": "c",
+          "text": "Groundwater is scarce"
+        },
+        {
+          "id": "d",
+          "text": "Traffic stops in winter"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t7-03",
+      "subject": "reading-comprehension",
+      "tier": 7,
+      "skill": "author-view",
+      "format": "study",
+      "passageTitle": "The Unread Clause",
+      "passage": "Almost nobody reads the terms they agree to, and companies write them knowing this. The consent is real in law and close to meaningless in practice.",
+      "questionText": "What contrast is drawn?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Between legal consent and informed consent"
+        },
+        {
+          "id": "b",
+          "text": "Between long and short contracts"
+        },
+        {
+          "id": "c",
+          "text": "Between buyers and sellers"
+        },
+        {
+          "id": "d",
+          "text": "Between old and new laws"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t7-04",
+      "subject": "reading-comprehension",
+      "tier": 7,
+      "skill": "detail",
+      "format": "study",
+      "passageTitle": "The Retraction",
+      "passage": "A journal withdrew a paper after the original data could not be found. The authors had made no accusation against them, but the finding no longer stands.",
+      "questionText": "Why was the paper withdrawn?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Its underlying data could not be produced"
+        },
+        {
+          "id": "b",
+          "text": "The authors were dishonest"
+        },
+        {
+          "id": "c",
+          "text": "It was unpopular"
+        },
+        {
+          "id": "d",
+          "text": "It was too long"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t7-05",
+      "subject": "reading-comprehension",
+      "tier": 7,
+      "skill": "author-view",
+      "format": "study",
+      "passageTitle": "Loan Words",
+      "passage": "English has borrowed so heavily that much of its everyday vocabulary began elsewhere. Speakers rarely notice, which is a fair measure of how completely the words have been absorbed.",
+      "questionText": "What does the writer take as evidence of absorption?",
+      "options": [
+        {
+          "id": "a",
+          "text": "That speakers do not notice the words are borrowed"
+        },
+        {
+          "id": "b",
+          "text": "That the words are old"
+        },
+        {
+          "id": "c",
+          "text": "That the words are short"
+        },
+        {
+          "id": "d",
+          "text": "That other languages borrowed back"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t7-06",
+      "subject": "reading-comprehension",
+      "tier": 7,
+      "skill": "cause-effect",
+      "format": "study",
+      "passageTitle": "The Detour",
+      "passage": "The bridge closure added forty minutes to every crossing, and within a month the shops on the old route reported takings down by a third.",
+      "questionText": "What connection does the passage draw?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Traffic changes affected local trade"
+        },
+        {
+          "id": "b",
+          "text": "The shops raised their prices"
+        },
+        {
+          "id": "c",
+          "text": "The bridge was unsafe"
+        },
+        {
+          "id": "d",
+          "text": "Drivers preferred the detour"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t8-01",
+      "subject": "reading-comprehension",
+      "tier": 8,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "Goodhart's Law",
+      "passage": "When a measure becomes a target it stops measuring well, because people optimise for the number rather than the thing it stood for. Hospitals judged on waiting times found ways to shorten the wait without treating anyone sooner.",
+      "questionText": "What does the hospital example illustrate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A target can be met without the underlying improvement"
+        },
+        {
+          "id": "b",
+          "text": "Waiting times do not matter"
+        },
+        {
+          "id": "c",
+          "text": "Measurement is impossible"
+        },
+        {
+          "id": "d",
+          "text": "Hospitals are dishonest by nature"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t8-02",
+      "subject": "reading-comprehension",
+      "tier": 8,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "The Restored Wetland",
+      "passage": "Engineers spent a decade returning a drained field to marsh, then let it alone. The species that returned were not the ones anyone had planned for, and the water ran clearer than the models predicted.",
+      "questionText": "What does the outcome suggest about the plan?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The system did better than the predictions anticipated"
+        },
+        {
+          "id": "b",
+          "text": "The restoration failed"
+        },
+        {
+          "id": "c",
+          "text": "The models were deliberately wrong"
+        },
+        {
+          "id": "d",
+          "text": "No species returned"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t8-03",
+      "subject": "reading-comprehension",
+      "tier": 8,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "Anonymous Review",
+      "passage": "Removing names from submissions changed which papers were accepted, and the effect was largest for authors from unfamiliar institutions. The work had not improved; only what reviewers could see about it had changed.",
+      "questionText": "What does the passage imply about the earlier process?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Judgements were influenced by the authors' identity"
+        },
+        {
+          "id": "b",
+          "text": "Reviewers were incompetent"
+        },
+        {
+          "id": "c",
+          "text": "The papers were poorly written"
+        },
+        {
+          "id": "d",
+          "text": "Anonymity lowered standards"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t8-04",
+      "subject": "reading-comprehension",
+      "tier": 8,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "Survivorship",
+      "passage": "Engineers studying returning aircraft first reinforced the areas that showed damage. The insight that changed the analysis was that the planes hit elsewhere had not come back at all.",
+      "questionText": "What error did the original approach make?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It drew conclusions only from what survived"
+        },
+        {
+          "id": "b",
+          "text": "It ignored the damage shown"
+        },
+        {
+          "id": "c",
+          "text": "It reinforced too much"
+        },
+        {
+          "id": "d",
+          "text": "It counted planes twice"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t8-05",
+      "subject": "reading-comprehension",
+      "tier": 8,
+      "skill": "reasoning",
+      "format": "study",
+      "passageTitle": "The Null Result",
+      "passage": "Studies finding no effect are published far less often than studies finding one, which means the literature as a whole overstates how reliable an effect is.",
+      "questionText": "Why does this distort the record?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The evidence against an effect is under-reported"
+        },
+        {
+          "id": "b",
+          "text": "Null studies are poorly conducted"
+        },
+        {
+          "id": "c",
+          "text": "Journals invent findings"
+        },
+        {
+          "id": "d",
+          "text": "Effects are usually large"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-rc-t8-06",
+      "subject": "reading-comprehension",
+      "tier": 8,
+      "skill": "figurative",
+      "format": "study",
+      "passageTitle": "Measured Prose",
+      "passage": "He writes as though every adjective costs him something. The restraint is not coldness; it is the reason the rare warm sentence lands as hard as it does.",
+      "questionText": "What is the critic arguing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Restraint gives the warm moments their force"
+        },
+        {
+          "id": "b",
+          "text": "The writing is emotionless"
+        },
+        {
+          "id": "c",
+          "text": "He uses too few words"
+        },
+        {
+          "id": "d",
+          "text": "Adjectives should be avoided"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
     {
       "id": "ts-vo-t0-01",
       "subject": "vocabulary",
