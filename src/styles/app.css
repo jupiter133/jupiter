@@ -553,12 +553,15 @@ body {
 /* Seven rows, not five. In a short landscape window the list is what runs the
    screen past its height, so the rows tighten rather than the decision card. */
 @media (orientation: landscape) and (max-height: 820px) {
-  .placement__rows { gap: 8px; }
-  .placement-row { padding: 8px 16px; }
+  .placement__rows { gap: 6px; }
+  .placement-row { padding: 6px 14px; }
   .placement-row__name { padding: 4px 12px; font-size: 14px; }
   .placement-row__value { font-size: 15px; }
-  .placement-explainer { padding: 12px 16px; font-size: 14px; line-height: 1.45; }
-  .placement { gap: clamp(10px, 1.6vh, 18px); }
+  /* Two explainers can stack here — a gated reading note and an unscored
+     read-aloud note — so they have to be as tight as they are legible. */
+  .placement-explainer { padding: 10px 14px; font-size: 13.5px; line-height: 1.4; }
+  .placement { gap: clamp(8px, 1.4vh, 16px); }
+  .placement-footnote { font-size: 13px; }
 }
 .placement__restart { text-align: center; }
 
