@@ -86,8 +86,10 @@ export interface Question {
   subject: Subject;
   /** Defaults to 'choice' when absent, so every existing item is unchanged. */
   format?: QuestionFormat;
-  /** The word to say aloud. Present on 'speak' items only. */
+  /** The word to say aloud. Present on single-word 'speak' items. */
   spokenWord?: string;
+  /** The passage to read aloud. Present on read-aloud 'speak' items. */
+  spokenPassage?: string;
   /** 0 (Kindergarten) to 8 (Grade 8). */
   tier: Tier;
   /** Fine-grained content tag, e.g. "letter-sound", "main-idea", "fractions". */
@@ -109,6 +111,12 @@ export interface Question {
 /** True when this item is answered by speaking rather than tapping. */
 export function isSpokenQuestion(question: Question): boolean {
   return question.format === 'speak';
+}
+
+/** What a spoken item asks for: one word, or a whole passage read aloud. */
+export function spokenTextFor(question: Question): { text: string; isPassage: boolean } {
+  if (question.spokenPassage) return { text: question.spokenPassage, isPassage: true };
+  return { text: question.spokenWord ?? question.questionText, isPassage: false };
 }
 
 export function questionTextFor(question: Question, band: AgeBand): string {
@@ -190,6 +198,13 @@ export interface SubjectResult {
   finalTier: Tier;
   /** True when the sitting was floored — see SessionState.floored. */
   floored: boolean;
+  /**
+   * True when NOTHING in the sitting was scored — every answer was a spoken
+   * attempt with no scorer behind it. `finalTier` is then just the tier the
+   * sitting opened on, and reading it as a measure would put a level on a
+   * child nobody measured.
+   */
+  unscored: boolean;
   questionsAnswered: number;
   durationMs: number;
   completedAt: number;
@@ -210,6 +225,8 @@ export interface SubjectPlacement {
    */
   nonDetermining: boolean;
   floored: boolean;
+  /** See SubjectResult.unscored. Never render this row as a level. */
+  unscored: boolean;
 }
 
 /** The one program the child is placed into, once every subject is done.
@@ -243,6 +260,12 @@ export interface PlacementResult {
   readingGated: boolean;
   /** The derived reading level, once both reading sittings are done. */
   readingTier: Tier | null;
+  /**
+   * The reading subjects the level actually rests on. Short of the track's
+   * full set when a reading sitting came back unscored — the level still
+   * derives, from what was measured, and this says what that was.
+   */
+  readingRestsOn: Subject[];
   /**
    * Math content level, set by GRADE placement, never by assessed math. The
    * assessed math tier only feeds gate step 4.

@@ -1634,3 +1634,86 @@ body {
   .mic svg { width: 28px; height: 28px; }
   .speaking__prompt { display: none; }
 }
+
+/* Oral Reading: the same mic mechanic, sized for a passage instead of a word. */
+.read-card {
+  width: 100%;
+  max-width: 660px;
+  padding: clamp(14px, 2.4vh, 26px) clamp(16px, 3vw, 34px);
+  border: 3px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--surface-canvas);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 0;
+  overflow-y: auto;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+.read-card--live { border-color: var(--accent-secondary); background: var(--accent-secondary-soft); }
+.read-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.read-card__kicker { color: var(--accent-secondary); text-align: left; }
+.read-card__text {
+  margin: 0;
+  text-align: left;
+  font-size: clamp(19px, 2.4vw, 30px);
+  font-weight: var(--fw-bold);
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+/* A passage needs the height a single word does not. */
+.speaking--passage .speaking__body { justify-content: flex-start; gap: clamp(8px, 1.4vh, 14px); }
+.speaking--passage .read-card { flex: 0 1 auto; }
+.speaking--passage .mic { width: clamp(72px, 10vh, 92px); height: clamp(72px, 10vh, 92px); }
+
+@media (max-height: 560px) {
+  .read-card__text { font-size: 15px; line-height: 1.42; }
+  .read-card { padding: 10px 16px; gap: 4px; }
+  .speaking--passage .mic { width: 60px; height: 60px; }
+}
+
+/* A child reading aloud should not have to scroll mid-sentence. On a shorter
+   tablet the longest passages need slightly smaller type to land whole. */
+@media (max-height: 820px) and (min-width: 601px) {
+  .read-card__text { font-size: clamp(18px, 2vw, 24px); line-height: 1.6; }
+}
+
+/* Same reason, on a phone. */
+@media (max-width: 600px) {
+  .read-card { padding: 14px 16px; gap: var(--space-2); }
+  .read-card__text { font-size: 17px; line-height: 1.55; }
+  .speaking--passage .speaking__prompt { display: none; }
+  .speaking--passage .mic { width: 68px; height: 68px; }
+  .speaking--passage .mic svg { width: 30px; height: 30px; }
+}
+
+/* In a short landscape window a stacked passage is squeezed into a slot too
+   small to read from. The passage takes the width instead, and the mic and
+   its button sit beside it. */
+@media (max-height: 560px) and (orientation: landscape) {
+  .speaking--passage .speaking__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    /* Column 2 stacks: mic, its caption, then the button. */
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    align-content: center;
+    column-gap: clamp(16px, 3vw, 32px);
+    /* The live mic carries a 10px ring, so the caption needs to clear it. */
+    row-gap: 14px;
+  }
+  .speaking--passage .read-card {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+  }
+  .speaking--passage .mic { grid-column: 2; grid-row: 1; align-self: end; justify-self: center; }
+  .speaking--passage .mic__caption { grid-column: 2; grid-row: 2; justify-self: center; }
+  .speaking--passage .speaking__go { grid-column: 2; grid-row: 3; }
+}

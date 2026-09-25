@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Question, Subject } from '../assessment/types';
-import { SUBJECT_LABEL } from '../assessment/types';
+import { SUBJECT_LABEL, spokenTextFor } from '../assessment/types';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
 import { ACTIVE_SPEECH_SCORER, type SpokenVerdict } from '../assessment/speechScoring';
@@ -57,7 +57,8 @@ export function SpeakingScreen({
   const stopTimer = useRef(0);
   const { supported: canSpeak, speaking, speak, stop: stopSpeaking } = useSpeech();
 
-  const word = question.spokenWord ?? question.questionText;
+  const { text: word, isPassage } = spokenTextFor(question);
+  const unit = isPassage ? 'Passage' : 'Word';
 
   function releaseMic() {
     window.cancelAnimationFrame(raf.current);
@@ -79,7 +80,9 @@ export function SpeakingScreen({
   // Model the word first when read-aloud is on, so a child who cannot read it
   // yet still knows what they are being asked to say.
   useEffect(() => {
-    if (audioEnabled) speak([word], 0.85);
+    // A passage is the child's to read — modelling it first would turn a
+    // reading measure into a repetition one. Single words are fair to model.
+    if (audioEnabled && !isPassage) speak([word], 0.85);
     return stopSpeaking;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [question.id, audioEnabled]);
@@ -143,10 +146,11 @@ export function SpeakingScreen({
 
   return (
     <div className="stage">
-      <div className="card card--tight question-screen speaking">
+      <div className={`card card--tight question-screen speaking${isPassage ? ' speaking--passage' : ''}`}>
         <div className="quest-bar">
           <span className="label">
-            <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · Word {questionNumber}
+            <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag> · {unit}{' '}
+            {questionNumber}
           </span>
           <div
             className="progress-track"
@@ -158,7 +162,7 @@ export function SpeakingScreen({
           >
             <div className="progress-fill" style={{ width: `${progress}%` }} />
           </div>
-          {canSpeak && (
+          {canSpeak && !isPassage && (
             <div className="audio-controls">
               <button
                 type="button"
@@ -183,36 +187,34 @@ export function SpeakingScreen({
         </div>
 
         <div key={question.id} className="speaking__body question-anim">
-          <div className={`word-card${phase === 'recording' ? ' word-card--live' : ''}`}>
-            <span className="wave" aria-hidden="true">
-              {bars.map((b, i) => (
-                <span
-                  key={i}
-                  className="wave__bar"
-                  style={{
-                    height: `${12 + b * 26 * (phase === 'recording' ? 0.4 + level * 3 : 0.35)}px`,
-                  }}
-                />
-              ))}
-            </span>
-            <span className="word-card__word">{word}</span>
-            <span className="wave wave--right" aria-hidden="true">
-              {bars.map((b, i) => (
-                <span
-                  key={i}
-                  className="wave__bar"
-                  style={{
-                    height: `${12 + b * 26 * (phase === 'recording' ? 0.4 + level * 3 : 0.35)}px`,
-                  }}
-                />
-              ))}
-            </span>
-          </div>
+          {isPassage ? (
+            <div className={`read-card${phase === 'recording' ? ' read-card--live' : ''}`}>
+              <div className="read-card__head">
+                <span className="label read-card__kicker">
+                  {question.passageTitle ?? 'Read this out loud'}
+                </span>
+                <Wave bars={bars} live={phase === 'recording'} level={level} />
+              </div>
+              <p className="read-card__text">{word}</p>
+            </div>
+          ) : (
+            <div className={`word-card${phase === 'recording' ? ' word-card--live' : ''}`}>
+              <Wave bars={bars} live={phase === 'recording'} level={level} />
+              <span className="word-card__word">{word}</span>
+              <span className="wave--right">
+                <Wave bars={bars} live={phase === 'recording'} level={level} />
+              </span>
+            </div>
+          )}
 
           <p className="body speaking__prompt">
-            {phase === 'ready' && 'Tap the microphone, then say the word out loud.'}
-            {phase === 'recording' && 'Listening — say it nice and clear!'}
-            {phase === 'captured' && 'Got it. Ready for the next word?'}
+            {phase === 'ready' &&
+              (isPassage
+                ? 'Tap the microphone, then read it out loud.'
+                : 'Tap the microphone, then say the word out loud.')}
+            {phase === 'recording' &&
+              (isPassage ? 'Listening — take your time.' : 'Listening — say it nice and clear!')}
+            {phase === 'captured' && `Got it. Ready for the next ${unit.toLowerCase()}?`}
           </p>
 
           <button
@@ -226,7 +228,13 @@ export function SpeakingScreen({
             <MicIcon done={phase === 'captured'} />
           </button>
           <span className="mic__caption">
-            {phase === 'recording' ? 'Tap when you’re done' : phase === 'captured' ? 'Nice one!' : 'Tap to speak'}
+            {phase === 'recording'
+              ? 'Tap when you’re done'
+              : phase === 'captured'
+                ? 'Nice one!'
+                : isPassage
+                  ? 'Tap to read'
+                  : 'Tap to speak'}
           </span>
 
           <div className="speaking__go">
@@ -236,11 +244,11 @@ export function SpeakingScreen({
               disabled={phase === 'recording'}
               onClick={next}
             >
-              {questionNumber >= questionsPerSubject ? 'Finish' : 'Next word'}
+              {questionNumber >= questionsPerSubject ? 'Finish' : `Next ${unit.toLowerCase()}`}
             </button>
             {phase === 'ready' && (
               <button type="button" className="text-btn text-btn--sm" onClick={next}>
-                Skip this word
+                {isPassage ? 'Skip this one' : 'Skip this word'}
               </button>
             )}
             <span className="field__hint">
@@ -252,6 +260,21 @@ export function SpeakingScreen({
         </div>
       </div>
     </div>
+  );
+}
+
+/** The child's own microphone level, not a timed animation. */
+function Wave({ bars, live, level }: { bars: number[]; live: boolean; level: number }) {
+  return (
+    <span className="wave" aria-hidden="true">
+      {bars.map((b, i) => (
+        <span
+          key={i}
+          className="wave__bar"
+          style={{ height: `${12 + b * 26 * (live ? 0.4 + level * 3 : 0.35)}px` }}
+        />
+      ))}
+    </span>
   );
 }
 

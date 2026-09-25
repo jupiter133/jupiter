@@ -37,7 +37,9 @@ export const QUESTIONS_PER_SUBJECT: Record<Subject, number> = {
   'letter-sounds': 8,
   'word-practice': 8,
   'words-speaking': 6,
-  'oral-reading': 8,
+  // Passages, not single items — five is already three or four minutes of
+  // reading aloud for a child.
+  'oral-reading': 5,
   vocabulary: 8,
   'reading-comprehension': 8,
   spelling: 8,

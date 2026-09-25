@@ -14,7 +14,7 @@ import { startTierForGrade, tierGradeLabel } from './types';
 import { MIN_TIER, clampTier, gapFor, gradeTier } from './tiers';
 import { evaluateGate, type GateDecision, type GateInputs } from './gate';
 import { hasAgeGradeMismatch } from './intake';
-import { deriveReadingLevel, readingSubjectsFor } from './readingLevel';
+import { deriveReadingLevel, measuredParts, readingSubjectsFor } from './readingLevel';
 import { trackFor, subjectsForTrack } from './subjects';
 import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
 import { coreReadingProgramFor, PROGRAM_DESCRIPTIONS as DESCRIPTIONS } from './programs';
@@ -83,6 +83,11 @@ export function isSessionComplete(state: SessionState): boolean {
   if (state.questionsAnswered.length >= (state.maxQuestions ?? QUESTIONS_PER_SUBJECT[state.subject]))
     return true;
   if (selectNextQuestion(state) === null) return true;
+  // A sitting nothing has scored has no tier signal, so a "stable" tier means
+  // only that nothing moved it. Stopping there would cut the sitting short and
+  // gather fewer observations, which is the one thing it is for.
+  if (state.questionsAnswered.length > 0 && state.questionsAnswered.every((a) => !a.scored))
+    return false;
   return isTierStable(state);
 }
 
@@ -158,6 +163,10 @@ export function toSubjectResult(state: SessionState): SubjectResult {
     subject: state.subject,
     finalTier: state.currentTier,
     floored: state.floored,
+    // Nothing in the sitting was judged, so the tier it ended on is just the
+    // tier it opened on. Downstream must not read it as a measure.
+    unscored:
+      state.questionsAnswered.length > 0 && state.questionsAnswered.every((a) => !a.scored),
     questionsAnswered: state.questionsAnswered.length,
     durationMs: Math.max(0, finishedAt - state.startedAt),
     completedAt: finishedAt,
@@ -224,6 +233,9 @@ export function buildResult(
     .map((subject) => by(subject))
     .filter((r): r is SubjectResult => Boolean(r));
   const readingTier = deriveReadingLevel(track, readingParts);
+  // Which sittings the level was actually read off — short of the full set
+  // when a spoken sitting came back unscored.
+  const readingRestsOn = measuredParts(readingParts).map((r) => r.subject);
   const gateInputs: GateInputs = {
     grade,
     readingTier,
@@ -248,8 +260,10 @@ export function buildResult(
     gap: gapFor(r.finalTier, grade),
     gradeEquivalentDisplay: tierGradeLabel(r.finalTier),
     questionsAnswered: r.questionsAnswered,
-    nonDetermining: r.floored || !determined.has(r.subject),
+    // An unscored sitting is on file, never a level.
+    nonDetermining: r.floored || r.unscored || !determined.has(r.subject),
     floored: r.floored,
+    unscored: r.unscored,
   }));
 
   const program: ProgramPlacement | null =
@@ -273,6 +287,7 @@ export function buildResult(
     age,
     ageGradeMismatch: age === null ? false : hasAgeGradeMismatch(age, grade),
     requiredSubjects,
+    readingRestsOn,
     subjects,
     nextSubject,
     complete,

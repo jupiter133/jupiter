@@ -324,7 +324,7 @@ exactly as the assessment intro design names them:
 | # | Chamber | Colour | Sitting |
 |---|---------|--------|---------|
 | 1 | Words Speaking | cyan | 6 words, **spoken** |
-| 2 | Oral Reading | pink | 8 questions |
+| 2 | Oral Reading | pink | 5 passages, **read aloud** |
 | 3 | Vocabulary | gold | 8 questions |
 | 4 | Reading Comprehension | green | 8 questions |
 | 5 | Spelling | lime | 8 questions |
@@ -342,11 +342,20 @@ every outcome and always reads as non-determining on the results page.
 
 ## Spoken items
 
-Every other item in the product is tapped. A Words Speaking item is **said out
-loud**: `Question.format` is `'speak'`, it carries a `spokenWord` and no
-options at all, and `SpeakingScreen` renders it — one big word, a live
-waveform driven by the child's own microphone level, tap to record, tap to
-stop, next.
+**Two of the seven Grade Level chambers are spoken**, and the rest are tapped.
+A spoken item has `Question.format === 'speak'` and no options at all;
+`SpeakingScreen` renders both shapes off the same mic mechanic — tap to
+record, a waveform driven by the child's own microphone level, tap to stop,
+next.
+
+| Subject | Carries | Renders as |
+|---|---|---|
+| Words Speaking | `spokenWord` | one big word, 6 per sitting |
+| Oral Reading | `spokenPassage` + `passageTitle` | a passage card, 5 per sitting |
+
+**Oral Reading is never read to the child**, even with auto-read on. Modelling
+the passage first would turn a reading measure into a repetition one. Single
+words are fair to model, so Words Speaking keeps its "Hear it" button.
 
 **Nothing scores it yet, and the code says so rather than pretending.**
 `src/assessment/speechScoring.ts` is the seam. The active scorer is a stub
@@ -357,11 +366,30 @@ that returns `{ scored: false }` for every attempt, and an unscored answer
 - no tier move, so the sitting ends where it started
 - `AnsweredQuestion.scored` is `false`, so a teacher can see what was measured
   and what was only captured
+- `SubjectResult.unscored` is true when NOTHING in the sitting was scored, and
+  that row reads **"Recorded — for review"** rather than a level
+- the stability window is suspended for an unscored sitting: a tier that never
+  moved is not a tier that settled, so it runs its full length instead of
+  stopping after four
 
 That is deliberate. Reading an unscored take as "wrong" would drop a child two
-tiers on the strength of a guess. Words Speaking is already non-determining,
-so a stub costs the placement nothing — and the screen never says right or
-wrong, because nothing has established either.
+tiers on the strength of a guess, and the screen never says right or wrong
+because nothing has established either.
+
+### What an unscored Oral Reading costs the placement
+
+Words Speaking never gated anything, so stubbing it is free. **Oral Reading is
+one of the two subjects the reading level derives from**, so it is not.
+
+Rather than withholding every Grade Level placement until a scorer exists,
+`deriveReadingLevel` ignores unscored sittings and derives from what was
+measured — today, Reading Comprehension alone. `PlacementResult.readingRestsOn`
+reports which subjects that was, and the results page says so to the parent in
+plain words instead of showing a level that quietly rests on half of what it
+appears to. A level is withheld entirely only when nothing at all was measured.
+
+When speech scoring lands, Oral Reading rejoins the derivation with no other
+change.
 
 Three ways to make it real, in `ACTIVE_SPEECH_SCORER`:
 

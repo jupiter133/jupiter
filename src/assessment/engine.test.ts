@@ -123,8 +123,20 @@ describe('question bank', () => {
     }
   });
 
+  it('makes both spoken subjects spoken, all the way through', () => {
+    for (const subject of ['words-speaking', 'oral-reading'] as Subject[]) {
+      const items = QUESTIONS.filter((q) => q.subject === subject);
+      expect(items.length, subject).toBeGreaterThan(0);
+      // A sitting that mixed a mic screen with tapped options would be
+      // incoherent; the bank is the place that guarantee holds.
+      expect(items.every(isSpokenQuestion), subject).toBe(true);
+    }
+  });
+
   it('holds at least six items per tier in the two reading subjects', () => {
-    for (const subject of [...readingSubjectsFor('little-reader'), ...readingSubjectsFor('grade-level')]) {
+    const tapped = [...readingSubjectsFor('little-reader'), ...readingSubjectsFor('grade-level')]
+      .filter((s) => !QUESTIONS.filter((q) => q.subject === s).every(isSpokenQuestion));
+    for (const subject of tapped) {
       for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
         const n = QUESTIONS.filter((q) => q.subject === subject && q.tier === tier).length;
         expect(n, `${subject} tier ${tier}`).toBeGreaterThanOrEqual(6);
@@ -145,11 +157,11 @@ describe('question bank', () => {
     }
   });
 
-  it('gives every spoken item a word to say and no answer key to leak', () => {
+  it('gives every spoken item something to say and no answer key to leak', () => {
     const spoken = QUESTIONS.filter(isSpokenQuestion);
     expect(spoken.length).toBeGreaterThan(0);
     for (const q of spoken) {
-      expect(q.spokenWord, q.id).toBeTruthy();
+      expect(q.spokenWord ?? q.spokenPassage, q.id).toBeTruthy();
       expect(q.options, q.id).toHaveLength(0);
       expect(q.correctAnswerId, q.id).toBe('');
     }
@@ -175,7 +187,7 @@ describe('start tier', () => {
 
 describe('branching', () => {
   it('moves up one tier after two correct in a row', () => {
-    let s = createSession('4', 'oral-reading');
+    let s = createSession('4', 'reading-comprehension');
     expect(s.currentTier).toBe(4);
     s = answer(s, true);
     expect(s.currentTier).toBe(4);
@@ -184,14 +196,14 @@ describe('branching', () => {
   });
 
   it('moves down one tier after two incorrect in a row', () => {
-    let s = createSession('4', 'oral-reading');
+    let s = createSession('4', 'reading-comprehension');
     s = answer(s, false);
     s = answer(s, false);
     expect(s.currentTier).toBe(3);
   });
 
   it('resets streaks when a run is broken', () => {
-    let s = createSession('4', 'oral-reading');
+    let s = createSession('4', 'reading-comprehension');
     s = answer(s, true);
     s = answer(s, false);
     expect(s.currentTier).toBe(4);
@@ -200,16 +212,16 @@ describe('branching', () => {
   });
 
   it('clamps at Kindergarten and Grade 8', () => {
-    const low = sit('SK', 'oral-reading', () => false);
+    const low = sit('SK', 'reading-comprehension', () => false);
     expect(low.currentTier).toBe(MIN_TIER);
 
-    let high = createSession('6', 'oral-reading');
+    let high = createSession('6', 'reading-comprehension');
     for (let i = 0; i < 6 && !high.finishedAt; i += 1) high = answer(high, true);
     expect(high.currentTier).toBeLessThanOrEqual(MAX_TIER);
   });
 
   it('serves the next question from the tier the branch moved to', () => {
-    let s = createSession('4', 'oral-reading');
+    let s = createSession('4', 'reading-comprehension');
     s = answer(s, true);
     s = answer(s, true);
     expect(s.currentTier).toBe(5);
@@ -231,18 +243,18 @@ describe('length and stop rule', () => {
 
   it('gives math the longer sitting its intro promises', () => {
     expect(QUESTIONS_PER_SUBJECT.math).toBe(10);
-    expect(QUESTIONS_PER_SUBJECT['oral-reading']).toBe(8);
+    expect(QUESTIONS_PER_SUBJECT['reading-comprehension']).toBe(8);
   });
 
   it('ends early once the tier has held for four questions', () => {
     // Alternating answers never build a streak, so the tier never moves.
-    const s = sit('4', 'oral-reading', (i) => i % 2 === 0);
+    const s = sit('4', 'reading-comprehension', (i) => i % 2 === 0);
     expect(s.questionsAnswered.length).toBe(STABILITY_WINDOW);
     expect(isTierStable(s)).toBe(true);
   });
 
   it('keeps going while the tier is still moving', () => {
-    const s = sit('4', 'oral-reading', (i) => i % 4 === 1 || i % 4 === 2);
+    const s = sit('4', 'reading-comprehension', (i) => i % 4 === 1 || i % 4 === 2);
     expect(s.questionsAnswered.length).toBeGreaterThan(STABILITY_WINDOW);
   });
 
@@ -296,6 +308,39 @@ describe('unscored answers', () => {
     expect(s.currentTier).toBe(6);
   });
 
+  it('marks a whole sitting unscored, and never levels it', () => {
+    let s = createSession('5', 'oral-reading');
+    for (let i = 0; i < 5; i += 1) {
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      s = submitAnswer(s, q, 'spoken', (i + 1) * 1000, { scored: false });
+    }
+    expect(toSubjectResult(s).unscored).toBe(true);
+
+    const result = buildResult('5', 10, [
+      toSubjectResult(s),
+      { subject: 'reading-comprehension', finalTier: 3, floored: false, unscored: false, questionsAnswered: 8, durationMs: 1, completedAt: 2, history: [] },
+    ]);
+    const row = result.subjects.find((p) => p.subject === 'oral-reading')!;
+    expect(row.unscored).toBe(true);
+    expect(row.nonDetermining).toBe(true);
+    // The level rests on the one sitting that was actually measured.
+    expect(result.readingRestsOn).toEqual(['reading-comprehension']);
+    expect(result.readingTier).toBe(3);
+  });
+
+  it('runs an unscored sitting to its full length instead of stopping on a still tier', () => {
+    let s = createSession('5', 'words-speaking');
+    for (let i = 0; i < 12; i += 1) {
+      if (s.finishedAt) break;
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      s = submitAnswer(s, q, 'spoken', (i + 1) * 1000, { scored: false });
+    }
+    // Four identical tiers would trip the stability window on a scored sitting.
+    expect(s.questionsAnswered.length).toBe(QUESTIONS_PER_SUBJECT['words-speaking']);
+  });
+
   it('knows speech scoring is a stub, so nobody ships on it by accident', () => {
     expect(SPEECH_SCORING_IS_STUB).toBe(true);
   });
@@ -303,10 +348,10 @@ describe('unscored answers', () => {
 
 describe('subject result', () => {
   it('reports the tier the sitting ended on', () => {
-    const s = sit('4', 'oral-reading', () => true);
+    const s = sit('4', 'reading-comprehension', () => true);
     const result = toSubjectResult(s);
     expect(result.finalTier).toBe(s.currentTier);
-    expect(result.subject).toBe('oral-reading');
+    expect(result.subject).toBe('reading-comprehension');
     expect(result.questionsAnswered).toBe(s.questionsAnswered.length);
     expect(result.durationMs).toBeGreaterThan(0);
   });
@@ -376,13 +421,14 @@ describe('placement result', () => {
   const resultFor = (
     grade: Grade,
     tiers: Partial<Record<Subject, number>>,
-    options: { age?: number; floored?: Subject[] } = {},
+    options: { age?: number; floored?: Subject[]; unscored?: Subject[] } = {},
   ) => {
     const floored = new Set(options.floored ?? []);
     const completed: SubjectResult[] = ALL.filter((s) => s in tiers).map((subject) => ({
       subject,
       finalTier: tiers[subject] as number,
       floored: floored.has(subject),
+      unscored: (options.unscored ?? []).includes(subject),
       questionsAnswered: 8,
       durationMs: 60_000,
       completedAt: 1,
@@ -460,9 +506,9 @@ describe('placement result', () => {
 
   it('orders subjects by the sitting order, not completion order', () => {
     const result = buildResult('4', 10, [
-      { subject: 'math', finalTier: 4, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 3, history: [] },
-      { subject: 'oral-reading', finalTier: 5, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 1, history: [] },
-      { subject: 'sentence-writing', finalTier: 4, floored: false, questionsAnswered: 8, durationMs: 1, completedAt: 2, history: [] },
+      { subject: 'math', finalTier: 4, floored: false, unscored: false, questionsAnswered: 8, durationMs: 1, completedAt: 3, history: [] },
+      { subject: 'oral-reading', finalTier: 5, floored: false, unscored: false, questionsAnswered: 8, durationMs: 1, completedAt: 1, history: [] },
+      { subject: 'sentence-writing', finalTier: 4, floored: false, unscored: false, questionsAnswered: 8, durationMs: 1, completedAt: 2, history: [] },
     ]);
     expect(result.subjects.map((s) => s.subject)).toEqual([
       'oral-reading',

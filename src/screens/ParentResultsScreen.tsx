@@ -1,6 +1,13 @@
 import type { ParentContext, PlacementResult, Subject, SubjectPlacement } from '../assessment/types';
 import { SUBJECT_LABEL, SUBJECT_SHORT, SUBJECT_TILE } from '../assessment/types';
 import { displayName, possessiveName } from '../assessment/childName';
+import { readingSubjectsFor } from '../assessment/readingLevel';
+
+/** "A", "A and B", "A, B and C". */
+function list(items: string[]): string {
+  if (items.length <= 1) return items[0] ?? '';
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
+}
 
 interface Props {
   context: ParentContext | null;
@@ -20,6 +27,8 @@ interface Props {
  */
 function levelTextFor(placement: SubjectPlacement | undefined): string {
   if (!placement) return 'Not yet assessed';
+  // A spoken sitting nothing scored is recorded, never levelled.
+  if (placement.unscored) return 'Recorded — for review';
   if (placement.floored || placement.nonDetermining) return 'Observed only';
   return placement.gradeEquivalentDisplay;
 }
@@ -38,7 +47,17 @@ export function ParentResultsScreen({
   onRestart,
 }: Props) {
   const name = displayName(context?.childName ?? childName);
-  const { program, subjects, nextSubject, complete, readingGated } = result;
+  const { program, subjects, nextSubject, complete, readingGated, readingRestsOn } = result;
+  // READING sittings that were sat but never measured — the read-aloud with no
+  // scorer behind it. Scoped to the subjects the level derives from: Words
+  // Speaking is also unscored, but it never fed the level, so naming it here
+  // would tell the parent it cost them something it never carried.
+  const unmeasuredReading = subjects.filter(
+    (p) =>
+      p.unscored &&
+      readingSubjectsFor(result.track).includes(p.subject) &&
+      !readingRestsOn.includes(p.subject),
+  );
   const bySubject = (subject: Subject) => subjects.find((p) => p.subject === subject);
 
   return (
@@ -126,6 +145,18 @@ export function ParentResultsScreen({
                   the five earlier activities are readiness, recorded as observations rather than
                   measured. At this age that is the point — {name} is starting to read, and the
                   program starts where the reading does.
+                </p>
+              )}
+
+              {unmeasuredReading.length > 0 && (
+                <p className="placement-explainer">
+                  {list(unmeasuredReading.map((p) => SUBJECT_LABEL[p.subject]))}{' '}
+                  {unmeasuredReading.length === 1 ? 'was' : 'were'} read aloud and recorded, but
+                  nothing has scored{' '}
+                  {unmeasuredReading.length === 1 ? 'it' : 'them'} yet, so{' '}
+                  {unmeasuredReading.length === 1 ? 'it is' : 'they are'} on file for a teacher
+                  rather than counted. {possessiveName(context?.childName ?? childName)} reading
+                  level here rests on {list(readingRestsOn.map((s) => SUBJECT_LABEL[s]))} alone.
                 </p>
               )}
 

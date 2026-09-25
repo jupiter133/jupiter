@@ -146,14 +146,14 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   'oral-reading': {
-    lead: 'Read the words and short sentences out loud, clearly — you have 3 seconds per word.',
+    lead: 'Read each short passage out loud, clearly, so Ms Hannah can hear you.',
     cta: 'Start reading aloud',
-    chips: [{ label: 'Speak aloud', ...CYAN }, { label: '3s per word', ...LIME }, { label: '~3 minutes', ...PINK }],
+    chips: [{ label: 'Read aloud', ...CYAN }, { label: 'Short passages', ...LIME }, { label: '~3 minutes', ...PINK }],
     sections: rules([
-      ['Before you start', 'Find a quiet spot and sit with your grown-up nearby. Make sure the sound is on so Ms Hannah can hear you.'],
-      ['Reading out loud', 'A word or short sentence appears on the screen. Read it out loud, nice and clearly. Not sure? Take your best guess — guessing is part of exploring!'],
-      ['How we listen', 'The tablet listens while you read and marks each one for Ms Hannah. Nothing is saved except your answers.'],
-      ['The rules', 'One at a time, about 3 seconds each. You can pause between words whenever you need a break.'],
+      ['Before you start', 'Find a quiet spot. The tablet will ask to use the microphone — your grown-up can say yes and sit nearby.'],
+      ['Reading out loud', 'A short passage appears. Tap the microphone, read it out loud at your normal speed, then tap again when you reach the end.'],
+      ['Stuck on a word', 'Say your best try and keep going, or say “pass” and move to the next word. Getting stuck on one word is not the end of the passage.'],
+      ['Take your time', 'There is no countdown and no pass or fail. Tap “Next passage” when you are ready, and you can stop between passages whenever you like.'],
     ]),
   },
   vocabulary: {
