@@ -357,6 +357,41 @@ next.
 the passage first would turn a reading measure into a repetition one. Single
 words are fair to model, so Words Speaking keeps its "Hear it" button.
 
+### Read-along highlighting
+
+While a child reads a passage aloud, the words they have got through go bold
+and full-ink; what is ahead stays lighter. It keeps their eyes on the line,
+which is the focus-first idea the product is built on.
+
+**It advances on speech, not on correctness, and that is the whole design.**
+`src/audio/readingProgress.ts` counts the words in the transcript and moves the
+marker along. It never compares a spoken word to the text. A highlight that
+only advanced on a correctly recognised word would stall on exactly the word a
+struggling reader is stuck on — telling them mid-sentence that they got it
+wrong, at the worst possible moment, in a product that gives no right/wrong
+feedback anywhere else. Sloppy recognition, which is what a seven-year-old
+produces, costs a little accuracy in where the marker sits and costs the child
+nothing. A test asserts that a correct reading and nonsense of the same length
+advance the marker identically.
+
+The marker never moves backwards (recognition revises interim results
+downward, and un-reading words in front of a child is worse than a stale
+marker) and never runs past the end.
+
+**No layout shift.** Bold type is wider, so bolding a word in place would nudge
+the rest of the line along and, at a line end, rewrap the paragraph under the
+child's eye. Each word reserves the width of its own bold form: an invisible
+bold "ghost" copy sizes the box and the visible copy changes weight inside a
+box that never moves.
+
+**Where the audio goes.** This is the browser's own `SpeechRecognition`. In
+Chrome the audio is sent to Google to transcribe; Safari may handle it on
+device. Nothing is stored, and nothing it returns reaches the placement — the
+transcript is read for its word count and discarded. Set `TRACKING_ENABLED` to
+`false` in `src/audio/useReadingTracker.ts` and passages render with no
+highlight. A browser without speech recognition (Firefox) gets the plain
+passage, and the sitting is unaffected either way.
+
 **Nothing scores it yet, and the code says so rather than pretending.**
 `src/assessment/speechScoring.ts` is the seam. The active scorer is a stub
 that returns `{ scored: false }` for every attempt, and an unscored answer

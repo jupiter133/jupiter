@@ -1720,3 +1720,39 @@ body {
   .speaking--passage .mic__caption { grid-column: 2; grid-row: 2; justify-self: center; }
   .speaking--passage .speaking__go { grid-column: 2; grid-row: 3; }
 }
+
+/* The read-along marker. Words the child has got through go bold and full
+   ink; what is still ahead stays lighter, so the line they are on leads.
+   It advances on speech, never on correctness — a word that refused to bold
+   would be a wrong answer shown mid-sentence, which nothing here does.
+
+   Bold type is wider than semibold, so bolding a word in place would nudge
+   everything after it along the line and, at a line end, rewrap the paragraph
+   under the child's eye. Every word therefore reserves the width of its own
+   bold form: the two copies stack in one grid cell, the hidden bold ghost
+   sizes the box, and the visible copy changes weight inside a box that never
+   moves. */
+.read-word {
+  display: inline-grid;
+  vertical-align: baseline;
+}
+.read-word__ghost,
+.read-word__ink {
+  grid-area: 1 / 1;
+}
+.read-word__ghost {
+  font-weight: var(--fw-black);
+  visibility: hidden;
+}
+.read-word__ink {
+  transition: color 160ms ease;
+  color: var(--text-secondary);
+  font-weight: var(--fw-semibold);
+}
+.read-word--read .read-word__ink {
+  color: var(--text-primary);
+  font-weight: var(--fw-black);
+}
+@media (prefers-reduced-motion: reduce) {
+  .read-word__ink { transition: none; }
+}

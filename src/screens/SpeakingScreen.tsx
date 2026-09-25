@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Question, Subject } from '../assessment/types';
 import { SUBJECT_LABEL, spokenTextFor } from '../assessment/types';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
 import { ACTIVE_SPEECH_SCORER, type SpokenVerdict } from '../assessment/speechScoring';
+import { useReadingTracker } from '../audio/useReadingTracker';
+import { splitPassage } from '../audio/readingProgress';
 
 /** Hold the mic at least this long before "next" is offered. */
 const MIN_HOLD_MS = 400;
@@ -56,11 +58,15 @@ export function SpeakingScreen({
   const raf = useRef(0);
   const stopTimer = useRef(0);
   const { supported: canSpeak, speaking, speak, stop: stopSpeaking } = useSpeech();
+  const tracker = useReadingTracker();
 
   const { text: word, isPassage } = spokenTextFor(question);
   const unit = isPassage ? 'Passage' : 'Word';
+  const passageWords = useMemo(() => (isPassage ? splitPassage(word) : []), [isPassage, word]);
+  const trackingRead = isPassage && tracker.supported;
 
   function releaseMic() {
+    tracker.stop();
     window.cancelAnimationFrame(raf.current);
     window.clearTimeout(stopTimer.current);
     recorder.current?.state === 'recording' && recorder.current.stop();
@@ -93,6 +99,9 @@ export function SpeakingScreen({
     startedAt.current = Date.now();
     setPhase('recording');
     stopTimer.current = window.setTimeout(stopRecording, MAX_HOLD_MS);
+    // Follows the reading so the highlight moves. Counts words, never checks
+    // them — see readingProgress.ts.
+    if (trackingRead) tracker.start(passageWords.length);
 
     try {
       const media = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -195,7 +204,27 @@ export function SpeakingScreen({
                 </span>
                 <Wave bars={bars} live={phase === 'recording'} level={level} />
               </div>
-              <p className="read-card__text">{word}</p>
+              {trackingRead ? (
+                <p className="read-card__text">
+                  {passageWords.map((w, i) => (
+                    /* Each word reserves the width of its BOLD form, so going
+                       bold cannot reflow the line a child is reading. The
+                       ghost is the invisible bold copy that sets the box. */
+                    <span key={`${i}-${w}`}>
+                      <span
+                        className={`read-word${i < tracker.marker ? ' read-word--read' : ''}`}
+                      >
+                        <span className="read-word__ghost" aria-hidden="true">
+                          {w}
+                        </span>
+                        <span className="read-word__ink">{w}</span>
+                      </span>{' '}
+                    </span>
+                  ))}
+                </p>
+              ) : (
+                <p className="read-card__text">{word}</p>
+              )}
             </div>
           ) : (
             <div className={`word-card${phase === 'recording' ? ' word-card--live' : ''}`}>
