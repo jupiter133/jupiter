@@ -101,11 +101,21 @@ export interface Question {
    */
   listenSentence?: string;
   /**
-   * How the answer is given. 'tap' is the default everywhere. 'drag' puts the
-   * choices on tiles the child moves into a gap, which is slower on purpose —
-   * it suits an item worth dwelling on, not a whole sitting of them.
+   * How the answer is given. 'tap' is the default everywhere.
+   *
+   * - 'drag'  one tile into one gap (spelling)
+   * - 'order' every tile into a sequence (sentence writing, lower tiers)
+   * - 'write' the child types it (sentence writing, upper tiers)
+   *
+   * Dragging and ordering are slower than tapping on purpose: they suit an
+   * item worth dwelling on, not a whole sitting of them.
    */
-  answerMode?: 'tap' | 'drag';
+  answerMode?: 'tap' | 'drag' | 'order' | 'write';
+  /**
+   * Words a written sentence has to contain. Only read by the rubric in
+   * sentenceScoring.ts, never rendered as an answer.
+   */
+  requiredWords?: string[];
   /** The word to study. Present on 'study' items only. */
   studyWord?: string;
   /**
@@ -145,9 +155,24 @@ export function isStudyQuestion(question: Question): boolean {
   return question.format === 'study' && Boolean(question.studyWord || question.passage);
 }
 
-/** True when the answer is dragged into a gap rather than tapped. */
+/** True when the answer is one tile dragged into one gap. */
 export function isDragQuestion(question: Question): boolean {
   return question.answerMode === 'drag';
+}
+
+/** True when every tile has to be put into the right sequence. */
+export function isOrderQuestion(question: Question): boolean {
+  return question.answerMode === 'order';
+}
+
+/** True when the child types the answer instead of choosing it. */
+export function isWriteQuestion(question: Question): boolean {
+  return question.answerMode === 'write';
+}
+
+/** The ids of an ordering item's options, in the order that is correct. */
+export function correctOrderFor(question: Question): string[] {
+  return question.correctAnswerId.split('-');
 }
 
 /** What a 'listen' item plays: the sentence where there is one, else the word. */
@@ -213,6 +238,12 @@ export interface AnsweredQuestion {
   scored: boolean;
   /** Held the mic for this long, on a spoken item. */
   spokenMs?: number;
+  /**
+   * What the child typed, word for word, on a written item. Stored because
+   * the rubric that marked it can only see sentence mechanics — a teacher
+   * who wants to know whether the writing is any good reads this.
+   */
+  writtenAnswer?: string;
   answeredAt: number;
   /** ms spent on this single item. */
   elapsedMs: number;

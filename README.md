@@ -328,7 +328,7 @@ exactly as the assessment intro design names them:
 | 3 | Vocabulary | gold | 8 words, **study then recall** |
 | 4 | Reading Comprehension | green | 8 passages, **study then recall** |
 | 5 | Spelling | lime | 8 words, **heard not seen** |
-| 6 | Sentence Writing | gold | 8 questions |
+| 6 | Sentence Writing | gold | 8 items, **built or written** |
 | 7 | Math | cyan | 10 questions |
 
 Nobody is stopped early. A result we did not gather is a result a teacher
@@ -395,6 +395,54 @@ without understanding anything.
 Read-aloud follows the phase: in the study beat it reads the word and its
 meaning, in the recall beat it reads the question and the choices. It never
 reads the meaning back once the card is gone.
+
+## Sentence Writing: built, then written
+
+Every item shows a picture. What the child does with it depends on their
+level, and the split is in the content rather than in a branch:
+
+| Tiers | `answerMode` | The ask |
+|---|---|---|
+| 0–3 | `order` | the words are given, jumbled — put them in order |
+| 4–8 | `write` | type the sentence yourself |
+
+A sitting starts at the child's grade, so a Grade 2 builds and a Grade 6
+writes; a Grade 6 who drops to tier 3 gets the ordering shape, which is the
+right thing to happen.
+
+**Ordering is tapped, not dragged.** Tapping a word adds it to the line,
+tapping it in the line takes it back. Ordering six tiles by drag on a phone is
+fiddly in a way that measures coordination rather than language — the one
+dragged item in the product is a single tile into a single gap, in spelling,
+where that is the whole interaction. The words stay visible throughout, so
+nothing here is a memory test either. The shuffle is seeded per item, so the
+same child returning sees the same tiles, and a shuffle that happened to land
+on the answer is nudged off it.
+
+### What marks a written sentence, and what cannot
+
+`src/assessment/sentenceScoring.ts` checks four objective things: the required
+words are present (whole words, so "waterfall" is not "water"), it opens with a
+capital, it closes with terminal punctuation, and it is longer than the words
+it was handed. All four, and the answer is recorded correct.
+
+**That is sentence mechanics, and it is all a rule can honestly claim.** It
+does not know whether the sentence is good, apt or true. So every typed answer
+is stored verbatim on the result as `AnsweredQuestion.writtenAnswer`, precisely
+because the rubric cannot tell a teacher what they actually want to know.
+
+An empty box is not a wrong answer — `hasAttempt` keeps "did not answer" and
+"answered badly" apart, and the commit button stays disabled until something
+is written.
+
+### The 60-second limit is not built
+
+The design this was drawn from puts a countdown on each sentence. It is not
+here, and that is deliberate rather than an omission: every other screen in
+this product says "no timer, take as long as you like", and a visible clock on
+a writing task is the single change most likely to undo the focus this whole
+assessment is for. Reinstating it is a product decision with a child on the
+other end of it, so it needs a teacher's name against it rather than mine.
 
 ## Spelling: heard, never seen
 

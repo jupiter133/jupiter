@@ -5,6 +5,8 @@ import {
   heardTextFor,
   isDragQuestion,
   isListenQuestion,
+  isOrderQuestion,
+  isWriteQuestion,
   isStudyPassage,
   isStudyQuestion,
   questionTextFor,
@@ -12,6 +14,9 @@ import {
 import { Illustration } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { DragAnswer } from '../components/DragAnswer';
+import { OrderAnswer } from '../components/OrderAnswer';
+import { WriteAnswer } from '../components/WriteAnswer';
+import { markSentence } from '../assessment/sentenceScoring';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
 import { speechRateFor, speechScriptFor } from '../audio/speechScript';
@@ -45,7 +50,10 @@ interface Props {
   questionsPerSubject: number;
   audioEnabled: boolean;
   onToggleAudio: () => void;
-  onAnswer: (selectedAnswerId: string, options?: { scored?: boolean }) => void;
+  onAnswer: (
+    selectedAnswerId: string,
+    options?: { scored?: boolean; correct?: boolean; writtenAnswer?: string },
+  ) => void;
 }
 
 /**
@@ -80,6 +88,8 @@ export function QuestionScreen({
   const studiesPassage = isStudyPassage(question);
   const isListen = isListenQuestion(question);
   const isDrag = isDragQuestion(question);
+  const isOrder = isOrderQuestion(question);
+  const isWrite = isWriteQuestion(question);
   const [replaysLeft, setReplaysLeft] = useState(SPELLING_REPLAYS);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
@@ -115,6 +125,18 @@ export function QuestionScreen({
     // Re-reading is keyed to the item and the preference, not to every render.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [question.id, audioEnabled, phase]);
+
+  function commitWritten(written: string) {
+    if (chosenId !== null) return;
+    stop();
+    setChosenId(written);
+    setLeaving(true);
+    const marks = markSentence(written, { requiredWords: question.requiredWords ?? [] });
+    window.setTimeout(
+      () => onAnswer(written, { scored: true, correct: marks.correct, writtenAnswer: written }),
+      TRANSITION_MS,
+    );
+  }
 
   function choose(optionId: string) {
     if (chosenId !== null) return;
@@ -252,7 +274,15 @@ export function QuestionScreen({
             {/* Without a passage the art heads the question. Senior keeps it, at
                 a smaller size, so the screen stays friendly without being babyish. */}
             {!hasPassage && question.art && (
-              <div className={`art-panel art-panel--${band}`}>
+              /* On an ordering or writing item the picture IS the prompt, so
+                 it leads at full size whatever the band — the senior
+                 treatment shrinks it to a supporting strip, which is wrong
+                 when it is the thing being written about. */
+              <div
+                className={`art-panel art-panel--${
+                  isOrder || isWrite ? 'prompt' : band
+                }`}
+              >
                 <Illustration art={question.art} />
               </div>
             )}
@@ -301,6 +331,20 @@ export function QuestionScreen({
                 options={question.options}
                 disabled={chosenId !== null}
                 onCommit={choose}
+              />
+            ) : isOrder ? (
+              <OrderAnswer
+                options={question.options}
+                disabled={chosenId !== null}
+                onCommit={choose}
+                seed={question.id}
+              />
+            ) : isWrite ? (
+              <WriteAnswer
+                requiredWords={question.requiredWords ?? []}
+                disabled={chosenId !== null}
+                onCommit={commitWritten}
+                seed={question.id}
               />
             ) : (
             <div

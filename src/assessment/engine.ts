@@ -125,7 +125,12 @@ export function submitAnswer(
   question: Question,
   selectedAnswerId: string,
   now: number = Date.now(),
-  options: { scored?: boolean; correct?: boolean; spokenMs?: number } = {},
+  options: {
+    scored?: boolean;
+    correct?: boolean;
+    spokenMs?: number;
+    writtenAnswer?: string;
+  } = {},
 ): SessionState {
   const scored = options.scored ?? true;
   const wasCorrect = scored
@@ -142,6 +147,7 @@ export function submitAnswer(
     wasCorrect,
     scored,
     spokenMs: options.spokenMs,
+    writtenAnswer: options.writtenAnswer,
     answeredAt: now,
     elapsedMs: Math.max(0, now - lastAnsweredAt),
   };

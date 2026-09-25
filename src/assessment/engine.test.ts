@@ -25,8 +25,11 @@ import {
   tierGradeLabel,
   heardTextFor,
   isDragQuestion,
+  correctOrderFor,
   isListenQuestion,
+  isOrderQuestion,
   isSpokenQuestion,
+  isWriteQuestion,
   isStudyQuestion,
 } from './types';
 
@@ -40,6 +43,15 @@ function answer(state: SessionState, correct: boolean, at?: number): SessionStat
   const q = selectNextQuestion(state)!;
   // A spoken item is answered by speaking, and nothing scores it yet.
   if (isSpokenQuestion(q)) return submitAnswer(state, q, 'spoken', at, { scored: false });
+  // A written item is marked by the rubric, not by an answer key.
+  if (isWriteQuestion(q)) {
+    return submitAnswer(state, q, 'written', at, { correct, writtenAnswer: 'A sentence.' });
+  }
+  if (isOrderQuestion(q)) {
+    const right = correctOrderFor(q);
+    const built = correct ? right : [...right].reverse();
+    return submitAnswer(state, q, built.join('-'), at);
+  }
   const wrong = q.options.find((o) => o.id !== q.correctAnswerId)!.id;
   return submitAnswer(state, q, correct ? q.correctAnswerId : wrong, at);
 }
@@ -248,8 +260,42 @@ describe('question bank', () => {
 
   it('uses unique ids and valid answer keys', () => {
     expect(new Set(QUESTIONS.map((q) => q.id)).size).toBe(QUESTIONS.length);
-    for (const q of QUESTIONS.filter((q) => !isSpokenQuestion(q))) {
+    const keyed = QUESTIONS.filter(
+      (q) => !isSpokenQuestion(q) && !isWriteQuestion(q) && !isOrderQuestion(q),
+    );
+    for (const q of keyed) {
       expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
+    }
+  });
+
+  it('keys an ordering item by the whole sequence, and uses every word', () => {
+    const order = QUESTIONS.filter(isOrderQuestion);
+    expect(order.length).toBeGreaterThan(0);
+    for (const q of order) {
+      const ids = correctOrderFor(q);
+      // Every option appears exactly once in the key: a sentence that left a
+      // word out, or used one twice, could never be built.
+      expect([...ids].sort(), q.id).toEqual(q.options.map((o) => o.id).sort());
+      expect(new Set(ids).size, q.id).toBe(ids.length);
+      expect(ids.length, q.id).toBeGreaterThanOrEqual(4);
+    }
+  });
+
+  it('gives every written item a prompt and words to use, and no options', () => {
+    const write = QUESTIONS.filter(isWriteQuestion);
+    expect(write.length).toBeGreaterThan(0);
+    for (const q of write) {
+      expect(q.options, q.id).toHaveLength(0);
+      expect(q.correctAnswerId, q.id).toBe('');
+      expect(q.requiredWords ?? [], q.id).not.toHaveLength(0);
+      expect(q.questionText.length, q.id).toBeGreaterThan(10);
+    }
+  });
+
+  it('splits sentence writing by level: lower tiers order, upper tiers write', () => {
+    for (const q of QUESTIONS.filter((q) => q.subject === 'sentence-writing')) {
+      const expected = q.tier <= 3 ? 'order' : 'write';
+      expect(q.answerMode, `${q.id} (tier ${q.tier})`).toBe(expected);
     }
   });
 

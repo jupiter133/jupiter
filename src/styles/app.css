@@ -1985,3 +1985,110 @@ body {
   .drag__slot { min-height: 52px; }
   .drag__tile, .drag__ghost { font-size: 17px; padding: 8px 16px; }
 }
+
+/* ---------- Sentence Writing: order the words, or write them ---------- */
+
+.order, .write {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.8vh, 18px);
+  width: 100%;
+}
+/* The line the sentence is built on. It grows with the words rather than
+   scrolling, so a child always sees the whole thing they have made. */
+.order__line {
+  width: 100%;
+  max-width: 620px;
+  min-height: clamp(62px, 8vh, 78px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--space-3);
+  border: 3px dashed var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-canvas);
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.order__line--filled { border-style: solid; border-color: var(--accent-primary); background: var(--accent-primary-soft); }
+.order__hint { font-size: 15px; font-weight: var(--fw-extrabold); color: var(--text-muted); }
+
+.order__tiles { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(8px, 1.2vw, 12px); }
+.order__tile {
+  font-family: var(--font-family);
+  font-size: clamp(17px, 2vw, 24px);
+  font-weight: var(--fw-black);
+  color: var(--text-primary);
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 0 var(--border-subtle);
+  padding: clamp(8px, 1.2vh, 14px) clamp(12px, 1.8vw, 20px);
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 80ms ease, opacity 140ms ease;
+}
+.order__tile:hover:not(:disabled) { border-color: var(--border-strong); }
+.order__tile:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 var(--border-subtle); }
+.order__tile:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 3px; }
+/* Its place in the row is held, so the tiles never reshuffle mid-sentence. */
+.order__tile--gone { opacity: 0; pointer-events: none; }
+.order__tile--placed {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  border-color: transparent;
+  box-shadow: 0 4px 0 var(--accent-primary-edge);
+}
+.order__go, .write__go { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.order__go .btn, .write__go .btn { margin-bottom: 4px; }
+
+.write__box {
+  width: 100%;
+  max-width: 620px;
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.5;
+  min-height: clamp(96px, 16vh, 150px);
+}
+.write__required {
+  margin: 0;
+  font-size: 15px;
+  font-weight: var(--fw-extrabold);
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.write__word {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-gold-soft);
+  border: 2px solid var(--accent-gold);
+  color: var(--text-on-gold);
+  font-weight: var(--fw-black);
+}
+
+@media (max-height: 560px) {
+  .order, .write { gap: 8px; }
+  .order__line { min-height: 48px; padding: 6px; }
+  .order__tile { font-size: 16px; padding: 6px 12px; }
+  .write__box { min-height: 72px; font-size: 17px; }
+  .write__required { font-size: 13px; }
+}
+
+/* A picture that is the prompt, not a decoration: centred and full size at
+   any age, because the child is writing about it. */
+.art-panel--prompt {
+  align-self: center;
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  box-shadow: var(--shadow-tile);
+  padding: clamp(10px, 1.8vh, 20px) clamp(16px, 3vw, 32px);
+}
+@media (max-height: 560px) {
+  .art-panel--prompt { padding: 6px 16px; }
+  .art-panel--prompt svg { width: 46px; height: 46px; }
+}

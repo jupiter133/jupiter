@@ -80,7 +80,7 @@ interface Flow {
   startSection: () => void;
   answer: (
     selectedAnswerId: string,
-    options?: { scored?: boolean; correct?: boolean; spokenMs?: number },
+    options?: { scored?: boolean; correct?: boolean; spokenMs?: number; writtenAnswer?: string },
   ) => void;
   /** Hands the tablet back for the next subject sitting. */
   continueNext: () => void;
@@ -205,7 +205,12 @@ export function usePlacementFlow(childName: string): Flow {
   const answer = useCallback(
     (
       selectedAnswerId: string,
-      options: { scored?: boolean; correct?: boolean; spokenMs?: number } = {},
+      options: {
+        scored?: boolean;
+        correct?: boolean;
+        spokenMs?: number;
+        writtenAnswer?: string;
+      } = {},
     ) => {
       if (!session || session.finishedAt) return;
       const question = selectNextQuestion(session);

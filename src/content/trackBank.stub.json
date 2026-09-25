@@ -4,6 +4,971 @@
   "note": "TEMPLATE-GENERATED PLACEHOLDER WHERE MARKED — NOT ASSESSMENT CONTENT. The seven Little Readers activities are template stubs. Words Speaking, Oral Reading, Vocabulary, Reading Comprehension and Spelling carry written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet (see speechScoring.ts).",
   "questions": [
     {
+      "id": "ts-sw-t0-01",
+      "subject": "sentence-writing",
+      "tier": 0,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fox"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "fox"
+        },
+        {
+          "id": "c",
+          "text": "is"
+        },
+        {
+          "id": "d",
+          "text": "red"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d"
+    },
+    {
+      "id": "ts-sw-t0-02",
+      "subject": "sentence-writing",
+      "tier": 0,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "sun"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "sun"
+        },
+        {
+          "id": "c",
+          "text": "is"
+        },
+        {
+          "id": "d",
+          "text": "hot"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d"
+    },
+    {
+      "id": "ts-sw-t0-03",
+      "subject": "sentence-writing",
+      "tier": 0,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fish"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "I"
+        },
+        {
+          "id": "b",
+          "text": "see"
+        },
+        {
+          "id": "c",
+          "text": "a"
+        },
+        {
+          "id": "d",
+          "text": "fish"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d"
+    },
+    {
+      "id": "ts-sw-t0-04",
+      "subject": "sentence-writing",
+      "tier": 0,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tree"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "tree"
+        },
+        {
+          "id": "c",
+          "text": "is"
+        },
+        {
+          "id": "d",
+          "text": "big"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d"
+    },
+    {
+      "id": "ts-sw-t1-01",
+      "subject": "sentence-writing",
+      "tier": 1,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "canoe"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "We"
+        },
+        {
+          "id": "b",
+          "text": "paddle"
+        },
+        {
+          "id": "c",
+          "text": "the"
+        },
+        {
+          "id": "d",
+          "text": "red"
+        },
+        {
+          "id": "e",
+          "text": "canoe"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e"
+    },
+    {
+      "id": "ts-sw-t1-02",
+      "subject": "sentence-writing",
+      "tier": 1,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "campfire"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "fire"
+        },
+        {
+          "id": "c",
+          "text": "keeps"
+        },
+        {
+          "id": "d",
+          "text": "us"
+        },
+        {
+          "id": "e",
+          "text": "warm"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e"
+    },
+    {
+      "id": "ts-sw-t1-03",
+      "subject": "sentence-writing",
+      "tier": 1,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "mitten"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "I"
+        },
+        {
+          "id": "b",
+          "text": "lost"
+        },
+        {
+          "id": "c",
+          "text": "one"
+        },
+        {
+          "id": "d",
+          "text": "blue"
+        },
+        {
+          "id": "e",
+          "text": "mitten"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e"
+    },
+    {
+      "id": "ts-sw-t1-04",
+      "subject": "sentence-writing",
+      "tier": 1,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "moose"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "A"
+        },
+        {
+          "id": "b",
+          "text": "moose"
+        },
+        {
+          "id": "c",
+          "text": "walks"
+        },
+        {
+          "id": "d",
+          "text": "by"
+        },
+        {
+          "id": "e",
+          "text": "slowly"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e"
+    },
+    {
+      "id": "ts-sw-t2-01",
+      "subject": "sentence-writing",
+      "tier": 2,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "scene",
+        "scene": "camp-breakfast"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "We"
+        },
+        {
+          "id": "b",
+          "text": "cook"
+        },
+        {
+          "id": "c",
+          "text": "breakfast"
+        },
+        {
+          "id": "d",
+          "text": "over"
+        },
+        {
+          "id": "e",
+          "text": "the"
+        },
+        {
+          "id": "f",
+          "text": "fire"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f"
+    },
+    {
+      "id": "ts-sw-t2-02",
+      "subject": "sentence-writing",
+      "tier": 2,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "scene",
+        "scene": "bear-cubs"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Two"
+        },
+        {
+          "id": "b",
+          "text": "bear"
+        },
+        {
+          "id": "c",
+          "text": "cubs"
+        },
+        {
+          "id": "d",
+          "text": "play"
+        },
+        {
+          "id": "e",
+          "text": "in"
+        },
+        {
+          "id": "f",
+          "text": "the"
+        },
+        {
+          "id": "g",
+          "text": "grass"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g"
+    },
+    {
+      "id": "ts-sw-t2-03",
+      "subject": "sentence-writing",
+      "tier": 2,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "My"
+        },
+        {
+          "id": "b",
+          "text": "backpack"
+        },
+        {
+          "id": "c",
+          "text": "is"
+        },
+        {
+          "id": "d",
+          "text": "heavy"
+        },
+        {
+          "id": "e",
+          "text": "today"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e"
+    },
+    {
+      "id": "ts-sw-t2-04",
+      "subject": "sentence-writing",
+      "tier": 2,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "glyph",
+        "glyph": "snowflake"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Snow"
+        },
+        {
+          "id": "b",
+          "text": "falls"
+        },
+        {
+          "id": "c",
+          "text": "softly"
+        },
+        {
+          "id": "d",
+          "text": "on"
+        },
+        {
+          "id": "e",
+          "text": "the"
+        },
+        {
+          "id": "f",
+          "text": "trail"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f"
+    },
+    {
+      "id": "ts-sw-t3-01",
+      "subject": "sentence-writing",
+      "tier": 3,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "scene",
+        "scene": "narrow-trail"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "narrow"
+        },
+        {
+          "id": "c",
+          "text": "trail"
+        },
+        {
+          "id": "d",
+          "text": "climbs"
+        },
+        {
+          "id": "e",
+          "text": "up"
+        },
+        {
+          "id": "f",
+          "text": "the"
+        },
+        {
+          "id": "g",
+          "text": "hill"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g"
+    },
+    {
+      "id": "ts-sw-t3-02",
+      "subject": "sentence-writing",
+      "tier": 3,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "scene",
+        "scene": "lost-mitten"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "She"
+        },
+        {
+          "id": "b",
+          "text": "found"
+        },
+        {
+          "id": "c",
+          "text": "her"
+        },
+        {
+          "id": "d",
+          "text": "mitten"
+        },
+        {
+          "id": "e",
+          "text": "under"
+        },
+        {
+          "id": "f",
+          "text": "the"
+        },
+        {
+          "id": "g",
+          "text": "bench"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g"
+    },
+    {
+      "id": "ts-sw-t3-03",
+      "subject": "sentence-writing",
+      "tier": 3,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "scene",
+        "scene": "compass"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "He"
+        },
+        {
+          "id": "b",
+          "text": "checked"
+        },
+        {
+          "id": "c",
+          "text": "the"
+        },
+        {
+          "id": "d",
+          "text": "compass"
+        },
+        {
+          "id": "e",
+          "text": "before"
+        },
+        {
+          "id": "f",
+          "text": "walking"
+        },
+        {
+          "id": "g",
+          "text": "on"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g"
+    },
+    {
+      "id": "ts-sw-t3-04",
+      "subject": "sentence-writing",
+      "tier": 3,
+      "skill": "word-order",
+      "answerMode": "order",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
+      "questionText": "Put the words in order to make a sentence.",
+      "questionTextJunior": "Put the words in order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "They"
+        },
+        {
+          "id": "b",
+          "text": "carried"
+        },
+        {
+          "id": "c",
+          "text": "the"
+        },
+        {
+          "id": "d",
+          "text": "canoe"
+        },
+        {
+          "id": "e",
+          "text": "down"
+        },
+        {
+          "id": "f",
+          "text": "to"
+        },
+        {
+          "id": "g",
+          "text": "the"
+        },
+        {
+          "id": "h",
+          "text": "lake"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h"
+    },
+    {
+      "id": "ts-sw-t4-01",
+      "subject": "sentence-writing",
+      "tier": 4,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "aurora"
+      },
+      "questionText": "Write one sentence about what you can see in the sky.",
+      "requiredWords": [
+        "sky"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t4-02",
+      "subject": "sentence-writing",
+      "tier": 4,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "camp-breakfast"
+      },
+      "questionText": "Write one sentence about what is happening at the camp.",
+      "requiredWords": [
+        "camp"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t4-03",
+      "subject": "sentence-writing",
+      "tier": 4,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "moose"
+      },
+      "questionText": "Write one sentence describing the moose.",
+      "requiredWords": [
+        "moose"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t4-04",
+      "subject": "sentence-writing",
+      "tier": 4,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "canoe"
+      },
+      "questionText": "Write one sentence about the canoe and the water.",
+      "requiredWords": [
+        "canoe",
+        "water"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t5-01",
+      "subject": "sentence-writing",
+      "tier": 5,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "ice-road"
+      },
+      "questionText": "Write one sentence explaining why the road is marked.",
+      "requiredWords": [
+        "road"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t5-02",
+      "subject": "sentence-writing",
+      "tier": 5,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "two-maps"
+      },
+      "questionText": "Write one sentence comparing the two maps.",
+      "requiredWords": [
+        "maps"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t5-03",
+      "subject": "sentence-writing",
+      "tier": 5,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "trail-guide"
+      },
+      "questionText": "Write one sentence about what the guide is doing.",
+      "requiredWords": [
+        "guide"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t5-04",
+      "subject": "sentence-writing",
+      "tier": 5,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "wind-out"
+      },
+      "questionText": "Write one sentence about the weather and the tent.",
+      "requiredWords": [
+        "wind",
+        "tent"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t6-01",
+      "subject": "sentence-writing",
+      "tier": 6,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "narrow-trail"
+      },
+      "questionText": "Write one sentence explaining why the trail is difficult.",
+      "requiredWords": [
+        "trail",
+        "because"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t6-02",
+      "subject": "sentence-writing",
+      "tier": 6,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "bear-cubs"
+      },
+      "questionText": "Write one sentence about the cubs that uses the word “although”.",
+      "requiredWords": [
+        "cubs",
+        "although"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t6-03",
+      "subject": "sentence-writing",
+      "tier": 6,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "pack-list"
+      },
+      "questionText": "Write one sentence about what should be packed and why.",
+      "requiredWords": [
+        "pack",
+        "because"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t6-04",
+      "subject": "sentence-writing",
+      "tier": 6,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "aurora"
+      },
+      "questionText": "Write one sentence describing the lights, using the word “while”.",
+      "requiredWords": [
+        "lights",
+        "while"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t7-01",
+      "subject": "sentence-writing",
+      "tier": 7,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "ice-road"
+      },
+      "questionText": "Write one sentence explaining what happens to the road in spring, using “however”.",
+      "requiredWords": [
+        "road",
+        "however"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t7-02",
+      "subject": "sentence-writing",
+      "tier": 7,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "compass"
+      },
+      "questionText": "Write one sentence about relying on a compass, using “unless”.",
+      "requiredWords": [
+        "compass",
+        "unless"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t7-03",
+      "subject": "sentence-writing",
+      "tier": 7,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "wind-out"
+      },
+      "questionText": "Write one sentence about the storm that uses “despite”.",
+      "requiredWords": [
+        "storm",
+        "despite"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t7-04",
+      "subject": "sentence-writing",
+      "tier": 7,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "trail-guide"
+      },
+      "questionText": "Write one sentence about the guide's decision, using “therefore”.",
+      "requiredWords": [
+        "guide",
+        "therefore"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t8-01",
+      "subject": "sentence-writing",
+      "tier": 8,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "two-maps"
+      },
+      "questionText": "Write one sentence contrasting the two maps, using “whereas”.",
+      "requiredWords": [
+        "maps",
+        "whereas"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t8-02",
+      "subject": "sentence-writing",
+      "tier": 8,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "ice-road"
+      },
+      "questionText": "Write one sentence about the road's short season, using “consequently”.",
+      "requiredWords": [
+        "road",
+        "consequently"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t8-03",
+      "subject": "sentence-writing",
+      "tier": 8,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "pack-list"
+      },
+      "questionText": "Write one sentence about preparation that uses “nevertheless”.",
+      "requiredWords": [
+        "nevertheless"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t8-04",
+      "subject": "sentence-writing",
+      "tier": 8,
+      "skill": "compose",
+      "answerMode": "write",
+      "art": {
+        "kind": "scene",
+        "scene": "aurora"
+      },
+      "questionText": "Write one sentence about the aurora that uses “as though”.",
+      "requiredWords": [
+        "aurora",
+        "though"
+      ],
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
       "id": "ts-sp-t0-01",
       "subject": "spelling",
       "tier": 0,

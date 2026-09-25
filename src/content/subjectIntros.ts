@@ -190,14 +190,14 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   'sentence-writing': {
-    lead: 'Look at a picture, then write a few sentences about what you see.',
+    lead: 'Look at the picture, then build or write a sentence about it.',
     cta: 'Start writing',
-    chips: [{ label: 'One picture', ...CYAN }, { label: 'Write freely', ...LIME }, { label: '~5 minutes', ...PINK }],
+    chips: [{ label: 'A picture each time', ...CYAN }, { label: 'Build or write', ...LIME }, { label: '~5 minutes', ...PINK }],
     sections: rules([
-      ['The picture', 'You’ll see one fun picture. Look at it for as long as you like — who’s there, what’s happening, what might happen next?'],
-      ['Your writing', 'Write a few sentences about the picture. There’s no right answer — your own ideas are exactly what we want.'],
-      ['Spelling doesn’t count here', 'Don’t worry about perfect spelling — this one is about your ideas and sentences.'],
-      ['The rules', 'One picture, about 5 minutes. When you’re happy with your writing, press the green check.'],
+      ['The picture', 'Every question shows a picture. Look at it for as long as you like — who’s there, what’s happening, what might happen next?'],
+      ['Building a sentence', 'Sometimes the words are already there, jumbled up. Tap them in the right order to build the sentence, and tap one again to take it back out.'],
+      ['Writing your own', 'Other times you write the sentence yourself in the box. Some questions ask you to use a particular word — it’s shown under the box so you don’t have to remember it.'],
+      ['What counts', 'Start with a capital letter and end with a full stop. There’s no time limit, and your own ideas are exactly what we want.'],
     ]),
   },
   math: {
