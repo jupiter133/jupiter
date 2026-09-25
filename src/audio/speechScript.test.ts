@@ -54,7 +54,8 @@ describe('speech script', () => {
     // The invariant is independence, not the absence of the word "correct" —
     // "Choose the correct word." is a legitimate prompt. Point the answer key at
     // a different option and the narration must come out byte-identical.
-    for (const question of QUESTIONS) {
+    // Spoken items have no options and no key, so there is nothing to leak.
+    for (const question of QUESTIONS.filter((q) => q.options.length > 1)) {
       for (const band of ['junior', 'senior'] as const) {
         const other = question.options.find((o) => o.id !== question.correctAnswerId)!;
         const rekeyed = { ...question, correctAnswerId: other.id };

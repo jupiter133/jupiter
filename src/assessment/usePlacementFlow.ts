@@ -78,7 +78,10 @@ interface Flow {
   submitContext: (context: ParentContext) => void;
   beginQuest: () => void;
   startSection: () => void;
-  answer: (selectedAnswerId: string) => void;
+  answer: (
+    selectedAnswerId: string,
+    options?: { scored?: boolean; correct?: boolean; spokenMs?: number },
+  ) => void;
   /** Hands the tablet back for the next subject sitting. */
   continueNext: () => void;
   /** "Do this one later" — skips this subject without recording a result. */
@@ -187,13 +190,16 @@ export function usePlacementFlow(childName: string): Flow {
   const startSection = useCallback(() => setStep('question'), []);
 
   const answer = useCallback(
-    (selectedAnswerId: string) => {
+    (
+      selectedAnswerId: string,
+      options: { scored?: boolean; correct?: boolean; spokenMs?: number } = {},
+    ) => {
       if (!session || session.finishedAt) return;
       const question = selectNextQuestion(session);
       if (!question) return;
       setLastQuestion(question);
 
-      const next = submitAnswer(session, question, selectedAnswerId);
+      const next = submitAnswer(session, question, selectedAnswerId, Date.now(), options);
       setSession(next);
       if (!next.finishedAt) return;
 

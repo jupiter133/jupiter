@@ -1542,3 +1542,95 @@ body {
 @media (max-width: 900px), (orientation: portrait) {
   .avatar-chip { width: 46px; height: 46px; vertical-align: -12px; }
 }
+
+/* ---------- Words Speaking (spoken items) ---------- */
+
+.speaking__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(8px, 1.6vh, 16px);
+}
+
+/* The word is the whole screen's subject, so it gets the whole screen's weight. */
+.word-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 3vw, 34px);
+  width: 100%;
+  max-width: 520px;
+  padding: clamp(18px, 3.2vh, 40px) clamp(12px, 4vw, 56px);
+  border: 3px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  background: var(--surface-canvas);
+  transition: border-color 160ms ease, background 160ms ease;
+}
+.word-card--live { border-color: var(--accent-secondary); background: var(--accent-secondary-soft); }
+.word-card__word {
+  /* The longest Grade 8 word has to fit a 390px phone without clipping. */
+  font-size: clamp(26px, 8vw, 80px);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: var(--fw-black);
+  line-height: 1;
+  color: var(--text-primary);
+}
+.wave { display: flex; align-items: center; gap: 4px; height: 44px; flex: 0 0 auto; }
+/* On a phone the word needs every pixel, so only the left wave stays. */
+@media (max-width: 600px) {
+  .wave--right { display: none; }
+  .wave__bar { width: 4px; }
+}
+.wave__bar {
+  width: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-secondary);
+  opacity: 0.45;
+  transition: height 90ms linear;
+}
+.word-card--live .wave__bar { opacity: 1; }
+
+.speaking__prompt { max-width: 420px; }
+
+.mic {
+  width: clamp(88px, 13vh, 116px);
+  height: clamp(88px, 13vh, 116px);
+  border-radius: var(--radius-pill);
+  border: none;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: var(--accent-secondary);
+  color: var(--text-on-accent);
+  box-shadow: 0 6px 0 var(--accent-secondary-edge);
+  transition: transform 80ms ease, box-shadow 80ms ease, background 160ms ease;
+}
+.mic:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--accent-secondary-edge); }
+.mic:focus-visible { outline: 3px solid var(--accent-primary); outline-offset: 4px; }
+/* Live is a steady ring, not a flash: a pulsing red dot reads as a warning. */
+.mic--live { background: var(--accent-pink); box-shadow: 0 0 0 10px var(--accent-pink-soft), 0 6px 0 var(--accent-pink-edge); }
+.mic--done { background: var(--accent-primary); box-shadow: 0 6px 0 var(--accent-primary-edge); }
+.mic__caption { font-size: 14px; font-weight: var(--fw-extrabold); color: var(--text-muted); }
+
+/* The flow dots sit top-right over every screen. On a phone there is no room
+   beside them, so the quest bar starts below them instead of under them. */
+@media (max-width: 600px) {
+  .question-screen .quest-bar { margin-top: 18px; }
+}
+
+.speaking__go { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.speaking__go .btn { margin-bottom: 4px; }
+
+@media (max-height: 560px) {
+  .speaking__body { gap: 6px; }
+  .word-card { padding: 10px 24px; }
+  .word-card__word { font-size: clamp(34px, 7vw, 56px); }
+  .mic { width: 64px; height: 64px; }
+  .mic svg { width: 28px; height: 28px; }
+  .speaking__prompt { display: none; }
+}

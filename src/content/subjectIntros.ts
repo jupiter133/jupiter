@@ -139,10 +139,10 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     cta: 'Start speaking',
     chips: [{ label: 'Speak aloud', ...CYAN }, { label: 'One word at a time', ...LIME }, { label: '~3 minutes', ...PINK }],
     sections: rules([
-      ['Before you start', 'Find a quiet spot and make sure the sound is on. Your grown-up can sit nearby.'],
-      ['Saying the words', 'A word appears on screen. Say it out loud, nice and clearly. Not sure? Your best try is exactly right.'],
-      ['How we listen', 'The tablet listens while you speak and marks each one for Ms Hannah. Nothing is saved except your answers.'],
-      ['The rules', 'One word at a time, and you can pause between them whenever you need to.'],
+      ['Before you start', 'Find a quiet spot. The tablet will ask to use the microphone — your grown-up can say yes and sit nearby.'],
+      ['Saying the words', 'One word appears at a time. Tap the microphone, say the word out loud, then tap again when you are done.'],
+      ['Take your time', 'There is no countdown and no pass or fail. Not sure how to say it? Tap “Hear it” and then try — your best try is exactly right.'],
+      ['Moving on', 'Tap “Next word” when you are ready. You can skip a word and come back to speaking any time.'],
     ]),
   },
   'oral-reading': {

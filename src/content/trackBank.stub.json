@@ -1,8 +1,656 @@
 {
   "version": 1,
   "stub": true,
-  "note": "TEMPLATE-GENERATED PLACEHOLDER — NOT ASSESSMENT CONTENT. Covers the seven Little Readers activities plus Words Speaking and Spelling, so both tracks can be walked end to end. Replace before any child sits this.",
+  "note": "TEMPLATE-GENERATED PLACEHOLDER — NOT ASSESSMENT CONTENT. Covers the seven Little Readers activities plus Spelling, and the Words Speaking word lists. Words Speaking items are spoken, not tapped, and nothing scores them yet (see speechScoring.ts). Replace before any child sits this.",
   "questions": [
+    {
+      "id": "ts-ws-t0-01",
+      "subject": "words-speaking",
+      "tier": 0,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "a",
+      "questionText": "Say the word “a” out loud.",
+      "questionTextJunior": "Say “a”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t0-02",
+      "subject": "words-speaking",
+      "tier": 0,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "I",
+      "questionText": "Say the word “I” out loud.",
+      "questionTextJunior": "Say “I”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t0-03",
+      "subject": "words-speaking",
+      "tier": 0,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "at",
+      "questionText": "Say the word “at” out loud.",
+      "questionTextJunior": "Say “at”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t0-04",
+      "subject": "words-speaking",
+      "tier": 0,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "up",
+      "questionText": "Say the word “up” out loud.",
+      "questionTextJunior": "Say “up”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t0-05",
+      "subject": "words-speaking",
+      "tier": 0,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "me",
+      "questionText": "Say the word “me” out loud.",
+      "questionTextJunior": "Say “me”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t0-06",
+      "subject": "words-speaking",
+      "tier": 0,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "go",
+      "questionText": "Say the word “go” out loud.",
+      "questionTextJunior": "Say “go”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t1-01",
+      "subject": "words-speaking",
+      "tier": 1,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "cat",
+      "questionText": "Say the word “cat” out loud.",
+      "questionTextJunior": "Say “cat”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t1-02",
+      "subject": "words-speaking",
+      "tier": 1,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "run",
+      "questionText": "Say the word “run” out loud.",
+      "questionTextJunior": "Say “run”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t1-03",
+      "subject": "words-speaking",
+      "tier": 1,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "big",
+      "questionText": "Say the word “big” out loud.",
+      "questionTextJunior": "Say “big”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t1-04",
+      "subject": "words-speaking",
+      "tier": 1,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "stop",
+      "questionText": "Say the word “stop” out loud.",
+      "questionTextJunior": "Say “stop”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t1-05",
+      "subject": "words-speaking",
+      "tier": 1,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "jump",
+      "questionText": "Say the word “jump” out loud.",
+      "questionTextJunior": "Say “jump”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t1-06",
+      "subject": "words-speaking",
+      "tier": 1,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "like",
+      "questionText": "Say the word “like” out loud.",
+      "questionTextJunior": "Say “like”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t2-01",
+      "subject": "words-speaking",
+      "tier": 2,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "happy",
+      "questionText": "Say the word “happy” out loud.",
+      "questionTextJunior": "Say “happy”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t2-02",
+      "subject": "words-speaking",
+      "tier": 2,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "because",
+      "questionText": "Say the word “because” out loud.",
+      "questionTextJunior": "Say “because”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t2-03",
+      "subject": "words-speaking",
+      "tier": 2,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "friend",
+      "questionText": "Say the word “friend” out loud.",
+      "questionTextJunior": "Say “friend”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t2-04",
+      "subject": "words-speaking",
+      "tier": 2,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "before",
+      "questionText": "Say the word “before” out loud.",
+      "questionTextJunior": "Say “before”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t2-05",
+      "subject": "words-speaking",
+      "tier": 2,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "little",
+      "questionText": "Say the word “little” out loud.",
+      "questionTextJunior": "Say “little”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t2-06",
+      "subject": "words-speaking",
+      "tier": 2,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "again",
+      "questionText": "Say the word “again” out loud.",
+      "questionTextJunior": "Say “again”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t3-01",
+      "subject": "words-speaking",
+      "tier": 3,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "quickly",
+      "questionText": "Say the word “quickly” out loud.",
+      "questionTextJunior": "Say “quickly”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t3-02",
+      "subject": "words-speaking",
+      "tier": 3,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "answer",
+      "questionText": "Say the word “answer” out loud.",
+      "questionTextJunior": "Say “answer”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t3-03",
+      "subject": "words-speaking",
+      "tier": 3,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "children",
+      "questionText": "Say the word “children” out loud.",
+      "questionTextJunior": "Say “children”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t3-04",
+      "subject": "words-speaking",
+      "tier": 3,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "thought",
+      "questionText": "Say the word “thought” out loud.",
+      "questionTextJunior": "Say “thought”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t3-05",
+      "subject": "words-speaking",
+      "tier": 3,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "another",
+      "questionText": "Say the word “another” out loud.",
+      "questionTextJunior": "Say “another”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t3-06",
+      "subject": "words-speaking",
+      "tier": 3,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "follow",
+      "questionText": "Say the word “follow” out loud.",
+      "questionTextJunior": "Say “follow”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t4-01",
+      "subject": "words-speaking",
+      "tier": 4,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "question",
+      "questionText": "Say the word “question” out loud.",
+      "questionTextJunior": "Say “question”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t4-02",
+      "subject": "words-speaking",
+      "tier": 4,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "important",
+      "questionText": "Say the word “important” out loud.",
+      "questionTextJunior": "Say “important”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t4-03",
+      "subject": "words-speaking",
+      "tier": 4,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "different",
+      "questionText": "Say the word “different” out loud.",
+      "questionTextJunior": "Say “different”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t4-04",
+      "subject": "words-speaking",
+      "tier": 4,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "remember",
+      "questionText": "Say the word “remember” out loud.",
+      "questionTextJunior": "Say “remember”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t4-05",
+      "subject": "words-speaking",
+      "tier": 4,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "probably",
+      "questionText": "Say the word “probably” out loud.",
+      "questionTextJunior": "Say “probably”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t4-06",
+      "subject": "words-speaking",
+      "tier": 4,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "complete",
+      "questionText": "Say the word “complete” out loud.",
+      "questionTextJunior": "Say “complete”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t5-01",
+      "subject": "words-speaking",
+      "tier": 5,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "necessary",
+      "questionText": "Say the word “necessary” out loud.",
+      "questionTextJunior": "Say “necessary”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t5-02",
+      "subject": "words-speaking",
+      "tier": 5,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "especially",
+      "questionText": "Say the word “especially” out loud.",
+      "questionTextJunior": "Say “especially”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t5-03",
+      "subject": "words-speaking",
+      "tier": 5,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "certainly",
+      "questionText": "Say the word “certainly” out loud.",
+      "questionTextJunior": "Say “certainly”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t5-04",
+      "subject": "words-speaking",
+      "tier": 5,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "experience",
+      "questionText": "Say the word “experience” out loud.",
+      "questionTextJunior": "Say “experience”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t5-05",
+      "subject": "words-speaking",
+      "tier": 5,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "available",
+      "questionText": "Say the word “available” out loud.",
+      "questionTextJunior": "Say “available”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t5-06",
+      "subject": "words-speaking",
+      "tier": 5,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "particular",
+      "questionText": "Say the word “particular” out loud.",
+      "questionTextJunior": "Say “particular”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t6-01",
+      "subject": "words-speaking",
+      "tier": 6,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "significant",
+      "questionText": "Say the word “significant” out loud.",
+      "questionTextJunior": "Say “significant”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t6-02",
+      "subject": "words-speaking",
+      "tier": 6,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "environment",
+      "questionText": "Say the word “environment” out loud.",
+      "questionTextJunior": "Say “environment”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t6-03",
+      "subject": "words-speaking",
+      "tier": 6,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "opportunity",
+      "questionText": "Say the word “opportunity” out loud.",
+      "questionTextJunior": "Say “opportunity”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t6-04",
+      "subject": "words-speaking",
+      "tier": 6,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "responsible",
+      "questionText": "Say the word “responsible” out loud.",
+      "questionTextJunior": "Say “responsible”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t6-05",
+      "subject": "words-speaking",
+      "tier": 6,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "immediately",
+      "questionText": "Say the word “immediately” out loud.",
+      "questionTextJunior": "Say “immediately”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t6-06",
+      "subject": "words-speaking",
+      "tier": 6,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "consequence",
+      "questionText": "Say the word “consequence” out loud.",
+      "questionTextJunior": "Say “consequence”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t7-01",
+      "subject": "words-speaking",
+      "tier": 7,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "characteristic",
+      "questionText": "Say the word “characteristic” out loud.",
+      "questionTextJunior": "Say “characteristic”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t7-02",
+      "subject": "words-speaking",
+      "tier": 7,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "approximately",
+      "questionText": "Say the word “approximately” out loud.",
+      "questionTextJunior": "Say “approximately”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t7-03",
+      "subject": "words-speaking",
+      "tier": 7,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "representative",
+      "questionText": "Say the word “representative” out loud.",
+      "questionTextJunior": "Say “representative”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t7-04",
+      "subject": "words-speaking",
+      "tier": 7,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "extraordinary",
+      "questionText": "Say the word “extraordinary” out loud.",
+      "questionTextJunior": "Say “extraordinary”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t7-05",
+      "subject": "words-speaking",
+      "tier": 7,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "demonstration",
+      "questionText": "Say the word “demonstration” out loud.",
+      "questionTextJunior": "Say “demonstration”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t7-06",
+      "subject": "words-speaking",
+      "tier": 7,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "unfortunately",
+      "questionText": "Say the word “unfortunately” out loud.",
+      "questionTextJunior": "Say “unfortunately”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t8-01",
+      "subject": "words-speaking",
+      "tier": 8,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "acknowledgement",
+      "questionText": "Say the word “acknowledgement” out loud.",
+      "questionTextJunior": "Say “acknowledgement”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t8-02",
+      "subject": "words-speaking",
+      "tier": 8,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "incomprehensible",
+      "questionText": "Say the word “incomprehensible” out loud.",
+      "questionTextJunior": "Say “incomprehensible”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t8-03",
+      "subject": "words-speaking",
+      "tier": 8,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "differentiation",
+      "questionText": "Say the word “differentiation” out loud.",
+      "questionTextJunior": "Say “differentiation”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t8-04",
+      "subject": "words-speaking",
+      "tier": 8,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "entrepreneurial",
+      "questionText": "Say the word “entrepreneurial” out loud.",
+      "questionTextJunior": "Say “entrepreneurial”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t8-05",
+      "subject": "words-speaking",
+      "tier": 8,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "conscientiously",
+      "questionText": "Say the word “conscientiously” out loud.",
+      "questionTextJunior": "Say “conscientiously”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "ts-ws-t8-06",
+      "subject": "words-speaking",
+      "tier": 8,
+      "skill": "say-the-word",
+      "format": "speak",
+      "spokenWord": "indistinguishable",
+      "questionText": "Say the word “indistinguishable” out loud.",
+      "questionTextJunior": "Say “indistinguishable”.",
+      "options": [],
+      "correctAnswerId": ""
+    },
     {
       "id": "ts-fts-t0-01",
       "subject": "find-the-same",
@@ -10205,1464 +10853,6 @@
         {
           "id": "d",
           "text": "lam"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t0-01",
-      "subject": "words-speaking",
-      "tier": 0,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“cat”)",
-      "questionTextJunior": "Say and pick: “cat”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t0-02",
-      "subject": "words-speaking",
-      "tier": 0,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“dog”)",
-      "questionTextJunior": "Say and pick: “dog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t0-03",
-      "subject": "words-speaking",
-      "tier": 0,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“sun”)",
-      "questionTextJunior": "Say and pick: “sun”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t0-04",
-      "subject": "words-speaking",
-      "tier": 0,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“map”)",
-      "questionTextJunior": "Say and pick: “map”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t0-05",
-      "subject": "words-speaking",
-      "tier": 0,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“bed”)",
-      "questionTextJunior": "Say and pick: “bed”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t0-06",
-      "subject": "words-speaking",
-      "tier": 0,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“fish”)",
-      "questionTextJunior": "Say and pick: “fish”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t1-01",
-      "subject": "words-speaking",
-      "tier": 1,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“tree”)",
-      "questionTextJunior": "Say and pick: “tree”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t1-02",
-      "subject": "words-speaking",
-      "tier": 1,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“star”)",
-      "questionTextJunior": "Say and pick: “star”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t1-03",
-      "subject": "words-speaking",
-      "tier": 1,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“moon”)",
-      "questionTextJunior": "Say and pick: “moon”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t1-04",
-      "subject": "words-speaking",
-      "tier": 1,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“rain”)",
-      "questionTextJunior": "Say and pick: “rain”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t1-05",
-      "subject": "words-speaking",
-      "tier": 1,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“book”)",
-      "questionTextJunior": "Say and pick: “book”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t1-06",
-      "subject": "words-speaking",
-      "tier": 1,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“frog”)",
-      "questionTextJunior": "Say and pick: “frog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t2-01",
-      "subject": "words-speaking",
-      "tier": 2,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“nest”)",
-      "questionTextJunior": "Say and pick: “nest”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t2-02",
-      "subject": "words-speaking",
-      "tier": 2,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“lamp”)",
-      "questionTextJunior": "Say and pick: “lamp”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t2-03",
-      "subject": "words-speaking",
-      "tier": 2,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“gift”)",
-      "questionTextJunior": "Say and pick: “gift”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t2-04",
-      "subject": "words-speaking",
-      "tier": 2,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“hand”)",
-      "questionTextJunior": "Say and pick: “hand”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t2-05",
-      "subject": "words-speaking",
-      "tier": 2,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“milk”)",
-      "questionTextJunior": "Say and pick: “milk”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t2-06",
-      "subject": "words-speaking",
-      "tier": 2,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“road”)",
-      "questionTextJunior": "Say and pick: “road”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t3-01",
-      "subject": "words-speaking",
-      "tier": 3,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“song”)",
-      "questionTextJunior": "Say and pick: “song”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t3-02",
-      "subject": "words-speaking",
-      "tier": 3,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“wind”)",
-      "questionTextJunior": "Say and pick: “wind”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t3-03",
-      "subject": "words-speaking",
-      "tier": 3,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“cat”)",
-      "questionTextJunior": "Say and pick: “cat”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t3-04",
-      "subject": "words-speaking",
-      "tier": 3,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“dog”)",
-      "questionTextJunior": "Say and pick: “dog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t3-05",
-      "subject": "words-speaking",
-      "tier": 3,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“sun”)",
-      "questionTextJunior": "Say and pick: “sun”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t3-06",
-      "subject": "words-speaking",
-      "tier": 3,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“map”)",
-      "questionTextJunior": "Say and pick: “map”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t4-01",
-      "subject": "words-speaking",
-      "tier": 4,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“bed”)",
-      "questionTextJunior": "Say and pick: “bed”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t4-02",
-      "subject": "words-speaking",
-      "tier": 4,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“fish”)",
-      "questionTextJunior": "Say and pick: “fish”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t4-03",
-      "subject": "words-speaking",
-      "tier": 4,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“tree”)",
-      "questionTextJunior": "Say and pick: “tree”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t4-04",
-      "subject": "words-speaking",
-      "tier": 4,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“star”)",
-      "questionTextJunior": "Say and pick: “star”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t4-05",
-      "subject": "words-speaking",
-      "tier": 4,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“moon”)",
-      "questionTextJunior": "Say and pick: “moon”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t4-06",
-      "subject": "words-speaking",
-      "tier": 4,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“rain”)",
-      "questionTextJunior": "Say and pick: “rain”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t5-01",
-      "subject": "words-speaking",
-      "tier": 5,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“book”)",
-      "questionTextJunior": "Say and pick: “book”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t5-02",
-      "subject": "words-speaking",
-      "tier": 5,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“frog”)",
-      "questionTextJunior": "Say and pick: “frog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t5-03",
-      "subject": "words-speaking",
-      "tier": 5,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“nest”)",
-      "questionTextJunior": "Say and pick: “nest”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t5-04",
-      "subject": "words-speaking",
-      "tier": 5,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“lamp”)",
-      "questionTextJunior": "Say and pick: “lamp”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t5-05",
-      "subject": "words-speaking",
-      "tier": 5,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“gift”)",
-      "questionTextJunior": "Say and pick: “gift”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t5-06",
-      "subject": "words-speaking",
-      "tier": 5,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“hand”)",
-      "questionTextJunior": "Say and pick: “hand”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t6-01",
-      "subject": "words-speaking",
-      "tier": 6,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“milk”)",
-      "questionTextJunior": "Say and pick: “milk”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t6-02",
-      "subject": "words-speaking",
-      "tier": 6,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“road”)",
-      "questionTextJunior": "Say and pick: “road”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t6-03",
-      "subject": "words-speaking",
-      "tier": 6,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“song”)",
-      "questionTextJunior": "Say and pick: “song”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t6-04",
-      "subject": "words-speaking",
-      "tier": 6,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“wind”)",
-      "questionTextJunior": "Say and pick: “wind”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t6-05",
-      "subject": "words-speaking",
-      "tier": 6,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“cat”)",
-      "questionTextJunior": "Say and pick: “cat”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t6-06",
-      "subject": "words-speaking",
-      "tier": 6,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“dog”)",
-      "questionTextJunior": "Say and pick: “dog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t7-01",
-      "subject": "words-speaking",
-      "tier": 7,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“sun”)",
-      "questionTextJunior": "Say and pick: “sun”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t7-02",
-      "subject": "words-speaking",
-      "tier": 7,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“map”)",
-      "questionTextJunior": "Say and pick: “map”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t7-03",
-      "subject": "words-speaking",
-      "tier": 7,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“bed”)",
-      "questionTextJunior": "Say and pick: “bed”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t7-04",
-      "subject": "words-speaking",
-      "tier": 7,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“fish”)",
-      "questionTextJunior": "Say and pick: “fish”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t7-05",
-      "subject": "words-speaking",
-      "tier": 7,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“tree”)",
-      "questionTextJunior": "Say and pick: “tree”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t7-06",
-      "subject": "words-speaking",
-      "tier": 7,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“star”)",
-      "questionTextJunior": "Say and pick: “star”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t8-01",
-      "subject": "words-speaking",
-      "tier": 8,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“moon”)",
-      "questionTextJunior": "Say and pick: “moon”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t8-02",
-      "subject": "words-speaking",
-      "tier": 8,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“rain”)",
-      "questionTextJunior": "Say and pick: “rain”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t8-03",
-      "subject": "words-speaking",
-      "tier": 8,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“book”)",
-      "questionTextJunior": "Say and pick: “book”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t8-04",
-      "subject": "words-speaking",
-      "tier": 8,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“frog”)",
-      "questionTextJunior": "Say and pick: “frog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t8-05",
-      "subject": "words-speaking",
-      "tier": 8,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“nest”)",
-      "questionTextJunior": "Say and pick: “nest”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ws-t8-06",
-      "subject": "words-speaking",
-      "tier": 8,
-      "skill": "stub-say-the-word",
-      "questionText": "Which word did you hear? (“lamp”)",
-      "questionTextJunior": "Say and pick: “lamp”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
         }
       ],
       "correctAnswerId": "a"

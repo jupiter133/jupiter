@@ -6,8 +6,9 @@ import { HandoffScreen } from './screens/HandoffScreen';
 import { ParentContextScreen } from './screens/ParentContextScreen';
 import { ParentResultsScreen } from './screens/ParentResultsScreen';
 import { QuestionScreen } from './screens/QuestionScreen';
-import { SUBJECT_LABEL } from './assessment/types';
+import { SUBJECT_LABEL, isSpokenQuestion } from './assessment/types';
 import { SectionIntroScreen } from './screens/SectionIntroScreen';
+import { SpeakingScreen } from './screens/SpeakingScreen';
 import { StartScreen } from './screens/StartScreen';
 import { DeferredScreen } from './screens/DeferredScreen';
 import { FlowChrome } from './components/FlowChrome';
@@ -59,7 +60,31 @@ export default function App() {
 
       {(flow.step === 'question' || flow.step === 'section-complete') &&
         (flow.currentQuestion ?? flow.lastQuestion) &&
-        flow.subject && (
+        flow.subject &&
+        isSpokenQuestion((flow.currentQuestion ?? flow.lastQuestion)!) && (
+        <SpeakingScreen
+          key={`${(flow.currentQuestion ?? flow.lastQuestion)!.id}-${flow.step}`}
+          question={(flow.currentQuestion ?? flow.lastQuestion)!}
+          subject={flow.subject}
+          questionNumber={flow.questionNumber}
+          questionsPerSubject={flow.questionsPerSubject}
+          audioEnabled={flow.audioEnabled}
+          onToggleAudio={flow.toggleAudio}
+          /* An unscored take still advances the sitting; it just moves no tier. */
+          onSpoken={(verdict, spokenMs) =>
+            flow.answer('spoken', {
+              scored: verdict.scored,
+              correct: verdict.scored ? verdict.correct : undefined,
+              spokenMs,
+            })
+          }
+        />
+      )}
+
+      {(flow.step === 'question' || flow.step === 'section-complete') &&
+        (flow.currentQuestion ?? flow.lastQuestion) &&
+        flow.subject &&
+        !isSpokenQuestion((flow.currentQuestion ?? flow.lastQuestion)!) && (
         <QuestionScreen
           /* Re-keyed for the popup step: the card had already faded itself out
              on the way to the result, so it needs a fresh mount to sit behind

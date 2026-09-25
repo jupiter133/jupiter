@@ -92,14 +92,22 @@ export function isSessionComplete(state: SessionState): boolean {
  * Two correct in a row moves up a tier, two incorrect moves down. Either move
  * resets both streaks, so a fresh pair is needed at the new tier before moving
  * again. The tier the session ends on is the placement for this subject.
+ *
+ * An UNSCORED answer — a spoken attempt nothing judged — is recorded and
+ * nothing else: no streak, no tier move. Guessing a verdict to keep the
+ * branching fed would put a number on a child that nobody measured.
  */
 export function submitAnswer(
   state: SessionState,
   question: Question,
   selectedAnswerId: string,
   now: number = Date.now(),
+  options: { scored?: boolean; correct?: boolean; spokenMs?: number } = {},
 ): SessionState {
-  const wasCorrect = selectedAnswerId === question.correctAnswerId;
+  const scored = options.scored ?? true;
+  const wasCorrect = scored
+    ? options.correct ?? selectedAnswerId === question.correctAnswerId
+    : false;
   const lastAnsweredAt =
     state.questionsAnswered[state.questionsAnswered.length - 1]?.answeredAt ?? state.startedAt;
 
@@ -109,19 +117,21 @@ export function submitAnswer(
     tier: question.tier,
     selectedAnswerId,
     wasCorrect,
+    scored,
+    spokenMs: options.spokenMs,
     answeredAt: now,
     elapsedMs: Math.max(0, now - lastAnsweredAt),
   };
 
-  let consecutiveCorrect = wasCorrect ? state.consecutiveCorrect + 1 : 0;
-  let consecutiveIncorrect = wasCorrect ? 0 : state.consecutiveIncorrect + 1;
+  let consecutiveCorrect = scored && wasCorrect ? state.consecutiveCorrect + 1 : scored ? 0 : state.consecutiveCorrect;
+  let consecutiveIncorrect = scored && !wasCorrect ? state.consecutiveIncorrect + 1 : scored ? 0 : state.consecutiveIncorrect;
   let currentTier = state.currentTier;
 
-  if (consecutiveCorrect >= STREAK_TO_MOVE) {
+  if (scored && consecutiveCorrect >= STREAK_TO_MOVE) {
     currentTier = clampTier(currentTier + 1);
     consecutiveCorrect = 0;
     consecutiveIncorrect = 0;
-  } else if (consecutiveIncorrect >= STREAK_TO_MOVE && !state.floored) {
+  } else if (scored && consecutiveIncorrect >= STREAK_TO_MOVE && !state.floored) {
     // A floored sitting is already at the bottom; there is nowhere to drop to.
     currentTier = clampTier(currentTier - 1);
     consecutiveCorrect = 0;

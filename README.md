@@ -323,7 +323,7 @@ exactly as the assessment intro design names them:
 
 | # | Chamber | Colour | Sitting |
 |---|---------|--------|---------|
-| 1 | Words Speaking | cyan | 6 questions |
+| 1 | Words Speaking | cyan | 6 words, **spoken** |
 | 2 | Oral Reading | pink | 8 questions |
 | 3 | Vocabulary | gold | 8 questions |
 | 4 | Reading Comprehension | green | 8 questions |
@@ -339,6 +339,45 @@ is actually sat.
 
 **Words Speaking is never a gate input.** It is recorded as an observation in
 every outcome and always reads as non-determining on the results page.
+
+## Spoken items
+
+Every other item in the product is tapped. A Words Speaking item is **said out
+loud**: `Question.format` is `'speak'`, it carries a `spokenWord` and no
+options at all, and `SpeakingScreen` renders it — one big word, a live
+waveform driven by the child's own microphone level, tap to record, tap to
+stop, next.
+
+**Nothing scores it yet, and the code says so rather than pretending.**
+`src/assessment/speechScoring.ts` is the seam. The active scorer is a stub
+that returns `{ scored: false }` for every attempt, and an unscored answer
+**moves nothing**:
+
+- no streak, so two takes never push a tier
+- no tier move, so the sitting ends where it started
+- `AnsweredQuestion.scored` is `false`, so a teacher can see what was measured
+  and what was only captured
+
+That is deliberate. Reading an unscored take as "wrong" would drop a child two
+tiers on the strength of a guess. Words Speaking is already non-determining,
+so a stub costs the placement nothing — and the screen never says right or
+wrong, because nothing has established either.
+
+Three ways to make it real, in `ACTIVE_SPEECH_SCORER`:
+
+| Scorer | What it needs | Cost |
+|---|---|---|
+| Browser speech recognition | nothing — Web Speech API | free, but Chrome streams the child's voice to Google |
+| Your own ASR (Whisper) | a backend endpoint and storage | per-minute, and you own the data |
+| Record only | somewhere to put the clip; a teacher listens later | storage only, no judgement risk |
+
+`SpeechScorer` takes the audio Blob and the target word and returns a verdict;
+no screen or engine code changes for any of the three. `SPEECH_SCORING_IS_STUB`
+is asserted by a test so a stub cannot ship as a scorer by accident.
+
+**Microphone access is best-effort.** No mic, or permission refused, and the
+child still speaks and still taps on — the take is marked as having no audio.
+A placement is not the place to fight a browser permission prompt.
 
 ### Reading is two of the seven
 

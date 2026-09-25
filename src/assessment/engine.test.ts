@@ -11,6 +11,7 @@ import {
 import { QUESTIONS, READING_BANK_IS_STUB, TRACK_BANK_IS_STUB } from './questionBank';
 import { deriveReadingLevel, readingBottleneck, readingSubjectsFor } from './readingLevel';
 import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
+import { SPEECH_SCORING_IS_STUB } from './speechScoring';
 import type { Grade, SessionState, Subject, SubjectResult, Track } from './types';
 import {
   MAX_TIER,
@@ -21,6 +22,7 @@ import {
   subjectsForTrack,
   trackFor,
   tierGradeLabel,
+  isSpokenQuestion,
 } from './types';
 
 /** Every subject in the product, both tracks, in sitting order. */
@@ -31,6 +33,8 @@ const EVERY_SUBJECT: Subject[] = [
 
 function answer(state: SessionState, correct: boolean, at?: number): SessionState {
   const q = selectNextQuestion(state)!;
+  // A spoken item is answered by speaking, and nothing scores it yet.
+  if (isSpokenQuestion(q)) return submitAnswer(state, q, 'spoken', at, { scored: false });
   const wrong = q.options.find((o) => o.id !== q.correctAnswerId)!.id;
   return submitAnswer(state, q, correct ? q.correctAnswerId : wrong, at);
 }
@@ -136,8 +140,18 @@ describe('question bank', () => {
 
   it('uses unique ids and valid answer keys', () => {
     expect(new Set(QUESTIONS.map((q) => q.id)).size).toBe(QUESTIONS.length);
-    for (const q of QUESTIONS) {
+    for (const q of QUESTIONS.filter((q) => !isSpokenQuestion(q))) {
       expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
+    }
+  });
+
+  it('gives every spoken item a word to say and no answer key to leak', () => {
+    const spoken = QUESTIONS.filter(isSpokenQuestion);
+    expect(spoken.length).toBeGreaterThan(0);
+    for (const q of spoken) {
+      expect(q.spokenWord, q.id).toBeTruthy();
+      expect(q.options, q.id).toHaveLength(0);
+      expect(q.correctAnswerId, q.id).toBe('');
     }
   });
 
@@ -243,6 +257,47 @@ describe('length and stop rule', () => {
       const s = sit('5', subject, () => true);
       for (const a of s.questionsAnswered) expect(a.subject).toBe(subject);
     }
+  });
+});
+
+describe('unscored answers', () => {
+  it('records a spoken attempt without moving the tier', () => {
+    let s = createSession('5', 'words-speaking');
+    const start = s.currentTier;
+    for (let i = 0; i < 6; i += 1) {
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      s = submitAnswer(s, q, 'spoken', (i + 1) * 1000, { scored: false });
+    }
+    expect(s.questionsAnswered.length).toBeGreaterThan(0);
+    expect(s.questionsAnswered.every((a) => a.scored === false)).toBe(true);
+    expect(s.currentTier).toBe(start);
+    expect(s.tierHistory.every((t) => t === start)).toBe(true);
+  });
+
+  it('never counts an unscored attempt as wrong', () => {
+    // Six unscored takes would be three tier drops if they were read as wrong.
+    let s = createSession('5', 'words-speaking');
+    for (let i = 0; i < 6; i += 1) {
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      s = submitAnswer(s, q, 'spoken', (i + 1) * 1000, { scored: false });
+    }
+    expect(s.consecutiveIncorrect).toBe(0);
+    expect(toSubjectResult(s).finalTier).toBe(5);
+  });
+
+  it('moves the tier again the moment a real scorer reports', () => {
+    let s = createSession('5', 'words-speaking');
+    for (let i = 0; i < 2; i += 1) {
+      const q = selectNextQuestion(s)!;
+      s = submitAnswer(s, q, 'spoken', (i + 1) * 1000, { scored: true, correct: true });
+    }
+    expect(s.currentTier).toBe(6);
+  });
+
+  it('knows speech scoring is a stub, so nobody ships on it by accident', () => {
+    expect(SPEECH_SCORING_IS_STUB).toBe(true);
   });
 });
 

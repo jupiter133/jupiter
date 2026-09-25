@@ -74,9 +74,20 @@ export interface AnswerOption {
   art?: ArtSpec;
 }
 
+/**
+ * How an item is answered. A `choice` item is tapped; a `speak` item is said
+ * out loud into the microphone. The screen, the engine and the bank all read
+ * this rather than guessing from the subject.
+ */
+export type QuestionFormat = 'choice' | 'speak';
+
 export interface Question {
   id: string;
   subject: Subject;
+  /** Defaults to 'choice' when absent, so every existing item is unchanged. */
+  format?: QuestionFormat;
+  /** The word to say aloud. Present on 'speak' items only. */
+  spokenWord?: string;
   /** 0 (Kindergarten) to 8 (Grade 8). */
   tier: Tier;
   /** Fine-grained content tag, e.g. "letter-sound", "main-idea", "fractions". */
@@ -95,6 +106,11 @@ export interface Question {
 }
 
 /** Resolves the wording to show for a band. */
+/** True when this item is answered by speaking rather than tapping. */
+export function isSpokenQuestion(question: Question): boolean {
+  return question.format === 'speak';
+}
+
 export function questionTextFor(question: Question, band: AgeBand): string {
   if (band === 'junior' && question.questionTextJunior) return question.questionTextJunior;
   return question.questionText;
@@ -126,6 +142,14 @@ export interface AnsweredQuestion {
   selectedAnswerId: string;
   /** Recorded for later analysis. Never rendered to the child mid-session. */
   wasCorrect: boolean;
+  /**
+   * False when nothing judged this answer — a spoken attempt with no scorer
+   * behind it. An unscored answer moves no tier and settles no placement; it
+   * is an observation a teacher can review, nothing more.
+   */
+  scored: boolean;
+  /** Held the mic for this long, on a spoken item. */
+  spokenMs?: number;
   answeredAt: number;
   /** ms spent on this single item. */
   elapsedMs: number;
