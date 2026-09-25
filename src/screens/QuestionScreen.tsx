@@ -157,6 +157,16 @@ export function QuestionScreen({
   /* Sentence-length answers read better one-up; two columns wrap them into
      three or four lines each. */
   const longOptions = question.options.some((o) => o.text.length > 36);
+  /* What a sitting counts. A vocabulary item is a word, a comprehension item
+     a passage, a sentence-writing item a sentence — calling all of them
+     "question" reads as a test, which is the one word this flow avoids. */
+  const unitLabel = studiesPassage
+    ? 'Passage'
+    : isOrder || isWrite
+      ? 'Sentence'
+      : isStudy || isListen
+        ? 'Word'
+        : 'Question';
   const progress = Math.min(100, (questionNumber / questionsPerSubject) * 100);
   const prompt = questionTextFor(question, band);
 
@@ -168,12 +178,7 @@ export function QuestionScreen({
             {/* A vocabulary sitting counts words, not questions — the study
                 card and the question it leads to are one item. */}
             <Tag color={STRAND_TAG[subject]}>{SUBJECT_LABEL[subject]}</Tag>{' '}
-            · {(isStudy && !studiesPassage) || isListen
-              ? 'Word'
-              : studiesPassage
-                ? 'Passage'
-                : 'Question'}{' '}
-            {questionNumber}
+            · {unitLabel} {questionNumber}
           </span>
           <div
             className="progress-track"
@@ -338,6 +343,7 @@ export function QuestionScreen({
                 disabled={chosenId !== null}
                 onCommit={choose}
                 seed={question.id}
+                draggable={question.answerMode === 'order-drag'}
               />
             ) : isWrite ? (
               <WriteAnswer

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { AnswerOption } from '../assessment/types';
 
 interface Props {
@@ -8,6 +8,8 @@ interface Props {
   disabled: boolean;
   /** Re-shuffles when this changes, so a new item never reuses an old order. */
   seed: string;
+  /** Adds pointer dragging on top of tapping. Tapping always works. */
+  draggable?: boolean;
 }
 
 /** A fixed shuffle per item: the same child revisiting sees the same tiles. */
@@ -29,16 +31,56 @@ function shuffled(options: AnswerOption[], seed: string): AnswerOption[] {
  * Build the sentence by putting the words in order.
  *
  * Tapping a word adds it to the end of the line; tapping it in the line takes
- * it back out. That is the whole interaction — no dragging required, because
- * ordering five tiles by drag on a phone is fiddly in a way that measures
- * coordination rather than language. The words stay visible the whole time,
- * so nothing here is a memory test either.
+ * it back out. On a `draggable` item the words can be dragged into the line
+ * instead — but tapping still does everything, because ordering tiles by drag
+ * on a phone is fiddly in a way that measures coordination rather than
+ * language, and no child should lose an item to their fine motor control.
+ *
+ * The words stay visible the whole time, so nothing here is a memory test of
+ * the tiles themselves — on a heard item the sentence is the thing being
+ * remembered, and that is the point.
  */
-export function OrderAnswer({ options, onCommit, disabled, seed }: Props) {
+export function OrderAnswer({ options, onCommit, disabled, seed, draggable = false }: Props) {
   const tiles = useMemo(() => shuffled(options, seed), [options, seed]);
   const [placed, setPlaced] = useState<string[]>([]);
+  const [dragId, setDragId] = useState<string | null>(null);
+  const [pointer, setPointer] = useState<{ x: number; y: number } | null>(null);
+  const [over, setOver] = useState(false);
+  const line = useRef<HTMLDivElement>(null);
+  const grabbed = useRef<{ dx: number; dy: number } | null>(null);
 
   useEffect(() => setPlaced([]), [seed]);
+
+  const insideLine = useCallback((x: number, y: number) => {
+    const box = line.current?.getBoundingClientRect();
+    if (!box) return false;
+    return x >= box.left && x <= box.right && y >= box.top && y <= box.bottom;
+  }, []);
+
+  useEffect(() => {
+    if (dragId === null) return;
+    const move = (e: PointerEvent) => {
+      const offset = grabbed.current ?? { dx: 0, dy: 0 };
+      setPointer({ x: e.clientX - offset.dx, y: e.clientY - offset.dy });
+      setOver(insideLine(e.clientX, e.clientY));
+    };
+    const up = (e: PointerEvent) => {
+      // Words land in the order they are dropped. A word dropped anywhere
+      // else goes home rather than being lost or silently added.
+      if (insideLine(e.clientX, e.clientY)) setPlaced((p) => (p.includes(dragId) ? p : [...p, dragId]));
+      setDragId(null);
+      setPointer(null);
+      setOver(false);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', up);
+    return () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+      window.removeEventListener('pointercancel', up);
+    };
+  }, [dragId, insideLine]);
 
   const placedSet = new Set(placed);
   const complete = placed.length === options.length;
@@ -46,9 +88,17 @@ export function OrderAnswer({ options, onCommit, disabled, seed }: Props) {
 
   return (
     <div className="order">
-      <div className={`order__line${placed.length ? ' order__line--filled' : ''}`} aria-live="polite">
+      <div
+        ref={line}
+        className={`order__line${placed.length ? ' order__line--filled' : ''}${
+          over ? ' order__line--over' : ''
+        }`}
+        aria-live="polite"
+      >
         {placed.length === 0 ? (
-          <span className="order__hint">Tap the words to build your sentence</span>
+          <span className="order__hint">
+            {draggable ? 'Drag the words here in order' : 'Tap the words to build your sentence'}
+          </span>
         ) : (
           placed.map((id, i) => (
             <button
@@ -70,14 +120,30 @@ export function OrderAnswer({ options, onCommit, disabled, seed }: Props) {
           <button
             key={option.id}
             type="button"
-            className={`order__tile${placedSet.has(option.id) ? ' order__tile--gone' : ''}`}
+            className={`order__tile${placedSet.has(option.id) ? ' order__tile--gone' : ''}${
+              option.id === dragId ? ' order__tile--lifting' : ''
+            }${draggable ? ' order__tile--draggable' : ''}`}
             disabled={disabled || placedSet.has(option.id)}
-            onClick={() => setPlaced((p) => [...p, option.id])}
+            onPointerDown={(e) => {
+              if (!draggable || disabled || placedSet.has(option.id)) return;
+              const box = e.currentTarget.getBoundingClientRect();
+              grabbed.current = { dx: e.clientX - box.left, dy: e.clientY - box.top };
+              setPointer({ x: box.left, y: box.top });
+              setDragId(option.id);
+            }}
+            onClick={() => setPlaced((p) => (p.includes(option.id) ? p : [...p, option.id]))}
           >
             {option.text}
           </button>
         ))}
       </div>
+
+      {/* The tile under the finger. Fixed, so the card cannot clip it. */}
+      {dragId && pointer && (
+        <div className="drag__ghost" style={{ left: pointer.x, top: pointer.y }} aria-hidden="true">
+          {byId(dragId)?.text}
+        </div>
+      )}
 
       <div className="order__go">
         <button

@@ -24,7 +24,7 @@ import {
   trackFor,
   tierGradeLabel,
   heardTextFor,
-  isDragQuestion,
+  isDraggedQuestion,
   correctOrderFor,
   isListenQuestion,
   isOrderQuestion,
@@ -156,7 +156,8 @@ describe('question bank', () => {
   it('never writes a heard word anywhere a child could read it', () => {
     // The whole spelling item is that the word is heard and not seen. If it
     // appears in the question text, the child is proofreading, not spelling.
-    const listen = QUESTIONS.filter(isListenQuestion);
+    // Spelling's heard WORD: the sentence-writing item is checked separately.
+    const listen = QUESTIONS.filter((q) => isListenQuestion(q) && q.listenWord);
     expect(listen.length).toBeGreaterThan(0);
     for (const q of listen) {
       const word = (q.listenWord ?? '').toLowerCase();
@@ -170,7 +171,7 @@ describe('question bank', () => {
   });
 
   it('gives every heard word four distinct spellings to choose from', () => {
-    for (const q of QUESTIONS.filter(isListenQuestion)) {
+    for (const q of QUESTIONS.filter((q) => isListenQuestion(q) && q.listenWord)) {
       const texts = q.options.map((o) => o.text);
       // A distractor that is the answer with padding, or a repeat, is not a
       // choice at all — it just makes the item look harder than it is.
@@ -292,10 +293,32 @@ describe('question bank', () => {
     }
   });
 
-  it('splits sentence writing by level: lower tiers order, upper tiers write', () => {
+  it('splits sentence writing by level, apart from the one heard item', () => {
     for (const q of QUESTIONS.filter((q) => q.subject === 'sentence-writing')) {
-      const expected = q.tier <= 3 ? 'order' : 'write';
+      // The heard-and-dragged item sits at every tier: it is the second
+      // question of the sitting whatever level the child is working at.
+      const expected = q.answerMode === 'order-drag' ? 'order-drag' : q.tier <= 3 ? 'order' : 'write';
       expect(q.answerMode, `${q.id} (tier ${q.tier})`).toBe(expected);
+    }
+  });
+
+  it('gives the heard sentence-building item a sentence it can actually play', () => {
+    const heard = QUESTIONS.filter((q) => q.answerMode === 'order-drag');
+    expect(heard.length).toBeGreaterThan(0);
+    for (const q of heard) {
+      // It has to read as a listen item, or the screen renders no speaker and
+      // the child has nothing to hear — the item becomes unanswerable.
+      expect(isListenQuestion(q), q.id).toBe(true);
+      expect(heardTextFor(q), q.id).toBe(q.listenSentence);
+      const spoken = (q.listenSentence ?? '').toLowerCase();
+      // Every tile must be a word of the sentence, and the key must rebuild it.
+      const rebuilt = correctOrderFor(q)
+        .map((id) => q.options.find((o) => o.id === id)!.text)
+        .join(' ')
+        .toLowerCase();
+      expect(spoken.replace(/[.!?]$/, ''), q.id).toBe(rebuilt);
+      // The sentence must not be written on the screen anywhere.
+      expect(q.questionText.toLowerCase().includes(rebuilt), q.id).toBe(false);
     }
   });
 
@@ -415,21 +438,25 @@ describe('length and stop rule', () => {
 });
 
 describe('the one drag item', () => {
-  it('lands at the second question of a spelling sitting and nowhere else', () => {
-    let s = createSession('5', 'spelling');
-    const positions: number[] = [];
-    for (let i = 0; i < QUESTIONS_PER_SUBJECT.spelling; i += 1) {
-      const q = selectNextQuestion(s);
-      if (!q) break;
-      if (isDragQuestion(q)) positions.push(i + 1);
-      s = submitAnswer(s, q, q.correctAnswerId, (i + 1) * 1000);
-      if (s.finishedAt) break;
+  it('lands at the second question of its sitting and nowhere else', () => {
+    for (const subject of ['spelling', 'sentence-writing'] as Subject[]) {
+      let s = createSession('5', subject);
+      const positions: number[] = [];
+      for (let i = 0; i < QUESTIONS_PER_SUBJECT[subject]; i += 1) {
+        const q = selectNextQuestion(s);
+        if (!q) break;
+        if (isDraggedQuestion(q)) positions.push(i + 1);
+        s = answer(s, true, (i + 1) * 1000);
+        if (s.finishedAt) break;
+      }
+      expect(positions, subject).toEqual([DRAG_QUESTION_POSITION]);
     }
-    expect(positions).toEqual([DRAG_QUESTION_POSITION]);
   });
 
   it('is heard as a whole sentence, and the sentence contains the word', () => {
-    const drag = QUESTIONS.filter(isDragQuestion);
+    // Spelling's single-gap drag only: the sentence-writing one has no single
+    // target word, it has the whole sentence.
+    const drag = QUESTIONS.filter((q) => q.answerMode === 'drag');
     expect(drag.length).toBeGreaterThan(0);
     for (const q of drag) {
       expect(q.listenSentence, q.id).toBeTruthy();
@@ -442,27 +469,33 @@ describe('the one drag item', () => {
     }
   });
 
-  it('keeps dragging to spelling, where exactly one item per tier uses it', () => {
-    const bySubject = new Set(QUESTIONS.filter(isDragQuestion).map((q) => q.subject));
-    expect([...bySubject]).toEqual(['spelling']);
-    for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
-      const n = QUESTIONS.filter((q) => isDragQuestion(q) && q.tier === tier).length;
-      expect(n, `tier ${tier}`).toBe(1);
+  it('gives each dragging subject exactly one such item per tier', () => {
+    const bySubject = new Set(QUESTIONS.filter(isDraggedQuestion).map((q) => q.subject));
+    expect([...bySubject].sort()).toEqual(['sentence-writing', 'spelling']);
+    for (const subject of ['spelling', 'sentence-writing'] as Subject[]) {
+      for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
+        const n = QUESTIONS.filter(
+          (q) => isDraggedQuestion(q) && q.subject === subject && q.tier === tier,
+        ).length;
+        // Two would make the position rule ambiguous; none would leave a
+        // child at that tier never meeting it.
+        expect(n, `${subject} tier ${tier}`).toBe(1);
+      }
     }
   });
 
-  it('falls back to a tapped item when the drag one is used up', () => {
+  it('falls back to a tapped item when the dragged one is used up', () => {
     // Nothing should ever render a sitting short just because the drag item
     // for that tier has already been served.
     let s = createSession('5', 'spelling');
     const first = selectNextQuestion(s)!;
     s = submitAnswer(s, first, first.correctAnswerId, 1000);
     const second = selectNextQuestion(s)!;
-    expect(isDragQuestion(second)).toBe(true);
+    expect(isDraggedQuestion(second)).toBe(true);
     s = submitAnswer(s, second, second.correctAnswerId, 2000);
     const third = selectNextQuestion(s);
     expect(third).not.toBeNull();
-    expect(isDragQuestion(third!)).toBe(false);
+    expect(isDraggedQuestion(third!)).toBe(false);
   });
 });
 

@@ -410,12 +410,25 @@ A sitting starts at the child's grade, so a Grade 2 builds and a Grade 6
 writes; a Grade 6 who drops to tier 3 gets the ordering shape, which is the
 right thing to happen.
 
-**Ordering is tapped, not dragged.** Tapping a word adds it to the line,
+### The second item is heard, and dragged
+
+Question two of every Sentence Writing sitting plays a **whole sentence** and
+asks the child to put the words back in the order they heard. The sentence is
+spoken and written nowhere; the tiles are the only text on the screen. One per
+tier, so a Grade 2 and a Grade 6 each meet it at their own level, and the same
+`DRAG_QUESTION_POSITION` rule that places Spelling's dragged item places this
+one.
+
+It is dragged rather than tapped, but **tapping still does everything** — see
+below. A word dropped outside the line goes home rather than being added.
+
+**Ordering is otherwise tapped, not dragged.** Tapping a word adds it to the line,
 tapping it in the line takes it back. Ordering six tiles by drag on a phone is
 fiddly in a way that measures coordination rather than language — the one
-dragged item in the product is a single tile into a single gap, in spelling,
-where that is the whole interaction. The words stay visible throughout, so
-nothing here is a memory test either. The shuffle is seeded per item, so the
+other dragged item in the product is a single tile into a single gap, in
+spelling. The words stay visible throughout, so the tiles themselves are never
+the memory test — on the heard item the sentence is the thing being held, and
+that is the point. The shuffle is seeded per item, so the
 same child returning sees the same tiles, and a shuffle that happened to land
 on the answer is nudged off it.
 

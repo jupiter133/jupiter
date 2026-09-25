@@ -103,14 +103,15 @@ export interface Question {
   /**
    * How the answer is given. 'tap' is the default everywhere.
    *
-   * - 'drag'  one tile into one gap (spelling)
-   * - 'order' every tile into a sequence (sentence writing, lower tiers)
-   * - 'write' the child types it (sentence writing, upper tiers)
+   * - 'drag'       one tile into one gap (spelling)
+   * - 'order'      every tile into a sequence, tapped (sentence writing)
+   * - 'order-drag' the same sequence, dragged, off a sentence they heard
+   * - 'write'      the child types it (sentence writing, upper tiers)
    *
    * Dragging and ordering are slower than tapping on purpose: they suit an
    * item worth dwelling on, not a whole sitting of them.
    */
-  answerMode?: 'tap' | 'drag' | 'order' | 'write';
+  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'write';
   /**
    * Words a written sentence has to contain. Only read by the rubric in
    * sentenceScoring.ts, never rendered as an answer.
@@ -162,7 +163,18 @@ export function isDragQuestion(question: Question): boolean {
 
 /** True when every tile has to be put into the right sequence. */
 export function isOrderQuestion(question: Question): boolean {
-  return question.answerMode === 'order';
+  return question.answerMode === 'order' || question.answerMode === 'order-drag';
+}
+
+/**
+ * True when the tiles are dragged rather than tapped.
+ *
+ * This is also what marks the one item per sitting that belongs at a fixed
+ * position — see DRAG_QUESTION_POSITION. Dragging is slower and more
+ * deliberate than tapping, which makes it worth meeting once.
+ */
+export function isDraggedQuestion(question: Question): boolean {
+  return question.answerMode === 'drag' || question.answerMode === 'order-drag';
 }
 
 /** True when the child types the answer instead of choosing it. */
@@ -185,7 +197,10 @@ export function heardTextFor(question: Question): string {
  * options are spellings of it.
  */
 export function isListenQuestion(question: Question): boolean {
-  return question.format === 'listen' && Boolean(question.listenWord);
+  // Either shape counts: a bare word (spelling) or a whole sentence
+  // (sentence writing). Requiring the word alone left the sentence item with
+  // no speaker and nothing to hear, which made it unanswerable.
+  return question.format === 'listen' && Boolean(question.listenWord || question.listenSentence);
 }
 
 /** True when the thing studied is a passage rather than a single word. */

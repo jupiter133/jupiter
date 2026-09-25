@@ -2092,3 +2092,8 @@ body {
   .art-panel--prompt { padding: 6px 16px; }
   .art-panel--prompt svg { width: 46px; height: 46px; }
 }
+
+/* Ordering by drag: the line accepts words, the tiles lift out of the row. */
+.order__line--over { border-color: var(--accent-secondary); background: var(--accent-secondary-soft); }
+.order__tile--draggable { cursor: grab; touch-action: none; }
+.order__tile--lifting { opacity: 0.25; }

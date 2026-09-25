@@ -132,6 +132,36 @@
       "correctAnswerId": "a-b-c-d"
     },
     {
+      "id": "ts-sw-t0-heard",
+      "subject": "sentence-writing",
+      "tier": 0,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "The dog ran fast.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "dog"
+        },
+        {
+          "id": "c",
+          "text": "ran"
+        },
+        {
+          "id": "d",
+          "text": "fast"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d"
+    },
+    {
       "id": "ts-sw-t1-01",
       "subject": "sentence-writing",
       "tier": 1,
@@ -274,6 +304,44 @@
         }
       ],
       "correctAnswerId": "a-b-c-d-e"
+    },
+    {
+      "id": "ts-sw-t1-heard",
+      "subject": "sentence-writing",
+      "tier": 1,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "My sister found a small shell.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "My"
+        },
+        {
+          "id": "b",
+          "text": "sister"
+        },
+        {
+          "id": "c",
+          "text": "found"
+        },
+        {
+          "id": "d",
+          "text": "a"
+        },
+        {
+          "id": "e",
+          "text": "small"
+        },
+        {
+          "id": "f",
+          "text": "shell"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f"
     },
     {
       "id": "ts-sw-t2-01",
@@ -434,6 +502,48 @@
         }
       ],
       "correctAnswerId": "a-b-c-d-e-f"
+    },
+    {
+      "id": "ts-sw-t2-heard",
+      "subject": "sentence-writing",
+      "tier": 2,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "We packed sandwiches for the long walk.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "We"
+        },
+        {
+          "id": "b",
+          "text": "packed"
+        },
+        {
+          "id": "c",
+          "text": "sandwiches"
+        },
+        {
+          "id": "d",
+          "text": "for"
+        },
+        {
+          "id": "e",
+          "text": "the"
+        },
+        {
+          "id": "f",
+          "text": "long"
+        },
+        {
+          "id": "g",
+          "text": "walk"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g"
     },
     {
       "id": "ts-sw-t3-01",
@@ -616,6 +726,52 @@
       "correctAnswerId": "a-b-c-d-e-f-g-h"
     },
     {
+      "id": "ts-sw-t3-heard",
+      "subject": "sentence-writing",
+      "tier": 3,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "The rain stopped just before the game started.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "rain"
+        },
+        {
+          "id": "c",
+          "text": "stopped"
+        },
+        {
+          "id": "d",
+          "text": "just"
+        },
+        {
+          "id": "e",
+          "text": "before"
+        },
+        {
+          "id": "f",
+          "text": "the"
+        },
+        {
+          "id": "g",
+          "text": "game"
+        },
+        {
+          "id": "h",
+          "text": "started"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h"
+    },
+    {
       "id": "ts-sw-t4-01",
       "subject": "sentence-writing",
       "tier": 4,
@@ -685,6 +841,52 @@
       "correctAnswerId": ""
     },
     {
+      "id": "ts-sw-t4-heard",
+      "subject": "sentence-writing",
+      "tier": 4,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "Nobody noticed the quiet boy at the back.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nobody"
+        },
+        {
+          "id": "b",
+          "text": "noticed"
+        },
+        {
+          "id": "c",
+          "text": "the"
+        },
+        {
+          "id": "d",
+          "text": "quiet"
+        },
+        {
+          "id": "e",
+          "text": "boy"
+        },
+        {
+          "id": "f",
+          "text": "at"
+        },
+        {
+          "id": "g",
+          "text": "the"
+        },
+        {
+          "id": "h",
+          "text": "back"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h"
+    },
+    {
       "id": "ts-sw-t5-01",
       "subject": "sentence-writing",
       "tier": 5,
@@ -752,6 +954,56 @@
       ],
       "options": [],
       "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t5-heard",
+      "subject": "sentence-writing",
+      "tier": 5,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "The librarian kept the last copy behind the desk.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "librarian"
+        },
+        {
+          "id": "c",
+          "text": "kept"
+        },
+        {
+          "id": "d",
+          "text": "the"
+        },
+        {
+          "id": "e",
+          "text": "last"
+        },
+        {
+          "id": "f",
+          "text": "copy"
+        },
+        {
+          "id": "g",
+          "text": "behind"
+        },
+        {
+          "id": "h",
+          "text": "the"
+        },
+        {
+          "id": "i",
+          "text": "desk"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h-i"
     },
     {
       "id": "ts-sw-t6-01",
@@ -826,6 +1078,56 @@
       "correctAnswerId": ""
     },
     {
+      "id": "ts-sw-t6-heard",
+      "subject": "sentence-writing",
+      "tier": 6,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "Although the path looked short it took us hours.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Although"
+        },
+        {
+          "id": "b",
+          "text": "the"
+        },
+        {
+          "id": "c",
+          "text": "path"
+        },
+        {
+          "id": "d",
+          "text": "looked"
+        },
+        {
+          "id": "e",
+          "text": "short"
+        },
+        {
+          "id": "f",
+          "text": "it"
+        },
+        {
+          "id": "g",
+          "text": "took"
+        },
+        {
+          "id": "h",
+          "text": "us"
+        },
+        {
+          "id": "i",
+          "text": "hours"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h-i"
+    },
+    {
       "id": "ts-sw-t7-01",
       "subject": "sentence-writing",
       "tier": 7,
@@ -898,6 +1200,56 @@
       "correctAnswerId": ""
     },
     {
+      "id": "ts-sw-t7-heard",
+      "subject": "sentence-writing",
+      "tier": 7,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "The committee postponed the decision until further evidence arrived.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The"
+        },
+        {
+          "id": "b",
+          "text": "committee"
+        },
+        {
+          "id": "c",
+          "text": "postponed"
+        },
+        {
+          "id": "d",
+          "text": "the"
+        },
+        {
+          "id": "e",
+          "text": "decision"
+        },
+        {
+          "id": "f",
+          "text": "until"
+        },
+        {
+          "id": "g",
+          "text": "further"
+        },
+        {
+          "id": "h",
+          "text": "evidence"
+        },
+        {
+          "id": "i",
+          "text": "arrived"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h-i"
+    },
+    {
       "id": "ts-sw-t8-01",
       "subject": "sentence-writing",
       "tier": 8,
@@ -967,6 +1319,60 @@
       ],
       "options": [],
       "correctAnswerId": ""
+    },
+    {
+      "id": "ts-sw-t8-heard",
+      "subject": "sentence-writing",
+      "tier": 8,
+      "skill": "hear-and-build",
+      "format": "listen",
+      "answerMode": "order-drag",
+      "listenSentence": "Whereas the first draft rambled the second was ruthlessly clear.",
+      "questionText": "Drag the words into the order you heard.",
+      "questionTextJunior": "Drag the words in the right order.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Whereas"
+        },
+        {
+          "id": "b",
+          "text": "the"
+        },
+        {
+          "id": "c",
+          "text": "first"
+        },
+        {
+          "id": "d",
+          "text": "draft"
+        },
+        {
+          "id": "e",
+          "text": "rambled"
+        },
+        {
+          "id": "f",
+          "text": "the"
+        },
+        {
+          "id": "g",
+          "text": "second"
+        },
+        {
+          "id": "h",
+          "text": "was"
+        },
+        {
+          "id": "i",
+          "text": "ruthlessly"
+        },
+        {
+          "id": "j",
+          "text": "clear"
+        }
+      ],
+      "correctAnswerId": "a-b-c-d-e-f-g-h-i-j"
     },
     {
       "id": "ts-sp-t0-01",
