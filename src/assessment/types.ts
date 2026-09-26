@@ -106,12 +106,16 @@ export interface Question {
    * - 'drag'       one tile into one gap (spelling)
    * - 'order'      every tile into a sequence, tapped (sentence writing)
    * - 'order-drag' the same sequence, dragged, off a sentence they heard
+   * - 'number'     the child types it on a keypad (math)
    * - 'write'      the child types it (sentence writing, upper tiers)
    *
    * Dragging and ordering are slower than tapping on purpose: they suit an
    * item worth dwelling on, not a whole sitting of them.
    */
-  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'write';
+  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'number' | 'write';
+  /** Keypad options, on 'number' items. */
+  allowDecimal?: boolean;
+  allowNegative?: boolean;
   /**
    * Words a written sentence has to contain. Only read by the rubric in
    * sentenceScoring.ts, never rendered as an answer.
@@ -180,6 +184,16 @@ export function isDraggedQuestion(question: Question): boolean {
 /** True when the child types the answer instead of choosing it. */
 export function isWriteQuestion(question: Question): boolean {
   return question.answerMode === 'write';
+}
+
+/**
+ * True when the answer is a number the child types.
+ *
+ * Four answers can be worked backwards; a typed number cannot, so these
+ * measure whether the arithmetic can be done rather than recognised.
+ */
+export function isNumberQuestion(question: Question): boolean {
+  return question.answerMode === 'number';
 }
 
 /** The ids of an ordering item's options, in the order that is correct. */

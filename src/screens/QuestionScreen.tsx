@@ -5,6 +5,7 @@ import {
   heardTextFor,
   isDragQuestion,
   isListenQuestion,
+  isNumberQuestion,
   isOrderQuestion,
   isWriteQuestion,
   isStudyPassage,
@@ -16,6 +17,7 @@ import { AnswerSparkles } from '../components/AnswerSparkles';
 import { DragAnswer } from '../components/DragAnswer';
 import { OrderAnswer } from '../components/OrderAnswer';
 import { WriteAnswer } from '../components/WriteAnswer';
+import { NumberAnswer } from '../components/NumberAnswer';
 import { markSentence } from '../assessment/sentenceScoring';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
@@ -90,6 +92,7 @@ export function QuestionScreen({
   const isDrag = isDragQuestion(question);
   const isOrder = isOrderQuestion(question);
   const isWrite = isWriteQuestion(question);
+  const isNumber = isNumberQuestion(question);
   const [replaysLeft, setReplaysLeft] = useState(SPELLING_REPLAYS);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
@@ -162,11 +165,13 @@ export function QuestionScreen({
      "question" reads as a test, which is the one word this flow avoids. */
   const unitLabel = studiesPassage
     ? 'Passage'
-    : isOrder || isWrite
-      ? 'Sentence'
-      : isStudy || isListen
-        ? 'Word'
-        : 'Question';
+    : subject === 'math'
+      ? 'Question'
+      : isOrder || isWrite
+        ? 'Sentence'
+        : isStudy || isListen
+          ? 'Word'
+          : 'Question';
   const progress = Math.min(100, (questionNumber / questionsPerSubject) * 100);
   const prompt = questionTextFor(question, band);
 
@@ -344,6 +349,15 @@ export function QuestionScreen({
                 onCommit={choose}
                 seed={question.id}
                 draggable={question.answerMode === 'order-drag'}
+                of={subject === 'math' ? 'numbers' : 'words'}
+              />
+            ) : isNumber ? (
+              <NumberAnswer
+                allowDecimal={question.allowDecimal}
+                allowNegative={question.allowNegative}
+                disabled={chosenId !== null}
+                onCommit={choose}
+                seed={question.id}
               />
             ) : isWrite ? (
               <WriteAnswer

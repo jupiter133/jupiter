@@ -10,6 +10,13 @@ interface Props {
   seed: string;
   /** Adds pointer dragging on top of tapping. Tapping always works. */
   draggable?: boolean;
+  /**
+   * What the tiles are. The same component orders the words of a sentence and
+   * the values of a number line, and telling a child building a number line
+   * to "use every word" is the sort of thing that makes a product feel like
+   * it was not written for them.
+   */
+  of?: 'words' | 'numbers';
 }
 
 /** A fixed shuffle per item: the same child revisiting sees the same tiles. */
@@ -40,7 +47,15 @@ function shuffled(options: AnswerOption[], seed: string): AnswerOption[] {
  * the tiles themselves — on a heard item the sentence is the thing being
  * remembered, and that is the point.
  */
-export function OrderAnswer({ options, onCommit, disabled, seed, draggable = false }: Props) {
+export function OrderAnswer({
+  options,
+  onCommit,
+  disabled,
+  seed,
+  draggable = false,
+  of = 'words',
+}: Props) {
+  const numbers = of === 'numbers';
   const tiles = useMemo(() => shuffled(options, seed), [options, seed]);
   const [placed, setPlaced] = useState<string[]>([]);
   const [dragId, setDragId] = useState<string | null>(null);
@@ -97,7 +112,11 @@ export function OrderAnswer({ options, onCommit, disabled, seed, draggable = fal
       >
         {placed.length === 0 ? (
           <span className="order__hint">
-            {draggable ? 'Drag the words here in order' : 'Tap the words to build your sentence'}
+            {numbers
+              ? 'Tap them in order, smallest first'
+              : draggable
+                ? 'Drag the words here in order'
+                : 'Tap the words to build your sentence'}
           </span>
         ) : (
           placed.map((id, i) => (
@@ -107,7 +126,9 @@ export function OrderAnswer({ options, onCommit, disabled, seed, draggable = fal
               className="order__tile order__tile--placed"
               disabled={disabled}
               onClick={() => setPlaced((p) => p.filter((x) => x !== id))}
-              aria-label={`${byId(id)?.text} — word ${i + 1}. Tap to take it back.`}
+              aria-label={`${byId(id)?.text} — ${numbers ? 'position' : 'word'} ${
+                i + 1
+              }. Tap to take it back.`}
             >
               {byId(id)?.text}
             </button>
@@ -115,7 +136,7 @@ export function OrderAnswer({ options, onCommit, disabled, seed, draggable = fal
         )}
       </div>
 
-      <div className="order__tiles" role="group" aria-label="Words to use">
+      <div className="order__tiles" role="group" aria-label={numbers ? 'Numbers to order' : 'Words to use'}>
         {tiles.map((option) => (
           <button
             key={option.id}
@@ -152,11 +173,17 @@ export function OrderAnswer({ options, onCommit, disabled, seed, draggable = fal
           disabled={disabled || !complete}
           onClick={() => onCommit(placed.join('-'))}
         >
-          {complete ? 'That’s my sentence' : 'Use every word'}
+          {complete
+            ? numbers
+              ? 'That’s my order'
+              : 'That’s my sentence'
+            : numbers
+              ? 'Use every number'
+              : 'Use every word'}
         </button>
         {placed.length > 0 && !disabled && (
           <button type="button" className="text-btn text-btn--sm" onClick={() => setPlaced([])}>
-            Start the sentence over
+            {numbers ? 'Start over' : 'Start the sentence over'}
           </button>
         )}
       </div>

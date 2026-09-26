@@ -83,11 +83,38 @@ export function selectNextQuestion(state: SessionState): Question | null {
 
   const mine = QUESTIONS.filter((q) => q.subject === state.subject && !served.has(q.id));
   const drag = mine.filter(isDraggedQuestion).sort(byNearestTier);
-  const tap = mine.filter((q) => !isDraggedQuestion(q)).sort(byNearestTier);
+  const rest = mine.filter((q) => !isDraggedQuestion(q)).sort(byNearestTier);
   // A drag item outside its position would make the sitting feel arbitrary, so
   // it is only ever reached when nothing else is left.
   if (wantsDrag && drag.length > 0) return drag[0];
-  return tap[0] ?? drag[0] ?? null;
+
+  /*
+   * Among items equally close to the current tier, prefer a SHAPE this sitting
+   * has not used yet.
+   *
+   * Without this the selector serves a tier in bank order, and since a stable
+   * sitting stops after four or five questions, whichever shapes were authored
+   * last are never reached. A maths sitting was serving tap, tap, tap and
+   * stopping — the child never met the typed-number or ordering items at all,
+   * which are the two that cannot be worked backwards.
+   */
+  const shapeOf = (q: Question) => q.answerMode ?? 'tap';
+  const usedShapes = new Set(
+    state.servedQuestionIds
+      .map((id) => QUESTIONS.find((q) => q.id === id))
+      .filter((q): q is Question => Boolean(q))
+      .map(shapeOf),
+  );
+  const fresh = rest.filter((q) => !usedShapes.has(shapeOf(q)));
+  const nearest = rest[0];
+  // Only reach past the nearest tier when the fresh shape is just as close —
+  // variety never costs the child a question at the wrong level.
+  const freshAtSameDistance = fresh.find(
+    (q) =>
+      nearest !== undefined &&
+      Math.abs(q.tier - state.currentTier) === Math.abs(nearest.tier - state.currentTier),
+  );
+  return freshAtSameDistance ?? nearest ?? drag[0] ?? null;
 }
 
 /** True once the tier has not changed across the trailing window. */

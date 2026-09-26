@@ -329,7 +329,7 @@ exactly as the assessment intro design names them:
 | 4 | Reading Comprehension | green | 8 passages, **study then recall** |
 | 5 | Spelling | lime | 8 words, **heard not seen** |
 | 6 | Sentence Writing | gold | 8 items, **built or written** |
-| 7 | Math | cyan | 10 questions |
+| 7 | Math | cyan | 10 questions, **five shapes** |
 
 Nobody is stopped early. A result we did not gather is a result a teacher
 cannot look at. Each sitting is separate and resumable, and a child can tap
@@ -395,6 +395,42 @@ without understanding anything.
 Read-aloud follows the phase: in the study beat it reads the word and its
 meaning, in the recall beat it reads the question and the choices. It never
 reads the meaning back once the card is gone.
+
+## Math: five shapes, because four answers can be worked backwards
+
+Every maths tier carries all five, so a sitting is never ten of the same thing:
+
+| Shape | `answerMode` | What it asks |
+|---|---|---|
+| tap | — | four answers, the classic |
+| picture | — | four answers led by an illustration |
+| **number** | `number` | type the answer on a keypad |
+| **order** | `order` | put the values in order, smallest first |
+| **gap** | `drag` | drag the missing number into an equation |
+
+**The typed answer is the point of the exercise.** Four answers can be worked
+backwards — try each, see which fits — so a bank of nothing but multiple choice
+measures recognition rather than arithmetic. A typed number cannot be
+back-solved. The keypad is on screen rather than borrowing the device keyboard:
+on a tablet a text field summons a full alphabetic keyboard that covers half
+the question, and a child hunting for the number row is not doing mathematics.
+
+Two tests guard the content: a typed answer is never a number already printed
+in its own question (checked as a whole token, so "7" inside "47" does not
+count), and an answer needing a minus sign or a decimal point has the key to
+type it.
+
+### Variety has to survive the stop rule
+
+A stable sitting ends after four or five questions. The selector used to serve
+a tier in bank order, so whichever shapes were authored last were never
+reached — a maths sitting ran tap, tap, tap and stopped, and the child never
+met the two shapes that cannot be back-solved.
+
+`selectNextQuestion` now prefers a shape the sitting has not used yet, **but
+only among items equally close to the current tier**. Variety is a tie-break,
+never a reason to ask a question at the wrong level, and a test asserts every
+served item is as close to the session tier as the closest unserved one.
 
 ## Sentence Writing: built, then written
 

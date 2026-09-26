@@ -2097,3 +2097,68 @@ body {
 .order__line--over { border-color: var(--accent-secondary); background: var(--accent-secondary-soft); }
 .order__tile--draggable { cursor: grab; touch-action: none; }
 .order__tile--lifting { opacity: 0.25; }
+
+/* ---------- Math: type the number ---------- */
+
+.pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(8px, 1.4vh, 14px);
+  width: 100%;
+}
+.pad__display {
+  width: 100%;
+  max-width: 320px;
+  min-height: clamp(56px, 8vh, 72px);
+  display: grid;
+  place-items: center;
+  padding: var(--space-2) var(--space-4);
+  border: 3px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-canvas);
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: var(--fw-black);
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.pad__display--filled { border-color: var(--accent-primary); background: var(--accent-primary-soft); }
+.pad__placeholder { font-size: 16px; font-weight: var(--fw-extrabold); color: var(--text-muted); letter-spacing: 0; }
+
+.pad__keys {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(6px, 1vw, 10px);
+  width: 100%;
+  max-width: 320px;
+}
+.pad__key {
+  font-family: var(--font-family);
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: var(--fw-black);
+  color: var(--text-primary);
+  background: var(--surface-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 0 var(--border-subtle);
+  /* A child's fingertip needs a target this big; anything smaller turns
+     arithmetic into aiming. */
+  min-height: clamp(48px, 7vh, 62px);
+  cursor: pointer;
+  transition: transform 70ms ease, box-shadow 70ms ease;
+}
+.pad__key:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 var(--border-subtle); }
+.pad__key:focus-visible { outline: 3px solid var(--accent-secondary); outline-offset: 2px; }
+.pad__key:disabled { opacity: 0.4; cursor: default; }
+.pad__key--quiet { background: var(--surface-inset); color: var(--text-secondary); }
+.pad__key--blank { background: transparent; border: none; box-shadow: none; pointer-events: none; }
+.pad__go { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.pad__go .btn { margin-bottom: 4px; }
+
+@media (max-height: 560px) {
+  .pad { gap: 6px; }
+  .pad__display { min-height: 44px; font-size: 26px; }
+  .pad__key { min-height: 38px; font-size: 18px; }
+  .pad__keys { max-width: 260px; }
+}

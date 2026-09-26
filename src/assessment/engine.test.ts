@@ -9,7 +9,7 @@ import {
   submitAnswer,
   toSubjectResult,
 } from './engine';
-import { QUESTIONS, TRACK_BANK_IS_STUB } from './questionBank';
+import { QUESTIONS, BANK_HAS_TEMPLATE_ITEMS } from './questionBank';
 import { deriveReadingLevel, readingBottleneck, readingSubjectsFor } from './readingLevel';
 import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
 import { SPEECH_SCORING_IS_STUB } from './speechScoring';
@@ -27,6 +27,7 @@ import {
   isDraggedQuestion,
   correctOrderFor,
   isListenQuestion,
+  isNumberQuestion,
   isOrderQuestion,
   isSpokenQuestion,
   isWriteQuestion,
@@ -51,6 +52,10 @@ function answer(state: SessionState, correct: boolean, at?: number): SessionStat
     const right = correctOrderFor(q);
     const built = correct ? right : [...right].reverse();
     return submitAnswer(state, q, built.join('-'), at);
+  }
+  // A typed number has no options to pick a wrong one from.
+  if (isNumberQuestion(q)) {
+    return submitAnswer(state, q, correct ? q.correctAnswerId : `${q.correctAnswerId}0`, at);
   }
   const wrong = q.options.find((o) => o.id !== q.correctAnswerId)!.id;
   return submitAnswer(state, q, correct ? q.correctAnswerId : wrong, at);
@@ -256,13 +261,18 @@ describe('question bank', () => {
 
   it('knows the reading bank is a stub, so nobody ships on it by accident', () => {
     // Flip this expectation when the teacher-written banks land.
-    expect(TRACK_BANK_IS_STUB).toBe(true);
+    expect(BANK_HAS_TEMPLATE_ITEMS).toBe(true);
   });
 
   it('uses unique ids and valid answer keys', () => {
     expect(new Set(QUESTIONS.map((q) => q.id)).size).toBe(QUESTIONS.length);
     const keyed = QUESTIONS.filter(
-      (q) => !isSpokenQuestion(q) && !isWriteQuestion(q) && !isOrderQuestion(q),
+      (q) =>
+        !isSpokenQuestion(q) &&
+        !isWriteQuestion(q) &&
+        !isOrderQuestion(q) &&
+        // A typed number is its own key, not the id of an option.
+        !isNumberQuestion(q),
     );
     for (const q of keyed) {
       expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
@@ -437,9 +447,95 @@ describe('length and stop rule', () => {
   });
 });
 
+describe('maths variants', () => {
+  const shapeOf = (q: { answerMode?: string }) => q.answerMode ?? 'tap';
+
+  it('offers all five shapes at every tier', () => {
+    for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
+      const shapes = QUESTIONS.filter((q) => q.subject === 'math' && q.tier === tier).map(shapeOf);
+      // Four answers can be worked backwards; a sitting of nothing but four
+      // answers measures recognition. Every tier carries the alternatives.
+      expect(new Set(shapes), `tier ${tier}`).toEqual(new Set(['tap', 'number', 'order', 'drag']));
+    }
+  });
+
+  it('actually serves a mix in one sitting, not ten of the same thing', () => {
+    // Two right then two wrong keeps the tier moving, so the sitting runs its
+    // full length instead of stopping on the stability window after four.
+    let s = createSession('5', 'math');
+    const shapes: string[] = [];
+    for (let i = 0; i < QUESTIONS_PER_SUBJECT.math; i += 1) {
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      shapes.push(shapeOf(q));
+      s = answer(s, i % 4 < 2, (i + 1) * 1000);
+      if (s.finishedAt) break;
+    }
+    expect(shapes.length).toBeGreaterThan(4);
+    expect(new Set(shapes).size, shapes.join(', ')).toBeGreaterThanOrEqual(3);
+  });
+
+  it('reaches the shapes that cannot be worked backwards before a sitting ends', () => {
+    // A stable sitting stops after four or five questions. The typed-number
+    // and ordering items are the two a child cannot back-solve, so they have
+    // to appear inside that window rather than at the end of the tier.
+    let s = createSession('5', 'math');
+    const shapes: string[] = [];
+    for (let i = 0; i < QUESTIONS_PER_SUBJECT.math; i += 1) {
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      shapes.push(shapeOf(q));
+      // Alternating never builds a streak, so the tier holds and the
+      // stability window ends the sitting early — the realistic case.
+      s = answer(s, i % 2 === 0, (i + 1) * 1000);
+      if (s.finishedAt) break;
+    }
+    expect(shapes, shapes.join(', ')).toContain('number');
+    expect(shapes, shapes.join(', ')).toContain('order');
+  });
+
+  it('never trades the right tier for a fresh shape', () => {
+    // Variety is a tie-break, not a reason to ask a question at the wrong
+    // level. Every served item sits as close to the session tier as the
+    // closest unserved one did.
+    let s = createSession('5', 'math');
+    for (let i = 0; i < 6; i += 1) {
+      const served = new Set(s.servedQuestionIds);
+      const available = QUESTIONS.filter((q) => q.subject === 'math' && !served.has(q.id));
+      const best = Math.min(...available.map((q) => Math.abs(q.tier - s.currentTier)));
+      const q = selectNextQuestion(s);
+      if (!q) break;
+      expect(Math.abs(q.tier - s.currentTier), `${q.id} at session tier ${s.currentTier}`).toBe(best);
+      s = answer(s, i % 2 === 0, (i + 1) * 1000);
+      if (s.finishedAt) break;
+    }
+  });
+
+  it('keys a typed number by the number itself, and never by an option', () => {
+    const typed = QUESTIONS.filter(isNumberQuestion);
+    expect(typed.length).toBeGreaterThan(0);
+    for (const q of typed) {
+      expect(q.options, q.id).toHaveLength(0);
+      expect(q.correctAnswerId, q.id).toMatch(/^-?\d+(\.\d+)?$/);
+      // The answer must not be sitting in the question to be copied. Checked
+      // as a whole token: "7" inside "47" is not a copyable answer, and
+      // treating it as one rejects perfectly good algebra.
+      const numbersAsked = q.questionText.match(/-?\d+(\.\d+)?/g) ?? [];
+      expect(numbersAsked, `${q.id}: ${q.questionText}`).not.toContain(q.correctAnswerId);
+    }
+  });
+
+  it('gives a negative or decimal answer the key to type it', () => {
+    for (const q of QUESTIONS.filter(isNumberQuestion)) {
+      if (q.correctAnswerId.startsWith('-')) expect(q.allowNegative, q.id).toBe(true);
+      if (q.correctAnswerId.includes('.')) expect(q.allowDecimal, q.id).toBe(true);
+    }
+  });
+});
+
 describe('the one drag item', () => {
   it('lands at the second question of its sitting and nowhere else', () => {
-    for (const subject of ['spelling', 'sentence-writing'] as Subject[]) {
+    for (const subject of ['spelling', 'sentence-writing', 'math'] as Subject[]) {
       let s = createSession('5', subject);
       const positions: number[] = [];
       for (let i = 0; i < QUESTIONS_PER_SUBJECT[subject]; i += 1) {
@@ -454,9 +550,11 @@ describe('the one drag item', () => {
   });
 
   it('is heard as a whole sentence, and the sentence contains the word', () => {
-    // Spelling's single-gap drag only: the sentence-writing one has no single
-    // target word, it has the whole sentence.
-    const drag = QUESTIONS.filter((q) => q.answerMode === 'drag');
+    // SPELLING's single-gap drag only. Sentence writing's dragged item has no
+    // single target word, and maths' drags a number into an equation with
+    // nothing spoken at all — keying this off answerMode alone stopped being
+    // enough the moment a second subject started dragging.
+    const drag = QUESTIONS.filter((q) => q.subject === 'spelling' && q.answerMode === 'drag');
     expect(drag.length).toBeGreaterThan(0);
     for (const q of drag) {
       expect(q.listenSentence, q.id).toBeTruthy();
@@ -471,8 +569,8 @@ describe('the one drag item', () => {
 
   it('gives each dragging subject exactly one such item per tier', () => {
     const bySubject = new Set(QUESTIONS.filter(isDraggedQuestion).map((q) => q.subject));
-    expect([...bySubject].sort()).toEqual(['sentence-writing', 'spelling']);
-    for (const subject of ['spelling', 'sentence-writing'] as Subject[]) {
+    expect([...bySubject].sort()).toEqual(['math', 'sentence-writing', 'spelling']);
+    for (const subject of ['spelling', 'sentence-writing', 'math'] as Subject[]) {
       for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
         const n = QUESTIONS.filter(
           (q) => isDraggedQuestion(q) && q.subject === subject && q.tier === tier,
