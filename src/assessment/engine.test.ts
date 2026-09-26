@@ -29,6 +29,7 @@ import {
   isListenQuestion,
   isMatchQuestion,
   isNumberQuestion,
+  isPairQuestion,
   isOrderQuestion,
   isSpokenQuestion,
   isWriteQuestion,
@@ -274,8 +275,10 @@ describe('question bank', () => {
         !isOrderQuestion(q) &&
         // A typed number is its own key, not the id of an option.
         !isNumberQuestion(q) &&
-        // A match is keyed by the PAIR of ids, not a single one.
-        !isMatchQuestion(q),
+        // A match is keyed by the PAIR of ids, not a single one, and a
+        // pairing by the whole placement.
+        !isMatchQuestion(q) &&
+        !isPairQuestion(q),
     );
     for (const q of keyed) {
       expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
@@ -486,6 +489,44 @@ describe('find the same', () => {
       expect(cardsAt(tier).length, `tier ${tier}`).toBeGreaterThan(0);
     }
     expect(Math.max(...cardsAt(MIN_TIER))).toBeLessThan(Math.max(...cardsAt(MAX_TIER)));
+  });
+});
+
+describe('match making', () => {
+  it('gives every picture exactly one twin, and keys the whole placement', () => {
+    const pairs = QUESTIONS.filter(isPairQuestion);
+    expect(pairs.length).toBeGreaterThan(0);
+    for (const q of pairs) {
+      const optionIds = q.options.map((o) => o.id);
+      // Each slot waits for one picture, and every picture has a slot.
+      expect([...(q.pairOrder ?? [])].sort(), q.id).toEqual([...optionIds].sort());
+      expect(q.correctAnswerId, q.id).toBe((q.pairOrder ?? []).join('-'));
+      // Two identical pictures would make two placements right.
+      const arts = q.options.map((o) => JSON.stringify(o.art));
+      expect(new Set(arts).size, q.id).toBe(arts.length);
+    }
+  });
+
+  it('never lines the slots up with the pictures', () => {
+    // Slots in the same order as the pictures can be filled top to bottom
+    // without looking at a single one of them.
+    for (const q of QUESTIONS.filter(isPairQuestion)) {
+      expect(q.pairOrder, q.id).not.toEqual(q.options.map((o) => o.id));
+    }
+  });
+
+  it('keeps a three-year-old to three pairs, and never more than five', () => {
+    for (const q of QUESTIONS.filter(isPairQuestion)) {
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+      expect(q.options.length, q.id).toBeLessThanOrEqual(5);
+      for (const o of q.options) {
+        expect(o.art, `${q.id} ${o.id}`).toBeTruthy();
+        expect(o.text, `${q.id} ${o.id}`).toBe('');
+      }
+    }
+    const at = (tier: number) =>
+      Math.max(...QUESTIONS.filter((q) => isPairQuestion(q) && q.tier === tier).map((q) => q.options.length));
+    expect(at(MIN_TIER)).toBeLessThan(at(MAX_TIER));
   });
 });
 

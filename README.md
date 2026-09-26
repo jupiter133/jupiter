@@ -396,6 +396,25 @@ Read-aloud follows the phase: in the study beat it reads the word and its
 meaning, in the recall beat it reads the question and the choices. It never
 reads the meaning back once the card is gone.
 
+## Little Readers: Match Making
+
+Pictures down the left, boxes down the right, each box holding a faded copy of
+the picture it wants. The child moves each picture onto its twin.
+
+`answerMode: 'pair'`, with `pairOrder` naming the option each slot waits for,
+and the key is the **whole placement**. Fifty-four items: three pairs for the
+youngest, five at the top. **The slots are always reordered**, so the puzzle can
+never be solved top-to-bottom without looking — a test enforces that, and
+another enforces that no two pictures in one puzzle are the same, which would
+make two placements right.
+
+**Two ways in, always.** Drag a picture onto a box, or tap the picture and then
+tap the box. Dragging is the fun one and the one the design asks for; tapping
+is the one a three-year-old with a wobbly finger can actually finish, and an
+assessment that measures fine motor control instead of matching is measuring
+the wrong thing. Tapping a filled box sends the picture back, and nothing is
+judged until the child presses the green button.
+
 ## Little Readers: Find the Same
 
 The first thing a three-year-old meets in the product. A few pictures, two of
@@ -417,6 +436,17 @@ wrong card:
 - **nothing commits on its own** — an accidental second tap would otherwise
   end the question
 - no card is ever marked wrong; chosen cards simply look chosen
+
+### Sizing a picture for someone who cannot read
+
+Twice now the first version put a small icon in a large card, and both times
+the cause was the same: a percentage width against a wrapper that had no width
+of its own, which silently collapses. The rule that came out of it —
+
+- size the picture off whichever card dimension is **constrained**: height on a
+  wide, short row; width on a square card
+- give the wrapper the card to fill, so a percentage has something to measure
+- then **measure it in a browser**, at every viewport, rather than trusting it
 
 ### Two things this exposed
 

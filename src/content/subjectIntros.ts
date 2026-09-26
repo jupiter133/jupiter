@@ -70,14 +70,16 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   'match-making': {
-    lead: 'Match each picture to the one that goes with it.',
-    cta: 'Start the matching game',
-    chips: [{ label: 'Pairs', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~2 minutes', ...PINK }],
+    lead: 'Every picture has a twin. Put them together!',
+    cta: 'Start matching',
+    chips: [{ label: 'Find the twins', ...CYAN }, { label: 'Drag or tap', ...LIME }, { label: '~2 minutes', ...PINK }],
+    /* For the grown-up sitting beside a three-year-old. The instruction the
+       CHILD needs is spoken aloud on the activity itself, automatically. */
     sections: rules([
-      ['How it works', 'You’ll see one picture at the top and a few below. Tap the one that belongs with it.'],
-      ['Things that go together', 'A sock and a shoe. A bird and a nest. Think about which two are friends.'],
-      ['Need a hand?', 'Tap the speaker to hear it read out loud whenever you like.'],
-      ['The rules', 'No timer, no score. Pick the one you think fits best.'],
+      ['How it works', 'Pictures down the left, boxes down the right. Each box has a faded picture in it — your child puts the matching picture into that box.'],
+      ['Two ways to move a picture', 'Drag it across, or tap the picture and then tap the box. Either works, so a small hand that cannot drag yet is never stuck.'],
+      ['Changing their mind', 'Tapping a filled box sends that picture back. Nothing is locked in until they press the big green button.'],
+      ['It reads itself', 'The instruction is spoken out loud as each puzzle appears, so a child who cannot read never needs you to explain it.'],
     ]),
   },
   'spot-the-difference': {

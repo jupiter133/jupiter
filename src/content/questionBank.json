@@ -4,6 +4,2706 @@
   "note": "MIXED BANK. The seven Little Readers activities are template-generated placeholder and are NOT assessment content. Words Speaking, Oral Reading, Vocabulary, Reading Comprehension, Spelling, Sentence Writing and Math carry written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts.",
   "questions": [
     {
+      "id": "ts-mm-t0-01",
+      "subject": "match-making",
+      "tier": 0,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "b-c-a"
+    },
+    {
+      "id": "ts-mm-t0-02",
+      "subject": "match-making",
+      "tier": 0,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswerId": "c-a-b"
+    },
+    {
+      "id": "ts-mm-t0-03",
+      "subject": "match-making",
+      "tier": 0,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "a-c-b"
+    },
+    {
+      "id": "ts-mm-t0-04",
+      "subject": "match-making",
+      "tier": 0,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "a",
+        "c"
+      ],
+      "correctAnswerId": "b-a-c"
+    },
+    {
+      "id": "ts-mm-t0-05",
+      "subject": "match-making",
+      "tier": 0,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "b-c-a"
+    },
+    {
+      "id": "ts-mm-t0-06",
+      "subject": "match-making",
+      "tier": 0,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswerId": "c-a-b"
+    },
+    {
+      "id": "ts-mm-t1-01",
+      "subject": "match-making",
+      "tier": 1,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "a",
+        "c"
+      ],
+      "correctAnswerId": "b-a-c"
+    },
+    {
+      "id": "ts-mm-t1-02",
+      "subject": "match-making",
+      "tier": 1,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "a-c-b"
+    },
+    {
+      "id": "ts-mm-t1-03",
+      "subject": "match-making",
+      "tier": 1,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "b-c-a"
+    },
+    {
+      "id": "ts-mm-t1-04",
+      "subject": "match-making",
+      "tier": 1,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "b-c-a"
+    },
+    {
+      "id": "ts-mm-t1-05",
+      "subject": "match-making",
+      "tier": 1,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "b-c-a"
+    },
+    {
+      "id": "ts-mm-t1-06",
+      "subject": "match-making",
+      "tier": 1,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswerId": "c-a-b"
+    },
+    {
+      "id": "ts-mm-t2-01",
+      "subject": "match-making",
+      "tier": 2,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "c-b-a"
+    },
+    {
+      "id": "ts-mm-t2-02",
+      "subject": "match-making",
+      "tier": 2,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "b-c-a"
+    },
+    {
+      "id": "ts-mm-t2-03",
+      "subject": "match-making",
+      "tier": 2,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "a-c-b"
+    },
+    {
+      "id": "ts-mm-t2-04",
+      "subject": "match-making",
+      "tier": 2,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "a",
+        "c"
+      ],
+      "correctAnswerId": "b-a-c"
+    },
+    {
+      "id": "ts-mm-t2-05",
+      "subject": "match-making",
+      "tier": 2,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "a-c-b"
+    },
+    {
+      "id": "ts-mm-t2-06",
+      "subject": "match-making",
+      "tier": 2,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "c-b-a"
+    },
+    {
+      "id": "ts-mm-t3-01",
+      "subject": "match-making",
+      "tier": 3,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "c",
+        "b",
+        "d"
+      ],
+      "correctAnswerId": "a-c-b-d"
+    },
+    {
+      "id": "ts-mm-t3-02",
+      "subject": "match-making",
+      "tier": 3,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "a",
+        "c",
+        "d"
+      ],
+      "correctAnswerId": "b-a-c-d"
+    },
+    {
+      "id": "ts-mm-t3-03",
+      "subject": "match-making",
+      "tier": 3,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "d",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "c-d-b-a"
+    },
+    {
+      "id": "ts-mm-t3-04",
+      "subject": "match-making",
+      "tier": 3,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "a",
+        "b",
+        "c"
+      ],
+      "correctAnswerId": "d-a-b-c"
+    },
+    {
+      "id": "ts-mm-t3-05",
+      "subject": "match-making",
+      "tier": 3,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "d-c-b-a"
+    },
+    {
+      "id": "ts-mm-t3-06",
+      "subject": "match-making",
+      "tier": 3,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "d",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "c-d-b-a"
+    },
+    {
+      "id": "ts-mm-t4-01",
+      "subject": "match-making",
+      "tier": 4,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "a",
+        "b",
+        "d"
+      ],
+      "correctAnswerId": "c-a-b-d"
+    },
+    {
+      "id": "ts-mm-t4-02",
+      "subject": "match-making",
+      "tier": 4,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "correctAnswerId": "b-a-d-c"
+    },
+    {
+      "id": "ts-mm-t4-03",
+      "subject": "match-making",
+      "tier": 4,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "d",
+        "a"
+      ],
+      "correctAnswerId": "b-c-d-a"
+    },
+    {
+      "id": "ts-mm-t4-04",
+      "subject": "match-making",
+      "tier": 4,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "a",
+        "b",
+        "d"
+      ],
+      "correctAnswerId": "c-a-b-d"
+    },
+    {
+      "id": "ts-mm-t4-05",
+      "subject": "match-making",
+      "tier": 4,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "d-a-c-b"
+    },
+    {
+      "id": "ts-mm-t4-06",
+      "subject": "match-making",
+      "tier": 4,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "d",
+        "a"
+      ],
+      "correctAnswerId": "b-c-d-a"
+    },
+    {
+      "id": "ts-mm-t5-01",
+      "subject": "match-making",
+      "tier": 5,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "a",
+        "d",
+        "b"
+      ],
+      "correctAnswerId": "c-a-d-b"
+    },
+    {
+      "id": "ts-mm-t5-02",
+      "subject": "match-making",
+      "tier": 5,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "a",
+        "d"
+      ],
+      "correctAnswerId": "b-c-a-d"
+    },
+    {
+      "id": "ts-mm-t5-03",
+      "subject": "match-making",
+      "tier": 5,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "d",
+        "a"
+      ],
+      "correctAnswerId": "b-c-d-a"
+    },
+    {
+      "id": "ts-mm-t5-04",
+      "subject": "match-making",
+      "tier": 5,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "a",
+        "b",
+        "c"
+      ],
+      "correctAnswerId": "d-a-b-c"
+    },
+    {
+      "id": "ts-mm-t5-05",
+      "subject": "match-making",
+      "tier": 5,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "a-d-c-b"
+    },
+    {
+      "id": "ts-mm-t5-06",
+      "subject": "match-making",
+      "tier": 5,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "d",
+        "a",
+        "c"
+      ],
+      "correctAnswerId": "b-d-a-c"
+    },
+    {
+      "id": "ts-mm-t6-01",
+      "subject": "match-making",
+      "tier": 6,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        }
+      ],
+      "pairOrder": [
+        "e",
+        "d",
+        "c",
+        "a",
+        "b"
+      ],
+      "correctAnswerId": "e-d-c-a-b"
+    },
+    {
+      "id": "ts-mm-t6-02",
+      "subject": "match-making",
+      "tier": 6,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "e",
+        "b",
+        "d",
+        "a"
+      ],
+      "correctAnswerId": "c-e-b-d-a"
+    },
+    {
+      "id": "ts-mm-t6-03",
+      "subject": "match-making",
+      "tier": 6,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "b",
+        "a",
+        "c",
+        "e"
+      ],
+      "correctAnswerId": "d-b-a-c-e"
+    },
+    {
+      "id": "ts-mm-t6-04",
+      "subject": "match-making",
+      "tier": 6,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        }
+      ],
+      "pairOrder": [
+        "e",
+        "d",
+        "c",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "e-d-c-b-a"
+    },
+    {
+      "id": "ts-mm-t6-05",
+      "subject": "match-making",
+      "tier": 6,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "e",
+        "a",
+        "b",
+        "d"
+      ],
+      "correctAnswerId": "c-e-a-b-d"
+    },
+    {
+      "id": "ts-mm-t6-06",
+      "subject": "match-making",
+      "tier": 6,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "e",
+        "d",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "c-e-d-b-a"
+    },
+    {
+      "id": "ts-mm-t7-01",
+      "subject": "match-making",
+      "tier": 7,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "b",
+        "d",
+        "e",
+        "c"
+      ],
+      "correctAnswerId": "a-b-d-e-c"
+    },
+    {
+      "id": "ts-mm-t7-02",
+      "subject": "match-making",
+      "tier": 7,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        }
+      ],
+      "pairOrder": [
+        "a",
+        "d",
+        "c",
+        "b",
+        "e"
+      ],
+      "correctAnswerId": "a-d-c-b-e"
+    },
+    {
+      "id": "ts-mm-t7-03",
+      "subject": "match-making",
+      "tier": 7,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "a",
+        "c",
+        "e",
+        "b"
+      ],
+      "correctAnswerId": "d-a-c-e-b"
+    },
+    {
+      "id": "ts-mm-t7-04",
+      "subject": "match-making",
+      "tier": 7,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        }
+      ],
+      "pairOrder": [
+        "e",
+        "d",
+        "a",
+        "c",
+        "b"
+      ],
+      "correctAnswerId": "e-d-a-c-b"
+    },
+    {
+      "id": "ts-mm-t7-05",
+      "subject": "match-making",
+      "tier": 7,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "c",
+        "a",
+        "b",
+        "e"
+      ],
+      "correctAnswerId": "d-c-a-b-e"
+    },
+    {
+      "id": "ts-mm-t7-06",
+      "subject": "match-making",
+      "tier": 7,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        }
+      ],
+      "pairOrder": [
+        "e",
+        "c",
+        "d",
+        "b",
+        "a"
+      ],
+      "correctAnswerId": "e-c-d-b-a"
+    },
+    {
+      "id": "ts-mm-t8-01",
+      "subject": "match-making",
+      "tier": 8,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "c",
+        "e",
+        "a",
+        "d"
+      ],
+      "correctAnswerId": "b-c-e-a-d"
+    },
+    {
+      "id": "ts-mm-t8-02",
+      "subject": "match-making",
+      "tier": 8,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        }
+      ],
+      "pairOrder": [
+        "c",
+        "b",
+        "d",
+        "a",
+        "e"
+      ],
+      "correctAnswerId": "c-b-d-a-e"
+    },
+    {
+      "id": "ts-mm-t8-03",
+      "subject": "match-making",
+      "tier": 8,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "b",
+        "e",
+        "c",
+        "a"
+      ],
+      "correctAnswerId": "d-b-e-c-a"
+    },
+    {
+      "id": "ts-mm-t8-04",
+      "subject": "match-making",
+      "tier": 8,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        }
+      ],
+      "pairOrder": [
+        "d",
+        "b",
+        "a",
+        "e",
+        "c"
+      ],
+      "correctAnswerId": "d-b-a-e-c"
+    },
+    {
+      "id": "ts-mm-t8-05",
+      "subject": "match-making",
+      "tier": 8,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "a",
+        "d",
+        "c",
+        "e"
+      ],
+      "correctAnswerId": "b-a-d-c-e"
+    },
+    {
+      "id": "ts-mm-t8-06",
+      "subject": "match-making",
+      "tier": 8,
+      "skill": "picture-pairing",
+      "answerMode": "pair",
+      "questionText": "Drag each picture to the one that matches.",
+      "questionTextJunior": "Put each picture with its twin!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "pairOrder": [
+        "b",
+        "e",
+        "d",
+        "a",
+        "c"
+      ],
+      "correctAnswerId": "b-e-d-a-c"
+    },
+    {
       "id": "ts-fs-t0-01",
       "subject": "find-the-same",
       "tier": 0,
@@ -10866,1464 +13566,6 @@
       "questionTextJunior": "Say “indistinguishable”.",
       "options": [],
       "correctAnswerId": ""
-    },
-    {
-      "id": "ts-mm-t0-01",
-      "subject": "match-making",
-      "tier": 0,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a cat?",
-      "questionTextJunior": "Match the cat.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t0-02",
-      "subject": "match-making",
-      "tier": 0,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a dog?",
-      "questionTextJunior": "Match the dog.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t0-03",
-      "subject": "match-making",
-      "tier": 0,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a sun?",
-      "questionTextJunior": "Match the sun.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t0-04",
-      "subject": "match-making",
-      "tier": 0,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a map?",
-      "questionTextJunior": "Match the map.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t0-05",
-      "subject": "match-making",
-      "tier": 0,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a bed?",
-      "questionTextJunior": "Match the bed.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t0-06",
-      "subject": "match-making",
-      "tier": 0,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a fish?",
-      "questionTextJunior": "Match the fish.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t1-01",
-      "subject": "match-making",
-      "tier": 1,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a tree?",
-      "questionTextJunior": "Match the tree.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t1-02",
-      "subject": "match-making",
-      "tier": 1,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a star?",
-      "questionTextJunior": "Match the star.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t1-03",
-      "subject": "match-making",
-      "tier": 1,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a moon?",
-      "questionTextJunior": "Match the moon.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t1-04",
-      "subject": "match-making",
-      "tier": 1,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a rain?",
-      "questionTextJunior": "Match the rain.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t1-05",
-      "subject": "match-making",
-      "tier": 1,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a book?",
-      "questionTextJunior": "Match the book.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t1-06",
-      "subject": "match-making",
-      "tier": 1,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a frog?",
-      "questionTextJunior": "Match the frog.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t2-01",
-      "subject": "match-making",
-      "tier": 2,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a nest?",
-      "questionTextJunior": "Match the nest.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t2-02",
-      "subject": "match-making",
-      "tier": 2,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a lamp?",
-      "questionTextJunior": "Match the lamp.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t2-03",
-      "subject": "match-making",
-      "tier": 2,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a gift?",
-      "questionTextJunior": "Match the gift.",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t2-04",
-      "subject": "match-making",
-      "tier": 2,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a hand?",
-      "questionTextJunior": "Match the hand.",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t2-05",
-      "subject": "match-making",
-      "tier": 2,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a milk?",
-      "questionTextJunior": "Match the milk.",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t2-06",
-      "subject": "match-making",
-      "tier": 2,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a road?",
-      "questionTextJunior": "Match the road.",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t3-01",
-      "subject": "match-making",
-      "tier": 3,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a song?",
-      "questionTextJunior": "Match the song.",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t3-02",
-      "subject": "match-making",
-      "tier": 3,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a wind?",
-      "questionTextJunior": "Match the wind.",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t3-03",
-      "subject": "match-making",
-      "tier": 3,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a cat?",
-      "questionTextJunior": "Match the cat.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t3-04",
-      "subject": "match-making",
-      "tier": 3,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a dog?",
-      "questionTextJunior": "Match the dog.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t3-05",
-      "subject": "match-making",
-      "tier": 3,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a sun?",
-      "questionTextJunior": "Match the sun.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t3-06",
-      "subject": "match-making",
-      "tier": 3,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a map?",
-      "questionTextJunior": "Match the map.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t4-01",
-      "subject": "match-making",
-      "tier": 4,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a bed?",
-      "questionTextJunior": "Match the bed.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t4-02",
-      "subject": "match-making",
-      "tier": 4,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a fish?",
-      "questionTextJunior": "Match the fish.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t4-03",
-      "subject": "match-making",
-      "tier": 4,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a tree?",
-      "questionTextJunior": "Match the tree.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t4-04",
-      "subject": "match-making",
-      "tier": 4,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a star?",
-      "questionTextJunior": "Match the star.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t4-05",
-      "subject": "match-making",
-      "tier": 4,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a moon?",
-      "questionTextJunior": "Match the moon.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t4-06",
-      "subject": "match-making",
-      "tier": 4,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a rain?",
-      "questionTextJunior": "Match the rain.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t5-01",
-      "subject": "match-making",
-      "tier": 5,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a book?",
-      "questionTextJunior": "Match the book.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t5-02",
-      "subject": "match-making",
-      "tier": 5,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a frog?",
-      "questionTextJunior": "Match the frog.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t5-03",
-      "subject": "match-making",
-      "tier": 5,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a nest?",
-      "questionTextJunior": "Match the nest.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t5-04",
-      "subject": "match-making",
-      "tier": 5,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a lamp?",
-      "questionTextJunior": "Match the lamp.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t5-05",
-      "subject": "match-making",
-      "tier": 5,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a gift?",
-      "questionTextJunior": "Match the gift.",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t5-06",
-      "subject": "match-making",
-      "tier": 5,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a hand?",
-      "questionTextJunior": "Match the hand.",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t6-01",
-      "subject": "match-making",
-      "tier": 6,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a milk?",
-      "questionTextJunior": "Match the milk.",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t6-02",
-      "subject": "match-making",
-      "tier": 6,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a road?",
-      "questionTextJunior": "Match the road.",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t6-03",
-      "subject": "match-making",
-      "tier": 6,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a song?",
-      "questionTextJunior": "Match the song.",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t6-04",
-      "subject": "match-making",
-      "tier": 6,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a wind?",
-      "questionTextJunior": "Match the wind.",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t6-05",
-      "subject": "match-making",
-      "tier": 6,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a cat?",
-      "questionTextJunior": "Match the cat.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t6-06",
-      "subject": "match-making",
-      "tier": 6,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a dog?",
-      "questionTextJunior": "Match the dog.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t7-01",
-      "subject": "match-making",
-      "tier": 7,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a sun?",
-      "questionTextJunior": "Match the sun.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t7-02",
-      "subject": "match-making",
-      "tier": 7,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a map?",
-      "questionTextJunior": "Match the map.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t7-03",
-      "subject": "match-making",
-      "tier": 7,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a bed?",
-      "questionTextJunior": "Match the bed.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t7-04",
-      "subject": "match-making",
-      "tier": 7,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a fish?",
-      "questionTextJunior": "Match the fish.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t7-05",
-      "subject": "match-making",
-      "tier": 7,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a tree?",
-      "questionTextJunior": "Match the tree.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t7-06",
-      "subject": "match-making",
-      "tier": 7,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a star?",
-      "questionTextJunior": "Match the star.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t8-01",
-      "subject": "match-making",
-      "tier": 8,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a moon?",
-      "questionTextJunior": "Match the moon.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t8-02",
-      "subject": "match-making",
-      "tier": 8,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a rain?",
-      "questionTextJunior": "Match the rain.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t8-03",
-      "subject": "match-making",
-      "tier": 8,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a book?",
-      "questionTextJunior": "Match the book.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t8-04",
-      "subject": "match-making",
-      "tier": 8,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a frog?",
-      "questionTextJunior": "Match the frog.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t8-05",
-      "subject": "match-making",
-      "tier": 8,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a nest?",
-      "questionTextJunior": "Match the nest.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-mm-t8-06",
-      "subject": "match-making",
-      "tier": 8,
-      "skill": "stub-match",
-      "questionText": "Which word goes with the picture of a lamp?",
-      "questionTextJunior": "Match the lamp.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
     },
     {
       "id": "ts-std-t0-01",

@@ -2247,3 +2247,98 @@ body {
   .match__card { min-height: 76px; padding: 4px; border-width: 2px; }
   .match__tick { width: 26px; height: 26px; font-size: 15px; top: 5px; right: 6px; }
 }
+
+/* ---------- Match Making: put each picture with its twin ---------- */
+
+.pair {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.8vh, 20px);
+  width: 100%;
+}
+.pair__board {
+  flex: 1;
+  min-height: 0;
+  /* Capped, so a picture is not marooned in the middle of a 450px row. The
+     two columns should read as two short stacks side by side. */
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  display: grid;
+  /* Pictures on the left, boxes on the right, with a lane between them that
+     reads as the distance a picture travels. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(12px, 4vw, 56px);
+  /* The board takes the stage, so the rows are as tall as the screen allows
+     and each picture is as big as it can be. */
+  align-content: stretch;
+}
+.pair__column { display: flex; flex-direction: column; gap: clamp(8px, 1.4vh, 14px); min-height: 0; height: 100%; }
+
+.pair__piece, .pair__slot {
+  flex: 1;
+  min-height: clamp(58px, 11vh, 104px);
+  border-radius: var(--radius-lg);
+  display: grid;
+  place-items: center;
+}
+.pair__piece {
+  background: var(--surface-card);
+  border: 3px solid var(--border-subtle);
+  box-shadow: 0 5px 0 var(--border-subtle);
+  cursor: grab;
+  touch-action: none;
+  transition: transform 90ms ease, box-shadow 90ms ease, border-color 140ms ease, opacity 140ms ease;
+}
+.pair__piece:hover:not(:disabled) { border-color: var(--border-strong); }
+.pair__piece:focus-visible { outline: 4px solid var(--accent-secondary); outline-offset: 3px; }
+/* Picked up by tapping: it lifts, so a child can see what they are holding. */
+.pair__piece--held {
+  border-color: var(--accent-secondary);
+  background: var(--accent-secondary-soft);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 0 var(--accent-secondary-edge);
+}
+.pair__piece--lifting { opacity: 0.25; }
+/* Its place in the column is kept, so nothing shuffles mid-puzzle. */
+.pair__piece--gone { opacity: 0; pointer-events: none; }
+
+.pair__slot {
+  position: relative;
+  border: 3px dashed var(--border-subtle);
+  background: var(--surface-canvas);
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.pair__slot--over { border-color: var(--accent-secondary); background: var(--accent-secondary-soft); }
+.pair__slot--filled { border-style: solid; border-color: var(--accent-primary); background: var(--accent-primary-soft); }
+/* The faded picture is the clue: this box is waiting for that one. */
+.pair__ghost-art { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0.2; pointer-events: none; }
+.pair__drop {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: none;
+  border-radius: inherit;
+  cursor: pointer;
+}
+.pair__drop:focus-visible { outline: 4px solid var(--accent-secondary); outline-offset: -4px; }
+
+/* The picture fills its card, as everywhere else in Little Readers. */
+.pair__piece .art, .pair__drop .art, .pair__ghost-art .art { width: 100%; height: 100%; display: grid; place-items: center; }
+/* These cards are wide and short, so the picture is sized off the card's
+   HEIGHT. Sizing it off width left a 60px icon adrift in an 880px row. */
+.pair__piece .art svg, .pair__drop .art svg, .pair__ghost-art .art svg { height: 94%; width: auto; max-width: 58%; }
+.pair__ghost .art svg { width: clamp(38px, 8vh, 74px); height: auto; }
+.pair__ghost { padding: 10px 14px; }
+
+.pair__go { flex: 0 0 auto; display: flex; justify-content: center; }
+.pair__go .btn { margin-bottom: 4px; }
+
+@media (max-height: 560px) {
+  .pair { gap: 6px; }
+  .pair__piece, .pair__slot { min-height: 42px; border-width: 2px; }
+}

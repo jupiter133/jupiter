@@ -7,6 +7,7 @@ import {
   isListenQuestion,
   isMatchQuestion,
   isNumberQuestion,
+  isPairQuestion,
   isOrderQuestion,
   isWriteQuestion,
   isStudyPassage,
@@ -20,6 +21,7 @@ import { OrderAnswer } from '../components/OrderAnswer';
 import { WriteAnswer } from '../components/WriteAnswer';
 import { NumberAnswer } from '../components/NumberAnswer';
 import { MatchAnswer } from '../components/MatchAnswer';
+import { PairAnswer } from '../components/PairAnswer';
 import { markSentence } from '../assessment/sentenceScoring';
 import { STRAND_TAG, Tag } from '../components/Tag';
 import { useSpeech } from '../audio/useSpeech';
@@ -96,6 +98,7 @@ export function QuestionScreen({
   const isWrite = isWriteQuestion(question);
   const isNumber = isNumberQuestion(question);
   const isMatch = isMatchQuestion(question);
+  const isPair = isPairQuestion(question);
   const [replaysLeft, setReplaysLeft] = useState(SPELLING_REPLAYS);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
@@ -166,7 +169,7 @@ export function QuestionScreen({
   /* What a sitting counts. A vocabulary item is a word, a comprehension item
      a passage, a sentence-writing item a sentence — calling all of them
      "question" reads as a test, which is the one word this flow avoids. */
-  const unitLabel = isMatch
+  const unitLabel = isMatch || isPair
     ? 'Picture'
     : studiesPassage
     ? 'Passage'
@@ -341,7 +344,15 @@ export function QuestionScreen({
 
             <h1 className={isJunior ? 'display' : 'title'}>{prompt}</h1>
 
-            {isMatch ? (
+            {isPair ? (
+              <PairAnswer
+                options={question.options}
+                slots={question.pairOrder ?? []}
+                disabled={chosenId !== null}
+                onCommit={choose}
+                seed={question.id}
+              />
+            ) : isMatch ? (
               <MatchAnswer
                 options={question.options}
                 disabled={chosenId !== null}
