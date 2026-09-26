@@ -27,6 +27,7 @@ import {
   isDraggedQuestion,
   correctOrderFor,
   isListenQuestion,
+  isMatchQuestion,
   isNumberQuestion,
   isOrderQuestion,
   isSpokenQuestion,
@@ -272,7 +273,9 @@ describe('question bank', () => {
         !isWriteQuestion(q) &&
         !isOrderQuestion(q) &&
         // A typed number is its own key, not the id of an option.
-        !isNumberQuestion(q),
+        !isNumberQuestion(q) &&
+        // A match is keyed by the PAIR of ids, not a single one.
+        !isMatchQuestion(q),
     );
     for (const q of keyed) {
       expect(q.options.some((o) => o.id === q.correctAnswerId), q.id).toBe(true);
@@ -444,6 +447,45 @@ describe('length and stop rule', () => {
       const s = sit('5', subject, () => true);
       for (const a of s.questionsAnswered) expect(a.subject).toBe(subject);
     }
+  });
+});
+
+describe('find the same', () => {
+  it('has exactly one matching pair on every card set, and keys it', () => {
+    const match = QUESTIONS.filter(isMatchQuestion);
+    expect(match.length).toBeGreaterThan(0);
+    for (const q of match) {
+      const arts = q.options.map((o) => JSON.stringify(o.art));
+      const tally = new Map<string, string[]>();
+      arts.forEach((a, i) => tally.set(a, [...(tally.get(a) ?? []), q.options[i].id]));
+      const pairs = [...tally.values()].filter((v) => v.length > 1);
+      // Two identical pictures and no more: a second pair would make two
+      // answers right, and none would make the question impossible.
+      expect(pairs, q.id).toHaveLength(1);
+      expect(pairs[0], q.id).toHaveLength(2);
+      expect(q.correctAnswerId, q.id).toBe([...pairs[0]].sort().join('-'));
+    }
+  });
+
+  it('gives a three-year-old a picture on every card and nothing to read', () => {
+    for (const q of QUESTIONS.filter(isMatchQuestion)) {
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+      for (const o of q.options) {
+        expect(o.art, `${q.id} ${o.id}`).toBeTruthy();
+        // Text on a card would be something to read, and the point of this
+        // activity is that there is nothing to read.
+        expect(o.text, `${q.id} ${o.id}`).toBe('');
+      }
+    }
+  });
+
+  it('grows by adding cards, never by shrinking the pictures', () => {
+    const cardsAt = (tier: number) =>
+      QUESTIONS.filter((q) => isMatchQuestion(q) && q.tier === tier).map((q) => q.options.length);
+    for (let tier = MIN_TIER; tier <= MAX_TIER; tier += 1) {
+      expect(cardsAt(tier).length, `tier ${tier}`).toBeGreaterThan(0);
+    }
+    expect(Math.max(...cardsAt(MIN_TIER))).toBeLessThan(Math.max(...cardsAt(MAX_TIER)));
   });
 });
 

@@ -106,13 +106,14 @@ export interface Question {
    * - 'drag'       one tile into one gap (spelling)
    * - 'order'      every tile into a sequence, tapped (sentence writing)
    * - 'order-drag' the same sequence, dragged, off a sentence they heard
+   * - 'match'      tap the two pictures that are the same (Little Readers)
    * - 'number'     the child types it on a keypad (math)
    * - 'write'      the child types it (sentence writing, upper tiers)
    *
    * Dragging and ordering are slower than tapping on purpose: they suit an
    * item worth dwelling on, not a whole sitting of them.
    */
-  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'number' | 'write';
+  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'number' | 'write' | 'match';
   /** Keypad options, on 'number' items. */
   allowDecimal?: boolean;
   allowNegative?: boolean;
@@ -184,6 +185,11 @@ export function isDraggedQuestion(question: Question): boolean {
 /** True when the child types the answer instead of choosing it. */
 export function isWriteQuestion(question: Question): boolean {
   return question.answerMode === 'write';
+}
+
+/** True when the answer is a pair of pictures tapped together. */
+export function isMatchQuestion(question: Question): boolean {
+  return question.answerMode === 'match';
 }
 
 /**

@@ -2162,3 +2162,88 @@ body {
   .pad__key { min-height: 38px; font-size: 18px; }
   .pad__keys { max-width: 260px; }
 }
+
+/* ---------- Find the Same: tap the matching pair ---------- */
+
+.match {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2.2vh, 24px);
+  width: 100%;
+}
+.match__cards {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  gap: clamp(10px, 1.8vw, 20px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: center;
+}
+/* Three across reads as a row; four or more wrap into two tidy rows rather
+   than shrinking every picture to fit one line. */
+.match__cards--4, .match__cards--6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.match__cards--5 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (min-width: 700px) {
+  .match__cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .match__cards--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* The picture is the target. Nothing else on the card competes with it. */
+.match__card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* The picture is the entire question for a child who cannot read, so the
+     card is square and the image fills it. A small icon in a wide card asks a
+     three-year-old to compare two postage stamps. */
+  aspect-ratio: 1;
+  min-height: clamp(120px, 24vh, 240px);
+  padding: clamp(8px, 1.4vh, 16px);
+  background: var(--surface-card);
+  border: 3px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 6px 0 var(--border-subtle);
+  cursor: pointer;
+  transition: transform 90ms ease, box-shadow 90ms ease, border-color 140ms ease, background 140ms ease;
+}
+.match__card:hover:not(:disabled) { border-color: var(--border-strong); }
+.match__card:active:not(:disabled) { transform: translateY(4px); box-shadow: 0 2px 0 var(--border-subtle); }
+.match__card:focus-visible { outline: 4px solid var(--accent-secondary); outline-offset: 3px; }
+/* Chosen, not correct. The same green every choice in this product uses. */
+.match__card--picked {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary-soft);
+  box-shadow: 0 6px 0 var(--accent-primary-edge);
+}
+/* The glyph carries its own width/height attributes, and a percentage against
+   an auto-width wrapper collapses — so the wrapper is given the card to fill
+   and the picture is sized outright. */
+.match__card .art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px; }
+.match__card .art svg { width: clamp(80px, 24vh, 210px); max-width: 72%; height: auto; }
+/* A counting card holds several pictures, so each one is smaller — but still
+   far bigger than an icon. */
+.match__card .count-row svg { width: clamp(34px, 8vh, 78px); max-width: 30%; }
+.match__tick {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  font-size: 19px;
+  font-weight: var(--fw-black);
+}
+.match__go { flex: 0 0 auto; display: flex; justify-content: center; }
+.match__go .btn { margin-bottom: 4px; }
+
+@media (max-height: 560px) {
+  .match { gap: 8px; }
+  .match__card { min-height: 76px; padding: 4px; border-width: 2px; }
+  .match__tick { width: 26px; height: 26px; font-size: 15px; top: 5px; right: 6px; }
+}

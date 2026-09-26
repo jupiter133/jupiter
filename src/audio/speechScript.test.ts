@@ -2,9 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { audioDefaultFor, speechRateFor, speechScriptFor } from './speechScript';
 import { QUESTIONS } from '../assessment/questionBank';
 import type { Question } from '../assessment/types';
+import { questionTextFor } from '../assessment/types';
 
 const withPassage = QUESTIONS.find((q) => q.passage)! as Question;
-const noPassage = QUESTIONS.find((q) => !q.passage)! as Question;
+// Worded options: picture-only cards are covered by their own test below,
+// and picking one here would assert that nothing is narrated.
+const noPassage = QUESTIONS.find(
+  (q) => !q.passage && q.options.length > 0 && q.options.every((o) => o.text !== ''),
+)! as Question;
 
 describe('read-aloud defaults', () => {
   it('starts off for every band until the user turns it on', () => {
@@ -18,6 +23,17 @@ describe('read-aloud defaults', () => {
 });
 
 describe('speech script', () => {
+  it('never narrates a wordless picture card', () => {
+    const pictureOnly = QUESTIONS.find(
+      (q) => q.options.length > 0 && q.options.every((o) => o.text === ''),
+    )!;
+    expect(pictureOnly, 'the bank should have picture-only items').toBeTruthy();
+    const script = speechScriptFor(pictureOnly, 'junior');
+    // Just the instruction. "A. B. C." is noise to a child who cannot read,
+    // and it buries the one line that tells them what to do.
+    expect(script).toEqual([questionTextFor(pictureOnly, 'junior')]);
+  });
+
   it('reads the passage before the question', () => {
     const script = speechScriptFor(withPassage, 'senior');
     expect(script).toContain(withPassage.passage);

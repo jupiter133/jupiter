@@ -56,14 +56,17 @@ function rules(items: [string, string][]): IntroSection[] {
 export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
   /* ---------- Little Readers ---------- */
   'find-the-same': {
-    lead: 'Look at the pictures and find the two that match.',
+    lead: 'Two of the pictures are the same. Tap both of them!',
     cta: 'Start matching',
-    chips: [{ label: 'Look closely', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~2 minutes', ...PINK }],
+    chips: [{ label: 'Look closely', ...CYAN }, { label: 'Tap two', ...LIME }, { label: '~2 minutes', ...PINK }],
+    /* These cards are for the grown-up sitting beside a three-year-old, who
+       cannot read them. The instruction the CHILD needs is spoken aloud on
+       the activity itself, automatically. */
     sections: rules([
-      ['How it works', 'You’ll see a row of pictures. Two of them are exactly the same — tap the one that matches.'],
-      ['Take your time', 'There’s no clock. Look at each picture for as long as you like before you choose.'],
-      ['Need a hand?', 'Tap the speaker to hear the question read out loud, any time you want.'],
-      ['The rules', 'One puzzle at a time. A guess is always okay — nothing here can go wrong.'],
+      ['How it works', 'A few pictures appear. Two of them are exactly the same — your child taps both of those, then the big green button.'],
+      ['Changing their mind', 'Tapping a chosen picture again unchooses it, and a third choice replaces the first. Nothing is locked in until they press the green button.'],
+      ['It reads itself', 'The instruction is spoken out loud the moment each puzzle appears, so a child who cannot read yet never needs you to explain it.'],
+      ['Take your time', 'There’s no clock and nothing can go wrong. A guess is always okay.'],
     ]),
   },
   'match-making': {

@@ -40,7 +40,7 @@ export function SectionIntroScreen({ subject, track, onStart, onDoLater }: Props
               <Tag color={STRAND_TAG[subject]}>
                 {SUBJECT_LABEL[subject]}
               </Tag>{' '}
-              test
+              {config.itemNoun}
             </h1>
             <p className="body intro__lead">{intro.lead}</p>
             <div className="intro-chips">

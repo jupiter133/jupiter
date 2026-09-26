@@ -396,6 +396,42 @@ Read-aloud follows the phase: in the study beat it reads the word and its
 meaning, in the recall beat it reads the question and the choices. It never
 reads the meaning back once the card is gone.
 
+## Little Readers: Find the Same
+
+The first thing a three-year-old meets in the product. A few pictures, two of
+them identical, and the child taps both.
+
+`answerMode: 'match'`, keyed by the **pair** of ids rather than a single one.
+Fifty-four items: difficulty grows by adding cards (three, then four, five,
+six) and by making the non-matching cards closer — at the top tiers the pair
+is two counts of the same object that differ by one, so it needs real counting.
+It never grows by shrinking a picture or adding a clock.
+
+Built for someone who cannot read, cannot aim precisely, and will tap the
+wrong card:
+
+- **the picture is about 60% of the card**, and the card is square. An icon in
+  a wide card asks a small child to compare two postage stamps
+- a tapped card can be untapped, and a third tap replaces the older choice
+  rather than being ignored
+- **nothing commits on its own** — an accidental second tap would otherwise
+  end the question
+- no card is ever marked wrong; chosen cards simply look chosen
+
+### Two things this exposed
+
+**Read-aloud started OFF for a child who cannot read.** It now starts ON for
+the whole Little Readers track — still toggleable, but the default cannot be
+silence for a three-year-old.
+
+**The read-aloud was narrating "A. B. C."** for picture cards with no words on
+them, burying the one line that actually says what to do. A wordless option is
+no longer narrated, and a test holds that.
+
+**Every Little Readers activity was calling itself a "test".** `itemNoun` was
+added to the track config a while back and never wired into the section intro,
+where the word was hardcoded. It now reads "The Find the Same **ride**".
+
 ## Math: five shapes, because four answers can be worked backwards
 
 Every maths tier carries all five, so a sitting is never ten of the same thing:

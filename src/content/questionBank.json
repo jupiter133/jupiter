@@ -4,6 +4,2622 @@
   "note": "MIXED BANK. The seven Little Readers activities are template-generated placeholder and are NOT assessment content. Words Speaking, Oral Reading, Vocabulary, Reading Comprehension, Spelling, Sentence Writing and Math carry written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts.",
   "questions": [
     {
+      "id": "ts-fs-t0-01",
+      "subject": "find-the-same",
+      "tier": 0,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t0-02",
+      "subject": "find-the-same",
+      "tier": 0,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t0-03",
+      "subject": "find-the-same",
+      "tier": 0,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t0-04",
+      "subject": "find-the-same",
+      "tier": 0,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t0-05",
+      "subject": "find-the-same",
+      "tier": 0,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t0-06",
+      "subject": "find-the-same",
+      "tier": 0,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t1-01",
+      "subject": "find-the-same",
+      "tier": 1,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t1-02",
+      "subject": "find-the-same",
+      "tier": 1,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t1-03",
+      "subject": "find-the-same",
+      "tier": 1,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t1-04",
+      "subject": "find-the-same",
+      "tier": 1,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t1-05",
+      "subject": "find-the-same",
+      "tier": 1,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t1-06",
+      "subject": "find-the-same",
+      "tier": 1,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t2-01",
+      "subject": "find-the-same",
+      "tier": 2,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t2-02",
+      "subject": "find-the-same",
+      "tier": 2,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "correctAnswerId": "c-d"
+    },
+    {
+      "id": "ts-fs-t2-03",
+      "subject": "find-the-same",
+      "tier": 2,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        }
+      ],
+      "correctAnswerId": "a-d"
+    },
+    {
+      "id": "ts-fs-t2-04",
+      "subject": "find-the-same",
+      "tier": 2,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "a-d"
+    },
+    {
+      "id": "ts-fs-t2-05",
+      "subject": "find-the-same",
+      "tier": 2,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t2-06",
+      "subject": "find-the-same",
+      "tier": 2,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "a-d"
+    },
+    {
+      "id": "ts-fs-t3-01",
+      "subject": "find-the-same",
+      "tier": 3,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "campfire"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t3-02",
+      "subject": "find-the-same",
+      "tier": 3,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bowl"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        }
+      ],
+      "correctAnswerId": "c-d"
+    },
+    {
+      "id": "ts-fs-t3-03",
+      "subject": "find-the-same",
+      "tier": 3,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t3-04",
+      "subject": "find-the-same",
+      "tier": 3,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t3-05",
+      "subject": "find-the-same",
+      "tier": 3,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t3-06",
+      "subject": "find-the-same",
+      "tier": 3,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        }
+      ],
+      "correctAnswerId": "c-d"
+    },
+    {
+      "id": "ts-fs-t4-01",
+      "subject": "find-the-same",
+      "tier": 4,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t4-02",
+      "subject": "find-the-same",
+      "tier": 4,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c-d"
+    },
+    {
+      "id": "ts-fs-t4-03",
+      "subject": "find-the-same",
+      "tier": 4,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t4-04",
+      "subject": "find-the-same",
+      "tier": 4,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "b-c"
+    },
+    {
+      "id": "ts-fs-t4-05",
+      "subject": "find-the-same",
+      "tier": 4,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t4-06",
+      "subject": "find-the-same",
+      "tier": 4,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 7
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t5-01",
+      "subject": "find-the-same",
+      "tier": 5,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 7
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t5-02",
+      "subject": "find-the-same",
+      "tier": 5,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 7
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a-d"
+    },
+    {
+      "id": "ts-fs-t5-03",
+      "subject": "find-the-same",
+      "tier": 5,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 7
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t5-04",
+      "subject": "find-the-same",
+      "tier": 5,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t5-05",
+      "subject": "find-the-same",
+      "tier": 5,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c-d"
+    },
+    {
+      "id": "ts-fs-t5-06",
+      "subject": "find-the-same",
+      "tier": 5,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c-d"
+    },
+    {
+      "id": "ts-fs-t6-01",
+      "subject": "find-the-same",
+      "tier": 6,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moon",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "d-e"
+    },
+    {
+      "id": "ts-fs-t6-02",
+      "subject": "find-the-same",
+      "tier": 6,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 7
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t6-03",
+      "subject": "find-the-same",
+      "tier": 6,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t6-04",
+      "subject": "find-the-same",
+      "tier": 6,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b-e"
+    },
+    {
+      "id": "ts-fs-t6-05",
+      "subject": "find-the-same",
+      "tier": 6,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t6-06",
+      "subject": "find-the-same",
+      "tier": 6,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "d-e"
+    },
+    {
+      "id": "ts-fs-t7-01",
+      "subject": "find-the-same",
+      "tier": 7,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t7-02",
+      "subject": "find-the-same",
+      "tier": 7,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "b-d"
+    },
+    {
+      "id": "ts-fs-t7-03",
+      "subject": "find-the-same",
+      "tier": 7,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c-e"
+    },
+    {
+      "id": "ts-fs-t7-04",
+      "subject": "find-the-same",
+      "tier": 7,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 7
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t7-05",
+      "subject": "find-the-same",
+      "tier": 7,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t7-06",
+      "subject": "find-the-same",
+      "tier": 7,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a-c"
+    },
+    {
+      "id": "ts-fs-t8-01",
+      "subject": "find-the-same",
+      "tier": 8,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 7
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 6
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t8-02",
+      "subject": "find-the-same",
+      "tier": 8,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 5
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "c-f"
+    },
+    {
+      "id": "ts-fs-t8-03",
+      "subject": "find-the-same",
+      "tier": 8,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 7
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "c-f"
+    },
+    {
+      "id": "ts-fs-t8-04",
+      "subject": "find-the-same",
+      "tier": 8,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 2
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "moose",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "a-b"
+    },
+    {
+      "id": "ts-fs-t8-05",
+      "subject": "find-the-same",
+      "tier": 8,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c-f"
+    },
+    {
+      "id": "ts-fs-t8-06",
+      "subject": "find-the-same",
+      "tier": 8,
+      "skill": "visual-matching",
+      "answerMode": "match",
+      "questionText": "Find the two that are the same.",
+      "questionTextJunior": "Tap the two that are the same!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 7
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 6
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "map",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a-f"
+    },
+    {
       "id": "ts-ma-t0-tap1",
       "subject": "math",
       "tier": 0,
@@ -8250,1464 +10866,6 @@
       "questionTextJunior": "Say “indistinguishable”.",
       "options": [],
       "correctAnswerId": ""
-    },
-    {
-      "id": "ts-fts-t0-01",
-      "subject": "find-the-same",
-      "tier": 0,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “cat”?",
-      "questionTextJunior": "Find “cat”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t0-02",
-      "subject": "find-the-same",
-      "tier": 0,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “dog”?",
-      "questionTextJunior": "Find “dog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t0-03",
-      "subject": "find-the-same",
-      "tier": 0,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “sun”?",
-      "questionTextJunior": "Find “sun”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t0-04",
-      "subject": "find-the-same",
-      "tier": 0,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “map”?",
-      "questionTextJunior": "Find “map”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t0-05",
-      "subject": "find-the-same",
-      "tier": 0,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “bed”?",
-      "questionTextJunior": "Find “bed”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t0-06",
-      "subject": "find-the-same",
-      "tier": 0,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “fish”?",
-      "questionTextJunior": "Find “fish”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t1-01",
-      "subject": "find-the-same",
-      "tier": 1,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “tree”?",
-      "questionTextJunior": "Find “tree”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t1-02",
-      "subject": "find-the-same",
-      "tier": 1,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “star”?",
-      "questionTextJunior": "Find “star”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t1-03",
-      "subject": "find-the-same",
-      "tier": 1,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “moon”?",
-      "questionTextJunior": "Find “moon”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t1-04",
-      "subject": "find-the-same",
-      "tier": 1,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “rain”?",
-      "questionTextJunior": "Find “rain”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t1-05",
-      "subject": "find-the-same",
-      "tier": 1,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “book”?",
-      "questionTextJunior": "Find “book”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t1-06",
-      "subject": "find-the-same",
-      "tier": 1,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “frog”?",
-      "questionTextJunior": "Find “frog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t2-01",
-      "subject": "find-the-same",
-      "tier": 2,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “nest”?",
-      "questionTextJunior": "Find “nest”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t2-02",
-      "subject": "find-the-same",
-      "tier": 2,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “lamp”?",
-      "questionTextJunior": "Find “lamp”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t2-03",
-      "subject": "find-the-same",
-      "tier": 2,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “gift”?",
-      "questionTextJunior": "Find “gift”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t2-04",
-      "subject": "find-the-same",
-      "tier": 2,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “hand”?",
-      "questionTextJunior": "Find “hand”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t2-05",
-      "subject": "find-the-same",
-      "tier": 2,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “milk”?",
-      "questionTextJunior": "Find “milk”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t2-06",
-      "subject": "find-the-same",
-      "tier": 2,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “road”?",
-      "questionTextJunior": "Find “road”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t3-01",
-      "subject": "find-the-same",
-      "tier": 3,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “song”?",
-      "questionTextJunior": "Find “song”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t3-02",
-      "subject": "find-the-same",
-      "tier": 3,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “wind”?",
-      "questionTextJunior": "Find “wind”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t3-03",
-      "subject": "find-the-same",
-      "tier": 3,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “cat”?",
-      "questionTextJunior": "Find “cat”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t3-04",
-      "subject": "find-the-same",
-      "tier": 3,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “dog”?",
-      "questionTextJunior": "Find “dog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t3-05",
-      "subject": "find-the-same",
-      "tier": 3,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “sun”?",
-      "questionTextJunior": "Find “sun”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t3-06",
-      "subject": "find-the-same",
-      "tier": 3,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “map”?",
-      "questionTextJunior": "Find “map”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t4-01",
-      "subject": "find-the-same",
-      "tier": 4,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “bed”?",
-      "questionTextJunior": "Find “bed”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t4-02",
-      "subject": "find-the-same",
-      "tier": 4,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “fish”?",
-      "questionTextJunior": "Find “fish”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t4-03",
-      "subject": "find-the-same",
-      "tier": 4,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “tree”?",
-      "questionTextJunior": "Find “tree”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t4-04",
-      "subject": "find-the-same",
-      "tier": 4,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “star”?",
-      "questionTextJunior": "Find “star”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t4-05",
-      "subject": "find-the-same",
-      "tier": 4,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “moon”?",
-      "questionTextJunior": "Find “moon”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t4-06",
-      "subject": "find-the-same",
-      "tier": 4,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “rain”?",
-      "questionTextJunior": "Find “rain”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t5-01",
-      "subject": "find-the-same",
-      "tier": 5,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “book”?",
-      "questionTextJunior": "Find “book”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t5-02",
-      "subject": "find-the-same",
-      "tier": 5,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “frog”?",
-      "questionTextJunior": "Find “frog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t5-03",
-      "subject": "find-the-same",
-      "tier": 5,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “nest”?",
-      "questionTextJunior": "Find “nest”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t5-04",
-      "subject": "find-the-same",
-      "tier": 5,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “lamp”?",
-      "questionTextJunior": "Find “lamp”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t5-05",
-      "subject": "find-the-same",
-      "tier": 5,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “gift”?",
-      "questionTextJunior": "Find “gift”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t5-06",
-      "subject": "find-the-same",
-      "tier": 5,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “hand”?",
-      "questionTextJunior": "Find “hand”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t6-01",
-      "subject": "find-the-same",
-      "tier": 6,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “milk”?",
-      "questionTextJunior": "Find “milk”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t6-02",
-      "subject": "find-the-same",
-      "tier": 6,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “road”?",
-      "questionTextJunior": "Find “road”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t6-03",
-      "subject": "find-the-same",
-      "tier": 6,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “song”?",
-      "questionTextJunior": "Find “song”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t6-04",
-      "subject": "find-the-same",
-      "tier": 6,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “wind”?",
-      "questionTextJunior": "Find “wind”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t6-05",
-      "subject": "find-the-same",
-      "tier": 6,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “cat”?",
-      "questionTextJunior": "Find “cat”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t6-06",
-      "subject": "find-the-same",
-      "tier": 6,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “dog”?",
-      "questionTextJunior": "Find “dog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t7-01",
-      "subject": "find-the-same",
-      "tier": 7,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “sun”?",
-      "questionTextJunior": "Find “sun”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t7-02",
-      "subject": "find-the-same",
-      "tier": 7,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “map”?",
-      "questionTextJunior": "Find “map”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t7-03",
-      "subject": "find-the-same",
-      "tier": 7,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “bed”?",
-      "questionTextJunior": "Find “bed”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t7-04",
-      "subject": "find-the-same",
-      "tier": 7,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “fish”?",
-      "questionTextJunior": "Find “fish”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t7-05",
-      "subject": "find-the-same",
-      "tier": 7,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “tree”?",
-      "questionTextJunior": "Find “tree”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t7-06",
-      "subject": "find-the-same",
-      "tier": 7,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “star”?",
-      "questionTextJunior": "Find “star”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t8-01",
-      "subject": "find-the-same",
-      "tier": 8,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “moon”?",
-      "questionTextJunior": "Find “moon”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t8-02",
-      "subject": "find-the-same",
-      "tier": 8,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “rain”?",
-      "questionTextJunior": "Find “rain”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t8-03",
-      "subject": "find-the-same",
-      "tier": 8,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “book”?",
-      "questionTextJunior": "Find “book”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t8-04",
-      "subject": "find-the-same",
-      "tier": 8,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “frog”?",
-      "questionTextJunior": "Find “frog”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t8-05",
-      "subject": "find-the-same",
-      "tier": 8,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “nest”?",
-      "questionTextJunior": "Find “nest”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-fts-t8-06",
-      "subject": "find-the-same",
-      "tier": 8,
-      "skill": "stub-same",
-      "questionText": "Which one is the same as “lamp”?",
-      "questionTextJunior": "Find “lamp”.",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
     },
     {
       "id": "ts-mm-t0-01",

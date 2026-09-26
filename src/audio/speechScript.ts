@@ -25,6 +25,10 @@ export function speechScriptFor(question: Question, band: AgeBand): string[] {
 
   if (band === 'junior') {
     question.options.forEach((option, i) => {
+      // A picture card has no words on it. Reading out "A. B. C." to a child
+      // who cannot read tells them nothing and buries the instruction that
+      // does — so a wordless option is simply not narrated.
+      if (!option.text.trim()) return;
       parts.push(`${OPTION_KEYS[i] ?? i + 1}. ${option.text}`);
     });
   }

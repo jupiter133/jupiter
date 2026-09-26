@@ -268,9 +268,19 @@ export function usePlacementFlow(childName: string): Flow {
     setStep('section-intro');
   }, [session, nextSubject, requiredSubjects, skipped, completed, grade, readingGated]);
 
+  /*
+   * Little Readers is for three to six year olds, who cannot read the
+   * instruction telling them what to do. Read-aloud therefore starts ON for
+   * that track rather than waiting to be discovered in a control — it stays
+   * toggleable, but the default cannot be "silent" for a child who cannot
+   * read the screen.
+   */
+  const audioDefault =
+    track === 'little-reader' || audioDefaultFor(age !== null ? ageBandForAge(age) : 'junior');
+
   const toggleAudio = useCallback(() => {
-    setAudioOverride((prev) => !(prev ?? audioDefaultFor(age !== null ? ageBandForAge(age) : 'junior')));
-  }, [age]);
+    setAudioOverride((prev) => !(prev ?? audioDefault));
+  }, [audioDefault]);
 
   const restart = useCallback(() => {
     clearProgress(childName);
@@ -348,7 +358,7 @@ export function usePlacementFlow(childName: string): Flow {
     isResuming,
     readingGated,
     band,
-    audioEnabled: forcedAudio || (audioOverride ?? audioDefaultFor(band)),
+    audioEnabled: forcedAudio || (audioOverride ?? audioDefault),
     toggleAudio,
     currentQuestion,
     lastQuestion,
