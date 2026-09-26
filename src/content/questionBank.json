@@ -4,6 +4,2700 @@
   "note": "MIXED BANK. The seven Little Readers activities are template-generated placeholder and are NOT assessment content. Words Speaking, Oral Reading, Vocabulary, Reading Comprehension, Spelling, Sentence Writing and Math carry written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts.",
   "questions": [
     {
+      "id": "ts-sd-t0-01",
+      "subject": "spot-the-difference",
+      "tier": 0,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pinecone"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t0-02",
+      "subject": "spot-the-difference",
+      "tier": 0,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ts-sd-t0-03",
+      "subject": "spot-the-difference",
+      "tier": 0,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t0-04",
+      "subject": "spot-the-difference",
+      "tier": 0,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t0-05",
+      "subject": "spot-the-difference",
+      "tier": 0,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "canoe"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t0-06",
+      "subject": "spot-the-difference",
+      "tier": 0,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t1-01",
+      "subject": "spot-the-difference",
+      "tier": 1,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "mitten"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moose"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t1-02",
+      "subject": "spot-the-difference",
+      "tier": 1,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "compass"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t1-03",
+      "subject": "spot-the-difference",
+      "tier": 1,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t1-04",
+      "subject": "spot-the-difference",
+      "tier": 1,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ts-sd-t1-05",
+      "subject": "spot-the-difference",
+      "tier": 1,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "map"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ts-sd-t1-06",
+      "subject": "spot-the-difference",
+      "tier": 1,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rope"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t2-01",
+      "subject": "spot-the-difference",
+      "tier": 2,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t2-02",
+      "subject": "spot-the-difference",
+      "tier": 2,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t2-03",
+      "subject": "spot-the-difference",
+      "tier": 2,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "bottle"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t2-04",
+      "subject": "spot-the-difference",
+      "tier": 2,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t2-05",
+      "subject": "spot-the-difference",
+      "tier": 2,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "river"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t2-06",
+      "subject": "spot-the-difference",
+      "tier": 2,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "berry"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t3-01",
+      "subject": "spot-the-difference",
+      "tier": 3,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t3-02",
+      "subject": "spot-the-difference",
+      "tier": 3,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t3-03",
+      "subject": "spot-the-difference",
+      "tier": 3,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t3-04",
+      "subject": "spot-the-difference",
+      "tier": 3,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t3-05",
+      "subject": "spot-the-difference",
+      "tier": 3,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t3-06",
+      "subject": "spot-the-difference",
+      "tier": 3,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t4-01",
+      "subject": "spot-the-difference",
+      "tier": 4,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t4-02",
+      "subject": "spot-the-difference",
+      "tier": 4,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "sun",
+            "n": 8
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t4-03",
+      "subject": "spot-the-difference",
+      "tier": 4,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fox",
+            "n": 7
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t4-04",
+      "subject": "spot-the-difference",
+      "tier": 4,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 8
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t4-05",
+      "subject": "spot-the-difference",
+      "tier": 4,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 7
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t4-06",
+      "subject": "spot-the-difference",
+      "tier": 4,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 8
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ts-sd-t5-01",
+      "subject": "spot-the-difference",
+      "tier": 5,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "river",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "river",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "river",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "river",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "river",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t5-02",
+      "subject": "spot-the-difference",
+      "tier": 5,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 7
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t5-03",
+      "subject": "spot-the-difference",
+      "tier": 5,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t5-04",
+      "subject": "spot-the-difference",
+      "tier": 5,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t5-05",
+      "subject": "spot-the-difference",
+      "tier": 5,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 7
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t5-06",
+      "subject": "spot-the-difference",
+      "tier": 5,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 6
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t6-01",
+      "subject": "spot-the-difference",
+      "tier": 6,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bottle",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t6-02",
+      "subject": "spot-the-difference",
+      "tier": 6,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t6-03",
+      "subject": "spot-the-difference",
+      "tier": 6,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t6-04",
+      "subject": "spot-the-difference",
+      "tier": 6,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t6-05",
+      "subject": "spot-the-difference",
+      "tier": 6,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "bowl",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ts-sd-t6-06",
+      "subject": "spot-the-difference",
+      "tier": 6,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ts-sd-t7-01",
+      "subject": "spot-the-difference",
+      "tier": 7,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t7-02",
+      "subject": "spot-the-difference",
+      "tier": 7,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t7-03",
+      "subject": "spot-the-difference",
+      "tier": 7,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t7-04",
+      "subject": "spot-the-difference",
+      "tier": 7,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t7-05",
+      "subject": "spot-the-difference",
+      "tier": 7,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t7-06",
+      "subject": "spot-the-difference",
+      "tier": 7,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "rope",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t8-01",
+      "subject": "spot-the-difference",
+      "tier": 8,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 4
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "tent",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "f"
+    },
+    {
+      "id": "ts-sd-t8-02",
+      "subject": "spot-the-difference",
+      "tier": 8,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 6
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ts-sd-t8-03",
+      "subject": "spot-the-difference",
+      "tier": 8,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 4
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "campfire",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "ts-sd-t8-04",
+      "subject": "spot-the-difference",
+      "tier": 8,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "backpack",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "ts-sd-t8-05",
+      "subject": "spot-the-difference",
+      "tier": 8,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 6
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "canoe",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "ts-sd-t8-06",
+      "subject": "spot-the-difference",
+      "tier": 8,
+      "skill": "odd-one-out",
+      "answerMode": "odd",
+      "questionText": "Which one is different?",
+      "questionTextJunior": "Tap the one that is different!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 6
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "compass",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
       "id": "ts-mm-t0-01",
       "subject": "match-making",
       "tier": 0,
@@ -13568,2922 +16262,6 @@
       "correctAnswerId": ""
     },
     {
-      "id": "ts-std-t0-01",
-      "subject": "spot-the-difference",
-      "tier": 0,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t0-02",
-      "subject": "spot-the-difference",
-      "tier": 0,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t0-03",
-      "subject": "spot-the-difference",
-      "tier": 0,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t0-04",
-      "subject": "spot-the-difference",
-      "tier": 0,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t0-05",
-      "subject": "spot-the-difference",
-      "tier": 0,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t0-06",
-      "subject": "spot-the-difference",
-      "tier": 0,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t1-01",
-      "subject": "spot-the-difference",
-      "tier": 1,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t1-02",
-      "subject": "spot-the-difference",
-      "tier": 1,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t1-03",
-      "subject": "spot-the-difference",
-      "tier": 1,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t1-04",
-      "subject": "spot-the-difference",
-      "tier": 1,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t1-05",
-      "subject": "spot-the-difference",
-      "tier": 1,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t1-06",
-      "subject": "spot-the-difference",
-      "tier": 1,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t2-01",
-      "subject": "spot-the-difference",
-      "tier": 2,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t2-02",
-      "subject": "spot-the-difference",
-      "tier": 2,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t2-03",
-      "subject": "spot-the-difference",
-      "tier": 2,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t2-04",
-      "subject": "spot-the-difference",
-      "tier": 2,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t2-05",
-      "subject": "spot-the-difference",
-      "tier": 2,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t2-06",
-      "subject": "spot-the-difference",
-      "tier": 2,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t3-01",
-      "subject": "spot-the-difference",
-      "tier": 3,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t3-02",
-      "subject": "spot-the-difference",
-      "tier": 3,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t3-03",
-      "subject": "spot-the-difference",
-      "tier": 3,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t3-04",
-      "subject": "spot-the-difference",
-      "tier": 3,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t3-05",
-      "subject": "spot-the-difference",
-      "tier": 3,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t3-06",
-      "subject": "spot-the-difference",
-      "tier": 3,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t4-01",
-      "subject": "spot-the-difference",
-      "tier": 4,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t4-02",
-      "subject": "spot-the-difference",
-      "tier": 4,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t4-03",
-      "subject": "spot-the-difference",
-      "tier": 4,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t4-04",
-      "subject": "spot-the-difference",
-      "tier": 4,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t4-05",
-      "subject": "spot-the-difference",
-      "tier": 4,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t4-06",
-      "subject": "spot-the-difference",
-      "tier": 4,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t5-01",
-      "subject": "spot-the-difference",
-      "tier": 5,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t5-02",
-      "subject": "spot-the-difference",
-      "tier": 5,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t5-03",
-      "subject": "spot-the-difference",
-      "tier": 5,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t5-04",
-      "subject": "spot-the-difference",
-      "tier": 5,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t5-05",
-      "subject": "spot-the-difference",
-      "tier": 5,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t5-06",
-      "subject": "spot-the-difference",
-      "tier": 5,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t6-01",
-      "subject": "spot-the-difference",
-      "tier": 6,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t6-02",
-      "subject": "spot-the-difference",
-      "tier": 6,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t6-03",
-      "subject": "spot-the-difference",
-      "tier": 6,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t6-04",
-      "subject": "spot-the-difference",
-      "tier": 6,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t6-05",
-      "subject": "spot-the-difference",
-      "tier": 6,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t6-06",
-      "subject": "spot-the-difference",
-      "tier": 6,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t7-01",
-      "subject": "spot-the-difference",
-      "tier": 7,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t7-02",
-      "subject": "spot-the-difference",
-      "tier": 7,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t7-03",
-      "subject": "spot-the-difference",
-      "tier": 7,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t7-04",
-      "subject": "spot-the-difference",
-      "tier": 7,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t7-05",
-      "subject": "spot-the-difference",
-      "tier": 7,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t7-06",
-      "subject": "spot-the-difference",
-      "tier": 7,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t8-01",
-      "subject": "spot-the-difference",
-      "tier": 8,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t8-02",
-      "subject": "spot-the-difference",
-      "tier": 8,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t8-03",
-      "subject": "spot-the-difference",
-      "tier": 8,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t8-04",
-      "subject": "spot-the-difference",
-      "tier": 8,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t8-05",
-      "subject": "spot-the-difference",
-      "tier": 8,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-std-t8-06",
-      "subject": "spot-the-difference",
-      "tier": 8,
-      "skill": "stub-difference",
-      "questionText": "Which one is different?",
-      "questionTextJunior": "Which is different?",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t0-01",
-      "subject": "shapes-colors",
-      "tier": 0,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t0-02",
-      "subject": "shapes-colors",
-      "tier": 0,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t0-03",
-      "subject": "shapes-colors",
-      "tier": 0,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t0-04",
-      "subject": "shapes-colors",
-      "tier": 0,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t0-05",
-      "subject": "shapes-colors",
-      "tier": 0,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t0-06",
-      "subject": "shapes-colors",
-      "tier": 0,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t1-01",
-      "subject": "shapes-colors",
-      "tier": 1,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t1-02",
-      "subject": "shapes-colors",
-      "tier": 1,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t1-03",
-      "subject": "shapes-colors",
-      "tier": 1,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t1-04",
-      "subject": "shapes-colors",
-      "tier": 1,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t1-05",
-      "subject": "shapes-colors",
-      "tier": 1,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t1-06",
-      "subject": "shapes-colors",
-      "tier": 1,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t2-01",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t2-02",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t2-03",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t2-04",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t2-05",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t2-06",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t3-01",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t3-02",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t3-03",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t3-04",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t3-05",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t3-06",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t4-01",
-      "subject": "shapes-colors",
-      "tier": 4,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t4-02",
-      "subject": "shapes-colors",
-      "tier": 4,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t4-03",
-      "subject": "shapes-colors",
-      "tier": 4,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t4-04",
-      "subject": "shapes-colors",
-      "tier": 4,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t4-05",
-      "subject": "shapes-colors",
-      "tier": 4,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t4-06",
-      "subject": "shapes-colors",
-      "tier": 4,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t5-01",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t5-02",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t5-03",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t5-04",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t5-05",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t5-06",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t6-01",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t6-02",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t6-03",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t6-04",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t6-05",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t6-06",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t7-01",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t7-02",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t7-03",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t7-04",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t7-05",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t7-06",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t8-01",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "stub-shape",
-      "questionText": "Which one is the circle?",
-      "questionTextJunior": "Find the circle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "circle"
-        },
-        {
-          "id": "b",
-          "text": "square"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t8-02",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "stub-shape",
-      "questionText": "Which one is the square?",
-      "questionTextJunior": "Find the square.",
-      "options": [
-        {
-          "id": "a",
-          "text": "square"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "triangle"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t8-03",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "stub-shape",
-      "questionText": "Which one is the triangle?",
-      "questionTextJunior": "Find the triangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "triangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "rectangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t8-04",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "stub-shape",
-      "questionText": "Which one is the rectangle?",
-      "questionTextJunior": "Find the rectangle.",
-      "options": [
-        {
-          "id": "a",
-          "text": "rectangle"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t8-05",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "stub-shape",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval.",
-      "options": [
-        {
-          "id": "a",
-          "text": "oval"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-sc-t8-06",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "stub-shape",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond.",
-      "options": [
-        {
-          "id": "a",
-          "text": "diamond"
-        },
-        {
-          "id": "b",
-          "text": "circle"
-        },
-        {
-          "id": "c",
-          "text": "square"
-        },
-        {
-          "id": "d",
-          "text": "triangle"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
       "id": "ts-nf-t0-01",
       "subject": "number-fun",
       "tier": 0,
@@ -20853,6 +20631,2814 @@
         {
           "id": "d",
           "text": "lam"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t0-01",
+      "subject": "shapes-colors",
+      "tier": 0,
+      "skill": "name-shape",
+      "questionText": "Which one is the rectangle?",
+      "questionTextJunior": "Find the rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t0-02",
+      "subject": "shapes-colors",
+      "tier": 0,
+      "skill": "name-shape",
+      "questionText": "Which one is the triangle?",
+      "questionTextJunior": "Find the triangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t0-03",
+      "subject": "shapes-colors",
+      "tier": 0,
+      "skill": "name-shape",
+      "questionText": "Which one is the circle?",
+      "questionTextJunior": "Find the circle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t0-04",
+      "subject": "shapes-colors",
+      "tier": 0,
+      "skill": "name-shape",
+      "questionText": "Which one is the rectangle?",
+      "questionTextJunior": "Find the rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t0-05",
+      "subject": "shapes-colors",
+      "tier": 0,
+      "skill": "name-shape",
+      "questionText": "Which one is the circle?",
+      "questionTextJunior": "Find the circle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t0-06",
+      "subject": "shapes-colors",
+      "tier": 0,
+      "skill": "name-shape",
+      "questionText": "Which one is the triangle?",
+      "questionTextJunior": "Find the triangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t1-01",
+      "subject": "shapes-colors",
+      "tier": 1,
+      "skill": "name-shape",
+      "questionText": "Which one is the rectangle?",
+      "questionTextJunior": "Find the rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t1-02",
+      "subject": "shapes-colors",
+      "tier": 1,
+      "skill": "name-shape",
+      "questionText": "Which one is the rectangle?",
+      "questionTextJunior": "Find the rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t1-03",
+      "subject": "shapes-colors",
+      "tier": 1,
+      "skill": "name-shape",
+      "questionText": "Which one is the rectangle?",
+      "questionTextJunior": "Find the rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t1-04",
+      "subject": "shapes-colors",
+      "tier": 1,
+      "skill": "name-shape",
+      "questionText": "Which one is the circle?",
+      "questionTextJunior": "Find the circle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t1-05",
+      "subject": "shapes-colors",
+      "tier": 1,
+      "skill": "name-shape",
+      "questionText": "Which one is the circle?",
+      "questionTextJunior": "Find the circle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t1-06",
+      "subject": "shapes-colors",
+      "tier": 1,
+      "skill": "name-shape",
+      "questionText": "Which one is the rectangle?",
+      "questionTextJunior": "Find the rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t2-01",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is yellow?",
+      "questionTextJunior": "Find the yellow one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t2-02",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is blue?",
+      "questionTextJunior": "Find the blue one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t2-03",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is green?",
+      "questionTextJunior": "Find the green one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t2-04",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is yellow?",
+      "questionTextJunior": "Find the yellow one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t2-05",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is blue?",
+      "questionTextJunior": "Find the blue one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t2-06",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is pink?",
+      "questionTextJunior": "Find the pink one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t3-01",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is red?",
+      "questionTextJunior": "Find the red one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t3-02",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is yellow?",
+      "questionTextJunior": "Find the yellow one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t3-03",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is yellow?",
+      "questionTextJunior": "Find the yellow one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t3-04",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is blue?",
+      "questionTextJunior": "Find the blue one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t3-05",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is pink?",
+      "questionTextJunior": "Find the pink one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t3-06",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is pink?",
+      "questionTextJunior": "Find the pink one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t4-01",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the hexagon?",
+      "questionTextJunior": "Find the hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t4-02",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the hexagon?",
+      "questionTextJunior": "Find the hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t4-03",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the star?",
+      "questionTextJunior": "Find the star!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t4-04",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the diamond?",
+      "questionTextJunior": "Find the diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t4-05",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the diamond?",
+      "questionTextJunior": "Find the diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t4-06",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the hexagon?",
+      "questionTextJunior": "Find the hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t5-01",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the star?",
+      "questionTextJunior": "Find the star!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t5-02",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the star?",
+      "questionTextJunior": "Find the star!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t5-03",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the star?",
+      "questionTextJunior": "Find the star!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t5-04",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the heart?",
+      "questionTextJunior": "Find the heart!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t5-05",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t5-06",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t6-01",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the pink rectangle?",
+      "questionTextJunior": "Find the pink rectangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t6-02",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the red diamond?",
+      "questionTextJunior": "Find the red diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t6-03",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the green oval?",
+      "questionTextJunior": "Find the green oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "green"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t6-04",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the pink triangle?",
+      "questionTextJunior": "Find the pink triangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t6-05",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow triangle?",
+      "questionTextJunior": "Find the yellow triangle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t6-06",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the red hexagon?",
+      "questionTextJunior": "Find the red hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t7-01",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the pink oval?",
+      "questionTextJunior": "Find the pink oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t7-02",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow hexagon?",
+      "questionTextJunior": "Find the yellow hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t7-03",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the blue hexagon?",
+      "questionTextJunior": "Find the blue hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t7-04",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the pink heart?",
+      "questionTextJunior": "Find the pink heart!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t7-05",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the green hexagon?",
+      "questionTextJunior": "Find the green hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t7-06",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the pink circle?",
+      "questionTextJunior": "Find the pink circle!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t8-01",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the blue square?",
+      "questionTextJunior": "Find the blue square!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t8-02",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow hexagon?",
+      "questionTextJunior": "Find the yellow hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "f"
+    },
+    {
+      "id": "sc-t8-03",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the blue hexagon?",
+      "questionTextJunior": "Find the blue hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "f"
+    },
+    {
+      "id": "sc-t8-04",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow diamond?",
+      "questionTextJunior": "Find the yellow diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t8-05",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow star?",
+      "questionTextJunior": "Find the yellow star!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "f"
+    },
+    {
+      "id": "sc-t8-06",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the red diamond?",
+      "questionTextJunior": "Find the red diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "pink"
+          }
         }
       ],
       "correctAnswerId": "a"

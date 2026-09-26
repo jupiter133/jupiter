@@ -83,25 +83,33 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   'spot-the-difference': {
-    lead: 'One of these is not like the others — can you spot it?',
-    cta: 'Start spotting',
-    chips: [{ label: 'Odd one out', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~2 minutes', ...PINK }],
+    lead: 'All of them are the same except one. Find it!',
+    cta: 'Start looking',
+    chips: [{ label: 'Eagle eyes', ...CYAN }, { label: 'Tap one', ...LIME }, { label: '~2 minutes', ...PINK }],
+    /* For the grown-up beside a three-year-old. The instruction the CHILD
+       needs is spoken aloud on the activity itself, automatically. */
     sections: rules([
-      ['How it works', 'You’ll see a few pictures. All of them go together except one — tap the odd one out.'],
-      ['Look carefully', 'Sometimes it’s the shape, sometimes the colour, sometimes what it is. Trust your eyes.'],
-      ['Need a hand?', 'Tap the speaker to hear the question again.'],
-      ['The rules', 'One at a time, no rush, no wrong way to think about it.'],
+      ['How it works', 'A few pictures appear and one of them does not belong. Your child taps that one, then the big green button.'],
+      ['It gets sneakier', 'Early on the odd one is a different thing altogether. Later it is the same thing in a different number — and later still, off by just one.'],
+      ['Changing their mind', 'Tapping another picture moves the choice to it. Nothing is locked in until they press the green button.'],
+      ['It reads itself', 'The question is spoken out loud as each puzzle appears, so a child who cannot read never needs you to explain it.'],
     ]),
   },
   'shapes-colors': {
-    lead: 'Shapes and colours — find the one being asked for.',
+    lead: 'Shapes and colours — tap the picture being asked for.',
     cta: 'Start shapes & colours',
     chips: [{ label: 'Shapes', ...CYAN }, { label: 'Colours', ...LIME }, { label: '~2 minutes', ...PINK }],
     sections: rules([
-      ['How it works', 'A question asks for a shape or a colour. Tap the picture that matches it.'],
-      ['The shapes', 'Circles, squares, triangles and rectangles — the ones you already know.'],
-      ['Need a hand?', 'Tap the speaker to hear the shape or colour said out loud.'],
-      ['The rules', 'One question at a time. Best guesses count for plenty.'],
+      ['How it works', 'A voice asks for a shape or a colour. Your child taps the picture that matches.'],
+      [
+        'No words on the cards',
+        'The shapes are unlabelled on purpose — a card reading “Diamond” would make this a reading test, and the children sitting this ride cannot read yet.',
+      ],
+      [
+        'It climbs',
+        'Circles and squares first, then colours on their own, then the trickier shapes, and finally both at once — “find the blue triangle”.',
+      ],
+      ['Need a hand?', 'Tap the speaker to hear the question again, as often as they like.'],
     ]),
   },
   'number-fun': {

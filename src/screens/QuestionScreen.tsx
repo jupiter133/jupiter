@@ -7,6 +7,7 @@ import {
   isListenQuestion,
   isMatchQuestion,
   isNumberQuestion,
+  isOddQuestion,
   isPairQuestion,
   isOrderQuestion,
   isWriteQuestion,
@@ -99,6 +100,7 @@ export function QuestionScreen({
   const isNumber = isNumberQuestion(question);
   const isMatch = isMatchQuestion(question);
   const isPair = isPairQuestion(question);
+  const isOdd = isOddQuestion(question);
   const [replaysLeft, setReplaysLeft] = useState(SPELLING_REPLAYS);
   const [phase, setPhase] = useState<StudyPhase>(isStudy ? 'study' : 'recall');
   const { supported: canSpeak, speaking, speak, stop } = useSpeech();
@@ -163,13 +165,20 @@ export function QuestionScreen({
   const isJunior = band === 'junior';
   const hasPassage = Boolean(question.passage) && !isStudy;
   const showOptionArt = isJunior && question.options.some((o) => o.art);
+  /* Picture-only answers — Shapes & Colors. Nothing is written on the cards,
+     so the picture is the whole target and gets the whole card; a per-option
+     speaker would also have nothing to say. */
+  const wordlessOptions =
+    showOptionArt && question.options.every((o) => o.art && !o.text.trim());
   /* Sentence-length answers read better one-up; two columns wrap them into
      three or four lines each. */
   const longOptions = question.options.some((o) => o.text.length > 36);
   /* What a sitting counts. A vocabulary item is a word, a comprehension item
      a passage, a sentence-writing item a sentence — calling all of them
      "question" reads as a test, which is the one word this flow avoids. */
-  const unitLabel = isMatch || isPair
+  /* Little Readers count pictures, not questions: "Question 3" means
+     nothing to someone who has never sat one. */
+  const unitLabel = isMatch || isPair || isOdd || wordlessOptions
     ? 'Picture'
     : studiesPassage
     ? 'Passage'
@@ -352,12 +361,13 @@ export function QuestionScreen({
                 onCommit={choose}
                 seed={question.id}
               />
-            ) : isMatch ? (
+            ) : isMatch || isOdd ? (
               <MatchAnswer
                 options={question.options}
                 disabled={chosenId !== null}
                 onCommit={choose}
                 seed={question.id}
+                pick={isOdd ? 1 : 2}
               />
             ) : isDrag ? (
               <DragAnswer
@@ -393,7 +403,11 @@ export function QuestionScreen({
             <div
               className={`options${
                 showOptionArt
-                  ? ' options--picture'
+                  ? ` options--picture${
+                      wordlessOptions
+                        ? ` options--wordless options--wordless-${question.options.length}`
+                        : ''
+                    }`
                   : hasPassage || longOptions
                     ? ' options--single'
                     : ''
@@ -407,13 +421,15 @@ export function QuestionScreen({
                    able to fire without choosing the answer. */
                 <div
                   key={option.id}
-                  className={`option-row${showOptionArt ? ' option-row--picture' : ''}`}
+                  className={`option-row${showOptionArt ? ' option-row--picture' : ''}${
+                    wordlessOptions ? ' option-row--wordless' : ''
+                  }`}
                 >
                   <button
                     type="button"
                     className={`option${chosenId === option.id ? ' option--chosen' : ''}${
                       showOptionArt ? ' option--picture' : ''
-                    }`}
+                    }${wordlessOptions ? ' option--wordless' : ''}`}
                     disabled={chosenId !== null}
                     onClick={() => choose(option.id)}
                   >
@@ -427,7 +443,7 @@ export function QuestionScreen({
                     <span>{option.text}</span>
                     {chosenId === option.id && <AnswerSparkles />}
                   </button>
-                  {canSpeak && !isListen && (
+                  {canSpeak && !isListen && !wordlessOptions && (
                     <button
                       type="button"
                       className="option__speak"

@@ -462,6 +462,98 @@ no longer narrated, and a test holds that.
 added to the track config a while back and never wired into the section intro,
 where the word was hardcoded. It now reads "The Find the Same **ride**".
 
+## Spot the Difference: one card unlike the rest
+
+Same act as Find the Same, one card fewer to pick: tap the picture that does
+not belong. `answerMode: 'odd'`, keyed by a single id.
+
+It shares a component with Find the Same rather than duplicating one —
+`MatchAnswer` takes a `pick` prop, 2 for a match and 1 for an odd one out —
+because to a three-year-old they are the same act with a different count. A
+second tap **moves** the choice rather than adding to it.
+
+Fifty-four items, climbing by what makes a card odd:
+
+| Tiers | What is different | Cards |
+| --- | --- | --- |
+| 0–2 | a different object entirely | 3–4 |
+| 3–5 | same object, a different count | 4–5 |
+| 6–8 | same object, a count off by **one** | 5–6 |
+
+Two tests hold the content honest: exactly one card is unlike the rest and the
+key points at it (two odd cards would make two answers right, none would make
+the item unanswerable), and within a tier the odd one is never always in the
+same position — a child who notices the answer is always last stops looking at
+the pictures, which is the one thing this activity asks them to do.
+
+## Shapes & Colors: no words on the cards
+
+A voice asks for a shape or a colour; the child taps the picture. Plain
+`answerMode: 'tap'`, but every option is a picture with **empty text**, which
+turned out to be a layout mode of its own rather than a content detail.
+
+**The cards are deliberately unlabelled.** The reference design put "Diamond"
+under the diamond. That turns "find the diamond" into a reading test, and the
+children sitting this ride cannot read yet. A test asserts every option in this
+subject has art and no text.
+
+Fifty-four items, and each rung varies exactly one thing:
+
+| Tiers | Asks | Held constant | Cards |
+| --- | --- | --- | --- |
+| 0–1 | name the shape | one colour throughout | 3–4 |
+| 2–3 | name the colour | one shape throughout | 4 |
+| 4–5 | the less common shapes — oval, diamond, star, heart, hexagon | one colour throughout | 4–5 |
+| 6–8 | **both at once** — "find the blue triangle" | nothing | 5–6 |
+
+A shape question that also changes colour is two questions at once, so tests
+assert the constant column above. At the top, every distractor shares
+**exactly one** of shape and colour with the answer, so neither half alone gets
+a child there — also a test.
+
+### Red and green never decide an item
+
+No item offers both. A colour-blind child is being assessed on whether they
+know a colour, not on their eyes. It is a test, not a convention, because the
+generator got it wrong once: the guard read
+
+```js
+othercol.filter((c) => c !== rng.choice(['red', 'green']))
+```
+
+which re-rolls `rng.choice` for every element, so red survived one draw and
+green another. Drawing once and filtering against that fixed the items; the
+test is what caught it.
+
+### Five colours, not six
+
+`--shape-red/blue/yellow/green/pink` in `tokens.css`, every one from the brand
+palette. Orange and purple are **deliberately absent** — adding them means new
+brand hexes, which is a design-system decision, not one to invent in a question
+bank. These are also the only roles allowed to use `--olc-red`: here the colour
+is the subject matter, and it still never means "wrong".
+
+### Wordless options are their own layout
+
+A picture with nothing written under it wants a big square card, not a wide
+text row, so `options--wordless` / `option--wordless` exist alongside the
+picture-option styles. Columns come from the card count (`--wordless-4` is two
+across, five and six are three across, everything is two across on a phone)
+rather than `auto-fit`, which collapses every track to its minimum. Per-option
+speaker buttons are hidden, since they would have nothing to say.
+
+Getting there took four wrong measurements, all the same class of bug as the
+Find the Same sizing rule above, and one new one worth writing down:
+
+> **`margin-inline: auto` stops a flex item stretching.** The grid had
+> `width` unset, `max-width: 720px` and `margin-inline: auto`; it shrink-wrapped
+> to 163px inside a 763px parent and the cards came out 76px square. `width:
+> 100%` plus `align-self: center` centres it without giving up the stretch.
+
+Measured after the fix, at three viewports and every card count from three to
+six: cards 174–354px square, shapes 84–188px, zero horizontal overflow, nothing
+below the fold.
+
 ## Math: five shapes, because four answers can be worked backwards
 
 Every maths tier carries all five, so a sitting is never ten of the same thing:

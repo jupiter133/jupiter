@@ -114,6 +114,19 @@
 
   /* Coins and rewards */
   --accent-gold: var(--olc-gold);
+
+  /* Shape colours — SUBJECT MATTER, not feedback.
+     Shapes & Colors asks a five-year-old to name a colour, so the colour is
+     the thing being assessed. These are the only roles allowed to use
+     --olc-red, and they still never mean "wrong". Every value comes from the
+     brand palette: the app teaches the five colours it actually owns. Orange
+     and purple are deliberately absent — adding them is a palette decision
+     for the design system, not something to invent here. */
+  --shape-red:    var(--olc-red);
+  --shape-blue:   var(--olc-cyan);
+  --shape-yellow: var(--olc-gold);
+  --shape-green:  var(--olc-green);
+  --shape-pink:   var(--olc-pink);
   --accent-gold-soft: var(--olc-gold-soft);
   --accent-gold-edge: var(--olc-gold-edge);
   --text-on-gold: #8A5A00; /* CoinPill text */

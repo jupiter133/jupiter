@@ -56,12 +56,36 @@ export type SceneName =
   | 'canoe';
 
 /** Declarative illustration spec. Content stays in JSON; drawing stays in code. */
+/**
+ * The shapes a five-year-old is expected to name. The first four are the
+ * Kindergarten set; the rest arrive in the later tiers of Shapes & Colors.
+ */
+export type ShapeName =
+  | 'circle'
+  | 'square'
+  | 'triangle'
+  | 'rectangle'
+  | 'oval'
+  | 'diamond'
+  | 'star'
+  | 'heart'
+  | 'hexagon';
+
+/**
+ * Named colours, not hexes, so the bank says what it means and the palette
+ * stays under the design system's control.
+ *
+ * Red and green never decide an item on their own — see the bank test. A
+ * colour-blind child is not being assessed on their eyes.
+ */
+export type ShapeColor = 'red' | 'blue' | 'yellow' | 'green' | 'pink';
+
 export type ArtSpec =
   | { kind: 'glyph'; glyph: GlyphName }
   | { kind: 'count'; glyph: GlyphName; n: number }
   | { kind: 'countPlus'; glyph: GlyphName; n: number; m: number }
   | { kind: 'countTakeAway'; glyph: GlyphName; n: number; takeAway: number }
-  | { kind: 'shape'; shape: 'triangle' | 'square' | 'circle' | 'rectangle' }
+  | { kind: 'shape'; shape: ShapeName; color?: ShapeColor }
   | { kind: 'fraction'; n: number; d: number }
   | { kind: 'areaGrid'; w: number; h: number }
   | { kind: 'pair'; left: GlyphName; right: GlyphName }
@@ -108,13 +132,14 @@ export interface Question {
    * - 'order-drag' the same sequence, dragged, off a sentence they heard
    * - 'match'      tap the two pictures that are the same (Little Readers)
    * - 'pair'       move each picture onto its twin (Little Readers)
+   * - 'odd'        tap the one picture that is different (Little Readers)
    * - 'number'     the child types it on a keypad (math)
    * - 'write'      the child types it (sentence writing, upper tiers)
    *
    * Dragging and ordering are slower than tapping on purpose: they suit an
    * item worth dwelling on, not a whole sitting of them.
    */
-  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'number' | 'write' | 'match' | 'pair';
+  answerMode?: 'tap' | 'drag' | 'order' | 'order-drag' | 'number' | 'write' | 'match' | 'pair' | 'odd';
   /**
    * Option ids in slot order, on a 'pair' item. Each slot shows that option's
    * picture faded, and waits for it.
@@ -191,6 +216,11 @@ export function isDraggedQuestion(question: Question): boolean {
 /** True when the child types the answer instead of choosing it. */
 export function isWriteQuestion(question: Question): boolean {
   return question.answerMode === 'write';
+}
+
+/** True when the answer is the single picture that does not belong. */
+export function isOddQuestion(question: Question): boolean {
+  return question.answerMode === 'odd';
 }
 
 /** True when each picture has to be moved onto its twin. */

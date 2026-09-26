@@ -29,6 +29,7 @@ import {
   isListenQuestion,
   isMatchQuestion,
   isNumberQuestion,
+  isOddQuestion,
   isPairQuestion,
   isOrderQuestion,
   isSpokenQuestion,
@@ -489,6 +490,127 @@ describe('find the same', () => {
       expect(cardsAt(tier).length, `tier ${tier}`).toBeGreaterThan(0);
     }
     expect(Math.max(...cardsAt(MIN_TIER))).toBeLessThan(Math.max(...cardsAt(MAX_TIER)));
+  });
+});
+
+describe('spot the difference', () => {
+  it('has exactly one odd card, and the key points at it', () => {
+    const odd = QUESTIONS.filter(isOddQuestion);
+    expect(odd.length).toBeGreaterThan(0);
+    for (const q of odd) {
+      const arts = q.options.map((o) => JSON.stringify(o.art));
+      const alone = arts.filter((a) => arts.filter((b) => b === a).length === 1);
+      // One card unlike the rest. Two would make two answers right; none
+      // would make the question unanswerable.
+      expect(alone, q.id).toHaveLength(1);
+      const keyed = q.options.find((o) => o.id === q.correctAnswerId);
+      expect(keyed, q.id).toBeTruthy();
+      expect(JSON.stringify(keyed!.art), q.id).toBe(alone[0]);
+    }
+  });
+
+  it('never leaves the odd one in the same place twice running', () => {
+    // A child who notices the answer is always last stops looking at the
+    // pictures, which is the one thing this activity asks them to do.
+    const byTier = new Map<number, string[]>();
+    for (const q of QUESTIONS.filter(isOddQuestion)) {
+      const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
+      byTier.set(q.tier, [...(byTier.get(q.tier) ?? []), `${at}`]);
+    }
+    for (const [tier, spots] of byTier) {
+      expect(new Set(spots).size, `tier ${tier} always puts it at ${spots[0]}`).toBeGreaterThan(1);
+    }
+  });
+
+  it('gives a three-year-old pictures and nothing to read', () => {
+    for (const q of QUESTIONS.filter(isOddQuestion)) {
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+      for (const o of q.options) {
+        expect(o.art, `${q.id} ${o.id}`).toBeTruthy();
+        expect(o.text, `${q.id} ${o.id}`).toBe('');
+      }
+    }
+  });
+});
+
+describe('shapes and colours', () => {
+  const shapeItems = QUESTIONS.filter((q) => q.subject === 'shapes-colors');
+  const artOf = (q: (typeof QUESTIONS)[number], id: string) =>
+    q.options.find((o) => o.id === id)?.art as { kind: string; shape: string; color?: string };
+
+  it('asks with pictures, never with words under them', () => {
+    // A label saying "Diamond" turns "find the diamond" into a reading test.
+    // Shapes & Colors is sat by children who cannot read.
+    expect(shapeItems.length).toBeGreaterThan(0);
+    for (const q of shapeItems) {
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+      for (const o of q.options) {
+        expect(o.art?.kind, `${q.id} ${o.id}`).toBe('shape');
+        expect(o.text, `${q.id} ${o.id}`).toBe('');
+      }
+    }
+  });
+
+  it('gives every item exactly one card that answers it', () => {
+    for (const q of shapeItems) {
+      const arts = q.options.map((o) => JSON.stringify(o.art));
+      expect(new Set(arts).size, q.id).toBe(arts.length);
+      expect(artOf(q, q.correctAnswerId), q.id).toBeTruthy();
+    }
+  });
+
+  it('never lets a colour-blind child fail on their eyes', () => {
+    // Red against green is the one pairing that decides an item by an eye
+    // rather than by knowing a colour, so no item offers both.
+    for (const q of shapeItems) {
+      const colours = new Set(q.options.map((o) => artOf(q, o.id).color));
+      expect(colours.has('red') && colours.has('green'), q.id).toBe(false);
+    }
+  });
+
+  it('varies only the thing it is asking about', () => {
+    for (const q of shapeItems) {
+      const shapes = new Set(q.options.map((o) => artOf(q, o.id).shape));
+      const colours = new Set(q.options.map((o) => artOf(q, o.id).color));
+      if (q.skill === 'name-colour') expect(shapes.size, q.id).toBe(1);
+      // A shape question that also changes colour is two questions at once.
+      if (q.skill.startsWith('name-shape')) expect(colours.size, q.id).toBe(1);
+      if (q.skill === 'shape-and-colour') {
+        expect(shapes.size, q.id).toBeGreaterThan(1);
+        expect(colours.size, q.id).toBeGreaterThan(1);
+      }
+    }
+  });
+
+  it('makes a two-part question need both parts', () => {
+    // Every distractor shares exactly one of shape and colour with the
+    // answer, so neither half alone gets a child there.
+    for (const q of shapeItems.filter((i) => i.skill === 'shape-and-colour')) {
+      const key = artOf(q, q.correctAnswerId);
+      for (const o of q.options.filter((x) => x.id !== q.correctAnswerId)) {
+        const a = artOf(q, o.id);
+        const shared = (a.shape === key.shape ? 1 : 0) + (a.color === key.color ? 1 : 0);
+        expect(shared, `${q.id} ${o.id}`).toBe(1);
+      }
+    }
+  });
+
+  it('never parks the answer in one spot within a tier', () => {
+    const byTier = new Map<number, number[]>();
+    for (const q of shapeItems) {
+      const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
+      byTier.set(q.tier, [...(byTier.get(q.tier) ?? []), at]);
+    }
+    for (const [tier, spots] of byTier) {
+      expect(new Set(spots).size, `tier ${tier}`).toBeGreaterThan(1);
+    }
+  });
+
+  it('climbs: the easy shapes first, then both at once', () => {
+    const skillAt = (tier: number) =>
+      new Set(shapeItems.filter((q) => q.tier === tier).map((q) => q.skill));
+    expect(skillAt(0)).toEqual(new Set(['name-shape']));
+    expect(skillAt(8)).toEqual(new Set(['shape-and-colour']));
   });
 });
 

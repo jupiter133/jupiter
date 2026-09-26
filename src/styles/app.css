@@ -2342,3 +2342,57 @@ body {
   .pair { gap: 6px; }
   .pair__piece, .pair__slot { min-height: 42px; border-width: 2px; }
 }
+
+/* ---------- Picture-only answers (Shapes & Colors) ---------- */
+
+/* Nothing is written on these cards, so the shape is the entire target and
+   is sized off the card's SHORT side — a percentage of an auto-width wrapper
+   silently collapses to nothing. Square cards keep a star and a rectangle at
+   the same visual weight, which is the whole point of the activity. */
+.option--wordless {
+  aspect-ratio: 1;
+  min-height: 0;
+  padding: var(--space-3);
+  display: grid;
+  place-items: center;
+}
+
+.option--wordless > span:empty { display: none; }
+
+.option--wordless .art { width: 100%; height: 100%; }
+
+.option--wordless .art svg {
+  width: auto;
+  height: 76%;
+  max-width: 76%;
+}
+
+/* Three cards a row at most: a six-card item wraps into two tidy rows rather
+   than shrinking every shape to fit one. */
+.options--wordless {
+  /* Text answers stretch to fill the screen; square picture cards must not,
+     or a card comes out 150 wide and 950 tall. Columns are set by the number
+     of cards rather than auto-fit, which collapses tracks to their minimum. */
+  grid-auto-rows: auto;
+  align-content: center;
+  /* width + align-self, never margin-inline:auto: an auto inline margin
+     stops this flex item stretching, and the whole grid shrink-wraps to a
+     third of the screen. */
+  width: 100%;
+  max-width: 720px;
+  align-self: center;
+}
+
+.option-row--wordless { align-items: center; }
+
+.options--wordless-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.options--wordless-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.options--wordless-5,
+.options--wordless-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 600px) {
+  /* Two across on a phone. Three would put a shape under a thumb. */
+  .options--wordless-3,
+  .options--wordless-5,
+  .options--wordless-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

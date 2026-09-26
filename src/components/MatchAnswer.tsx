@@ -4,18 +4,25 @@ import { Illustration } from './Illustration';
 
 interface Props {
   options: AnswerOption[];
-  /** Fired with the two chosen ids, sorted and joined by '-'. */
-  onCommit: (pair: string) => void;
+  /**
+   * Fired with the chosen ids, sorted and joined by '-'. One card picked
+   * commits that card's id on its own, which is what an odd-one-out item's
+   * key looks like.
+   */
+  onCommit: (chosen: string) => void;
   disabled: boolean;
   /** Clears when this changes. */
   seed: string;
+  /** Cards that make an answer: two for a match, one for an odd one out. */
+  pick?: number;
 }
 
-/** How many cards make a match. Two, always — this is a pair game. */
-const PAIR = 2;
-
 /**
- * Tap the two pictures that are the same.
+ * Tap the picture, or the two pictures, that answer the question.
+ *
+ * One component for both Little Readers picking games — "find the two that
+ * are the same" and "find the one that is different" — because to a
+ * three-year-old they are the same act with a different count.
  *
  * This is the first thing a three-year-old meets in the whole product, so it
  * is built for someone who cannot read, cannot aim precisely, and will tap the
@@ -27,7 +34,7 @@ const PAIR = 2;
  *    otherwise end the question
  *  - no card is ever marked wrong; chosen cards simply look chosen
  */
-export function MatchAnswer({ options, onCommit, disabled, seed }: Props) {
+export function MatchAnswer({ options, onCommit, disabled, seed, pick = 2 }: Props) {
   const [chosen, setChosen] = useState<string[]>([]);
 
   useEffect(() => setChosen([]), [seed]);
@@ -36,13 +43,14 @@ export function MatchAnswer({ options, onCommit, disabled, seed }: Props) {
     if (disabled) return;
     setChosen((c) => {
       if (c.includes(id)) return c.filter((x) => x !== id);
-      // A third tap replaces the older choice rather than being ignored: a
-      // child who changes their mind should not have to undo first.
-      return c.length < PAIR ? [...c, id] : [c[1], id];
+      // One more tap than allowed replaces the oldest choice rather than
+      // being ignored: a child who changes their mind should not have to
+      // undo first.
+      return c.length < pick ? [...c, id] : [...c.slice(1), id];
     });
   };
 
-  const ready = chosen.length === PAIR;
+  const ready = chosen.length === pick;
 
   return (
     <div className="match">
@@ -77,7 +85,7 @@ export function MatchAnswer({ options, onCommit, disabled, seed }: Props) {
           disabled={disabled || !ready}
           onClick={() => onCommit([...chosen].sort().join('-'))}
         >
-          {ready ? 'All done!' : 'Tap two pictures'}
+          {ready ? 'All done!' : pick === 1 ? 'Tap a picture' : 'Tap two pictures'}
         </button>
       </div>
     </div>

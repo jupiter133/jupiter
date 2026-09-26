@@ -1,6 +1,6 @@
 import { Glyph, GLYPHS } from './glyphs';
 import type { GlyphName } from './glyphs';
-import type { ArtSpec, SceneName } from '../assessment/types';
+import type { ArtSpec, SceneName, ShapeName } from '../assessment/types';
 
 /** Scenes are compositions of existing glyphs rather than bespoke art, which
  *  keeps the illustration set consistent and cheap to extend. */
@@ -113,16 +113,29 @@ export function Illustration({ art, variant = 'panel' }: Props) {
       );
 
     case 'shape': {
-      const shapes = {
-        triangle: <path d="M50 12L88 84H12z" />,
-        square: <rect x="16" y="16" width="68" height="68" rx="6" />,
-        circle: <circle cx="50" cy="50" r="36" />,
-        rectangle: <rect x="8" y="26" width="84" height="48" rx="6" />,
+      // Drawn in one 100x100 box so every shape lands at the same visual
+      // weight — a star must not read as smaller than a square.
+      const shapes: Record<ShapeName, JSX.Element> = {
+        circle: <circle cx="50" cy="50" r="38" />,
+        square: <rect x="14" y="14" width="72" height="72" rx="6" />,
+        triangle: <path d="M50 10L90 86H10z" />,
+        rectangle: <rect x="6" y="24" width="88" height="52" rx="6" />,
+        oval: <ellipse cx="50" cy="50" rx="27" ry="40" />,
+        diamond: <path d="M50 8L88 50 50 92 12 50z" />,
+        star: <path d="M50 8l12.4 25.9 28.1 3.9-20.4 19.8 5 28.2L50 72.4 24.9 85.8l5-28.2L9.5 37.8l28.1-3.9z" />,
+        heart: <path d="M50 88S12 62 12 38a20 20 0 0 1 38-9 20 20 0 0 1 38 9c0 24-38 50-38 50z" />,
+        hexagon: <path d="M28 14h44l22 36-22 36H28L6 50z" />,
       };
+      const size = variant === 'option' ? 64 : 110;
       return (
         <div className={`art art--${variant}`}>
-          <svg width={variant === 'option' ? 64 : 110} height={variant === 'option' ? 64 : 110} viewBox="0 0 100 100" aria-hidden="true">
-            <g fill="var(--accent-secondary)" stroke="var(--text-primary)" strokeWidth="4" strokeLinejoin="round">
+          <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
+            <g
+              fill={art.color ? `var(--shape-${art.color})` : 'var(--accent-secondary)'}
+              stroke="var(--text-primary)"
+              strokeWidth="4"
+              strokeLinejoin="round"
+            >
               {shapes[art.shape]}
             </g>
           </svg>
