@@ -98,29 +98,42 @@ export function selectNextQuestion(state: SessionState): Question | null {
    * stopping — the child never met the typed-number or ordering items at all,
    * which are the two that cannot be worked backwards.
    */
-  /* Two items can share an answer mode and still be different moves: a
-     Shapes & Colors paint item is tapped like a card item, but the child is
-     picking a colour off a palette rather than a picture out of a line-up.
-     Keying variety on the answer mode alone hid every paint item, the same
-     way it once hid the maths variants. The art on the options says what the
-     move actually is. */
-  const shapeOf = (q: Question) =>
-    `${q.answerMode ?? 'tap'}:${q.options[0]?.art?.kind ?? 'none'}`;
-  const usedShapes = new Set(
-    state.servedQuestionIds
-      .map((id) => QUESTIONS.find((q) => q.id === id))
-      .filter((q): q is Question => Boolean(q))
-      .map(shapeOf),
-  );
-  const fresh = rest.filter((q) => !usedShapes.has(shapeOf(q)));
+  /*
+   * Variety has two levels, and they are not interchangeable.
+   *
+   * The ANSWER MODE is how a question is answered — tapped, dragged, typed,
+   * ordered. This is the one that matters most: a maths sitting that never
+   * serves the typed-number or ordering items lets a child work every answer
+   * backwards from the options.
+   *
+   * The SKILL is what a question asks. Two items can share an answer mode and
+   * still be different questions: naming a shape, naming a colour and
+   * painting a shape are all tapped. Keying only on the mode served whichever
+   * came first in the bank, so a child sat at one tier of Shapes & Colors met
+   * shapes and nothing else — in the ride named for both.
+   *
+   * So: a mode this sitting has not used wins; failing that, a skill it has
+   * not used. Never at the cost of serving a question at the wrong level.
+   */
+  const alreadyServed = state.servedQuestionIds
+    .map((id) => QUESTIONS.find((q) => q.id === id))
+    .filter((q): q is Question => Boolean(q));
+  const modeOf = (q: Question) => q.answerMode ?? 'tap';
+  const usedModes = new Set(alreadyServed.map(modeOf));
+  const usedSkills = new Set(alreadyServed.map((q) => `${modeOf(q)}:${q.skill}`));
+
   const nearest = rest[0];
-  // Only reach past the nearest tier when the fresh shape is just as close —
+  // Only reach past the nearest tier when the fresh item is just as close —
   // variety never costs the child a question at the wrong level.
-  const freshAtSameDistance = fresh.find(
-    (q) =>
-      nearest !== undefined &&
-      Math.abs(q.tier - state.currentTier) === Math.abs(nearest.tier - state.currentTier),
+  const sameDistance = (q: Question) =>
+    nearest !== undefined &&
+    Math.abs(q.tier - state.currentTier) === Math.abs(nearest.tier - state.currentTier);
+
+  const freshMode = rest.find((q) => !usedModes.has(modeOf(q)) && sameDistance(q));
+  const freshSkill = rest.find(
+    (q) => !usedSkills.has(`${modeOf(q)}:${q.skill}`) && sameDistance(q),
   );
+  const freshAtSameDistance = freshMode ?? freshSkill;
   return freshAtSameDistance ?? nearest ?? drag[0] ?? null;
 }
 

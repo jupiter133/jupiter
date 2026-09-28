@@ -618,11 +618,32 @@ describe('shapes and colours', () => {
     }
   });
 
-  it('climbs: the easy shapes first, then both at once', () => {
-    const skillAt = (tier: number) =>
-      new Set(cards.filter((q) => q.tier === tier).map((q) => q.skill));
-    expect(skillAt(0)).toEqual(new Set(['name-shape']));
-    expect(skillAt(8)).toEqual(new Set(['shape-and-colour']));
+  it('offers shapes AND colours at every tier below the two-part items', () => {
+    /*
+     * Topic is not difficulty. A three-year-old knows "red" long before
+     * "rectangle", and most children never climb past the tier they start on
+     * — so putting colours two tiers up meant a ride named Shapes & Colors
+     * showed a guessing child nothing but shapes. Every tier that is not the
+     * two-part rung carries both.
+     */
+    for (let tier = 0; tier <= 5; tier += 1) {
+      const skills = new Set(cards.filter((q) => q.tier === tier).map((q) => q.skill));
+      expect(skills, `tier ${tier}`).toContain('name-colour');
+      expect([...skills].some((k) => k.startsWith('name-shape')), `tier ${tier}`).toBe(true);
+    }
+  });
+
+  it('climbs by making each topic harder, not by swapping the topic', () => {
+    const at = (tier: number) => cards.filter((q) => q.tier === tier);
+    // More to choose between as the tiers go up.
+    expect(Math.max(...at(0).map((q) => q.options.length))).toBeLessThan(
+      Math.min(...at(6).map((q) => q.options.length)),
+    );
+    // The easy four only, low down; the harder shapes appear later.
+    const shapesAt = (tier: number) =>
+      new Set(at(tier).flatMap((q) => q.options.map((o) => (o.art as { shape: string }).shape)));
+    expect([...shapesAt(0)].every((sh) => ['circle', 'square', 'triangle', 'rectangle'].includes(sh))).toBe(true);
+    expect(new Set(at(8).map((q) => q.skill))).toEqual(new Set(['shape-and-colour']));
   });
 
   it('gives a paint item an unpainted shape and a palette', () => {

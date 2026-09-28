@@ -497,21 +497,48 @@ under the diamond. That turns "find the diamond" into a reading test, and the
 children sitting this ride cannot read yet. A test asserts every option in this
 subject has art and no text.
 
-Fifty-four items, and each rung varies exactly one thing:
+Seventy-five items. **Every tier below the two-part rung carries both shapes
+and colours**, and the paint items start at the bottom too:
 
-| Tiers | Asks | Held constant | Cards |
-| --- | --- | --- | --- |
-| 0–1 | name the shape | one colour throughout | 3–4 |
-| 2–3 | name the colour | one shape throughout | 4 |
-| 4–5 | the less common shapes — oval, diamond, star, heart, hexagon | one colour throughout | 4–5 |
-| 6–8 | **both at once** — "find the blue triangle" | nothing | 5–6 |
+| Tiers | Shape items | Colour items | Paint items | Cards |
+| --- | --- | --- | --- | --- |
+| 0 | circle, square, triangle, rectangle | red, blue, yellow | ✓ | 3 |
+| 1–2 | the same four | all five colours | ✓ | 4 |
+| 3–5 | oval, diamond, star, heart, hexagon join | all five | ✓ | 4–5 |
+| 6–8 | **both at once** — "find the blue triangle" | | | 5–6 |
 
-Plus eighteen **paint** items across tiers 2–7 — see below — for 72 in all.
+### Topic is not difficulty
 
-A shape question that also changes colour is two questions at once, so tests
-assert the constant column above. At the top, every distractor shares
-**exactly one** of shape and colour with the answer, so neither half alone gets
-a child there — also a test.
+The first version put colours two tiers above shapes, and that was wrong.
+
+A sitting stops after five or six questions once the tier is stable, and a
+child who guesses never leaves the tier they start on. So a guessing
+four-year-old sat the whole of Shapes & Colors and met **nothing but shapes** —
+in the ride named for both. Measured, three ways of playing:
+
+```
+before        after
+all-right   shape 2, colour 3, paint 1   shape 3, colour 2, paint 1
+all-wrong   shape 5, colour 0, paint 0   shape 2, colour 2, paint 1
+random      shape 5, colour 0, paint 0   shape 3, colour 2, paint 1
+```
+
+A three-year-old knows "red" long before "rectangle". Difficulty now grows
+*inside* each topic — more cards, harder shapes, the full palette — never by
+swapping the topic out. A test asserts every tier 0–5 carries both.
+
+### The selector needed two levels of variety, not one
+
+Fixing the bank was not enough: shape and colour items are both tapped, so the
+tie-break that keeps a sitting varied saw them as the same thing and served
+whichever came first in the bank.
+
+It now prefers an unused **answer mode** first — that is the one that matters,
+since a maths sitting which never serves the typed-number items lets a child
+work every answer backwards — and failing that an unused **skill**, which is
+what actually says what a question asks. Keying on skill *alone* was the first
+attempt and it broke the maths variants, which is how the two levels got
+separated.
 
 ### Paint items: an outline and a palette
 
@@ -519,7 +546,7 @@ A second move for the same skill. Instead of picking a coloured card out of a
 line-up, the child sees **one unpainted shape** and a palette of colour chips,
 and taps the colour named: "Paint the rectangle pink!"
 
-Eighteen items across tiers 2–7. The shape on the panel carries `outline:
+Twenty-one items across tiers 0–6. The shape on the panel carries `outline:
 true`, so it is white with a heavy stroke — a painted one would hand the child
 the answer to copy, and a test asserts it has no colour of its own. The prompt
 names the shape as well as the colour, so a child who knows one but not the
