@@ -535,8 +535,13 @@ describe('spot the difference', () => {
 
 describe('shapes and colours', () => {
   const shapeItems = QUESTIONS.filter((q) => q.subject === 'shapes-colors');
+  const cards = shapeItems.filter((q) => q.skill !== 'paint-colour');
+  const paint = shapeItems.filter((q) => q.skill === 'paint-colour');
   const artOf = (q: (typeof QUESTIONS)[number], id: string) =>
-    q.options.find((o) => o.id === id)?.art as { kind: string; shape: string; color?: string };
+    q.options.find((o) => o.id === id)?.art as
+      | { kind: 'shape'; shape: string; color?: string; outline?: boolean }
+      | { kind: 'swatch'; color: string };
+  const colourOf = (q: (typeof QUESTIONS)[number], id: string) => artOf(q, id).color;
 
   it('asks with pictures, never with words under them', () => {
     // A label saying "Diamond" turns "find the diamond" into a reading test.
@@ -545,7 +550,7 @@ describe('shapes and colours', () => {
     for (const q of shapeItems) {
       expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
       for (const o of q.options) {
-        expect(o.art?.kind, `${q.id} ${o.id}`).toBe('shape');
+        expect(o.art?.kind, `${q.id} ${o.id}`).toBe(q.skill === 'paint-colour' ? 'swatch' : 'shape');
         expect(o.text, `${q.id} ${o.id}`).toBe('');
       }
     }
@@ -559,19 +564,24 @@ describe('shapes and colours', () => {
     }
   });
 
-  it('never lets a colour-blind child fail on their eyes', () => {
-    // Red against green is the one pairing that decides an item by an eye
-    // rather than by knowing a colour, so no item offers both.
+  it('never makes a colour-blind child tell red from green', () => {
+    // The sharp rule is about the ANSWER: a child has to tell it from every
+    // distractor, not tell two distractors apart. So red and green may share
+    // a palette — the answer just may not sit opposite the other one. With
+    // only five brand colours, the broader rule would cap every palette at
+    // four and there would be no five-chip paint item at all.
     for (const q of shapeItems) {
-      const colours = new Set(q.options.map((o) => artOf(q, o.id).color));
-      expect(colours.has('red') && colours.has('green'), q.id).toBe(false);
+      const key = colourOf(q, q.correctAnswerId);
+      const rest = q.options.filter((o) => o.id !== q.correctAnswerId).map((o) => colourOf(q, o.id));
+      if (key === 'red') expect(rest, q.id).not.toContain('green');
+      if (key === 'green') expect(rest, q.id).not.toContain('red');
     }
   });
 
   it('varies only the thing it is asking about', () => {
-    for (const q of shapeItems) {
-      const shapes = new Set(q.options.map((o) => artOf(q, o.id).shape));
-      const colours = new Set(q.options.map((o) => artOf(q, o.id).color));
+    for (const q of cards) {
+      const shapes = new Set(q.options.map((o) => (artOf(q, o.id) as { shape: string }).shape));
+      const colours = new Set(q.options.map((o) => colourOf(q, o.id)));
       if (q.skill === 'name-colour') expect(shapes.size, q.id).toBe(1);
       // A shape question that also changes colour is two questions at once.
       if (q.skill.startsWith('name-shape')) expect(colours.size, q.id).toBe(1);
@@ -585,10 +595,10 @@ describe('shapes and colours', () => {
   it('makes a two-part question need both parts', () => {
     // Every distractor shares exactly one of shape and colour with the
     // answer, so neither half alone gets a child there.
-    for (const q of shapeItems.filter((i) => i.skill === 'shape-and-colour')) {
-      const key = artOf(q, q.correctAnswerId);
+    for (const q of cards.filter((i) => i.skill === 'shape-and-colour')) {
+      const key = artOf(q, q.correctAnswerId) as { shape: string; color: string };
       for (const o of q.options.filter((x) => x.id !== q.correctAnswerId)) {
-        const a = artOf(q, o.id);
+        const a = artOf(q, o.id) as { shape: string; color: string };
         const shared = (a.shape === key.shape ? 1 : 0) + (a.color === key.color ? 1 : 0);
         expect(shared, `${q.id} ${o.id}`).toBe(1);
       }
@@ -596,21 +606,39 @@ describe('shapes and colours', () => {
   });
 
   it('never parks the answer in one spot within a tier', () => {
-    const byTier = new Map<number, number[]>();
-    for (const q of shapeItems) {
-      const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
-      byTier.set(q.tier, [...(byTier.get(q.tier) ?? []), at]);
-    }
-    for (const [tier, spots] of byTier) {
-      expect(new Set(spots).size, `tier ${tier}`).toBeGreaterThan(1);
+    for (const group of [cards, paint]) {
+      const byTier = new Map<number, number[]>();
+      for (const q of group) {
+        const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
+        byTier.set(q.tier, [...(byTier.get(q.tier) ?? []), at]);
+      }
+      for (const [tier, spots] of byTier) {
+        expect(new Set(spots).size, `tier ${tier}`).toBeGreaterThan(1);
+      }
     }
   });
 
   it('climbs: the easy shapes first, then both at once', () => {
     const skillAt = (tier: number) =>
-      new Set(shapeItems.filter((q) => q.tier === tier).map((q) => q.skill));
+      new Set(cards.filter((q) => q.tier === tier).map((q) => q.skill));
     expect(skillAt(0)).toEqual(new Set(['name-shape']));
     expect(skillAt(8)).toEqual(new Set(['shape-and-colour']));
+  });
+
+  it('gives a paint item an unpainted shape and a palette', () => {
+    expect(paint.length).toBeGreaterThan(0);
+    for (const q of paint) {
+      // The shape on the panel carries no colour of its own — a painted one
+      // would hand the child the answer to copy.
+      const art = q.art as { kind: string; outline?: boolean; color?: string };
+      expect(art?.kind, q.id).toBe('shape');
+      expect(art.outline, q.id).toBe(true);
+      expect(art.color, q.id).toBeUndefined();
+      // The prompt names the colour, which is the whole question, and the
+      // shape, so a child who knows one but not the other still knows the ask.
+      const colour = colourOf(q, q.correctAnswerId)!;
+      expect(q.questionTextJunior?.toLowerCase(), q.id).toContain(colour);
+    }
   });
 });
 

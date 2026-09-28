@@ -2345,16 +2345,28 @@ body {
 
 /* ---------- Picture-only answers (Shapes & Colors) ---------- */
 
-/* Nothing is written on these cards, so the shape is the entire target and
-   is sized off the card's SHORT side — a percentage of an auto-width wrapper
-   silently collapses to nothing. Square cards keep a star and a rectangle at
-   the same visual weight, which is the whole point of the activity. */
+/* Nothing is written on these cards, so the picture is the entire target.
+   The card is SQUARE and sized off its HEIGHT, not its width: the rows share
+   whatever height is left under the question, and a width-driven square runs
+   off the bottom of a short screen — where the stage does not scroll, so the
+   last colour was simply unreachable. Height is the constrained dimension
+   here; max-width pulls it back in when a column is the tighter of the two. */
 .option--wordless {
-  aspect-ratio: 1;
+  /* The CARD fills its cell; the PICTURE is the square. Chasing a square card
+     means fighting the grid — height:100% and aspect-ratio contradict each
+     other, and one of them always wins by clipping. Sizing the picture off
+     whichever dimension is tighter is the rule that has held everywhere else
+     in this app. */
+  width: 100%;
+  height: 100%;
   min-height: 0;
   padding: var(--space-3);
   display: grid;
   place-items: center;
+  /* Makes the card the query container, so the picture below can be sized
+     off its SHORTER side literally, rather than via an aspect-ratio an
+     inline-sized <svg> quietly ignores. */
+  container-type: size;
 }
 
 .option--wordless > span:empty { display: none; }
@@ -2362,19 +2374,17 @@ body {
 .option--wordless .art { width: 100%; height: 100%; }
 
 .option--wordless .art svg {
-  width: auto;
-  height: 76%;
-  max-width: 76%;
+  /* Square, off the tighter of the card's two sides. */
+  width: min(76cqw, 76cqh);
+  height: min(76cqw, 76cqh);
 }
 
-/* Three cards a row at most: a six-card item wraps into two tidy rows rather
-   than shrinking every shape to fit one. */
 .options--wordless {
-  /* Text answers stretch to fill the screen; square picture cards must not,
-     or a card comes out 150 wide and 950 tall. Columns are set by the number
-     of cards rather than auto-fit, which collapses tracks to their minimum. */
-  grid-auto-rows: auto;
-  align-content: center;
+  /* Rows share the height left under the question, with no min-content
+     floor: the floor of a square card is its own width, which makes the grid
+     taller than its box and clips the bottom row. */
+  grid-auto-rows: 1fr;
+  min-height: 0;
   /* width + align-self, never margin-inline:auto: an auto inline margin
      stops this flex item stretching, and the whole grid shrink-wraps to a
      third of the screen. */
@@ -2383,16 +2393,28 @@ body {
   align-self: center;
 }
 
-.option-row--wordless { align-items: center; }
-
+/* Columns come from the card count. auto-fit collapses every track to its
+   minimum, which is how the cards once came out 76px square. */
 .options--wordless-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .options--wordless-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .options--wordless-5,
 .options--wordless-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.option-row--wordless { justify-content: center; align-items: center; }
 
 @media (max-width: 600px) {
   /* Two across on a phone. Three would put a shape under a thumb. */
   .options--wordless-3,
   .options--wordless-5,
   .options--wordless-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .option-row--wordless .option { min-height: 0; }
+}
+
+/* A shape a child is asked to paint is the subject of the question, not a
+   decoration above it, so it gets the panel's height rather than the 110px
+   an option-sized glyph would take. Sized off the viewport height, which is
+   what constrains it here. */
+.art-panel--junior .art--shape > svg {
+  width: clamp(120px, 22vh, 230px);
+  height: auto;
 }

@@ -85,7 +85,9 @@ export type ArtSpec =
   | { kind: 'count'; glyph: GlyphName; n: number }
   | { kind: 'countPlus'; glyph: GlyphName; n: number; m: number }
   | { kind: 'countTakeAway'; glyph: GlyphName; n: number; takeAway: number }
-  | { kind: 'shape'; shape: ShapeName; color?: ShapeColor }
+  | { kind: 'shape'; shape: ShapeName; color?: ShapeColor; outline?: boolean }
+  /** A colour on its own, as a paint chip. The palette of a paint item. */
+  | { kind: 'swatch'; color: ShapeColor }
   | { kind: 'fraction'; n: number; d: number }
   | { kind: 'areaGrid'; w: number; h: number }
   | { kind: 'pair'; left: GlyphName; right: GlyphName }

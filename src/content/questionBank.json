@@ -21150,15 +21150,15 @@
       "subject": "shapes-colors",
       "tier": 2,
       "skill": "name-colour",
-      "questionText": "Which one is yellow?",
-      "questionTextJunior": "Find the yellow one!",
+      "questionText": "Which one is blue?",
+      "questionTextJunior": "Find the blue one!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
+            "shape": "triangle",
             "color": "green"
           }
         },
@@ -21167,8 +21167,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
+            "shape": "triangle",
+            "color": "yellow"
           }
         },
         {
@@ -21176,8 +21176,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
+            "shape": "triangle",
+            "color": "pink"
           }
         },
         {
@@ -21185,12 +21185,12 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
+            "shape": "triangle",
             "color": "blue"
           }
         }
       ],
-      "correctAnswerId": "c"
+      "correctAnswerId": "d"
     },
     {
       "id": "sc-t2-02",
@@ -21205,8 +21205,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "pink"
+            "shape": "triangle",
+            "color": "green"
           }
         },
         {
@@ -21214,8 +21214,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "green"
+            "shape": "triangle",
+            "color": "pink"
           }
         },
         {
@@ -21223,8 +21223,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "blue"
+            "shape": "triangle",
+            "color": "red"
           }
         },
         {
@@ -21232,20 +21232,20 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "yellow"
+            "shape": "triangle",
+            "color": "blue"
           }
         }
       ],
-      "correctAnswerId": "c"
+      "correctAnswerId": "d"
     },
     {
       "id": "sc-t2-03",
       "subject": "shapes-colors",
       "tier": 2,
       "skill": "name-colour",
-      "questionText": "Which one is green?",
-      "questionTextJunior": "Find the green one!",
+      "questionText": "Which one is pink?",
+      "questionTextJunior": "Find the pink one!",
       "options": [
         {
           "id": "a",
@@ -21271,7 +21271,7 @@
           "art": {
             "kind": "shape",
             "shape": "triangle",
-            "color": "yellow"
+            "color": "blue"
           }
         },
         {
@@ -21280,66 +21280,19 @@
           "art": {
             "kind": "shape",
             "shape": "triangle",
-            "color": "blue"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t2-04",
-      "subject": "shapes-colors",
-      "tier": 2,
-      "skill": "name-colour",
-      "questionText": "Which one is yellow?",
-      "questionTextJunior": "Find the yellow one!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "green"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
+            "color": "red"
           }
         }
       ],
       "correctAnswerId": "a"
     },
     {
-      "id": "sc-t2-05",
+      "id": "sc-t2-04",
       "subject": "shapes-colors",
       "tier": 2,
       "skill": "name-colour",
-      "questionText": "Which one is blue?",
-      "questionTextJunior": "Find the blue one!",
+      "questionText": "Which one is red?",
+      "questionTextJunior": "Find the red one!",
       "options": [
         {
           "id": "a",
@@ -21375,6 +21328,53 @@
             "kind": "shape",
             "shape": "rectangle",
             "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t2-05",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "name-colour",
+      "questionText": "Which one is pink?",
+      "questionTextJunior": "Find the pink one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
           }
         }
       ],
@@ -21421,7 +21421,7 @@
           "art": {
             "kind": "shape",
             "shape": "circle",
-            "color": "yellow"
+            "color": "red"
           }
         }
       ],
@@ -21429,147 +21429,6 @@
     },
     {
       "id": "sc-t3-01",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "name-colour",
-      "questionText": "Which one is red?",
-      "questionTextJunior": "Find the red one!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "red"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "yellow"
-          }
-        }
-      ],
-      "correctAnswerId": "c"
-    },
-    {
-      "id": "sc-t3-02",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "name-colour",
-      "questionText": "Which one is yellow?",
-      "questionTextJunior": "Find the yellow one!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "red"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "blue"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t3-03",
-      "subject": "shapes-colors",
-      "tier": 3,
-      "skill": "name-colour",
-      "questionText": "Which one is yellow?",
-      "questionTextJunior": "Find the yellow one!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "green"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "blue"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t3-04",
       "subject": "shapes-colors",
       "tier": 3,
       "skill": "name-colour",
@@ -21581,8 +21440,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
+            "shape": "triangle",
+            "color": "blue"
           }
         },
         {
@@ -21590,8 +21449,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "green"
+            "shape": "triangle",
+            "color": "red"
           }
         },
         {
@@ -21599,8 +21458,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "blue"
+            "shape": "triangle",
+            "color": "yellow"
           }
         },
         {
@@ -21608,7 +21467,54 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
+            "shape": "triangle",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t3-02",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is pink?",
+      "questionTextJunior": "Find the pink one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
             "color": "yellow"
           }
         }
@@ -21616,12 +21522,59 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "sc-t3-05",
+      "id": "sc-t3-03",
       "subject": "shapes-colors",
       "tier": 3,
       "skill": "name-colour",
-      "questionText": "Which one is pink?",
-      "questionTextJunior": "Find the pink one!",
+      "questionText": "Which one is blue?",
+      "questionTextJunior": "Find the blue one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-t3-04",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is green?",
+      "questionTextJunior": "Find the green one!",
       "options": [
         {
           "id": "a",
@@ -21643,40 +21596,40 @@
         },
         {
           "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
           "text": "",
           "art": {
             "kind": "shape",
             "shape": "rectangle",
             "color": "green"
           }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
-          }
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "d"
     },
     {
-      "id": "sc-t3-06",
+      "id": "sc-t3-05",
       "subject": "shapes-colors",
       "tier": 3,
       "skill": "name-colour",
-      "questionText": "Which one is pink?",
-      "questionTextJunior": "Find the pink one!",
+      "questionText": "Which one is yellow?",
+      "questionTextJunior": "Find the yellow one!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "blue"
+            "shape": "triangle",
+            "color": "red"
           }
         },
         {
@@ -21684,7 +21637,54 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
+            "shape": "triangle",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t3-06",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "name-colour",
+      "questionText": "Which one is yellow?",
+      "questionTextJunior": "Find the yellow one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
             "color": "pink"
           }
         },
@@ -21693,7 +21693,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
+            "shape": "triangle",
             "color": "yellow"
           }
         },
@@ -21702,28 +21702,28 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "red"
+            "shape": "triangle",
+            "color": "blue"
           }
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "c"
     },
     {
       "id": "sc-t4-01",
       "subject": "shapes-colors",
       "tier": 4,
       "skill": "name-shape-extended",
-      "questionText": "Which one is the hexagon?",
-      "questionTextJunior": "Find the hexagon!",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
-            "color": "yellow"
+            "shape": "star",
+            "color": "blue"
           }
         },
         {
@@ -21731,8 +21731,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
+            "shape": "oval",
+            "color": "blue"
           }
         },
         {
@@ -21740,8 +21740,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "yellow"
+            "shape": "heart",
+            "color": "blue"
           }
         },
         {
@@ -21749,8 +21749,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "oval",
-            "color": "yellow"
+            "shape": "hexagon",
+            "color": "blue"
           }
         }
       ],
@@ -21769,8 +21769,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "yellow"
+            "shape": "hexagon",
+            "color": "pink"
           }
         },
         {
@@ -21779,7 +21779,7 @@
           "art": {
             "kind": "shape",
             "shape": "star",
-            "color": "yellow"
+            "color": "pink"
           }
         },
         {
@@ -21788,7 +21788,7 @@
           "art": {
             "kind": "shape",
             "shape": "heart",
-            "color": "yellow"
+            "color": "pink"
           }
         },
         {
@@ -21796,28 +21796,28 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
+            "shape": "diamond",
+            "color": "pink"
           }
         }
       ],
-      "correctAnswerId": "d"
+      "correctAnswerId": "a"
     },
     {
       "id": "sc-t4-03",
       "subject": "shapes-colors",
       "tier": 4,
       "skill": "name-shape-extended",
-      "questionText": "Which one is the star?",
-      "questionTextJunior": "Find the star!",
+      "questionText": "Which one is the diamond?",
+      "questionTextJunior": "Find the diamond!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "star",
-            "color": "pink"
+            "shape": "diamond",
+            "color": "green"
           }
         },
         {
@@ -21825,8 +21825,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "pink"
+            "shape": "rectangle",
+            "color": "green"
           }
         },
         {
@@ -21834,8 +21834,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
-            "color": "pink"
+            "shape": "circle",
+            "color": "green"
           }
         },
         {
@@ -21843,8 +21843,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
+            "shape": "oval",
+            "color": "green"
           }
         }
       ],
@@ -21855,16 +21855,16 @@
       "subject": "shapes-colors",
       "tier": 4,
       "skill": "name-shape-extended",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond!",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "circle",
-            "color": "green"
+            "shape": "square",
+            "color": "pink"
           }
         },
         {
@@ -21872,8 +21872,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "green"
+            "shape": "rectangle",
+            "color": "pink"
           }
         },
         {
@@ -21881,8 +21881,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "triangle",
-            "color": "green"
+            "shape": "oval",
+            "color": "pink"
           }
         },
         {
@@ -21890,28 +21890,28 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "oval",
-            "color": "green"
+            "shape": "diamond",
+            "color": "pink"
           }
         }
       ],
-      "correctAnswerId": "b"
+      "correctAnswerId": "c"
     },
     {
       "id": "sc-t4-05",
       "subject": "shapes-colors",
       "tier": 4,
       "skill": "name-shape-extended",
-      "questionText": "Which one is the diamond?",
-      "questionTextJunior": "Find the diamond!",
+      "questionText": "Which one is the heart?",
+      "questionTextJunior": "Find the heart!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "blue"
+            "shape": "square",
+            "color": "pink"
           }
         },
         {
@@ -21919,8 +21919,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "triangle",
-            "color": "blue"
+            "shape": "diamond",
+            "color": "pink"
           }
         },
         {
@@ -21928,8 +21928,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "blue"
+            "shape": "heart",
+            "color": "pink"
           }
         },
         {
@@ -21937,8 +21937,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "oval",
-            "color": "blue"
+            "shape": "star",
+            "color": "pink"
           }
         }
       ],
@@ -21949,221 +21949,6 @@
       "subject": "shapes-colors",
       "tier": 4,
       "skill": "name-shape-extended",
-      "questionText": "Which one is the hexagon?",
-      "questionTextJunior": "Find the hexagon!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "triangle",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "diamond",
-            "color": "pink"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t5-01",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "name-shape-extended",
-      "questionText": "Which one is the star?",
-      "questionTextJunior": "Find the star!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "diamond",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "heart",
-            "color": "pink"
-          }
-        }
-      ],
-      "correctAnswerId": "d"
-    },
-    {
-      "id": "sc-t5-02",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "name-shape-extended",
-      "questionText": "Which one is the star?",
-      "questionTextJunior": "Find the star!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "red"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "red"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "red"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "heart",
-            "color": "red"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "red"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t5-03",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "name-shape-extended",
-      "questionText": "Which one is the star?",
-      "questionTextJunior": "Find the star!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "red"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "diamond",
-            "color": "red"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "red"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "red"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "triangle",
-            "color": "red"
-          }
-        }
-      ],
-      "correctAnswerId": "d"
-    },
-    {
-      "id": "sc-t5-04",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "name-shape-extended",
       "questionText": "Which one is the heart?",
       "questionTextJunior": "Find the heart!",
       "options": [
@@ -22172,7 +21957,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
+            "shape": "heart",
             "color": "yellow"
           }
         },
@@ -22190,64 +21975,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "triangle",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "heart",
-            "color": "yellow"
-          }
-        }
-      ],
-      "correctAnswerId": "e"
-    },
-    {
-      "id": "sc-t5-05",
-      "subject": "shapes-colors",
-      "tier": 5,
-      "skill": "name-shape-extended",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "red"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "red"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
             "shape": "diamond",
-            "color": "red"
+            "color": "yellow"
           }
         },
         {
@@ -22256,28 +21985,19 @@
           "art": {
             "kind": "shape",
             "shape": "rectangle",
-            "color": "red"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "red"
+            "color": "yellow"
           }
         }
       ],
       "correctAnswerId": "a"
     },
     {
-      "id": "sc-t5-06",
+      "id": "sc-t5-01",
       "subject": "shapes-colors",
       "tier": 5,
       "skill": "name-shape-extended",
-      "questionText": "Which one is the oval?",
-      "questionTextJunior": "Find the oval!",
+      "questionText": "Which one is the star?",
+      "questionTextJunior": "Find the star!",
       "options": [
         {
           "id": "a",
@@ -22302,7 +22022,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
+            "shape": "star",
             "color": "pink"
           }
         },
@@ -22311,7 +22031,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "oval",
+            "shape": "rectangle",
             "color": "pink"
           }
         },
@@ -22320,15 +22040,463 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
+            "shape": "oval",
             "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-t5-02",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t5-03",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the hexagon?",
+      "questionTextJunior": "Find the hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t5-04",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t5-05",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the diamond?",
+      "questionTextJunior": "Find the diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
           }
         }
       ],
       "correctAnswerId": "d"
     },
     {
+      "id": "sc-t5-06",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "name-shape-extended",
+      "questionText": "Which one is the oval?",
+      "questionTextJunior": "Find the oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "rectangle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
       "id": "sc-t6-01",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow hexagon?",
+      "questionTextJunior": "Find the yellow hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "green"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-t6-02",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the red square?",
+      "questionTextJunior": "Find the red square!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t6-03",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the red oval?",
+      "questionTextJunior": "Find the red oval!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "red"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t6-04",
       "subject": "shapes-colors",
       "tier": 6,
       "skill": "shape-and-colour",
@@ -22349,7 +22517,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "star",
+            "shape": "square",
             "color": "pink"
           }
         },
@@ -22359,7 +22527,7 @@
           "art": {
             "kind": "shape",
             "shape": "rectangle",
-            "color": "blue"
+            "color": "green"
           }
         },
         {
@@ -22367,8 +22535,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "red"
+            "shape": "star",
+            "color": "pink"
           }
         },
         {
@@ -22376,15 +22544,15 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
-            "color": "pink"
+            "shape": "rectangle",
+            "color": "blue"
           }
         }
       ],
       "correctAnswerId": "a"
     },
     {
-      "id": "sc-t6-02",
+      "id": "sc-t6-05",
       "subject": "shapes-colors",
       "tier": 6,
       "skill": "shape-and-colour",
@@ -22440,7 +22608,7 @@
       "correctAnswerId": "b"
     },
     {
-      "id": "sc-t6-03",
+      "id": "sc-t6-06",
       "subject": "shapes-colors",
       "tier": 6,
       "skill": "shape-and-colour",
@@ -22496,9 +22664,9 @@
       "correctAnswerId": "d"
     },
     {
-      "id": "sc-t6-04",
+      "id": "sc-t7-01",
       "subject": "shapes-colors",
-      "tier": 6,
+      "tier": 7,
       "skill": "shape-and-colour",
       "questionText": "Which one is the pink triangle?",
       "questionTextJunior": "Find the pink triangle!",
@@ -22508,7 +22676,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
+            "shape": "circle",
             "color": "pink"
           }
         },
@@ -22518,7 +22686,7 @@
           "art": {
             "kind": "shape",
             "shape": "triangle",
-            "color": "blue"
+            "color": "red"
           }
         },
         {
@@ -22544,6 +22712,15 @@
           "text": "",
           "art": {
             "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
             "shape": "triangle",
             "color": "green"
           }
@@ -22552,9 +22729,9 @@
       "correctAnswerId": "c"
     },
     {
-      "id": "sc-t6-05",
+      "id": "sc-t7-02",
       "subject": "shapes-colors",
-      "tier": 6,
+      "tier": 7,
       "skill": "shape-and-colour",
       "questionText": "Which one is the yellow triangle?",
       "questionTextJunior": "Find the yellow triangle!",
@@ -22574,7 +22751,7 @@
           "art": {
             "kind": "shape",
             "shape": "triangle",
-            "color": "pink"
+            "color": "blue"
           }
         },
         {
@@ -22588,187 +22765,10 @@
         },
         {
           "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "triangle",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "yellow"
-          }
-        }
-      ],
-      "correctAnswerId": "c"
-    },
-    {
-      "id": "sc-t6-06",
-      "subject": "shapes-colors",
-      "tier": 6,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the red hexagon?",
-      "questionTextJunior": "Find the red hexagon!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "red"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "red"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "red"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "pink"
-          }
-        }
-      ],
-      "correctAnswerId": "c"
-    },
-    {
-      "id": "sc-t7-01",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the pink oval?",
-      "questionTextJunior": "Find the pink oval!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "f",
           "text": "",
           "art": {
             "kind": "shape",
             "shape": "square",
-            "color": "pink"
-          }
-        }
-      ],
-      "correctAnswerId": "e"
-    },
-    {
-      "id": "sc-t7-02",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the yellow hexagon?",
-      "questionTextJunior": "Find the yellow hexagon!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "diamond",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
             "color": "yellow"
           }
         },
@@ -22777,7 +22777,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
+            "shape": "triangle",
             "color": "pink"
           }
         },
@@ -22786,7 +22786,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
+            "shape": "oval",
             "color": "yellow"
           }
         }
@@ -22798,81 +22798,16 @@
       "subject": "shapes-colors",
       "tier": 7,
       "skill": "shape-and-colour",
-      "questionText": "Which one is the blue hexagon?",
-      "questionTextJunior": "Find the blue hexagon!",
+      "questionText": "Which one is the pink hexagon?",
+      "questionTextJunior": "Find the pink hexagon!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "oval",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "triangle",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
+            "shape": "circle",
             "color": "pink"
-          }
-        },
-        {
-          "id": "f",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
-          }
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "sc-t7-04",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the pink heart?",
-      "questionTextJunior": "Find the pink heart!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "heart",
-            "color": "blue"
           }
         },
         {
@@ -22889,8 +22824,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
-            "color": "pink"
+            "shape": "hexagon",
+            "color": "green"
           }
         },
         {
@@ -22898,7 +22833,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
+            "shape": "triangle",
             "color": "pink"
           }
         },
@@ -22907,8 +22842,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
-            "color": "yellow"
+            "shape": "hexagon",
+            "color": "blue"
           }
         },
         {
@@ -22916,7 +22851,72 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "f"
+    },
+    {
+      "id": "sc-t7-04",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the blue diamond?",
+      "questionTextJunior": "Find the blue diamond!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "circle",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
             "color": "pink"
           }
         }
@@ -22928,15 +22928,15 @@
       "subject": "shapes-colors",
       "tier": 7,
       "skill": "shape-and-colour",
-      "questionText": "Which one is the green hexagon?",
-      "questionTextJunior": "Find the green hexagon!",
+      "questionText": "Which one is the green rectangle?",
+      "questionTextJunior": "Find the green rectangle!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
+            "shape": "rectangle",
             "color": "green"
           }
         },
@@ -22945,7 +22945,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
+            "shape": "triangle",
             "color": "green"
           }
         },
@@ -22963,7 +22963,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
+            "shape": "rectangle",
             "color": "blue"
           }
         },
@@ -22972,72 +22972,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "f",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "triangle",
-            "color": "green"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t7-06",
-      "subject": "shapes-colors",
-      "tier": 7,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the pink circle?",
-      "questionTextJunior": "Find the pink circle!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "green"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "heart",
+            "shape": "rectangle",
             "color": "pink"
           }
         },
@@ -23047,156 +22982,26 @@
           "art": {
             "kind": "shape",
             "shape": "oval",
-            "color": "pink"
-          }
-        }
-      ],
-      "correctAnswerId": "b"
-    },
-    {
-      "id": "sc-t8-01",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the blue square?",
-      "questionTextJunior": "Find the blue square!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "pink"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "diamond",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "e",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "square",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "f",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "circle",
-            "color": "blue"
+            "color": "green"
           }
         }
       ],
       "correctAnswerId": "a"
     },
     {
-      "id": "sc-t8-02",
+      "id": "sc-t7-06",
       "subject": "shapes-colors",
-      "tier": 8,
+      "tier": 7,
       "skill": "shape-and-colour",
-      "questionText": "Which one is the yellow hexagon?",
-      "questionTextJunior": "Find the yellow hexagon!",
+      "questionText": "Which one is the blue diamond?",
+      "questionTextJunior": "Find the blue diamond!",
       "options": [
         {
           "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "star",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "b",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "blue"
-          }
-        },
-        {
-          "id": "c",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "red"
-          }
-        },
-        {
-          "id": "d",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "e",
           "text": "",
           "art": {
             "kind": "shape",
             "shape": "diamond",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "f",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
-          }
-        }
-      ],
-      "correctAnswerId": "f"
-    },
-    {
-      "id": "sc-t8-03",
-      "subject": "shapes-colors",
-      "tier": 8,
-      "skill": "shape-and-colour",
-      "questionText": "Which one is the blue hexagon?",
-      "questionTextJunior": "Find the blue hexagon!",
-      "options": [
-        {
-          "id": "a",
-          "text": "",
-          "art": {
-            "kind": "shape",
-            "shape": "hexagon",
             "color": "green"
           }
         },
@@ -23205,7 +23010,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "triangle",
+            "shape": "rectangle",
             "color": "blue"
           }
         },
@@ -23214,8 +23019,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
-            "color": "yellow"
+            "shape": "diamond",
+            "color": "blue"
           }
         },
         {
@@ -23223,8 +23028,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "circle",
-            "color": "blue"
+            "shape": "diamond",
+            "color": "yellow"
           }
         },
         {
@@ -23232,7 +23037,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
+            "shape": "hexagon",
             "color": "blue"
           }
         },
@@ -23241,20 +23046,150 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "hexagon",
+            "shape": "star",
             "color": "blue"
           }
         }
       ],
-      "correctAnswerId": "f"
+      "correctAnswerId": "c"
     },
     {
-      "id": "sc-t8-04",
+      "id": "sc-t8-01",
       "subject": "shapes-colors",
       "tier": 8,
       "skill": "shape-and-colour",
-      "questionText": "Which one is the yellow diamond?",
-      "questionTextJunior": "Find the yellow diamond!",
+      "questionText": "Which one is the blue star?",
+      "questionTextJunior": "Find the blue star!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "heart",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-t8-02",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the yellow square?",
+      "questionTextJunior": "Find the yellow square!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "triangle",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "star",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t8-03",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the pink oval?",
+      "questionTextJunior": "Find the pink oval!",
       "options": [
         {
           "id": "a",
@@ -23270,8 +23205,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "square",
-            "color": "yellow"
+            "shape": "oval",
+            "color": "blue"
           }
         },
         {
@@ -23279,8 +23214,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "circle",
-            "color": "yellow"
+            "shape": "heart",
+            "color": "pink"
           }
         },
         {
@@ -23288,8 +23223,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "yellow"
+            "shape": "oval",
+            "color": "pink"
           }
         },
         {
@@ -23297,8 +23232,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
+            "shape": "oval",
+            "color": "red"
           }
         },
         {
@@ -23306,15 +23241,15 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "blue"
+            "shape": "hexagon",
+            "color": "pink"
           }
         }
       ],
       "correctAnswerId": "d"
     },
     {
-      "id": "sc-t8-05",
+      "id": "sc-t8-04",
       "subject": "shapes-colors",
       "tier": 8,
       "skill": "shape-and-colour",
@@ -23326,7 +23261,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
+            "shape": "star",
             "color": "yellow"
           }
         },
@@ -23336,7 +23271,7 @@
           "art": {
             "kind": "shape",
             "shape": "star",
-            "color": "red"
+            "color": "blue"
           }
         },
         {
@@ -23344,7 +23279,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
+            "shape": "circle",
             "color": "yellow"
           }
         },
@@ -23353,8 +23288,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "star",
-            "color": "pink"
+            "shape": "diamond",
+            "color": "yellow"
           }
         },
         {
@@ -23362,8 +23297,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "rectangle",
-            "color": "yellow"
+            "shape": "star",
+            "color": "green"
           }
         },
         {
@@ -23371,28 +23306,28 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "star",
+            "shape": "oval",
             "color": "yellow"
           }
         }
       ],
-      "correctAnswerId": "f"
+      "correctAnswerId": "a"
     },
     {
-      "id": "sc-t8-06",
+      "id": "sc-t8-05",
       "subject": "shapes-colors",
       "tier": 8,
       "skill": "shape-and-colour",
-      "questionText": "Which one is the red diamond?",
-      "questionTextJunior": "Find the red diamond!",
+      "questionText": "Which one is the yellow hexagon?",
+      "questionTextJunior": "Find the yellow hexagon!",
       "options": [
         {
           "id": "a",
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "red"
+            "shape": "square",
+            "color": "yellow"
           }
         },
         {
@@ -23400,7 +23335,7 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "triangle",
+            "shape": "hexagon",
             "color": "red"
           }
         },
@@ -23410,7 +23345,7 @@
           "art": {
             "kind": "shape",
             "shape": "hexagon",
-            "color": "red"
+            "color": "green"
           }
         },
         {
@@ -23418,8 +23353,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "heart",
-            "color": "red"
+            "shape": "star",
+            "color": "yellow"
           }
         },
         {
@@ -23427,8 +23362,8 @@
           "text": "",
           "art": {
             "kind": "shape",
-            "shape": "diamond",
-            "color": "blue"
+            "shape": "hexagon",
+            "color": "yellow"
           }
         },
         {
@@ -23437,11 +23372,1012 @@
           "art": {
             "kind": "shape",
             "shape": "diamond",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-t8-06",
+      "subject": "shapes-colors",
+      "tier": 8,
+      "skill": "shape-and-colour",
+      "questionText": "Which one is the blue hexagon?",
+      "questionTextJunior": "Find the blue hexagon!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "square",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "diamond",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "oval",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "f",
+          "text": "",
+          "art": {
+            "kind": "shape",
+            "shape": "hexagon",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-paint-t2-01",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "rectangle",
+        "outline": true
+      },
+      "questionText": "Can you paint the rectangle pink?",
+      "questionTextJunior": "Paint the rectangle pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
             "color": "pink"
           }
         }
       ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t2-02",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "circle",
+        "outline": true
+      },
+      "questionText": "Can you paint the circle pink?",
+      "questionTextJunior": "Paint the circle pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-paint-t2-03",
+      "subject": "shapes-colors",
+      "tier": 2,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "circle",
+        "outline": true
+      },
+      "questionText": "Can you paint the circle green?",
+      "questionTextJunior": "Paint the circle green!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t3-01",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "circle",
+        "outline": true
+      },
+      "questionText": "Can you paint the circle blue?",
+      "questionTextJunior": "Paint the circle blue!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        }
+      ],
       "correctAnswerId": "a"
+    },
+    {
+      "id": "sc-paint-t3-02",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "triangle",
+        "outline": true
+      },
+      "questionText": "Can you paint the triangle pink?",
+      "questionTextJunior": "Paint the triangle pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-paint-t3-03",
+      "subject": "shapes-colors",
+      "tier": 3,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "triangle",
+        "outline": true
+      },
+      "questionText": "Can you paint the triangle pink?",
+      "questionTextJunior": "Paint the triangle pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-paint-t4-01",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "square",
+        "outline": true
+      },
+      "questionText": "Can you paint the square blue?",
+      "questionTextJunior": "Paint the square blue!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t4-02",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "circle",
+        "outline": true
+      },
+      "questionText": "Can you paint the circle blue?",
+      "questionTextJunior": "Paint the circle blue!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-paint-t4-03",
+      "subject": "shapes-colors",
+      "tier": 4,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "triangle",
+        "outline": true
+      },
+      "questionText": "Can you paint the triangle red?",
+      "questionTextJunior": "Paint the triangle red!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t5-01",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "heart",
+        "outline": true
+      },
+      "questionText": "Can you paint the heart blue?",
+      "questionTextJunior": "Paint the heart blue!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t5-02",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "star",
+        "outline": true
+      },
+      "questionText": "Can you paint the star yellow?",
+      "questionTextJunior": "Paint the star yellow!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t5-03",
+      "subject": "shapes-colors",
+      "tier": 5,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "hexagon",
+        "outline": true
+      },
+      "questionText": "Can you paint the hexagon yellow?",
+      "questionTextJunior": "Paint the hexagon yellow!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-paint-t6-01",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "rectangle",
+        "outline": true
+      },
+      "questionText": "Can you paint the rectangle pink?",
+      "questionTextJunior": "Paint the rectangle pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
+    },
+    {
+      "id": "sc-paint-t6-02",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "diamond",
+        "outline": true
+      },
+      "questionText": "Can you paint the diamond yellow?",
+      "questionTextJunior": "Paint the diamond yellow!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-paint-t6-03",
+      "subject": "shapes-colors",
+      "tier": 6,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "circle",
+        "outline": true
+      },
+      "questionText": "Can you paint the circle pink?",
+      "questionTextJunior": "Paint the circle pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "c"
+    },
+    {
+      "id": "sc-paint-t7-01",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "diamond",
+        "outline": true
+      },
+      "questionText": "Can you paint the diamond pink?",
+      "questionTextJunior": "Paint the diamond pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "e"
+    },
+    {
+      "id": "sc-paint-t7-02",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "oval",
+        "outline": true
+      },
+      "questionText": "Can you paint the oval pink?",
+      "questionTextJunior": "Paint the oval pink!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "sc-paint-t7-03",
+      "subject": "shapes-colors",
+      "tier": 7,
+      "skill": "paint-colour",
+      "art": {
+        "kind": "shape",
+        "shape": "oval",
+        "outline": true
+      },
+      "questionText": "Can you paint the oval yellow?",
+      "questionTextJunior": "Paint the oval yellow!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "blue"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "green"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "red"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "yellow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "swatch",
+            "color": "pink"
+          }
+        }
+      ],
+      "correctAnswerId": "d"
     }
   ]
 }

@@ -98,7 +98,14 @@ export function selectNextQuestion(state: SessionState): Question | null {
    * stopping — the child never met the typed-number or ordering items at all,
    * which are the two that cannot be worked backwards.
    */
-  const shapeOf = (q: Question) => q.answerMode ?? 'tap';
+  /* Two items can share an answer mode and still be different moves: a
+     Shapes & Colors paint item is tapped like a card item, but the child is
+     picking a colour off a palette rather than a picture out of a line-up.
+     Keying variety on the answer mode alone hid every paint item, the same
+     way it once hid the maths variants. The art on the options says what the
+     move actually is. */
+  const shapeOf = (q: Question) =>
+    `${q.answerMode ?? 'tap'}:${q.options[0]?.art?.kind ?? 'none'}`;
   const usedShapes = new Set(
     state.servedQuestionIds
       .map((id) => QUESTIONS.find((q) => q.id === id))

@@ -506,24 +506,48 @@ Fifty-four items, and each rung varies exactly one thing:
 | 4–5 | the less common shapes — oval, diamond, star, heart, hexagon | one colour throughout | 4–5 |
 | 6–8 | **both at once** — "find the blue triangle" | nothing | 5–6 |
 
+Plus eighteen **paint** items across tiers 2–7 — see below — for 72 in all.
+
 A shape question that also changes colour is two questions at once, so tests
 assert the constant column above. At the top, every distractor shares
 **exactly one** of shape and colour with the answer, so neither half alone gets
 a child there — also a test.
 
-### Red and green never decide an item
+### Paint items: an outline and a palette
 
-No item offers both. A colour-blind child is being assessed on whether they
-know a colour, not on their eyes. It is a test, not a convention, because the
-generator got it wrong once: the guard read
+A second move for the same skill. Instead of picking a coloured card out of a
+line-up, the child sees **one unpainted shape** and a palette of colour chips,
+and taps the colour named: "Paint the rectangle pink!"
+
+Eighteen items across tiers 2–7. The shape on the panel carries `outline:
+true`, so it is white with a heavy stroke — a painted one would hand the child
+the answer to copy, and a test asserts it has no colour of its own. The prompt
+names the shape as well as the colour, so a child who knows one but not the
+other still knows what is being asked.
+
+**These never reached a child at first.** The selector's variety tie-break keys
+on answer mode, and a paint item is tapped exactly like a card item, so it was
+invisible — the same failure that once hid the maths variants. The key is now
+the answer mode *plus the kind of art on the options*, which is what actually
+says whether two items are a different move.
+
+### Red and green may share a palette; the answer may not
+
+The rule that matters is about the **answer**: a child has to tell it from
+every distractor, not tell two distractors apart. So a palette may hold red and
+green together, as long as the answer is neither. The broader rule — no item
+offers both — was the first version, and with only five brand colours it capped
+every palette at four, which would have meant no five-chip paint item at all.
+
+It is a test, not a convention, because the generator got it wrong once:
 
 ```js
 othercol.filter((c) => c !== rng.choice(['red', 'green']))
 ```
 
-which re-rolls `rng.choice` for every element, so red survived one draw and
-green another. Drawing once and filtering against that fixed the items; the
-test is what caught it.
+`rng.choice` re-rolls for every element, so red survived one draw and green
+another. Drawing once and filtering against that fixed the items; the test is
+what caught it.
 
 ### Five colours, not six
 
@@ -535,24 +559,49 @@ is the subject matter, and it still never means "wrong".
 
 ### Wordless options are their own layout
 
-A picture with nothing written under it wants a big square card, not a wide
+A picture with nothing written under it wants a big picture card, not a wide
 text row, so `options--wordless` / `option--wordless` exist alongside the
 picture-option styles. Columns come from the card count (`--wordless-4` is two
 across, five and six are three across, everything is two across on a phone)
 rather than `auto-fit`, which collapses every track to its minimum. Per-option
 speaker buttons are hidden, since they would have nothing to say.
 
-Getting there took four wrong measurements, all the same class of bug as the
-Find the Same sizing rule above, and one new one worth writing down:
+**The card fills its cell; the picture is the square.** Chasing a square
+*card* means fighting the grid — `height: 100%` and `aspect-ratio: 1`
+contradict each other and one of them always wins by clipping. The card takes
+whatever cell it is given, and the picture is sized off the card's shorter
+side with a container query:
 
-> **`margin-inline: auto` stops a flex item stretching.** The grid had
-> `width` unset, `max-width: 720px` and `margin-inline: auto`; it shrink-wrapped
-> to 163px inside a 763px parent and the cards came out 76px square. `width:
-> 100%` plus `align-self: center` centres it without giving up the stretch.
+```css
+.option--wordless { container-type: size; }
+.option--wordless .art svg { width: min(76cqw, 76cqh); height: min(76cqw, 76cqh); }
+```
 
-Measured after the fix, at three viewports and every card count from three to
-six: cards 174–354px square, shapes 84–188px, zero horizontal overflow, nothing
-below the fold.
+A container query rather than `aspect-ratio` because an `<svg>` with inline
+`width`/`height` attributes quietly ignores the latter — it came out 152×727.
+
+Three rules came out of getting this wrong, repeatedly:
+
+> **`margin-inline: auto` stops a flex item stretching.** The grid had `width`
+> unset, `max-width: 720px` and `margin-inline: auto`; it shrink-wrapped to
+> 163px inside a 763px parent and the cards came out 76px square. `width: 100%`
+> plus `align-self: center` centres it without giving up the stretch.
+
+> **`grid-auto-rows: minmax(min-content, 1fr)` and a square card are circular.**
+> A square's min-content floor is its own width, so the grid grew taller than
+> its box. The stage does not scroll, so the bottom row was not merely below
+> the fold — **the last colour was unreachable**. `grid-auto-rows: 1fr` with
+> `min-height: 0` makes the rows share what is actually left.
+
+> **A scroll check does not catch a clip.** The viewport audit reported
+> `overflow 0px, below fold 0px` for a screen whose bottom row was cut off, on
+> every short viewport. What caught it was measuring the last card's bottom
+> edge against the viewport height. That check is now in `paintfit.mjs` and
+> `sc-grid.mjs`.
+
+Measured after the fix, at four viewports down to 360×640 and every card count
+from three to six: pictures 108–245px square, zero horizontal overflow, and the
+last card visible in every case.
 
 ## Math: five shapes, because four answers can be worked backwards
 

@@ -127,17 +127,37 @@ export function Illustration({ art, variant = 'panel' }: Props) {
         hexagon: <path d="M28 14h44l22 36-22 36H28L6 50z" />,
       };
       const size = variant === 'option' ? 64 : 110;
+      // An unpainted shape: white, so the colour the child picks is the only
+      // colour on screen and there is nothing to copy.
+      const fill = art.outline
+        ? 'var(--surface-card)'
+        : art.color
+          ? `var(--shape-${art.color})`
+          : 'var(--accent-secondary)';
       return (
-        <div className={`art art--${variant}`}>
+        <div className={`art art--${variant} art--shape`}>
           <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
             <g
-              fill={art.color ? `var(--shape-${art.color})` : 'var(--accent-secondary)'}
+              fill={fill}
               stroke="var(--text-primary)"
-              strokeWidth="4"
+              strokeWidth={art.outline ? 6 : 4}
               strokeLinejoin="round"
             >
               {shapes[art.shape]}
             </g>
+          </svg>
+        </div>
+      );
+    }
+
+    case 'swatch': {
+      // A paint chip. Round, because a coloured square next to the square
+      // shape card would read as an answer about shapes.
+      const d = variant === 'option' ? 64 : 96;
+      return (
+        <div className={`art art--${variant}`}>
+          <svg width={d} height={d} viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="44" fill={`var(--shape-${art.color})`} />
           </svg>
         </div>
       );
