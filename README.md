@@ -630,6 +630,71 @@ Measured after the fix, at four viewports down to 360×640 and every card count
 from three to six: pictures 108–245px square, zero horizontal overflow, and the
 last card visible in every case.
 
+## Number Fun: three moves, and the numbers grow
+
+Replaces a stub bank that was worse than empty. Every item keyed to option A,
+and the question printed its own answer:
+
+```
+"How many stars are there? (1)"   →   "Count them: 1."
+```
+
+Fifty-four real items. Three core moves, **all of them at every tier 0–5**,
+because the Shapes & Colors lesson applies here too — a child who guesses
+never leaves the tier they start on:
+
+| Move | Asks | Cards show |
+| --- | --- | --- |
+| `find-numeral` | "Find the number five!" | written digits |
+| `count-things` | "Find two fish!" | groups to count |
+| `how-many` | a group on the panel, "Count the leaves. Tap the number!" | written digits |
+
+The third is the bridge, and the one that matters most: it is the only one
+that shows whether a child knows what a written number *means*.
+
+The ladder is the **size of the numbers** — to three, then to five, then to
+ten — not which move is asked. Only at tiers 6–8 does the move itself change,
+to one-more, which-is-most and adding within ten. That is not the mistake
+Shapes & Colors made: adding genuinely is harder than naming a digit, where
+naming a colour is not harder than naming a shape.
+
+Distractors are always within four of the answer. "Is it 3 or 9" is a question
+about eyesight; "is it 4 or 5" is a question about counting.
+
+### A counting card that hides part of the count
+
+The worst bug in this pass, and the screenshot is the only reason it was
+caught. `find two fish` drew four cards that looked like **2, 2, 2, 1** — the
+3-fish and 4-fish cards were rendering two fish each.
+
+The wordless-card rule sized *every* `svg` inside a card to 76% of the card.
+That is right for one picture and catastrophic for a group: the first two
+glyphs filled the card and the rest were pushed out of sight. The item was not
+merely ugly, it was **unanswerable** — and nothing flagged it, because the
+count in the DOM was correct and the page did not overflow.
+
+Two fixes, one structural and one to how this gets checked:
+
+```css
+.option--wordless .art > svg { … }        /* direct child: ONE picture */
+.option--wordless .count-item svg {       /* a group: two across, wrapping */
+  width: clamp(14px, min(38cqw, 26cqh), 140px);
+}
+```
+
+> **Check what the child can see, not what the DOM says.** `nfcount.mjs`
+> walks a sitting and, for every counting card, compares the number the card
+> claims against the number of glyphs whose bounding box actually sits inside
+> the card. It runs at four viewports down to 360×640.
+
+### Picture cards had no name at all
+
+Every Little Readers answer is a picture with nothing written under it, so the
+answers reached a screen reader as "button, button, button". `describeArt()`
+now gives each one an `aria-label` saying exactly what a sighted child sees —
+"3 fish", "the number 5", "blue triangle". It needed an irregular-plural map
+on the way; the first version said "2 fishs" and "3 leafs".
+
 ## Math: five shapes, because four answers can be worked backwards
 
 Every maths tier carries all five, so a sitting is never ten of the same thing:

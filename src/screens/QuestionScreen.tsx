@@ -15,7 +15,7 @@ import {
   isStudyQuestion,
   questionTextFor,
 } from '../assessment/types';
-import { Illustration } from '../components/Illustration';
+import { Illustration, describeArt } from '../components/Illustration';
 import { AnswerSparkles } from '../components/AnswerSparkles';
 import { DragAnswer } from '../components/DragAnswer';
 import { OrderAnswer } from '../components/OrderAnswer';
@@ -432,6 +432,11 @@ export function QuestionScreen({
                     }${wordlessOptions ? ' option--wordless' : ''}`}
                     disabled={chosenId !== null}
                     onClick={() => choose(option.id)}
+                    /* A picture card has no text, so without this the answers
+                       reach a screen reader as "button, button, button". */
+                    aria-label={
+                      wordlessOptions && option.art ? describeArt(option.art) : undefined
+                    }
                   >
                     {showOptionArt && option.art ? (
                       <Illustration art={option.art} variant="option" />

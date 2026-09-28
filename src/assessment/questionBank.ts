@@ -14,6 +14,9 @@ import type { Question, Tier } from './types';
  */
 export const BANK_HAS_TEMPLATE_ITEMS: boolean = bank.stub === true;
 
+/** The bank's own description of what it is. Read by a test, not by the app. */
+export const BANK_NOTE: string = (bank.note as string) ?? '';
+
 export const QUESTIONS: Question[] = bank.questions as Question[];
 
 export function questionsForTier(tier: Tier): Question[] {

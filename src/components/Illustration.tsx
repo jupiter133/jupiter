@@ -78,6 +78,53 @@ interface Props {
   variant?: 'panel' | 'option';
 }
 
+/**
+ * What a picture card is, in words, for a button that has no text on it.
+ *
+ * Every Little Readers answer is a picture with nothing written under it, so
+ * without this the answer buttons reach a screen reader as "button, button,
+ * button". It describes exactly what a sighted child sees — no more.
+ */
+/** English is irregular; a bare +s gives "2 fishs" and "3 leafs". */
+const PLURAL: Partial<Record<GlyphName, string>> = {
+  fish: 'fish',
+  leaf: 'leaves',
+  berry: 'berries',
+  fox: 'foxes',
+  bearcub: 'bear cubs',
+  moose: 'moose',
+};
+
+const countOf = (glyph: GlyphName, n: number) =>
+  `${n} ${n === 1 ? glyph.replace(/([a-z])([A-Z])/g, '$1 $2') : (PLURAL[glyph] ?? `${glyph}s`)}`;
+
+export function describeArt(art: ArtSpec): string {
+  switch (art.kind) {
+    case 'glyph':
+      return art.glyph;
+    case 'count':
+      return countOf(art.glyph, art.n);
+    case 'countPlus':
+      return `${countOf(art.glyph, art.n)} and ${art.m} more`;
+    case 'countTakeAway':
+      return `${countOf(art.glyph, art.n)}, ${art.takeAway} faded`;
+    case 'shape':
+      return art.color ? `${art.color} ${art.shape}` : art.shape;
+    case 'swatch':
+      return art.color;
+    case 'numeral':
+      return `the number ${art.n}`;
+    case 'fraction':
+      return `${art.n} of ${art.d} parts shaded`;
+    case 'areaGrid':
+      return `a grid ${art.w} across and ${art.h} down`;
+    case 'pair':
+      return `${art.left} and ${art.right}`;
+    case 'scene':
+      return art.scene.replace(/-/g, ' ');
+  }
+}
+
 export function Illustration({ art, variant = 'panel' }: Props) {
   const unit = variant === 'option' ? 36 : 56;
 
@@ -145,6 +192,33 @@ export function Illustration({ art, variant = 'panel' }: Props) {
             >
               {shapes[art.shape]}
             </g>
+          </svg>
+        </div>
+      );
+    }
+
+    case 'numeral': {
+      // Drawn as text rather than nine hand-built paths: a digit is a
+      // glyph, and the brand face already has one that a child will meet
+      // again everywhere else in the product.
+      const d = variant === 'option' ? 64 : 110;
+      return (
+        <div className={`art art--${variant} art--numeral`}>
+          <svg width={d} height={d} viewBox="0 0 100 100" aria-hidden="true">
+            <text
+              x="50"
+              y="50"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fontSize="88"
+              fontWeight="900"
+              fill={art.outline ? 'var(--surface-card)' : 'var(--accent-secondary)'}
+              stroke="var(--text-primary)"
+              strokeWidth={art.outline ? 3 : 0}
+              paintOrder="stroke"
+            >
+              {art.n}
+            </text>
           </svg>
         </div>
       );

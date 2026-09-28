@@ -9,7 +9,7 @@ import {
   submitAnswer,
   toSubjectResult,
 } from './engine';
-import { QUESTIONS, BANK_HAS_TEMPLATE_ITEMS } from './questionBank';
+import { QUESTIONS, BANK_HAS_TEMPLATE_ITEMS, BANK_NOTE } from './questionBank';
 import { deriveReadingLevel, readingBottleneck, readingSubjectsFor } from './readingLevel';
 import { QUESTIONS_PER_SUBJECT } from './sessionMeta';
 import { SPEECH_SCORING_IS_STUB } from './speechScoring';
@@ -659,6 +659,121 @@ describe('shapes and colours', () => {
       // shape, so a child who knows one but not the other still knows the ask.
       const colour = colourOf(q, q.correctAnswerId)!;
       expect(q.questionTextJunior?.toLowerCase(), q.id).toContain(colour);
+    }
+  });
+});
+
+describe('the bank\u2019s own note', () => {
+  it('names exactly the subjects that are still placeholder', () => {
+    /*
+     * This note is what a teacher reads to know what they are looking at, and
+     * it went stale the moment a stub bank was replaced with real content —
+     * it still called all seven Little Readers activities placeholder when
+     * five of them were finished. A claim nobody checks is worse than none.
+     */
+    const stubbed = new Set(
+      QUESTIONS.filter((q) => q.skill.startsWith('stub-')).map((q) => q.subject),
+    );
+    const note = BANK_NOTE.toLowerCase();
+    for (const subject of stubbed) expect(note, subject).toContain(subject);
+    for (const subject of new Set(QUESTIONS.map((q) => q.subject))) {
+      if (!stubbed.has(subject)) expect(note, subject).not.toContain(subject);
+    }
+  });
+});
+
+describe('number fun', () => {
+  const nums = QUESTIONS.filter((q) => q.subject === 'number-fun');
+  const artOf = (q: (typeof QUESTIONS)[number], id: string) =>
+    q.options.find((o) => o.id === id)?.art as { kind: string; n: number; glyph?: string };
+  const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
+  it('asks with pictures, never with words under them', () => {
+    expect(nums.length).toBeGreaterThan(0);
+    for (const q of nums) {
+      expect(q.options.length, q.id).toBeGreaterThanOrEqual(3);
+      for (const o of q.options) {
+        expect(['numeral', 'count'], `${q.id} ${o.id}`).toContain(o.art?.kind);
+        expect(o.text, `${q.id} ${o.id}`).toBe('');
+      }
+    }
+  });
+
+  it('never prints the answer in the question', () => {
+    /*
+     * The stub bank this replaced read "How many stars are there? (1)" with
+     * "Count them: 1." underneath — it said the answer out loud, and keyed
+     * every item to option A besides.
+     */
+    for (const q of nums.filter((i) => i.skill === 'how-many' || i.skill === 'add-within-ten')) {
+      const n = artOf(q, q.correctAnswerId).n;
+      const asked = `${q.questionText} ${q.questionTextJunior ?? ''}`.toLowerCase();
+      expect(asked, q.id).not.toContain(String(n));
+      expect(asked.split(/\W+/), q.id).not.toContain(WORDS[n]);
+    }
+  });
+
+  it('gives every item one answer, and distractors close to it', () => {
+    for (const q of nums) {
+      const arts = q.options.map((o) => JSON.stringify(o.art));
+      expect(new Set(arts).size, q.id).toBe(arts.length);
+      const key = artOf(q, q.correctAnswerId);
+      expect(key, q.id).toBeTruthy();
+      // Counts within four of the answer: "is it 3 or 9" is a question about
+      // eyesight, not about counting.
+      if (q.skill !== 'which-is-most') {
+        for (const o of q.options) {
+          expect(Math.abs(artOf(q, o.id).n - key.n), `${q.id} ${o.id}`).toBeLessThanOrEqual(4);
+        }
+      }
+    }
+  });
+
+  it('counts one kind of thing per card, in a countable number', () => {
+    for (const q of nums) {
+      const groups = q.options.map((o) => artOf(q, o.id)).filter((a) => a.kind === 'count');
+      expect(new Set(groups.map((g) => g.glyph)).size, q.id).toBeLessThanOrEqual(1);
+      // Seven pinecones in an answer card is a picture, not a count.
+      for (const g of groups) expect(g.n, q.id).toBeLessThanOrEqual(6);
+    }
+  });
+
+  it('offers all three core moves at every tier a child can be floored at', () => {
+    // Same lesson as Shapes & Colors: a child who guesses never leaves the
+    // tier they start on, so spotting a digit, counting things and bridging
+    // the two must all be reachable from the bottom.
+    for (let tier = 0; tier <= 5; tier += 1) {
+      const skills = new Set(nums.filter((q) => q.tier === tier).map((q) => q.skill));
+      expect(skills, `tier ${tier}`).toContain('find-numeral');
+      expect(skills, `tier ${tier}`).toContain('count-things');
+      expect(skills, `tier ${tier}`).toContain('how-many');
+    }
+  });
+
+  it('climbs by the size of the numbers, then by what is asked', () => {
+    const biggest = (tier: number) =>
+      Math.max(...nums.filter((q) => q.tier === tier).flatMap((q) => q.options.map((o) => artOf(q, o.id).n)));
+    expect(biggest(0)).toBeLessThan(biggest(3));
+    // Reasoning only at the top, where it genuinely is harder — unlike
+    // colours against shapes, which are the same difficulty.
+    const topSkills = new Set(nums.filter((q) => q.tier >= 6).map((q) => q.skill));
+    expect(topSkills).toContain('one-more');
+    expect(topSkills).toContain('add-within-ten');
+    for (let tier = 0; tier <= 5; tier += 1) {
+      const skills = new Set(nums.filter((q) => q.tier === tier).map((q) => q.skill));
+      expect(skills.has('add-within-ten'), `tier ${tier}`).toBe(false);
+    }
+  });
+
+  it('never parks the answer in one spot for a move within a tier', () => {
+    const byGroup = new Map<string, number[]>();
+    for (const q of nums) {
+      const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
+      const k = `${q.tier}:${q.skill}`;
+      byGroup.set(k, [...(byGroup.get(k) ?? []), at]);
+    }
+    for (const [k, spots] of byGroup) {
+      if (spots.length > 1) expect(new Set(spots).size, k).toBeGreaterThan(1);
     }
   });
 });

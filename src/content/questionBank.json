@@ -1,7 +1,7 @@
 {
   "version": 1,
   "stub": true,
-  "note": "MIXED BANK. The seven Little Readers activities are template-generated placeholder and are NOT assessment content. Words Speaking, Oral Reading, Vocabulary, Reading Comprehension, Spelling, Sentence Writing and Math carry written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts.",
+  "note": "MIXED BANK. Two subjects are still template-generated placeholder and are NOT assessment content: letter-sounds, word-practice. Both are Little Readers reading subjects, so an under-7 is currently placed off filler. Every other subject carries written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts. Items that are placeholder carry a skill beginning 'stub-'; a test holds this note to them.",
   "questions": [
     {
       "id": "ts-sd-t0-01",
@@ -16262,1464 +16262,6 @@
       "correctAnswerId": ""
     },
     {
-      "id": "ts-nf-t0-01",
-      "subject": "number-fun",
-      "tier": 0,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t0-02",
-      "subject": "number-fun",
-      "tier": 0,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t0-03",
-      "subject": "number-fun",
-      "tier": 0,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t0-04",
-      "subject": "number-fun",
-      "tier": 0,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t0-05",
-      "subject": "number-fun",
-      "tier": 0,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t0-06",
-      "subject": "number-fun",
-      "tier": 0,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t1-01",
-      "subject": "number-fun",
-      "tier": 1,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t1-02",
-      "subject": "number-fun",
-      "tier": 1,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t1-03",
-      "subject": "number-fun",
-      "tier": 1,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t1-04",
-      "subject": "number-fun",
-      "tier": 1,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t1-05",
-      "subject": "number-fun",
-      "tier": 1,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t1-06",
-      "subject": "number-fun",
-      "tier": 1,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t2-01",
-      "subject": "number-fun",
-      "tier": 2,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t2-02",
-      "subject": "number-fun",
-      "tier": 2,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t2-03",
-      "subject": "number-fun",
-      "tier": 2,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t2-04",
-      "subject": "number-fun",
-      "tier": 2,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t2-05",
-      "subject": "number-fun",
-      "tier": 2,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t2-06",
-      "subject": "number-fun",
-      "tier": 2,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t3-01",
-      "subject": "number-fun",
-      "tier": 3,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t3-02",
-      "subject": "number-fun",
-      "tier": 3,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t3-03",
-      "subject": "number-fun",
-      "tier": 3,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t3-04",
-      "subject": "number-fun",
-      "tier": 3,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t3-05",
-      "subject": "number-fun",
-      "tier": 3,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t3-06",
-      "subject": "number-fun",
-      "tier": 3,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t4-01",
-      "subject": "number-fun",
-      "tier": 4,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t4-02",
-      "subject": "number-fun",
-      "tier": 4,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t4-03",
-      "subject": "number-fun",
-      "tier": 4,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t4-04",
-      "subject": "number-fun",
-      "tier": 4,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t4-05",
-      "subject": "number-fun",
-      "tier": 4,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t4-06",
-      "subject": "number-fun",
-      "tier": 4,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t5-01",
-      "subject": "number-fun",
-      "tier": 5,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t5-02",
-      "subject": "number-fun",
-      "tier": 5,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t5-03",
-      "subject": "number-fun",
-      "tier": 5,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t5-04",
-      "subject": "number-fun",
-      "tier": 5,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t5-05",
-      "subject": "number-fun",
-      "tier": 5,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t5-06",
-      "subject": "number-fun",
-      "tier": 5,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t6-01",
-      "subject": "number-fun",
-      "tier": 6,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t6-02",
-      "subject": "number-fun",
-      "tier": 6,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t6-03",
-      "subject": "number-fun",
-      "tier": 6,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t6-04",
-      "subject": "number-fun",
-      "tier": 6,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t6-05",
-      "subject": "number-fun",
-      "tier": 6,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t6-06",
-      "subject": "number-fun",
-      "tier": 6,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t7-01",
-      "subject": "number-fun",
-      "tier": 7,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t7-02",
-      "subject": "number-fun",
-      "tier": 7,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t7-03",
-      "subject": "number-fun",
-      "tier": 7,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t7-04",
-      "subject": "number-fun",
-      "tier": 7,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t7-05",
-      "subject": "number-fun",
-      "tier": 7,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t7-06",
-      "subject": "number-fun",
-      "tier": 7,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t8-01",
-      "subject": "number-fun",
-      "tier": 8,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t8-02",
-      "subject": "number-fun",
-      "tier": 8,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (5)",
-      "questionTextJunior": "Count them: 5.",
-      "options": [
-        {
-          "id": "a",
-          "text": "5"
-        },
-        {
-          "id": "b",
-          "text": "6"
-        },
-        {
-          "id": "c",
-          "text": "7"
-        },
-        {
-          "id": "d",
-          "text": "8"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t8-03",
-      "subject": "number-fun",
-      "tier": 8,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (1)",
-      "questionTextJunior": "Count them: 1.",
-      "options": [
-        {
-          "id": "a",
-          "text": "1"
-        },
-        {
-          "id": "b",
-          "text": "2"
-        },
-        {
-          "id": "c",
-          "text": "3"
-        },
-        {
-          "id": "d",
-          "text": "4"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t8-04",
-      "subject": "number-fun",
-      "tier": 8,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (2)",
-      "questionTextJunior": "Count them: 2.",
-      "options": [
-        {
-          "id": "a",
-          "text": "2"
-        },
-        {
-          "id": "b",
-          "text": "3"
-        },
-        {
-          "id": "c",
-          "text": "4"
-        },
-        {
-          "id": "d",
-          "text": "5"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t8-05",
-      "subject": "number-fun",
-      "tier": 8,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (3)",
-      "questionTextJunior": "Count them: 3.",
-      "options": [
-        {
-          "id": "a",
-          "text": "3"
-        },
-        {
-          "id": "b",
-          "text": "4"
-        },
-        {
-          "id": "c",
-          "text": "5"
-        },
-        {
-          "id": "d",
-          "text": "6"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-nf-t8-06",
-      "subject": "number-fun",
-      "tier": 8,
-      "skill": "stub-counting",
-      "questionText": "How many stars are there? (4)",
-      "questionTextJunior": "Count them: 4.",
-      "options": [
-        {
-          "id": "a",
-          "text": "4"
-        },
-        {
-          "id": "b",
-          "text": "5"
-        },
-        {
-          "id": "c",
-          "text": "6"
-        },
-        {
-          "id": "d",
-          "text": "7"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
       "id": "ts-ls-t0-01",
       "subject": "letter-sounds",
       "tier": 0,
@@ -24396,6 +22938,2693 @@
         }
       ],
       "correctAnswerId": "c"
+    },
+    {
+      "id": "nf-num-t0-01",
+      "subject": "number-fun",
+      "tier": 0,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number two?",
+      "questionTextJunior": "Find the number two!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-count-t0-02",
+      "subject": "number-fun",
+      "tier": 0,
+      "skill": "count-things",
+      "questionText": "Which one has two leaves?",
+      "questionTextJunior": "Find two leaves!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-howmany-t0-03",
+      "subject": "number-fun",
+      "tier": 0,
+      "skill": "how-many",
+      "questionText": "How many stars are there?",
+      "questionTextJunior": "Count the stars. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "count",
+        "glyph": "star",
+        "n": 3
+      }
+    },
+    {
+      "id": "nf-num-t0-04",
+      "subject": "number-fun",
+      "tier": 0,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number one?",
+      "questionTextJunior": "Find the number one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-count-t0-05",
+      "subject": "number-fun",
+      "tier": 0,
+      "skill": "count-things",
+      "questionText": "Which one has two pinecones?",
+      "questionTextJunior": "Find two pinecones!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-howmany-t0-06",
+      "subject": "number-fun",
+      "tier": 0,
+      "skill": "how-many",
+      "questionText": "How many pinecones are there?",
+      "questionTextJunior": "Count the pinecones. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "b",
+      "art": {
+        "kind": "count",
+        "glyph": "pinecone",
+        "n": 2
+      }
+    },
+    {
+      "id": "nf-num-t1-01",
+      "subject": "number-fun",
+      "tier": 1,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number one?",
+      "questionTextJunior": "Find the number one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-count-t1-02",
+      "subject": "number-fun",
+      "tier": 1,
+      "skill": "count-things",
+      "questionText": "Which one has two fish?",
+      "questionTextJunior": "Find two fish!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-howmany-t1-03",
+      "subject": "number-fun",
+      "tier": 1,
+      "skill": "how-many",
+      "questionText": "How many leaves are there?",
+      "questionTextJunior": "Count the leaves. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "count",
+        "glyph": "leaf",
+        "n": 4
+      }
+    },
+    {
+      "id": "nf-num-t1-04",
+      "subject": "number-fun",
+      "tier": 1,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number four?",
+      "questionTextJunior": "Find the number four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-count-t1-05",
+      "subject": "number-fun",
+      "tier": 1,
+      "skill": "count-things",
+      "questionText": "Which one has two snowflakes?",
+      "questionTextJunior": "Find two snowflakes!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-howmany-t1-06",
+      "subject": "number-fun",
+      "tier": 1,
+      "skill": "how-many",
+      "questionText": "How many snowflakes are there?",
+      "questionTextJunior": "Count the snowflakes. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b",
+      "art": {
+        "kind": "count",
+        "glyph": "snowflake",
+        "n": 3
+      }
+    },
+    {
+      "id": "nf-num-t2-01",
+      "subject": "number-fun",
+      "tier": 2,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number one?",
+      "questionTextJunior": "Find the number one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-count-t2-02",
+      "subject": "number-fun",
+      "tier": 2,
+      "skill": "count-things",
+      "questionText": "Which one has four fish?",
+      "questionTextJunior": "Find four fish!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-howmany-t2-03",
+      "subject": "number-fun",
+      "tier": 2,
+      "skill": "how-many",
+      "questionText": "How many stars are there?",
+      "questionTextJunior": "Count the stars. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "count",
+        "glyph": "star",
+        "n": 1
+      }
+    },
+    {
+      "id": "nf-num-t2-04",
+      "subject": "number-fun",
+      "tier": 2,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number one?",
+      "questionTextJunior": "Find the number one!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-count-t2-05",
+      "subject": "number-fun",
+      "tier": 2,
+      "skill": "count-things",
+      "questionText": "Which one has two stars?",
+      "questionTextJunior": "Find two stars!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-howmany-t2-06",
+      "subject": "number-fun",
+      "tier": 2,
+      "skill": "how-many",
+      "questionText": "How many berries are there?",
+      "questionTextJunior": "Count the berries. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "b",
+      "art": {
+        "kind": "count",
+        "glyph": "berry",
+        "n": 5
+      }
+    },
+    {
+      "id": "nf-num-t3-01",
+      "subject": "number-fun",
+      "tier": 3,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number five?",
+      "questionTextJunior": "Find the number five!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-count-t3-02",
+      "subject": "number-fun",
+      "tier": 3,
+      "skill": "count-things",
+      "questionText": "Which one has four mittens?",
+      "questionTextJunior": "Find four mittens!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "mitten",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-howmany-t3-03",
+      "subject": "number-fun",
+      "tier": 3,
+      "skill": "how-many",
+      "questionText": "How many stars are there?",
+      "questionTextJunior": "Count the stars. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "count",
+        "glyph": "star",
+        "n": 7
+      }
+    },
+    {
+      "id": "nf-num-t3-04",
+      "subject": "number-fun",
+      "tier": 3,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number nine?",
+      "questionTextJunior": "Find the number nine!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 10
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-count-t3-05",
+      "subject": "number-fun",
+      "tier": 3,
+      "skill": "count-things",
+      "questionText": "Which one has two stars?",
+      "questionTextJunior": "Find two stars!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-howmany-t3-06",
+      "subject": "number-fun",
+      "tier": 3,
+      "skill": "how-many",
+      "questionText": "How many pinecones are there?",
+      "questionTextJunior": "Count the pinecones. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "b",
+      "art": {
+        "kind": "count",
+        "glyph": "pinecone",
+        "n": 1
+      }
+    },
+    {
+      "id": "nf-num-t4-01",
+      "subject": "number-fun",
+      "tier": 4,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number two?",
+      "questionTextJunior": "Find the number two!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-count-t4-02",
+      "subject": "number-fun",
+      "tier": 4,
+      "skill": "count-things",
+      "questionText": "Which one has one fish?",
+      "questionTextJunior": "Find one fish!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-howmany-t4-03",
+      "subject": "number-fun",
+      "tier": 4,
+      "skill": "how-many",
+      "questionText": "How many pinecones are there?",
+      "questionTextJunior": "Count the pinecones. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "count",
+        "glyph": "pinecone",
+        "n": 2
+      }
+    },
+    {
+      "id": "nf-num-t4-04",
+      "subject": "number-fun",
+      "tier": 4,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number four?",
+      "questionTextJunior": "Find the number four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-count-t4-05",
+      "subject": "number-fun",
+      "tier": 4,
+      "skill": "count-things",
+      "questionText": "Which one has six leaves?",
+      "questionTextJunior": "Find six leaves!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-howmany-t4-06",
+      "subject": "number-fun",
+      "tier": 4,
+      "skill": "how-many",
+      "questionText": "How many snowflakes are there?",
+      "questionTextJunior": "Count the snowflakes. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b",
+      "art": {
+        "kind": "count",
+        "glyph": "snowflake",
+        "n": 3
+      }
+    },
+    {
+      "id": "nf-num-t5-01",
+      "subject": "number-fun",
+      "tier": 5,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number ten?",
+      "questionTextJunior": "Find the number ten!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 10
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-count-t5-02",
+      "subject": "number-fun",
+      "tier": 5,
+      "skill": "count-things",
+      "questionText": "Which one has four stars?",
+      "questionTextJunior": "Find four stars!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-howmany-t5-03",
+      "subject": "number-fun",
+      "tier": 5,
+      "skill": "how-many",
+      "questionText": "How many pinecones are there?",
+      "questionTextJunior": "Count the pinecones. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 10
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "count",
+        "glyph": "pinecone",
+        "n": 8
+      }
+    },
+    {
+      "id": "nf-num-t5-04",
+      "subject": "number-fun",
+      "tier": 5,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number three?",
+      "questionTextJunior": "Find the number three!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-count-t5-05",
+      "subject": "number-fun",
+      "tier": 5,
+      "skill": "count-things",
+      "questionText": "Which one has five berries?",
+      "questionTextJunior": "Find five berries!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-howmany-t5-06",
+      "subject": "number-fun",
+      "tier": 5,
+      "skill": "how-many",
+      "questionText": "How many fish are there?",
+      "questionTextJunior": "Count the fish. Tap the number!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        }
+      ],
+      "correctAnswerId": "b",
+      "art": {
+        "kind": "count",
+        "glyph": "fish",
+        "n": 2
+      }
+    },
+    {
+      "id": "nf-num-t6-01",
+      "subject": "number-fun",
+      "tier": 6,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number three?",
+      "questionTextJunior": "Find the number three!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-more-t6-02",
+      "subject": "number-fun",
+      "tier": 6,
+      "skill": "one-more",
+      "questionText": "Which one has one more than four?",
+      "questionTextJunior": "Find one more than four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 2
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-most-t6-03",
+      "subject": "number-fun",
+      "tier": 6,
+      "skill": "which-is-most",
+      "questionText": "Which one has the most stars?",
+      "questionTextJunior": "Find the most stars!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 6
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "star",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-add-t6-04",
+      "subject": "number-fun",
+      "tier": 6,
+      "skill": "add-within-ten",
+      "questionText": "four leaves and three more — how many?",
+      "questionTextJunior": "four and three more. How many?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "leaf",
+        "n": 4,
+        "m": 3
+      }
+    },
+    {
+      "id": "nf-num-t6-05",
+      "subject": "number-fun",
+      "tier": 6,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number seven?",
+      "questionTextJunior": "Find the number seven!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-more-t6-06",
+      "subject": "number-fun",
+      "tier": 6,
+      "skill": "one-more",
+      "questionText": "Which one has one more than four?",
+      "questionTextJunior": "Find one more than four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "berry",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-num-t7-01",
+      "subject": "number-fun",
+      "tier": 7,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number nine?",
+      "questionTextJunior": "Find the number nine!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 10
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-more-t7-02",
+      "subject": "number-fun",
+      "tier": 7,
+      "skill": "one-more",
+      "questionText": "Which one has one more than three?",
+      "questionTextJunior": "Find one more than three!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 4
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 3
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-most-t7-03",
+      "subject": "number-fun",
+      "tier": 7,
+      "skill": "which-is-most",
+      "questionText": "Which one has the most leaves?",
+      "questionTextJunior": "Find the most leaves!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 6
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "leaf",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-add-t7-04",
+      "subject": "number-fun",
+      "tier": 7,
+      "skill": "add-within-ten",
+      "questionText": "three snowflakes and two more — how many?",
+      "questionTextJunior": "three and two more. How many?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "snowflake",
+        "n": 3,
+        "m": 2
+      }
+    },
+    {
+      "id": "nf-num-t7-05",
+      "subject": "number-fun",
+      "tier": 7,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number four?",
+      "questionTextJunior": "Find the number four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-more-t7-06",
+      "subject": "number-fun",
+      "tier": 7,
+      "skill": "one-more",
+      "questionText": "Which one has one more than two?",
+      "questionTextJunior": "Find one more than two!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 1
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 5
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-num-t8-01",
+      "subject": "number-fun",
+      "tier": 8,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number ten?",
+      "questionTextJunior": "Find the number ten!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 10
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-more-t8-02",
+      "subject": "number-fun",
+      "tier": 8,
+      "skill": "one-more",
+      "questionText": "Which one has one more than four?",
+      "questionTextJunior": "Find one more than four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 6
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "snowflake",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-most-t8-03",
+      "subject": "number-fun",
+      "tier": 8,
+      "skill": "which-is-most",
+      "questionText": "Which one has the most pinecones?",
+      "questionTextJunior": "Find the most pinecones!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 5
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 3
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 2
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 1
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "pinecone",
+            "n": 4
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "nf-add-t8-04",
+      "subject": "number-fun",
+      "tier": 8,
+      "skill": "add-within-ten",
+      "questionText": "two berries and one more — how many?",
+      "questionTextJunior": "two and one more. How many?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 3
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 1
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 4
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 2
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 5
+          }
+        }
+      ],
+      "correctAnswerId": "a",
+      "art": {
+        "kind": "countPlus",
+        "glyph": "berry",
+        "n": 2,
+        "m": 1
+      }
+    },
+    {
+      "id": "nf-num-t8-05",
+      "subject": "number-fun",
+      "tier": 8,
+      "skill": "find-numeral",
+      "questionText": "Which one is the number eight?",
+      "questionTextJunior": "Find the number eight!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 6
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 8
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 10
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 7
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "numeral",
+            "n": 9
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "nf-more-t8-06",
+      "subject": "number-fun",
+      "tier": 8,
+      "skill": "one-more",
+      "questionText": "Which one has one more than four?",
+      "questionTextJunior": "Find one more than four!",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 6
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 5
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 3
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 4
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "count",
+            "glyph": "fish",
+            "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
     }
   ]
 }

@@ -117,10 +117,10 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     cta: 'Start counting',
     chips: [{ label: 'Counting', ...CYAN }, { label: 'Starts easy', ...LIME }, { label: '~2 minutes', ...PINK }],
     sections: rules([
-      ['How it works', 'You’ll see things to count, or numbers to pick. Tap your answer.'],
-      ['Fingers allowed', 'Count on your fingers, out loud, or in your head — whatever helps you.'],
-      ['Need a hand?', 'Tap the speaker to hear the question read to you.'],
-      ['The rules', 'It starts easy and only gets trickier while you’re doing well.'],
+      ['How it works', 'Three kinds of question: find a written number, find a group to count, or count a group and tap the number that says how many.'],
+      ['Fingers allowed', 'Count on your fingers, out loud, or in your head — whatever helps.'],
+      ['Need a hand?', 'Tap the speaker to hear the question again, as often as they like.'],
+      ['The rules', 'Numbers to three at the start, then to ten, and only then anything to work out.'],
     ]),
   },
   'letter-sounds': {

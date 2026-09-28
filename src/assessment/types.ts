@@ -88,6 +88,11 @@ export type ArtSpec =
   | { kind: 'shape'; shape: ShapeName; color?: ShapeColor; outline?: boolean }
   /** A colour on its own, as a paint chip. The palette of a paint item. */
   | { kind: 'swatch'; color: ShapeColor }
+  /**
+   * A written digit. `outline` draws it hollow, the way a number waiting to
+   * be traced or coloured looks in a workbook.
+   */
+  | { kind: 'numeral'; n: number; outline?: boolean }
   | { kind: 'fraction'; n: number; d: number }
   | { kind: 'areaGrid'; w: number; h: number }
   | { kind: 'pair'; left: GlyphName; right: GlyphName }

@@ -2373,10 +2373,31 @@ body {
 
 .option--wordless .art { width: 100%; height: 100%; }
 
-.option--wordless .art svg {
-  /* Square, off the tighter of the card's two sides. */
+.option--wordless .art > svg {
+  /* Square, off the tighter of the card's two sides. ONE picture per card —
+     a direct child, so this never reaches the glyphs inside a count row. */
   width: min(76cqw, 76cqh);
   height: min(76cqw, 76cqh);
+}
+
+/* A card that holds a GROUP to count is a different problem: six things have
+   to fit and stay separately countable. Sizing each one at 76% of the card
+   drew the first two and pushed the rest out of sight, which turned "find
+   four fish" into four identical-looking cards.
+
+   Two across, wrapping down, so six things use the card's height instead of
+   shrinking into one thin row. Capped by BOTH sides: a short, wide card on a
+   landscape screen has no height to spend. */
+.option--wordless .count-row {
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  gap: clamp(2px, 2cqw, 10px);
+}
+
+.option--wordless .count-item svg {
+  width: clamp(14px, min(38cqw, 26cqh), 140px);
+  height: auto;
 }
 
 .options--wordless {
@@ -2416,5 +2437,13 @@ body {
    what constrains it here. */
 .art-panel--junior .art--shape > svg {
   width: clamp(120px, 22vh, 230px);
+  height: auto;
+}
+
+/* Things a child is asked to COUNT are the question, so they get the panel's
+   height. Ten small icons in a wide box is a picture; ten big ones is a
+   counting task. */
+.art-panel--junior .count-item svg {
+  width: clamp(40px, 8.5vh, 84px);
   height: auto;
 }
