@@ -145,12 +145,19 @@ export const TRACKS: Record<Track, TrackConfig> = {
   'grade-level': {
     id: 'grade-level',
     name: 'Grade Level',
-    kicker: "Scholar's chamber",
-    lead: 'Step into the tower — 7 chambers of wisdom await your mind!',
-    cta: 'Ascend the Tower!',
-    unit: 'Chamber',
-    unitPlural: 'Chambers',
-    itemNoun: 'test',
+    /*
+     * Straight language, on purpose. A ten-year-old being told they are
+     * ascending a tower of wisdom knows they are being managed, and the
+     * sentence has to be decoded before it says anything true. Say what the
+     * thing is: seven sections, they get harder, that is how we find the
+     * level. The whimsy belongs in Little Readers, where the child is four.
+     */
+    kicker: 'Before you start',
+    lead: 'Seven short sections. They get harder while you’re doing well — that’s how we find where you are.',
+    cta: 'Let’s begin',
+    unit: 'Section',
+    unitPlural: 'Sections',
+    itemNoun: 'section',
     minutes: 30,
     character: 'Adaptive',
     subjects: [
@@ -181,7 +188,8 @@ const LITTLE_READER_GRADES = ['EL', 'JK', 'SK', '1'];
 
 /**
  * Age decides. Grade is the fallback for an account that never captured an
- * age — a guess from grade beats defaulting a five-year-old into the tower.
+ * age — a guess from grade beats putting a five-year-old through the full
+ * Grade Level set.
  */
 export function trackFor(age: number | null, grade: string | null): Track {
   if (age !== null) return age <= LITTLE_READER_MAX_AGE ? 'little-reader' : 'grade-level';
