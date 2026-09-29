@@ -695,6 +695,85 @@ now gives each one an `aria-label` saying exactly what a sighted child sees —
 "3 fish", "the number 5", "blue triangle". It needed an irregular-plural map
 on the way; the first version said "2 fishs" and "3 leafs".
 
+## Letter Sounds: the sound is heard, never shown
+
+One of the two subjects an under-7's placement actually rests on. Replaces a
+stub bank keyed entirely to option A.
+
+Fifty-four items, three moves, **all three at every tier**:
+
+| Move | The child gets | Answers with |
+| --- | --- | --- |
+| `hear-sound-pick-picture` | a sound, played, shown nowhere | pictures |
+| `see-letter-pick-picture` | a letter on the panel | pictures |
+| `picture-pick-letter` | a picture on the panel | letters |
+
+### The reference design tested the wrong thing
+
+It printed a large **B** beside "which word starts with the sound B?". That is
+a letter-recognition question wearing a phonics question's clothes: a child who
+cannot yet match a letter to its sound fails it for the wrong reason, and a
+child who reads the B answers without hearing anything.
+
+Here the heard items carry **no art at all** and the sound appears nowhere on
+screen — the same `listen` machinery Spelling uses, with the replay counter. A
+test asserts it.
+
+The letter is also **said, not named**. A voice reading `"b"` says *"bee"*,
+which is the letter's name; the bank stores `"buh"`. A test rejects any
+single-character `listenWord` for exactly this reason.
+
+### The cards carry no words
+
+The reference wrote "Ball" under the ball. Every other Little Readers activity
+is pictures-only for the same reason: these children cannot read, and a label
+turns a phonics item into a reading item.
+
+### The ladder is which sounds, the way phonics is taught
+
+`m s b t f p` first — the ones a child holds onto earliest — then the rest of
+the consonants, and **vowels last**, because they are the hard ones. A test
+asserts no vowel at tier 0 and vowels present at tier 8.
+
+### The picture set was the real constraint
+
+The original glyph set covered **nine** initial sounds, which is not an
+alphabet. Fourteen glyphs were added — apple, egg, igloo, owl, umbrella, duck,
+grapes, hat, nest, jar, kite, pizza, rainbow, window — taking it to twenty
+sounds. Missing: `q x y z`, and `v`, which lost its only word (see below).
+
+Each was drawn in the existing chunky style and then **looked at**, on a
+contact sheet, before being used. The first pass shipped a nest whose eggs were
+the same colour as the nest and a kite with an invisible tail.
+
+### A word is only usable if a child names the picture one way
+
+The sharpest content risk in the whole subject, and it does not show up in any
+test of the mechanics. A picture is unusable when the *other* name a child
+would reasonably reach for starts with a **different sound that is also in the
+answer set** — the item then marks a child wrong for naming the picture
+sensibly:
+
+| Picture | Also called | Which is |
+| --- | --- | --- |
+| moose | "deer" | /d/ |
+| mitten | "glove" | /g/ |
+| river | "water" | /w/ |
+| gift | "present" | /p/ |
+| bottle | "tube" | /t/ |
+| map | "paper" | /p/ |
+| rope | "knot" | /n/ |
+| van | "truck" | /t/ |
+| bowl | "soup" | /s/ |
+| compass | "circle" | /s/ |
+| pinecone | "acorn" | /a/ |
+| berry | "grapes" | /g/ |
+
+All twelve are out of the bank, and a test holds them out — of the answer
+cards *and* of the picture on the panel. Dropping them cost `/v/` its only
+word, so `v` is out of the sound set too. **A smaller alphabet that measures
+something beats a full one that measures whether a child shares my vocabulary.**
+
 ## Math: five shapes, because four answers can be worked backwards
 
 Every maths tier carries all five, so a sitting is never ten of the same thing:

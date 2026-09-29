@@ -32,7 +32,25 @@ export type GlyphName =
   | 'river'
   | 'rope'
   | 'match'
-  | 'teacher';
+  | 'teacher'
+  // Added for Letter Sounds: the original set covered nine initial sounds,
+  // which is not an alphabet. These fill the vowels and the common consonants.
+  | 'apple'
+  | 'egg'
+  | 'igloo'
+  | 'owl'
+  | 'umbrella'
+  | 'duck'
+  | 'gift'
+  | 'hat'
+  | 'nest'
+  | 'jar'
+  | 'kite'
+  | 'van'
+  | 'window'
+  | 'pizza'
+  | 'grapes'
+  | 'rainbow';
 
 const FUR = 'var(--mascot-fur)';
 const AMBER = 'var(--accent-gold)';
@@ -232,6 +250,146 @@ export const GLYPHS: Record<GlyphName, ReactElement> = {
       <circle cx="34" cy="24" r="9" fill={AMBER} />
       <rect x="60" y="28" width="8" height="54" rx="4" fill={SAND} />
       <circle cx="64" cy="24" r="9" fill={AMBER} />
+    </g>
+  ),
+  apple: (
+    <g {...S}>
+      <path d="M50 34c-8-7-22-7-28 3-7 11-2 32 8 44 5 6 12 8 20 4 8 4 15 2 20-4 10-12 15-33 8-44-6-10-20-10-28-3z" fill="var(--olc-red)" />
+      <path d="M50 34V18" strokeWidth="5" />
+      <path d="M50 24c8-10 18-9 18-9s-1 11-10 13c-4 1-8-1-8-4z" fill={MOSS} />
+    </g>
+  ),
+  egg: (
+    <g {...S}>
+      <path d="M50 12c14 0 26 22 26 40a26 26 0 0 1-52 0c0-18 12-40 26-40z" fill={SAND} />
+    </g>
+  ),
+  igloo: (
+    <g {...S}>
+      <path d="M8 76a42 34 0 0 1 84 0z" fill={SAND} />
+      <path d="M36 76V60a14 14 0 0 1 28 0v16" fill="var(--surface-inset)" />
+      <path d="M8 76h84" />
+      <path d="M22 62h20M58 62h20M34 48h32" fill="none" strokeWidth="3" />
+    </g>
+  ),
+  owl: (
+    <g {...S}>
+      <path d="M50 16c20 0 32 16 32 36S68 90 50 90 18 72 18 52 30 16 50 16z" fill="var(--mascot-fur)" />
+      <circle cx="37" cy="45" r="12" fill={SAND} />
+      <circle cx="63" cy="45" r="12" fill={SAND} />
+      <g fill={INK} stroke="none">
+        <circle cx="37" cy="45" r="5" />
+        <circle cx="63" cy="45" r="5" />
+      </g>
+      <path d="M50 54l-7 9h14z" fill={AMBER} />
+      <path d="M24 22l10 12M76 22L66 34" fill="none" />
+    </g>
+  ),
+  umbrella: (
+    <g {...S}>
+      <path d="M6 54a44 40 0 0 1 88 0z" fill="var(--olc-pink)" />
+      <path d="M50 54v28a10 10 0 0 0 20 0" fill="none" strokeWidth="5" />
+      <path d="M6 54q11-14 22 0 11-14 22 0 11-14 22 0 11-14 22 0" fill="none" strokeWidth="3" />
+    </g>
+  ),
+  duck: (
+    <g {...S}>
+      <path d="M22 62c0-14 12-22 28-22 18 0 30 8 30 22 0 12-12 22-30 22-16 0-28-8-28-22z" fill={AMBER} />
+      <circle cx="70" cy="34" r="15" fill={AMBER} />
+      <path d="M84 32h12l-6 8z" fill="var(--olc-gold-edge)" />
+      <circle cx="73" cy="31" r="3" fill={INK} stroke="none" />
+      <path d="M40 84h26" fill="none" strokeWidth="5" />
+    </g>
+  ),
+  gift: (
+    <g {...S}>
+      <rect x="16" y="40" width="68" height="44" rx="5" fill="var(--olc-cyan)" />
+      <rect x="12" y="28" width="76" height="16" rx="5" fill="var(--olc-cyan-soft)" />
+      <path d="M50 28v56" strokeWidth="5" />
+      <path d="M50 28c-14-4-20-18-8-18 7 0 8 12 8 18zM50 28c14-4 20-18 8-18-7 0-8 12-8 18z" fill="var(--olc-pink)" />
+    </g>
+  ),
+  hat: (
+    <g {...S}>
+      <path d="M28 62V36a22 22 0 0 1 44 0v26z" fill="var(--accent-secondary)" />
+      <rect x="10" y="62" width="80" height="14" rx="7" fill="var(--accent-secondary)" />
+      <path d="M28 52h44" fill="none" strokeWidth="3" />
+    </g>
+  ),
+  nest: (
+    <g {...S}>
+      {/* Eggs first, so the rim overlaps them and they sit IN the nest. */}
+      <g fill={SAND}>
+        <ellipse cx="37" cy="48" rx="12" ry="14" />
+        <ellipse cx="63" cy="48" rx="12" ry="14" />
+      </g>
+      <path d="M10 56h80c0 20-18 30-40 30S10 76 10 56z" fill="var(--olc-gold-edge)" />
+      <path d="M18 66q16 7 32 0t32 0" fill="none" strokeWidth="3" />
+    </g>
+  ),
+  jar: (
+    <g {...S}>
+      <rect x="26" y="34" width="48" height="52" rx="8" fill="var(--olc-lime)" />
+      <rect x="22" y="20" width="56" height="16" rx="6" fill="var(--olc-gold)" />
+      <path d="M34 48h32" fill="none" strokeWidth="3" />
+    </g>
+  ),
+  kite: (
+    <g {...S}>
+      <path d="M50 8L84 44 50 80 16 44z" fill="var(--olc-pink)" />
+      <path d="M50 8v72M16 44h68" fill="none" strokeWidth="3" />
+      <path d="M50 80q9 7 0 12t0 12" fill="none" strokeWidth="4" />
+    </g>
+  ),
+  van: (
+    <g {...S}>
+      <path d="M8 44h46v30H8z" fill="var(--olc-cyan)" />
+      <path d="M54 52h20l16 14v8H54z" fill="var(--olc-cyan-soft)" />
+      <circle cx="28" cy="78" r="10" fill={INK} />
+      <circle cx="70" cy="78" r="10" fill={INK} />
+      <g fill={SAND} stroke="none">
+        <circle cx="28" cy="78" r="3.5" />
+        <circle cx="70" cy="78" r="3.5" />
+      </g>
+    </g>
+  ),
+  pizza: (
+    <g {...S}>
+      <path d="M50 10L88 84a90 90 0 0 1-76 0z" fill={AMBER} />
+      <path d="M12 84a90 90 0 0 0 76 0l-5-10a80 80 0 0 1-66 0z" fill="var(--olc-gold-edge)" />
+      <g fill="var(--olc-red)" stroke="none">
+        <circle cx="50" cy="42" r="6" />
+        <circle cx="36" cy="62" r="6" />
+        <circle cx="64" cy="62" r="6" />
+      </g>
+    </g>
+  ),
+  rainbow: (
+    <g {...S} fill="none" strokeWidth="4">
+      <path d="M10 78a40 40 0 0 1 80 0" stroke="var(--olc-red)" strokeWidth="11" />
+      <path d="M22 78a28 28 0 0 1 56 0" stroke="var(--olc-gold)" strokeWidth="11" />
+      <path d="M34 78a16 16 0 0 1 32 0" stroke="var(--olc-cyan)" strokeWidth="11" />
+      <path d="M6 78h88" stroke={INK} strokeWidth="4" />
+    </g>
+  ),
+  grapes: (
+    <g {...S}>
+      <path d="M50 30V16q10-6 18-4" fill="none" strokeWidth="5" />
+      <g fill="var(--olc-pink)">
+        <circle cx="50" cy="38" r="10" />
+        <circle cx="36" cy="52" r="10" />
+        <circle cx="64" cy="52" r="10" />
+        <circle cx="50" cy="62" r="10" />
+        <circle cx="36" cy="74" r="10" />
+        <circle cx="64" cy="74" r="10" />
+      </g>
+    </g>
+  ),
+  window: (
+    <g {...S}>
+      <rect x="18" y="16" width="64" height="68" rx="6" fill="var(--olc-cyan-soft)" />
+      <path d="M50 16v68M18 50h64" strokeWidth="5" />
+      <rect x="12" y="84" width="76" height="8" rx="4" fill={SAND} />
     </g>
   ),
 };

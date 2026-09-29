@@ -1,7 +1,7 @@
 {
   "version": 1,
   "stub": true,
-  "note": "MIXED BANK. Two subjects are still template-generated placeholder and are NOT assessment content: letter-sounds, word-practice. Both are Little Readers reading subjects, so an under-7 is currently placed off filler. Every other subject carries written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts. Items that are placeholder carry a skill beginning 'stub-'; a test holds this note to them.",
+  "note": "MIXED BANK. One subject is still template-generated placeholder and is NOT assessment content: word-practice. It is a Little Readers reading subject, so an under-7's placement still rests partly on filler. Every other subject carries written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts. Placeholder items carry a skill beginning 'stub-'; a test holds this note to them.",
   "questions": [
     {
       "id": "ts-sd-t0-01",
@@ -16262,1464 +16262,6 @@
       "correctAnswerId": ""
     },
     {
-      "id": "ts-ls-t0-01",
-      "subject": "letter-sounds",
-      "tier": 0,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /b/ sound?",
-      "questionTextJunior": "Which starts with /b/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t0-02",
-      "subject": "letter-sounds",
-      "tier": 0,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /d/ sound?",
-      "questionTextJunior": "Which starts with /d/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t0-03",
-      "subject": "letter-sounds",
-      "tier": 0,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /f/ sound?",
-      "questionTextJunior": "Which starts with /f/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t0-04",
-      "subject": "letter-sounds",
-      "tier": 0,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /g/ sound?",
-      "questionTextJunior": "Which starts with /g/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t0-05",
-      "subject": "letter-sounds",
-      "tier": 0,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /h/ sound?",
-      "questionTextJunior": "Which starts with /h/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t0-06",
-      "subject": "letter-sounds",
-      "tier": 0,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /j/ sound?",
-      "questionTextJunior": "Which starts with /j/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t1-01",
-      "subject": "letter-sounds",
-      "tier": 1,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /k/ sound?",
-      "questionTextJunior": "Which starts with /k/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t1-02",
-      "subject": "letter-sounds",
-      "tier": 1,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /l/ sound?",
-      "questionTextJunior": "Which starts with /l/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t1-03",
-      "subject": "letter-sounds",
-      "tier": 1,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /m/ sound?",
-      "questionTextJunior": "Which starts with /m/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t1-04",
-      "subject": "letter-sounds",
-      "tier": 1,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /n/ sound?",
-      "questionTextJunior": "Which starts with /n/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t1-05",
-      "subject": "letter-sounds",
-      "tier": 1,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /p/ sound?",
-      "questionTextJunior": "Which starts with /p/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t1-06",
-      "subject": "letter-sounds",
-      "tier": 1,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /r/ sound?",
-      "questionTextJunior": "Which starts with /r/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t2-01",
-      "subject": "letter-sounds",
-      "tier": 2,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /s/ sound?",
-      "questionTextJunior": "Which starts with /s/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t2-02",
-      "subject": "letter-sounds",
-      "tier": 2,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /t/ sound?",
-      "questionTextJunior": "Which starts with /t/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t2-03",
-      "subject": "letter-sounds",
-      "tier": 2,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /v/ sound?",
-      "questionTextJunior": "Which starts with /v/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t2-04",
-      "subject": "letter-sounds",
-      "tier": 2,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /w/ sound?",
-      "questionTextJunior": "Which starts with /w/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t2-05",
-      "subject": "letter-sounds",
-      "tier": 2,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /b/ sound?",
-      "questionTextJunior": "Which starts with /b/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t2-06",
-      "subject": "letter-sounds",
-      "tier": 2,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /d/ sound?",
-      "questionTextJunior": "Which starts with /d/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t3-01",
-      "subject": "letter-sounds",
-      "tier": 3,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /f/ sound?",
-      "questionTextJunior": "Which starts with /f/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t3-02",
-      "subject": "letter-sounds",
-      "tier": 3,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /g/ sound?",
-      "questionTextJunior": "Which starts with /g/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t3-03",
-      "subject": "letter-sounds",
-      "tier": 3,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /h/ sound?",
-      "questionTextJunior": "Which starts with /h/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t3-04",
-      "subject": "letter-sounds",
-      "tier": 3,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /j/ sound?",
-      "questionTextJunior": "Which starts with /j/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t3-05",
-      "subject": "letter-sounds",
-      "tier": 3,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /k/ sound?",
-      "questionTextJunior": "Which starts with /k/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t3-06",
-      "subject": "letter-sounds",
-      "tier": 3,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /l/ sound?",
-      "questionTextJunior": "Which starts with /l/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t4-01",
-      "subject": "letter-sounds",
-      "tier": 4,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /m/ sound?",
-      "questionTextJunior": "Which starts with /m/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t4-02",
-      "subject": "letter-sounds",
-      "tier": 4,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /n/ sound?",
-      "questionTextJunior": "Which starts with /n/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t4-03",
-      "subject": "letter-sounds",
-      "tier": 4,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /p/ sound?",
-      "questionTextJunior": "Which starts with /p/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t4-04",
-      "subject": "letter-sounds",
-      "tier": 4,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /r/ sound?",
-      "questionTextJunior": "Which starts with /r/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t4-05",
-      "subject": "letter-sounds",
-      "tier": 4,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /s/ sound?",
-      "questionTextJunior": "Which starts with /s/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t4-06",
-      "subject": "letter-sounds",
-      "tier": 4,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /t/ sound?",
-      "questionTextJunior": "Which starts with /t/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t5-01",
-      "subject": "letter-sounds",
-      "tier": 5,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /v/ sound?",
-      "questionTextJunior": "Which starts with /v/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t5-02",
-      "subject": "letter-sounds",
-      "tier": 5,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /w/ sound?",
-      "questionTextJunior": "Which starts with /w/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t5-03",
-      "subject": "letter-sounds",
-      "tier": 5,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /b/ sound?",
-      "questionTextJunior": "Which starts with /b/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t5-04",
-      "subject": "letter-sounds",
-      "tier": 5,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /d/ sound?",
-      "questionTextJunior": "Which starts with /d/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t5-05",
-      "subject": "letter-sounds",
-      "tier": 5,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /f/ sound?",
-      "questionTextJunior": "Which starts with /f/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "wind"
-        },
-        {
-          "id": "c",
-          "text": "map"
-        },
-        {
-          "id": "d",
-          "text": "star"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t5-06",
-      "subject": "letter-sounds",
-      "tier": 5,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /g/ sound?",
-      "questionTextJunior": "Which starts with /g/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "cat"
-        },
-        {
-          "id": "c",
-          "text": "bed"
-        },
-        {
-          "id": "d",
-          "text": "moon"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t6-01",
-      "subject": "letter-sounds",
-      "tier": 6,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /h/ sound?",
-      "questionTextJunior": "Which starts with /h/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "dog"
-        },
-        {
-          "id": "c",
-          "text": "fish"
-        },
-        {
-          "id": "d",
-          "text": "rain"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t6-02",
-      "subject": "letter-sounds",
-      "tier": 6,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /j/ sound?",
-      "questionTextJunior": "Which starts with /j/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "sun"
-        },
-        {
-          "id": "c",
-          "text": "tree"
-        },
-        {
-          "id": "d",
-          "text": "book"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t6-03",
-      "subject": "letter-sounds",
-      "tier": 6,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /k/ sound?",
-      "questionTextJunior": "Which starts with /k/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "map"
-        },
-        {
-          "id": "c",
-          "text": "star"
-        },
-        {
-          "id": "d",
-          "text": "frog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t6-04",
-      "subject": "letter-sounds",
-      "tier": 6,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /l/ sound?",
-      "questionTextJunior": "Which starts with /l/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "bed"
-        },
-        {
-          "id": "c",
-          "text": "moon"
-        },
-        {
-          "id": "d",
-          "text": "nest"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t6-05",
-      "subject": "letter-sounds",
-      "tier": 6,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /m/ sound?",
-      "questionTextJunior": "Which starts with /m/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "fish"
-        },
-        {
-          "id": "c",
-          "text": "rain"
-        },
-        {
-          "id": "d",
-          "text": "lamp"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t6-06",
-      "subject": "letter-sounds",
-      "tier": 6,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /n/ sound?",
-      "questionTextJunior": "Which starts with /n/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "tree"
-        },
-        {
-          "id": "c",
-          "text": "book"
-        },
-        {
-          "id": "d",
-          "text": "gift"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t7-01",
-      "subject": "letter-sounds",
-      "tier": 7,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /p/ sound?",
-      "questionTextJunior": "Which starts with /p/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "star"
-        },
-        {
-          "id": "c",
-          "text": "frog"
-        },
-        {
-          "id": "d",
-          "text": "hand"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t7-02",
-      "subject": "letter-sounds",
-      "tier": 7,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /r/ sound?",
-      "questionTextJunior": "Which starts with /r/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "moon"
-        },
-        {
-          "id": "c",
-          "text": "nest"
-        },
-        {
-          "id": "d",
-          "text": "milk"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t7-03",
-      "subject": "letter-sounds",
-      "tier": 7,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /s/ sound?",
-      "questionTextJunior": "Which starts with /s/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "rain"
-        },
-        {
-          "id": "c",
-          "text": "lamp"
-        },
-        {
-          "id": "d",
-          "text": "road"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t7-04",
-      "subject": "letter-sounds",
-      "tier": 7,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /t/ sound?",
-      "questionTextJunior": "Which starts with /t/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "book"
-        },
-        {
-          "id": "c",
-          "text": "gift"
-        },
-        {
-          "id": "d",
-          "text": "song"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t7-05",
-      "subject": "letter-sounds",
-      "tier": 7,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /v/ sound?",
-      "questionTextJunior": "Which starts with /v/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "frog"
-        },
-        {
-          "id": "c",
-          "text": "hand"
-        },
-        {
-          "id": "d",
-          "text": "wind"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t7-06",
-      "subject": "letter-sounds",
-      "tier": 7,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /w/ sound?",
-      "questionTextJunior": "Which starts with /w/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "nest"
-        },
-        {
-          "id": "c",
-          "text": "milk"
-        },
-        {
-          "id": "d",
-          "text": "cat"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t8-01",
-      "subject": "letter-sounds",
-      "tier": 8,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /b/ sound?",
-      "questionTextJunior": "Which starts with /b/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "lamp"
-        },
-        {
-          "id": "c",
-          "text": "road"
-        },
-        {
-          "id": "d",
-          "text": "dog"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t8-02",
-      "subject": "letter-sounds",
-      "tier": 8,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /d/ sound?",
-      "questionTextJunior": "Which starts with /d/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "gift"
-        },
-        {
-          "id": "c",
-          "text": "song"
-        },
-        {
-          "id": "d",
-          "text": "sun"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t8-03",
-      "subject": "letter-sounds",
-      "tier": 8,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /f/ sound?",
-      "questionTextJunior": "Which starts with /f/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "hand"
-        },
-        {
-          "id": "c",
-          "text": "wind"
-        },
-        {
-          "id": "d",
-          "text": "map"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t8-04",
-      "subject": "letter-sounds",
-      "tier": 8,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /g/ sound?",
-      "questionTextJunior": "Which starts with /g/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "milk"
-        },
-        {
-          "id": "c",
-          "text": "cat"
-        },
-        {
-          "id": "d",
-          "text": "bed"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t8-05",
-      "subject": "letter-sounds",
-      "tier": 8,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /h/ sound?",
-      "questionTextJunior": "Which starts with /h/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "road"
-        },
-        {
-          "id": "c",
-          "text": "dog"
-        },
-        {
-          "id": "d",
-          "text": "fish"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-ls-t8-06",
-      "subject": "letter-sounds",
-      "tier": 8,
-      "skill": "stub-letter-sound",
-      "questionText": "Which word starts with the /j/ sound?",
-      "questionTextJunior": "Which starts with /j/?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "song"
-        },
-        {
-          "id": "c",
-          "text": "sun"
-        },
-        {
-          "id": "d",
-          "text": "tree"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
       "id": "ts-wp-t0-01",
       "subject": "word-practice",
       "tier": 0,
@@ -25621,6 +24163,2604 @@
             "kind": "count",
             "glyph": "fish",
             "n": 2
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t0-01",
+      "subject": "letter-sounds",
+      "tier": 0,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "sss",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t0-02",
+      "subject": "letter-sounds",
+      "tier": 0,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "b"
+      },
+      "questionText": "Which picture starts with the letter B?",
+      "questionTextJunior": "Which one starts with B?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t0-03",
+      "subject": "letter-sounds",
+      "tier": 0,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "pizza"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "p"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "s"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "t"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t0-04",
+      "subject": "letter-sounds",
+      "tier": 0,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "puh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t0-05",
+      "subject": "letter-sounds",
+      "tier": 0,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "t"
+      },
+      "questionText": "Which picture starts with the letter T?",
+      "questionTextJunior": "Which one starts with T?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t0-06",
+      "subject": "letter-sounds",
+      "tier": 0,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "moon"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "b"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "m"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "f"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t1-01",
+      "subject": "letter-sounds",
+      "tier": 1,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "sss",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t1-02",
+      "subject": "letter-sounds",
+      "tier": 1,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "m"
+      },
+      "questionText": "Which picture starts with the letter M?",
+      "questionTextJunior": "Which one starts with M?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t1-03",
+      "subject": "letter-sounds",
+      "tier": 1,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "snowflake"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "s"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "m"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "p"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t1-04",
+      "subject": "letter-sounds",
+      "tier": 1,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "tuh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t1-05",
+      "subject": "letter-sounds",
+      "tier": 1,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "t"
+      },
+      "questionText": "Which picture starts with the letter T?",
+      "questionTextJunior": "Which one starts with T?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t1-06",
+      "subject": "letter-sounds",
+      "tier": 1,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tree"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "b"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "t"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "f"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t2-01",
+      "subject": "letter-sounds",
+      "tier": 2,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "duh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t2-02",
+      "subject": "letter-sounds",
+      "tier": 2,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "h"
+      },
+      "questionText": "Which picture starts with the letter H?",
+      "questionTextJunior": "Which one starts with H?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t2-03",
+      "subject": "letter-sounds",
+      "tier": 2,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "moon"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "m"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "k"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "w"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "d"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t2-04",
+      "subject": "letter-sounds",
+      "tier": 2,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "nnn",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t2-05",
+      "subject": "letter-sounds",
+      "tier": 2,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "l"
+      },
+      "questionText": "Which picture starts with the letter L?",
+      "questionTextJunior": "Which one starts with L?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t2-06",
+      "subject": "letter-sounds",
+      "tier": 2,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "grapes"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "f"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "g"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "p"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "s"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t3-01",
+      "subject": "letter-sounds",
+      "tier": 3,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "kuh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t3-02",
+      "subject": "letter-sounds",
+      "tier": 3,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "r"
+      },
+      "questionText": "Which picture starts with the letter R?",
+      "questionTextJunior": "Which one starts with R?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t3-03",
+      "subject": "letter-sounds",
+      "tier": 3,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "pizza"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "p"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "s"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "j"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "m"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t3-04",
+      "subject": "letter-sounds",
+      "tier": 3,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "buh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t3-05",
+      "subject": "letter-sounds",
+      "tier": 3,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "k"
+      },
+      "questionText": "Which picture starts with the letter K?",
+      "questionTextJunior": "Which one starts with K?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t3-06",
+      "subject": "letter-sounds",
+      "tier": 3,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "kite"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "d"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "k"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "f"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "s"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t4-01",
+      "subject": "letter-sounds",
+      "tier": 4,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "nnn",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "egg"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t4-02",
+      "subject": "letter-sounds",
+      "tier": 4,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "t"
+      },
+      "questionText": "Which picture starts with the letter T?",
+      "questionTextJunior": "Which one starts with T?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "apple"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t4-03",
+      "subject": "letter-sounds",
+      "tier": 4,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "owl"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "o"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "t"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "h"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "e"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t4-04",
+      "subject": "letter-sounds",
+      "tier": 4,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "ih",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "umbrella"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t4-05",
+      "subject": "letter-sounds",
+      "tier": 4,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "o"
+      },
+      "questionText": "Which picture starts with the letter O?",
+      "questionTextJunior": "Which one starts with O?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t4-06",
+      "subject": "letter-sounds",
+      "tier": 4,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fish"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "l"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "f"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "g"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "n"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t5-01",
+      "subject": "letter-sounds",
+      "tier": 5,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "lll",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t5-02",
+      "subject": "letter-sounds",
+      "tier": 5,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "r"
+      },
+      "questionText": "Which picture starts with the letter R?",
+      "questionTextJunior": "Which one starts with R?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t5-03",
+      "subject": "letter-sounds",
+      "tier": 5,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "rainbow"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "r"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "n"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "e"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "f"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "i"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t5-04",
+      "subject": "letter-sounds",
+      "tier": 5,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "puh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t5-05",
+      "subject": "letter-sounds",
+      "tier": 5,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "u"
+      },
+      "questionText": "Which picture starts with the letter U?",
+      "questionTextJunior": "Which one starts with U?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "umbrella"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "egg"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t5-06",
+      "subject": "letter-sounds",
+      "tier": 5,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "umbrella"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "l"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "u"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "h"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "b"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "n"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t6-01",
+      "subject": "letter-sounds",
+      "tier": 6,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "nnn",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "egg"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t6-02",
+      "subject": "letter-sounds",
+      "tier": 6,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "i"
+      },
+      "questionText": "Which picture starts with the letter I?",
+      "questionTextJunior": "Which one starts with I?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "umbrella"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t6-03",
+      "subject": "letter-sounds",
+      "tier": 6,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "apple"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "a"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "h"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "r"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "n"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "u"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t6-04",
+      "subject": "letter-sounds",
+      "tier": 6,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "buh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t6-05",
+      "subject": "letter-sounds",
+      "tier": 6,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "s"
+      },
+      "questionText": "Which picture starts with the letter S?",
+      "questionTextJunior": "Which one starts with S?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "apple"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t6-06",
+      "subject": "letter-sounds",
+      "tier": 6,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "nest"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "s"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "n"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "d"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "j"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "b"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t7-01",
+      "subject": "letter-sounds",
+      "tier": 7,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "tuh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t7-02",
+      "subject": "letter-sounds",
+      "tier": 7,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "p"
+      },
+      "questionText": "Which picture starts with the letter P?",
+      "questionTextJunior": "Which one starts with P?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t7-03",
+      "subject": "letter-sounds",
+      "tier": 7,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "leaf"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "l"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "a"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "k"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "e"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "m"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t7-04",
+      "subject": "letter-sounds",
+      "tier": 7,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "fff",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t7-05",
+      "subject": "letter-sounds",
+      "tier": 7,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "g"
+      },
+      "questionText": "Which picture starts with the letter G?",
+      "questionTextJunior": "Which one starts with G?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t7-06",
+      "subject": "letter-sounds",
+      "tier": 7,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "egg"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "u"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "e"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "p"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "m"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "l"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-hear-t8-01",
+      "subject": "letter-sounds",
+      "tier": 8,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "kuh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-letter-t8-02",
+      "subject": "letter-sounds",
+      "tier": 8,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "d"
+      },
+      "questionText": "Which picture starts with the letter D?",
+      "questionTextJunior": "Which one starts with D?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-spell-t8-03",
+      "subject": "letter-sounds",
+      "tier": 8,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "leaf"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "l"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "d"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "w"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "e"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "a"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "ls-hear-t8-04",
+      "subject": "letter-sounds",
+      "tier": 8,
+      "skill": "hear-sound-pick-picture",
+      "format": "listen",
+      "listenWord": "buh",
+      "questionText": "Listen to the sound. Which picture starts with it?",
+      "questionTextJunior": "Which one starts with that sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-letter-t8-05",
+      "subject": "letter-sounds",
+      "tier": 8,
+      "skill": "see-letter-pick-picture",
+      "art": {
+        "kind": "letter",
+        "letter": "m"
+      },
+      "questionText": "Which picture starts with the letter M?",
+      "questionTextJunior": "Which one starts with M?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "ls-spell-t8-06",
+      "subject": "letter-sounds",
+      "tier": 8,
+      "skill": "picture-pick-letter",
+      "art": {
+        "kind": "glyph",
+        "glyph": "owl"
+      },
+      "questionText": "Which letter does this picture start with?",
+      "questionTextJunior": "Which letter does it start with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "n"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "o"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "a"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "d"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "letter",
+            "letter": "b"
           }
         }
       ],

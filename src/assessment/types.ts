@@ -93,6 +93,8 @@ export type ArtSpec =
    * be traced or coloured looks in a workbook.
    */
   | { kind: 'numeral'; n: number; outline?: boolean }
+  /** A single written letter, shown big. Letter Sounds. */
+  | { kind: 'letter'; letter: string }
   | { kind: 'fraction'; n: number; d: number }
   | { kind: 'areaGrid'; w: number; h: number }
   | { kind: 'pair'; left: GlyphName; right: GlyphName }

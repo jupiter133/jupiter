@@ -128,10 +128,13 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     cta: 'Start letter sounds',
     chips: [{ label: 'Listen', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~3 minutes', ...PINK }],
     sections: rules([
-      ['How it works', 'A sound or a letter comes up, and you tap the picture or word that goes with it.'],
-      ['Sound it out', 'Say the sound to yourself first. Your mouth often knows before your eyes do.'],
-      ['Need a hand?', 'Tap the speaker to hear the sound again, as many times as you like.'],
-      ['The rules', 'One at a time, no timer. Guessing is part of learning.'],
+      ['How it works', 'Three kinds of question: hear a sound and find the picture that starts with it, see a letter and find the picture, or see a picture and find the letter.'],
+      [
+        'The sound is heard, not shown',
+        'When the question is a sound, it is played and never printed. A letter on the screen would turn “which starts with /b/?” into a question about recognising a B.',
+      ],
+      ['Sound it out', 'Say the sound aloud together. A mouth often knows before eyes do.'],
+      ['Need a hand?', 'Tap the speaker to hear it again, as often as they like.'],
     ]),
   },
   'word-practice': {

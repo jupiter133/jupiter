@@ -165,12 +165,16 @@ describe('question bank', () => {
     // The whole spelling item is that the word is heard and not seen. If it
     // appears in the question text, the child is proofreading, not spelling.
     // Spelling's heard WORD: the sentence-writing item is checked separately.
+    // Letter Sounds also hears something it must not see — a sound, answered
+    // with pictures rather than spellings — so the not-on-screen half of this
+    // applies to every heard item and the spellings half only to spelling.
     const listen = QUESTIONS.filter((q) => isListenQuestion(q) && q.listenWord);
     expect(listen.length).toBeGreaterThan(0);
     for (const q of listen) {
       const word = (q.listenWord ?? '').toLowerCase();
       const onScreen = [q.questionText, q.questionTextJunior ?? '', q.passage ?? ''].join(' ');
       expect(onScreen.toLowerCase().includes(word), `${q.id}: ${q.questionText}`).toBe(false);
+      if (q.subject !== 'spelling') continue;
       // Exactly one option spells it, and it is the key.
       const spellings = q.options.filter((o) => o.text.toLowerCase() === word);
       expect(spellings, q.id).toHaveLength(1);
@@ -179,7 +183,9 @@ describe('question bank', () => {
   });
 
   it('gives every heard word four distinct spellings to choose from', () => {
-    for (const q of QUESTIONS.filter((q) => isListenQuestion(q) && q.listenWord)) {
+    for (const q of QUESTIONS.filter(
+      (q) => isListenQuestion(q) && q.listenWord && q.subject === 'spelling',
+    )) {
       const texts = q.options.map((o) => o.text);
       // A distractor that is the answer with padding, or a repeat, is not a
       // choice at all — it just makes the item look harder than it is.
@@ -659,6 +665,141 @@ describe('shapes and colours', () => {
       // shape, so a child who knows one but not the other still knows the ask.
       const colour = colourOf(q, q.correctAnswerId)!;
       expect(q.questionTextJunior?.toLowerCase(), q.id).toContain(colour);
+    }
+  });
+});
+
+describe('letter sounds', () => {
+  const ls = QUESTIONS.filter((q) => q.subject === 'letter-sounds');
+  const artOf = (q: (typeof QUESTIONS)[number], id: string) =>
+    q.options.find((o) => o.id === id)?.art as { kind: string; glyph?: string; letter?: string };
+  /** What each picture word starts with, as the bank intends it to be named. */
+  const STARTS: Record<string, string> = {
+    backpack: 'b', duck: 'd', fish: 'f', fox: 'f', grapes: 'g', hat: 'h',
+    jar: 'j', kite: 'k', leaf: 'l', moon: 'm', nest: 'n', pizza: 'p',
+    rainbow: 'r', sun: 's', star: 's', snowflake: 's', tent: 't', tree: 't',
+    window: 'w', apple: 'a', egg: 'e', igloo: 'i', owl: 'o', umbrella: 'u',
+  };
+
+  it('uses only pictures a child names one way', () => {
+    /*
+     * An item is corrupt if the other name a child would reasonably reach
+     * for starts with a different sound in the same answer set: a moose
+     * called "deer" is /d/, a mitten called "glove" is /g/, a river called
+     * "water" is /w/, a gift called "present" is /p/. All four are out of
+     * the bank, and this holds them out.
+     */
+    const banned = [
+      'moose', 'mitten', 'river', 'gift', 'bowl', 'match', 'compass', 'pinecone',
+      'berry', 'bottle', 'map', 'rope', 'van',
+    ];
+    for (const q of ls) {
+      const shown = [q.art, ...q.options.map((o) => o.art)]
+        .map((a) => (a as { glyph?: string } | undefined)?.glyph)
+        .filter(Boolean) as string[];
+      for (const g of shown) {
+        expect(banned, `${q.id} shows ${g}`).not.toContain(g);
+        expect(STARTS[g], `${q.id}: ${g} has no agreed first sound`).toBeTruthy();
+      }
+    }
+  });
+
+  it('never shows a sound the child is supposed to hear', () => {
+    /*
+     * The reference design printed a big "B" next to "which word starts with
+     * the sound B?". That is a letter-recognition question wearing a phonics
+     * question's clothes. The heard items carry no art at all, and the sound
+     * appears nowhere on screen.
+     */
+    const heard = ls.filter((q) => q.skill === 'hear-sound-pick-picture');
+    expect(heard.length).toBeGreaterThan(0);
+    for (const q of heard) {
+      expect(q.art, q.id).toBeUndefined();
+      expect(q.format, q.id).toBe('listen');
+      const onScreen = `${q.questionText} ${q.questionTextJunior ?? ''}`.toLowerCase();
+      expect(onScreen, q.id).not.toContain((q.listenWord ?? '').toLowerCase());
+    }
+  });
+
+  it('says the sound, not the letter name', () => {
+    // A voice reading "b" says "bee", which is the letter's NAME. A child
+    // being asked which word starts with /b/ is not being asked about names.
+    for (const q of ls.filter((i) => i.listenWord)) {
+      expect(q.listenWord, q.id).not.toMatch(/^[a-z]$/);
+      expect((q.listenWord ?? '').length, q.id).toBeGreaterThanOrEqual(2);
+    }
+  });
+
+  it('puts nothing to read on the answer cards', () => {
+    for (const q of ls) {
+      for (const o of q.options) {
+        expect(['glyph', 'letter'], `${q.id} ${o.id}`).toContain(o.art?.kind);
+        expect(o.text, `${q.id} ${o.id}`).toBe('');
+      }
+    }
+  });
+
+  it('leaves exactly one card that can be right', () => {
+    // Two pictures starting with the same sound makes two answers correct.
+    for (const q of ls) {
+      const key = artOf(q, q.correctAnswerId);
+      expect(key, q.id).toBeTruthy();
+      if (key.kind === 'glyph') {
+        const firsts = q.options.map((o) => STARTS[artOf(q, o.id).glyph!]);
+        expect(firsts.every(Boolean), q.id).toBe(true);
+        expect(new Set(firsts).size, q.id).toBe(firsts.length);
+      } else {
+        const letters = q.options.map((o) => artOf(q, o.id).letter);
+        expect(new Set(letters).size, q.id).toBe(letters.length);
+      }
+    }
+  });
+
+  it('keys every item to a card that really does start with that sound', () => {
+    for (const q of ls.filter((i) => i.skill === 'see-letter-pick-picture')) {
+      const asked = (q.art as { letter: string }).letter;
+      expect(STARTS[artOf(q, q.correctAnswerId).glyph!], q.id).toBe(asked);
+    }
+    for (const q of ls.filter((i) => i.skill === 'picture-pick-letter')) {
+      const shown = (q.art as { glyph: string }).glyph;
+      expect(artOf(q, q.correctAnswerId).letter, q.id).toBe(STARTS[shown]);
+    }
+  });
+
+  it('offers all three moves at every tier a child can be floored at', () => {
+    for (let tier = 0; tier <= 8; tier += 1) {
+      const skills = new Set(ls.filter((q) => q.tier === tier).map((q) => q.skill));
+      expect(skills, `tier ${tier}`).toContain('hear-sound-pick-picture');
+      expect(skills, `tier ${tier}`).toContain('see-letter-pick-picture');
+      expect(skills, `tier ${tier}`).toContain('picture-pick-letter');
+    }
+  });
+
+  it('climbs by which sounds, the way phonics is actually taught', () => {
+    const soundsAt = (tier: number) =>
+      new Set(
+        ls
+          .filter((q) => q.tier === tier)
+          .flatMap((q) => q.options.map((o) => {
+            const a = artOf(q, o.id);
+            return a.kind === 'letter' ? a.letter! : STARTS[a.glyph!];
+          })),
+      );
+    // Vowels are the hard ones and arrive last.
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    expect([...soundsAt(0)].some((c) => vowels.includes(c))).toBe(false);
+    expect([...soundsAt(8)].some((c) => vowels.includes(c))).toBe(true);
+  });
+
+  it('never parks the answer in one spot for a move within a tier', () => {
+    const byGroup = new Map<string, number[]>();
+    for (const q of ls) {
+      const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
+      const k = `${q.tier}:${q.skill}`;
+      byGroup.set(k, [...(byGroup.get(k) ?? []), at]);
+    }
+    for (const [k, spots] of byGroup) {
+      if (spots.length > 1) expect(new Set(spots).size, k).toBeGreaterThan(1);
     }
   });
 });

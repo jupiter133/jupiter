@@ -114,6 +114,8 @@ export function describeArt(art: ArtSpec): string {
       return art.color;
     case 'numeral':
       return `the number ${art.n}`;
+    case 'letter':
+      return `the letter ${art.letter.toUpperCase()}`;
     case 'fraction':
       return `${art.n} of ${art.d} parts shaded`;
     case 'areaGrid':
@@ -131,7 +133,7 @@ export function Illustration({ art, variant = 'panel' }: Props) {
   switch (art.kind) {
     case 'glyph':
       return (
-        <div className={`art art--${variant}`}>
+        <div className={`art art--${variant} art--glyph`}>
           <Glyph name={art.glyph} size={variant === 'option' ? 56 : 96} />
         </div>
       );
@@ -218,6 +220,22 @@ export function Illustration({ art, variant = 'panel' }: Props) {
               paintOrder="stroke"
             >
               {art.n}
+            </text>
+          </svg>
+        </div>
+      );
+    }
+
+    case 'letter': {
+      // Lower case with the capital beside it: a child meets both in the
+      // wild, and a bank that only ever shows capitals teaches half a letter.
+      const d = variant === 'option' ? 64 : 110;
+      return (
+        <div className={`art art--${variant} art--letter`}>
+          <svg width={d * 1.4} height={d} viewBox="0 0 140 100" aria-hidden="true">
+            <text x="70" y="52" textAnchor="middle" dominantBaseline="central" fontSize="76" fontWeight="900" fill="var(--accent-secondary)">
+              {art.letter.toUpperCase()}
+              <tspan fill="var(--text-primary)">{art.letter.toLowerCase()}</tspan>
             </text>
           </svg>
         </div>
