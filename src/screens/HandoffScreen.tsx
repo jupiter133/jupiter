@@ -53,7 +53,6 @@ export function HandoffScreen({ childName, track, onStart }: Props) {
                       style={{
                         background: tile.bg,
                         boxShadow: `0 4px 0 ${tile.edge}`,
-                        transform: `rotate(${tile.tilt})`,
                       }}
                     >
                       <span className="subject-tile__num">{i + 1}</span>

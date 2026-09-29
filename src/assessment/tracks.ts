@@ -70,22 +70,28 @@ export const SUBJECT_COLOR: Record<Subject, SubjectColor> = {
   math: 'cyan',
 };
 
-/** Soft tile fill, hard bottom edge and tilt, for the tiles and results chips. */
-export const SUBJECT_TILE: Record<Subject, { bg: string; edge: string; tilt: string }> = {
-  'find-the-same': { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)', tilt: '-1.5deg' },
-  'match-making': { bg: 'var(--olc-gold-soft)', edge: '#E5C46A', tilt: '1deg' },
-  'spot-the-difference': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)', tilt: '-1deg' },
-  'shapes-colors': { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)', tilt: '1.5deg' },
-  'number-fun': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)', tilt: '-1deg' },
-  'letter-sounds': { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)', tilt: '1deg' },
-  'word-practice': { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)', tilt: '-1.5deg' },
-  'words-speaking': { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)', tilt: '-1.5deg' },
-  'oral-reading': { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)', tilt: '1deg' },
-  vocabulary: { bg: 'var(--olc-gold-soft)', edge: '#E5C46A', tilt: '-1deg' },
-  'reading-comprehension': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)', tilt: '1.5deg' },
-  spelling: { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)', tilt: '-1deg' },
-  'sentence-writing': { bg: 'var(--olc-gold-soft)', edge: '#E5C46A', tilt: '1deg' },
-  math: { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)', tilt: '-1.5deg' },
+/**
+ * Soft tile fill and hard bottom edge, for the tiles and results chips.
+ *
+ * They sit STRAIGHT. Each tile used to carry its own hand-placed rotation,
+ * which reads as charming on a marketing page and as a printing error on a
+ * list of seven — the same call already made for `--tag-tilt` in tokens.css.
+ */
+export const SUBJECT_TILE: Record<Subject, { bg: string; edge: string }> = {
+  'find-the-same': { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)' },
+  'match-making': { bg: 'var(--olc-gold-soft)', edge: '#E5C46A' },
+  'spot-the-difference': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)' },
+  'shapes-colors': { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)' },
+  'number-fun': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)' },
+  'letter-sounds': { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)' },
+  'word-practice': { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)' },
+  'words-speaking': { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)' },
+  'oral-reading': { bg: 'var(--olc-pink-soft)', edge: 'var(--olc-pink-soft-dark)' },
+  vocabulary: { bg: 'var(--olc-gold-soft)', edge: '#E5C46A' },
+  'reading-comprehension': { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)' },
+  spelling: { bg: 'var(--olc-cyan-soft)', edge: 'var(--olc-cyan-soft-dark)' },
+  'sentence-writing': { bg: 'var(--olc-gold-soft)', edge: '#E5C46A' },
+  math: { bg: 'var(--olc-lime)', edge: 'var(--olc-lime-dark)' },
 };
 
 export interface TrackConfig {
