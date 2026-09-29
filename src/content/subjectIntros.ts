@@ -138,14 +138,17 @@ export const SUBJECT_INTROS: Record<Subject, SubjectIntro> = {
     ]),
   },
   'word-practice': {
-    lead: 'Words you’re starting to know by sight.',
+    lead: 'Reading whole words, both directions.',
     cta: 'Start word practice',
-    chips: [{ label: 'Whole words', ...CYAN }, { label: 'Tap to pick', ...LIME }, { label: '~3 minutes', ...PINK }],
+    chips: [{ label: 'Whole words', ...CYAN }, { label: 'Read aloud', ...LIME }, { label: '~3 minutes', ...PINK }],
     sections: rules([
-      ['How it works', 'You’ll see a word and a few choices. Tap the one that matches.'],
-      ['Sight words', 'Some words you just know by looking — the, and, see, go. Those are the ones.'],
-      ['Need a hand?', 'Tap the speaker to hear the word out loud.'],
-      ['The rules', 'No pass or fail here. Every answer tells Ms Hannah something useful.'],
+      ['How it works', 'Read a word and find the picture, see a picture and find the word, or read a word out loud.'],
+      [
+        'The choices look alike on purpose',
+        '“nest” sits next to “next” and “best”, not next to “elephant”. A word that looks nothing like the answer tests length, not reading.',
+      ],
+      ['Reading aloud', 'One question in three asks your child to say the word. There is no timer and no wrong way to try it.'],
+      ['Need a hand?', 'Tap the speaker to hear the word, as often as they like.'],
     ]),
   },
 

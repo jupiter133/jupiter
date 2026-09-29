@@ -178,7 +178,9 @@ export function QuestionScreen({
      "question" reads as a test, which is the one word this flow avoids. */
   /* Little Readers count pictures, not questions: "Question 3" means
      nothing to someone who has never sat one. */
-  const unitLabel = isMatch || isPair || isOdd || wordlessOptions
+  const unitLabel = subject === 'word-practice'
+    ? 'Word'
+    : isMatch || isPair || isOdd || wordlessOptions
     ? 'Picture'
     : studiesPassage
     ? 'Passage'

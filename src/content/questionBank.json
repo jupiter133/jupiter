@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "stub": true,
-  "note": "MIXED BANK. One subject is still template-generated placeholder and is NOT assessment content: word-practice. It is a Little Readers reading subject, so an under-7's placement still rests partly on filler. Every other subject carries written content, still pending teacher sign-off. Nothing scores the two spoken subjects yet — see speechScoring.ts. Placeholder items carry a skill beginning 'stub-'; a test holds this note to them.",
+  "stub": false,
+  "note": "No placeholder items remain: every subject carries written content, still pending teacher sign-off. TWO THINGS ARE STILL MISSING, and neither is content. Nothing scores a spoken answer — see speechScoring.ts — so Words Speaking, Oral Reading and the read-aloud third of Word Practice are recorded as observations and move no placement. Word Practice is one of only two subjects an under-7's placement rests on, so a third of its evidence is currently unusable. Placeholder items would carry a skill beginning 'stub-'; a test holds this note to them.",
   "questions": [
     {
       "id": "ts-sd-t0-01",
@@ -16262,1464 +16262,6 @@
       "correctAnswerId": ""
     },
     {
-      "id": "ts-wp-t0-01",
-      "subject": "word-practice",
-      "tier": 0,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “cat” the right way?",
-      "questionTextJunior": "Which is “cat”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "catt"
-        },
-        {
-          "id": "c",
-          "text": "tac"
-        },
-        {
-          "id": "d",
-          "text": "ca"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t0-02",
-      "subject": "word-practice",
-      "tier": 0,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “dog” the right way?",
-      "questionTextJunior": "Which is “dog”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "dogg"
-        },
-        {
-          "id": "c",
-          "text": "god"
-        },
-        {
-          "id": "d",
-          "text": "do"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t0-03",
-      "subject": "word-practice",
-      "tier": 0,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “sun” the right way?",
-      "questionTextJunior": "Which is “sun”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "sunn"
-        },
-        {
-          "id": "c",
-          "text": "nus"
-        },
-        {
-          "id": "d",
-          "text": "su"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t0-04",
-      "subject": "word-practice",
-      "tier": 0,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “map” the right way?",
-      "questionTextJunior": "Which is “map”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "mapp"
-        },
-        {
-          "id": "c",
-          "text": "pam"
-        },
-        {
-          "id": "d",
-          "text": "ma"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t0-05",
-      "subject": "word-practice",
-      "tier": 0,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “bed” the right way?",
-      "questionTextJunior": "Which is “bed”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "bedd"
-        },
-        {
-          "id": "c",
-          "text": "deb"
-        },
-        {
-          "id": "d",
-          "text": "be"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t0-06",
-      "subject": "word-practice",
-      "tier": 0,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “fish” the right way?",
-      "questionTextJunior": "Which is “fish”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "fishh"
-        },
-        {
-          "id": "c",
-          "text": "hsif"
-        },
-        {
-          "id": "d",
-          "text": "fis"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t1-01",
-      "subject": "word-practice",
-      "tier": 1,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “tree” the right way?",
-      "questionTextJunior": "Which is “tree”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "treee"
-        },
-        {
-          "id": "c",
-          "text": "eert"
-        },
-        {
-          "id": "d",
-          "text": "tre"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t1-02",
-      "subject": "word-practice",
-      "tier": 1,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “star” the right way?",
-      "questionTextJunior": "Which is “star”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "starr"
-        },
-        {
-          "id": "c",
-          "text": "rats"
-        },
-        {
-          "id": "d",
-          "text": "sta"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t1-03",
-      "subject": "word-practice",
-      "tier": 1,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “moon” the right way?",
-      "questionTextJunior": "Which is “moon”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "moonn"
-        },
-        {
-          "id": "c",
-          "text": "noom"
-        },
-        {
-          "id": "d",
-          "text": "moo"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t1-04",
-      "subject": "word-practice",
-      "tier": 1,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “rain” the right way?",
-      "questionTextJunior": "Which is “rain”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "rainn"
-        },
-        {
-          "id": "c",
-          "text": "niar"
-        },
-        {
-          "id": "d",
-          "text": "rai"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t1-05",
-      "subject": "word-practice",
-      "tier": 1,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “book” the right way?",
-      "questionTextJunior": "Which is “book”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "bookk"
-        },
-        {
-          "id": "c",
-          "text": "koob"
-        },
-        {
-          "id": "d",
-          "text": "boo"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t1-06",
-      "subject": "word-practice",
-      "tier": 1,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “frog” the right way?",
-      "questionTextJunior": "Which is “frog”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "frogg"
-        },
-        {
-          "id": "c",
-          "text": "gorf"
-        },
-        {
-          "id": "d",
-          "text": "fro"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t2-01",
-      "subject": "word-practice",
-      "tier": 2,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “nest” the right way?",
-      "questionTextJunior": "Which is “nest”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "nestt"
-        },
-        {
-          "id": "c",
-          "text": "tsen"
-        },
-        {
-          "id": "d",
-          "text": "nes"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t2-02",
-      "subject": "word-practice",
-      "tier": 2,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “lamp” the right way?",
-      "questionTextJunior": "Which is “lamp”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "lampp"
-        },
-        {
-          "id": "c",
-          "text": "pmal"
-        },
-        {
-          "id": "d",
-          "text": "lam"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t2-03",
-      "subject": "word-practice",
-      "tier": 2,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “gift” the right way?",
-      "questionTextJunior": "Which is “gift”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "giftt"
-        },
-        {
-          "id": "c",
-          "text": "tfig"
-        },
-        {
-          "id": "d",
-          "text": "gif"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t2-04",
-      "subject": "word-practice",
-      "tier": 2,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “hand” the right way?",
-      "questionTextJunior": "Which is “hand”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "handd"
-        },
-        {
-          "id": "c",
-          "text": "dnah"
-        },
-        {
-          "id": "d",
-          "text": "han"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t2-05",
-      "subject": "word-practice",
-      "tier": 2,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “milk” the right way?",
-      "questionTextJunior": "Which is “milk”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "milkk"
-        },
-        {
-          "id": "c",
-          "text": "klim"
-        },
-        {
-          "id": "d",
-          "text": "mil"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t2-06",
-      "subject": "word-practice",
-      "tier": 2,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “road” the right way?",
-      "questionTextJunior": "Which is “road”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "roadd"
-        },
-        {
-          "id": "c",
-          "text": "daor"
-        },
-        {
-          "id": "d",
-          "text": "roa"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t3-01",
-      "subject": "word-practice",
-      "tier": 3,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “song” the right way?",
-      "questionTextJunior": "Which is “song”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "songg"
-        },
-        {
-          "id": "c",
-          "text": "gnos"
-        },
-        {
-          "id": "d",
-          "text": "son"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t3-02",
-      "subject": "word-practice",
-      "tier": 3,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “wind” the right way?",
-      "questionTextJunior": "Which is “wind”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "windd"
-        },
-        {
-          "id": "c",
-          "text": "dniw"
-        },
-        {
-          "id": "d",
-          "text": "win"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t3-03",
-      "subject": "word-practice",
-      "tier": 3,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “cat” the right way?",
-      "questionTextJunior": "Which is “cat”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "catt"
-        },
-        {
-          "id": "c",
-          "text": "tac"
-        },
-        {
-          "id": "d",
-          "text": "ca"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t3-04",
-      "subject": "word-practice",
-      "tier": 3,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “dog” the right way?",
-      "questionTextJunior": "Which is “dog”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "dogg"
-        },
-        {
-          "id": "c",
-          "text": "god"
-        },
-        {
-          "id": "d",
-          "text": "do"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t3-05",
-      "subject": "word-practice",
-      "tier": 3,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “sun” the right way?",
-      "questionTextJunior": "Which is “sun”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "sunn"
-        },
-        {
-          "id": "c",
-          "text": "nus"
-        },
-        {
-          "id": "d",
-          "text": "su"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t3-06",
-      "subject": "word-practice",
-      "tier": 3,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “map” the right way?",
-      "questionTextJunior": "Which is “map”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "mapp"
-        },
-        {
-          "id": "c",
-          "text": "pam"
-        },
-        {
-          "id": "d",
-          "text": "ma"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t4-01",
-      "subject": "word-practice",
-      "tier": 4,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “bed” the right way?",
-      "questionTextJunior": "Which is “bed”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "bedd"
-        },
-        {
-          "id": "c",
-          "text": "deb"
-        },
-        {
-          "id": "d",
-          "text": "be"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t4-02",
-      "subject": "word-practice",
-      "tier": 4,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “fish” the right way?",
-      "questionTextJunior": "Which is “fish”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "fishh"
-        },
-        {
-          "id": "c",
-          "text": "hsif"
-        },
-        {
-          "id": "d",
-          "text": "fis"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t4-03",
-      "subject": "word-practice",
-      "tier": 4,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “tree” the right way?",
-      "questionTextJunior": "Which is “tree”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "treee"
-        },
-        {
-          "id": "c",
-          "text": "eert"
-        },
-        {
-          "id": "d",
-          "text": "tre"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t4-04",
-      "subject": "word-practice",
-      "tier": 4,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “star” the right way?",
-      "questionTextJunior": "Which is “star”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "starr"
-        },
-        {
-          "id": "c",
-          "text": "rats"
-        },
-        {
-          "id": "d",
-          "text": "sta"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t4-05",
-      "subject": "word-practice",
-      "tier": 4,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “moon” the right way?",
-      "questionTextJunior": "Which is “moon”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "moonn"
-        },
-        {
-          "id": "c",
-          "text": "noom"
-        },
-        {
-          "id": "d",
-          "text": "moo"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t4-06",
-      "subject": "word-practice",
-      "tier": 4,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “rain” the right way?",
-      "questionTextJunior": "Which is “rain”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "rainn"
-        },
-        {
-          "id": "c",
-          "text": "niar"
-        },
-        {
-          "id": "d",
-          "text": "rai"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t5-01",
-      "subject": "word-practice",
-      "tier": 5,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “book” the right way?",
-      "questionTextJunior": "Which is “book”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "bookk"
-        },
-        {
-          "id": "c",
-          "text": "koob"
-        },
-        {
-          "id": "d",
-          "text": "boo"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t5-02",
-      "subject": "word-practice",
-      "tier": 5,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “frog” the right way?",
-      "questionTextJunior": "Which is “frog”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "frogg"
-        },
-        {
-          "id": "c",
-          "text": "gorf"
-        },
-        {
-          "id": "d",
-          "text": "fro"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t5-03",
-      "subject": "word-practice",
-      "tier": 5,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “nest” the right way?",
-      "questionTextJunior": "Which is “nest”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "nestt"
-        },
-        {
-          "id": "c",
-          "text": "tsen"
-        },
-        {
-          "id": "d",
-          "text": "nes"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t5-04",
-      "subject": "word-practice",
-      "tier": 5,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “lamp” the right way?",
-      "questionTextJunior": "Which is “lamp”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "lampp"
-        },
-        {
-          "id": "c",
-          "text": "pmal"
-        },
-        {
-          "id": "d",
-          "text": "lam"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t5-05",
-      "subject": "word-practice",
-      "tier": 5,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “gift” the right way?",
-      "questionTextJunior": "Which is “gift”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "gift"
-        },
-        {
-          "id": "b",
-          "text": "giftt"
-        },
-        {
-          "id": "c",
-          "text": "tfig"
-        },
-        {
-          "id": "d",
-          "text": "gif"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t5-06",
-      "subject": "word-practice",
-      "tier": 5,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “hand” the right way?",
-      "questionTextJunior": "Which is “hand”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "hand"
-        },
-        {
-          "id": "b",
-          "text": "handd"
-        },
-        {
-          "id": "c",
-          "text": "dnah"
-        },
-        {
-          "id": "d",
-          "text": "han"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t6-01",
-      "subject": "word-practice",
-      "tier": 6,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “milk” the right way?",
-      "questionTextJunior": "Which is “milk”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "milk"
-        },
-        {
-          "id": "b",
-          "text": "milkk"
-        },
-        {
-          "id": "c",
-          "text": "klim"
-        },
-        {
-          "id": "d",
-          "text": "mil"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t6-02",
-      "subject": "word-practice",
-      "tier": 6,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “road” the right way?",
-      "questionTextJunior": "Which is “road”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "road"
-        },
-        {
-          "id": "b",
-          "text": "roadd"
-        },
-        {
-          "id": "c",
-          "text": "daor"
-        },
-        {
-          "id": "d",
-          "text": "roa"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t6-03",
-      "subject": "word-practice",
-      "tier": 6,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “song” the right way?",
-      "questionTextJunior": "Which is “song”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "song"
-        },
-        {
-          "id": "b",
-          "text": "songg"
-        },
-        {
-          "id": "c",
-          "text": "gnos"
-        },
-        {
-          "id": "d",
-          "text": "son"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t6-04",
-      "subject": "word-practice",
-      "tier": 6,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “wind” the right way?",
-      "questionTextJunior": "Which is “wind”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "wind"
-        },
-        {
-          "id": "b",
-          "text": "windd"
-        },
-        {
-          "id": "c",
-          "text": "dniw"
-        },
-        {
-          "id": "d",
-          "text": "win"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t6-05",
-      "subject": "word-practice",
-      "tier": 6,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “cat” the right way?",
-      "questionTextJunior": "Which is “cat”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "cat"
-        },
-        {
-          "id": "b",
-          "text": "catt"
-        },
-        {
-          "id": "c",
-          "text": "tac"
-        },
-        {
-          "id": "d",
-          "text": "ca"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t6-06",
-      "subject": "word-practice",
-      "tier": 6,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “dog” the right way?",
-      "questionTextJunior": "Which is “dog”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "dog"
-        },
-        {
-          "id": "b",
-          "text": "dogg"
-        },
-        {
-          "id": "c",
-          "text": "god"
-        },
-        {
-          "id": "d",
-          "text": "do"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t7-01",
-      "subject": "word-practice",
-      "tier": 7,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “sun” the right way?",
-      "questionTextJunior": "Which is “sun”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "sun"
-        },
-        {
-          "id": "b",
-          "text": "sunn"
-        },
-        {
-          "id": "c",
-          "text": "nus"
-        },
-        {
-          "id": "d",
-          "text": "su"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t7-02",
-      "subject": "word-practice",
-      "tier": 7,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “map” the right way?",
-      "questionTextJunior": "Which is “map”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "map"
-        },
-        {
-          "id": "b",
-          "text": "mapp"
-        },
-        {
-          "id": "c",
-          "text": "pam"
-        },
-        {
-          "id": "d",
-          "text": "ma"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t7-03",
-      "subject": "word-practice",
-      "tier": 7,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “bed” the right way?",
-      "questionTextJunior": "Which is “bed”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "bed"
-        },
-        {
-          "id": "b",
-          "text": "bedd"
-        },
-        {
-          "id": "c",
-          "text": "deb"
-        },
-        {
-          "id": "d",
-          "text": "be"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t7-04",
-      "subject": "word-practice",
-      "tier": 7,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “fish” the right way?",
-      "questionTextJunior": "Which is “fish”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "fish"
-        },
-        {
-          "id": "b",
-          "text": "fishh"
-        },
-        {
-          "id": "c",
-          "text": "hsif"
-        },
-        {
-          "id": "d",
-          "text": "fis"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t7-05",
-      "subject": "word-practice",
-      "tier": 7,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “tree” the right way?",
-      "questionTextJunior": "Which is “tree”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "tree"
-        },
-        {
-          "id": "b",
-          "text": "treee"
-        },
-        {
-          "id": "c",
-          "text": "eert"
-        },
-        {
-          "id": "d",
-          "text": "tre"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t7-06",
-      "subject": "word-practice",
-      "tier": 7,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “star” the right way?",
-      "questionTextJunior": "Which is “star”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "star"
-        },
-        {
-          "id": "b",
-          "text": "starr"
-        },
-        {
-          "id": "c",
-          "text": "rats"
-        },
-        {
-          "id": "d",
-          "text": "sta"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t8-01",
-      "subject": "word-practice",
-      "tier": 8,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “moon” the right way?",
-      "questionTextJunior": "Which is “moon”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "moon"
-        },
-        {
-          "id": "b",
-          "text": "moonn"
-        },
-        {
-          "id": "c",
-          "text": "noom"
-        },
-        {
-          "id": "d",
-          "text": "moo"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t8-02",
-      "subject": "word-practice",
-      "tier": 8,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “rain” the right way?",
-      "questionTextJunior": "Which is “rain”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "rain"
-        },
-        {
-          "id": "b",
-          "text": "rainn"
-        },
-        {
-          "id": "c",
-          "text": "niar"
-        },
-        {
-          "id": "d",
-          "text": "rai"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t8-03",
-      "subject": "word-practice",
-      "tier": 8,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “book” the right way?",
-      "questionTextJunior": "Which is “book”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "book"
-        },
-        {
-          "id": "b",
-          "text": "bookk"
-        },
-        {
-          "id": "c",
-          "text": "koob"
-        },
-        {
-          "id": "d",
-          "text": "boo"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t8-04",
-      "subject": "word-practice",
-      "tier": 8,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “frog” the right way?",
-      "questionTextJunior": "Which is “frog”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "frog"
-        },
-        {
-          "id": "b",
-          "text": "frogg"
-        },
-        {
-          "id": "c",
-          "text": "gorf"
-        },
-        {
-          "id": "d",
-          "text": "fro"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t8-05",
-      "subject": "word-practice",
-      "tier": 8,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “nest” the right way?",
-      "questionTextJunior": "Which is “nest”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "nest"
-        },
-        {
-          "id": "b",
-          "text": "nestt"
-        },
-        {
-          "id": "c",
-          "text": "tsen"
-        },
-        {
-          "id": "d",
-          "text": "nes"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
-      "id": "ts-wp-t8-06",
-      "subject": "word-practice",
-      "tier": 8,
-      "skill": "stub-word-practice",
-      "questionText": "Which one spells “lamp” the right way?",
-      "questionTextJunior": "Which is “lamp”?",
-      "options": [
-        {
-          "id": "a",
-          "text": "lamp"
-        },
-        {
-          "id": "b",
-          "text": "lampp"
-        },
-        {
-          "id": "c",
-          "text": "pmal"
-        },
-        {
-          "id": "d",
-          "text": "lam"
-        }
-      ],
-      "correctAnswerId": "a"
-    },
-    {
       "id": "sc-t0-01",
       "subject": "shapes-colors",
       "tier": 0,
@@ -26765,6 +25307,1578 @@
         }
       ],
       "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-pic-t0-01",
+      "subject": "word-practice",
+      "tier": 0,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “sun”. Which picture is it?",
+      "questionTextJunior": "Which one is “sun”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t0-02",
+      "subject": "word-practice",
+      "tier": 0,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fox"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fox"
+        },
+        {
+          "id": "b",
+          "text": "far"
+        },
+        {
+          "id": "c",
+          "text": "box"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t0-03",
+      "subject": "word-practice",
+      "tier": 0,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "hat",
+      "questionText": "Can you read this word out loud? “hat”",
+      "questionTextJunior": "Read it out loud: “hat”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t0-04",
+      "subject": "word-practice",
+      "tier": 0,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “sun”. Which picture is it?",
+      "questionTextJunior": "Which one is “sun”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t0-05",
+      "subject": "word-practice",
+      "tier": 0,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fox"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "far"
+        },
+        {
+          "id": "b",
+          "text": "fox"
+        },
+        {
+          "id": "c",
+          "text": "fog"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t0-06",
+      "subject": "word-practice",
+      "tier": 0,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "hat",
+      "questionText": "Can you read this word out loud? “hat”",
+      "questionTextJunior": "Read it out loud: “hat”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t1-01",
+      "subject": "word-practice",
+      "tier": 1,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “jar”. Which picture is it?",
+      "questionTextJunior": "Which one is “jar”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t1-02",
+      "subject": "word-practice",
+      "tier": 1,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "egg"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "egg"
+        },
+        {
+          "id": "b",
+          "text": "edge"
+        },
+        {
+          "id": "c",
+          "text": "ego"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t1-03",
+      "subject": "word-practice",
+      "tier": 1,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "owl",
+      "questionText": "Can you read this word out loud? “owl”",
+      "questionTextJunior": "Read it out loud: “owl”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t1-04",
+      "subject": "word-practice",
+      "tier": 1,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “jar”. Which picture is it?",
+      "questionTextJunior": "Which one is “jar”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t1-05",
+      "subject": "word-practice",
+      "tier": 1,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "egg"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "edge"
+        },
+        {
+          "id": "b",
+          "text": "egg"
+        },
+        {
+          "id": "c",
+          "text": "beg"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t1-06",
+      "subject": "word-practice",
+      "tier": 1,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "owl",
+      "questionText": "Can you read this word out loud? “owl”",
+      "questionTextJunior": "Read it out loud: “owl”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t2-01",
+      "subject": "word-practice",
+      "tier": 2,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “nest”. Which picture is it?",
+      "questionTextJunior": "Which one is “nest”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t2-02",
+      "subject": "word-practice",
+      "tier": 2,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "duck"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "duck"
+        },
+        {
+          "id": "b",
+          "text": "deck"
+        },
+        {
+          "id": "c",
+          "text": "dusk"
+        },
+        {
+          "id": "d",
+          "text": "dock"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t2-03",
+      "subject": "word-practice",
+      "tier": 2,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "kite",
+      "questionText": "Can you read this word out loud? “kite”",
+      "questionTextJunior": "Read it out loud: “kite”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t2-04",
+      "subject": "word-practice",
+      "tier": 2,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “nest”. Which picture is it?",
+      "questionTextJunior": "Which one is “nest”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "duck"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t2-05",
+      "subject": "word-practice",
+      "tier": 2,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "duck"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "dusk"
+        },
+        {
+          "id": "b",
+          "text": "duck"
+        },
+        {
+          "id": "c",
+          "text": "luck"
+        },
+        {
+          "id": "d",
+          "text": "deck"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t2-06",
+      "subject": "word-practice",
+      "tier": 2,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "kite",
+      "questionText": "Can you read this word out loud? “kite”",
+      "questionTextJunior": "Read it out loud: “kite”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t3-01",
+      "subject": "word-practice",
+      "tier": 3,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “star”. Which picture is it?",
+      "questionTextJunior": "Which one is “star”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t3-02",
+      "subject": "word-practice",
+      "tier": 3,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tree"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "tree"
+        },
+        {
+          "id": "b",
+          "text": "three"
+        },
+        {
+          "id": "c",
+          "text": "true"
+        },
+        {
+          "id": "d",
+          "text": "free"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t3-03",
+      "subject": "word-practice",
+      "tier": 3,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "leaf",
+      "questionText": "Can you read this word out loud? “leaf”",
+      "questionTextJunior": "Read it out loud: “leaf”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t3-04",
+      "subject": "word-practice",
+      "tier": 3,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “star”. Which picture is it?",
+      "questionTextJunior": "Which one is “star”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "nest"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t3-05",
+      "subject": "word-practice",
+      "tier": 3,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "tree"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "three"
+        },
+        {
+          "id": "b",
+          "text": "tree"
+        },
+        {
+          "id": "c",
+          "text": "trees"
+        },
+        {
+          "id": "d",
+          "text": "true"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t3-06",
+      "subject": "word-practice",
+      "tier": 3,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "leaf",
+      "questionText": "Can you read this word out loud? “leaf”",
+      "questionTextJunior": "Read it out loud: “leaf”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t4-01",
+      "subject": "word-practice",
+      "tier": 4,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “tent”. Which picture is it?",
+      "questionTextJunior": "Which one is “tent”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "apple"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t4-02",
+      "subject": "word-practice",
+      "tier": 4,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fish"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fish"
+        },
+        {
+          "id": "b",
+          "text": "flesh"
+        },
+        {
+          "id": "c",
+          "text": "fist"
+        },
+        {
+          "id": "d",
+          "text": "dish"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t4-03",
+      "subject": "word-practice",
+      "tier": 4,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "moon",
+      "questionText": "Can you read this word out loud? “moon”",
+      "questionTextJunior": "Read it out loud: “moon”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t4-04",
+      "subject": "word-practice",
+      "tier": 4,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “tent”. Which picture is it?",
+      "questionTextJunior": "Which one is “tent”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "apple"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "umbrella"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t4-05",
+      "subject": "word-practice",
+      "tier": 4,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "fish"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "fist"
+        },
+        {
+          "id": "b",
+          "text": "fish"
+        },
+        {
+          "id": "c",
+          "text": "wish"
+        },
+        {
+          "id": "d",
+          "text": "flesh"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t4-06",
+      "subject": "word-practice",
+      "tier": 4,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "moon",
+      "questionText": "Can you read this word out loud? “moon”",
+      "questionTextJunior": "Read it out loud: “moon”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t5-01",
+      "subject": "word-practice",
+      "tier": 5,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “apple”. Which picture is it?",
+      "questionTextJunior": "Which one is “apple”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "apple"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t5-02",
+      "subject": "word-practice",
+      "tier": 5,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "igloo"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "igloo"
+        },
+        {
+          "id": "b",
+          "text": "ingot"
+        },
+        {
+          "id": "c",
+          "text": "iglos"
+        },
+        {
+          "id": "d",
+          "text": "igloos"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t5-03",
+      "subject": "word-practice",
+      "tier": 5,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "pizza",
+      "questionText": "Can you read this word out loud? “pizza”",
+      "questionTextJunior": "Read it out loud: “pizza”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t5-04",
+      "subject": "word-practice",
+      "tier": 5,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “apple”. Which picture is it?",
+      "questionTextJunior": "Which one is “apple”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "apple"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "igloo"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "rainbow"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t5-05",
+      "subject": "word-practice",
+      "tier": 5,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "igloo"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "iglos"
+        },
+        {
+          "id": "b",
+          "text": "igloo"
+        },
+        {
+          "id": "c",
+          "text": "ingot"
+        },
+        {
+          "id": "d",
+          "text": "igloe"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t5-06",
+      "subject": "word-practice",
+      "tier": 5,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "pizza",
+      "questionText": "Can you read this word out loud? “pizza”",
+      "questionTextJunior": "Read it out loud: “pizza”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t6-01",
+      "subject": "word-practice",
+      "tier": 6,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “grapes”. Which picture is it?",
+      "questionTextJunior": "Which one is “grapes”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "jar"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "backpack"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t6-02",
+      "subject": "word-practice",
+      "tier": 6,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "window"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "window"
+        },
+        {
+          "id": "b",
+          "text": "winder"
+        },
+        {
+          "id": "c",
+          "text": "widow"
+        },
+        {
+          "id": "d",
+          "text": "winnow"
+        },
+        {
+          "id": "e",
+          "text": "windows"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t6-03",
+      "subject": "word-practice",
+      "tier": 6,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "rainbow",
+      "questionText": "Can you read this word out loud? “rainbow”",
+      "questionTextJunior": "Read it out loud: “rainbow”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t6-04",
+      "subject": "word-practice",
+      "tier": 6,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “grapes”. Which picture is it?",
+      "questionTextJunior": "Which one is “grapes”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "grapes"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "leaf"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t6-05",
+      "subject": "word-practice",
+      "tier": 6,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "window"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "winder"
+        },
+        {
+          "id": "b",
+          "text": "window"
+        },
+        {
+          "id": "c",
+          "text": "windows"
+        },
+        {
+          "id": "d",
+          "text": "winnow"
+        },
+        {
+          "id": "e",
+          "text": "widow"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t6-06",
+      "subject": "word-practice",
+      "tier": 6,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "rainbow",
+      "questionText": "Can you read this word out loud? “rainbow”",
+      "questionTextJunior": "Read it out loud: “rainbow”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t7-01",
+      "subject": "word-practice",
+      "tier": 7,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “umbrella”. Which picture is it?",
+      "questionTextJunior": "Which one is “umbrella”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "umbrella"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "kite"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fish"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t7-02",
+      "subject": "word-practice",
+      "tier": 7,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "backpack"
+        },
+        {
+          "id": "b",
+          "text": "bakpack"
+        },
+        {
+          "id": "c",
+          "text": "backrack"
+        },
+        {
+          "id": "d",
+          "text": "backpick"
+        },
+        {
+          "id": "e",
+          "text": "backpacks"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t7-03",
+      "subject": "word-practice",
+      "tier": 7,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "snowflake",
+      "questionText": "Can you read this word out loud? “snowflake”",
+      "questionTextJunior": "Read it out loud: “snowflake”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t7-04",
+      "subject": "word-practice",
+      "tier": 7,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “umbrella”. Which picture is it?",
+      "questionTextJunior": "Which one is “umbrella”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "egg"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "umbrella"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "pizza"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "fox"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t7-05",
+      "subject": "word-practice",
+      "tier": 7,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "backpack"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "backpick"
+        },
+        {
+          "id": "b",
+          "text": "backpack"
+        },
+        {
+          "id": "c",
+          "text": "bakpack"
+        },
+        {
+          "id": "d",
+          "text": "backpacks"
+        },
+        {
+          "id": "e",
+          "text": "backrack"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t7-06",
+      "subject": "word-practice",
+      "tier": 7,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "snowflake",
+      "questionText": "Can you read this word out loud? “snowflake”",
+      "questionTextJunior": "Read it out loud: “snowflake”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t8-01",
+      "subject": "word-practice",
+      "tier": 8,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “snowflake”. Which picture is it?",
+      "questionTextJunior": "Which one is “snowflake”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "moon"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "hat"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "owl"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "window"
+          }
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-word-t8-02",
+      "subject": "word-practice",
+      "tier": 8,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "umbrella"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "umbrella"
+        },
+        {
+          "id": "b",
+          "text": "ambrella"
+        },
+        {
+          "id": "c",
+          "text": "umbrela"
+        },
+        {
+          "id": "d",
+          "text": "umbrellas"
+        },
+        {
+          "id": "e",
+          "text": "umberella"
+        }
+      ],
+      "correctAnswerId": "a"
+    },
+    {
+      "id": "wp-say-t8-03",
+      "subject": "word-practice",
+      "tier": 8,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "backpack",
+      "questionText": "Can you read this word out loud? “backpack”",
+      "questionTextJunior": "Read it out loud: “backpack”",
+      "options": [],
+      "correctAnswerId": ""
+    },
+    {
+      "id": "wp-pic-t8-04",
+      "subject": "word-practice",
+      "tier": 8,
+      "skill": "word-to-picture",
+      "questionText": "Read the word “snowflake”. Which picture is it?",
+      "questionTextJunior": "Which one is “snowflake”?",
+      "options": [
+        {
+          "id": "a",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "star"
+          }
+        },
+        {
+          "id": "b",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "snowflake"
+          }
+        },
+        {
+          "id": "c",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "sun"
+          }
+        },
+        {
+          "id": "d",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tree"
+          }
+        },
+        {
+          "id": "e",
+          "text": "",
+          "art": {
+            "kind": "glyph",
+            "glyph": "tent"
+          }
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-word-t8-05",
+      "subject": "word-practice",
+      "tier": 8,
+      "skill": "picture-to-word",
+      "art": {
+        "kind": "glyph",
+        "glyph": "umbrella"
+      },
+      "questionText": "Which word says what this picture is?",
+      "questionTextJunior": "Which word is it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "umberella"
+        },
+        {
+          "id": "b",
+          "text": "umbrella"
+        },
+        {
+          "id": "c",
+          "text": "umbrela"
+        },
+        {
+          "id": "d",
+          "text": "ambrella"
+        },
+        {
+          "id": "e",
+          "text": "umbrellas"
+        }
+      ],
+      "correctAnswerId": "b"
+    },
+    {
+      "id": "wp-say-t8-06",
+      "subject": "word-practice",
+      "tier": 8,
+      "skill": "read-the-word-aloud",
+      "format": "speak",
+      "spokenWord": "backpack",
+      "questionText": "Can you read this word out loud? “backpack”",
+      "questionTextJunior": "Read it out loud: “backpack”",
+      "options": [],
+      "correctAnswerId": ""
     }
   ]
 }

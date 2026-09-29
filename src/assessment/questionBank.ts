@@ -5,12 +5,13 @@ import type { Question, Tier } from './types';
  * The one bank. Subject and tier data live in the JSON, so replacing content
  * needs no engine change.
  *
- * It is MIXED, and its own `note` field says which parts are which: the seven
- * Little Readers activities are template-generated placeholder, while every
- * Grade Level subject carries written content that is still pending teacher
- * sign-off. `BANK_HAS_TEMPLATE_ITEMS` stays true until none of it is
- * generated, so nothing ships on a template item quietly — the README and a
- * test both point here.
+ * Every subject now carries written content, still pending teacher sign-off;
+ * no placeholder items remain. `BANK_HAS_TEMPLATE_ITEMS` tracks that, and a
+ * test holds it to the items rather than trusting the flag — it stayed set
+ * after the last placeholder subject was replaced.
+ *
+ * The bank's own `note` says what is still missing, which is no longer
+ * content: nothing scores a spoken answer. See speechScoring.ts.
  */
 export const BANK_HAS_TEMPLATE_ITEMS: boolean = bank.stub === true;
 

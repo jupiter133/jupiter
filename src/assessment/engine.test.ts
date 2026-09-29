@@ -268,9 +268,15 @@ describe('question bank', () => {
     }
   });
 
-  it('knows the reading bank is a stub, so nobody ships on it by accident', () => {
-    // Flip this expectation when the teacher-written banks land.
-    expect(BANK_HAS_TEMPLATE_ITEMS).toBe(true);
+  it('flags a template bank, and agrees with the items themselves', () => {
+    /*
+     * The flag and the items have to say the same thing. This was true and
+     * wrong for a while — the flag stayed set after the last placeholder
+     * subject was replaced, which is exactly the kind of stale claim that
+     * lets something ship on filler quietly.
+     */
+    const anyStub = QUESTIONS.some((q) => q.skill.startsWith('stub-'));
+    expect(BANK_HAS_TEMPLATE_ITEMS).toBe(anyStub);
   });
 
   it('uses unique ids and valid answer keys', () => {
@@ -665,6 +671,96 @@ describe('shapes and colours', () => {
       // shape, so a child who knows one but not the other still knows the ask.
       const colour = colourOf(q, q.correctAnswerId)!;
       expect(q.questionTextJunior?.toLowerCase(), q.id).toContain(colour);
+    }
+  });
+});
+
+describe('word practice', () => {
+  const wp = QUESTIONS.filter((q) => q.subject === 'word-practice');
+  const spoken = wp.filter((q) => q.skill === 'read-the-word-aloud');
+  const tapped = wp.filter((q) => q.skill !== 'read-the-word-aloud');
+
+  it('does not rest the whole subject on something nothing can score', () => {
+    /*
+     * The reference design was a microphone: see a word, read it aloud. That
+     * is the right activity and it cannot be scored today — so building only
+     * that would leave an under-7's placement resting on Letter Sounds alone,
+     * since Word Practice is the other half of it.
+     *
+     * Two of the three moves are tapped and score. The read-aloud is the
+     * third, and it is an observation until speech scoring exists.
+     */
+    expect(spoken.length).toBeGreaterThan(0);
+    expect(tapped.length).toBeGreaterThan(spoken.length);
+    for (const q of spoken) {
+      expect(q.format, q.id).toBe('speak');
+      expect(q.options, q.id).toHaveLength(0);
+    }
+  });
+
+  it('keeps every tier answerable without a microphone', () => {
+    // A child on a tablet with no mic permission must still be placeable.
+    for (let tier = 0; tier <= 8; tier += 1) {
+      const scorable = tapped.filter((q) => q.tier === tier);
+      expect(scorable.length, `tier ${tier}`).toBeGreaterThanOrEqual(4);
+    }
+  });
+
+  it('offers both directions of reading at every tier', () => {
+    for (let tier = 0; tier <= 8; tier += 1) {
+      const skills = new Set(wp.filter((q) => q.tier === tier).map((q) => q.skill));
+      expect(skills, `tier ${tier}`).toContain('word-to-picture');
+      expect(skills, `tier ${tier}`).toContain('picture-to-word');
+    }
+  });
+
+  it('gives a picture-to-word item distractors that are real misreadings', () => {
+    /*
+     * "cat" against "elephant" is not a reading question, it is a length
+     * question. Every distractor is within two letters of the answer, so the
+     * child has to actually decode.
+     */
+    for (const q of tapped.filter((i) => i.skill === 'picture-to-word')) {
+      const key = q.options.find((o) => o.id === q.correctAnswerId)!.text;
+      expect(key, q.id).toBe((q.art as { glyph: string }).glyph);
+      for (const o of q.options) {
+        expect(Math.abs(o.text.length - key.length), `${q.id}: ${o.text}`).toBeLessThanOrEqual(2);
+      }
+      expect(new Set(q.options.map((o) => o.text)).size, q.id).toBe(q.options.length);
+    }
+  });
+
+  it('puts the asked-for word on exactly one card', () => {
+    for (const q of tapped.filter((i) => i.skill === 'word-to-picture')) {
+      const asked = (q.questionTextJunior ?? '').split('\u201c')[1]?.split('\u201d')[0];
+      expect(asked, q.id).toBeTruthy();
+      const glyphs = q.options.map((o) => (o.art as { glyph: string }).glyph);
+      expect(glyphs.filter((g) => g === asked), q.id).toHaveLength(1);
+      const key = q.options.find((o) => o.id === q.correctAnswerId)!;
+      expect((key.art as { glyph: string }).glyph, q.id).toBe(asked);
+    }
+  });
+
+  it('climbs by the length of the word, which is the only ladder here', () => {
+    const longest = (tier: number) =>
+      Math.max(
+        ...wp
+          .filter((q) => q.tier === tier)
+          .map((q) => (q.spokenWord ?? (q.art as { glyph?: string })?.glyph ?? '').length),
+      );
+    expect(longest(0)).toBeLessThan(longest(5));
+    expect(longest(5)).toBeLessThan(longest(8));
+  });
+
+  it('never parks the answer in one spot for a move within a tier', () => {
+    const byGroup = new Map<string, number[]>();
+    for (const q of tapped) {
+      const at = q.options.findIndex((o) => o.id === q.correctAnswerId);
+      const k = `${q.tier}:${q.skill}`;
+      byGroup.set(k, [...(byGroup.get(k) ?? []), at]);
+    }
+    for (const [k, spots] of byGroup) {
+      if (spots.length > 1) expect(new Set(spots).size, k).toBeGreaterThan(1);
     }
   });
 });

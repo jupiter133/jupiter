@@ -2458,3 +2458,21 @@ body {
   width: clamp(40px, 8.5vh, 84px);
   height: auto;
 }
+
+/* ---------- Short screens ---------- */
+
+/* A 360x640 phone is the tightest thing a child sits this on. There the
+   panel picture and three text answers together ran 25px past the bottom —
+   and the stage does not scroll, so the last answer was unreachable rather
+   than merely below the fold. Both give up a little. */
+@media (max-height: 700px) {
+  .art-panel--junior .art--glyph > svg,
+  .art-panel--junior .art--letter > svg,
+  .art-panel--junior .art--numeral > svg,
+  .art-panel--junior .art--shape > svg {
+    width: clamp(72px, 15vh, 140px);
+  }
+
+  .question-screen--junior .option { min-height: 52px; }
+  .art-panel { padding: 6px 10px; }
+}

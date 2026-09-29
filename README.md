@@ -774,6 +774,59 @@ cards *and* of the picture on the panel. Dropping them cost `/v/` its only
 word, so `v` is out of the sound set too. **A smaller alphabet that measures
 something beats a full one that measures whether a child shares my vocabulary.**
 
+## Word Practice: two moves that score, one that cannot yet
+
+The last subject, and the other half of what places an under-7.
+
+The reference design was a microphone: see a word, read it aloud. That is the
+right activity, and **nothing can score it today** — so building only that
+would have left an under-7's placement resting on Letter Sounds alone.
+
+So the subject is three moves, and two of them are tapped:
+
+| Move | The child gets | Scored |
+| --- | --- | --- |
+| `word-to-picture` | the word written, pictures to choose | ✅ |
+| `picture-to-word` | the picture, written words to choose | ✅ |
+| `read-the-word-aloud` | the word, and a microphone | ❌ observation |
+
+A test asserts the tapped moves outnumber the spoken one, and that **every
+tier stays answerable without a microphone** — a child on a tablet with no mic
+permission must still be placeable.
+
+### Distractors that are real misreadings
+
+`nest` sits next to `next`, `best` and `neat`. `egg` sits next to `ego`, `leg`
+and `beg`. A distractor that looks nothing like the answer tests word length,
+not reading, so every one is within two letters of the key — asserted.
+
+The ladder is word length, which is the only ladder that means anything when
+the skill is reading the word at all: three letters, then four, then `apple`
+and `igloo`, then `umbrella` and `snowflake`.
+
+### The bank has no placeholder items left
+
+`BANK_HAS_TEMPLATE_ITEMS` stayed `true` after the last stub subject was
+replaced, and a test asserted it *stayed* true — a claim nobody had rechecked.
+The flag is now compared against the items themselves, so it cannot drift
+again, and the bank's note says what is actually missing.
+
+Which is no longer content:
+
+> Nothing scores a spoken answer. Words Speaking, Oral Reading and the
+> read-aloud third of Word Practice are recorded as observations and move no
+> placement. Word Practice is one of only two subjects an under-7's placement
+> rests on, so **a third of its evidence is currently unusable**.
+
+### One more unreachable-answer bug, on the smallest screen
+
+At 360×640 the panel picture plus three text answers ran 25px past the bottom.
+The stage does not scroll, so the third answer could not be tapped at all — the
+same class of bug as the paint chips and the counting cards, found the same
+way: by measuring the last answer's bottom edge against the viewport, not by
+asking whether the page scrolled. Panel art and the junior answer height both
+give up a little under `max-height: 700px`.
+
 ## Math: five shapes, because four answers can be worked backwards
 
 Every maths tier carries all five, so a sitting is never ten of the same thing:
